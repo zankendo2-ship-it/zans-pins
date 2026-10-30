@@ -114,6 +114,14 @@ h2.big{font-size:clamp(34px,6vw,54px);color:#fff;margin-bottom:12px}
 .tile,.ed{transition:transform .2s ease,box-shadow .2s ease}
 .tile:hover,.ed:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.18)}
 @media (prefers-reduced-motion:reduce){.tile,.ed{transition:none}.tile:hover,.ed:hover{transform:none}}
+/* v4: white running rail + winning post on the right, like the Etsy receipt banner; metal strip */
+.hero{position:relative;overflow:hidden;border-bottom:0}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,#7a4a26,#d79a62 15%,#8b5a30 28%,#7d8389 38%,#e9edf0 50%,#8e959b 62%,#8a6a1c 72%,#f1d27a 85%,#9c7a24)}
+.rail{position:absolute;left:0;right:0;bottom:6px;height:36px;pointer-events:none;
+ background:linear-gradient(#F3EDE5,#F3EDE5) 0 0/100% 5px no-repeat,repeating-linear-gradient(90deg,transparent 0 76px,#F3EDE5 76px 80px) 0 5px/100% 31px no-repeat;opacity:.9}
+.winpost{position:absolute;right:max(16px,3vw);bottom:6px;width:40px;height:120px;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35))}
+.hero .in.herogrid{padding-bottom:96px}
+@media (max-width:820px){.winpost{width:34px;height:116px}.hero .ctas{padding-right:44px}}
 </style>
 </head><body>
 <header class="bar"><div class="in"><a class="brand" href="#top"><img src="img/zans-logo.png" alt="ZANS Racing horse racing guides" width="60" height="58"><span>ZANS Racing<small>Horse racing guides</small></span></a>
@@ -122,7 +130,7 @@ h2.big{font-size:clamp(34px,6vw,54px);color:#fff;margin-bottom:12px}
 <section class="hero"><div class="in herogrid"><div class="herotext"><p class="eyebrow">ZANS Racing · Horse racing guides</p><h1>Horse Racing Guides for UK and Irish Racing Fans</h1>
 <p class="lede">Racecourse guide PDFs that explain the draw, the going and the course stats at every track, in Beginner, Advanced and Pro editions. Instant download.</p>
 <p class="line">Make finding a winner a little easier.</p>
-<div class="ctas"><a class="btn gold" href="https://www.etsy.com/uk/shop/ZANSRacingTools" target="_blank" rel="noopener">Shop the guides on Etsy</a><a class="btn ghost" href="#breeders-cup">Breeders&#39; Cup 2026 guide</a></div></div><div class="herologo"><img src="img/zans-logo-big.jpg" alt="ZANS Racing horse racing guides logo" width="560" height="545"></div></div></section>
+<div class="ctas"><a class="btn gold" href="https://www.etsy.com/uk/shop/ZANSRacingTools" target="_blank" rel="noopener">Shop the guides on Etsy</a><a class="btn ghost" href="#breeders-cup">Breeders&#39; Cup 2026 guide</a></div></div><div class="herologo"><img src="img/zans-logo-big.jpg" alt="ZANS Racing horse racing guides logo" width="560" height="545"></div></div><div class="rail" aria-hidden="true"></div><svg class="winpost" aria-hidden="true" viewBox="0 0 60 200"><rect x="26" y="40" width="8" height="160" fill="#F3EDE5"/><circle cx="30" cy="32" r="28" fill="#F3EDE5"/><circle cx="30" cy="32" r="15" fill="#D62839"/></svg></section>
 <section class="what"><div class="in"><p class="eyebrow dark">What we do</p><h2>Racecourse guide PDFs built from official race results</h2>
 <div class="tiles"><div class="tile t1"><span class="ic">◎</span><h3>Know the course</h3><p>Every guide maps the track and explains how the draw (starting stalls) and the going (ground conditions) play out there.</p></div>
 <div class="tile t2"><span class="ic">≈</span><h3>Built from official results</h3><p>Draw, going, jockey and trainer figures come from years of official race results, checked over two separate periods.</p></div>
