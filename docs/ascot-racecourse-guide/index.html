@@ -149,6 +149,10 @@ a.tile{text-decoration:none;display:block}
 .tonight::after{content:"";position:absolute;inset:0;background:rgba(28,28,28,.45)}
 .tonight .in{position:relative;z-index:1;padding-block:9px;line-height:1.5}
 .tonight a{color:#fff;text-decoration:underline;font-weight:700}
+.flagbar .in{max-width:none;gap:4px;padding:4px}
+.flagbar .flag{flex:1 1 0;min-width:0;width:auto;height:30px;object-fit:cover;border-radius:2px}
+@media (max-width:400px){.flagbar .flag{width:auto;height:24px}}
+@media (min-width:700px){.flagbar .in{justify-content:center;gap:6px;padding:5px}.flagbar .flag{flex:none;width:54px;height:36px}}
 
 .art .in{max-width:860px;padding-block:44px 56px}
 .art h1{color:var(--ink);font-size:clamp(30px,5.5vw,46px)}
