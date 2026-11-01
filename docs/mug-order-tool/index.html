@@ -12,7 +12,7 @@ html,body{margin:0}body{background:var(--bg);color:var(--ink);font:17px/1.5 syst
 h1{font-size:26px;margin:4px 0 6px;letter-spacing:.5px;text-transform:uppercase}
 .box{background:var(--card);border:2px solid var(--edge);border-radius:4px;padding:16px;margin-top:16px}
 label{display:block;font-weight:700;margin:10px 0 4px}
-textarea,input{width:100%;box-sizing:border-box;font:16px ui-monospace,Menlo,monospace;padding:10px;border:2px solid var(--line);border-radius:4px;background:#fff}
+textarea,input,select{width:100%;box-sizing:border-box;font:16px ui-monospace,Menlo,monospace;padding:10px;border:2px solid var(--line);border-radius:4px;background:#fff}
 button{font:700 16px system-ui;letter-spacing:.5px;text-transform:uppercase;padding:14px 18px;border:0;border-radius:4px;background:var(--goldm);color:var(--ink);cursor:pointer;width:100%;margin-top:12px}
 button:disabled{opacity:.4;cursor:not-allowed}
 #flat svg{width:100%;height:auto;display:block;border:2px solid var(--edge)}
@@ -29,15 +29,17 @@ ol{padding-left:22px}li{margin-bottom:6px}
 <textarea id="code" rows="3" placeholder="ZANS-B-hoops-..."></textarea>
 <label for="name">2. Name to print (exactly as the buyer typed it)</label>
 <input id="name" maxlength="40" placeholder="HORSE NAME">
+<label for="etsyh">3. Handle colour the buyer chose in the Etsy menu</label>
+<select id="etsyh"><option value="">Pick from the Etsy order...</option><option>Black</option><option>Blue</option><option>Red</option><option>Yellow</option><option>Orange</option><option>Pink</option></select>
 <p id="msg" aria-live="polite"></p>
 </div>
-<div class="box"><b>3. Check the print</b> (this is the whole wrap; the two name plates sit either side of the handle)
+<div class="box"><b>4. Check the print</b> (this is the whole wrap; the two name plates sit either side of the handle)
 <div id="flat" style="margin-top:10px"></div>
 <table id="facts" style="margin-top:10px"></table>
 <button id="dl" type="button" disabled>Download print file (2700 x 1050)</button>
 <p id="dlmsg"></p>
 </div>
-<div class="box"><b>4. Place it on Printful</b>
+<div class="box"><b>5. Place it on Printful</b>
 <ol>
 <li>Printful &rarr; Orders &rarr; New order &rarr; Manual order.</li>
 <li>Product: <b>White Ceramic Mug with Color Inside</b>, size <b>11 oz</b>, colour = the <b>handle colour</b> shown above.</li>
@@ -94,14 +96,18 @@ ol{padding-left:22px}li{margin-bottom:6px}
   const BLOCKED = [
     'godolphin', 'coolmore', 'juddmonte', 'ballydoyle', 'darley', 'shadwell', 'gigginstown', 'owners group',
     'wathnan', 'amo racing', 'king power', 'qatar racing', 'cheveley park', 'sheikh', 'mcmanus', 'jp mcmanus',
-    'ricci', 'aidan o\'brien', 'the queen', 'the king', 'royal', 'his majesty', 'her majesty',
+    'ricci', 'aidan o\'brien', 'the queen', 'the king', 'royal family', 'his majesty', 'her majesty',
     'emirates', 'rolex', 'longines', 'qipco', 'boodles', 'betfair', 'bet365', 'ladbrokes', 'william hill',
-    'paddy power', 'coral', 'sky bet', 'skybet', 'betvictor', 'betway', 'unibet', 'racing post', 'timeform',
+    'paddy power', 'coral racing', 'sky bet', 'skybet', 'betvictor', 'betway', 'unibet', 'racing post', 'timeform',
     'cheltenham', 'royal ascot', 'grand national', 'aintree', 'breeders cup', 'breeders\' cup', 'kentucky derby',
     'frankel', 'enable', 'sea the stars', 'galileo', 'kauto star', 'denman', 'best mate', 'arkle', 'red rum',
     'tiger roll', 'constitution hill', 'galopin des champs', 'lossiemouth', 'the new lion', 'state of rest',
     'city of troy', 'auguste rodin', 'baaeed', 'stradivarius', 'altior', 'sprinter sacre', 'desert orchid',
-    'honeysuckle', 'shishkin', 'energumene', 'el fabiolo', 'fact to file', 'secretariat', 'seabiscuit'
+    'honeysuckle', 'shishkin', 'energumene', 'el fabiolo', 'fact to file', 'secretariat', 'seabiscuit',
+    'minnie hauk', 'delacroix', 'ombudsman', 'kyprios', 'trueshan', 'paddington', 'inspiral', 'mostahdaf', 'calandagan',
+    'jan brueghel', 'economics', 'rebel\'s romance', 'native trail', 'bolshoi ballet', 'goliath', 'vauban', 'majborough',
+    'marine nationale', 'jonbon', 'gaelic warrior', 'ballyburn', 'inothewayurthinkin', 'sir gino', 'kopek des bordes',
+    'il etait temps', 'nijinsky', 'mill reef', 'dancing brave', 'golden horn', 'dubai millennium', 'desert crown'
   ];
   function checkName(text, maxLen) {
     maxLen = maxLen || 28;
@@ -109,8 +115,9 @@ ol{padding-left:22px}li{margin-bottom:6px}
     if (!clean) return { ok: false, error: 'Please type the name to print.' };
     if (clean.length > maxLen) return { ok: false, error: `Please keep the name to ${maxLen} characters or fewer.` };
     if (/[^A-Za-z0-9 '\-&.#]/.test(clean)) return { ok: false, error: 'Letters, numbers, spaces and - \' & . # only, please.' };
-    const low = ' ' + clean.toLowerCase() + ' ';
-    const hit = BLOCKED.find(w => low.includes(w));
+    // whole words only, so 'Sparkle' is not caught by 'arkle'
+    const low = ' ' + clean.toLowerCase().replace(/[^a-z0-9']+/g, ' ').trim() + ' ';
+    const hit = BLOCKED.find(w => low.includes(' ' + w.replace(/[^a-z0-9']+/g, ' ') + ' '));
     if (hit) return { ok: false, error: 'Sorry, we can\'t print the names of racing stables, owners, sponsors, events or famous racehorses. Please use your own horse\'s or syndicate\'s name.', hit };
     return { ok: true, text: clean.toUpperCase() };
   }
@@ -120,6 +127,7 @@ ol{padding-left:22px}li{margin-bottom:6px}
   function checkDesign(d, isMug) {
     const pat = d.layout === 'B' ? d.allover : d.body, a = d.c1.toUpperCase(), b = d.c2.toUpperCase();
     const hit = FAMOUS.find(([p, x, y]) => p === pat && ((x === a && (y === '*' || y === b)) || (x === b && y === a)));
+    if (pat !== 'plain' && a === b) return { ok: false, error: 'Both colours are the same, so the pattern would not show. Please pick two different colours.' };
     if (hit) return { ok: false, error: 'That exact pattern and colour mix is very close to a famous owner\'s colours. Please change one colour or the pattern.' };
     const hc = isMug ? handleClash(d) : null;
     return hc ? { ok: false, error: hc } : { ok: true };
@@ -310,6 +318,7 @@ ol{padding-left:22px}li{margin-bottom:6px}
     if (p.length === 13) {
       handlePick = Object.keys(HANDLE_CODES).find(n => 'H' + HANDLE_CODES[n] === p[11]);
       if (!handlePick || !['R0', 'R1'].includes(p[12])) return null; ring = p[12] === 'R1';
+      if (!HANDLE_COLOURS[handlePick]) return null; // not sold in the UK
     }
     const pat = p[2].toLowerCase(), sl = p[5].toLowerCase(), cap = p[8].toLowerCase();
     const cols = [p[3], p[4], p[6], p[7], p[9], p[10]].map(c => '#' + c);
@@ -527,7 +536,8 @@ ol{padding-left:22px}li{margin-bottom:6px}
 
   // Handle + inside colour = the cap colour (Alex 1 Nov). Printful's coloured-inside mug offers only these, so the cap colour is
   // matched to the nearest one; a white or very light cap uses the plain white mug.
-  const HANDLE_COLOURS = { Black: '#050505', 'Dark Blue': '#1B1B51', Blue: '#1E9FCD', 'Dark Green': '#226653', Green: '#B2D264', 'Golden Yellow': '#FEBA45', Yellow: '#FFDC3A', Orange: '#F85625', Red: '#E32A2D', Pink: '#F6A1B1' };
+  // UK/IE Printful handle colours only (checked 1 Nov 2026): the other four are US-only
+  const HANDLE_COLOURS = { Black: '#050505', Blue: '#1E9FCD', Yellow: '#FFDC3A', Orange: '#F85625', Red: '#E32A2D', Pink: '#F6A1B1' };
   function capColour(d) { d = normalise(d); return (d.cap === 'plain' || d.cap === 'peak') ? d.c1 : d.k1; }
   function handleFor(d) {
     if (d && d.handlePick && (HANDLE_COLOURS[d.handlePick] || d.handlePick === 'White'))
@@ -558,6 +568,7 @@ function go(){
   $('dl').disabled=true; svgNow=null; $('flat').innerHTML=''; $('facts').innerHTML=''; $('dlmsg').textContent='';
   if(!code){$('msg').innerHTML='';return;}
   const d=Z.fromCode(code);
+  if(d && !d.handlePick){$('msg').innerHTML='<span class="err">This code has no handle colour on the end (older designer). Ask the buyer to copy the code again.</span>';return;}
   if(!d){$('msg').innerHTML='<span class="err">That design code is not valid. Ask the buyer to copy it again from the designer.</span>';return;}
   const n=Z.checkName(nm);
   if(!n.ok){$('msg').innerHTML='<span class="err">Name: '+n.error+'</span>';return;}
@@ -566,12 +577,17 @@ function go(){
   if(!dc.ok){$('msg').innerHTML='<span class="err">'+dc.error+' Message the buyer before printing.</span>';return;}
   if(d.layout!=='B'){$('msg').innerHTML='<span class="err">This code is for the old jersey layout. Ask the buyer to make it again in the designer.</span>';return;}
   const h=Z.handleFor(d);
+  if(!Z.HANDLE_COLOURS[h.name]){$('msg').innerHTML='<span class="err">Handle '+h.name+' is not sold in the UK. Message the buyer to pick Black, Blue, Red, Yellow, Orange or Pink.</span>';return;}
+  const eh=$('etsyh').value;
+  if(!eh){$('msg').innerHTML='<span class="err">Pick the handle colour from the Etsy order (step 3).</span>';return;}
+  if(eh!==h.name){$('msg').innerHTML='<span class="err">Handle does not match: the code says '+h.name+', the Etsy order says '+eh+'. The Etsy order is what the buyer paid for, so message the buyer before printing.</span>';return;}
+  const cname=x=>{const k=Object.keys(Z.COLOURS).find(n=>Z.COLOURS[n].toUpperCase()===String(x).toUpperCase());return k?k+' ('+x+')':'custom colour '+x;};
   svgNow=Z.printFile(d,MUG,"Jost",LOGO); $("flat").innerHTML=withFont(svgNow);
-  $('facts').innerHTML=`<tr><td>Name printed</td><td><b>${n.text}</b></td></tr><tr><td>Pattern</td><td>${d.allover}</td></tr><tr><td>Colours</td><td>${d.c1} + ${d.c2}</td></tr><tr><td>Handle and inside</td><td><b>${h.name}</b></td></tr><tr><td>Cap ring</td><td>${d.ring?'Yes':'No'}</td></tr>`;
+  $('facts').innerHTML=`<tr><td>Name printed</td><td><b>${n.text}</b></td></tr><tr><td>Pattern</td><td>${d.allover}</td></tr><tr><td>Colours</td><td>${cname(d.c1)} + ${cname(d.c2)}</td></tr><tr><td>Handle and inside</td><td><b>${h.name}</b></td></tr><tr><td>Cap ring</td><td>${d.ring?'Yes':'No'}</td></tr>`;
   fileName=('ZANS mug '+n.text).replace(/[^A-Za-z0-9 ]+/g,'').trim().replace(/\s+/g,'-')+'-2700x1050.png';
   $('msg').innerHTML='<span class="ok">Code and name OK.</span>'; $('dl').disabled=false;
 }
-$('code').addEventListener('input',go); $('name').addEventListener('input',go);
+$('code').addEventListener('input',go); $('name').addEventListener('input',go); $('etsyh').addEventListener('change',go);
 $('dl').addEventListener('click',()=>{
   if(!svgNow) return; $('dlmsg').textContent='Making the file...';
   const img=new Image();

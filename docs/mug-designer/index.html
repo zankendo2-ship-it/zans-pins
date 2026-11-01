@@ -233,14 +233,18 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
   const BLOCKED = [
     'godolphin', 'coolmore', 'juddmonte', 'ballydoyle', 'darley', 'shadwell', 'gigginstown', 'owners group',
     'wathnan', 'amo racing', 'king power', 'qatar racing', 'cheveley park', 'sheikh', 'mcmanus', 'jp mcmanus',
-    'ricci', 'aidan o\'brien', 'the queen', 'the king', 'royal', 'his majesty', 'her majesty',
+    'ricci', 'aidan o\'brien', 'the queen', 'the king', 'royal family', 'his majesty', 'her majesty',
     'emirates', 'rolex', 'longines', 'qipco', 'boodles', 'betfair', 'bet365', 'ladbrokes', 'william hill',
-    'paddy power', 'coral', 'sky bet', 'skybet', 'betvictor', 'betway', 'unibet', 'racing post', 'timeform',
+    'paddy power', 'coral racing', 'sky bet', 'skybet', 'betvictor', 'betway', 'unibet', 'racing post', 'timeform',
     'cheltenham', 'royal ascot', 'grand national', 'aintree', 'breeders cup', 'breeders\' cup', 'kentucky derby',
     'frankel', 'enable', 'sea the stars', 'galileo', 'kauto star', 'denman', 'best mate', 'arkle', 'red rum',
     'tiger roll', 'constitution hill', 'galopin des champs', 'lossiemouth', 'the new lion', 'state of rest',
     'city of troy', 'auguste rodin', 'baaeed', 'stradivarius', 'altior', 'sprinter sacre', 'desert orchid',
-    'honeysuckle', 'shishkin', 'energumene', 'el fabiolo', 'fact to file', 'secretariat', 'seabiscuit'
+    'honeysuckle', 'shishkin', 'energumene', 'el fabiolo', 'fact to file', 'secretariat', 'seabiscuit',
+    'minnie hauk', 'delacroix', 'ombudsman', 'kyprios', 'trueshan', 'paddington', 'inspiral', 'mostahdaf', 'calandagan',
+    'jan brueghel', 'economics', 'rebel\'s romance', 'native trail', 'bolshoi ballet', 'goliath', 'vauban', 'majborough',
+    'marine nationale', 'jonbon', 'gaelic warrior', 'ballyburn', 'inothewayurthinkin', 'sir gino', 'kopek des bordes',
+    'il etait temps', 'nijinsky', 'mill reef', 'dancing brave', 'golden horn', 'dubai millennium', 'desert crown'
   ];
   function checkName(text, maxLen) {
     maxLen = maxLen || 28;
@@ -248,8 +252,9 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
     if (!clean) return { ok: false, error: 'Please type the name to print.' };
     if (clean.length > maxLen) return { ok: false, error: `Please keep the name to ${maxLen} characters or fewer.` };
     if (/[^A-Za-z0-9 '\-&.#]/.test(clean)) return { ok: false, error: 'Letters, numbers, spaces and - \' & . # only, please.' };
-    const low = ' ' + clean.toLowerCase() + ' ';
-    const hit = BLOCKED.find(w => low.includes(w));
+    // whole words only, so 'Sparkle' is not caught by 'arkle'
+    const low = ' ' + clean.toLowerCase().replace(/[^a-z0-9']+/g, ' ').trim() + ' ';
+    const hit = BLOCKED.find(w => low.includes(' ' + w.replace(/[^a-z0-9']+/g, ' ') + ' '));
     if (hit) return { ok: false, error: 'Sorry, we can\'t print the names of racing stables, owners, sponsors, events or famous racehorses. Please use your own horse\'s or syndicate\'s name.', hit };
     return { ok: true, text: clean.toUpperCase() };
   }
@@ -259,6 +264,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
   function checkDesign(d, isMug) {
     const pat = d.layout === 'B' ? d.allover : d.body, a = d.c1.toUpperCase(), b = d.c2.toUpperCase();
     const hit = FAMOUS.find(([p, x, y]) => p === pat && ((x === a && (y === '*' || y === b)) || (x === b && y === a)));
+    if (pat !== 'plain' && a === b) return { ok: false, error: 'Both colours are the same, so the pattern would not show. Please pick two different colours.' };
     if (hit) return { ok: false, error: 'That exact pattern and colour mix is very close to a famous owner\'s colours. Please change one colour or the pattern.' };
     const hc = isMug ? handleClash(d) : null;
     return hc ? { ok: false, error: hc } : { ok: true };
@@ -449,6 +455,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
     if (p.length === 13) {
       handlePick = Object.keys(HANDLE_CODES).find(n => 'H' + HANDLE_CODES[n] === p[11]);
       if (!handlePick || !['R0', 'R1'].includes(p[12])) return null; ring = p[12] === 'R1';
+      if (!HANDLE_COLOURS[handlePick]) return null; // not sold in the UK
     }
     const pat = p[2].toLowerCase(), sl = p[5].toLowerCase(), cap = p[8].toLowerCase();
     const cols = [p[3], p[4], p[6], p[7], p[9], p[10]].map(c => '#' + c);
@@ -666,7 +673,8 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
 
   // Handle + inside colour = the cap colour (Alex 1 Nov). Printful's coloured-inside mug offers only these, so the cap colour is
   // matched to the nearest one; a white or very light cap uses the plain white mug.
-  const HANDLE_COLOURS = { Black: '#050505', 'Dark Blue': '#1B1B51', Blue: '#1E9FCD', 'Dark Green': '#226653', Green: '#B2D264', 'Golden Yellow': '#FEBA45', Yellow: '#FFDC3A', Orange: '#F85625', Red: '#E32A2D', Pink: '#F6A1B1' };
+  // UK/IE Printful handle colours only (checked 1 Nov 2026): the other four are US-only
+  const HANDLE_COLOURS = { Black: '#050505', Blue: '#1E9FCD', Yellow: '#FFDC3A', Orange: '#F85625', Red: '#E32A2D', Pink: '#F6A1B1' };
   function capColour(d) { d = normalise(d); return (d.cap === 'plain' || d.cap === 'peak') ? d.c1 : d.k1; }
   function handleFor(d) {
     if (d && d.handlePick && (HANDLE_COLOURS[d.handlePick] || d.handlePick === 'White'))
