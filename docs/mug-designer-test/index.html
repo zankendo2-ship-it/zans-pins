@@ -48,6 +48,16 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
 .flat{border:1px solid var(--line);border-radius:3px;background:#fff;max-width:100%;overflow:hidden}
 .flat svg{display:block;width:100%;height:auto}
 .mini svg{display:block;width:100%;height:auto}
+/* ZANS gold trim (Alex 1 Nov 17:37: 'gold trim on each page so it looks classy') */
+:root{--goldm:linear-gradient(135deg,#8a6a1c,#f1d27a 45%,#9c7a24 70%,#e2bd5a);--edge:#c9a24a}
+.strip{height:12px;background:var(--goldm)}
+.step{border:2px solid var(--edge)}
+.stage{border:3px solid var(--edge);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.flat{border:3px solid var(--edge)}
+.codebox{border:2px solid var(--edge)}
+.btn{background:var(--goldm);color:var(--ink)}
+.btn2{border-color:var(--edge)}
+.brand{background:var(--goldm);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.25))}
 @media (prefers-reduced-motion:reduce){.opt{transition:none}}
 </style>
 
