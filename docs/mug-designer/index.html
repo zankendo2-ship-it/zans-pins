@@ -210,15 +210,16 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
   const CAPS = ['plain', 'contrast', 'quartered', 'hoops', 'star', 'spots', 'stars',
     'checks', 'diamonds', 'stripes', 'halved', 'peak', 'diamond', 'large_spots'];
   const ALLOVER = ['plain', 'hoops', 'stripes', 'spots', 'stars', 'diamonds', 'chevrons', 'checks', 'diagonal',
-    'large_spots', 'quartered', 'hoop'];
+    'large_spots', 'quartered', 'hoop', 'stripe', 'halved', 'seams', 'braces', 'sash', 'cross_belts', 'large_diamond',
+    'triple_diamond', 'star', 'disc', 'cross', 'chevron'];
   const NAMES = {
     plain: 'Plain', hoops: 'Hoops', stripes: 'Stripes', spots: 'Spots', stars: 'Stars', diamonds: 'Diamonds',
-    chevrons: 'Chevrons', quartered: 'Quartered', large_diamond: 'Large diamond', cross_belts: 'Cross belts',
-    sash: 'Sash', braces: 'Braces', halved: 'Halved', checks: 'Check', contrast: 'Second colour',
-    armlets: 'Armlets', star: 'Large star', diagonal: 'Diagonal stripes',
-    hoop: 'Broad hoop', stripe: 'Broad stripe', large_spots: 'Large spots', disc: 'Disc', cross: 'Cross',
-    cross_of_lorraine: 'Cross of Lorraine', diabolo: 'Diabolo', triple_diamond: 'Triple diamond', epaulets: 'Epaulets',
-    seams: 'Seams', chevron: 'Single chevron', collar: 'Collar + hem', cuffs: 'Cuffs', armlet_cuffs: 'Armlet + cuffs',
+    chevrons: 'Chevrons', quartered: 'Quartered', large_diamond: 'Large diamonds', cross_belts: 'Cross belts',
+    sash: 'Sash', braces: 'Braces', halved: 'Halves', checks: 'Check', contrast: 'Second colour',
+    armlets: 'Armlets', star: 'Big stars', diagonal: 'Diagonal stripes',
+    hoop: 'Broad hoop', stripe: 'Broad stripes', large_spots: 'Large spots', disc: 'Big discs', cross: 'Crosses',
+    cross_of_lorraine: 'Cross of Lorraine', diabolo: 'Diabolo', triple_diamond: 'Triple diamonds', epaulets: 'Epaulets',
+    seams: 'Seams', chevron: 'Broad chevrons', collar: 'Collar + hem', cuffs: 'Cuffs', armlet_cuffs: 'Armlet + cuffs',
     peak: 'Second-colour peak', diamond: 'Diamond', thirds: 'Three-colour panels'
   };
 
@@ -352,6 +353,53 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       const bw = 50 * scale;
       for (let x = x0 - h; x < x1 + h; x += 2 * bw)
         s.push(`<polygon points="${f1(x)},${y1} ${f1(x + bw)},${y1} ${f1(x + bw + h)},${y0} ${f1(x + h)},${y0}" fill="${c2}"/>`);
+    } else if (pat === 'stripe') {
+      const bw = 130 * scale; for (let x = x0 + bw; x < x1; x += 3 * bw) s.push(`<rect x="${f1(x)}" y="${y0}" width="${f1(bw)}" height="${h}" fill="${c2}"/>`);
+    } else if (pat === 'halved') {
+      const bw = 340 * scale; for (let x = x0 + bw; x < x1; x += 2 * bw) s.push(`<rect x="${f1(x)}" y="${y0}" width="${f1(bw)}" height="${h}" fill="${c2}"/>`);
+    } else if (pat === 'seams') {
+      const bw = 12 * scale, g = 120 * scale; for (let x = x0 + g / 2; x < x1; x += g) s.push(`<rect x="${f1(x)}" y="${y0}" width="${f1(bw)}" height="${h}" fill="${c2}"/>`);
+    } else if (pat === 'braces') {
+      const bw = 26 * scale, g = 260 * scale; for (let x = x0 + g / 3; x < x1; x += g) { s.push(`<rect x="${f1(x)}" y="${y0}" width="${f1(bw)}" height="${h}" fill="${c2}"/>`); s.push(`<rect x="${f1(x + 3 * bw)}" y="${y0}" width="${f1(bw)}" height="${h}" fill="${c2}"/>`); }
+    } else if (pat === 'sash') {
+      const bw = 140 * scale;
+      for (let x = x0 - h; x < x1 + h; x += 4 * bw)
+        s.push(`<polygon points="${f1(x)},${y1} ${f1(x + bw)},${y1} ${f1(x + bw + h)},${y0} ${f1(x + h)},${y0}" fill="${c2}"/>`);
+    } else if (pat === 'cross_belts') {
+      const bw = 34 * scale, g = 240 * scale;
+      for (let x = x0 - h; x < x1 + h; x += g) {
+        s.push(`<polygon points="${f1(x)},${y1} ${f1(x + bw)},${y1} ${f1(x + bw + h)},${y0} ${f1(x + h)},${y0}" fill="${c2}"/>`);
+        s.push(`<polygon points="${f1(x)},${y0} ${f1(x + bw)},${y0} ${f1(x + bw + h)},${y1} ${f1(x + h)},${y1}" fill="${c2}"/>`);
+      }
+    } else if (pat === 'large_diamond') {
+      const dw = 200 * scale, dh = 280 * scale, g = 330 * scale; let row = 0;
+      for (let y = y0 + dh / 2; y < y1 + dh; y += dh * 1.1, row++)
+        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g)
+          s.push(`<polygon points="${f1(x)},${f1(y - dh / 2)} ${f1(x + dw / 2)},${f1(y)} ${f1(x)},${f1(y + dh / 2)} ${f1(x - dw / 2)},${f1(y)}" fill="${c2}"/>`);
+    } else if (pat === 'triple_diamond') {
+      const dw = 56 * scale, dh = 84 * scale, g = 300 * scale; let row = 0;
+      for (let y = y0 + dh; y < y1 + dh; y += dh * 2.2, row++)
+        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g)
+          for (const k of [-1, 0, 1]) { const cx = x + k * dw; s.push(`<polygon points="${f1(cx)},${f1(y - dh / 2)} ${f1(cx + dw / 2)},${f1(y)} ${f1(cx)},${f1(y + dh / 2)} ${f1(cx - dw / 2)},${f1(y)}" fill="${c2}"/>`); }
+    } else if (pat === 'star') {
+      const g = 280 * scale; let row = 0;
+      for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
+        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) s.push(star(x, y, 78 * scale, c2));
+    } else if (pat === 'disc') {
+      const g = 300 * scale; let row = 0;
+      for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
+        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) s.push(`<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(95 * scale)}" fill="${c2}"/>`);
+    } else if (pat === 'cross') {
+      const g = 240 * scale, a = 70 * scale, t = 26 * scale; let row = 0;
+      for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
+        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) { s.push(`<rect x="${f1(x - t / 2)}" y="${f1(y - a)}" width="${f1(t)}" height="${f1(2 * a)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - a)}" y="${f1(y - t / 2)}" width="${f1(2 * a)}" height="${f1(t)}" fill="${c2}"/>`); }
+    } else if (pat === 'chevron') {
+      const bh = 70 * scale, step = 380 * scale, dep = 120 * scale;
+      for (let y = y0 + step / 3; y < y1 + step; y += step) {
+        const top = [], bot = []; let k = 0;
+        for (let x = x0 - step; x < x1 + step; x += step / 2, k++) { const yy = y - (k % 2 ? dep : 0); top.push([x, yy]); bot.push([x, yy + bh]); }
+        s.push(`<polygon points="${top.concat(bot.reverse()).map(p => f1(p[0]) + ',' + f1(p[1])).join(' ')}" fill="${c2}"/>`);
+      }
     }
     return s.join('');
   }
@@ -740,7 +788,7 @@ function design(){
 }
 function mini(pat, layout){
   const d = Z.normalise({layout, body:pat, allover:pat, c1:S.c1, c2:S.c2, sleeves: layout==='C'?S.sleeves:'plain', cap:S.cap});
-  if (layout==='B') return `<svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="m${pat}"><rect width="160" height="110" rx="6"/></clipPath><g clip-path="url(#m${pat})">${Z.fillPattern(pat,d.c1,d.c2,0,0,160,110,pat==='quartered'?0.185:0.5)}</g></svg>`;
+  if (layout==='B') return `<svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="m${pat}"><rect width="160" height="110" rx="6"/></clipPath><g clip-path="url(#m${pat})">${Z.fillPattern(pat,d.c1,d.c2,0,0,160,110,(['quartered','halved','stripe','sash','large_diamond','triple_diamond','star','disc','cross','chevron','braces','seams','cross_belts'].includes(pat)?0.2:0.5))}</g></svg>`;
   return `<svg viewBox="-290 -420 580 690" xmlns="http://www.w3.org/2000/svg">${Z.jersey(d,'p'+pat)}</svg>`;
 }
 function optBtn(html, pressed, onClick, label){
