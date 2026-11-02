@@ -79,13 +79,13 @@ ol{padding-left:22px}li{margin-bottom:6px}
     'checks', 'diamonds', 'stripes', 'halved', 'peak', 'diamond', 'large_spots'];
   const ALLOVER = ['plain', 'hoops', 'stripes', 'spots', 'stars', 'diamonds', 'chevrons', 'checks', 'diagonal',
     'large_spots', 'quartered', 'hoop', 'stripe', 'halved', 'seams', 'braces', 'sash', 'cross_belts', 'large_diamond',
-    'triple_diamond', 'star', 'disc', 'cross', 'chevron'];
+    'triple_diamond', 'star', 'disc', 'spot_diag', 'cross', 'chevron'];
   const NAMES = {
     plain: 'Plain', hoops: 'Hoops', stripes: 'Stripes', spots: 'Spots', stars: 'Stars', diamonds: 'Diamonds',
     chevrons: 'Chevrons', quartered: 'Quartered', large_diamond: 'Large diamonds', cross_belts: 'Cross belts',
     sash: 'Sash', braces: 'Braces', halved: 'Halves', checks: 'Check', contrast: 'Second colour',
     armlets: 'Armlets', star: 'Big stars', diagonal: 'Diagonal stripes',
-    hoop: 'Broad hoop', stripe: 'Broad stripes', large_spots: 'Large spots', disc: 'Big discs', cross: 'Crosses',
+    hoop: 'Broad hoop', stripe: 'Broad stripes', large_spots: 'Large spots', disc: 'Big discs', spot_diag: 'Three big spots', cross: 'Crosses',
     cross_of_lorraine: 'Cross of Lorraine', diabolo: 'Diabolo', triple_diamond: 'Triple diamonds', epaulets: 'Epaulets',
     seams: 'Seams', chevron: 'Broad chevrons', collar: 'Collar + hem', cuffs: 'Cuffs', armlet_cuffs: 'Armlet + cuffs',
     peak: 'Second-colour peak', diamond: 'Diamond', thirds: 'Three-colour panels'
@@ -252,6 +252,10 @@ ol{padding-left:22px}li{margin-bottom:6px}
       const g = 280 * scale; let row = 0;
       for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
         for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) s.push(star(x, y, 78 * scale, c2));
+    } else if (pat === 'spot_diag') {
+      const gx = 640 * scale, r = 105 * scale, hh = y1 - y0;
+      for (let x = x0 - gx; x < x1 + gx; x += gx)
+        [[0, 0.2], [0.24, 0.5], [0.48, 0.8]].forEach(([dx, dy]) => s.push(`<circle cx="${f1(x + dx * gx)}" cy="${f1(y0 + dy * hh)}" r="${f1(r)}" fill="${c2}"/>`));
     } else if (pat === 'disc') {
       const g = 300 * scale; let row = 0;
       for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
