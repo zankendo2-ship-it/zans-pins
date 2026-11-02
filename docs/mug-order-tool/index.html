@@ -94,22 +94,11 @@ ol{padding-left:22px}li{margin-bottom:6px}
   // ---------- name check (soft IP guard) ----------
   // Stables, studs, sponsors, bookmakers, famous owners and famous horses. A hit blocks the order;
   // the buyer is asked to use their own horse's or syndicate's name instead.
-  const BLOCKED = [
-    'godolphin', 'coolmore', 'juddmonte', 'ballydoyle', 'darley', 'shadwell', 'gigginstown', 'owners group',
-    'wathnan', 'amo racing', 'king power', 'qatar racing', 'cheveley park', 'sheikh', 'mcmanus', 'jp mcmanus',
-    'ricci', 'aidan o\'brien', 'the queen', 'the king', 'royal family', 'his majesty', 'her majesty',
-    'emirates', 'rolex', 'longines', 'qipco', 'boodles', 'betfair', 'bet365', 'ladbrokes', 'william hill',
-    'paddy power', 'coral racing', 'sky bet', 'skybet', 'betvictor', 'betway', 'unibet', 'racing post', 'timeform',
-    'cheltenham', 'royal ascot', 'grand national', 'aintree', 'breeders cup', 'breeders\' cup', 'kentucky derby',
-    'frankel', 'enable', 'sea the stars', 'galileo', 'kauto star', 'denman', 'best mate', 'arkle', 'red rum',
-    'tiger roll', 'constitution hill', 'galopin des champs', 'lossiemouth', 'the new lion', 'state of rest',
-    'city of troy', 'auguste rodin', 'baaeed', 'stradivarius', 'altior', 'sprinter sacre', 'desert orchid',
-    'honeysuckle', 'shishkin', 'energumene', 'el fabiolo', 'fact to file', 'secretariat', 'seabiscuit',
-    'minnie hauk', 'delacroix', 'ombudsman', 'kyprios', 'trueshan', 'paddington', 'inspiral', 'mostahdaf', 'calandagan',
-    'jan brueghel', 'economics', 'rebel\'s romance', 'native trail', 'bolshoi ballet', 'goliath', 'vauban', 'majborough',
-    'marine nationale', 'jonbon', 'gaelic warrior', 'ballyburn', 'inothewayurthinkin', 'sir gino', 'kopek des bordes',
-    'il etait temps', 'nijinsky', 'mill reef', 'dancing brave', 'golden horn', 'dubai millennium', 'desert crown'
-  ];
+  // Alex 2 Nov 2026: customers may type any name; only rude words are refused.
+  // RUDE_ANY = caught inside any word (incl. letters spaced or doubled); RUDE_WORD = whole words only (so 'Scunthorpe', 'Dickens', 'Hancock' pass)
+  const RUDE_ANY = ['fuck','fuk','fck','shit','cunt','kunt','wank','twat','bollock','bastard','bitch','whore','slut','nigg','nigga','faggot','spastic','retard','motherf','dildo','rapist','pussy','arsehole','asshole','jizz','bellend','minge','nonce'];
+  const RUDE_WORD = ['ass','arse','tit','tits','cock','cocks','dick','dicks','prick','fag','fags','cum','sex','porn','knob','knobhead','piss','pissed','tosser','wanker','spaz','coon','rape','rapes','anal','boob','boobs','nazi','hitler','kkk','bumhole','turd','twats','paki','pakis','clit','shag','shagger'];
+  const BLOCKED = RUDE_ANY.concat(RUDE_WORD);
   function checkName(text, maxLen) {
     maxLen = maxLen || 28;
     const clean = String(text || '').replace(/\s+/g, ' ').trim();
@@ -118,8 +107,9 @@ ol{padding-left:22px}li{margin-bottom:6px}
     if (/[^A-Za-z0-9 '\-&.#]/.test(clean)) return { ok: false, error: 'Letters, numbers, spaces and - \' & . # only, please.' };
     // whole words only, so 'Sparkle' is not caught by 'arkle'
     const low = ' ' + clean.toLowerCase().replace(/[^a-z0-9']+/g, ' ').trim() + ' ';
-    const hit = BLOCKED.find(w => low.includes(' ' + w.replace(/[^a-z0-9']+/g, ' ') + ' '));
-    if (hit) return { ok: false, error: 'Sorry, we can\'t print the names of racing stables, owners, sponsors, events or famous racehorses. Please use your own horse\'s or syndicate\'s name.', hit };
+    const squash = clean.toLowerCase().replace(/scunthorpe|clitheroe|pakistan|shaggy|cockermouth|penistone/g, '').replace(/[^a-z]/g, '').replace(/(.)\1+/g, '$1');
+    const hit = RUDE_ANY.find(w => squash.includes(w.replace(/(.)\1+/g, '$1'))) || RUDE_WORD.find(w => low.includes(' ' + w + ' '));
+    if (hit) return { ok: false, error: 'Sorry, we can\'t print that word. Please choose a different name.', hit };
     return { ok: true, text: clean.toUpperCase() };
   }
   // Well-known owners' looks: the exact combination is refused so no mug copies a real owner's registered colours.
