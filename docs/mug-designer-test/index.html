@@ -156,8 +156,10 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
         <h2><b>4</b> Handle colour and cap ring</h2>
         <div class="lbl mt-3 mb-1">Handle and inside colour</div>
                 <div class="flex flex-wrap gap-2" id="handles"></div>
-        <div class="lbl mt-4 mb-1">Cap colour (any colour)</div>
-        <div class="flex items-center gap-3"><input id="capcol" type="color" value="#E32A2D" style="width:64px;height:40px"> <label class="flex items-center gap-2"><input type="checkbox" id="ring" class="w-5 h-5"> <span>Print a ring in my cap colour round the top of the mug</span></label></div>
+        <div class="lbl mt-4 mb-1">Ring round the top (cap colour)</div>
+        <label class="flex items-center gap-2 mb-2"><input type="checkbox" id="ring" class="w-5 h-5"> <span>Print a ring in my cap colour round the top of the mug</span></label>
+        <div class="flex flex-wrap gap-2" id="ringsw"></div>
+        <div class="flex items-center gap-3 mt-2 hint">Any other shade: <input id="capcol" type="color" value="#E32A2D" style="width:64px;height:40px"></div>
         <p class="hint mt-2"><b>Handle and inside:</b> pick any of the 6 colours. The handle comes in one solid colour (handles can't have a pattern printed on them). <b>The ring round the top of the mug is printed in your cap colour.</b></p>
       </div>
 
@@ -841,6 +843,8 @@ function renderControls(){
   const P=$('patterns'); P.innerHTML='';
   (S.layout==='B'?Z.ALLOVER:Z.BODY).forEach(p=>P.appendChild(optBtn(`<div class="mini">${mini(p,S.layout)}</div><div class="text-xs font-semibold mt-1 text-center">${Z.NAMES[p]}</div>`, S.body===p, ()=>{S.body=p; render();}, Z.NAMES[p])));
   renderPresets();
+  { const R=$('ringsw'); if(R){ R.innerHTML=''; Object.entries(Z.COLOURS).forEach(([n,h])=>{const bt=document.createElement('button'); bt.type='button'; bt.className='sw'; bt.style.background=h; bt.title=n; bt.setAttribute('aria-label','Ring '+n);
+    bt.setAttribute('aria-pressed', !!(S.ring && S.capCol && S.capCol.toUpperCase()===h.toUpperCase())); bt.onclick=()=>{S.capCol=h; S.ring=true; render();}; R.appendChild(bt);}); } }
   swatches($('c1'),'c1'); swatches($('c2'),'c2'); $('pick1').value=S.c1; $('pick2').value=S.c2;
   $('kitstep').hidden = S.layout!=='C'; $('subrow').hidden = S.layout!=='C';
   const SL=$('sleeves'); SL.innerHTML=''; Z.SLEEVES.forEach(p=>SL.appendChild(chip(p==='plain'?'Same as jersey':Z.NAMES[p], S.sleeves===p, ()=>{S.sleeves=p; render();})));
