@@ -163,42 +163,50 @@ a.tile{text-decoration:none;display:block}
 .tbtn{background:var(--goldm);color:var(--ink);font:700 16px var(--display);padding:9px 16px;border-radius:4px;text-decoration:none}
 .tlink{color:#fff;font-weight:700;text-decoration:underline}
 @media (max-width:500px){.usflag{height:26px}.tseal{width:82px;height:82px}.tbody .in{gap:12px}.foil{font-size:27px}.ttext b{font-size:19px}.tt{font-size:15px}.tbtn{font-size:15px;padding:8px 13px}}
-.announce{background:radial-gradient(ellipse 90% 70% at 50% 55%,#24684a 0%,#143f2c 55%,#0c2a1c 100%);color:var(--cream);border-bottom:3px solid var(--gold)}
-.announce .in{padding-block:30px 34px}
-.annframe{position:relative;border:1px solid rgba(232,195,90,.55);border-radius:6px;padding:30px 20px 26px;display:grid;gap:18px;justify-items:center;text-align:center;grid-template-areas:"eye" "head" "img" "copy" "cta"}
-.annframe::before{content:"";position:absolute;inset:5px;border:1px solid rgba(232,195,90,.22);border-radius:4px;pointer-events:none}
-.anneye{grid-area:eye;display:flex;align-items:center;gap:12px;margin:0;font:600 12px var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
-.anneye::before,.anneye::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.7}
-@media (max-width:899px){.anneye::before,.anneye::after{display:none}}
-.anneye b{background:var(--goldm);color:var(--ink);font-weight:700;letter-spacing:.2em;padding:3px 8px 3px 10px;border-radius:2px}
-.announce h2{grid-area:head;font:700 clamp(30px,7vw,54px)/1.08 var(--display);margin:0;color:#FFF;text-wrap:balance;letter-spacing:-.01em}
+.announce{background:linear-gradient(180deg,#0b2a1b 0%,#082114 60%,#061a10 100%);color:var(--cream);border-bottom:3px solid var(--gold)}
+.announce .in{padding-block:30px 36px}
+.announce h2{font:700 clamp(30px,7vw,52px)/1.08 var(--display);margin:0 0 18px;color:#FFF;text-wrap:balance;letter-spacing:-.01em;text-align:center}
 .announce h2 em{font-style:normal;background:var(--goldm);-webkit-background-clip:text;background-clip:text;color:transparent}
-.annimg{grid-area:img;display:block;width:100%;max-width:640px;background:radial-gradient(ellipse 60% 55% at 50% 55%,rgba(241,210,122,.20),rgba(241,210,122,0) 70%)}
-.annimg img{width:100%;height:auto;display:block}
-.anncopy{grid-area:copy;display:grid;gap:6px;justify-items:center}
-.announce .anncopy p{margin:0;font-size:17px;line-height:1.55;max-width:46ch;color:#E9E2D6}
-.annticks{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin:6px 0 0;padding:0;list-style:none;font:600 13px var(--display);letter-spacing:.12em;text-transform:uppercase;color:#d9cfa8}
+.anncard{position:relative;max-width:640px;margin:0 auto;border-radius:10px;overflow:hidden;border:1px solid rgba(232,195,90,.3);box-shadow:0 12px 32px rgba(0,0,0,.55);background:#0b2a1b;display:block}
+.anncard img{display:block;width:100%;height:auto}
+.annscrim{position:absolute;left:0;right:0;top:0;height:38%;background:linear-gradient(180deg,rgba(4,16,10,.82) 0%,rgba(4,16,10,.5) 55%,transparent 100%);pointer-events:none;z-index:1}
+.anntop{position:absolute;left:0;right:0;top:0;padding:22px 20px 0;z-index:2;text-align:center}
+.anntag{display:inline-block;padding:12px 30px;border:2px solid rgba(241,210,122,.95);border-radius:3px;font:800 clamp(22px,6vw,30px)/1 var(--display);letter-spacing:.42em;color:#f6dd93;text-indent:.42em;margin:0 0 14px;background:rgba(6,22,14,.9);box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.annsub{display:inline-block;font:700 clamp(15px,4vw,20px)/1.2 var(--display);letter-spacing:.22em;text-transform:uppercase;color:#FFF;margin:0;text-indent:.22em;padding:9px 18px;background:rgba(6,22,14,.78);border-radius:2px;border:1px solid rgba(241,210,122,.35)}
+.annpts{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 14px 16px;text-align:center}
+.annpts ul{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;margin:0;padding:9px 18px;list-style:none;font:600 12px var(--display);letter-spacing:.18em;text-transform:uppercase;color:#F3EDE5;background:rgba(6,20,12,.6);backdrop-filter:blur(4px);border:1px solid rgba(232,195,90,.3);border-radius:4px}
+.annpts li{display:flex;align-items:center;gap:7px;padding:2px 14px}
+.annpts li+li{border-left:1px solid rgba(232,195,90,.35)}
+.annpts li::before{content:"\2726";color:var(--gold);font-size:10px}
+.anncopy{text-align:center;margin:22px auto 0;max-width:46ch}
+.announce .anncopy p{margin:0;font-size:17px;line-height:1.55;color:#E9E2D6}
+.annticks{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin:14px 0 0;padding:0;list-style:none;font:600 13px var(--display);letter-spacing:.12em;text-transform:uppercase;color:#d9cfa8}
 .annticks li::before{content:"\2726";color:var(--gold);margin-right:7px;font-size:11px}
-.anncta{grid-area:cta;display:grid;gap:10px;justify-items:center}
+.anncta{text-align:center;margin-top:22px}
 .annbtn{display:inline-block;background:var(--goldm);color:var(--ink);font:700 17px var(--display);letter-spacing:.04em;padding:14px 30px;border-radius:4px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.45)}
 .annbtn:hover{filter:brightness(1.06)}
-.announce .annsoon{margin:0;font:italic 400 15px var(--body);color:rgba(243,237,229,.75)}
-@media (min-width:900px){.annframe{padding:42px 44px;column-gap:40px;text-align:left;justify-items:start;grid-template-columns:1fr 1.2fr;grid-template-areas:"eye img" "head img" "copy img" "cta img"}
-.anneye::before{display:none}.anncopy,.anncta{justify-items:start}.annticks{justify-content:flex-start}.annimg{align-self:center}}
+.announce .annsoon{margin:12px 0 0;font:italic 400 15px var(--body);color:rgba(243,237,229,.75)}
+@media (max-width:560px){.annpts ul{padding:8px 10px;font-size:11px;letter-spacing:.14em}.annpts li{padding:2px 8px}.annpts li+li{border-left:0}.anntop{padding:16px 14px 0}.anntag{letter-spacing:.36em;padding:6px 16px;font-size:12px}}
 </style>
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"f65e1060086bd22f5c071f12bc020af5"})});</script>
 </head><body>
 <div class="flagbar"><div class="in"><img class="flag" src="img/flags/gb-eng.svg" alt="England flag" width="40" height="30"><img class="flag" src="img/flags/ie.svg" alt="Ireland flag" width="40" height="30"><img class="flag" src="img/flags/gb-sct.svg" alt="Scotland flag" width="40" height="30"><img class="flag" src="img/flags/gb-wls.svg" alt="Wales flag" width="40" height="30"><img class="flag" src="img/flags/gb.svg" alt="Great Britain flag" width="40" height="30"><img class="flag" src="img/flags/us.svg" alt="USA flag" width="40" height="30"><img class="flag" src="img/flags/jp.svg" alt="Japan flag" width="40" height="30"></div></div><header class="bar"><div class="in"><a class="brand" href="#top"><img src="img/zans-logo.png" alt="ZANS Racing horse racing guides" width="60" height="58"><span>ZANS Racing Tools &amp; Gifts<small>Horse racing guides, tools &amp; gifts</small></span></a>
 <nav><a href="/mug-designer/">Silks mugs</a><a href="#breeders-cup">Breeders&#39; Cup</a><a href="/articles/breeders-cup-uk-times/">UK times</a><a href="#guides">Ascot</a><a href="#about">About</a><a class="shop" href="https://www.etsy.com/uk/shop/ZANSRacingTools" target="_blank" rel="noopener">Etsy shop</a></nav></div></header>
 <main id="top">
-<section class="announce" id="silks-mugs"><div class="in"><div class="annframe">
-<p class="anneye"><b>New</b> Racing silks mugs</p>
+<section class="announce" id="silks-mugs"><div class="in">
 <h2>Your horse. <em>Your colours.</em> Your mug.</h2>
-<a class="annimg" href="/mug-designer/"><img src="img/silks-mugs-trio.png" alt="Three personalised racing silks mugs: red with white sashes named ZEUS, green with pink sashes named SASHA, white and dark blue diamonds named SEA HORSE" width="1553" height="688"></a>
-<div class="anncopy"><p>Design a personalised mug in your horse's racing silks, with the name printed all the way round.</p>
-<ul class="annticks"><li>25 silks patterns</li><li>18 colours</li><li>6 handle colours</li></ul></div>
+<a class="anncard" href="/mug-designer/">
+<img src="img/silks-mugs-hero.jpg" alt="Three personalised racing silks mugs on a gold-rimmed podium at a floodlit racecourse: red with white sashes named ZEUS, green with pink sashes named SASHA, white and dark blue diamonds named SEA HORSE" width="1096" height="1435" loading="lazy">
+<div class="annscrim"></div>
+<div class="anntop">
+<p><span class="anntag">NEW</span></p>
+<p class="annsub">Personalised silks mugs</p>
+</div>
+<div class="annpts"><ul><li>25 silks patterns</li><li>18 colours</li><li>6 handle colours</li></ul></div>
+</a>
+<div class="anncopy"><p>Design a personalised mug in your horse's racing silks, with the name printed all the way round.</p></div>
 <div class="anncta"><a class="annbtn" href="/mug-designer/">Design your mug</a><p class="annsoon">Ordering opens on our Etsy shop very soon.</p></div>
-</div></div></section>
+</div></section>
 <section class="hero"><div class="in herogrid"><div class="herotext"><p class="toprated"><span class="stars5" aria-hidden="true">★★★★★</span> Rated 5 stars on Etsy</p><p class="eyebrow">Track DNA racecourse guides</p><h1>Horse Racing Racecourse Guides: UK Flat and All-Weather</h1>
 <p class="lede">ZANS racecourse guides explain UK and Irish Flat racing course by course: the draw (starting stalls), the going (ground conditions), the course layout, and the jockeys and trainers who do best there. Start with our Ascot Racecourse Guide in Beginner, Advanced or Pro. All-Weather guides are coming soon. Every guide is an instant PDF in colour and printable versions.</p>
 <p class="line">Know the course before the stalls open.</p>
