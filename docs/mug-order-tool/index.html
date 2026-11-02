@@ -123,8 +123,7 @@ ol{padding-left:22px}li{margin-bottom:6px}
     return { ok: true, text: clean.toUpperCase() };
   }
   // Well-known owners' looks: the exact combination is refused so no mug copies a real owner's registered colours.
-  const FAMOUS = [['plain','#1B2A5C','*'],['plain','#7FB7E3','*'],['sash','#0E6B3B','#F3B5C9'],['hoops','#0E6B3B','#E9A21A'],
-    ['spots','#F3B5C9','#0E6B3B'],['plain','#5B2C83','*'],['hoops','#0E6B3B','#E36414'],['stars','#1B2A5C','#FFFFFF'],['plain','#8B1E3F','*'],['plain','#002F6C','*'],['stars','#002F6C','#FFFFFF']];
+  const FAMOUS = []; // Alex 2 Nov 2026: famous owners' colour schemes allowed
   function checkDesign(d, isMug) {
     const pat = d.layout === 'B' ? d.allover : d.body, a = d.c1.toUpperCase(), b = d.c2.toUpperCase();
     const hit = FAMOUS.find(([p, x, y]) => p === pat && ((x === a && (y === '*' || y === b)) || (x === b && y === a)));
