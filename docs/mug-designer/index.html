@@ -155,14 +155,14 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       </div>
 
       <div class="step">
-        <h2><b>4</b> Handle colour and cap ring</h2>
-        <div class="lbl mt-3 mb-1">Handle and inside colour</div>
+        <h2><b>4</b> Handle colour (and inside colour)</h2>
+        <div class="lbl mt-3 mb-1">Handle colour — this is also the inside colour</div>
                 <div class="flex flex-wrap gap-2" id="handles"></div>
         <div class="lbl mt-4 mb-1">Ring round the top (cap colour)</div>
         <label class="flex items-center gap-2 mb-2"><input type="checkbox" id="ring" class="w-5 h-5"> <span>Print a ring in my cap colour round the top of the mug</span></label>
         <div class="flex flex-wrap gap-2" id="ringsw"></div>
         <div class="flex items-center gap-3 mt-2 hint">Any other shade: <input id="capcol" type="color" value="#E32A2D" style="width:64px;height:40px"></div>
-        <p class="hint mt-2"><b>Handle and inside:</b> pick any of the 6 colours. The handle comes in one solid colour (handles can't have a pattern printed on them). <b>The ring round the top of the mug is printed in your cap colour.</b></p>
+        <p class="hint mt-2"><b>The colour you pick is your handle colour — and the inside of the mug.</b> The handle and inside are always one solid colour (handles can't have a pattern printed on them). Pick any of the 9 colours above. <b>The ring round the top of the mug is printed in your cap colour.</b></p>
       </div>
 
       <div class="step">
@@ -495,7 +495,8 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
     if (d.handlePick && HANDLE_CODES[d.handlePick]) p.push('H' + HANDLE_CODES[d.handlePick], d.ring ? 'R1' : 'R0');
     return p.join('-');
   }
-  const HANDLE_CODES = { Black: 'BK', 'Dark Blue': 'DB', Blue: 'BL', 'Dark Green': 'DG', Green: 'GR', 'Golden Yellow': 'GY', Yellow: 'YE', Orange: 'OR', Red: 'RD', Pink: 'PK', White: 'WH' };
+  // Harrier (UK Printify) 9 handle colours get the primary codes; legacy codes are kept so old design codes still parse.
+  const HANDLE_CODES = { Black: 'BK', Navy: 'NV', 'Light Blue': 'LB', Purple: 'PR', Red: 'RD', Pink: 'PK', Orange: 'OR', Yellow: 'YE', 'Light Green': 'LG', 'Dark Blue': 'DB', Blue: 'BL', 'Dark Green': 'DG', Green: 'GR', 'Golden Yellow': 'GY', White: 'WH' };
   function fromCode(code) {
     const p = String(code || '').trim().toUpperCase().split('-');
     if (![11, 13].includes(p.length) || p[0] !== 'ZANS' || !['B', 'C'].includes(p[1])) return null;
@@ -720,10 +721,9 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
   }
 
 
-  // Handle + inside colour = the cap colour (Alex 1 Nov). Printful's coloured-inside mug offers only these, so the cap colour is
-  // matched to the nearest one; a white or very light cap uses the plain white mug.
-  // UK/IE Printful handle colours only (checked 1 Nov 2026): the other four are US-only
-  const HANDLE_COLOURS = { Black: '#050505', Blue: '#1E9FCD', Yellow: '#FFDC3A', Orange: '#F85625', Red: '#E32A2D', Pink: '#F6A1B1' };
+  // Handle + inside colour = the cap colour (Alex 1 Nov). Harrier (UK Printify, blueprint 635) offers 9 colours;
+  // a white or very light cap uses the plain white mug. Hex values are Harrier's own swatches.
+  const HANDLE_COLOURS = { Black: '#000000', Navy: '#262F4C', 'Light Blue': '#AADCF2', Purple: '#862470', Red: '#CC141B', Pink: '#DAA2A6', Orange: '#F97000', Yellow: '#FFE819', 'Light Green': '#A2D161' };
   function capColour(d) { d = normalise(d); return (d.cap === 'plain' || d.cap === 'peak') ? d.c1 : d.k1; }
   function handleFor(d) {
     if (d && d.handlePick && (HANDLE_COLOURS[d.handlePick] || d.handlePick === 'White'))
