@@ -107,19 +107,19 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
 
     <!-- controls -->
     <main class="lg:order-1 flex flex-col gap-4 min-w-0">
-      <div class="step">
+      <div hidden class="step">
         <h2><b>1</b> Choose a mug style</h2>
         <div class="grid grid-cols-2 gap-3 mt-3" id="layouts"></div>
       </div>
 
       <div class="step">
-        <h2><b>2</b> Pick a pattern</h2>
+        <h2><b>1</b> Pick a pattern</h2>
         <p class="hint">Tap a pattern. Each one is shown in your colours, so you see exactly how it looks.</p>
         <div class="patgrid mt-3" id="patterns"></div>
       </div>
 
       <div class="step">
-        <h2><b>3</b> Pick the colours</h2>
+        <h2><b>2</b> Pick the colours</h2>
         <div class="mt-3"><div class="lbl mb-2">Main colour</div><div class="flex flex-wrap gap-2" id="c1"></div></div>
         <div class="mt-4"><div class="lbl mb-2">Second colour</div><div class="flex flex-wrap gap-2" id="c2"></div></div>
         <div class="mt-3 flex items-center gap-3 flex-wrap">
@@ -131,7 +131,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       </div>
 
       <div class="step" id="kitstep">
-        <h2><b>4</b> Sleeves and cap</h2>
+        <h2><b>&middot;</b> Sleeves and cap</h2>
         <label class="flex items-center gap-2 mt-2"><input type="checkbox" id="sync" checked class="w-5 h-5"> <span>Match the sleeves and cap to the jersey colours</span></label>
         <div class="mt-3"><div class="lbl mb-2">Sleeves</div><div class="flex flex-wrap gap-2" id="sleeves"></div></div>
         <div class="mt-3"><div class="lbl mb-2">Cap pattern (cap colour = handle colour, chosen in step 6)</div><div class="flex flex-wrap gap-2" id="caps"></div></div>
@@ -142,7 +142,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       </div>
 
       <div class="step">
-        <h2><b>5</b> Type the name</h2>
+        <h2><b>3</b> Type the name</h2>
         <label for="name" class="lbl block mt-3 mb-1">Horse or syndicate name</label>
         <input id="name" type="text" maxlength="28" autocomplete="off" value="Lucky Lady">
         <div class="flex justify-between mt-1"><span id="nameerr" class="err" aria-live="polite"></span><span class="hint mono" id="count"></span></div>
@@ -150,7 +150,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       </div>
 
       <div class="step">
-        <h2><b>6</b> Handle colour and cap ring</h2>
+        <h2><b>4</b> Handle colour and cap ring</h2>
         <div class="lbl mt-3 mb-1">Handle and inside colour</div>
                 <div class="flex flex-wrap gap-2" id="handles"></div>
         <div class="lbl mt-4 mb-1">Cap colour (any colour)</div>
@@ -159,7 +159,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       </div>
 
       <div class="step">
-        <h2><b>7</b> Ordering for a syndicate?</h2>
+        <h2><b>5</b> Ordering for a syndicate?</h2>
         <p class="hint">Everyone gets the same design with the same name. Slide to see the group price.</p>
         <div class="flex items-center gap-3 mt-3">
           <label for="qty" class="lbl whitespace-nowrap">Mugs</label>
