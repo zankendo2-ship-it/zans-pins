@@ -787,7 +787,7 @@ function design(){
 }
 function mini(pat, layout){
   const d = Z.normalise({layout, body:pat, allover:pat, c1:S.c1, c2:S.c2, sleeves: layout==='C'?S.sleeves:'plain', cap:S.cap});
-  if (layout==='B') return `<svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="m${pat}"><rect width="160" height="110" rx="6"/></clipPath><g clip-path="url(#m${pat})">${Z.fillPattern(pat,d.c1,d.c2,0,0,160,110,(['quartered','halved','stripe','sash','large_diamond','triple_diamond','star','disc','cross','chevron','braces','seams','cross_belts'].includes(pat)?0.2:0.5))}</g></svg>`;
+  if (layout==='B') return `<svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="m${pat}"><rect width="160" height="110" rx="6"/></clipPath><g clip-path="url(#m${pat})">${Z.fillPattern(pat,d.c1,d.c2,0,0,160,110,(['quartered','halved','stripe','sash','large_diamond','triple_diamond','star','disc','cross','chevron','braces','seams','cross_belts'].includes(pat)?0.2:pat==='spot_diag'?0.13:0.5))}</g></svg>`;
   return `<svg viewBox="-290 -420 580 690" xmlns="http://www.w3.org/2000/svg">${Z.jersey(d,'p'+pat)}</svg>`;
 }
 // Popular colour schemes (Alex 2 Nov: colours only, never names)
@@ -798,6 +798,7 @@ const PRESETS = [
   ['Yellow, white ring','plain','#F5D130','#1C1C1C','#FFFFFF','Yellow'],
   ['All white, black ring','plain','#FFFFFF','#1C1C1C','#1C1C1C','Black'],
   ['Yellow, three big black spots','spot_diag','#F5D130','#1C1C1C',null,'Yellow'],
+  ['Yellow, black spots','spots','#F5D130','#1C1C1C',null,'Yellow'],
   ['Royal blue','plain','#1C4FA0','#FFFFFF',null,'Blue'],
   ['Green, pink sashes','sash','#00843D','#F2A6C2','#F2A6C2','Pink'],
   ['Royal blue, white ring','plain','#1C4FA0','#FFFFFF','#FFFFFF','Blue'],
@@ -816,7 +817,7 @@ const PRESETS = [
 function renderPresets(){
   const el=$('presets'); if(!el) return; el.innerHTML='';
   PRESETS.forEach(([lab,p,a,b,ring,hd])=>{
-    const sc=(['quartered','halved','stripe','sash','large_diamond','triple_diamond','star','disc','cross','chevron','braces','seams','cross_belts'].includes(p)?0.2:0.5);
+    const sc=(['quartered','halved','stripe','sash','large_diamond','triple_diamond','star','disc','cross','chevron','braces','seams','cross_belts'].includes(p)?0.2:p==='spot_diag'?0.13:0.5);
     const on = S.body===p && S.c1.toUpperCase()===a && (p==='plain'||S.c2.toUpperCase()===b) && (S.ring?S.capCol:null)===ring && S.capHandle===hd;
     const ringSvg = ring ? `<rect x="0" y="0" width="160" height="12" fill="${ring}"/>` : '';
     el.appendChild(optBtn(`<div class="mini"><svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="pr${PRESETS.findIndex(x=>x[0]===lab)}"><rect width="160" height="110" rx="6"/></clipPath><g clip-path="url(#pr${PRESETS.findIndex(x=>x[0]===lab)})">${Z.fillPattern(p,a,b,0,0,160,110,sc)}${ringSvg}</g></svg></div><div class="text-xs font-semibold mt-1 text-center">${lab}</div>`, on, ()=>{
