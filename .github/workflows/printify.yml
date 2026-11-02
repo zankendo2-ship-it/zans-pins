@@ -1,0 +1,32 @@
+name: Printify catalogue check
+
+# Reads the Printify catalogue (no orders, no products created). Push config/printify_request.txt or dispatch.
+on:
+  push:
+    paths:
+      - config/printify_request.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python scripts/printify_mugs.py
+        env:
+          PRINTIFY_KEY: ${{ secrets.PRINTIFY_API_KEY || secrets.PRINTIFY_KEY || secrets.PRINTIFY || secrets.PRINTIFY_TOKEN || secrets.PRINTIFY_API_TOKEN || secrets.PRINTIFY_ACCESS_TOKEN || secrets.PRINTIFYKEY || secrets.PRINTIFY_API }}
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/printify
+          git diff --cached --quiet && echo "nothing to commit" || git commit -m "Printify catalogue: $(date -u +%Y-%m-%d\ %H:%M) UTC"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git push origin HEAD:"${GITHUB_REF_NAME}"
