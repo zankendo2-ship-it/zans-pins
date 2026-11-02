@@ -855,8 +855,8 @@ function renderControls(){
   // silks mode: only the handle colours that match a colour in the silks (jersey, second colour, sleeves, cap)
   const silksSet=[...new Set([cur.c1,cur.c2,cur.s1,Z.capColour(cur)].map(c=>Z.handleFor({cap:'contrast',k1:c,k2:c,c1:c,c2:c}).name))].filter(n=>n!=='White');
   if (!silksSet.length) silksSet.push(Z.handleFor(Object.assign({}, cur, {cap:'plain'})).name==='White' ? 'Black' : Z.handleFor(Object.assign({}, cur, {cap:'plain'})).name);
-  if (S.hmode==='silks' && !silksSet.includes(cur.handlePick)) { S.capHandle=silksSet[0]; cur.handlePick=silksSet[0]; S.handle=silksSet[0]; }
-  Object.entries(Z.HANDLE_COLOURS).filter(([n])=>S.hmode!=='silks'||silksSet.includes(n)).forEach(([n,h])=>{
+  S.hmode='plain'; // Alex 2 Nov: every handle colour always shown
+  Object.entries(Z.HANDLE_COLOURS).forEach(([n,h])=>{
     const bad=false;
     const b=chip(n, cur.handlePick===n, ()=>{ S.capHandle=n; render(); });
     b.insertAdjacentHTML('afterbegin',`<span style="display:inline-block;width:18px;height:18px;border-radius:50%;vertical-align:middle;margin-right:6px;background:${h};border:1px solid #999"></span>`);
