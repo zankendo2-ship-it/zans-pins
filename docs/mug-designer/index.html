@@ -3,7 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../img/zans-logo.png">
-<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}.patgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}@media(min-width:640px){.patgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}.patgrid .opt{padding:6px}.patgrid .opt .mini svg{width:100%;height:auto;display:block}.patgrid .opt div.text-xs{font-size:14px;padding:4px 0 2px}
+</style>
 <title>ZANS Silks Mug Designer</title><link rel="canonical" href="https://www.zanshorseracing.co.uk/mug-designer/">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,14 +114,8 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
 
       <div class="step">
         <h2><b>2</b> Pick a pattern</h2>
-        <p class="hint">Or start from a numbered design in our catalogue:</p>
-        <div class="flex gap-2 mt-2 items-center">
-          <label for="catno" class="lbl whitespace-nowrap">Design no.</label>
-          <input id="catno" type="number" min="1" max="120" inputmode="numeric" class="max-w-[110px]" placeholder="1–120">
-          <button class="btn2 text-sm" id="catgo" type="button">Load</button>
-          <span id="catmsg" class="hint min-w-0"></span>
-        </div>
-        <div class="grid grid-cols-4 sm:grid-cols-5 gap-2 mt-3" id="patterns"></div>
+        <p class="hint">Tap a pattern. Each one is shown in your colours, so you see exactly how it looks.</p>
+        <div class="patgrid mt-3" id="patterns"></div>
       </div>
 
       <div class="step">
@@ -745,7 +740,7 @@ function design(){
 }
 function mini(pat, layout){
   const d = Z.normalise({layout, body:pat, allover:pat, c1:S.c1, c2:S.c2, sleeves: layout==='C'?S.sleeves:'plain', cap:S.cap});
-  if (layout==='B') return `<svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="m${pat}"><rect width="160" height="110" rx="6"/></clipPath><g clip-path="url(#m${pat})">${Z.fillPattern(pat,d.c1,d.c2,0,0,160,110,0.5)}</g></svg>`;
+  if (layout==='B') return `<svg viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="m${pat}"><rect width="160" height="110" rx="6"/></clipPath><g clip-path="url(#m${pat})">${Z.fillPattern(pat,d.c1,d.c2,0,0,160,110,pat==='quartered'?0.185:0.5)}</g></svg>`;
   return `<svg viewBox="-290 -420 580 690" xmlns="http://www.w3.org/2000/svg">${Z.jersey(d,'p'+pat)}</svg>`;
 }
 function optBtn(html, pressed, onClick, label){
@@ -863,7 +858,7 @@ $('pick2').addEventListener('input',e=>{S.c2=e.target.value.toUpperCase(); rende
 ['s1','s2','k1','k2'].forEach(k=>$(k).addEventListener('input',e=>{S[k]=e.target.value.toUpperCase(); render();}));
 $('swap').onclick=()=>{[S.c1,S.c2]=[S.c2,S.c1]; render();};
 $('spin').onclick=()=>{ face++; $('spin').textContent = face%2 ? 'Turn to the name' : (S.layout==='C'?'Turn to the jersey':'Turn to the other side'); target = rotY + (((faceAngle()-rotY)%(2*Math.PI))+3*Math.PI)%(2*Math.PI)-Math.PI; };
-$('catgo').onclick=()=>{ const no=+$('catno').value, d=CAT.find(x=>x.no===no);
+if($('catgo')) $('catgo').onclick=()=>{ const no=+$('catno').value, d=CAT.find(x=>x.no===no);
   if(!d){ $('catmsg').textContent='Pick a number from 1 to 200.'; return; }
   const multi=!!d.s1; Object.assign(S,{layout:'C',body:d.body,c1:d.c1,c2:d.c2,sleeves:d.sleeves,cap:d.cap,sync:!multi}); if(multi) Object.assign(S,{s1:d.s1,s2:d.s2,k1:d.k1,k2:d.k2}); $('sync').checked=!multi;
   $('catmsg').textContent=`Design ${no}: ${d.text}`; render(); };
