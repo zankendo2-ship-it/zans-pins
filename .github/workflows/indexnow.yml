@@ -1,0 +1,20 @@
+name: IndexNow (tell Bing about updated pages)
+on:
+  push:
+    branches: [claude/project-thread-cbdh5k]
+    paths: [docs/sitemap.xml]
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for GitHub Pages to publish
+        run: sleep 120
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          KEY=$(ls docs/*.txt | xargs -n1 basename | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | sed 's/.txt//')
+          URLS=$(grep -o '<loc>[^<]*' docs/sitemap.xml | sed 's/<loc>//' | python3 -c 'import sys,json;print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+          BODY="{\"host\":\"www.zanshorseracing.co.uk\",\"key\":\"$KEY\",\"keyLocation\":\"https://www.zanshorseracing.co.uk/$KEY.txt\",\"urlList\":$URLS}"
+          echo "$BODY"
+          curl -sS -w "\nHTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$BODY"
