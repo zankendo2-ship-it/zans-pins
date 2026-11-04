@@ -2,7 +2,8 @@
 
 1. The Tailwind Play CDN script (compiles CSS on the visitor's phone) -> the same rules prebuilt with
    Tailwind CLI 3.4.17 (tw.min.css, built from this page's own classes), inlined where the CDN put its CSS.
-2. three.min.js no longer holds up the first paint (defer); the 3D preview starts once it has loaded.
+2. three.min.js no longer holds up the first paint: it downloads early (low-priority preload) and runs just after the
+   page's first paint, then the 3D preview starts.
 3. The 3D mug redraws only while something changes (drag, turn, new design) instead of every frame forever.
 
 Usage: python3 make_after.py <live index.html> <out.html> [A|B]
@@ -33,14 +34,16 @@ else:
             'python3 tools/designer-speed/swap_css.py docs/mug-designer/index.html (the designer-css workflow runs it after every push). -->\n')
     sub('</style>\n\n<div class="strip"></div>\n<div class="wrap">', '</style>\n' + note + tw + '\n\n<div class="strip"></div>\n<div class="wrap">')
 
-# 2. three.js: download in parallel, run after the page is parsed
-sub('<script src="three.min.js"></script>', '<script src="three.min.js" defer></script>')
+# 2. three.js: download early without holding anything up, run it just after the page's first paint
+sub('<script src="three.min.js"></script>', '<link rel="preload" href="three.min.js" as="script" fetchpriority="low">')
 sub("init3D(); render(); priceUI(); target=faceAngle();",
     "render(); priceUI();\n"
     "function start3D(){ init3D(); render(); target=faceAngle(); wake(); }\n"
-    "// Set up the 3D mug just after the page's first paint, so the 3D set-up never holds up the first view.\n"
+    "// The 3D library downloads early (preload in <head>) but runs only after the page's first paint,\n"
+    "// so the 3D mug never holds up the first view. If it fails to load, init3D shows the flat-print message.\n"
     "function afterPaint(f){ requestAnimationFrame(()=>setTimeout(f,0)); }\n"
-    "if (window.THREE) afterPaint(start3D); else document.addEventListener('DOMContentLoaded', ()=>afterPaint(start3D));")
+    "function load3D(){ const s=document.createElement('script'); s.src='three.min.js'; s.onload=s.onerror=()=>start3D(); document.head.appendChild(s); }\n"
+    "if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', ()=>afterPaint(load3D)); else afterPaint(load3D);")
 
 # 3. draw on demand
 sub("function loop(){ if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(target-rotY)<0.002) target=null; }\n"

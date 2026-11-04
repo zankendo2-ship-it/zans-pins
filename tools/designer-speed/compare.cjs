@@ -47,6 +47,19 @@ const STEPS = [
   { name: 'scroll top', act: p => p.evaluate(() => window.scrollTo(0, 0)), wait: 2500 },
 ];
 
+// The mug picture once it has stopped moving: two pictures 700 ms apart that match exactly (at most ~20 s). On a slow
+// runner a mug can still be finishing its turn after the fixed wait, which is not a real difference between pages.
+async function stableMug(p) {
+  let prev = await p.locator('#stage').screenshot();
+  for (let i = 0; i < 28; i++) {
+    await p.waitForTimeout(700);
+    const cur = await p.locator('#stage').screenshot();
+    if (Buffer.compare(prev, cur) === 0) return cur;
+    prev = cur;
+  }
+  return prev;
+}
+
 const INIT = () => {
   window.__draws = 0;
   for (const C of [window.WebGLRenderingContext, window.WebGL2RenderingContext]) {
@@ -127,7 +140,7 @@ function pngDiff(a, b, file, key) {
         const p = pages[s.name];
         snaps[s.name] = await p.evaluate(SNAP);
         shots[s.name] = await p.screenshot({ fullPage: true, mask: [p.locator('#stage canvas')], animations: 'disabled' });
-        try { mugs[s.name] = await p.locator('#stage').screenshot(); } catch (e) { mugs[s.name] = null; }
+        try { mugs[s.name] = await stableMug(p); } catch (e) { mugs[s.name] = null; }
       }
       const tag = `${vp.name}_${String(R.steps.length).padStart(2, '0')}_${st.name.replace(/\W+/g, '-')}`;
       if (['loaded', 'turn it round', 'scroll top'].includes(st.name)) fs.writeFileSync(path.join(out, `${tag}_${ref}.png`), shots[ref]);
