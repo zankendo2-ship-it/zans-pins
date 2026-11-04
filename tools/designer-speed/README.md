@@ -7,9 +7,9 @@ What changed (nothing visible; checked in real Chrome on phone, tablet and compu
 
 1. CSS built in: the same Tailwind rules, prebuilt with Tailwind CLI 3.4.17 from the page's own classes, sit in
    `<style id="zans-tw">` after the page's main style block (exactly where the CDN put its CSS, so the cascade is the same).
-2. three.min.js no longer holds up the first paint: `<link rel="preload" ... fetchpriority="low">` downloads it early,
-   and `load3D()` runs it just after the page's first paint, then sets up the 3D mug (`start3D`). If it fails to load,
-   the page shows the flat-print message as before.
+2. three.min.js no longer holds up or slows the first paint: `load3D()` fetches and runs it just after the page's first
+   paint, then sets up the 3D mug (`start3D`). If it fails to load, the page shows the flat-print message as before.
+   (A preload was tried: it made the 600 KB library share the phone's bandwidth with the page itself.)
 3. The mug is drawn only while something changes (drag, turn, new design, resize), plus 3 frames after the last change.
    Anything that changes the mug calls `wake()`. Never call `loop()` directly (two drawing chains would draw every frame
    twice).
