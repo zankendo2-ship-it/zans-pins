@@ -1,0 +1,49 @@
+name: music-fetch
+on:
+  push:
+    branches: [claude/project-thread-g7d1g8]
+    paths: [music/request.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find and download tracks
+        run: |
+          set -x
+          cd music
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 13_0) AppleWebKit/605.1.15 Safari/605.1.15"
+          > found.txt
+          while read -r page; do
+            [ -z "$page" ] && continue
+            curl -sL -A "$UA" "$page" -o page.html || true
+            # print title + mp3 urls near each other
+            python3 - <<'PY' >> found.txt
+          import re,html
+          s=open('page.html',encoding='utf-8',errors='ignore').read()
+          for m in re.finditer(r'https://assets\.mixkit\.co/[^"\s\']+\.mp3',s):
+              ctx=s[max(0,m.start()-3000):m.start()]
+              t=re.findall(r'<h2[^>]*>([^<]+)</h2>|data-title="([^"]+)"|item-grid-card__title[^>]*>\s*([^<]+)<',ctx)
+              title=''
+              if t:
+                  last=t[-1]; title=next(x for x in last if x)
+              print(html.unescape(title.strip())+'\t'+m.group(0))
+          PY
+          done < request.txt
+          sort -u found.txt -o found.txt
+          cat found.txt
+          mkdir -p tracks
+          grep -iE "Tinsel and Mistletoe|Christmas Gifts|Christmas Jazz|December Treats|Golden Freezer|Holidays 2" found.txt | while IFS=$'\t' read -r t u; do
+            f="tracks/$(echo "$t" | tr -cd 'A-Za-z0-9 -' | tr ' ' '_').mp3"
+            [ -f "$f" ] || curl -sL -A "$UA" "$u" -o "$f"
+          done
+          curl -sL -A "$UA" https://mixkit.co/license/ -o license.html || true
+          python3 -c "import re,html;s=open('license.html',errors='ignore').read();t=re.sub(r'<script.*?</script>|<style.*?</style>','',s,flags=re.S);t=html.unescape(re.sub(r'<[^>]+>',' ',t));t=re.sub(r'\s+',' ',t);i=t.lower().find('music');print(t[:6000])" > license.txt || true
+          rm -f page.html license.html
+          ls -la tracks
+      - name: Commit
+        run: |
+          git config user.name "music-fetch"; git config user.email "actions@github.com"
+          git add music; git commit -m "music: fetched tracks" || echo nothing; git push
