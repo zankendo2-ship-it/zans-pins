@@ -35,30 +35,39 @@ jobs:
           cd "$GITHUB_WORKSPACE"
           NODE_PATH=/tmp/nm/node_modules node tools/designer-speed/compare.cjs "reports/designer-compare/$STAMP" \
             live=http://127.0.0.1:8101/mug-designer/ A=http://127.0.0.1:8102/mug-designer/ B=http://127.0.0.1:8103/mug-designer/
-      - name: Lighthouse (lab speed test, phone + computer)
+      - name: Lighthouse (lab speed test, phone + computer, 3 runs each, median)
         if: always()
         continue-on-error: true
         run: |
           D="reports/designer-compare/$STAMP/lighthouse"; mkdir -p "$D"
-          for s in live:8101 A:8102 B:8103; do n=${s%%:*}; p=${s##*:}
-            npx -y lighthouse@12 "http://127.0.0.1:$p/mug-designer/" --quiet --chrome-flags="--headless=new --no-sandbox" \
-              --only-categories=performance --output=json --output-path="$D/${n}_mobile.json" || echo "LH fail $n mobile"
-            npx -y lighthouse@12 "http://127.0.0.1:$p/mug-designer/" --quiet --preset=desktop --chrome-flags="--headless=new --no-sandbox" \
-              --only-categories=performance --output=json --output-path="$D/${n}_desktop.json" || echo "LH fail $n desktop"
+          for s in live:8101 B:8103; do n=${s%%:*}; p=${s##*:}
+            for i in 1 2 3; do
+              npx -y lighthouse@12 "http://127.0.0.1:$p/mug-designer/" --quiet --chrome-flags="--headless=new --no-sandbox" \
+                --only-categories=performance --output=json --output-path="$D/${n}_mobile_$i.json" || echo "LH fail $n mobile $i"
+              npx -y lighthouse@12 "http://127.0.0.1:$p/mug-designer/" --quiet --preset=desktop --chrome-flags="--headless=new --no-sandbox" \
+                --only-categories=performance --output=json --output-path="$D/${n}_desktop_$i.json" || echo "LH fail $n desktop $i"
+            done
           done
           python3 - <<'PY'
-          import json, glob, os
+          import json, glob, os, statistics
           d = "reports/designer-compare/" + os.environ["STAMP"] + "/lighthouse"
-          rows = []
+          rows, groups = [], {}
+          keys = ("first-contentful-paint", "largest-contentful-paint", "total-blocking-time", "cumulative-layout-shift", "speed-index", "interactive")
           for f in sorted(glob.glob(d + "/*.json")):
               try: j = json.load(open(f))
               except Exception: continue
               a = j.get("audits", {}); g = lambda k: (a.get(k) or {}).get("displayValue")
-              rows.append("- %s: perf %s | FCP %s | LCP %s | TBT %s | CLS %s | SI %s | TTI %s" % (os.path.basename(f), round((j["categories"]["performance"].get("score") or 0) * 100),
-                  g("first-contentful-paint"), g("largest-contentful-paint"), g("total-blocking-time"), g("cumulative-layout-shift"), g("speed-index"), g("interactive")))
+              score = round((j["categories"]["performance"].get("score") or 0) * 100)
+              rows.append("- %s: perf %s | FCP %s | LCP %s | TBT %s | CLS %s | SI %s | TTI %s" % ((os.path.basename(f), score) + tuple(g(k) for k in keys)))
+              name = os.path.basename(f).rsplit("_", 1)[0]
+              groups.setdefault(name, []).append([score] + [(a.get(k) or {}).get("numericValue") or 0 for k in keys])
               for k in ("final-screenshot", "screenshot-thumbnails", "full-page-screenshot"): a.pop(k, None)
               j.pop("fullPageScreenshot", None); json.dump(j, open(f, "w"))
-          open(d + "/summary.md", "w").write("\n".join(rows) + "\n"); print("\n".join(rows))
+          med = ["", "MEDIAN of the runs (perf | FCP s | LCP s | TBT ms | CLS | SI s | TTI s):"]
+          for name, v in sorted(groups.items()):
+              m = [statistics.median(c) for c in zip(*v)]
+              med.append("- %s (%d runs): perf %d | FCP %.1f | LCP %.1f | TBT %d | CLS %.3f | SI %.1f | TTI %.1f" % (name, len(v), m[0], m[1] / 1000, m[2] / 1000, m[3], m[4], m[5] / 1000, m[6] / 1000))
+          open(d + "/summary.md", "w").write("\n".join(rows + med) + "\n"); print("\n".join(rows + med))
           PY
       - name: Commit report
         if: always()

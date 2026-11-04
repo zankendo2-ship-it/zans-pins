@@ -1,1 +1,2 @@
 2026-11-04 21:50 UTC run 1 (live v prebuilt CSS at the CDN spot (A) v end of head (B))
+2026-11-04 22:40 UTC run 2 (fix: the new page drew every frame twice; Lighthouse 3 runs each, live v B)

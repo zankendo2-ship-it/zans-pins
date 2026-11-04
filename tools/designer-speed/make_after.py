@@ -29,7 +29,9 @@ if pos == "A":
     sub(cdn, tw + "\n")
 else:
     sub(cdn, "")
-    sub('</style>\n\n<div class="strip"></div>\n<div class="wrap">', '</style>\n' + tw + '\n\n<div class="strip"></div>\n<div class="wrap">')
+    note = ('<!-- Tailwind CSS is built into this page (no CDN). New Tailwind classes need a rebuild: '
+            'python3 tools/designer-speed/swap_css.py docs/mug-designer/index.html (the designer-css workflow runs it after every push). -->\n')
+    sub('</style>\n\n<div class="strip"></div>\n<div class="wrap">', '</style>\n' + note + tw + '\n\n<div class="strip"></div>\n<div class="wrap">')
 
 # 2. three.js: download in parallel, run after the page is parsed
 sub('<script src="three.min.js"></script>', '<script src="three.min.js" defer></script>')
@@ -44,7 +46,8 @@ sub("function loop(){ if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(t
     "// Draw only while something is changing (saves phone battery). Anything that changes the mug calls wake().\n"
     "let raf=0, still=0;\n"
     "function wake(){ still=0; if(!raf && renderer && group) raf=requestAnimationFrame(loop); }\n"
-    "function loop(){ raf=0; if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(target-rotY)<0.002) target=null; }\n"
+    "// One drawing chain only: a direct call cancels any frame already booked (two chains = every frame drawn twice).\n"
+    "function loop(){ cancelAnimationFrame(raf); raf=0; if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(target-rotY)<0.002) target=null; }\n"
     "  group.rotation.y=rotY; renderer.render(scene,camera);\n"
     "  if(target!==null || dragging || ++still<30) raf=requestAnimationFrame(loop); }")
 sub("el.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;target=null;el.setPointerCapture(e.pointerId);});",
@@ -54,7 +57,7 @@ sub("el.addEventListener('pointermove',e=>{if(!dragging)return; rotY+=(e.clientX
 sub("new ResizeObserver(size).observe(st); size(); loop();",
     "el.addEventListener('webglcontextrestored',wake);\n"
     "  ['pointerdown','keydown','input','change','click'].forEach(t=>document.addEventListener(t,wake,{capture:true,passive:true}));\n"
-    "  new ResizeObserver(size).observe(st); size(); loop();")
+    "  new ResizeObserver(size).observe(st); size();")  # size() calls wake(), which books the first frame
 sub("camera.aspect=w/h; camera.updateProjectionMatrix(); }",
     "camera.aspect=w/h; camera.updateProjectionMatrix(); wake(); }")
 sub("tex.image=c; tex.needsUpdate=true; };", "tex.image=c; tex.needsUpdate=true; wake(); };")

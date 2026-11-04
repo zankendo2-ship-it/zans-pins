@@ -1,0 +1,36 @@
+name: Mug designer built-in CSS (rebuild after edits)
+# The designer page carries its own prebuilt Tailwind CSS (no CDN script). When the page changes on the live
+# branch, rebuild that CSS from the page's own classes so a newly added class is never left unstyled.
+on:
+  push:
+    branches: [claude/project-thread-cbdh5k]
+    paths: [docs/mug-designer/index.html]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: designer-css
+  cancel-in-progress: false
+jobs:
+  css:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/project-thread-cbdh5k
+      - name: Rebuild the CSS from the page's own classes
+        run: |
+          if ! grep -q '<style id="zans-tw">' docs/mug-designer/index.html; then echo "Page has no built-in CSS block - nothing to do"; exit 0; fi
+          python3 tools/designer-speed/swap_css.py docs/mug-designer/index.html
+      - name: Commit if it changed, then ask GitHub Pages to rebuild
+        run: |
+          if git diff --quiet; then echo "CSS already up to date"; exit 0; fi
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git commit -am "Mug designer: rebuild built-in Tailwind CSS after a page edit"
+          for i in 1 2 3 4; do git pull --rebase -q origin claude/project-thread-cbdh5k && git push origin HEAD:claude/project-thread-cbdh5k && break; sleep $((i*5)); done
+          curl -sS -o /dev/null -w "Pages build request: HTTP %{http_code}\n" -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" || true
