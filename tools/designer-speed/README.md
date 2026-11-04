@@ -7,9 +7,11 @@ What changed (nothing visible; checked in real Chrome on phone, tablet and compu
 
 1. CSS built in: the same Tailwind rules, prebuilt with Tailwind CLI 3.4.17 from the page's own classes, sit in
    `<style id="zans-tw">` after the page's main style block (exactly where the CDN put its CSS, so the cascade is the same).
-2. three.min.js loads with `defer`, so it no longer holds up the first paint; the 3D mug starts once it has loaded.
-3. The mug is drawn only while something changes (drag, turn, new design, resize). Anything that changes the mug calls
-   `wake()`. Never call `loop()` directly (two drawing chains would draw every frame twice).
+2. three.min.js loads with `defer`, so it no longer holds up the first paint. The 3D mug is set up just after the page's
+   first paint (`afterPaint(start3D)`), so building the 3D scene never delays the first view.
+3. The mug is drawn only while something changes (drag, turn, new design, resize), plus 3 frames after the last change.
+   Anything that changes the mug calls `wake()`. Never call `loop()` directly (two drawing chains would draw every frame
+   twice).
 
 ## Added a Tailwind class to the designer page?
 

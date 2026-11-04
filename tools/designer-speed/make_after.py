@@ -38,7 +38,9 @@ sub('<script src="three.min.js"></script>', '<script src="three.min.js" defer></
 sub("init3D(); render(); priceUI(); target=faceAngle();",
     "render(); priceUI();\n"
     "function start3D(){ init3D(); render(); target=faceAngle(); wake(); }\n"
-    "if (window.THREE) start3D(); else document.addEventListener('DOMContentLoaded', start3D);")
+    "// Set up the 3D mug just after the page's first paint, so the 3D set-up never holds up the first view.\n"
+    "function afterPaint(f){ requestAnimationFrame(()=>setTimeout(f,0)); }\n"
+    "if (window.THREE) afterPaint(start3D); else document.addEventListener('DOMContentLoaded', ()=>afterPaint(start3D));")
 
 # 3. draw on demand
 sub("function loop(){ if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(target-rotY)<0.002) target=null; }\n"
@@ -49,7 +51,7 @@ sub("function loop(){ if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(t
     "// One drawing chain only: a direct call cancels any frame already booked (two chains = every frame drawn twice).\n"
     "function loop(){ cancelAnimationFrame(raf); raf=0; if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(target-rotY)<0.002) target=null; }\n"
     "  group.rotation.y=rotY; renderer.render(scene,camera);\n"
-    "  if(target!==null || dragging || ++still<30) raf=requestAnimationFrame(loop); }")
+    "  if(target!==null || dragging || ++still<3) raf=requestAnimationFrame(loop); }")
 sub("el.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;target=null;el.setPointerCapture(e.pointerId);});",
     "el.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;target=null;el.setPointerCapture(e.pointerId);wake();});")
 sub("el.addEventListener('pointermove',e=>{if(!dragging)return; rotY+=(e.clientX-lastX)*0.012; lastX=e.clientX;});",
