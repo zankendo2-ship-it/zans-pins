@@ -21,7 +21,7 @@ ICONS = ('<link rel="icon" href="/favicon.ico" sizes="48x48">'
          '<link rel="icon" href="/img/icon-192.png" type="image/png" sizes="192x192">'
          '<link rel="apple-touch-icon" href="/apple-touch-icon.png">')
 SITE_NAME = 'ZANS Racing Tools &amp; Gifts'
-EXTRA_CSS = ('picture{display:contents}'
+EXTRA_CSS = ('picture{display:contents}source{display:none}'
              '.flinks{line-height:1.9}.flinks a{color:inherit;text-decoration:underline;text-underline-offset:2px}')
 FONT_BLOCK = PRELOAD + '<style id="zans-fonts">' + font_css() + EXTRA_CSS + '</style>'
 
