@@ -1,0 +1,13 @@
+These fonts are used under the SIL Open Font License, Version 1.1 (https://openfontlicense.org).
+They are served unchanged from the Google Fonts subsets (latin and latin-ext).
+
+Jost - Copyright 2020 The Jost Project Authors (https://github.com/indestructible-type/Jost)
+Source Sans 3 - (c) 2023 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'
+IBM Plex Mono - Copyright 2017 IBM Corp. All rights reserved.
+
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+Full text: https://openfontlicense.org/open-font-license-official-text/
+Permission is hereby granted, free of charge, to any person obtaining a copy of the Font Software,
+to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of
+the Font Software, subject to the conditions in the licence (the fonts may not be sold by themselves,
+Reserved Font Names may not be used for modified versions, and the licence must stay with the fonts).

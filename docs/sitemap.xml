@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.zanshorseracing.co.uk/</loc><lastmod>2026-11-03</lastmod><priority>1.0</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/horse-racing-gifts/</loc><lastmod>2026-11-03</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/mug-designer/</loc><lastmod>2026-11-03</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/</loc><lastmod>2026-11-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/racing-syndicate-gifts/</loc><lastmod>2026-11-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/breeders-cup-guide/</loc><lastmod>2026-10-30</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/</loc><lastmod>2026-10-30</lastmod><priority>0.9</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/ascot-racecourse-guide/</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/</loc><lastmod>2026-10-30</lastmod><priority>0.7</priority></url>
-  <url><loc>https://www.zanshorseracing.co.uk/articles/going-explained/</loc><lastmod>2026-10-30</lastmod><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://www.zanshorseracing.co.uk/</loc><lastmod>2026-11-04</lastmod><priority>1.0</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg</image:loc></image:image></url>
+  <url><loc>https://www.zanshorseracing.co.uk/horse-racing-gifts/</loc><lastmod>2026-11-04</lastmod><priority>0.9</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg</image:loc></image:image></url>
+  <url><loc>https://www.zanshorseracing.co.uk/mug-designer/</loc><lastmod>2026-11-04</lastmod><priority>0.9</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg</image:loc></image:image></url>
+  <url><loc>https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image></url>
+  <url><loc>https://www.zanshorseracing.co.uk/racing-syndicate-gifts/</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg</image:loc></image:image></url>
+  <url><loc>https://www.zanshorseracing.co.uk/breeders-cup-guide/</loc><lastmod>2026-11-04</lastmod><priority>0.9</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-advanced.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-pro.jpg</image:loc></image:image></url>
+  <url><loc>https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/</loc><lastmod>2026-11-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.zanshorseracing.co.uk/ascot-racecourse-guide/</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-advanced.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-pro.jpg</image:loc></image:image></url>
+  <url><loc>https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/</loc><lastmod>2026-11-04</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.zanshorseracing.co.uk/articles/going-explained/</loc><lastmod>2026-11-04</lastmod><priority>0.7</priority></url>
 </urlset>
