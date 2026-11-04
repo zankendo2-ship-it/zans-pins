@@ -1,0 +1,26 @@
+name: music-ids
+on:
+  push:
+    branches: [claude/project-thread-g7d1g8]
+    paths: [music/ids.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and cut 20s samples
+        run: |
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 13_0) AppleWebKit/605.1.15 Safari/605.1.15"
+          mkdir -p music/samples
+          for id in $(cat music/ids.txt); do
+            curl -sL -A "$UA" "https://assets.mixkit.co/music/$id/$id.mp3" -o /tmp/$id.mp3 || continue
+            ffmpeg -v error -y -ss 4 -t 20 -i /tmp/$id.mp3 -af "afade=t=in:d=0.5,afade=t=out:st=18:d=2" -b:a 160k "music/samples/mixkit_$id.mp3" || true
+            d=$(ffprobe -v quiet -show_entries format=duration -of csv=p=0 /tmp/$id.mp3); echo "$id $d" >> music/samples/durations.txt
+          done
+          ls -la music/samples
+      - run: |
+          git config user.name "music-fetch"; git config user.email "actions@github.com"
+          git add music/samples; git commit -m "music: samples" || echo nothing; git push
