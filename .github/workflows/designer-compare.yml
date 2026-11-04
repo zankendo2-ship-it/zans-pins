@@ -1,0 +1,70 @@
+name: Mug designer old v new (real Chrome)
+on:
+  push:
+    branches: [claude/project-thread-oy3858]
+    paths: [tools/designer-speed/request.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: designer-compare
+  cancel-in-progress: false
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the three sites (live page, new page A, new page B)
+        run: |
+          git fetch -q origin claude/project-thread-cbdh5k
+          mkdir -p /tmp/sites/live /tmp/sites/A /tmp/sites/B
+          git archive origin/claude/project-thread-cbdh5k docs | tar -x -C /tmp/sites/live
+          cp -r /tmp/sites/live/docs /tmp/sites/A/ && cp -r /tmp/sites/live/docs /tmp/sites/B/
+          python3 tools/designer-speed/make_after.py /tmp/sites/live/docs/mug-designer/index.html /tmp/sites/A/docs/mug-designer/index.html A
+          python3 tools/designer-speed/make_after.py /tmp/sites/live/docs/mug-designer/index.html /tmp/sites/B/docs/mug-designer/index.html B
+          (cd /tmp/sites/live/docs && nohup python3 -m http.server 8101 >/dev/null 2>&1 &)
+          (cd /tmp/sites/A/docs && nohup python3 -m http.server 8102 >/dev/null 2>&1 &)
+          (cd /tmp/sites/B/docs && nohup python3 -m http.server 8103 >/dev/null 2>&1 &)
+          sleep 2
+          for p in 8101 8102 8103; do curl -s -o /dev/null -w "$p %{http_code}\n" http://127.0.0.1:$p/mug-designer/; done
+          echo "STAMP=$(date -u +%Y%m%d_%H%M)" >> $GITHUB_ENV
+      - name: Compare every step of the designer (phone, tablet, computer)
+        run: |
+          mkdir -p /tmp/nm && cd /tmp/nm && npm i -s --no-audit --no-fund playwright-core@1.49.1 pixelmatch@5.3.0 pngjs@7.0.0
+          cd "$GITHUB_WORKSPACE"
+          NODE_PATH=/tmp/nm/node_modules node tools/designer-speed/compare.cjs "reports/designer-compare/$STAMP" \
+            live=http://127.0.0.1:8101/mug-designer/ A=http://127.0.0.1:8102/mug-designer/ B=http://127.0.0.1:8103/mug-designer/
+      - name: Lighthouse (lab speed test, phone + computer)
+        if: always()
+        continue-on-error: true
+        run: |
+          D="reports/designer-compare/$STAMP/lighthouse"; mkdir -p "$D"
+          for s in live:8101 A:8102 B:8103; do n=${s%%:*}; p=${s##*:}
+            npx -y lighthouse@12 "http://127.0.0.1:$p/mug-designer/" --quiet --chrome-flags="--headless=new --no-sandbox" \
+              --only-categories=performance --output=json --output-path="$D/${n}_mobile.json" || echo "LH fail $n mobile"
+            npx -y lighthouse@12 "http://127.0.0.1:$p/mug-designer/" --quiet --preset=desktop --chrome-flags="--headless=new --no-sandbox" \
+              --only-categories=performance --output=json --output-path="$D/${n}_desktop.json" || echo "LH fail $n desktop"
+          done
+          python3 - <<'PY'
+          import json, glob, os
+          d = "reports/designer-compare/" + os.environ["STAMP"] + "/lighthouse"
+          rows = []
+          for f in sorted(glob.glob(d + "/*.json")):
+              try: j = json.load(open(f))
+              except Exception: continue
+              a = j.get("audits", {}); g = lambda k: (a.get(k) or {}).get("displayValue")
+              rows.append("- %s: perf %s | FCP %s | LCP %s | TBT %s | CLS %s | SI %s | TTI %s" % (os.path.basename(f), round((j["categories"]["performance"].get("score") or 0) * 100),
+                  g("first-contentful-paint"), g("largest-contentful-paint"), g("total-blocking-time"), g("cumulative-layout-shift"), g("speed-index"), g("interactive")))
+              for k in ("final-screenshot", "screenshot-thumbnails", "full-page-screenshot"): a.pop(k, None)
+              j.pop("fullPageScreenshot", None); json.dump(j, open(f, "w"))
+          open(d + "/summary.md", "w").write("\n".join(rows) + "\n"); print("\n".join(rows))
+          PY
+      - name: Commit report
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add reports/designer-compare
+          git commit -m "Mug designer old v new $STAMP" || exit 0
+          for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep $((i*5)); done
