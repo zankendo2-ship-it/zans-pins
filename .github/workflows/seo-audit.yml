@@ -1,0 +1,71 @@
+name: SEO audit (live site, our own pages only)
+on:
+  push:
+    branches: [claude/project-thread-oy3858]
+    paths: [tools/seo-audit/request.txt]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: seo-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -q requests beautifulsoup4 lxml dnspython
+      - name: Live checks
+        run: |
+          STAMP=$(date -u +%Y%m%d_%H%M)
+          echo "STAMP=$STAMP" >> $GITHUB_ENV
+          python tools/seo-audit/audit.py "reports/seo-audit/$STAMP"
+      - name: Lighthouse (lab test, mobile + desktop)
+        continue-on-error: true
+        run: |
+          mkdir -p "reports/seo-audit/$STAMP/lighthouse"
+          for p in "" "horse-racing-gifts/" "mug-designer/" "ascot-racecourse-guide/" "articles/ascot-draw-bias/" "gifts-for-racehorse-owners/"; do
+            n=$(echo "home$p" | tr '/' '_')
+            npx -y lighthouse@12 "https://www.zanshorseracing.co.uk/$p" --quiet --chrome-flags="--headless=new --no-sandbox" \
+              --only-categories=performance,seo,best-practices,accessibility --output=json \
+              --output-path="reports/seo-audit/$STAMP/lighthouse/${n}mobile.json" || echo "LH fail $p"
+          done
+          for p in "" "mug-designer/"; do
+            n=$(echo "home$p" | tr '/' '_')
+            npx -y lighthouse@12 "https://www.zanshorseracing.co.uk/$p" --quiet --preset=desktop --chrome-flags="--headless=new --no-sandbox" \
+              --only-categories=performance,seo,best-practices,accessibility --output=json \
+              --output-path="reports/seo-audit/$STAMP/lighthouse/${n}desktop.json" || echo "LH fail $p"
+          done
+          python3 - <<'PY'
+          import json, glob, os
+          d = "reports/seo-audit/" + os.environ["STAMP"] + "/lighthouse"
+          rows = []
+          for f in sorted(glob.glob(d + "/*.json")):
+              try:
+                  j = json.load(open(f))
+              except Exception:
+                  continue
+              c = {k: round((v.get("score") or 0) * 100) for k, v in j.get("categories", {}).items()}
+              a = j.get("audits", {})
+              g = lambda k: (a.get(k) or {}).get("displayValue")
+              rows.append("- %s: %s | LCP %s | TBT %s | CLS %s | weight %s" % (os.path.basename(f), c, g("largest-contentful-paint"), g("total-blocking-time"), g("cumulative-layout-shift"), g("total-byte-weight")))
+              # keep the summary small: drop the big screenshots from the json
+              for k in ("final-screenshot", "screenshot-thumbnails", "full-page-screenshot"):
+                  a.pop(k, None)
+              j.pop("fullPageScreenshot", None)
+              json.dump(j, open(f, "w"))
+          open(d + "/summary.md", "w").write("\n".join(rows) + "\n")
+          print("\n".join(rows))
+          PY
+      - name: Commit report
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add reports/seo-audit
+          git commit -m "Live SEO audit $STAMP" || exit 0
+          for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep $((i*5)); done

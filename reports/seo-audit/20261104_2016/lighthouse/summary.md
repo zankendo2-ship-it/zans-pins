@@ -1,0 +1,8 @@
+- homearticles_ascot-draw-bias_mobile.json: {'performance': 95, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 2.7 s | TBT 0 ms | CLS 0.049 | weight Total size was 286 KiB
+- homeascot-racecourse-guide_mobile.json: {'performance': 88, 'accessibility': 97, 'best-practices': 100, 'seo': 100} | LCP 3.0 s | TBT 0 ms | CLS 0 | weight Total size was 537 KiB
+- homedesktop.json: {'performance': 81, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 0.9 s | TBT 0 ms | CLS 0.351 | weight Total size was 731 KiB
+- homegifts-for-racehorse-owners_mobile.json: {'performance': 80, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 2.6 s | TBT 0 ms | CLS 0.339 | weight Total size was 420 KiB
+- homehorse-racing-gifts_mobile.json: {'performance': 75, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 3.0 s | TBT 0 ms | CLS 0.336 | weight Total size was 1,319 KiB
+- homemobile.json: {'performance': 64, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 4.6 s | TBT 0 ms | CLS 0.3 | weight Total size was 560 KiB
+- homemug-designer_desktop.json: {'performance': 84, 'accessibility': 90, 'best-practices': 100, 'seo': 100} | LCP 1.1 s | TBT 110 ms | CLS 0.223 | weight Total size was 823 KiB
+- homemug-designer_mobile.json: {'performance': 37, 'accessibility': 90, 'best-practices': 100, 'seo': 100} | LCP 5.2 s | TBT 8,130 ms | CLS 0.067 | weight Total size was 823 KiB
