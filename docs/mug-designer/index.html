@@ -22,8 +22,6 @@
 @font-face{font-family:'Source Sans 3 Fallback';font-style:normal;font-weight:500 649;src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('LiberationSans-Bold'),local('Arimo Bold'),local('Arimo-Bold');size-adjust:89.76%;ascent-override:114.08%;descent-override:44.56%;line-gap-override:0%}
 @font-face{font-family:'Source Sans 3 Fallback';font-style:normal;font-weight:650 900;src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('LiberationSans-Bold'),local('Arimo Bold'),local('Arimo-Bold');size-adjust:92.21%;ascent-override:111.05%;descent-override:43.38%;line-gap-override:0%}
 @font-face{font-family:'IBM Plex Mono Fallback';font-style:normal;font-weight:100 900;src:local('Courier New'),local('CourierNewPSMT'),local('Liberation Mono'),local('LiberationMono'),local('Cousine');size-adjust:99.98%;ascent-override:102.52%;descent-override:27.5%;line-gap-override:0%}picture{display:contents}source{display:none}.flinks{line-height:1.9}.flinks a{color:inherit;text-decoration:underline;text-underline-offset:2px}</style>
-<script src="https://cdn.tailwindcss.com/3.4.17"></script>
-<script src="three.min.js"></script>
 <style>
 /* Layout: two panes on wide screens (controls left, sticky live preview right); one column on phones with the preview first.
    ZANS brand look only (cream + ink), one theme on purpose. */
@@ -77,6 +75,8 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
 .brand{background:var(--goldm);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.25))}
 @media (prefers-reduced-motion:reduce){.opt{transition:none}}
 </style>
+<!-- Tailwind CSS is built into this page (no CDN). New Tailwind classes need a rebuild: python3 tools/designer-speed/swap_css.py docs/mug-designer/index.html (the designer-css workflow runs it after every push). -->
+<style id="zans-tw">/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-6{margin-bottom:1.5rem}.mt-1{margin-top:.25rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.h-5{height:1.25rem}.h-8{height:2rem}.w-10{width:2.5rem}.w-5{width:1.25rem}.w-full{width:100%}.min-w-0{min-width:0}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.overflow-hidden{overflow:hidden}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:.25rem}.border{border-width:1px}.border-\[var\(--ink\)\]{border-color:var(--ink)}.border-\[var\(--line\)\]{border-color:var(--line)}.bg-\[\#FBF7F0\]{--tw-bg-opacity:1;background-color:rgb(251 247 240/var(--tw-bg-opacity,1))}.bg-\[var\(--ink\)\]{background-color:var(--ink)}.p-2{padding:.5rem}.p-4{padding:1rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-2{padding-left:.5rem;padding-right:.5rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-semibold{font-weight:600}.tabular-nums{--tw-numeric-spacing:tabular-nums;font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)}.text-\[\#FBF7F0\]{--tw-text-opacity:1;color:rgb(251 247 240/var(--tw-text-opacity,1))}.accent-\[\#1C1C1C\]{accent-color:#1c1c1c}@media (min-width:768px){.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}@media (min-width:1024px){.lg\:sticky{position:sticky}.lg\:top-4{top:1rem}.lg\:order-1{order:1}.lg\:order-2{order:2}.lg\:grid-cols-\[1fr_440px\]{grid-template-columns:1fr 440px}}</style>
 
 <div class="strip"></div>
 <div class="wrap">
@@ -914,14 +914,21 @@ function init3D(){
   // texture seam sits at the handle (+x). Cylinder UV u=0 starts at -z... rotate so seam = handle
   body.rotation.y=Math.PI/2;
   const el=renderer.domElement;
-  el.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;target=null;el.setPointerCapture(e.pointerId);});
-  el.addEventListener('pointermove',e=>{if(!dragging)return; rotY+=(e.clientX-lastX)*0.012; lastX=e.clientX;});
+  el.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;target=null;el.setPointerCapture(e.pointerId);wake();});
+  el.addEventListener('pointermove',e=>{if(!dragging)return; rotY+=(e.clientX-lastX)*0.012; lastX=e.clientX; wake();});
   el.addEventListener('pointerup',()=>dragging=false); el.addEventListener('pointercancel',()=>dragging=false);
-  new ResizeObserver(size).observe(st); size(); loop();
+  el.addEventListener('webglcontextrestored',wake);
+  ['pointerdown','keydown','input','change','click'].forEach(t=>document.addEventListener(t,wake,{capture:true,passive:true}));
+  new ResizeObserver(size).observe(st); size();
 }
-function size(){ const st=$('stage'); const w=st.clientWidth,h=st.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
-function loop(){ if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(target-rotY)<0.002) target=null; }
-  group.rotation.y=rotY; renderer.render(scene,camera); requestAnimationFrame(loop); }
+function size(){ const st=$('stage'); const w=st.clientWidth,h=st.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); wake(); }
+// Draw only while something is changing (saves phone battery). Anything that changes the mug calls wake().
+let raf=0, still=0;
+function wake(){ still=0; if(!raf && renderer && group) raf=requestAnimationFrame(loop); }
+// One drawing chain only: a direct call cancels any frame already booked (two chains = every frame drawn twice).
+function loop(){ cancelAnimationFrame(raf); raf=0; if(target!==null){ rotY+=(target-rotY)*0.08; if(Math.abs(target-rotY)<0.002) target=null; }
+  group.rotation.y=rotY; renderer.render(scene,camera);
+  if(target!==null || dragging || ++still<3) raf=requestAnimationFrame(loop); }
 let texJob=0;
 function paintTexture(svg){
   if(!tex) return; const job=++texJob;
@@ -929,7 +936,7 @@ function paintTexture(svg){
   const img=new Image(); img.onload=()=>{ if(job!==texJob) return;
     const c=document.createElement('canvas'); c.width=3015; c.height=1125; const x=c.getContext('2d');
     x.fillStyle='#ffffff'; x.fillRect(0,0,c.width,c.height); x.drawImage(img,(3015-2700)/2,(1125-1050)/2,2700,1050);
-    tex.image=c; tex.needsUpdate=true; };
+    tex.image=c; tex.needsUpdate=true; wake(); };
   img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(withFont);
 }
 let face=0;
@@ -942,7 +949,7 @@ function render(){
   const d=design(); const svg=Z.printFile(d,MUG,'Jost',LOGO);
   $('flat').innerHTML=svg;
   paintTexture(svg);
-  if (insideMat){ const hc=new THREE.Color(Z.HANDLE_COLOURS[d.handlePick]); insideMat.color=hc; handleMat.color=hc; }
+  if (insideMat){ const hc=new THREE.Color(Z.HANDLE_COLOURS[d.handlePick]); insideMat.color=hc; handleMat.color=hc; wake(); }
   $('code').textContent=Z.toCode(d);
   const n=Z.checkName(S.name), dc=Z.checkDesign(d);
   $('nameerr').textContent = n.ok ? '' : n.error;
@@ -960,7 +967,7 @@ $('pick1').addEventListener('input',e=>{S.c1=e.target.value.toUpperCase(); rende
 $('pick2').addEventListener('input',e=>{S.c2=e.target.value.toUpperCase(); render();});
 ['s1','s2','k1','k2'].forEach(k=>$(k).addEventListener('input',e=>{S[k]=e.target.value.toUpperCase(); render();}));
 $('swap').onclick=()=>{[S.c1,S.c2]=[S.c2,S.c1]; render();};
-$('spin').onclick=()=>{ face++; $('spin').textContent = face%2 ? 'Turn to the name' : (S.layout==='C'?'Turn to the jersey':'Turn to the other side'); target = rotY + (((faceAngle()-rotY)%(2*Math.PI))+3*Math.PI)%(2*Math.PI)-Math.PI; };
+$('spin').onclick=()=>{ face++; $('spin').textContent = face%2 ? 'Turn to the name' : (S.layout==='C'?'Turn to the jersey':'Turn to the other side'); target = rotY + (((faceAngle()-rotY)%(2*Math.PI))+3*Math.PI)%(2*Math.PI)-Math.PI; wake(); };
 if($('catgo')) $('catgo').onclick=()=>{ const no=+$('catno').value, d=CAT.find(x=>x.no===no);
   if(!d){ $('catmsg').textContent='Pick a number from 1 to 200.'; return; }
   const multi=!!d.s1; Object.assign(S,{layout:'C',body:d.body,c1:d.c1,c2:d.c2,sleeves:d.sleeves,cap:d.cap,sync:!multi}); if(multi) Object.assign(S,{s1:d.s1,s2:d.s2,k1:d.k1,k2:d.k2}); $('sync').checked=!multi;
@@ -977,7 +984,13 @@ function priceUI(){
   $('tiers').innerHTML=PRICES.tiers.map(t=>{const on=q>=t.min&&q<=t.max;return `<span class="text-xs font-semibold px-2 py-1 rounded border ${on?'bg-[var(--ink)] text-[#FBF7F0] border-[var(--ink)]':'border-[var(--line)]'}">${t.min}${t.max>=999?'+':'–'+t.max}: ${t.discount?Math.round(t.discount*100)+'% off':'full price'}</span>`}).join('');
 }
 $('qty').addEventListener('input',priceUI);
-init3D(); render(); priceUI(); target=faceAngle();
+render(); priceUI();
+function start3D(){ init3D(); render(); target=faceAngle(); wake(); }
+// The 3D library (three.min.js) is fetched and run just after the page's first paint, so it never holds up or
+// slows the first view. If it fails to load, init3D shows the flat-print message.
+function afterPaint(f){ requestAnimationFrame(()=>setTimeout(f,0)); }
+function load3D(){ const s=document.createElement('script'); s.src='three.min.js'; s.onload=s.onerror=()=>start3D(); document.head.appendChild(s); }
+if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', ()=>afterPaint(load3D)); else afterPaint(load3D);
 </script>
 
 </body></html>

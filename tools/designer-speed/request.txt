@@ -1,1 +1,5 @@
 2026-11-04 21:50 UTC run 1 (live v prebuilt CSS at the CDN spot (A) v end of head (B))
+2026-11-04 22:40 UTC run 2 (fix: the new page drew every frame twice; Lighthouse 3 runs each, live v B)
+2026-11-04 23:10 UTC run 3 (3D mug set up just after the first paint; drawing stops 3 frames after the last change)
+2026-11-04 23:45 UTC run 4 (3D library preloaded, runs after the first paint; mug pictures compared once each mug stops turning)
+2026-11-04 23:58 UTC run 5 (3D library fetched only after the first paint, no preload)
