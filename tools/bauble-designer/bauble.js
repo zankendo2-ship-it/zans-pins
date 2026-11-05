@@ -86,7 +86,7 @@ function renderControls() {
     PR.appendChild(optBtn(`<div class="mini"><svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="pr${i}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#pr${i})">${Z.fillPattern(p, a, b, 0, 0, 110, 110, scaleFor(p) * 0.35)}<rect width="110" height="22" fill="${cap}"/></g><circle cx="55" cy="55" r="53" fill="none" stroke="${GOLD}" stroke-width="3"/></svg></div><div class="text-xs font-semibold mt-1 text-center">${lab}</div>`, on, () => { Object.assign(S, { pat: p, body: Z.BODY.includes(p) ? p : 'hoops', c1: a, c2: b, capCol: cap }); render(); }, lab));
   });
   const P = $('patterns'); P.innerHTML = '';
-  (S.style === 'A' ? Z.ALLOVER : Z.BODY).forEach(p => P.appendChild(optBtn(`<div class="mini">${S.style === 'A' ? miniA(p) : miniB(p)}</div><div class="text-xs font-semibold mt-1 text-center">${Z.NAMES[p] || p}</div>`, (S.style === 'A' ? S.pat : S.body) === p, () => { if (S.style === 'A') { S.pat = p; if (Z.BODY.includes(p)) S.body = p; } else { S.body = p; if (Z.ALLOVER.includes(p)) S.pat = p; } render(); }, Z.NAMES[p])));
+  (S.style === 'A' ? Z.ALLOVER : Z.BODY).filter(p => p !== 'thirds').forEach(p => P.appendChild(optBtn(`<div class="mini">${S.style === 'A' ? miniA(p) : miniB(p)}</div><div class="text-xs font-semibold mt-1 text-center">${Z.NAMES[p] || p}</div>`, (S.style === 'A' ? S.pat : S.body) === p, () => { if (S.style === 'A') { S.pat = p; if (Z.BODY.includes(p)) S.body = p; } else { S.body = p; if (Z.ALLOVER.includes(p)) S.pat = p; } render(); }, Z.NAMES[p])));
   swatches($('c1'), 'c1'); swatches($('c2'), 'c2'); swatches($('capsw'), 'capCol');
   $('pick1').value = S.c1; $('pick2').value = S.c2; $('capcol').value = S.capCol;
   $('sleevestep').hidden = S.style !== 'B';
@@ -152,6 +152,6 @@ $('vflat').onclick = () => { S.view = 'flat'; render(); };
 $('vtree').onclick = () => { S.view = 'tree'; render(); };
 $('totree').onclick = () => { S.view = 'tree'; render(); $('preview').scrollIntoView({ behavior: 'smooth', block: 'start' }); };
 $('copy').onclick = async () => { const t = `${$('code').textContent}  |  ${design().name}`;
-  try { await navigator.clipboard.writeText(t); $('copied').textContent = 'Copied. Paste it into the Etsy personalisation box.'; }
+  try { await navigator.clipboard.writeText(t); $('copied').textContent = 'Copied. Paste it into the Etsy box "Design code from our bauble designer".'; }
   catch (e) { const r = document.createRange(); r.selectNodeContents($('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $('copied').textContent = 'Code selected. Copy it from your phone menu.'; } };
 render();

@@ -10,7 +10,7 @@ engine = next(s for s in scripts if 'ZANS silks drawing engine' in s)
 metricool = next(s for s in scripts if 'tracker.metricool.com' in s)
 URL = 'https://www.zanshorseracing.co.uk/bauble-designer/'
 TITLE = 'Personalised Horse Racing Christmas Bauble in Your Silks | ZANS'
-DESC = "Design a personalised horse racing Christmas bauble in your own jockey silks with your horse's name, then see it on a Christmas tree. Made in the UK."
+DESC = "Design a personalised horse racing Christmas bauble in your own jockey silks with your horse's name, then see it on a Christmas tree. Printed in the UK."
 head = re.sub(r'<title>.*?</title>', f'<title>{TITLE}</title>', head)
 head = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{DESC}">', head)
 head = head.replace('https://www.zanshorseracing.co.uk/mug-designer/', URL)
