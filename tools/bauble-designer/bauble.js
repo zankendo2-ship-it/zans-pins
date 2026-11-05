@@ -171,7 +171,7 @@ window.ZANSBauble = {
 /* ---------- Christmas sparkles (Alex 5 Nov: "sparkles throughout the page ... glistening and christmassy") ----------
    One fixed canvas over the page with pointer-events off, so taps go straight through. Gold stars twinkle and drift
    slowly down. Every half second each star checks what is under it: over a button, box, colour, picture or the bauble
-   it fades away, so sparkles never sit on the controls or the preview. Light on phones (60-110 stars, ~30 fps, stops when
+   it fades away, so sparkles never sit on the controls or the preview. Light on phones (40-80 stars, ~30 fps, stops when
    the tab is hidden). Reduce-motion: a still scatter, no movement. */
 (function sparkles() {
   const cv = document.createElement('canvas'); cv.id = 'sparkles'; cv.setAttribute('aria-hidden', 'true');
@@ -184,8 +184,8 @@ window.ZANSBauble = {
   function size() {
     dpr = Math.min(window.devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight;
     cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(110, Math.max(60, W * H / 5000)));
-    stars = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, r: 3.5 + Math.random() * 5.5,
+    const n = Math.round(Math.min(80, Math.max(40, W * H / 7000)));
+    stars = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, r: 8 + Math.random() * 8,
       c: COLS[Math.random() * COLS.length | 0], ph: Math.random() * 6.28, sp: .6 + Math.random() * 1.4, dy: .04 + Math.random() * .14, ok: 1, vis: 1 }));
     check();
   }
