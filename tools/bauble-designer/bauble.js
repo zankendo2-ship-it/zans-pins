@@ -171,3 +171,24 @@ $('copy').onclick = async () => { const t = `${$('code').textContent}  |  ${desi
   try { await navigator.clipboard.writeText(t); $('copied').textContent = 'Copied. Paste it into the Etsy box "Design code from our bauble designer".'; }
   catch (e) { const r = document.createRange(); r.selectNodeContents($('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $('copied').textContent = 'Code selected. Copy it from your phone menu.'; } };
 render();
+
+/* ---------- print file (Alex 5 Nov: every designer prints at 2x oversample, like the mug order tool) ----------
+   Harrier ceramic bauble print area is 990 x 990 px; we render 1980 x 1980 (2x) with high-quality smoothing and
+   Printify scales it down cleanly. Usage: await ZANSBauble.printFile() -> PNG data URL of the current design. */
+window.ZANSBauble = {
+  PRINT_PX: 990, OVERSAMPLE: 2,
+  async printFile(scale = 2) {
+    const px = 990 * scale; let svg = printSVG(design(), 'pf').replace(/width="990" height="990"/, `width="${px}" height="${px}"`).replace(' clip-path="url(#pfc)"', ''); // full square = bleed past the round edge
+    // an SVG drawn as an image can't see the page's fonts, so embed Jost (same as the mug order tool)
+    if (!this._font) { const buf = await (await fetch('/fonts/jost-latin.woff2')).arrayBuffer(); let bin = ''; new Uint8Array(buf).forEach(b => bin += String.fromCharCode(b)); this._font = btoa(bin); }
+    svg = svg.replace('>', `><defs><style>@font-face{font-family:Jost;font-weight:100 900;src:url(data:font/woff2;base64,${this._font}) format('woff2')}</style></defs>`);
+    const img = new Image(); img.decoding = 'sync';
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    await img.decode();
+    const c = document.createElement('canvas'); c.width = c.height = px;
+    const g = c.getContext('2d'); g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
+    g.drawImage(img, 0, 0, px, px);
+    return c.toDataURL('image/png');
+  },
+  code: () => code(design())
+};
