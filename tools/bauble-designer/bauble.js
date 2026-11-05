@@ -109,11 +109,14 @@ function treeScene(baubleSvg, scene) {   // Alex 5 Nov: must look like a real ph
   </svg>`;
 }
 
+/* Real Harrier bauble (Printify pictures 5 Nov): round disc, hole INSIDE the circle near the top, red ribbon, no tab. Preview only, never printed. */
+const HANGER = '<svg class="hang" viewBox="0 -18 100 118" aria-hidden="true"><path d="M46.5 -18 L49.3 6.2 M53.5 -18 L50.7 6.2" stroke="#B3121F" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="50" cy="7" r="2.6" fill="#EFE8DE" stroke="rgba(0,0,0,.35)" stroke-width=".4"/><path d="M48.6 5.4 Q50 9.6 51.4 5.4" stroke="#B3121F" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>';
+
 /* ---------- render ---------- */
 function render() {
   renderControls();
   const d = design(), svg = printSVG(d, 'pv');
-  $('flat').innerHTML = svg;
+  $('flat').innerHTML = svg + HANGER;
   $('ribbonname').textContent = S.style === 'A' ? 'Silks bauble' : 'Racing green bauble';
   $('tree').innerHTML = treeScene(printSVG(d, 'tv'), S.scene);
   $('scsoft').setAttribute('aria-pressed', S.scene === 'soft'); $('scmoody').setAttribute('aria-pressed', S.scene === 'moody');

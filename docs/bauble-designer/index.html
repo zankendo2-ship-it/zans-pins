@@ -81,7 +81,8 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
 <style>.tree{border:3px solid var(--edge);border-radius:4px;overflow:hidden;background:#1a1612;box-shadow:0 8px 20px rgba(0,0,0,.12)}
 .tree svg{display:block;width:100%;height:auto}
 .bflat{border:3px solid var(--edge);border-radius:4px;background:radial-gradient(120% 90% at 50% 25%,#FBF7F0 0%,var(--soft) 75%);padding:18px 18px 22px;text-align:center}
-.bflat .ball{width:min(100%,380px);margin:0 auto;position:relative}
+.bflat .ball{width:min(100%,380px);margin:18% auto 0;position:relative}
+.bflat .ball .hang{position:absolute;left:0;top:-18%;width:100%;height:118%;filter:none;pointer-events:none}
 .bflat .ball svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 12px rgba(0,0,0,.18))}
 .bflat .rib{width:16px;height:44px;margin:0 auto -14px;border:4px solid #B3121F;border-bottom:none;border-radius:10px 10px 0 0;position:relative;z-index:1}
 .bflat .rib2{width:26px;height:12px;margin:0 auto;background:var(--goldm,#C9A646);border-radius:3px}
@@ -117,8 +118,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
           <button class="opt" id="vtree" type="button" aria-pressed="false">On the Christmas tree</button>
         </div>
         <div id="flatwrap" class="bflat">
-          <div class="rib"></div>
-          <div class="ball" id="flat" aria-label="Your bauble design"></div>
+                    <div class="ball" id="flat" aria-label="Your bauble design"></div>
           <p class="hint mt-3"><b id="ribbonname">Silks bauble</b> · round ceramic, about 7.5 cm across · the same design is printed on both sides · comes with a ribbon</p>
         </div>
         <div id="treewrap" class="tree" hidden><div id="tree"></div><div style="display:flex;gap:.5rem;margin-top:.75rem;justify-content:center"><button class="opt" id="scsoft" type="button" aria-pressed="true">Soft light</button><button class="opt" id="scmoody" type="button" aria-pressed="false">Evening</button></div></div>
@@ -853,11 +853,14 @@ function treeScene(baubleSvg, scene) {   // Alex 5 Nov: must look like a real ph
   </svg>`;
 }
 
+/* Real Harrier bauble (Printify pictures 5 Nov): round disc, hole INSIDE the circle near the top, red ribbon, no tab. Preview only, never printed. */
+const HANGER = '<svg class="hang" viewBox="0 -18 100 118" aria-hidden="true"><path d="M46.5 -18 L49.3 6.2 M53.5 -18 L50.7 6.2" stroke="#B3121F" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="50" cy="7" r="2.6" fill="#EFE8DE" stroke="rgba(0,0,0,.35)" stroke-width=".4"/><path d="M48.6 5.4 Q50 9.6 51.4 5.4" stroke="#B3121F" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>';
+
 /* ---------- render ---------- */
 function render() {
   renderControls();
   const d = design(), svg = printSVG(d, 'pv');
-  $('flat').innerHTML = svg;
+  $('flat').innerHTML = svg + HANGER;
   $('ribbonname').textContent = S.style === 'A' ? 'Silks bauble' : 'Racing green bauble';
   $('tree').innerHTML = treeScene(printSVG(d, 'tv'), S.scene);
   $('scsoft').setAttribute('aria-pressed', S.scene === 'soft'); $('scmoody').setAttribute('aria-pressed', S.scene === 'moody');
