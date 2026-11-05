@@ -839,49 +839,45 @@ function renderControls() {
 }
 
 /* ---------- Christmas tree scene ---------- */
-function treeScene(baubleSvg) {   // Alex 5 Nov: realistic tree, bauble life-size (7.5 cm), lit like the photo so it sits in the scene
+const TREE_LOOK = {};  // the chosen look (Alex picks from 10 examples, 5 Nov)
+function treeScene(baubleSvg, o) {   // realistic tree photo, bauble life-size (7.5 cm), lit like the photo, kept SHARP
   // Photo: AI-made for ZANS (FLUX.1 Krea), /img/bauble-tree-scene.jpg 864x1072 (the photo's own ball + cap removed under our bauble).
+  o = Object.assign({ gain: [.86, .78, .66], sat: .88, shade: 1, warm: 1, spec: 1, rot: -5, sx: .93, streak: 0, rim: .22, edge: 7, matte: 0 }, TREE_LOOK, o || {});
   const cx = 608, cy = 570, r = 134, top = cy - r;
   const inner = baubleSvg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '').replace(/id="([^"]+)"/g, 'id="tr$1"').replace(/url\(#([^)]+)\)/g, 'url(#tr$1)');
-  const tilt = `translate(${cx},${cy}) rotate(-5) scale(.93,1) translate(${-cx},${-cy})`;
+  const tilt = `translate(${cx},${cy}) rotate(${o.rot}) scale(${o.sx},1) translate(${-cx},${-cy})`;
+  const [gr, gg, gb] = o.gain;
   return `<svg viewBox="170 170 694 860" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Your bauble hanging on a real Christmas tree, shown life-size next to other decorations">
   <defs>
-    <filter id="photo" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
-      <feColorMatrix type="saturate" values=".78"/>
-      <feComponentTransfer><feFuncR type="gamma" amplitude=".80" exponent="1.18"/><feFuncG type="gamma" amplitude=".70" exponent="1.22"/><feFuncB type="gamma" amplitude=".56" exponent="1.25"/></feComponentTransfer>
-      <feGaussianBlur stdDeviation=".9" result="soft"/>
-      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4" result="n"/>
-      <feColorMatrix in="n" type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .07 0" result="g"/>
-      <feComposite in="g" in2="SourceAlpha" operator="in" result="g2"/>
-      <feMerge><feMergeNode in="soft"/><feMergeNode in="g2"/></feMerge>
-    </filter>
-    <radialGradient id="shade" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#FFF4DE" stop-opacity="0"/><stop offset=".45" stop-color="#2A1A0C" stop-opacity=".18"/><stop offset=".8" stop-color="#140C05" stop-opacity=".55"/><stop offset="1" stop-color="#0A0603" stop-opacity=".72"/></radialGradient>
-    <radialGradient id="warm" cx="28%" cy="20%" r="55%"><stop offset="0" stop-color="#FFD9A0" stop-opacity=".30"/><stop offset="1" stop-color="#FFD9A0" stop-opacity="0"/></radialGradient>
+    <filter id="photo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="${o.sat}"/><feComponentTransfer><feFuncR type="linear" slope="${gr}"/><feFuncG type="linear" slope="${gg}"/><feFuncB type="linear" slope="${gb}"/></feComponentTransfer></filter>
+    <radialGradient id="shade" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#FFF4DE" stop-opacity="0"/><stop offset=".5" stop-color="#2A1A0C" stop-opacity="${f1(.12 * o.shade * 100) / 100}"/><stop offset=".85" stop-color="#140C05" stop-opacity="${f1(.42 * o.shade * 100) / 100}"/><stop offset="1" stop-color="#0A0603" stop-opacity="${f1(.6 * o.shade * 100) / 100}"/></radialGradient>
+    <radialGradient id="warm" cx="28%" cy="20%" r="60%"><stop offset="0" stop-color="#FFD9A0" stop-opacity="${f1(.28 * o.warm * 100) / 100}"/><stop offset="1" stop-color="#FFD9A0" stop-opacity="0"/></radialGradient>
     <radialGradient id="spec"><stop offset="0" stop-color="#FFF6E2" stop-opacity=".95"/><stop offset=".35" stop-color="#FFE7BC" stop-opacity=".55"/><stop offset="1" stop-color="#FFE7BC" stop-opacity="0"/></radialGradient>
-    <linearGradient id="rib" x1="0" x2="1"><stop offset="0" stop-color="#5E0A10"/><stop offset=".5" stop-color="#9E1A22"/><stop offset="1" stop-color="#5E0A10"/></linearGradient>
-    <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="#3A3228"/><stop offset=".6" stop-color="#7A6E5E"/><stop offset="1" stop-color="#4A4034"/></linearGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="1"><stop offset=".28" stop-color="#fff" stop-opacity="0"/><stop offset=".38" stop-color="#fff" stop-opacity="${o.streak}"/><stop offset=".46" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="rib" x1="0" x2="1"><stop offset="0" stop-color="#6E0B12"/><stop offset=".5" stop-color="#B21E27"/><stop offset="1" stop-color="#6E0B12"/></linearGradient>
+    <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="#3A3228"/><stop offset=".6" stop-color="#8A7E6C"/><stop offset="1" stop-color="#4A4034"/></linearGradient>
     <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="16"/></filter>
-    <filter id="blur1"><feGaussianBlur stdDeviation="1.1"/></filter>
     <clipPath id="disc"><circle cx="${cx}" cy="${cy}" r="${r}"/></clipPath>
   </defs>
   <image href="/img/bauble-tree-scene.jpg" x="0" y="0" width="864" height="1072" preserveAspectRatio="xMidYMid slice"/>
   <g class="swing" style="transform-origin:605px 348px">
-    <path d="M603,350 C598,385 598,${top - 10} 602,${top + 16} M607,350 C612,385 612,${top - 10} 608,${top + 16}" fill="none" stroke="url(#rib)" stroke-width="4.5" stroke-linecap="round" filter="url(#blur1)"/>
-    <ellipse cx="${cx + 26}" cy="${cy + 30}" rx="${r * 0.95}" ry="${r}" fill="#000" opacity=".55" filter="url(#shadow)"/>
+    <path d="M603,350 C598,385 598,${top - 10} 602,${top + 16} M607,350 C612,385 612,${top - 10} 608,${top + 16}" fill="none" stroke="url(#rib)" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="${cx + 26}" cy="${cy + 30}" rx="${r * 0.95}" ry="${r}" fill="#000" opacity=".5" filter="url(#shadow)"/>
     <g transform="${tilt}">
-      <circle cx="${cx + 7}" cy="${cy + 2}" r="${r}" fill="url(#edge)" filter="url(#blur1)"/>
+      ${o.edge ? `<circle cx="${cx + o.edge}" cy="${cy + 2}" r="${r}" fill="url(#edge)"/>` : ''}
       <g clip-path="url(#disc)">
         <g filter="url(#photo)"><g transform="translate(${cx - r},${cy - r}) scale(${f1(2 * r / 990 * 1000) / 1000})">${inner}</g></g>
         <circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#shade)"/>
         <circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#warm)"/>
-        <ellipse cx="${cx - 62}" cy="${cy - 78}" rx="16" ry="11" fill="url(#spec)" transform="rotate(-30 ${cx - 62} ${cy - 78})"/>
-        <ellipse cx="${cx + 58}" cy="${cy - 92}" rx="7" ry="5" fill="url(#spec)" opacity=".7"/>
-        <ellipse cx="${cx - 96}" cy="${cy - 20}" rx="5" ry="9" fill="url(#spec)" opacity=".45"/>
+        ${o.matte ? '' : `<ellipse cx="${cx - 62}" cy="${cy - 78}" rx="16" ry="11" fill="url(#spec)" opacity="${o.spec}" transform="rotate(-30 ${cx - 62} ${cy - 78})"/>
+        <ellipse cx="${cx + 58}" cy="${cy - 92}" rx="7" ry="5" fill="url(#spec)" opacity="${f1(.7 * o.spec * 100) / 100}"/>
+        <ellipse cx="${cx - 96}" cy="${cy - 20}" rx="5" ry="9" fill="url(#spec)" opacity="${f1(.45 * o.spec * 100) / 100}"/>`}
+        ${o.streak ? `<rect x="${cx - r}" y="${cy - r}" width="${2 * r}" height="${2 * r}" fill="url(#streak)"/>` : ''}
       </g>
-      <circle cx="${cx}" cy="${cy}" r="${r - 0.6}" fill="none" stroke="#FFE9C4" stroke-opacity=".22" stroke-width="1.4"/>
+      <circle cx="${cx}" cy="${cy}" r="${r - 0.6}" fill="none" stroke="#FFE9C4" stroke-opacity="${o.rim}" stroke-width="1.4"/>
       <circle cx="${cx}" cy="${top + 16}" r="6" fill="#120D08" stroke="#6A6052" stroke-width="1.5"/>
     </g>
-    <path d="M601,${top + 14} q4,-7 9,0" fill="none" stroke="#7A1018" stroke-width="4" stroke-linecap="round" filter="url(#blur1)"/>
+    <path d="M601,${top + 14} q4,-7 9,0" fill="none" stroke="#7A1018" stroke-width="4" stroke-linecap="round"/>
   </g></svg>`;
 }
 
