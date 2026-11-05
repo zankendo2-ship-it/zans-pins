@@ -17,3 +17,7 @@
 @keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
 .swing{animation:swing 4.2s ease-in-out infinite;transform-box:view-box}
 @media (prefers-reduced-motion:reduce){.tw,.swing{animation:none}}
+.wrap h1{font-family:var(--display);font-weight:600;font-size:clamp(26px,4.4vw,40px);line-height:1.1;text-wrap:balance}
+
+#code{white-space:nowrap;overflow-x:auto;word-break:normal;font-size:clamp(10px,3.1vw,13px)}
+.viewtabs .opt{min-height:44px}

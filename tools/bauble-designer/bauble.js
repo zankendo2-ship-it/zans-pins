@@ -59,7 +59,7 @@ function design() {
   const n = Z.checkName(S.name);
   const d = Z.normalise({ layout: 'B', body: S.style === 'A' ? S.pat : S.body, allover: S.pat, c1: S.c1, c2: S.c2, sleeves: S.sleeves, cap: 'contrast', k1: S.capCol, k2: S.capCol });
   if (S.style === 'B') d.body = S.body;
-  d.capCol = S.capCol; d.name = n.ok ? n.text : ((S.name || '').toUpperCase().slice(0, 28) || 'YOUR NAME');
+  d.capCol = S.capCol; d.name = n.ok ? n.text : 'YOUR NAME'; // a refused name is never drawn
   return d;
 }
 function code(d) { // ZANS bauble code: ZB<style>-<pattern>-<c1>-<c2>-<sleeves>-<cap colour>
@@ -95,7 +95,7 @@ function renderControls() {
 }
 
 /* ---------- Christmas tree scene ---------- */
-const SCENES = { soft: { cx: 446, cy: 628, r: 263, label: 'Soft light' }, moody: { cx: 452, cy: 641, r: 301, label: 'Evening' } };
+const SCENES = { soft: { cx: 446, cy: 628, r: 263, label: 'Soft light' }, moody: { cx: 452, cy: 648, r: 298, label: 'Evening' } };
 function treeScene(baubleSvg, scene) {   // Alex 5 Nov: must look like a real photo; round disc, no tab (matches Harrier's bauble)
   // Photos: AI-made for ZANS (FLUX.1 Krea) of a BLANK white round ceramic bauble on a tree, /img/bauble-tree-<scene>.jpg 880x1088.
   // The design is laid on the blank face with "multiply" so the photo's own light and shadow show through it.
@@ -115,6 +115,7 @@ const HANGER = '<svg class="hang" viewBox="0 -18 100 118" aria-hidden="true"><pa
 /* ---------- render ---------- */
 function render() {
   renderControls();
+  const cc = code(design()); if (S._copied !== cc) $('copied').textContent = '';
   const d = design(), svg = printSVG(d, 'pv');
   $('flat').innerHTML = svg + HANGER;
   $('ribbonname').textContent = S.style === 'A' ? 'Silks bauble' : 'Racing green bauble';
@@ -141,9 +142,9 @@ $('scsoft').onclick = () => { S.scene = 'soft'; render(); };
 $('scmoody').onclick = () => { S.scene = 'moody'; render(); };
 $('vtree').onclick = () => { S.view = 'tree'; render(); };
 $('totree').onclick = () => { S.view = 'tree'; render(); $('preview').scrollIntoView({ behavior: 'smooth', block: 'start' }); };
-$('copy').onclick = async () => { const t = `${$('code').textContent}  |  ${design().name}`;
-  try { await navigator.clipboard.writeText(t); $('copied').textContent = 'Copied. Paste it into the Etsy box "Design code from our bauble designer".'; }
-  catch (e) { const r = document.createRange(); r.selectNodeContents($('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $('copied').textContent = 'Code selected. Copy it from your phone menu.'; } };
+$('copy').onclick = async () => { const t = $('code').textContent;
+  try { await navigator.clipboard.writeText(t); S._copied = t; $('copied').textContent = 'Copied. Paste it into the Etsy box "Design code from our bauble designer".'; }
+  catch (e) { const r = document.createRange(); r.selectNodeContents($('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); S._copied = t; $('copied').textContent = 'Code selected. Copy it from your phone menu.'; } };
 render();
 
 /* ---------- print file (Alex 5 Nov: every designer prints at 2x oversample, like the mug order tool) ----------

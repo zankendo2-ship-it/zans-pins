@@ -97,6 +97,10 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
 @keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
 .swing{animation:swing 4.2s ease-in-out infinite;transform-box:view-box}
 @media (prefers-reduced-motion:reduce){.tw,.swing{animation:none}}
+.wrap h1{font-family:var(--display);font-weight:600;font-size:clamp(26px,4.4vw,40px);line-height:1.1;text-wrap:balance}
+
+#code{white-space:nowrap;overflow-x:auto;word-break:normal;font-size:clamp(10px,3.1vw,13px)}
+.viewtabs .opt{min-height:44px}
 </style>
 <div class="strip"></div>
 <div class="wrap">
@@ -121,7 +125,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
                     <div class="ball" id="flat" aria-label="Your bauble design"></div>
           <p class="hint mt-3"><b id="ribbonname">Silks bauble</b> · round ceramic, about 7.5 cm across · the same design is printed on both sides · comes with a ribbon</p>
         </div>
-        <div id="treewrap" class="tree" hidden><div id="tree"></div><div style="display:flex;gap:.5rem;margin-top:.75rem;justify-content:center"><button class="opt" id="scsoft" type="button" aria-pressed="true">Soft light</button><button class="opt" id="scmoody" type="button" aria-pressed="false">Evening</button></div></div>
+        <div id="treewrap" hidden><div class="tree"><div id="tree"></div></div><div class="viewtabs mt-2" role="group" aria-label="Tree lighting"><button class="opt" id="scsoft" type="button" aria-pressed="true">Soft light</button><button class="opt" id="scmoody" type="button" aria-pressed="false">Evening</button></div></div>
         <div class="step">
           <div class="lbl">Your design code</div>
           <div class="codebox mt-2" id="code"></div>
@@ -242,19 +246,29 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
   // the buyer is asked to use their own horse's or syndicate's name instead.
   // Alex 2 Nov 2026: customers may type any name; only rude words are refused.
   // RUDE_ANY = caught inside any word (incl. letters spaced or doubled); RUDE_WORD = whole words only (so 'Scunthorpe', 'Dickens', 'Hancock' pass)
-  const RUDE_ANY = ['fuck','fuk','fck','shit','cunt','kunt','wank','twat','bollock','bastard','bitch','whore','slut','faggot','spastic','retard','motherf','dildo','rapist','pussy','arsehole','asshole','jizz','bellend','minge','nonce'];
-  const RUDE_WORD = ['ass','arse','tit','tits','cock','cocks','dick','dicks','prick','fag','fags','cum','sex','porn','knob','knobhead','piss','pissed','tosser','wanker','spaz','coon','rape','rapes','anal','boob','boobs','nazi','hitler','kkk','bumhole','turd','twats','paki','pakis','clit','shag','shagger'];
+  const RUDE_ANY = ['fuck','fuk','fck','shit','cunt','kunt','wank','twat','bollock','bastard','bitch','whore','slut','faggot','spastic','retard','motherf','dildo','rapist','pussy','arsehole','asshole','jizz','bellend','minge','nonce','dickhead','cockhead','cocksuck','knobhead','pissflap','porn','titties','tittie'];
+  const RUDE_WORD = ['ass','arse','tits','cock','dick','prick','fag','cum','sex','knob','piss','pissed','tosser','wanker','spaz','coon','rape','anal','boob','nazi','hitler','kkk','bumhole','turd','twats','paki','clit','shag','shagged','shagger','shagging','penis','boner','bonk','todger','bum'];
+  // word tests also try the word without a plural/-ed ending, so 'Pricks', 'Tossers', 'Nazis' are caught
+  const STEMS = w => [w, w.replace(/s$/, ''), w.replace(/(es|ed|ing)$/, ''), w.replace(/ies$/, 'y')];
+  // real names and words that contain a rude word inside them
+  const SAFE = /scunthorpe|clitheroe|pakistan|shaggy|cockermouth|penistone|swank|therapist|shiitake|shitake|pussycat|pussywillow|wankel|hancock|dickens|cocktail|cockney|cockerel|peacock|woodcock|shuttlecock|weathercock|cockle|grape|drape|scrape|canal|analys|nonchalant|sextant|sussex|essex|wessex|middlesex|cumbria|cumber|cumulus|document|accumul|circum|scum|bumble|bumper|bump|titch|titan|title|titl/g;
   const BLOCKED = RUDE_ANY.concat(RUDE_WORD);
   function checkName(text, maxLen) {
     maxLen = maxLen || 28;
     const clean = String(text || '').replace(/\s+/g, ' ').trim();
     if (!clean) return { ok: false, error: 'Please type the name to print.' };
     if (clean.length > maxLen) return { ok: false, error: `Please keep the name to ${maxLen} characters or fewer.` };
-    if (/[^A-Za-z0-9 '\-&.#]/.test(clean)) return { ok: false, error: 'Letters, numbers, spaces and - \' & . # only, please.' };
-    // whole words only, so 'Sparkle' is not caught by 'arkle'
-    const low = ' ' + clean.toLowerCase().replace(/[^a-z0-9']+/g, ' ').trim() + ' ';
-    const squash = clean.toLowerCase().replace(/scunthorpe|clitheroe|pakistan|shaggy|cockermouth|penistone|swank/g, '').replace(/[^a-z]/g, '').replace(/(.)\1+/g, '$1');
-    const hit = RUDE_ANY.find(w => squash.includes(w.replace(/(.)\1+/g, '$1'))) || RUDE_WORD.find(w => low.includes(' ' + w + ' ')) || (/n+[i1!]+g{2,}/.test(clean.toLowerCase().replace(/[^a-z1!]/g, '')) ? 'nigg' : null); // 'nigg' needs the double g, so Midnight / Knight are fine
+    // accented letters (Seán, Zoë, Café) are allowed: they are in the print font
+    if (/[^A-Za-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF0-9 '\-&.#]/.test(clean)) return { ok: false, error: 'Letters, numbers, spaces and - \' & . # only, please.' };
+    const plain = clean.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[0@]/g, 'o').replace(/[1!|]/g, 'i').replace(/3/g, 'e').replace(/\$/g, 's');
+    // check word by word, so 'Push It' or 'Who Reigns' are not read as one rude word; single letters typed with gaps ('f u c k') are joined first
+    const words = []; let run = '';
+    plain.split(/[^a-z]+/).filter(Boolean).forEach(w => { if (w.length === 1) run += w; else { if (run) words.push(run); run = ''; words.push(w); } });
+    if (run) words.push(run);
+    const hit = words.map(w => w.replace(SAFE, '')).reduce((h, w) => h
+      || RUDE_ANY.find(r => w.replace(/(.)\1+/g, '$1').includes(r.replace(/(.)\1+/g, '$1')))
+      || STEMS(w).map(s => RUDE_WORD.find(r => s === r)).find(Boolean), null)
+      || (/n+[i1!]+g{2,}/.test(plain.replace(/[^a-z1!]/g, '')) ? 'nigg' : null); // 'nigg' needs the double g, so Midnight / Knight are fine
     if (hit) return { ok: false, error: 'Sorry, we can\'t print that word. Please choose a different name.', hit };
     return { ok: true, text: clean.toUpperCase() };
   }
@@ -803,7 +817,7 @@ function design() {
   const n = Z.checkName(S.name);
   const d = Z.normalise({ layout: 'B', body: S.style === 'A' ? S.pat : S.body, allover: S.pat, c1: S.c1, c2: S.c2, sleeves: S.sleeves, cap: 'contrast', k1: S.capCol, k2: S.capCol });
   if (S.style === 'B') d.body = S.body;
-  d.capCol = S.capCol; d.name = n.ok ? n.text : ((S.name || '').toUpperCase().slice(0, 28) || 'YOUR NAME');
+  d.capCol = S.capCol; d.name = n.ok ? n.text : 'YOUR NAME'; // a refused name is never drawn
   return d;
 }
 function code(d) { // ZANS bauble code: ZB<style>-<pattern>-<c1>-<c2>-<sleeves>-<cap colour>
@@ -839,7 +853,7 @@ function renderControls() {
 }
 
 /* ---------- Christmas tree scene ---------- */
-const SCENES = { soft: { cx: 446, cy: 628, r: 263, label: 'Soft light' }, moody: { cx: 452, cy: 641, r: 301, label: 'Evening' } };
+const SCENES = { soft: { cx: 446, cy: 628, r: 263, label: 'Soft light' }, moody: { cx: 452, cy: 648, r: 298, label: 'Evening' } };
 function treeScene(baubleSvg, scene) {   // Alex 5 Nov: must look like a real photo; round disc, no tab (matches Harrier's bauble)
   // Photos: AI-made for ZANS (FLUX.1 Krea) of a BLANK white round ceramic bauble on a tree, /img/bauble-tree-<scene>.jpg 880x1088.
   // The design is laid on the blank face with "multiply" so the photo's own light and shadow show through it.
@@ -859,6 +873,7 @@ const HANGER = '<svg class="hang" viewBox="0 -18 100 118" aria-hidden="true"><pa
 /* ---------- render ---------- */
 function render() {
   renderControls();
+  const cc = code(design()); if (S._copied !== cc) $('copied').textContent = '';
   const d = design(), svg = printSVG(d, 'pv');
   $('flat').innerHTML = svg + HANGER;
   $('ribbonname').textContent = S.style === 'A' ? 'Silks bauble' : 'Racing green bauble';
@@ -885,9 +900,9 @@ $('scsoft').onclick = () => { S.scene = 'soft'; render(); };
 $('scmoody').onclick = () => { S.scene = 'moody'; render(); };
 $('vtree').onclick = () => { S.view = 'tree'; render(); };
 $('totree').onclick = () => { S.view = 'tree'; render(); $('preview').scrollIntoView({ behavior: 'smooth', block: 'start' }); };
-$('copy').onclick = async () => { const t = `${$('code').textContent}  |  ${design().name}`;
-  try { await navigator.clipboard.writeText(t); $('copied').textContent = 'Copied. Paste it into the Etsy box "Design code from our bauble designer".'; }
-  catch (e) { const r = document.createRange(); r.selectNodeContents($('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $('copied').textContent = 'Code selected. Copy it from your phone menu.'; } };
+$('copy').onclick = async () => { const t = $('code').textContent;
+  try { await navigator.clipboard.writeText(t); S._copied = t; $('copied').textContent = 'Copied. Paste it into the Etsy box "Design code from our bauble designer".'; }
+  catch (e) { const r = document.createRange(); r.selectNodeContents($('code')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); S._copied = t; $('copied').textContent = 'Code selected. Copy it from your phone menu.'; } };
 render();
 
 /* ---------- print file (Alex 5 Nov: every designer prints at 2x oversample, like the mug order tool) ----------
