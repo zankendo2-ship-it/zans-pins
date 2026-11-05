@@ -1,0 +1,97 @@
+<div class="strip"></div>
+<div class="wrap">
+  <header class="flex items-end justify-between gap-4 flex-wrap">
+    <div><a href="/" aria-label="ZANS Racing home"><img class="zlogo" src="/img/zans-logo-mug-designer.png" alt="ZANS Racing logo" width="140" height="116"></a></div>
+    <div class="tag">Silks bauble designer</div>
+  </header>
+
+  <section class="mt-6 mb-6">
+    <h1>Personalised Horse Racing Christmas Bauble</h1>
+    <p class="lead mt-2">Choose your bauble, pick a pattern and colours, choose your cap colour and type the name. Then hang it on the Christmas tree to see how it looks. When you're happy, copy your design code into the personalisation box on our Etsy listing.</p>
+  </section>
+
+  <div class="grid gap-6 lg:grid-cols-[1fr_440px]">
+    <aside class="lg:order-2 min-w-0" id="preview">
+      <div class="lg:sticky lg:top-4 flex flex-col gap-3">
+        <div class="viewtabs" role="group" aria-label="Preview">
+          <button class="opt" id="vflat" type="button" aria-pressed="true">Your bauble</button>
+          <button class="opt" id="vtree" type="button" aria-pressed="false">On the Christmas tree</button>
+        </div>
+        <div id="flatwrap" class="bflat">
+          <div class="rib"></div><div class="rib2"></div>
+          <div class="ball" id="flat" aria-label="Your bauble design"></div>
+          <p class="hint mt-3"><b id="ribbonname">Silks bauble</b> · round ceramic, about 7.5 cm across · the same design is printed on both sides · comes with a ribbon</p>
+        </div>
+        <div id="treewrap" class="tree" hidden><div id="tree"></div></div>
+        <div class="step">
+          <div class="lbl">Your design code</div>
+          <div class="codebox mt-2" id="code"></div>
+          <div class="mt-2 flex gap-2 flex-wrap items-center">
+            <button class="btn" id="copy" type="button">Copy design code</button>
+            <span id="copied" class="ok" aria-live="polite"></span>
+          </div>
+          <p class="hint mt-2">Paste the code and your name into the Etsy personalisation box. We print exactly this design.</p>
+          <div class="btn mt-3 inline-block text-center w-full" style="padding:.8rem 1rem;font-weight:700;letter-spacing:.08em;opacity:.8">ORDERING ON ETSY OPENS VERY SOON</div>
+          <div id="problem" class="err mt-2" aria-live="polite"></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="lg:order-1 flex flex-col gap-4 min-w-0">
+      <div class="step">
+        <h2><b>1</b> Choose your bauble</h2>
+        <div class="stylegrid mt-3" id="styles"></div>
+      </div>
+
+      <div class="step">
+        <h2><b>2</b> Pick a pattern</h2>
+        <p class="hint">Tap a colour scheme, or pick any pattern below. Patterns are shown in your colours.</p>
+        <div class="lbl mt-1 mb-2">Popular colour schemes (one tap)</div>
+        <div class="patgrid" id="presets"></div>
+        <div class="lbl mt-4 mb-1">Or pick any pattern</div>
+        <div class="patgrid" id="patterns"></div>
+      </div>
+
+      <div class="step">
+        <h2><b>3</b> Pick the colours</h2>
+        <div class="mt-3"><div class="lbl mb-2">Main colour</div><div class="flex flex-wrap gap-2" id="c1"></div></div>
+        <div class="mt-4"><div class="lbl mb-2">Second colour</div><div class="flex flex-wrap gap-2" id="c2"></div></div>
+        <div class="mt-3 flex items-center gap-3 flex-wrap">
+          <label class="hint flex items-center gap-2">Any other shade:
+            <input type="color" id="pick1" aria-label="Custom main colour" class="w-10 h-8"> main
+            <input type="color" id="pick2" aria-label="Custom second colour" class="w-10 h-8"> second</label>
+          <button class="btn2 text-sm" id="swap" type="button">Swap colours</button>
+        </div>
+        <div class="mt-4" id="sleevestep"><div class="lbl mb-2">Sleeves</div><div class="flex flex-wrap gap-2" id="sleeves"></div></div>
+      </div>
+
+      <div class="step">
+        <h2><b>4</b> Cap colour</h2>
+        <p class="hint mt-1">The jockey cap is one plain colour. Pick any colour.</p>
+        <div class="flex flex-wrap gap-2 mt-3" id="capsw"></div>
+        <div class="flex items-center gap-3 mt-2 hint">Any other shade: <input id="capcol" type="color" value="#C8102E" style="width:64px;height:40px"></div>
+      </div>
+
+      <div class="step">
+        <h2><b>5</b> Type the name</h2>
+        <label for="name" class="lbl block mt-3 mb-1">Horse, syndicate or person's name</label>
+        <input id="name" type="text" maxlength="28" autocomplete="off" value="Lucky Lady">
+        <div class="flex justify-between mt-1"><span id="nameerr" class="err" aria-live="polite"></span><span class="hint mono" id="count"></span></div>
+      </div>
+
+      <div class="step text-center">
+        <div class="lbl">See it on the tree</div>
+        <p class="hint mt-2">Hang your bauble on our Christmas tree to see how it looks.</p>
+        <button class="btn mt-3 w-full" id="totree" type="button" style="padding:1rem;font-weight:700;letter-spacing:.1em">SHOW IT ON THE CHRISTMAS TREE</button>
+      </div>
+      <p class="hint">Our designs are racing patterns drawn by ZANS. Type any name you like: we just won't print rude words.</p>
+    </main>
+  </div>
+
+  <section class="mt-10 grid gap-6 md:grid-cols-3">
+    <div class="step"><h2>A horse racing Christmas tree decoration</h2><p class="hint mt-2">A round ceramic bauble printed in a horse's racing silks, with the name on the front. A personal Christmas gift for any racing fan.</p></div>
+    <div class="step"><h2>Two bauble designs</h2><p class="hint mt-2">The silks bauble has your pattern all over with a jockey cap across the top. The racing green bauble has your jersey and cap with your name in gold.</p></div>
+    <div class="step"><h2>More racing gifts</h2><p class="hint mt-2" style="color:var(--ink)"><a style="color:var(--ink);text-decoration:underline" href="/mug-designer/">Silks mug designer</a> · <a style="color:var(--ink);text-decoration:underline" href="/gifts-for-racehorse-owners/">Gifts for racehorse owners</a> · <a style="color:var(--ink);text-decoration:underline" href="/racing-syndicate-gifts/">Racing syndicate gifts</a> · <a style="color:var(--ink);text-decoration:underline" href="/horse-racing-gifts/">All horse racing gifts</a></p></div>
+  </section>
+</div>
+<div class="strip"></div>

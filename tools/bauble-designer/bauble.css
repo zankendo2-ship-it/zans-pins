@@ -1,0 +1,18 @@
+.tree{border:3px solid var(--edge);border-radius:4px;overflow:hidden;background:#08170F;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.tree svg{display:block;width:100%;height:auto}
+.bflat{border:3px solid var(--edge);border-radius:4px;background:radial-gradient(120% 90% at 50% 25%,#FBF7F0 0%,var(--soft) 75%);padding:18px 18px 22px;text-align:center}
+.bflat .ball{width:min(100%,380px);margin:0 auto;position:relative}
+.bflat .ball svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 12px rgba(0,0,0,.18))}
+.bflat .rib{width:18px;height:34px;margin:0 auto -4px;border:5px solid #B3121F;border-bottom:none;border-radius:12px 12px 0 0}
+.bflat .rib2{width:26px;height:12px;margin:0 auto;background:var(--goldm,#C9A646);border-radius:3px}
+.viewtabs{display:flex;gap:8px}
+.viewtabs .opt{flex:1;text-align:center;font-family:var(--display);font-weight:600;padding:10px 6px}
+.viewtabs .opt[aria-pressed="true"],.opt[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.stylegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.stylegrid svg{display:block;width:100%;height:auto}
+.patgrid .opt .mini svg{max-width:96px;margin:0 auto}
+@keyframes tw{0%,100%{opacity:.35}50%{opacity:1}}
+.tw{animation:tw 2.6s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.swing{animation:swing 4.2s ease-in-out infinite;transform-box:view-box}
+@media (prefers-reduced-motion:reduce){.tw,.swing{animation:none}}
