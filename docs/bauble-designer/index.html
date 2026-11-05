@@ -839,46 +839,16 @@ function renderControls() {
 }
 
 /* ---------- Christmas tree scene ---------- */
-const TREE_LOOK = {};  // the chosen look (Alex picks from 10 examples, 5 Nov)
-function treeScene(baubleSvg, o) {   // realistic tree photo, bauble life-size (7.5 cm), lit like the photo, kept SHARP
-  // Photo: AI-made for ZANS (FLUX.1 Krea), /img/bauble-tree-scene.jpg 864x1072 (the photo's own ball + cap removed under our bauble).
-  o = Object.assign({ gain: [.98, .95, .88], sat: 1, shade: .45, warm: .7, spec: .9, rot: -3, sx: .95, streak: 0, rim: .3, edge: 11, matte: 0 }, TREE_LOOK, o || {});   // Alex 5 Nov reference photos: bright true colours, thick cream edge, red cord
-  const cx = 608, cy = 570, r = 134, top = cy - r;
+function treeScene(baubleSvg) {   // Alex 5 Nov: must look like a real photo
+  // Photo: AI-made for ZANS (FLUX.1 Krea) of a BLANK white ceramic disc bauble on a tree, /img/bauble-tree-scene.jpg 880x1088.
+  // The customer's design is laid on the blank face with "multiply", so the photo's own light, shine and shadow show through it.
+  const cx = 439, cy = 652, r = 236;
   const inner = baubleSvg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '').replace(/id="([^"]+)"/g, 'id="tr$1"').replace(/url\(#([^)]+)\)/g, 'url(#tr$1)');
-  const tilt = `translate(${cx},${cy}) rotate(${o.rot}) scale(${o.sx},1) translate(${-cx},${-cy})`;
-  const [gr, gg, gb] = o.gain;
-  return `<svg viewBox="230 214 634 792" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Your bauble hanging on a real Christmas tree, shown life-size next to other decorations">
-  <defs>
-    <filter id="photo" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="${o.sat}"/><feComponentTransfer><feFuncR type="linear" slope="${gr}"/><feFuncG type="linear" slope="${gg}"/><feFuncB type="linear" slope="${gb}"/></feComponentTransfer></filter>
-    <radialGradient id="shade" cx="30%" cy="22%" r="95%"><stop offset="0" stop-color="#FFF4DE" stop-opacity="0"/><stop offset=".5" stop-color="#2A1A0C" stop-opacity="${f1(.12 * o.shade * 100) / 100}"/><stop offset=".85" stop-color="#140C05" stop-opacity="${f1(.42 * o.shade * 100) / 100}"/><stop offset="1" stop-color="#0A0603" stop-opacity="${f1(.6 * o.shade * 100) / 100}"/></radialGradient>
-    <radialGradient id="warm" cx="28%" cy="20%" r="60%"><stop offset="0" stop-color="#FFD9A0" stop-opacity="${f1(.28 * o.warm * 100) / 100}"/><stop offset="1" stop-color="#FFD9A0" stop-opacity="0"/></radialGradient>
-    <radialGradient id="spec"><stop offset="0" stop-color="#FFF6E2" stop-opacity=".95"/><stop offset=".35" stop-color="#FFE7BC" stop-opacity=".55"/><stop offset="1" stop-color="#FFE7BC" stop-opacity="0"/></radialGradient>
-    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="1"><stop offset=".28" stop-color="#fff" stop-opacity="0"/><stop offset=".38" stop-color="#fff" stop-opacity="${o.streak}"/><stop offset=".46" stop-color="#fff" stop-opacity="0"/></linearGradient>
-    <linearGradient id="rib" x1="0" x2="1"><stop offset="0" stop-color="#6E0B12"/><stop offset=".5" stop-color="#B21E27"/><stop offset="1" stop-color="#6E0B12"/></linearGradient>
-    <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="#B9AF9C"/><stop offset=".55" stop-color="#F1EADB"/><stop offset=".85" stop-color="#E2D8C4"/><stop offset="1" stop-color="#9C927F"/></linearGradient>
-    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="16"/></filter>
-    <clipPath id="disc"><circle cx="${cx}" cy="${cy}" r="${r}"/></clipPath>
-  </defs>
-  <image href="/img/bauble-tree-scene.jpg" x="0" y="0" width="864" height="1072" preserveAspectRatio="xMidYMid slice"/>
-  <g class="swing" style="transform-origin:605px 300px">
-    <path d="M600,300 C595,360 598,${top - 10} 603,${top + 16} M611,300 C616,360 613,${top - 10} 607,${top + 16}" fill="none" stroke="url(#rib)" stroke-width="5" stroke-linecap="round"/><path d="M600,300 q5,-9 11,0" fill="none" stroke="#8E1219" stroke-width="5" stroke-linecap="round"/><path d="M601,310 q4,4 9,0" fill="none" stroke="#C02A33" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
-    <ellipse cx="${cx + 26}" cy="${cy + 30}" rx="${r * 0.95}" ry="${r}" fill="#000" opacity=".5" filter="url(#shadow)"/>
-    <g transform="${tilt}">
-      ${o.edge ? `<circle cx="${cx + o.edge}" cy="${cy + 2}" r="${r}" fill="url(#edge)"/>` : ''}
-      <g clip-path="url(#disc)">
-        <g filter="url(#photo)"><g transform="translate(${cx - r},${cy - r}) scale(${f1(2 * r / 990 * 1000) / 1000})">${inner}</g></g>
-        <circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#shade)"/>
-        <circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#warm)"/>
-        ${o.matte ? '' : `<ellipse cx="${cx - 62}" cy="${cy - 78}" rx="16" ry="11" fill="url(#spec)" opacity="${o.spec}" transform="rotate(-30 ${cx - 62} ${cy - 78})"/>
-        <ellipse cx="${cx + 58}" cy="${cy - 92}" rx="7" ry="5" fill="url(#spec)" opacity="${f1(.7 * o.spec * 100) / 100}"/>
-        <ellipse cx="${cx - 96}" cy="${cy - 20}" rx="5" ry="9" fill="url(#spec)" opacity="${f1(.45 * o.spec * 100) / 100}"/>`}
-        ${o.streak ? `<rect x="${cx - r}" y="${cy - r}" width="${2 * r}" height="${2 * r}" fill="url(#streak)"/>` : ''}
-      </g>
-      <circle cx="${cx}" cy="${cy}" r="${r - 1.5}" fill="none" stroke="#F3ECDD" stroke-width="3.5"/><circle cx="${cx}" cy="${cy}" r="${r - 0.6}" fill="none" stroke="#FFE9C4" stroke-opacity="${o.rim}" stroke-width="1.4"/>
-      <circle cx="${cx}" cy="${top + 16}" r="7" fill="#1E1912" stroke="#F1EADB" stroke-width="2.5"/>
-    </g>
-    <path d="M600,${top + 12} q5,-9 10,0" fill="none" stroke="#9E1A22" stroke-width="5" stroke-linecap="round"/><circle cx="605" cy="${top + 3}" r="4.5" fill="#8E1219"/>
-  </g></svg>`;
+  return `<svg viewBox="0 0 880 1088" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Your bauble hanging on a Christmas tree">
+  <defs><clipPath id="face"><circle cx="${cx}" cy="${cy}" r="${r}"/></clipPath></defs>
+  <image href="/img/bauble-tree-scene.jpg" x="0" y="0" width="880" height="1088"/>
+  <g clip-path="url(#face)" style="mix-blend-mode:multiply"><g transform="translate(${cx - r},${cy - r}) scale(${Math.round(2 * r / 990 * 10000) / 10000})">${inner}</g></g>
+  </svg>`;
 }
 
 /* ---------- render ---------- */
