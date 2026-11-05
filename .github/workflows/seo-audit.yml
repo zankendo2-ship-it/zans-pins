@@ -25,6 +25,11 @@ jobs:
           STAMP=$(date -u +%Y%m%d_%H%M)
           echo "STAMP=$STAMP" >> $GITHUB_ENV
           python tools/seo-audit/audit.py "reports/seo-audit/$STAMP"
+      - name: Layout check in real Chrome (photos beside the text on computer screens, mug designer loads)
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/nm && (cd /tmp/nm && npm i -s --no-audit --no-fund playwright-core@1.49.1)
+          NODE_PATH=/tmp/nm/node_modules node tools/seo-audit/layout.cjs "reports/seo-audit/$STAMP/layout"
       - name: Lighthouse (lab test, mobile + desktop)
         continue-on-error: true
         run: |
