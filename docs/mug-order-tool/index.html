@@ -36,7 +36,7 @@ ol{padding-left:22px}li{margin-bottom:6px}
 <div class="box"><b>4. Check the print</b> (this is the whole wrap; the two name plates sit either side of the handle)
 <div id="flat" style="margin-top:10px"></div>
 <table id="facts" style="margin-top:10px"></table>
-<button id="dl" type="button" disabled>Download print file (2700 x 1050)</button>
+<button id="dl" type="button" disabled>Download high-res print file (5400 x 2100)</button>
 <p id="dlmsg"></p>
 </div>
 <div class="box"><b>5. Place it on Printful</b>
@@ -626,17 +626,19 @@ function go(){
   const cname=x=>{const k=Object.keys(Z.COLOURS).find(n=>Z.COLOURS[n].toUpperCase()===String(x).toUpperCase());return k?k+' ('+x+')':'custom colour '+x;};
   svgNow=Z.printFile(d,MUG,"Jost",LOGO); $("flat").innerHTML=withFont(svgNow);
   $('facts').innerHTML=`<tr><td>Name printed</td><td><b>${n.text}</b></td></tr><tr><td>Pattern</td><td>${d.allover}</td></tr><tr><td>Colours</td><td>${cname(d.c1)} + ${cname(d.c2)}</td></tr><tr><td>Handle and inside</td><td><b>${h.name}</b></td></tr><tr><td>Cap ring</td><td>${d.ring?'Yes':'No'}</td></tr>`;
-  fileName=('ZANS mug '+n.text).replace(/[^A-Za-z0-9 ]+/g,'').trim().replace(/\s+/g,'-')+'-2700x1050.png';
+  fileName=('ZANS mug '+n.text).replace(/[^A-Za-z0-9 ]+/g,'').trim().replace(/\s+/g,'-')+'-5400x2100.png';
   $('msg').innerHTML='<span class="ok">Code and name OK.</span>'; $('dl').disabled=false;
 }
 $('code').addEventListener('input',go); $('name').addEventListener('input',go); $('etsyh').addEventListener('change',go);
 $('dl').addEventListener('click',()=>{
   if(!svgNow) return; $('dlmsg').textContent='Making the file...';
+  const SCALE=2; // 2x oversample: Printify downsamples cleanly, no soft re-raster at the printer's end
   const img=new Image();
-  img.onload=()=>{const c=document.createElement('canvas');c.width=MUG.width_px;c.height=MUG.height_px;const x=c.getContext('2d');
+  img.onload=()=>{const c=document.createElement('canvas');c.width=MUG.width_px*SCALE;c.height=MUG.height_px*SCALE;const x=c.getContext('2d');
+    x.imageSmoothingEnabled=true;x.imageSmoothingQuality='high';
     x.fillStyle='#ffffff';x.fillRect(0,0,c.width,c.height);x.drawImage(img,0,0,c.width,c.height);
     c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fileName;document.body.appendChild(a);a.click();a.remove();
-      $('dlmsg').textContent='Saved: '+fileName+' (on iPhone: Files > Downloads).';},'image/png');};
+      $('dlmsg').textContent='Saved: '+fileName+' (on iPhone: Files > Downloads). Upload this file on Printify as-is; it will downsample it to the printer’s exact size, which is why it comes out crisp.';},'image/png');};
   img.onerror=()=>{$('dlmsg').textContent='Could not make the file on this device. Send the code and name to Claude instead.';};
   img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(withFont(svgNow));
 });
