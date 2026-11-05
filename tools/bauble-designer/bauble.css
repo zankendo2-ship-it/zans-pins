@@ -1,4 +1,4 @@
-.tree{border:3px solid var(--edge);border-radius:4px;overflow:hidden;background:#08170F;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.tree{border:3px solid var(--edge);border-radius:4px;overflow:hidden;background:#1a1612;box-shadow:0 8px 20px rgba(0,0,0,.12)}
 .tree svg{display:block;width:100%;height:auto}
 .bflat{border:3px solid var(--edge);border-radius:4px;background:radial-gradient(120% 90% at 50% 25%,#FBF7F0 0%,var(--soft) 75%);padding:18px 18px 22px;text-align:center}
 .bflat .ball{width:min(100%,380px);margin:0 auto;position:relative}

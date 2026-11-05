@@ -48,7 +48,7 @@ function designB(d, id) {
   let t = ''; const top = n.lines.length === 1 ? 770 : 735;
   n.lines.forEach((l, i) => { t += `<text x="${R}" y="${f1(top + i * n.fs * 1.02)}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${f1(n.fs)}" letter-spacing="${f1(n.fs * 0.04)}" fill="${GOLD}">${esc(l)}</text>`; });
   const mc = `<text x="${R}" y="${n.lines.length === 1 ? 860 : 875}" text-anchor="middle" font-family="Jost" font-weight="600" font-size="30" letter-spacing="9.6" fill="${GOLD}">MERRY CHRISTMAS</text>`;
-  return svgWrap(id, `<rect width="${W}" height="${W}" fill="${RGREEN}"/><circle cx="${R}" cy="${R}" r="${R - 26}" fill="none" stroke="${GOLD}" stroke-width="8"/><circle cx="${R}" cy="${R}" r="${R - 44}" fill="none" stroke="${GOLD}" stroke-width="2"/>` + jerseyAt(jd, R, n.lines.length === 1 ? 430 : 400, n.lines.length === 1 ? 420 : 380, id + 'j') + t + mc);
+  return svgWrap(id, `<defs><filter id="${id}ol" x="-15%" y="-15%" width="130%" height="130%"><feMorphology in="SourceAlpha" operator="dilate" radius="9" result="d"/><feFlood flood-color="${GOLD}"/><feComposite in2="d" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="${W}" height="${W}" fill="${RGREEN}"/><circle cx="${R}" cy="${R}" r="${R - 26}" fill="none" stroke="${GOLD}" stroke-width="8"/><circle cx="${R}" cy="${R}" r="${R - 44}" fill="none" stroke="${GOLD}" stroke-width="2"/>` + `<g filter="url(#${id}ol)">` + jerseyAt(jd, R, n.lines.length === 1 ? 430 : 400, n.lines.length === 1 ? 420 : 380, id + 'j') + '</g>' + t + mc);
 }
 function svgWrap(id, inner) { return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${W}" width="${W}" height="${W}"><defs><clipPath id="${id}c"><circle cx="${R}" cy="${R}" r="${R}"/></clipPath></defs><g clip-path="url(#${id}c)">${inner}</g></svg>`; }
 function printSVG(d, id) { return S.style === 'A' ? designA(d, id) : designB(d, id); }
@@ -95,38 +95,33 @@ function renderControls() {
 }
 
 /* ---------- Christmas tree scene ---------- */
-function treeScene(baubleSvg) {
-  const lights = [], deco = [];
-  const rnd = (i => () => (i = (i * 9301 + 49297) % 233280) / 233280)(7);
-  const tiers = [[300, 120, 175, 260], [300, 215, 235, 380], [300, 320, 290, 500], [300, 430, 340, 620]]; // cx, top y, half width, bottom y
-  let tree = '';
-  tiers.forEach(([cx, ty, hw, by], i) => {
-    tree += `<path d="M${cx},${ty} C${cx - hw * 0.35},${ty + (by - ty) * 0.45} ${cx - hw * 0.8},${by - 40} ${cx - hw},${by} Q${cx - hw * 0.5},${by + 22} ${cx},${by + 8} Q${cx + hw * 0.5},${by + 22} ${cx + hw},${by} C${cx + hw * 0.8},${by - 40} ${cx + hw * 0.35},${ty + (by - ty) * 0.45} ${cx},${ty} Z" fill="url(#tg${i % 2})"/>`;
-    tree += `<path d="M${cx - hw * 0.82},${by - 30} Q${cx},${by + 18} ${cx + hw * 0.82},${by - 30}" fill="none" stroke="${GOLD}" stroke-width="2.5" opacity=".75"/>`;
-    for (let k = 0; k < 9 + i * 3; k++) { const yy = ty + 30 + rnd() * (by - ty - 30), half = hw * (yy - ty) / (by - ty) * 0.92, xx = cx - half + rnd() * half * 2;
-      lights.push(`<circle cx="${f1(xx)}" cy="${f1(yy)}" r="${f1(3 + rnd() * 2.5)}" fill="#FFE9A8" class="tw" style="animation-delay:${f1(rnd() * 3)}s"/>`); }
-  });
-  const decoPos = [[230, 300, '#B8862B'], [380, 260, '#7A1F2B'], [205, 450, '#F6F1E7'], [420, 420, '#B8862B'], [150, 585, '#7A1F2B'], [470, 570, '#F6F1E7'], [330, 560, '#B8862B']];
-  decoPos.forEach(([x, y, c]) => deco.push(`<line x1="${x}" y1="${y - 26}" x2="${x}" y2="${y - 14}" stroke="${GOLD}" stroke-width="2"/><circle cx="${x}" cy="${y}" r="14" fill="${c}"/><circle cx="${x - 4}" cy="${y - 5}" r="4" fill="#fff" opacity=".35"/>`));
-  const inner = baubleSvg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '').replace(/id="([^"]+)c"/g, 'id="tr$1c"').replace(/url\(#([^)]+)c\)/g, 'url(#tr$1c)');
-  return `<svg viewBox="0 0 600 720" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Your bauble hanging on a Christmas tree">
-  <defs><radialGradient id="room" cx="50%" cy="38%" r="75%"><stop offset="0" stop-color="#2A4A3A"/><stop offset=".7" stop-color="#0F2A20"/><stop offset="1" stop-color="#08170F"/></radialGradient>
-  <linearGradient id="tg0" x1="0" x2="1"><stop offset="0" stop-color="#0B3B23"/><stop offset=".5" stop-color="#17603A"/><stop offset="1" stop-color="#0A3320"/></linearGradient>
-  <linearGradient id="tg1" x1="0" x2="1"><stop offset="0" stop-color="#0A3520"/><stop offset=".5" stop-color="#145634"/><stop offset="1" stop-color="#092E1C"/></linearGradient>
-  <radialGradient id="glow"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".55"/><stop offset="1" stop-color="#FFE9A8" stop-opacity="0"/></radialGradient>
-  <radialGradient id="gloss" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></radialGradient></defs>
-  <rect width="600" height="720" fill="url(#room)"/>
-  ${[[70, 120, 40], [530, 90, 55], [560, 330, 35], [40, 420, 45], [520, 560, 40]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="url(#glow)" class="tw" style="animation-duration:5s"/>`).join('')}
-  <rect x="282" y="620" width="36" height="55" fill="#4A2E1C"/><path d="M215,668 h170 l-14,46 h-142 z" fill="#7A1F2B"/><path d="M215,668 h170" stroke="${GOLD}" stroke-width="3"/>
-  ${tree}${lights.join('')}${deco.join('')}
-  <polygon points="300,78 309,104 336,104 314,120 322,146 300,130 278,146 286,120 264,104 291,104" fill="${GOLD}"/><circle cx="300" cy="112" r="38" fill="url(#glow)"/>
-  <g class="swing" style="transform-origin:300px 300px">
-    <path d="M300,300 L300,352" stroke="#B3121F" stroke-width="5"/><path d="M300,302 c-14,-14 -28,-2 -14,8 M300,302 c14,-14 28,-2 14,8" fill="none" stroke="#B3121F" stroke-width="5"/>
-    <rect x="290" y="350" width="20" height="14" rx="3" fill="${GOLD}"/>
-    <circle cx="300" cy="462" r="128" fill="url(#glow)"/>
-    <g transform="translate(200,362) scale(${f1(200 / 990 * 1000) / 1000})">${inner}</g>
-    <circle cx="300" cy="462" r="100" fill="url(#gloss)"/>
-    <circle cx="300" cy="462" r="100.5" fill="none" stroke="${GOLD}" stroke-width="2" opacity=".85"/>
+function treeScene(baubleSvg) {   // Alex 5 Nov: realistic tree, bauble life-size (7.5 cm) next to real decorations
+  // Photo: AI-made for ZANS (FLUX.1 Krea), /img/bauble-tree-scene.jpg 864x1072. Our bauble hangs where the photo's red ball was.
+  const cx = 608, cy = 576, r = 136, top = cy - r;
+  const inner = baubleSvg.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '').replace(/id="([^"]+)"/g, 'id="tr$1"').replace(/url\(#([^)]+)\)/g, 'url(#tr$1)');
+  const RIB = '#A3101C', RIB2 = '#D42A35';
+  return `<svg viewBox="170 170 694 860" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Your bauble hanging on a real Christmas tree, shown life-size next to other decorations">
+  <defs>
+    <radialGradient id="glaze" cx="32%" cy="26%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset=".22" stop-color="#fff" stop-opacity=".08"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".30"/></radialGradient>
+    <linearGradient id="streak" x1="0" y1="0" x2="1" y2="1"><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset=".42" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="rib" x1="0" x2="1"><stop offset="0" stop-color="${RIB}"/><stop offset=".5" stop-color="${RIB2}"/><stop offset="1" stop-color="${RIB}"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur in="SourceAlpha" stdDeviation="10"/><feOffset dx="10" dy="16"/><feComponentTransfer><feFuncA type="linear" slope=".55"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="disc"><circle cx="${cx}" cy="${cy}" r="${r}"/></clipPath>
+  </defs>
+  <image href="/img/bauble-tree-scene.jpg" x="0" y="0" width="864" height="1072" preserveAspectRatio="xMidYMid slice"/>
+  <g class="swing" style="transform-origin:605px 345px">
+    <path d="M603,348 C597,380 596,412 600,${top + 20} M607,348 C613,380 614,412 610,${top + 20}" fill="none" stroke="url(#rib)" stroke-width="6" stroke-linecap="round"/><path d="M596,352 q9,-14 18,0" fill="none" stroke="${RIB}" stroke-width="6" stroke-linecap="round"/>
+    <g filter="url(#shadow)">
+      <circle cx="${cx + 5}" cy="${cy + 6}" r="${r}" fill="#CFC5B4"/>
+      <g clip-path="url(#disc)"><g transform="translate(${cx - r},${cy - r}) scale(${f1(2 * r / 990 * 1000) / 1000})">${inner}</g>
+        <rect x="${cx - r}" y="${cy - r}" width="${2 * r}" height="${2 * r}" fill="#FFB060" opacity=".07"/>
+        <circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#glaze)"/><rect x="${cx - r}" y="${cy - r}" width="${2 * r}" height="${2 * r}" fill="url(#streak)"/></g>
+      <circle cx="${cx}" cy="${cy}" r="${r - 0.8}" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.6"/>
+    </g>
+    <circle cx="${cx}" cy="${top + 20}" r="8" fill="#14110E" stroke="#E8E0D0" stroke-width="2"/>
+    <path d="M605,${top - 8} c-30,-26 -62,-14 -52,6 c8,14 36,8 52,-6 z M605,${top - 8} c30,-26 62,-14 52,6 c-8,14 -36,8 -52,-6 z" fill="url(#rib)" stroke="#7E0B15" stroke-width="1.5"/>
+    <path d="M600,${top - 4} l-22,38 l12,-4 l6,12 z M610,${top - 4} l22,38 l-12,-4 l-6,12 z" fill="${RIB}" stroke="#7E0B15" stroke-width="1.2"/>
+    <rect x="596" y="${top - 18}" width="18" height="18" rx="5" fill="${RIB2}" stroke="#7E0B15" stroke-width="1.5"/>
   </g></svg>`;
 }
 
