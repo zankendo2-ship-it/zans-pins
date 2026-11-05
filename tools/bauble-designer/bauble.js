@@ -54,7 +54,13 @@ function svgWrap(id, inner) { return `<svg xmlns="http://www.w3.org/2000/svg" xm
 function printSVG(d, id) { return S.style === 'A' ? designA(d, id) : designB(d, id); }
 
 /* ---------- state ---------- */
-const S = { style: 'A', pat: 'hoops', body: 'hoops', c1: '#0E6B3B', c2: '#F5D130', sleeves: 'plain', capCol: '#C8102E', name: 'Lucky Lady', view: 'flat', scene: 'soft' };
+// Christmas starting designs (Alex 5 Nov): Snow Dancer on the silks bauble, Starry Night on the racing green bauble.
+// Names checked: no famous racehorse of either name. Colours: Christmas red, white, gold, racing green (never green + pink).
+const DEF = {
+  A: { pat: 'stars', body: 'stars', c1: '#C8102E', c2: '#FFFFFF', sleeves: 'plain', capCol: '#0E6B3B', name: 'Snow Dancer' },
+  B: { pat: 'stars', body: 'stars', c1: '#C8102E', c2: '#F5D130', sleeves: 'plain', capCol: '#F5D130', name: 'Starry Night' } };
+const untouched = () => Object.keys(DEF[S.style]).every(k => S[k] === DEF[S.style][k]);
+const S = Object.assign({ style: 'A', view: 'flat', scene: 'soft' }, DEF.A);
 function design() {
   const n = Z.checkName(S.name);
   const d = Z.normalise({ layout: 'B', body: S.style === 'A' ? S.pat : S.body, allover: S.pat, c1: S.c1, c2: S.c2, sleeves: S.sleeves, cap: 'contrast', k1: S.capCol, k2: S.capCol });
@@ -77,8 +83,8 @@ const PRESETS = [['Green and yellow hoops, red cap','hoops','#0E6B3B','#F5D130',
 function renderControls() {
   const SB = $('styles'); SB.innerHTML = '';
   [['A', 'Silks bauble', 'Your silks all over, a jockey cap across the top, your name on a cream plate'], ['B', 'Racing green bauble', 'Racing green and gold, your jersey and cap, your name in gold, Merry Christmas']].forEach(([k, t, s]) => {
-    const d = design(); const svg = (k === 'A' ? designA : designB)(Object.assign({}, d, { allover: S.pat, body: k === 'A' ? S.pat : S.body }), 'st' + k);
-    SB.appendChild(optBtn(`<div class="mx-auto" style="max-width:120px">${svg}</div><div class="disp font-semibold mt-2">${t}</div><div class="hint text-sm">${s}</div>`, S.style === k, () => { S.style = k; render(); }));
+    const d = design(), u = untouched() ? DEF[k] : null; const svg = (k === 'A' ? designA : designB)(Object.assign({}, d, u ? { allover: u.pat, body: u.body, c1: u.c1, c2: u.c2, sleeves: u.sleeves, capCol: u.capCol, k1: u.capCol, k2: u.capCol, name: u.name.toUpperCase() } : { allover: S.pat, body: k === 'A' ? S.pat : S.body }), 'st' + k);
+    SB.appendChild(optBtn(`<div class="mx-auto" style="max-width:120px">${svg}</div><div class="disp font-semibold mt-2">${t}</div><div class="hint text-sm">${s}</div>`, S.style === k, () => { if (S.style !== k) { if (untouched()) Object.assign(S, DEF[k]); else if (S.name === DEF[S.style].name) S.name = DEF[k].name; } S.style = k; render(); }));
   });
   const PR = $('presets'); PR.innerHTML = '';
   PRESETS.forEach(([lab, p, a, b, cap], i) => {
@@ -91,6 +97,7 @@ function renderControls() {
   $('pick1').value = S.c1; $('pick2').value = S.c2; $('capcol').value = S.capCol;
   $('sleevestep').hidden = S.style !== 'B';
   const SL = $('sleeves'); SL.innerHTML = ''; Z.SLEEVES.forEach(p => SL.appendChild(chip(p === 'plain' ? 'Same as jersey' : Z.NAMES[p], S.sleeves === p, () => { S.sleeves = p; render(); })));
+  if (document.activeElement !== $('name') && $('name').value !== S.name) $('name').value = S.name;
   $('count').textContent = `${(S.name || '').length}/28`;
 }
 
@@ -128,9 +135,9 @@ function render() {
   $('copy').disabled = !n.ok; $('copy').style.opacity = n.ok ? 1 : .45;
   $('vflat').setAttribute('aria-pressed', S.view === 'flat'); $('vtree').setAttribute('aria-pressed', S.view === 'tree');
   $('flatwrap').hidden = S.view !== 'flat'; $('treewrap').hidden = S.view !== 'tree';
-  try { localStorage.setItem('zans_bauble_design', JSON.stringify(S)); } catch (e) {}
+  try { localStorage.setItem('zans_bauble_design_v2', JSON.stringify(S)); } catch (e) {}
 }
-try { const saved = JSON.parse(localStorage.getItem('zans_bauble_design') || 'null'); if (saved) Object.assign(S, saved); } catch (e) {}
+try { const saved = JSON.parse(localStorage.getItem('zans_bauble_design_v2') || 'null'); if (saved) Object.assign(S, saved); } catch (e) {}
 $('name').value = S.name;
 $('name').addEventListener('input', e => { S.name = e.target.value; render(); });
 $('pick1').addEventListener('input', e => { S.c1 = e.target.value.toUpperCase(); render(); });
@@ -191,7 +198,7 @@ window.ZANSBauble = {
   }
   function check() {   // fade out stars that sit over anything people tap or look at
     cv.style.visibility = 'hidden';
-    for (const s of stars) { const el = document.elementFromPoint(s.x, s.y); s.ok = !(el && el.closest(KEEP_CLEAR)); }
+    for (const s of stars) { const d = s.r * 1.6; s.ok = [[0, 0], [d, 0], [-d, 0], [0, d], [0, -d]].every(([dx, dy]) => { const el = document.elementFromPoint(s.x + dx, s.y + dy); return !(el && el.closest(KEEP_CLEAR)); }); }
     cv.style.visibility = '';
   }
   // Realistic glint: soft warm glow, thin light spikes that taper out, bright white core (pre-drawn once, then stamped)
