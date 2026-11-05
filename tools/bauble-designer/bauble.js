@@ -178,15 +178,15 @@ window.ZANSBauble = {
   document.body.appendChild(cv);
   const ctx = cv.getContext('2d'); if (!ctx) return;
   const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const COLS = ['#B8892E', '#C9A646', '#D4AF37', '#E7C873'];
+  const COLS = ['#B8862B', '#C99A2E', '#D4A93A', '#A97A22'];
   const KEEP_CLEAR = 'p,h1,h2,.lbl,button,input,label,a,img,svg,canvas:not(#sparkles),select,.codebox,.ball,.tree,.opt,.xmasmsg,.zlogo';
   let W, H, dpr, stars = [];
   function size() {
     dpr = Math.min(window.devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight;
     cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.round(Math.min(80, Math.max(40, W * H / 7000)));
-    stars = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, r: 8 + Math.random() * 8,
-      c: COLS[Math.random() * COLS.length | 0], ph: Math.random() * 6.28, sp: .6 + Math.random() * 1.4, dy: .04 + Math.random() * .14, ok: 1, vis: 1 }));
+    const n = Math.round(Math.min(90, Math.max(45, W * H / 6500)));
+    stars = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, r: 4 + 14 * Math.random() ** 2.2, rot: Math.random() * .5 - .25,
+      c: COLS[Math.random() * COLS.length | 0], ph: Math.random() * 6.28, sp: .5 + Math.random() * 1.1, dy: .04 + Math.random() * .14, ok: 1, vis: 1 }));
     check();
   }
   function check() {   // fade out stars that sit over anything people tap or look at
@@ -194,19 +194,32 @@ window.ZANSBauble = {
     for (const s of stars) { const el = document.elementFromPoint(s.x, s.y); s.ok = !(el && el.closest(KEEP_CLEAR)); }
     cv.style.visibility = '';
   }
-  function star(x, y, r, a, c) {
-    ctx.globalAlpha = a; ctx.fillStyle = c; ctx.beginPath();
-    ctx.moveTo(x, y - r); ctx.quadraticCurveTo(x, y, x + r, y); ctx.quadraticCurveTo(x, y, x, y + r);
-    ctx.quadraticCurveTo(x, y, x - r, y); ctx.quadraticCurveTo(x, y, x, y - r); ctx.fill();
-    ctx.fillStyle = '#FFF8DC'; ctx.globalAlpha = a; ctx.beginPath(); ctx.arc(x, y, r * .22, 0, 6.28); ctx.fill();
+  // Realistic glint: soft warm glow, thin light spikes that taper out, bright white core (pre-drawn once, then stamped)
+  const SPR = {};
+  function sprite(c) {
+    if (SPR[c]) return SPR[c];
+    const N = 128, m = N / 2, o = document.createElement('canvas'); o.width = o.height = N; const g = o.getContext('2d');
+    let rg = g.createRadialGradient(m, m, 0, m, m, m * .55); rg.addColorStop(0, c + 'DD'); rg.addColorStop(.3, c + '66'); rg.addColorStop(1, c + '00');
+    g.fillStyle = rg; g.fillRect(0, 0, N, N);
+    const spike = (ang, len, wid, al) => { g.save(); g.translate(m, m); g.rotate(ang);
+      const lg = g.createLinearGradient(-len, 0, len, 0); lg.addColorStop(0, c + '00'); lg.addColorStop(.42, c + Math.round(al * 255).toString(16).padStart(2, '0')); lg.addColorStop(.5, `rgba(255,250,225,${al})`); lg.addColorStop(.58, c + Math.round(al * 255).toString(16).padStart(2, '0')); lg.addColorStop(1, c + '00');
+      g.fillStyle = lg; g.beginPath(); g.moveTo(-len, 0); g.lineTo(0, -wid); g.lineTo(len, 0); g.lineTo(0, wid); g.closePath(); g.fill(); g.restore(); };
+    spike(0, m * .98, 2.6, 1); spike(Math.PI / 2, m * .98, 2.6, 1); spike(Math.PI / 4, m * .5, 1.6, .7); spike(-Math.PI / 4, m * .5, 1.6, .7);
+    rg = g.createRadialGradient(m, m, 0, m, m, 9); rg.addColorStop(0, 'rgba(255,255,255,1)'); rg.addColorStop(.4, 'rgba(255,246,210,.9)'); rg.addColorStop(1, 'rgba(255,240,200,0)');
+    g.fillStyle = rg; g.beginPath(); g.arc(m, m, 9, 0, 6.29); g.fill();
+    return SPR[c] = o;
+  }
+  function star(x, y, r, a, c, rot) {
+    const im = sprite(c), d = r * 4; ctx.globalAlpha = a;
+    ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.drawImage(im, -d / 2, -d / 2, d, d); ctx.restore();
   }
   function draw(t) {
     ctx.clearRect(0, 0, W, H);
     for (const s of stars) {
-      const tw = still ? .8 : .25 + .75 * Math.max(0, Math.sin(t / 1000 * s.sp + s.ph)) ** 2;
+      const tw = still ? .8 : .35 + .65 * Math.max(0, Math.sin(t / 1000 * s.sp + s.ph)) ** 4; // short bright glint, then rest
       s.vis += ((s.ok ? 1 : 0) - s.vis) * .15;
       if (!still) { s.y += s.dy; if (s.y > H + 10) { s.y = -10; s.x = Math.random() * W; } }
-      const a = tw * s.vis; if (a > .03) star(s.x, s.y, s.r * (.7 + .3 * tw), a, s.c);
+      const a = tw * s.vis; if (a > .03) star(s.x, s.y, s.r * (.55 + .45 * tw), a, s.c, s.rot + tw * .15);
     }
   }
   let last = 0, lastCheck = 0, raf = 0;
