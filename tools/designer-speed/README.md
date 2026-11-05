@@ -28,3 +28,10 @@ commits the rebuilt CSS and asks GitHub Pages to rebuild (about a minute).
 - `swap_css.py` - rebuilds the CSS block from the page itself.
 - `compare.cjs` + `.github/workflows/designer-compare.yml` - real-Chrome old v new comparison and Lighthouse runs
   (trigger: add a line to `request.txt` on branch claude/project-thread-oy3858). Reports in reports/designer-compare/.
+
+## Reports kept on the branch
+
+Each run in reports/designer-compare/<stamp>/ keeps summary.md, report.json and lighthouse/summary.md. The final run
+before publishing (20261104_2353) also keeps its Lighthouse JSON files and the difference pictures for the published
+page (B). Every picture from every run is still in the git history of claude/project-thread-oy3858 (commits
+"Mug designer old v new <stamp>"). From now on the workflow commits only difference pictures.

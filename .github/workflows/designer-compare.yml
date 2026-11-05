@@ -74,6 +74,9 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
+          # Keep the record small: summaries, data and Lighthouse files, plus pictures only where something differed
+          # (*diff.png). The full picture set is in the run's log only while the runner is alive.
+          find reports/designer-compare -name '*.png' ! -name '*diff.png' -delete
           git add reports/designer-compare
           git commit -m "Mug designer old v new $STAMP" || exit 0
           for i in 1 2 3 4; do git pull --rebase -q && git push && break; sleep $((i*5)); done
