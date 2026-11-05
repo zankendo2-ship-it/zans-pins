@@ -949,7 +949,7 @@ function render(){
   const d=design(); const svg=Z.printFile(d,MUG,'Jost',LOGO);
   $('flat').innerHTML=svg;
   paintTexture(svg);
-  if (insideMat){ const hc=new THREE.Color(Z.HANDLE_COLOURS[d.handlePick]); insideMat.color=hc; handleMat.color=hc; wake(); }
+  if (insideMat){ const hhex=Z.HANDLE_COLOURS[d.handlePick]||'#000000'; const hc=new THREE.Color(hhex).convertSRGBToLinear(); insideMat.color=hc; handleMat.color=hc; wake(); }
   $('code').textContent=Z.toCode(d);
   const n=Z.checkName(S.name), dc=Z.checkDesign(d);
   $('nameerr').textContent = n.ok ? '' : n.error;
