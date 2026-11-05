@@ -30,3 +30,4 @@
 @keyframes zshine{0%,15%{background-position:100% 0}60%,100%{background-position:0 0}}
 @keyframes ztwinkle{0%,100%{opacity:0;transform:scale(.3)}45%{opacity:1;transform:scale(1)}75%{opacity:0;transform:scale(.5)}}
 @media (prefers-reduced-motion:reduce){.xmasmsg .big,.xmasmsg .sp{position:absolute;width:12px;height:12px;background:#FFF4C9;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);filter:drop-shadow(0 0 3px #FFF4C9);opacity:0;animation:ztwinkle 3.6s ease-in-out infinite}.xmasmsg .sp{position:absolute;width:12px;height:12px;background:#FFF4C9;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);filter:drop-shadow(0 0 3px #FFF4C9);opacity:0;animation:ztwinkle 3.6s ease-in-out infinite}}
+#sparkles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
