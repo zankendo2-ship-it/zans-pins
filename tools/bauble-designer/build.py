@@ -13,7 +13,7 @@ TITLE = 'Personalised Horse Racing Christmas Bauble in Your Silks | ZANS'
 DESC = "Design a personalised horse racing Christmas bauble in your own jockey silks with your horse's name, then see it on a Christmas tree. Printed in the UK."
 head = re.sub(r'<title>.*?</title>', f'<title>{TITLE}</title>', head)
 head = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{DESC}">', head)
-head = head.replace('https://www.zanshorseracing.co.uk/mug-designer/', URL)
+head = head.replace('https://www.zanshorseracing.co.uk/mug-designer/', URL).replace('/img/zans-gifts-share.jpg', '/img/zans-bauble-share.jpg')
 head = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="Personalised Horse Racing Christmas Bauble in Your Silks">', head)
 head = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{DESC}">', head)
 # schema: breadcrumb for this page

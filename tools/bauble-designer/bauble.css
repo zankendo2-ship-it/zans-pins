@@ -21,3 +21,5 @@
 
 #code{white-space:nowrap;overflow-x:auto;word-break:normal;font-size:clamp(10px,3.1vw,13px)}
 .viewtabs .opt{min-height:44px}
+.xmas .zlogo{width:180px}
+.xmasmsg{font-family:var(--display);font-weight:500;letter-spacing:.06em;margin-top:8px;font-size:15px;white-space:nowrap}
