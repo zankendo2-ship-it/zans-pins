@@ -196,7 +196,55 @@ a.tile{text-decoration:none;display:block}
 @media (max-width:560px){.tbl th,.tbl td{padding:8px 6px;font-size:15px}.tbl td.t{font-size:14px}}
 </style>
 </head><body>
-<div class="flagbar"><div class="in"><img class="flag" src="/img/flags/gb-eng.svg" alt="England flag" width="40" height="30"><img class="flag" src="/img/flags/ie.svg" alt="Ireland flag" width="40" height="30"><img class="flag" src="/img/flags/gb-sct.svg" alt="Scotland flag" width="40" height="30"><img class="flag" src="/img/flags/gb-wls.svg" alt="Wales flag" width="40" height="30"><img class="flag" src="/img/flags/gb.svg" alt="Great Britain flag" width="40" height="30"><img class="flag" src="/img/flags/us.svg" alt="USA flag" width="40" height="30"><img class="flag" src="/img/flags/jp.svg" alt="Japan flag" width="40" height="30"></div></div><header class="bar"><div class="in"><a class="brand" href="/#top"><img src="/img/zans-logo-180.jpg" alt="ZANS Racing horse racing guides" width="60" height="58"><span>ZANS Racing<small>Horse racing guides</small></span></a>
+<style id="zans-topbanner">/* top banner: Days to Christmas + Starry Night take turns (replaced the flags bar 6 Nov 2026) */
+.zbn{position:relative;display:grid;container-type:inline-size;font-family:'Jost','Jost Fallback',system-ui,sans-serif}
+.zbn>a{grid-area:1/1;display:flex;align-items:center;justify-content:center;gap:14px;padding:8px max(16px,env(safe-area-inset-left,0px)) 8px max(16px,env(safe-area-inset-right,0px));text-decoration:none;opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s}
+.zbn>a.on{opacity:1;visibility:visible}
+.zbn>a:focus-visible{outline:3px solid #E8C35A;outline-offset:-3px}
+.zbn .zs{width:50px;height:41px;object-fit:contain;background:#EFEAE4;border-radius:6px;flex:none}
+.zbn .zt{min-width:0;text-align:left}
+.zbn .zt b{display:block;font-weight:600;font-size:14px;letter-spacing:.2em;text-transform:uppercase}
+.zbn .zt small{font:400 13.5px/1.3 'Source Sans 3','Source Sans 3 Fallback',system-ui,sans-serif}
+.zbn .zbtn{font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;padding:8px 14px;border-radius:3px;flex:none;background:linear-gradient(135deg,#8a6a1c,#f1d27a 45%,#9c7a24 70%,#e2bd5a);color:#1C1C1C}
+.zbn .zcd{grid-area:1/1;background:linear-gradient(90deg,#7d1219,#B3202A 50%,#7d1219);color:#fff;border-top:2px solid #E8C35A;border-bottom:2px solid #E8C35A}
+.zbn .zdig{display:flex;gap:4px;flex:none}
+.zbn .zdig span{font-weight:700;font-size:24px;line-height:1;background:#2a0a0d;color:#E8C35A;border:1px solid #E8C35A;border-radius:3px;padding:6px 7px;font-variant-numeric:tabular-nums}
+.zbn .zsn{background-color:#101c3a;background-image:radial-gradient(circle,#E8C35A 1.1px,transparent 1.6px),radial-gradient(circle,rgba(232,195,90,.55) .8px,transparent 1.3px);background-size:46px 34px,29px 23px;background-position:0 0,13px 9px;color:#F3EDE5;border-top:2px solid #E8C35A;border-bottom:2px solid #E8C35A}
+.zbn .zsn .zi{display:flex;align-items:center;justify-content:center;gap:16px;padding:4px 14px;border-radius:40px;background:radial-gradient(ellipse at center,rgba(16,28,58,.95) 40%,rgba(16,28,58,.4) 85%);min-width:0}
+.zbn .zsn .zt{text-align:center}
+.zbn .zsn .zt b{color:#E8C35A;font-size:15px}
+.zbn .zbb{display:flex;gap:6px;flex:none}
+.zbn .zbb img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #E8C35A}
+.zbn .zdots{position:absolute;right:8px;bottom:4px;display:flex;gap:4px;pointer-events:none}
+.zbn .zdots i{width:5px;height:5px;border-radius:50%;border:1px solid rgba(232,195,90,.9)}
+.zbn .zdots i.on{background:#E8C35A}
+@container (max-width:520px){
+.zbn>a{gap:8px;padding-block:7px}
+.zbn .zcd .zs{display:none}
+.zbn .zdig span{font-size:19px;padding:5px}
+.zbn .zt b{font-size:11.5px;letter-spacing:.1em}
+.zbn .zt small{font-size:12px;display:block}
+.zbn .zbtn{font-size:11px;padding:7px 8px;letter-spacing:.05em}
+.zbn .zsn .zi{gap:9px;padding:2px 6px}
+.zbn .zbb img{width:38px;height:38px}.zbn .zbb img+img{display:none}
+.zbn .zsn .zs{width:40px;height:33px}
+.zbn .zsn .zt b{font-size:12px}}
+@media (prefers-reduced-motion:reduce){.zbn>a{transition:none}}
+</style>
+<div class="zbn" role="region" aria-label="Christmas offers">
+<a class="zcd on" href="/bauble-designer/"><img class="zs" src="/img/banner-santa.webp" alt="ZANS logo in a Santa hat" width="50" height="41"><span class="zdig" aria-hidden="true"><span>4</span><span>9</span></span><span class="zt"><b><span class="zn">49</span> <span class="zw">days</span> to Christmas</b><small>Silks baubles and mugs · £16.99 · Free UK delivery</small></span><span class="zbtn">Shop now</span></a>
+<a class="zsn" href="/bauble-designer/"><span class="zi"><span class="zbb"><img src="/img/banner-bauble-winter.webp" alt="Winter Winner silks bauble" width="46" height="46"><img src="/img/banner-bauble-tinsel.webp" alt="Tinsel Turf silks bauble" width="46" height="46"></span><span class="zt"><b>Hang your colours on the tree</b><small>Personalised silks baubles · £16.99 · Free UK delivery</small></span><img class="zs" src="/img/banner-santa.webp" alt="ZANS logo in a Santa hat" width="50" height="41"></span></a>
+<span class="zdots" aria-hidden="true"><i class="on"></i><i></i></span>
+</div>
+<script>(function(){var b=document.currentScript.previousElementSibling;
+try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+var g=function(t){return +p.filter(function(x){return x.type===t})[0].value},y=g('year'),t=Date.UTC(y,g('month')-1,g('day')),x=Date.UTC(y,11,25);
+if(t>x)x=Date.UTC(y+1,11,25);var n=Math.round((x-t)/864e5);
+if(n===0){b.querySelector('.zt b').textContent='Merry Christmas from ZANS';b.querySelector('.zdig').style.display='none'}
+else{var s=String(n).padStart(2,'0');b.querySelector('.zdig').innerHTML=s.split('').map(function(c){return '<span>'+c+'</span>'}).join('');b.querySelector('.zn').textContent=n;b.querySelector('.zw').textContent=n===1?'day':'days'}}catch(e){}
+var a=b.querySelectorAll(':scope>a'),d=b.querySelectorAll('.zdots i'),i=0;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){a[i].classList.remove('on');d[i].classList.remove('on');i=(i+1)%a.length;a[i].classList.add('on');d[i].classList.add('on')},6000);})();</script><header class="bar"><div class="in"><a class="brand" href="/#top"><img src="/img/zans-logo-180.jpg" alt="ZANS Racing horse racing guides" width="60" height="58"><span>ZANS Racing<small>Horse racing guides</small></span></a>
 <nav><a href="/horse-racing-gifts/">Gifts</a><a href="/mug-designer/">Silks mugs</a><a href="/#breeders-cup">Breeders&#39; Cup</a><a href="/articles/breeders-cup-uk-times/">UK times</a><a href="/#guides">Ascot</a><a href="/#about">About</a><a class="shop" href="https://www.etsy.com/uk/shop/ZANSRacingTools" target="_blank" rel="noopener">Etsy shop</a></nav></div></header>
 <main id="top"><section class="pagehero"><div class="in"><p class="crumbs"><a href="/">Home</a> › Breeders&#39; Cup 2026 Guide</p><div class="bchead"><picture><source type="image/webp" srcset="/img/limited-edition-seal.webp 360w" sizes="220px"><img class="seal" src="/img/limited-edition-seal.png" alt="Limited Edition Breeders&#39; Cup 2026 gold seal" width="360" height="360"></picture><div>
 <h1>Breeders&#39; Cup 2026 Guide: Keeneland, 30-31 October</h1><p class="lede">Our Breeders&#39; Cup guide PDF puts all 14 Keeneland races in UK time, shows the main contenders in every race, and lists every runner with its colours, trainer and jockey. Choose the Beginner, Advanced or Pro edition.</p></div></div></div></section>
