@@ -805,18 +805,19 @@ function logoTab(cy, w) { return `<rect x="${R - w / 2 - 14}" y="${f1(cy - w * 0
 function designA(d, id) {
   const pat = Z.fillPattern(d.allover, d.c1, d.c2, 0, 0, W, W, scaleFor(d.allover));
   const n = fit(d.name, 640, 210, 120, 0.03), ink = Z.darkOf(d);
-  const h = n.lines.length * n.fs * 1.05 + 70, y = 560 - h / 2;
+  const h = n.lines.length * n.fs * 1.05 + 120, y = 545 - h / 2;
   let t = `<rect x="${R - 380}" y="${f1(y)}" width="760" height="${f1(h)}" rx="${f1(Math.min(90, h / 2))}" fill="${CREAM}" stroke="${GOLD}" stroke-width="12"/>`;
   n.lines.forEach((l, i) => { t += `<text x="${R}" y="${f1(y + 35 + n.fs * 0.86 + i * n.fs * 1.05)}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${f1(n.fs)}" letter-spacing="${f1(n.fs * 0.03)}" fill="${ink}">${esc(l)}</text>`; });
+  t += `<text x="${R}" y="${f1(y + h - 34)}" text-anchor="middle" font-family="Jost" font-weight="600" font-size="32" letter-spacing="9.6" fill="${ink}">MERRY CHRISTMAS</text>`;
   return svgWrap(id, pat + capTop(d.capCol) + `<circle cx="${R}" cy="${R}" r="${R - 26}" fill="none" stroke="${GOLD}" stroke-width="14"/>` + t + logoTab(860, 280));
 }
 function designB(d, id) {
   const jd = Object.assign({}, d, { cap: 'contrast', k1: d.capCol, k2: d.capCol });
   const n = fit(d.name, 600, 150, 96, 0.04);
-  let t = ''; const top = n.lines.length === 1 ? 770 : 735;
+  let t = ''; const one = n.lines.length === 1, top = one ? 715 : 680;
   n.lines.forEach((l, i) => { t += `<text x="${R}" y="${f1(top + i * n.fs * 1.02)}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${f1(n.fs)}" letter-spacing="${f1(n.fs * 0.04)}" fill="${GOLD}">${esc(l)}</text>`; });
-  const mc = `<text x="${R}" y="${n.lines.length === 1 ? 860 : 875}" text-anchor="middle" font-family="Jost" font-weight="600" font-size="30" letter-spacing="9.6" fill="${GOLD}">MERRY CHRISTMAS</text>`;
-  return svgWrap(id, `<defs><filter id="${id}ol" x="-15%" y="-15%" width="130%" height="130%"><feMorphology in="SourceAlpha" operator="dilate" radius="9" result="d"/><feFlood flood-color="${GOLD}"/><feComposite in2="d" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="${W}" height="${W}" fill="${RGREEN}"/><circle cx="${R}" cy="${R}" r="${R - 26}" fill="none" stroke="${GOLD}" stroke-width="8"/><circle cx="${R}" cy="${R}" r="${R - 44}" fill="none" stroke="${GOLD}" stroke-width="2"/>` + `<g filter="url(#${id}ol)">` + jerseyAt(jd, R, n.lines.length === 1 ? 430 : 400, n.lines.length === 1 ? 420 : 380, id + 'j') + '</g>' + t + mc);
+  const mc = `<text x="${R}" y="${one ? 795 : 830}" text-anchor="middle" font-family="Jost" font-weight="600" font-size="30" letter-spacing="9.6" fill="${GOLD}">MERRY CHRISTMAS</text>`;
+  return svgWrap(id, `<defs><filter id="${id}ol" x="-15%" y="-15%" width="130%" height="130%"><feMorphology in="SourceAlpha" operator="dilate" radius="9" result="d"/><feFlood flood-color="${GOLD}"/><feComposite in2="d" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="${W}" height="${W}" fill="${RGREEN}"/><circle cx="${R}" cy="${R}" r="${R - 26}" fill="none" stroke="${GOLD}" stroke-width="8"/><circle cx="${R}" cy="${R}" r="${R - 44}" fill="none" stroke="${GOLD}" stroke-width="2"/>` + `<g filter="url(#${id}ol)">` + jerseyAt(jd, R, one ? 395 : 365, one ? 380 : 340, id + 'j') + '</g>' + t + mc + logoTab(one ? 875 : 900, 240));
 }
 function svgWrap(id, inner) { return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${W}" width="${W}" height="${W}"><defs><clipPath id="${id}c"><circle cx="${R}" cy="${R}" r="${R}"/></clipPath></defs><g clip-path="url(#${id}c)">${inner}</g></svg>`; }
 function printSVG(d, id) { return S.style === 'A' ? designA(d, id) : designB(d, id); }
