@@ -80,7 +80,37 @@ function chip(text, pressed, onClick) { const b = optBtn(`<span class="text-sm f
 function swatches(el, key) { el.innerHTML = ''; Object.entries(Z.COLOURS).forEach(([n, h]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'sw'; b.style.background = h; b.title = n; b.setAttribute('aria-label', n); b.setAttribute('aria-pressed', S[key].toUpperCase() === h.toUpperCase()); b.onclick = () => { S[key] = h; render(); }; el.appendChild(b); }); }
 function miniA(p) { return `<svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="ma${p}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#ma${p})">${Z.fillPattern(p, S.c1, S.c2, 0, 0, 110, 110, scaleFor(p) * 0.35)}<rect width="110" height="22" fill="${S.capCol}"/></g><circle cx="55" cy="55" r="53" fill="none" stroke="${GOLD}" stroke-width="3"/></svg>`; }
 function miniB(p) { const d = Z.normalise({ layout: 'C', body: p, c1: S.c1, c2: S.c2, sleeves: S.sleeves, cap: 'contrast', k1: S.capCol, k2: S.capCol }); return `<svg viewBox="-290 -420 580 690" xmlns="http://www.w3.org/2000/svg">${Z.jersey(d, 'mb' + p)}</svg>`; }
-const PRESETS = [['Green and yellow hoops, red cap','hoops','#0E6B3B','#F5D130','#C8102E'],['Purple, yellow chevrons, black cap','chevrons','#5B2C83','#F5D130','#1C1C1C'],['Dark blue, orange diagonals, orange cap','diagonal','#1B2A5C','#E36414','#E36414'],['Red, white stars, white cap','stars','#C8102E','#FFFFFF','#FFFFFF'],['Yellow, black spots, black cap','spots','#F5D130','#1C1C1C','#1C1C1C'],['Royal blue and white check, red cap','checks','#1C4FA0','#FFFFFF','#C8102E'],['Maroon, light blue hoops, light blue cap','hoops','#8B1E3F','#7FB7E3','#7FB7E3'],['Emerald, white diamonds, white cap','diamonds','#0E6B3B','#FFFFFF','#FFFFFF']];
+// Popular colour schemes (Alex 6 Nov: the same as the mug designer, plus the two bauble photo designs first).
+// Mug ring colour = bauble cap colour; no ring = cap in the second colour. Colours only, never names.
+// Left out: the mug's "Pink, green spots" (no green + pink on ZANS presets - Juddmonte rule).
+const PRESETS = [
+  ['Red, white stars, green cap (Snow Dancer)','stars','#C8102E','#FFFFFF','#0E6B3B'],
+  ['Navy, gold stars, gold cap (Starry Night)','stars','#1B2A5C','#F5D130','#F5D130'],
+  ['Green and yellow hoops, white cap','hoops','#00843D','#F5D130','#FFFFFF'],
+  ['White and dark blue diamonds, red cap','diamonds','#FFFFFF','#0B3A5E','#C8102E'],
+  ['Yellow, white cap','plain','#F5D130','#1C1C1C','#FFFFFF'],
+  ['All white, black cap','plain','#FFFFFF','#1C1C1C','#1C1C1C'],
+  ['Yellow, three big black spots, black cap','spot_diag','#F5D130','#1C1C1C','#1C1C1C'],
+  ['Yellow, black spots, black cap','spots','#F5D130','#1C1C1C','#1C1C1C'],
+  ['Royal blue, white cap','plain','#1C4FA0','#FFFFFF','#FFFFFF'],
+  ['Green, blue sash, blue cap','sash','#00843D','#1C4FA0','#1C4FA0'],
+  ['Royal blue, orange discs, orange cap','disc','#1C4FA0','#E36414','#E36414'],
+  ['Purple, white seams, white cap','seams','#5B2C83','#FFFFFF','#FFFFFF'],
+  ['Mid blue, red cap','plain','#4A7FC1','#FFFFFF','#C8102E'],
+  ['Green, red cap','plain','#00843D','#FFFFFF','#C8102E'],
+  ['Red, white sashes, blue cap','sash','#C8102E','#FFFFFF','#1C4FA0'],
+  ['Purple, white diamonds, white cap','large_diamond','#5B2A86','#FFFFFF','#FFFFFF'],
+  ['Blue, white seams, white cap','seams','#1C4FA0','#FFFFFF','#FFFFFF'],
+  ['Yellow, dark blue cross belts, dark blue cap','cross_belts','#F5D130','#1B2A5C','#1B2A5C'],
+  ['Dark blue and yellow hoops, yellow cap','hoops','#1B2A5C','#F5D130','#F5D130'],
+  ['Red, black stars, black cap','stars','#C8102E','#1C1C1C','#1C1C1C'],
+  ['All grey, white cap','plain','#9AA0A6','#FFFFFF','#FFFFFF'],
+  ['Green and yellow hoops, red cap','hoops','#0E6B3B','#F5D130','#C8102E'],
+  ['Purple, yellow chevrons, black cap','chevrons','#5B2C83','#F5D130','#1C1C1C'],
+  ['Dark blue, orange diagonals, orange cap','diagonal','#1B2A5C','#E36414','#E36414'],
+  ['Royal blue and white check, red cap','checks','#1C4FA0','#FFFFFF','#C8102E'],
+  ['Maroon, light blue hoops, light blue cap','hoops','#8B1E3F','#7FB7E3','#7FB7E3'],
+  ['Emerald, white diamonds, white cap','diamonds','#0E6B3B','#FFFFFF','#FFFFFF']];
 function renderControls() {
   const SB = $('styles'); SB.innerHTML = '';
   [['A', 'Silks bauble', 'Your silks all over, a jockey cap across the top, your name on a cream plate'], ['B', 'Racing green bauble', 'Racing green and gold, your jersey and cap, your name in gold, Merry Christmas']].forEach(([k, t, s]) => {
@@ -90,10 +120,10 @@ function renderControls() {
   const PR = $('presets'); PR.innerHTML = '';
   PRESETS.forEach(([lab, p, a, b, cap], i) => {
     const on = S.pat === p && S.c1.toUpperCase() === a && S.c2.toUpperCase() === b && S.capCol.toUpperCase() === cap;
-    PR.appendChild(optBtn(`<div class="mini"><svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="pr${i}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#pr${i})">${Z.fillPattern(p, a, b, 0, 0, 110, 110, scaleFor(p) * 0.35)}<rect width="110" height="22" fill="${cap}"/></g><circle cx="55" cy="55" r="53" fill="none" stroke="${GOLD}" stroke-width="3"/></svg></div><div class="text-xs font-semibold mt-1 text-center">${lab}</div>`, on, () => { Object.assign(S, { pat: p, body: Z.BODY.includes(p) ? p : 'hoops', c1: a, c2: b, capCol: cap }); render(); }, lab));
+    PR.appendChild(optBtn(`<div class="mini"><svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="pr${i}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#pr${i})">${Z.fillPattern(p, a, b, 0, 0, 110, 110, scaleFor(p) * 0.35)}<rect width="110" height="22" fill="${cap}"/></g><circle cx="55" cy="55" r="53" fill="none" stroke="${GOLD}" stroke-width="3"/></svg></div><div class="text-xs font-semibold mt-1 text-center">${lab}</div>`, on, () => { Object.assign(S, { pat: p, body: p, c1: a, c2: b, capCol: cap }); render(); }, lab));
   });
   const P = $('patterns'); P.innerHTML = '';
-  (S.style === 'A' ? Z.ALLOVER : Z.BODY).filter(p => p !== 'thirds').forEach(p => P.appendChild(optBtn(`<div class="mini">${S.style === 'A' ? miniA(p) : miniB(p)}</div><div class="text-xs font-semibold mt-1 text-center">${Z.NAMES[p] || p}</div>`, (S.style === 'A' ? S.pat : S.body) === p, () => { if (S.style === 'A') { S.pat = p; if (Z.BODY.includes(p)) S.body = p; } else { S.body = p; if (Z.ALLOVER.includes(p)) S.pat = p; } render(); }, Z.NAMES[p])));
+  Z.ALLOVER /* Alex 6 Nov: same 25 patterns as the mug designer, both baubles */.forEach(p => P.appendChild(optBtn(`<div class="mini">${S.style === 'A' ? miniA(p) : miniB(p)}</div><div class="text-xs font-semibold mt-1 text-center">${Z.NAMES[p] || p}</div>`, (S.style === 'A' ? S.pat : S.body) === p, () => { S.pat = p; S.body = p; render(); }, Z.NAMES[p])));
   swatches($('c1'), 'c1'); swatches($('c2'), 'c2'); swatches($('capsw'), 'capCol');
   $('pick1').value = S.c1; $('pick2').value = S.c2; $('capcol').value = S.capCol;
   $('sleevestep').hidden = S.style !== 'B';

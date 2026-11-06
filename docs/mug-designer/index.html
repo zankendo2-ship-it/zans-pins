@@ -469,6 +469,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       else if (pat === 'seams') inner += `<rect x="-140" y="-230" width="30" height="480" fill="${c2}"/><rect x="110" y="-230" width="30" height="480" fill="${c2}"/><path d="M-118,-205 L-52,-222 Q0,-182 52,-222 L118,-205" fill="none" stroke="${c2}" stroke-width="26"/>`;
       else if (pat === 'chevron') inner += `<polygon points="-140,-60 0,60 140,-60 140,30 0,150 -140,30" fill="${c2}"/>`;
       else if (pat === 'collar') inner += `<path d="M-60,-232 Q0,-170 60,-232" fill="none" stroke="${c2}" stroke-width="40"/><rect x="-140" y="215" width="280" height="35" fill="${c2}"/>`;
+      else if (pat === 'spot_diag') [[-62, -110], [0, 20], [62, 150]].forEach(([x, y]) => { inner += `<circle cx="${x}" cy="${y}" r="52" fill="${c2}"/>`; }); // three big spots (bauble jersey, Alex 6 Nov)
       else if (pat === 'braces') inner += `<rect x="-82" y="-230" width="40" height="480" fill="${c2}"/><rect x="42" y="-230" width="40" height="480" fill="${c2}"/>`;
     }
     return `<defs><clipPath id="${id}"><path d="${P.body}"/></clipPath></defs><g clip-path="url(#${id})">${inner}</g>` +
