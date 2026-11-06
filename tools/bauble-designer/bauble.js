@@ -157,6 +157,7 @@ function render() {
   const d = design(), svg = printSVG(d, 'pv');
   $('flat').innerHTML = svg + HANGER;
   $('ribbonname').textContent = S.style === 'A' ? 'Silks bauble' : 'Racing green bauble';
+  $('etsyorder').href = S.style === 'A' ? 'https://www.etsy.com/listing/4611232428' : 'https://www.etsy.com/listing/4611213915';
   $('tree').innerHTML = treeScene(printSVG(d, 'tv'), S.scene);
   $('scsoft').setAttribute('aria-pressed', S.scene === 'soft'); $('scmoody').setAttribute('aria-pressed', S.scene === 'moody');
   $('code').textContent = code(d);
