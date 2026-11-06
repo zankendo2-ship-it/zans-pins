@@ -156,11 +156,11 @@ $('copy').onclick = async () => { const t = $('code').textContent;
 render();
 
 /* ---------- print file (Alex 5 Nov: every designer prints at 2x oversample, like the mug order tool) ----------
-   Harrier ceramic bauble print area is 990 x 990 px; we render 1980 x 1980 (2x) with high-quality smoothing and
+   Harrier ceramic bauble print area is 990 x 990 px; we render 3960 x 3960 (4x, Alex 6 Nov "super high definition"; logo source 750 px wide stays sharp) with high-quality smoothing and
    Printify scales it down cleanly. Usage: await ZANSBauble.printFile() -> PNG data URL of the current design. */
 window.ZANSBauble = {
-  PRINT_PX: 990, OVERSAMPLE: 2,
-  async printFile(scale = 2) {
+  PRINT_PX: 990, OVERSAMPLE: 4,
+  async printFile(scale = 4) {
     const px = 990 * scale; let svg = printSVG(design(), 'pf').replace(/width="990" height="990"/, `width="${px}" height="${px}"`).replace(' clip-path="url(#pfc)"', ''); // full square = bleed past the round edge
     // an SVG drawn as an image can't see the page's fonts, so embed Jost (same as the mug order tool)
     if (!this._font) { const buf = await (await fetch('/fonts/jost-latin.woff2')).arrayBuffer(); let bin = ''; new Uint8Array(buf).forEach(b => bin += String.fromCharCode(b)); this._font = btoa(bin); }
