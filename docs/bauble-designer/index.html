@@ -826,7 +826,7 @@ function printSVG(d, id) { return S.style === 'A' ? designA(d, id) : designB(d, 
 // Names checked: no famous racehorse of either name. Colours: Christmas red, white, gold, racing green (never green + pink).
 const DEF = {
   A: { pat: 'stars', body: 'stars', c1: '#C8102E', c2: '#FFFFFF', sleeves: 'plain', capCol: '#0E6B3B', name: 'Snow Dancer' },
-  B: { pat: 'stars', body: 'stars', c1: '#C8102E', c2: '#F5D130', sleeves: 'plain', capCol: '#F5D130', name: 'Starry Night' } };
+  B: { pat: 'stars', body: 'stars', c1: '#1B2A5C', c2: '#F5D130', sleeves: 'plain', capCol: '#F5D130', name: 'Starry Night' } };
 const untouched = () => Object.keys(DEF[S.style]).every(k => S[k] === DEF[S.style][k]);
 const S = Object.assign({ style: 'A', view: 'flat', scene: 'soft' }, DEF.A);
 function design() {
