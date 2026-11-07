@@ -1,3 +1,4 @@
 2026-11-04 21:08 UTC run 2 (after publishing the fixes)
 2026-11-05 00:30 UTC run 3 (after the designer speed-up + photo fix went live)
 2026-11-07T16:44Z after PR #10/#11: bauble footer links, sitemap dates
+2026-11-07T16:56Z after PR #12: lighter Santa logo + 800w banner photo (home + bauble designer speed)
