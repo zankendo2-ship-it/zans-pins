@@ -4,11 +4,13 @@
    that has the footer link row but not the bauble link (the home page already has it).
 2. Mug designer: add the bauble designer to its 'Gifts for racehorse owners and
    syndicates' link line.
-3. IndexNow key file docs/<key>.txt (Bing, Yandex, Seznam, Naver read it; public by design).
-4. Sitemap: lastmod = the day each page last changed (git, or today when this script
+3. Sitemap: lastmod = the day each page last changed (git, or today when this script
    changed it), and the bauble share photo as the bauble page's image.
 
-Usage: python3 bauble_links_sitemap.py <live checkout> <indexnow key>
+(IndexNow for Bing already runs on its own: .github/workflows/indexnow.yml sends every
+sitemap URL whenever docs/sitemap.xml changes, with the key file docs/ebca91f5....txt.)
+
+Usage: python3 bauble_links_sitemap.py <live checkout>
 Prints what it changed. Safe to run twice.
 """
 import datetime as dt
@@ -17,7 +19,7 @@ import re
 import subprocess
 import sys
 
-root, key = sys.argv[1], sys.argv[2]
+root = sys.argv[1]
 docs = os.path.join(root, 'docs')
 today = dt.date.today().isoformat()
 changed = set()
@@ -53,12 +55,6 @@ for path in page_files():
         open(path, 'w', encoding='utf-8').write(new)
         changed.add(rel)
         print('links  ', rel)
-
-key_path = os.path.join(docs, key + '.txt')
-if not os.path.exists(key_path):
-    open(key_path, 'w', encoding='utf-8').write(key)
-    print('key    ', os.path.relpath(key_path, root))
-
 
 def last_change(rel):
     dirty = subprocess.run(['git', '-C', root, 'diff', '--quiet', 'HEAD', '--', rel]).returncode != 0
