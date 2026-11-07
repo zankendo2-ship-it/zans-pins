@@ -174,6 +174,16 @@ a.tile{text-decoration:none;display:block}
 .tbtn{background:var(--goldm);color:var(--ink);font:700 16px var(--display);padding:9px 16px;border-radius:4px;text-decoration:none}
 .tlink{color:#fff;font-weight:700;text-decoration:underline}
 @media (max-width:500px){.usflag{height:26px}.tseal{width:82px;height:82px}.tbody .in{gap:12px}.foil{font-size:27px}.ttext b{font-size:19px}.tt{font-size:15px}.tbtn{font-size:15px;padding:8px 13px}}
+.xmasann{background:radial-gradient(ellipse at 50% 0%,#14422b 0%,#0b2a1b 55%,#061a10 100%);color:var(--cream);border-bottom:3px solid var(--gold);border-top:3px solid var(--gold)}
+.xmasann .in{padding-block:26px 30px;text-align:center}
+.xlogo{display:inline-block}.xlogo img{display:block;width:150px;height:auto}
+.xeyebrow{margin:10px 0 0;font:600 13px var(--display);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.xmasann .xhead{margin:8px 0 18px;font:700 clamp(28px,7vw,46px)/1.1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:#F5D98A;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.xcard{display:block;max-width:640px;margin:0 auto;border:2px solid var(--gold);border-radius:6px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,.55)}
+.xcard img{display:block;width:100%;height:auto}
+.xmasann .xcopy{margin:20px auto 0;max-width:46ch;font-size:17px;line-height:1.55;color:#E9E2D6}
+.xmasann .xorder{margin:12px 0 0;font:400 15px var(--body);color:rgba(243,237,229,.8)}.xmasann .xorder a{color:var(--gold);font-weight:600}
+.xmasann .xwish{margin:16px 0 0;font:italic 400 16px var(--body);color:var(--gold)}
 .announce{background:linear-gradient(180deg,#0b2a1b 0%,#082114 60%,#061a10 100%);color:var(--cream);border-bottom:3px solid var(--gold)}
 .announce .in{padding-block:28px 32px;text-align:center}
 .anncard{display:block;max-width:560px;margin:0 auto;border-radius:6px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,.55)}
@@ -188,9 +198,68 @@ a.tile{text-decoration:none;display:block}
 </style>
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"f65e1060086bd22f5c071f12bc020af5"})});</script>
 </head><body>
-<div class="flagbar"><div class="in"><img class="flag" src="img/flags/gb-eng.svg" alt="England flag" width="40" height="30"><img class="flag" src="img/flags/ie.svg" alt="Ireland flag" width="40" height="30"><img class="flag" src="img/flags/gb-sct.svg" alt="Scotland flag" width="40" height="30"><img class="flag" src="img/flags/gb-wls.svg" alt="Wales flag" width="40" height="30"><img class="flag" src="img/flags/gb.svg" alt="Great Britain flag" width="40" height="30"><img class="flag" src="img/flags/us.svg" alt="USA flag" width="40" height="30"><img class="flag" src="img/flags/jp.svg" alt="Japan flag" width="40" height="30"></div></div><header class="bar"><div class="in"><a class="brand" href="#top"><img src="/img/zans-logo-180.jpg" alt="ZANS Racing horse racing guides" width="60" height="58"><span>ZANS Racing Tools &amp; Gifts<small>Horse racing guides, tools &amp; gifts</small></span></a>
-<nav><a href="/horse-racing-gifts/">Gifts</a><a href="/mug-designer/">Silks mugs</a><a href="#breeders-cup">Breeders&#39; Cup</a><a href="/articles/breeders-cup-uk-times/">UK times</a><a href="#guides">Ascot</a><a href="#about">About</a><a class="shop" href="https://www.etsy.com/uk/shop/ZANSRacingTools" target="_blank" rel="noopener">Etsy shop</a></nav></div></header>
+<style id="zans-topbanner">/* top banner: Days to Christmas + Starry Night take turns (replaced the flags bar 6 Nov 2026) */
+.zbn{position:relative;display:grid;container-type:inline-size;font-family:'Jost','Jost Fallback',system-ui,sans-serif}
+.zbn>a{grid-area:1/1;display:flex;align-items:center;justify-content:center;gap:14px;padding:8px max(16px,env(safe-area-inset-left,0px)) 8px max(16px,env(safe-area-inset-right,0px));text-decoration:none;opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s}
+.zbn>a.on{opacity:1;visibility:visible}
+.zbn>a:focus-visible{outline:3px solid #E8C35A;outline-offset:-3px}
+.zbn .zs{width:50px;height:41px;object-fit:contain;background:#EFEAE4;border-radius:6px;flex:none}
+.zbn .zt{min-width:0;text-align:left}
+.zbn .zt b{display:block;font-weight:600;font-size:14px;letter-spacing:.2em;text-transform:uppercase}
+.zbn .zt small{font:400 13.5px/1.3 'Source Sans 3','Source Sans 3 Fallback',system-ui,sans-serif}
+.zbn .zbtn{font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;padding:8px 14px;border-radius:3px;flex:none;background:linear-gradient(135deg,#8a6a1c,#f1d27a 45%,#9c7a24 70%,#e2bd5a);color:#1C1C1C}
+.zbn .zcd{grid-area:1/1;background:linear-gradient(90deg,#7d1219,#B3202A 50%,#7d1219);color:#fff;border-top:2px solid #E8C35A;border-bottom:2px solid #E8C35A}
+.zbn .zdig{display:flex;gap:4px;flex:none}
+.zbn .zdig span{font-weight:700;font-size:24px;line-height:1;background:#2a0a0d;color:#E8C35A;border:1px solid #E8C35A;border-radius:3px;padding:6px 7px;font-variant-numeric:tabular-nums}
+.zbn .zsn{background-color:#101c3a;background-image:radial-gradient(circle,#E8C35A 1.1px,transparent 1.6px),radial-gradient(circle,rgba(232,195,90,.55) .8px,transparent 1.3px);background-size:46px 34px,29px 23px;background-position:0 0,13px 9px;color:#F3EDE5;border-top:2px solid #E8C35A;border-bottom:2px solid #E8C35A}
+.zbn .zsn .zi{display:flex;align-items:center;justify-content:center;gap:16px;padding:4px 14px;border-radius:40px;background:radial-gradient(ellipse at center,rgba(16,28,58,.95) 40%,rgba(16,28,58,.4) 85%);min-width:0}
+.zbn .zsn .zt{text-align:center}
+.zbn .zsn .zt b{color:#E8C35A;font-size:15px}
+.zbn .zbb{display:flex;gap:6px;flex:none}
+.zbn .zbb img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #E8C35A}
+.zbn .zdots{position:absolute;right:8px;bottom:4px;display:flex;gap:4px;pointer-events:none}
+.zbn .zdots i{width:5px;height:5px;border-radius:50%;border:1px solid rgba(232,195,90,.9)}
+.zbn .zdots i.on{background:#E8C35A}
+@container (max-width:520px){
+.zbn>a{gap:8px;padding-block:7px}
+.zbn .zcd .zs{display:none}
+.zbn .zdig span{font-size:19px;padding:5px}
+.zbn .zt b{font-size:11.5px;letter-spacing:.1em}
+.zbn .zt small{font-size:12px;display:block}
+.zbn .zbtn{font-size:11px;padding:7px 8px;letter-spacing:.05em}
+.zbn .zsn .zi{gap:9px;padding:2px 6px}
+.zbn .zbb img{width:38px;height:38px}.zbn .zbb img+img{display:none}
+.zbn .zsn .zs{width:40px;height:33px}
+.zbn .zsn .zt b{font-size:12px}}
+@media (prefers-reduced-motion:reduce){.zbn>a{transition:none}}
+</style>
+<div class="zbn" role="region" aria-label="Christmas offers">
+<a class="zcd on" href="/bauble-designer/"><img class="zs" src="/img/banner-santa.webp" alt="ZANS logo in a Santa hat" width="50" height="41"><span class="zdig" aria-hidden="true"><span>4</span><span>9</span></span><span class="zt"><b><span class="zn">49</span> <span class="zw">days</span> to Christmas</b><small>Silks baubles and mugs · £16.99 · Free UK delivery</small></span><span class="zbtn">Shop now</span></a>
+<a class="zsn" href="/bauble-designer/"><span class="zi"><span class="zbb"><img src="/img/banner-bauble-winter.webp" alt="Winter Winner silks bauble" width="46" height="46"><img src="/img/banner-bauble-tinsel.webp" alt="Tinsel Turf silks bauble" width="46" height="46"></span><span class="zt"><b>Hang your colours on the tree</b><small>Personalised silks baubles · £16.99 · Free UK delivery</small></span><img class="zs" src="/img/banner-santa.webp" alt="ZANS logo in a Santa hat" width="50" height="41"></span></a>
+<span class="zdots" aria-hidden="true"><i class="on"></i><i></i></span>
+</div>
+<script>(function(){var b=document.currentScript.previousElementSibling;
+try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+var g=function(t){return +p.filter(function(x){return x.type===t})[0].value},y=g('year'),t=Date.UTC(y,g('month')-1,g('day')),x=Date.UTC(y,11,25);
+if(t>x)x=Date.UTC(y+1,11,25);var n=Math.round((x-t)/864e5);
+if(n===0){b.querySelector('.zt b').textContent='Merry Christmas from ZANS';b.querySelector('.zdig').style.display='none'}
+else{var s=String(n).padStart(2,'0');b.querySelector('.zdig').innerHTML=s.split('').map(function(c){return '<span>'+c+'</span>'}).join('');b.querySelector('.zn').textContent=n;b.querySelector('.zw').textContent=n===1?'day':'days'}}catch(e){}
+var a=b.querySelectorAll(':scope>a'),d=b.querySelectorAll('.zdots i'),i=0;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){a[i].classList.remove('on');d[i].classList.remove('on');i=(i+1)%a.length;a[i].classList.add('on');d[i].classList.add('on')},6000);})();</script><header class="bar"><div class="in"><a class="brand" href="#top"><img src="/img/zans-logo-180.jpg" alt="ZANS Racing horse racing guides" width="60" height="58"><span>ZANS Racing Tools &amp; Gifts<small>Horse racing guides, tools &amp; gifts</small></span></a>
+<nav><a href="/horse-racing-gifts/">Gifts</a><a href="/mug-designer/">Silks mugs</a><a href="/bauble-designer/">Silks baubles</a><a href="#breeders-cup">Breeders&#39; Cup</a><a href="/articles/breeders-cup-uk-times/">UK times</a><a href="#guides">Ascot</a><a href="#about">About</a><a class="shop" href="https://www.etsy.com/uk/shop/ZANSRacingTools" target="_blank" rel="noopener">Etsy shop</a></nav></div></header>
 <main id="top">
+<section class="xmasann" id="christmas-baubles"><div class="in">
+<a class="xlogo" href="/bauble-designer/" aria-label="ZANS Racing Christmas baubles"><img src="/img/zans-logo-santa.png" alt="ZANS Horse Racing logo wearing a Santa hat" width="150" height="123"></a>
+<p class="xeyebrow">New for Christmas · Personalised silks baubles</p>
+<h2 class="xhead">Order now for Christmas!</h2>
+<a class="xcard" href="/bauble-designer/" aria-label="Design your personalised horse racing Christmas bauble">
+<picture><source type="image/webp" srcset="/img/xmas-baubles-workshop-600.webp 600w, /img/xmas-baubles-workshop-1000.webp 1000w" sizes="(max-width: 700px) calc(100vw - 32px), 640px"><img src="/img/xmas-baubles-workshop.jpg" alt="Two personalised horse racing Christmas baubles in racing silks, Tinsel Turf and Winter Winner, in Santa's workshop" width="1448" height="1086" fetchpriority="high"></picture>
+</a>
+<p class="xcopy">A ceramic Christmas bauble in your horse's racing silks, with the name and Merry Christmas. Printed in the UK.</p>
+<div class="anncta"><a class="annbtn" href="/bauble-designer/">Design your bauble</a><p class="annsoon xorder">Order on Etsy: <a href="https://www.etsy.com/uk/listing/4611232428" target="_blank" rel="noopener">Silks bauble</a> · <a href="https://www.etsy.com/uk/listing/4611213915" target="_blank" rel="noopener">Racing green bauble</a></p></div>
+<p class="xwish">Wishing you a Merry Christmas</p>
+</div></section>
 <section class="announce" id="silks-mugs"><div class="in">
 <a class="anncard" href="/mug-designer/" aria-label="New: personalised silks mugs — design yours">
 <picture><source type="image/webp" srcset="/img/silks-mugs-hero-600.webp 600w, /img/silks-mugs-hero-940.webp 940w" sizes="(max-width: 592px) calc(100vw - 32px), 560px"><img src="/img/silks-mugs-hero.jpg" alt="Personalised horse racing gift mug printed in jockey silks with the horse's name by the handle" width="940" height="1672" fetchpriority="high"></picture>
@@ -235,5 +304,5 @@ a.tile{text-decoration:none;display:block}
 <details><summary>Can I read it on my phone?</summary><p>Yes. The PDF opens on any phone, tablet or computer, and you can print it.</p></details>
 </div></div></section>
 </main>
-<footer><div class="in"><p class="flinks"><a href="/horse-racing-gifts/">Horse racing gifts</a> · <a href="/mug-designer/">Silks mug designer</a> · <a href="/gifts-for-racehorse-owners/">Gifts for racehorse owners</a> · <a href="/racing-syndicate-gifts/">Racing syndicate gifts</a> · <a href="/ascot-racecourse-guide/">Ascot racecourse guide</a> · <a href="/articles/ascot-draw-bias/">Ascot draw bias</a> · <a href="/articles/going-explained/">The going explained</a> · <a href="/breeders-cup-guide/">Breeders&#39; Cup guide</a></p><p><b>ZANS Racing Tools &amp; Gifts</b> · Horse racing guides, tools and gifts for UK and Irish racing fans · Leicester, England</p><p>18+ | Have fun and always gamble responsibly.</p><p>Not affiliated with any racecourse, racing body or bookmaker.</p><p>ZANS is independent and not connected with or endorsed by Breeders&#39; Cup Ltd or Keeneland.</p><p>© 2026 ZANS Racing Tools &amp; Gifts</p></div></footer>
+<footer><div class="in"><p class="flinks"><a href="/horse-racing-gifts/">Horse racing gifts</a> · <a href="/mug-designer/">Silks mug designer</a> · <a href="/bauble-designer/">Silks bauble designer</a> · <a href="/gifts-for-racehorse-owners/">Gifts for racehorse owners</a> · <a href="/racing-syndicate-gifts/">Racing syndicate gifts</a> · <a href="/ascot-racecourse-guide/">Ascot racecourse guide</a> · <a href="/articles/ascot-draw-bias/">Ascot draw bias</a> · <a href="/articles/going-explained/">The going explained</a> · <a href="/breeders-cup-guide/">Breeders&#39; Cup guide</a></p><p><b>ZANS Racing Tools &amp; Gifts</b> · Horse racing guides, tools and gifts for UK and Irish racing fans · Leicester, England</p><p>18+ | Have fun and always gamble responsibly.</p><p>Not affiliated with any racecourse, racing body or bookmaker.</p><p>ZANS is independent and not connected with or endorsed by Breeders&#39; Cup Ltd or Keeneland.</p><p>© 2026 ZANS Racing Tools &amp; Gifts</p></div></footer>
 </body></html>
