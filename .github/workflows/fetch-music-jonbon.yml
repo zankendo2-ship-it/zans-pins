@@ -1,0 +1,30 @@
+name: Fetch royalty-free music (Jonbon)
+on:
+  push:
+    branches: [claude/project-thread-iqcn36]
+    paths: [tools/music_request.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download Kevin MacLeod (incompetech, CC BY 4.0) tracks
+        run: |
+          mkdir -p music
+          while IFS= read -r t; do
+            [ -z "$t" ] && continue
+            f="music/${t}.mp3"
+            [ -f "$f" ] && continue
+            u="https://incompetech.com/music/royalty-free/mp3-royaltyfree/$(python3 -c 'import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))' "$t").mp3"
+            curl -fsSL --retry 3 -A "Mozilla/5.0" "$u" -o "$f" && echo "OK $t" || { echo "FAIL $t"; rm -f "$f"; }
+          done < tools/music_request.txt
+          ls -la music
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add music
+          git diff --cached --quiet || git commit -m "Add royalty-free music samples (Kevin MacLeod, CC BY 4.0)"
+          git push
