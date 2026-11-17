@@ -1,0 +1,369 @@
+# ZANS Racing: Rulebook for Claude Code
+
+Compiled 17 Nov 2026 from the ZANS project memory, the ZANS skills (Etsy SEO, Track DNA guide, visibility manager, final check, full-depth boxes), the Social Caption Playbook, the design system and the guides rules log. The owner is **Alex**. These are his standing rules. Where a later message from Alex conflicts with this file, Alex wins: update this file.
+
+No passwords, API keys, connector IDs, chat/thread IDs or personal email addresses are kept in this file, and none should be added.
+
+---
+
+## 0. How to work with Alex (read first)
+
+1. **Alex works from an iPhone.** Keep replies short, plain and outcome-first. Do the running and fixing yourself and don't ask him to run code.
+2. **Read exactly what Alex writes.** Take names exactly as he spells them (Constitution River is not Constitution Hill). If you are unsure, ask.
+3. **Repeat his asks back as a numbered list** and tick each one off as it's done.
+4. **One step at a time** when Alex has to set something up himself: one short step, then wait for "done".
+5. **Alex approves everything that goes public**: every post, listing, price, order and email. Don't put anything live untested.
+6. **Nothing free.** No giveaways, freebies or "I'll design yours free" lines. Never place an order without his clear yes. (Only exception so far: the Constitution Hill bauble giveaway he approved on 16 Nov, Instagram and Facebook only.)
+7. **A change to one product applies to all of them.** If he fixes something on a mug, check the baubles, guides and trackers too.
+8. **Never send PDF links to his phone** because he can't open them. Send page-image previews or readable web pages, plus one zip of the finished pack.
+9. **Paste-ready text:** one field at a time, in code blocks, answering only the screen he is on.
+10. **Verify every fact in 2 independent sources.** Never invent a figure. Never say "independently" unless it's true. No fake reviews.
+11. **Effort:** medium by default.
+
+---
+
+## 1. Brand and tone of voice
+
+### Names
+- Brand: **ZANS Racing**. Etsy shop: **ZANSRacingTools**, trading as "ZANS Racing Tools & Gifts", based in Leicester.
+- Website: **www.zanshorseracing.co.uk**.
+- Always pair ZANS with a horse-racing word in profiles and first lines ("ZANS Racing | UK Horse Racing Guides"), so search doesn't confuse it with motorsport teams.
+- **Never use "tips", "tipster" or "tipping"** anywhere Etsy-facing (shop name, titles, tags, photos), on social, or on the website. Use the logo with the **"HORSE RACING"** strapline, never the "TIPS" version.
+
+### Look
+- House style: **racing green #1F5A3D + gold #F2CF5B**, thin gold frames, real photography. No stickers, ribbons, sashes, glitter or flashing badges (Alex calls them tacky).
+- Design-system tokens: cream background #EAE2D8, card #F3EDE5, soft #E0D6C9, line #C9BDAE, ink #1C1C1C, muted #5E574F.
+- Fonts: Jost (headings), Source Sans 3 (body), IBM Plex Mono (figures).
+- Guide edition metals: **Beginner = bronze, Advanced = silver, Pro = gold.**
+- Course colours: Ascot pink #B8336A, Breeders' Cup teal #1F4E5F. Use a course colour only for that course. Each Jumps/AW guide gets its own unique colour pair (see guides/COLOURS.md in the guides repo).
+- Avoid plain royal blue anywhere it could read as a famous owner's silks.
+
+### Voice
+- Write like a racing fan who has followed racing every day for years: plain UK English, short sentences, real racing words (going, draw, stalls, course and distance, hold-up horse). Add a little warmth and humour. Vary sentence length.
+- Give figures with their meaning, e.g. "19 winners from 737 runners: 14% more winners than their odds suggested".
+- Write stats in words, never with a slash: "5 wins from 7 runs"; date ranges as "2023-24".
+- Approved product line: **"Make finding a winner a little easier."** Never strengthen it.
+- Approved disclaimer: **"ZANS doesn't guarantee winners. We use data and stats to help you find one."**
+- **Banned words and phrases:** guaranteed, banker, sure thing, can't lose, beat the bookies, profit, nap, certain winner, lock, winning system, investment, second income, pay the bills, betting slip, "helping you try and find a winner". Also banned are stock AI phrases (unlock, dive in, game-changer, elevate, "in today's fast-paced world").
+- No emoji walls and no corporate phrasing.
+
+### Endings and seasonal
+- Single-horse videos end **"Up the <horse>!"** in the voiceover, on the end card and as the closing caption line.
+- Retirement videos end **"Thank you, <horse>!"**
+- Constitution Hill videos end **"Come on Conny!"** "My favourite horse" is said sparingly (at most once a video, not on every post).
+- **Christmas items/posts:** end with the Santa-hat ZANS logo (HORSE RACING version) and "Wishing you a Merry Christmas". Christmas music and snow appear on Christmas posts only, and snow only outdoors.
+
+---
+
+## 2. Compliance, copyright and safety
+
+### Copyright and trade marks (check before building anything)
+- **Never use Juddmonte colours (green with pink sash).** Exception: Frankel in social videos only, with nothing sold. Never on Etsy, products or shop links.
+- Other owners' silks may appear, but never name racehorse owners on Etsy or social.
+- No famous horse names on products (e.g. Frankel is a registered trade mark).
+- Never use Racing Post, RPR, Topspeed or Timeform material. Use only the **"ZANS rating"** (our own, recomputed).
+- Never name websites, bookmakers, betting sites or racing media in guides or posts (Racing Post, At The Races, Timeform, Sporting Life, bet365, Betfair, Paddy Power, Sky Bet, William Hill, Ladbrokes, Coral (the Coral Gold Cup race name is fine), Betfred, Tote, Oddschecker). Never cite Wikipedia as a source.
+- Use event and course names descriptively only. Never write "Royal Ascot" on products, never "official", and use no logos or crowns. Add "not affiliated with any racecourse or organiser" on the website and profiles.
+- No fetched images or footage. Visuals must be ZANS-made (code-rendered or AI-generated). **Exception (17 Nov):** real jockey photos only if FREE and Creative-Commons licensed, credited, never bought. Never black masks over faces. Never an AI face or likeness of a real person.
+
+### Gambling advertising (ASA/CAP applies even to guides)
+- Sell knowledge, never winnings. No results claims (ZANS strike rates, ROI, "x winners", "+£"). Quoting a **course** statistic from our data is fine.
+- **No paper-test or trial records on any post** (bets, won, paid out, profit).
+- No under-18 appeal: no cartoons, anime, gaming or meme styles, kids' sounds or youth slang on betting-themed content, and no people who are or look under 25.
+- No bookmaker logos, odds screenshots or bookmaker-branded bet slips. When Alex's slip is shown, redraw it with no bookmaker branding.
+- Paid, gifted or affiliate content is labelled "Ad" up front with the platform's paid-partnership toggle on.
+- No fake, bought or incentivised reviews (the CMA can fine up to 10% of turnover).
+
+### Footers: where they go and where they don't
+| Place | Footer |
+|---|---|
+| Etsy listings, Etsy photos, shop banner | **No** 18+ / gamble-responsibly / BeGambleAware line |
+| Inside every ZANS product (guides, trackers) | "Have fun and always gamble responsibly." + 18+ + BeGambleAware.org + "Not betting advice" + "Past results don't guarantee future results" |
+| Social **betting** posts (not TikTok) | "18+ Only. Begambleaware.org. Past track statistics do not guarantee future race outcomes. Insights are for informational and entertainment use only." |
+| Social **merch** posts | **No** 18+ line, and no "made in the UK" |
+| Profile bios / website footer | "18+ \| Have fun and always gamble responsibly." (TikTok bio: "18+ Gamble responsibly") |
+
+### Word scan before anything is shown or posted
+Scan by script for: tip/tips/tipster/tipping (also in hashtags), guaranteed, sure thing, can't lose, beat the bookies, banker, lock, profit, investment, second income, winning system, "x winners", "+£", every bookmaker/racing-media name above, Wikipedia, "official", Juddmonte, youth slang. On Etsy-facing text, also flag "gamble responsibly", BeGambleAware, helpline and "18+". Negated lines ("we never promise winners") are fine. Count every character limit with code.
+
+---
+
+## 3. Etsy listing rules
+
+### Research first
+- Every new listing gets live UK **and** US keyword research (Etsy market pages etsy.com/uk/market/<phrase> and etsy.com/market/<phrase>, search suggestions, a rank checker), reported separately for each country.
+- "horse racing" + the product type goes at the start of every field.
+
+### Field limits (count with code)
+| Field | Limit |
+|---|---|
+| Title | 140 characters, under 15 words, no repeated words; `% : &` at most once each; no `$ ^` or backtick, `.` or `°`; max 3 ALL-CAPS words. The first ~55 characters show in search. |
+| Tags | **Exactly 13**, each **20 characters or fewer**; letters, numbers, spaces, hyphens and apostrophes only; no duplicates |
+| Materials | 13 × 45 characters |
+| Alt text | 250 characters |
+| Photo captions | 120 characters |
+| Description | 1,500-3,000 characters |
+| Media | 20 photos, 2 videos (each ≤15 s, ≥1080 px, no sound) |
+| Digital files | 5 × 20 MB; file name 3-70 characters, no spaces |
+| Shop title | 55 · About headline 150 · About story 5,000 · Section names 24 |
+| Personalisation question | 45 characters (put web addresses in the instructions line) |
+
+### Title formulas
+- Course guide: `[Course] Racecourse Guide for [Edition] - Horse Racing PDF Download, [Code] Track DNA [year]`
+  e.g. *Ascot Racecourse Guide for Beginners - Horse Racing PDF Download, Flat Track DNA 2027*
+- Desktop tracker: `Horse Racing Betting Tracker Spreadsheet - Excel Log, Each Way Calculator, Odds Converter, [Edition]`
+- Phone tracker: the same, with `Phone - Google Sheets Log`.
+
+### Proven tag sets
+- **Ascot Flat Beginner (live):** ascot racecourse, ascot guide pdf, racecourse guide, racecourse guide pdf, uk racecourse guide, flat racing guide, horse racing guide, racing for beginners, horse racing basics, race day guide, horse racing pdf, racing form guide, horse racing gift
+- **Trackers:** betting tracker, betting spreadsheet, betting log, horse racing tracker, horse racing log, each way bet, each way betting, betting journal, odds calculator, horse racing excel, racing betting log, horse racing gift, racing fan gift
+
+### Trap phrases: never use as tags
+- Etsy auto-corrects them: *bet tracker*, *each way calculator*.
+- They bring up wrong products on page 1: *ascot guide, ascot flat guide, ascot races, royal ascot, first time racegoer, track dna, grand national* (alone), *goodwood, flat racing* (alone), *jump racing, cheltenham* (alone), *race day planner, race day checklist, punter gift, horse racing printable, derby, horse racing form, racing fan gift* (shows F1 products; fine on trackers only), *race day* (shows motorsport).
+- Baubles: *racing colours bauble, racing green bauble, jockey bauble, horse bauble, equestrian, horse lover, silks bauble, personalised silks*.
+
+### Description structure (in this order)
+1. A first sentence that leads with the keyword.
+2. Hook: "Course data to help make finding a winner at <Course> a little easier."
+3. Colour + print versions included; digital download only, nothing posted.
+4. **WHAT'S INSIDE**
+5. **WHAT YOU GET**
+6. **WHO IT'S FOR**
+7. **GOOD TO KNOW:** doesn't promise winners or profit; past results don't guarantee future results; independent, not affiliated with any racecourse or organiser; AI-disclosure line where AI images are used. **No 18+ line on Etsy.**
+8. **RETURNS** (digital, word for word): "Digital download: once your file is available to download you lose the 14-day right to cancel, as you've asked for instant access. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights."
+9. **MORE FROM ZANS**
+
+Christmas listings end with "Wishing you a Merry Christmas", and the Santa-logo card is the last photo.
+
+### Listing form, screen by screen (digital guides)
+- Category: Guides & How Tos.
+- Who made it: I did · A finished product · 2020-2026 · Digital.
+- No variations. Quantity 999. Renewal automatic.
+- Attributes: eBook; pages = one PDF; English; Sports / Horses / Hobbies; green + course colour; Birthday / Christmas; Portrait; 2 pieces.
+- Materials: digital download, printable PDF, etc.
+- Upload the **product zip only**.
+
+### Print-on-demand extras (mugs, baubles)
+- Printify **UK providers only** (Harrier for mugs). Exception: silks hats (Printful all-over-print beanie, or knitted pom-poms from a UK knitter), sold outside Etsy.
+- Quantity 999 on every variation. Put "COLOUR OPTION = HANDLE COLOUR" at the top of mug descriptions. Never rename Printify's "Mug color". Fill every attribute.
+- Mug attributes: Ceramic, 8.2 cm W, 9.6 cm H, 330 ml, dishwasher-safe Yes, microwave-safe Yes.
+- Delivery: UK £3.95 (+£1 each extra), Ireland £6.95 (+£2). Processing 3-10 days ("up to 10 working days"). US postage is not decided yet.
+- "Who made it": Another company, with the production partner named. Disclose AI photos.
+- **Never sync images from Printify.** After any sync, check the listing is still live.
+- Personalisation boxes: "Design code from our mug designer" and "Name on the mug" (limit 28).
+- One product style per listing photo.
+
+### Edit, never delete
+- Edit listings, **never delete and re-create** (that loses the URL, history and Google indexing).
+- Renew 6-8 weeks before a big meeting.
+- Weekly Monday tag rotation: 2-4 swaps per listing, only on Alex's yes.
+- Whenever a product goes live, remind Alex to update the shop's About photos.
+
+### TRIPLE-CHECK GATE (before Alex sees any listing)
+Do 3 full passes, the last one by an independent checker, over the whole listing **as a UK buyer sees it**: price, postage per country (UK first), delivery estimate, processing time, shipping profile, variations and their prices, quantity, personalisation, title, description, tags, photos, video, Printify sync and provider. Show Alex the ticked checklist.
+
+### Listing photos
+- **Photo 01** copies the Beginner Ascot photo 01 exactly: 2700×2025; hook "Make finding a winner a little easier"; course badge; 786×140 edition metal box at x601 y1000; ticks; "INSTANT PDF DOWNLOAD" tag.
+- Check the main photo in both the square search crop and the 4:5 crop.
+- Up to 7 photos: cover + ~5 different exciting inside pages + the colour/print versions.
+- Shiny metal strip at the top and bottom of Etsy-facing images (bronze/silver/gold).
+- Watermark "ZANS RACING" and blur the valuable content.
+
+### Listing videos
+- 1080×1920 portrait, ≤15 s, no sound. The first frame is the cover. The middle frame must be clean (Etsy uses it as the thumbnail). No count-up numbers.
+- Make it full of information like the photos, and make sure it fills the phone player.
+- End card order: logo → course name → info bar → course-colour stripe → edition metal box → flag badge.
+
+### How the listing text is delivered to Alex
+- A big-text **TAP TO COPY** page with one box per field and a COPY button (all 13 tags on one comma-separated line), plus a .txt copy.
+- When Alex gives a new product, reply in 4 blocks: title, description, 13 tags, alt text.
+
+### Live listings (17 Nov 2026)
+| Product | Listing ID | Price |
+|---|---|---|
+| Ascot Flat Guide, Beginner | 4601073843 | £4.99 ex VAT |
+| Ascot Flat Guide, Advanced | 4604440668 | £9.99 ex VAT |
+| Ascot Flat Guide, Pro | 4604430033 | £15.99 ex VAT |
+| Silks mug (Premium) | 4608193933 | £14.99 |
+| Christmas mug | 4609859882 | |
+| White Silks Mug | 4612435420 | £11.99 |
+| Silks bauble | 4611232428 | £14.99 / £12.99 |
+| Racing green bauble | 4611213915 | £14.99 / £12.99 |
+
+Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search ads: £3/day on mugs, which Alex switches on himself.
+
+---
+
+## 4. Product templates
+
+### 4.1 Track DNA racecourse guides
+**Before every build:** read `guides/ALEX_RULES_AND_MISTAKES.md` and the review issue in the guides repo (horse-racing-extraction-, `guides/` folder), and tick each rule before Alex sees anything.
+
+- **Three editions, each adding real value** (Advanced never repeats Beginner pages):
+  - **Beginner (bronze):** plain words, "ground conditions", stall gate boxes 1-5 / 6-10 / 11-15, simple race-day lines ("won 1 in 6").
+  - **Advanced (silver):** "Going (ground conditions)", A/E as one figure + verdict tags, price-band tables, value and longshot pages, Placepot, decision pills.
+  - **Pro (gold):** "Going", two periods side by side (2019-21 v 2022-26), price bands, its own value pages and silks. Pro picks come from the data, not famous names.
+- **Layout:** led by distance, with a ground block under each distance. A skip note at the start. Any group with under 20 races = one line only. A "TICK AS YOU GO" bar + real PDF checkboxes + a phone panel. Every figure sits under its label. Calm picture-and-figures pages, each one grabbing attention.
+- **Colour rules:** green = at least 1 in 7, 5+ runs in each period, A/E above 1 in both periods. Red = real negatives only (strike rate below average in both periods). Never more red than green.
+- **Best/worst boxes:** full depth in every box, never one lazy point (zans-full-depth-boxes).
+- **Silks** drawn in the Beginner jersey style. Trainers/jockeys with strike rates, active ones only. Past winners' silks. Overseas raiders only in special editions.
+- **Cover:** black top bar "ZANS · ENGLAND" with flag (bar 11.1 mm, flag 6.2 mm), code icon (flat/jumps), course map. Jumps maps show the hurdle and chase courses. Special editions get a gold embossed seal.
+- **Maps:** draw the map first, and use exact distances only. The Ascot Flat guide is the template look.
+- **Data:** only from the ZANS Course Knowledge Base (https://claude.ai/artifact/AP2pBbB9RbymKEmcfn2Kyt) and the etsy-data pack. Drop Ascot WA (Australia) races. Never guess a figure; leave a marked placeholder instead.
+- **Files:** Colour PDF + Print PDF. Product zip named like `ZANS-Ascot-Flat-Track-DNA-2027-Pro-Edition.zip`. PDF compression must keep transparent PNGs. Run a PDF check before sending.
+- **Rollout:** every UK + Irish Jumps and AW course, 3 editions each. Alex signs one course off before the next starts.
+
+### 4.2 Bet trackers
+- 6 products: Beginner / Advanced / Pro × Desktop (Excel) / Phone (Google Sheets).
+- Decimal odds, "best odds (BOG) tracking", each-way calculator, odds converter.
+- Listing photos include a "THIS EDITION" photo and a "WHICH EDITION?" block.
+- Never claim a tracker helps anyone win.
+
+### 4.3 Mugs
+- Print file 2362×1004 or 2700×1050. Export the print PNG at 2× oversample.
+- Names in UPPERCASE, mirrored either side of the handle. Any name allowed except rude words.
+- Show designs as flat 2D mockups. AI lifestyle scenes are only for social posts.
+- The whole mug must be in shot. Real scenes, not plain cards.
+
+### 4.4 Baubles
+- They hang on a **tree**, never sit on presents.
+- True scale: about a 7.5 cm disc (roughly 0.9 of a palm's knuckle width).
+- Premium bauble photos use the **real website designer artwork** mapped onto the photo, never AI-drawn. Edited text follows the object's tilt and angle. 2 checkers review every photo.
+- Only **one** "DANNY" bauble per set, and other names are never repeated.
+
+---
+
+## 5. Social media (Metricool)
+
+### Setup
+- One Metricool brand, 7 networks: Instagram, Facebook, TikTok, YouTube, X, Pinterest, LinkedIn.
+- **No built-in review flow:** book posts as drafts and switch them live only after Alex says yes to that exact post.
+- **Turn the AI-generated label OFF on every network** (Instagram, YouTube, TikTok, Pinterest) and don't mention AI in captions. Keep the images' C2PA data (compare image copies by pixels, not by file hash).
+
+### How often (caps)
+| Network | Normal day | Big race day |
+|---|---|---|
+| Instagram | 1-2 | up to 4 |
+| Facebook | 1-2 | up to 4 |
+| YouTube | 1-2 | up to 4 |
+| X | 2-3 | up to 4 |
+| TikTok | 1-2 | 2 max |
+| LinkedIn | best post only, 3-5 a week | 2 |
+| Pinterest | no cap | no cap |
+
+- At least **1 hour between posts on the same network**, and never two within 15 minutes.
+- **Never skip a day:** every network has at least one approved, non-draft post every day. If a gap appears, fill it from allowed paused topics.
+- Post at the same time each day for each series. Longshot posts go out 1 hour before the first race.
+
+### Best UK times
+- TikTok: Thursday is best (16:00 to midnight); Wednesday 15:00-23:00 and Monday 16:00 to midnight are also good. Saturday is weakest.
+- Instagram: Monday-Thursday 17:00-21:00.
+- Facebook: Tuesday/Wednesday 12:00-20:00, Thursday 12:00-14:00 and 20:00.
+- X: Tuesday-Thursday 12:00-18:00, and around the big races on race days.
+- Pinterest: Tuesday-Thursday 10:00-13:00. Pins take 6-12 weeks to reach full reach, so post festival pins 6-12 weeks ahead.
+
+### Caption rules (every network)
+1. **Line 1 = hook + the words people search for**, and it matches the picture. Never open with a link, a price or "GET YOURS".
+2. Lines 2-3 tell a tiny story with real specific words.
+3. **One open question** people want to answer, and it matches the on-screen question. Never "tag a friend" or "comment YES".
+4. Write it to be **sent** to a friend.
+5. Price late, never first, and never on TikTok.
+6. **Hashtag limits:** TikTok 5 · Instagram 5 · Facebook 3 · X 2 · YouTube 3 · Pinterest 0 · LinkedIn 3. Never #fyp, #foryou or #viral. Never "tips" tags, anti-racing tags or bookmaker tags.
+7. **House lines go at the end, in order:** website line → (Christmas only) "Wishing you a Merry Christmas 🎅" → hashtags → **"Link in bio 👉 www.zanshorseracing.co.uk"** as the very last line.
+8. **Facebook:** no link in the post; put it in the first comment. **X:** put the link in the reply.
+9. Every post's last slide carries **www.zanshorseracing.co.uk**. Centre the text, add ZANS branding, and use the course colour on race posts.
+10. No non-runners: re-check the card just before posting.
+
+### Network specifics
+- **Instagram:** the first sentence reads like a Google search; add literal alt text; upload clean originals (no TikTok watermark). **Every post also goes out as an Instagram Story** with a link sticker.
+- **YouTube Shorts:** title keyword first (aim for 60 characters or fewer), up to 3 hashtags, one always **#Shorts**. Links aren't clickable in Shorts, so add "Search ZANSRacingTools on Etsy".
+- **Pinterest:** title ≤100 characters with the keyword first, description ~200-350 characters with no hashtags, linked straight to the Etsy listing.
+- **Every video is also a YouTube Short and a Pinterest video pin** (with its own Short title and pin title/description).
+- **LinkedIn:** lowest priority; use the corporate-gift angle (syndicates, owners' clubs, client gifts).
+
+### TikTok (the account has two strikes, from 6 and 13 Nov)
+- **Banned on TikTok:** race-day or "today" content, race times, "can X win", win records near a race, odds, price, bet, gamble, value, 18+, tips, selections.
+- Allowed: history, fans, horses and merch. Use a separate safe cut of each video. The end card on racing content has no website button.
+- Commercial-content disclosure on merch posts only. Shop wording only in the house lines at the end.
+- An independent check and Alex's yes on every TikTok post. Max 1-2 a day.
+- Safe zone on 1080×1920: keep everything inside y 340-1600, and nothing beyond x 950 below y 1240.
+- Video beats photo (about 650-750 views v ~240).
+
+### Paused until Alex restarts them
+- Mug posts (drafts only).
+- Tips and value videos (except the longshot series below).
+
+### Longshot series
+- Alex's 4 strongest picks, with his reasons, as an each-way Yankee at current prices. Video in the old bet-slip style with our voice, under 3 minutes. Stake/returns page with a racing-green amount box.
+- Post 1 hour before the first race, plus a results review post every evening.
+- TikTok gets a teaser only (no horses, no prices) pointing to Instagram.
+- Never name bookmakers. No record line.
+
+### Pre-send checklist (every post)
+1. Line 1 has a search phrase + who it's for, and it matches the image.
+2. Hashtag counts and character limits checked with code (TikTok photo title ≤90, Pinterest title ≤100 / description ≤500, YouTube title ≤100).
+3. Word scan is clean.
+4. House lines are at the end and in order. Christmas posts carry the Merry Christmas line and the Santa logo.
+5. No link in the Facebook post body; on X the link is in the reply.
+6. An independent phone-size check of every slide/frame.
+7. **Alex has said yes.**
+
+---
+
+## 6. Video and image rules
+
+### Video format (all networks)
+- **Motion in the first 1-2 seconds** (horse, finish, jockey). Text comes in only after 1 second. Never open on a static title card.
+- An on-screen question that matches the caption question.
+- Approve scene by scene with Alex first.
+- **3 music options** (one trending), and Alex picks. Never sound effects. Rotate the approved Mixkit sounds. Christmas music only on Christmas posts (from 1 Dec).
+- Voiceover on race videos. **Our voice everywhere:** "voice 2" = the Gemini voice Aoede, style exactly "a warm young woman from London with an everyday London accent, upbeat and conversational, not posh". Never rewrite those instructions and never substitute another voice. If voice credit runs out, pause and ask Alex to top up.
+- Make it professional, colourful, eye-catching and full of information (the Constitution River video is the benchmark). Alex finds plain static cards boring.
+- Never repeat an image within a horse video.
+- No count-up number animations.
+- Reply to comments with video replies.
+
+### Accuracy on named horses
+- Use the horse's **real silks** and name **the jockey who actually rode** in that race. Check each race separately in 2 sources.
+- **Triple-check every named horse's coat, markings and silks** (3 passes, the last one independent, 2 sources).
+- Hide faces. No AI likeness of real people.
+
+### Image realism
+- **Black gloves only** on jockeys (no white, cream or brown).
+- **Patterned rival silks** on every racing image (not plain blocks).
+- Graphics and maps drawn clean, symmetric, upright and centred. Measure them on the rendered phone-size still and show that still before the link.
+- Text never covers the horse.
+- No "AI illustration" text on images.
+
+### How images are made
+- **Free FLUX Krea** for all new images. Paid Gemini only for edits of existing images and small touch-ups.
+- Before generating, check each prompt against the realism standard. Redo only the scenes that failed. Try local pixel fixes before a new generation (credit is not wasted).
+
+---
+
+## 7. Final check before anything reaches Alex
+
+1. Run an **independent checker** over the whole product or pack (zans-final-check). Fix everything it finds.
+2. Every figure checked against the Knowledge Base or the product. Every claim true and verified in 2 sources.
+3. Compliance word scan clean, footers present where they belong and absent where they don't.
+4. Character limits counted with code.
+5. Deliver **one zip**: `<Edition> <Course>.zip` = product zip (no spaces) + PDFs + photos + video + Etsy text + READ ME + START HERE. No shop banner or logo files in it.
+6. Show phone-size previews (images or a readable page), never PDF links.
+
+---
+
+## 8. Calendar anchors (re-check dates on official fixture lists)
+
+Betfair Chase, Haydock 21 Nov 2026 · Coral Gold Cup, Newbury 28 Nov 2026 · King George VI Chase, Kempton 26 Dec 2026 · Dublin Racing Festival 30-31 Jan 2027 · Cheltenham Festival 16-19 Mar 2027 · Grand National Festival 8-10 Apr 2027 · Punchestown 27 Apr-1 May 2027 · Chester May Festival 5-7 May · York Dante 12-14 May · Epsom Derby 4-5 Jun · Royal Ascot 15-19 Jun · Newmarket July 8-10 Jul · Glorious Goodwood 27-31 Jul · York Ebor 18-21 Aug.
+
+Gift season runs mid-October to mid-December. For each big meeting: guide listed 4 weeks before → pins 3 weeks before → course-angle videos 2 weeks before → daily posts in race week → a facts-only recap afterwards. Big-race packs are kept out of the course Track DNA guides.
+
+---
+
+## 9. Reference links (no logins needed beyond Alex's own Claude account)
+- ZANS design system: https://claude.ai/artifact/DkxGRsbcFKhnGWwX6f7qLS
+- Course Knowledge Base (all figures): https://claude.ai/artifact/AP2pBbB9RbymKEmcfn2Kyt
+- House-style reference page: https://claude.ai/artifact/9LXwgXpKwRVxrYk3Sm6w7J
+- Etsy shop: https://www.etsy.com/uk/shop/ZANSRacingTools
+- Website: https://www.zanshorseracing.co.uk (renewal 29 Nov 2026; never delete the Search Console DNS record)
