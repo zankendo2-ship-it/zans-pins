@@ -142,7 +142,7 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - Pillar limits that still apply: mug posts stay drafts until Alex restarts them; betting-themed Pillar A posts carry the social betting footer; TikTok only gets Pillar B gift and merch posts (TikTok Strike Shield, Section 2).
 
 ### 3.4 Hook and conversion discipline
-- Every data graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still. Gift posts carry their hook in the branded colour block (3.7) and in the caption's first line.
+- Every data graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still. Gift posts carry their hook on the hook card (3.7) and in the caption's first line.
 - Every caption bridges naturally from the hook into a clear, compliant call-to-action pointing to `www.zanshorseracing.co.uk` or Etsy (`ZANSRacingTools`).
 - The approved product line, **"Make finding a winner a little easier."**, is used word for word and never strengthened. It belongs on posts selling guides and trackers. Gift posts (mugs, baubles) use a plain "design yours" call-to-action instead, because the line would not be true of a mug.
 - The call-to-action still follows the caption rules: never open with a link, a price or "GET YOURS"; Facebook link in the first comment; X link in the reply; no price on TikTok; YouTube Shorts say "Search ZANSRacingTools on Etsy"; house lines stay at the end in their set order.
@@ -162,44 +162,25 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 ### 3.6 TikTok Visual Hook Rule (strict, added 17 Nov 2026)
 - **NEVER post plain beige text-only title cards to TikTok.** They stall at about 700 views.
 - Every TikTok post uses a **rich, warm, real-life lifestyle scene**, for example a personalised silks bauble hanging on a lit Christmas tree by a fireplace.
-- The **short, emotional story hook sits in the branded colour block above the photo** and in the caption's first line (see 3.7), for example the Ombudsman retirement keepsake or the Lossiemouth pink-and-green-spots showcase.
+- The **short, emotional story hook sits on the hook card after the photo** and in the caption's first line, never over the photo (see 3.7), for example the Ombudsman retirement keepsake or the Lossiemouth pink-and-green-spots showcase.
 - The caption carries **a comment-triggering question**.
 - This sits inside the TikTok Strike Shield (Section 2): gift and merch posts only, with zero mention of odds, stalls or winning.
 
-### 3.7 Gift post spec: luxury photography in the Track DNA guide branding (17 Nov 2026)
-This replaces every earlier version of 3.7. Two references set the standard: the bauble photos Alex made in Claude Chat (Tinsel Turf over a frosty racecourse, Lucky Lady on a lit tree, Dad and Mum in gift boxes by the fire) and the branding of the Track DNA guides (the Ascot Flat Pro edition).
+### 3.7 LOCKED video and carousel style (Alex, 17 Nov 2026: "These are the video styles I want. Nothing else")
+This replaces every earlier visual layout rule in this file. **The reference is exact:** `reference/locked-style/ombudsman-video.mp4` and `lossiemouth-video.mp4`, plus their `-slide1/2/3.png`. Every bauble, mug, coaster and merch post looks exactly like these. Only the scene, the horse, the colours and the words change. Never restyle, re-time or "improve" it unless Alex asks.
 
-**1. The photograph**
-- Generate a full, photorealistic scene with FLUX Krea in the style of those references, with a **blank** glossy white ceramic disc bauble in it. Print our **exact designer artwork** (website bauble designer, by its design code) onto that bauble, keeping its real glaze, light, shadow, hole and ribbon (`tools/video/mapart.py`). FLUX never draws the design or the name: it misspells names ("LUCKY LADI") and changes colours.
-- No text, logo or box is laid over the bauble photograph: it opens the video and the carousel on its own, framed only by the metal strips.
-- Every name is checked against what Alex wrote before rendering. Lossiemouth is **LOSSIEMOUTH**.
+**How to make one (the only way):** add the post to `templates/posts.json`, then `node templates/render.js <cards_dir> <key>` and `python3 templates/video.py <cards_dir> templates/scenes/<key>.png <key> <cx> <cy> <snow|shimmer> <out_dir>`. Scenes: FLUX Krea photo with a blank product, then `templates/mapart.py` prints our exact designer artwork onto it (FLUX never draws the design or the name). The templates reproduce the reference frame for frame.
 
-**2. The branding (copied from the Track DNA guides, so every post follows through)**
-- **Top bar:** #1C1C1C, "ZANS · HORSE RACING GIFTS" in tracked Jost capitals, and a black pill with a gold border and gold IBM Plex Mono capitals on the right (for example "CHRISTMAS 2026"), like the guides' "PRO EDITION" pill.
-- **Metal strips at the top and bottom of every post and video frame**, like the guide pages, plus under the top bar and between sections. Pick the metal to suit the post's vibe:
-  - **Gold** (bronze #725415, gold #B98A36, champagne #FFF4C9) for warm posts: lit trees, candlelight, fireplaces, gift boxes, pink, red and green designs.
-  - **Silver** (#5E646B, #A9AFB6, #F7F9FB) for cool posts: frost, snow, winter racecourses, blue and white designs.
-  - The pill border and pill text use the same metal. Bronze stays reserved for the Beginner guides.
-- **The post's own colour** for the text and end-card clips, the way each guide uses its course colour: take it from the bauble's silks (Ombudsman blue #1C4FA0 with silver; Lossiemouth rose pink #C2477E with gold, to go with her green and pink design). A small tracked eyebrow, then the hook in big white Jost Bold capitals, then one sentence in Jost, then the question on a cream card.
-- **The big Santa-hat ZANS logo** with "WISHING YOU A MERRY CHRISTMAS" in Jost Bold capitals closes every Christmas post.
-- Fonts: Jost (headings), Source Sans 3 (small text), IBM Plex Mono (pills). Never another display face.
+**Video (9 seconds, 1080×1920, three clips):**
+1. **0.0s to 4.0s, the photo:** the product photo on its own with a slow push-in and natural movement (snow outdoors, a shimmer in the lights indoors). No text, banners, logos or boxes. Only a thin metal strip at the very top and the very bottom.
+2. **4.0s to 6.5s, the hook card:** soft cross-fade to a card in the horse's silks colour (default racing green #1F5A3D) with gentle snow: black top bar "ZANS · HORSE RACING GIFTS" with the season pill (for example "CHRISTMAS 2026") and the metal strip under it; a small tracked eyebrow; the big bold white uppercase headline; one sub-line; a short metal rule; the cream box "TELL US IN THE COMMENTS" with the question; metal strip and black footer bar at the bottom.
+3. **6.5s to 9.0s, the end card:** soft cross-fade, same colour, same framing, falling snow: "ZANS RACING · TOOLS & GIFTS", the big cream-framed ZANS logo (Santa hat at Christmas, standard logo the rest of the year), the greeting ("WISHING YOU A MERRY CHRISTMAS" at Christmas), the black BUY NOW pill and WWW.ZANSHORSERACING.CO.UK.
 
-**3. 4:5 feed carousel (1080×1350), three slides in the same order as the video**
-- **Slide 1:** the bauble photograph on its own, with only the metal strip at the top and bottom. No text.
-- **Slide 2:** the same photograph with the text box (fitted to its words, centred) at the top and the question card under the bauble.
-- **Slide 3:** the Santa-hat card: the big Santa-hat ZANS logo, "WISHING YOU A MERRY CHRISTMAS", the BUY NOW pill and the website.
-- Networks that take one image (Pinterest) get slide 1.
+**Carousel (1080×1350):** the same three as slides 1, 2 and 3. Pinterest gets slide 1.
 
-**4. Video (11.5 seconds, 1080×1920)**
-- **0.0s to 4.0s:** the bauble photograph on its own, with the metal strip at the top only, a slow push-in and natural movement (snowfall outdoors, a soft shimmer in the lights indoors). **No metal or black bar at the very bottom of any video frame.**
-- **4.0s to 6.0s:** the **text box** glides down slowly into place at y=350 (never a fast drop). The box is only as wide and tall as its words, centred, in the post's colour with a metal edge: a small eyebrow, the hook in white Jost Bold capitals and one sentence. No full-width band and no empty space inside it.
-- **6.4s to 7.4s:** the question fades up on a cream card under the bauble ("Tell us in the comments").
-- **9.0s to 11.5s:** a soft cross-fade to the Santa-hat end-card in the post's colour, with falling snow and WWW.ZANSHORSERACING.CO.UK at y=1350, and nothing at the very bottom.
-- All text sits between y=340 and y=1600, with nothing right of x=950 below y=1240. The bauble is never covered.
+**Metal:** silver for cool posts (snow, frost, blue designs), gold for warm posts (lit trees, candlelight, fires, red, pink and green designs). Bronze stays with the Beginner guides.
 
-**5. Process:** show Alex preview frames before rendering a batch. Run `compliance_check.py` on the captions. Nothing is scheduled until Alex approves.
-
-**6. Sound:** videos carry our brand voice with subtle music that suits the video, once a voice and music source is in place (the Section 7 voice rule still applies).
+**Process:** compliance check on the captions, show Alex the slides and video under new, clear file names, and schedule nothing until he says yes. Music only once Alex has picked a track (options in `templates/music.py`).
 
 ---
 

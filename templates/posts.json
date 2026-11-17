@@ -1,0 +1,34 @@
+{
+ "ombudsman": {
+  "metal": "silver",
+  "colour": "#1C4FA0",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "Ombudsman retiring?",
+  "sub": "Put him on your tree this Christmas.",
+  "question": "Which horse's name would you put on yours?"
+ },
+ "lossiemouth": {
+  "metal": "gold",
+  "colour": "#C2477E",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "Lossiemouth fans,",
+  "sub": "green silks and pink spots.",
+  "question": "Would this go on your tree?"
+ },
+ "silks-bauble": {
+  "metal": "gold",
+  "colour": "#B3122B",
+  "eyebrow": "Personalised silks bauble",
+  "big": "Their silks, on the tree",
+  "sub": "Any colours, any name.",
+  "question": "Whose name would you hang on the tree?"
+ },
+ "syndicate": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Syndicate gift · 35 days to Christmas",
+  "big": "One for every owner",
+  "sub": "Your silks, your horse's name.",
+  "question": "How many are in your syndicate?"
+ }
+}

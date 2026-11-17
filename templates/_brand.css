@@ -1,0 +1,14 @@
+/* ZANS locked post system (Alex, 17 Nov 2026). Shared by carousel_hook.html and carousel_endcard.html. Do not restyle. */
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:{{W}}px;height:{{H}}px;overflow:hidden;font-family:Jost,sans-serif;background:transparent}
+.bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 42%, {{COLOUR}}E6, {{COLOUR}})}
+.bar{position:absolute;left:0;right:0;top:0;height:60px;background:#1C1C1C;display:flex;align-items:center;justify-content:space-between;padding:0 44px}
+.bar b{color:#F3EDE5;font-weight:600;font-size:21px;letter-spacing:.26em}
+.pill{border:3px solid {{EDGE}};border-radius:8px;background:#141414;color:{{TEXT}};font-family:Plex,monospace;font-weight:700;letter-spacing:.2em;box-shadow:0 0 0 1px {{INSET}} inset}
+.stripe{position:absolute;left:0;right:0;height:12px;background:{{STRIPE}}}
+.eyebrow{font-weight:600;letter-spacing:.24em;text-transform:uppercase;opacity:.95}
+.big{font-weight:700;text-transform:uppercase;line-height:.98;letter-spacing:.005em}
+.sub{font-weight:600;line-height:1.15}
+.logo{display:block;border-radius:22px}
+.ink{color:#1C1C1C}.muted{color:#5E574F}
+.foot{position:absolute;left:0;right:0;top:{{FOOT_BAR}}px;height:60px;background:#1C1C1C}
