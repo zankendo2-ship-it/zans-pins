@@ -1,0 +1,28 @@
+{
+ "guide": {
+  "headline": "Ascot 5f: high draws win more",
+  "sub": "105 five-furlong races since 2019. Who won?",
+  "rows": [
+   {"label": "Low stalls", "hint": "lowest third", "fig": "1 in 16", "det": "28 winners from 453 runners", "w": 70},
+   {"label": "Middle stalls", "hint": "middle third", "fig": "1 in 16", "det": "31 winners from 487 runners", "w": 72},
+   {"label": "High stalls", "hint": "highest third", "fig": "1 in 11", "det": "46 winners from 522 runners", "w": 100, "hi": true}
+  ],
+  "note": "All ground conditions. Stalls split into thirds in each race. 6 or more runners, May 2019 to Oct 2026.",
+  "key": "High draws: 17% more winners than their odds suggested",
+  "save": "Save this before your next trip to Ascot",
+  "question": "High draw or low draw on soft ground at Ascot—where do you want to be?"
+ },
+ "bauble": {
+  "headline": "Their racing silks, on the tree",
+  "headline_html": "Their racing silks,<br><em>on the tree</em>",
+  "facts": "25 silks patterns · any colours · any name",
+  "send": "Send this to whoever buys the syndicate presents",
+  "question": "Whose name would you hang on the tree?"
+ },
+ "mug": {
+  "headline": "One mug for every syndicate member",
+  "facts": "25 silks patterns · any colours · your horse's name",
+  "send": "Send this to your syndicate group chat",
+  "question": "What is the single best racehorse name you have ever seen on a set of silks?"
+ }
+}
