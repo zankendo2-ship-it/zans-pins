@@ -164,31 +164,31 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - The caption carries **a comment-triggering question**.
 - This sits inside the TikTok Strike Shield (Section 2): gift and merch posts only, with zero mention of odds, stalls or winning.
 
-### 3.7 Visual style and the two-part video structure (Alex, 17 Nov 2026)
-Every gift post must look like a clean, high-end British gift brand, never a promotional flyer. Alex called the first Ombudsman layout cluttered, cheap and tacky; do not repeat any part of it.
+### 3.7 Gift video and photo spec (reset 17 Nov 2026; exact, non-negotiable)
+This section replaces every earlier version of 3.7. Earlier edits conflicted and produced tiny text and dark, muddy backgrounds. Never repeat that.
 
-**Never, on any product scene (photo or video):** bottom boxes, footer bars, banners, pills, panels, logos, logo boxes, sub-lines, website addresses, prices or emojis. The product scene fills the whole frame cleanly.
+**1. Hook typography (no small text)**
+- On 1080×1920 videos and 1080×1350 feed photos, the top hook headline is **95px to 110px, bold uppercase**, with its widest line spanning **85% to 90% of the canvas width**.
+- Colour: bright cream **#EAE2D8**, with the key words in bright metallic gold **#F2CF5B**.
+- A strong dark drop-shadow: **offset 4px, blur 12px**.
+- Use a condensed high-impact display face (Anton) so a full line fits at that size. Never render small or sentence-case hook text. No emojis.
+- On videos the hook pops and slides in at about 0.5 seconds.
 
-**Part 1: the bauble scene (0.0 to 6.0 seconds), clean and high-impact**
-- A natural photograph: generate with FLUX Krea a blank glossy ceramic bauble hanging from a dark green spruce branch, with warm golden fairy lights softly blurred behind (or a glowing fireplace and tree). Print the exact designer artwork onto that photographed bauble, keeping its real glaze, highlights, shadow, hole and cord (`tools/video/mapart.py`). It must never look like a flat sticker cut-out. The product itself is never AI-drawn or AI-animated.
-- The bauble is big and is the picture.
-- **Big, exciting hook text** at the top: much larger and bolder than body text, high contrast, brand cream #EAE2D8 for the first line and bright gold #F2CF5B for the second, with only a subtle shadow. It pops and slides in at about 0.5 seconds. No emojis.
-- A slow push-in on the bauble and a soft twinkle in the scene's own lights. Nothing else on screen.
+**2. Bright, warm lighting (no dark or muddy backgrounds)**
+- Fill the frame with vibrant golden fairy-light bokeh, a rich amber fireplace glow and bright warm highlights around the bauble, plus subtle sparkling light particles on video. It must feel festive, luxurious and eye-catching on a phone.
+- Generate the scene with FLUX Krea as a real-looking photograph of a blank glossy white ceramic bauble hanging by its red cord from a lit spruce branch, then print the exact designer artwork onto that bauble, keeping its real glaze, highlights, shadow, hole and cord (`tools/video/mapart.py`). Never a flat sticker cut-out, and the product is never AI-drawn.
+- The bauble is big. Never a dim, tight or flat crop.
 
-**Part 2: the branded snow end-card (6.0 to 8.5 seconds)**
-- Deep racing-green #1F5A3D card, framed top and bottom with ZANS metallic gold striping (#F2CF5B, champagne-to-bronze sheen), with soft, realistic falling snow across the whole screen.
-- **Everything sits in the upper and middle 70% of the frame**, well above the bottom 25% where the TikTok and Reels username and caption bar sit. In order, top to bottom:
-  1. "ZANS RACING · TOOLS & GIFTS" header in metallic gold.
-  2. The Santa-hat ZANS Horse Racing logo in a crisp gold-bordered cream card.
-  3. Bold warm-cream headline "Wishing you a Merry Christmas", then "Any horse's name · Custom keepsake".
-  4. A metallic gold "BUY NOW" pill (#F2CF5B fill, bold #1F5A3D text) directly above "WWW.ZANSHORSERACING.CO.UK".
-- The end-card is the only place the logo, website and button appear. Snow is allowed on the end-card.
+**3. Two-part video structure (8.5 seconds)**
+- **0.0s to 6.0s, the bauble scene:** the bright scene and the big animated hook only. **Zero boxes, bars, banners, pills, logos, sub-lines or website addresses over the photo.**
+- **6.0s to 8.5s, the animated ZANS snow end-card:** racing-green **#1F5A3D** background; metallic gold striping top and bottom; "ZANS RACING · TOOLS & GIFTS" in gold; the Santa-hat ZANS Horse Racing logo on a cream card framed in gold; bold "Wishing you a Merry Christmas"; a bright gold **BUY NOW** pill (#F2CF5B fill, bold #1F5A3D text); and **WWW.ZANSHORSERACING.CO.UK placed at y=1350px**, above the TikTok caption bar. Everything sits above the bottom 25% of the frame. Real animated falling snow covers the whole end-card.
+- Our existing end-card graphic was not found in the repo or Drive on 17 Nov, so it is recreated to this spec in `tools/video/overlays.js`.
 
-**Feed photos:** the Part 1 scene with the big hook and nothing else. The end-card can follow as a second slide.
+**4. Feed photos:** the bright scene with the big hook and nothing else. The end-card may follow as a second slide.
 
-**Sound:** videos carry our brand voice with subtle music that suits the video, once a voice and music source is in place (Section 7 voice rule still applies).
+**5. Process:** make one test frame of the hook screen and one of the snow end-card and show Alex before rendering full videos. Run `compliance_check.py` on the captions. Nothing is scheduled until Alex approves.
 
-Build scripts live in `tools/video/`. Run `compliance_check.py` on the captions and show Alex the previews before anything is booked.
+**6. Sound:** videos carry our brand voice with subtle music that suits the video, once a voice and music source is in place (the Section 7 voice rule still applies).
 
 ---
 
