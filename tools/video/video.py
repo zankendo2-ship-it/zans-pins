@@ -1,7 +1,7 @@
 import subprocess, numpy as np, imageio_ffmpeg
 from PIL import Image
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, SECS, W, H = 30, 8, 1080, 1920
-CX, CY, R = 654, 1121, 295           # bauble in the 1296x2304 master
+CX, CY, R = 654, 1111, 295           # bauble in the 1296x2304 master
 ease = lambda x: 0 if x <= 0 else 1 if x >= 1 else x*x*(3-2*x)
 def layer(img, a, dy=0):
     if a <= 0: return None

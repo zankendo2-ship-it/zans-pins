@@ -2,12 +2,13 @@
 import sys, numpy as np
 from PIL import Image, ImageFilter, ImageEnhance, ImageChops
 W, H = 1296, 2304            # 9:16 master, bigger than 1080x1920 so the video can zoom
-def build(capture, out, seed):
+def build(capture, out, seed, flip=False):
     rng = np.random.default_rng(seed)
     # backdrop: the Canva fireplace scene (small copy), enlarged and softened into bokeh
-    bd = Image.open('t1.png').convert('RGB').resize((W, int(W*200/112)), Image.BICUBIC)
-    bd = bd.crop((0, (bd.height-H)//2, W, (bd.height-H)//2+H)).filter(ImageFilter.GaussianBlur(14))
-    bd = ImageEnhance.Color(bd).enhance(1.35); bd = ImageEnhance.Contrast(bd).enhance(1.12); bd = ImageEnhance.Brightness(bd).enhance(1.05)
+    bd = Image.open('assets/scene-flux-branch.webp').convert('RGB')
+    if flip: bd = bd.transpose(Image.FLIP_LEFT_RIGHT)
+    bd = bd.resize((W, H), Image.LANCZOS)
+    bd = ImageEnhance.Color(bd).enhance(1.18); bd = ImageEnhance.Contrast(bd).enhance(1.06)
     # foreground: the designer photo with the artwork mapped on (1176x1455), plus its bauble mask
     fg = Image.open(capture).convert('RGB'); fw, fh = fg.size
     mask = Image.open('assets/bauble-tree-moody-mask.png').convert('L').resize((fw, fh), Image.LANCZOS)
@@ -22,9 +23,10 @@ def build(capture, out, seed):
     top_cy, top_r = 648*(fh/1088), 298*(fh/1088)
     keep = ((yy0 < top_cy - top_r*0.62) & (xx0 > fw*0.12) & (xx0 < fw*0.58)).astype(np.float32)   # only the branch above the bauble
     keep = np.asarray(Image.fromarray((keep*255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(30))).astype(np.float32)/255
-    alpha = alpha*keep
+    alpha = alpha*0          # the scene has its own branches: keep only the real cord and the ceramic disc
     red &= (yy0 < top_cy - top_r*0.5) & (xx0 > fw*0.36) & (xx0 < fw*0.56)
-    alpha = np.maximum(alpha, red.astype(np.float32))
+    redm = Image.fromarray((red*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.GaussianBlur(1))
+    alpha = np.maximum(alpha, np.asarray(redm).astype(np.float32)/255)
     # the ceramic disc: fully opaque, slightly grown to keep the white rim
     disc = np.asarray(mask.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.GaussianBlur(1.2))).astype(np.float32)/255
     alpha = np.maximum(alpha, disc)
@@ -34,11 +36,11 @@ def build(capture, out, seed):
     alpha *= edge
     A = Image.fromarray((alpha*255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.8))
     s = 0.74; fgs = fg.resize((int(fw*s), int(fh*s)), Image.LANCZOS); As = A.resize(fgs.size, Image.LANCZOS)
-    ox, oy = (W-fgs.width)//2 - 6, 480
+    ox, oy = (W-fgs.width)//2 - 6, 470
     # soft shadow behind the disc so it sits in the scene
     sh = Image.new('L', (W, H), 0); dm = mask.resize(fgs.size, Image.LANCZOS)
     sh.paste(dm, (ox+26, oy+34)); sh = sh.filter(ImageFilter.GaussianBlur(38))
-    bd = Image.composite(Image.new('RGB', (W, H), (8, 6, 4)), bd, sh.point(lambda v: int(v*0.55)))
+    bd = Image.composite(Image.new('RGB', (W, H), (8, 6, 4)), bd, sh.point(lambda v: int(v*0.45)))
     bd.paste(fgs, (ox, oy), As)
     # warm vignette
     vy, vx = np.mgrid[0:H, 0:W].astype(np.float32)
@@ -48,4 +50,4 @@ def build(capture, out, seed):
     cx, cy, r = ox + 452*(fw/880)*s, oy + 648*(fh/1088)*s, 298*(fw/880)*s
     print(out, 'bauble centre', round(cx), round(cy), 'radius', round(r))
 build('assets/bauble-ombudsman.png', 'v/scene-ombudsman.png', 1)
-build('assets/bauble-lossiemouth.png', 'v/scene-lossiemouth.png', 2)
+build('assets/bauble-lossiemouth.png', 'v/scene-lossiemouth.png', 2, flip=True)
