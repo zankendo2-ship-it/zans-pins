@@ -140,7 +140,7 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - Pillar limits that still apply: mug posts stay drafts until Alex restarts them; betting-themed Pillar A posts carry the social betting footer; TikTok only gets Pillar B gift and merch posts (TikTok Strike Shield, Section 2).
 
 ### 3.4 Hook and conversion discipline
-- Every graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still.
+- Every data graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still. Gift photos and videos carry no text on the scene (3.7): their hook is the caption's first line.
 - Every caption bridges naturally from the hook into a clear, compliant call-to-action pointing to `www.zanshorseracing.co.uk` or Etsy (`ZANSRacingTools`).
 - The approved product line, **"Make finding a winner a little easier."**, is used word for word and never strengthened. It belongs on posts selling guides and trackers. Gift posts (mugs, baubles) use a plain "design yours" call-to-action instead, because the line would not be true of a mug.
 - The call-to-action still follows the caption rules: never open with a link, a price or "GET YOURS"; Facebook link in the first comment; X link in the reply; no price on TikTok; YouTube Shorts say "Search ZANSRacingTools on Etsy"; house lines stay at the end in their set order.
@@ -160,36 +160,29 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 ### 3.6 TikTok Visual Hook Rule (strict, added 17 Nov 2026)
 - **NEVER post plain beige text-only title cards to TikTok.** They stall at about 700 views.
 - Every TikTok post uses a **rich, warm, real-life lifestyle scene**, for example a personalised silks bauble hanging on a lit Christmas tree by a fireplace.
-- A **short, emotional story hook sits at the top of the image as the one clean headline (see 3.7)**, for example the Ombudsman retirement keepsake or the Lossiemouth pink-and-green-spots showcase.
+- The **short, emotional story hook goes in the caption's first line**; the photo itself stays clean (see 3.7), for example the Ombudsman retirement keepsake or the Lossiemouth pink-and-green-spots showcase.
 - The caption carries **a comment-triggering question**.
 - This sits inside the TikTok Strike Shield (Section 2): gift and merch posts only, with zero mention of odds, stalls or winning.
 
-### 3.7 Gift video and photo spec (reset 17 Nov 2026; exact, non-negotiable)
-This section replaces every earlier version of 3.7. Earlier edits conflicted and produced tiny text and dark, muddy backgrounds. Never repeat that.
+### 3.7 Gift photo and video spec: pure luxury product photography (reset 17 Nov 2026)
+This replaces every earlier version of 3.7. The standard is the bauble photos Alex made in Claude Chat (Tinsel Turf over a frosty racecourse, Lucky Lady on a lit tree, Dad and Mum in gift boxes by the fire).
 
-**1. Hook typography (no small text)**
-- On 1080×1920 videos and 1080×1350 feed photos, the top hook headline is **95px to 110px, bold uppercase**, with its widest line spanning **85% to 90% of the canvas width**.
-- Colour: bright cream **#EAE2D8**, with the key words in bright metallic gold **#F2CF5B**.
-- A strong dark drop-shadow: **offset 4px, blur 12px**.
-- Use a condensed high-impact display face (Anton) so a full line fits at that size. Never render small or sentence-case hook text. No emojis.
-- On videos the hook pops and slides in at about 0.5 seconds.
+**1. Pure luxury product photography, zero text on the scene**
+- Generate a full, photorealistic scene with FLUX Krea (Hugging Face) in the style and light of those references: a frosted pine branch over a snowy UK racecourse at twilight; a rustic wooden table with candlelight and dried orange slices; a cosy lit Christmas tree with brass bells and glass ornaments; gift boxes by a fire.
+- FLUX generates the scene with a **blank** glossy white ceramic disc bauble in it. Our **exact designer artwork** (from the website bauble designer, by its design code) is then printed onto that bauble, keeping its real glaze, light, shadow, hole and ribbon (`tools/video/mapart.py`). FLUX never draws the design or the name itself: it misspells names ("LUCKY LADI") and changes colours.
+- **No text, banners, footer bars, boxes, logos, prices or website on the photo.** The bauble is the star and is big in the frame.
+- Spelling: every name is checked against what Alex wrote before rendering. Lossiemouth is **LOSSIEMOUTH**.
 
-**2. Bright, warm lighting (no dark or muddy backgrounds)**
-- Fill the frame with vibrant golden fairy-light bokeh, a rich amber fireplace glow and bright warm highlights around the bauble, plus subtle sparkling light particles on video. It must feel festive, luxurious and eye-catching on a phone.
-- **Never use AI to generate the bauble itself** (Alex, 17 Nov: it looks fake and plastic). Always use our real designer bauble product photo, with its genuine ribbon, pine sprig and studio lighting, and the artwork mapped onto the real bauble face by the website designer with its natural gloss and shadows. Keep the photo whole: never cut the bauble or the pine out and paste them onto another background.
-- Brighten and warm the surroundings of that real photo and add soft golden fairy-light bokeh and an amber fire glow around it (`tools/video/real.py`). AI image tools may only be used for backgrounds that contain no product.
-- The bauble is big. Never a dim, tight or flat crop.
+**2. Video (8.5 seconds, 1080×1920, Reels, TikTok and Shorts)**
+- **0.0s to 6.0s:** a slow, cinematic push-in on the pure photograph, with subtle natural movement only: gentle snowfall in outdoor scenes, a soft shimmer in the scene's own lights indoors. No text at all.
+- **6.0s to 8.5s:** cut to the approved animated ZANS snow end-card: #1F5A3D racing green, metallic gold striping top and bottom, falling snow, "ZANS RACING · TOOLS & GIFTS" in gold, the Santa-hat ZANS logo on a gold-framed cream card, bold "Wishing you a Merry Christmas", a gold BUY NOW pill (#F2CF5B fill, bold #1F5A3D text) and WWW.ZANSHORSERACING.CO.UK at y=1350px, all above the bottom 25% where the TikTok and Reels captions sit.
+- All branding and the call-to-action live on the end-card only.
 
-**3. Two-part video structure (8.5 seconds)**
-- **0.0s to 6.0s, the bauble scene:** the bright scene and the big animated hook only. **Zero boxes, bars, banners, pills, logos, sub-lines or website addresses over the photo.**
-- **6.0s to 8.5s, the animated ZANS snow end-card:** racing-green **#1F5A3D** background; metallic gold striping top and bottom; "ZANS RACING · TOOLS & GIFTS" in gold; the Santa-hat ZANS Horse Racing logo on a cream card framed in gold; bold "Wishing you a Merry Christmas"; a bright gold **BUY NOW** pill (#F2CF5B fill, bold #1F5A3D text); and **WWW.ZANSHORSERACING.CO.UK placed at y=1350px**, above the TikTok caption bar. Everything sits above the bottom 25% of the frame. Real animated falling snow covers the whole end-card.
-- Our existing end-card graphic was not found in the repo or Drive on 17 Nov, so it is recreated to this spec in `tools/video/overlays.js`.
+**3. 4:5 feed photos (1080×1350):** the pure photograph with zero text. The hook, the horse's story and zanshorseracing.co.uk go in the caption.
 
-**4. Feed photos:** the bright scene with the big hook and nothing else. The end-card may follow as a second slide.
+**4. Process:** show Alex preview frames before rendering a batch. Run `compliance_check.py` on the captions. Nothing is scheduled until Alex approves.
 
-**5. Process:** make one test frame of the hook screen and one of the snow end-card and show Alex before rendering full videos. Run `compliance_check.py` on the captions. Nothing is scheduled until Alex approves.
-
-**6. Sound:** videos carry our brand voice with subtle music that suits the video, once a voice and music source is in place (the Section 7 voice rule still applies).
+**5. Sound:** videos carry our brand voice with subtle music that suits the video, once a voice and music source is in place (the Section 7 voice rule still applies).
 
 ---
 

@@ -33,7 +33,7 @@ const endcard = y => `<div class="card"></div><div class="stripe" style="top:0">
     await p.setContent(`<!doctype html><meta charset=utf8><style>${css}</style>${html}`); await p.evaluate(() => document.fonts.ready); return p; };
   for (const [k, D] of Object.entries(P)) {
     for (const [tag, w, h, top] of [['hook', 1080, 1920, 352], ['f', 1080, 1350, 54]]) {
-      const p = await page(w, h, `<div class="hook" style="top:${top}px">${D.lines.map(l => `<span class="${l.c}">${l.t}</span>`).join('')}</div>`);
+      const p = await page(w, h, `<div style="position:absolute;left:0;right:0;top:0;height:${top + 420}px;background:linear-gradient(rgba(6,16,10,.88),rgba(6,16,10,.72) 62%,rgba(6,16,10,0))"></div><div class="hook" style="top:${top}px">${D.lines.map(l => `<span class="${l.c}">${l.t}</span>`).join('')}</div>`);
       // fit every line to 88% of the width, inside the 95-110px rule
       report[k + '-' + tag] = await p.evaluate(() => [...document.querySelectorAll('.hook span')].map(s => {
         s.style.display = 'inline-block'; s.style.fontSize = '100px'; const w100 = s.getBoundingClientRect().width;

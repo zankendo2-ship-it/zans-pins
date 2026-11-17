@@ -92,7 +92,7 @@
   },
   "on_image": {
    "t": "bauble",
-   "headline": "Ombudsman retiring? Put him on your tree",
+   "headline": "",
    "question": "",
    "facts": "",
    "send": ""
@@ -214,8 +214,8 @@
   },
   "on_image": {
    "t": "bauble",
-   "headline": "Lossiemouth fans: would this go on your tree?",
-   "question": "Would this go on your tree?",
+   "headline": "",
+   "question": "",
    "facts": "",
    "send": ""
   }

@@ -58,7 +58,9 @@ def check_post(post):
     img_text = " ".join(str(v) for v in img.values() if isinstance(v, str)) + " " + json.dumps(
         img.get("rows", "") or img.get("cards", ""), ensure_ascii=False)
     words = len([w for w in img.get("headline", "").split() if re.search(r"[A-Za-z0-9]", w)])
-    if not 5 <= words <= 8:
+    if img.get("t") == "bauble" and not img.get("headline"):
+        pass                     # pure gift photo: no text on the scene by design (rulebook 3.7)
+    elif not 5 <= words <= 8:
         fail("image", f"headline is {words} words (rule 3.4: 5 to 8)")
     if betting and "tiktok" in nets:
         fail("tiktok", "Strike Shield: a guide or betting-adjacent post is routed to TikTok")
@@ -124,7 +126,7 @@ def check_post(post):
             if len(d.get("title", "")) > 90:
                 fail(net, f"TikTok title {len(d['title'])} characters (limit 90)")
             if img.get("t") != "bauble":
-                fail(net, "Visual Hook Rule 3.6: image is not a real-life lifestyle scene")
+                fail(net, "Rule 3.6/3.7: TikTok image is not a real product photograph")
         if post.get("showcase") and re.search(r"etsy", every, re.I):
             fail(net, "showcase bauble post mentions or links to Etsy")
     return out
