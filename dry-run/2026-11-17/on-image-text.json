@@ -7,7 +7,7 @@
    {"label": "Middle stalls", "hint": "middle third", "fig": "1 in 16", "det": "31 winners from 487 runners", "w": 72},
    {"label": "High stalls", "hint": "highest third", "fig": "1 in 11", "det": "46 winners from 522 runners", "w": 100, "hi": true}
   ],
-  "note": "All ground conditions. Stalls split into thirds in each race. 6 or more runners, May 2019 to Oct 2026.",
+  "note": "All ground conditions. Stalls in thirds per race. 6 or more runners. May 2019 to Oct 2026.",
   "key": "High draws: 17% more winners than their odds suggested",
   "save": "Save this before your next trip to Ascot",
   "question": "High draw or low draw on soft ground at Ascot—where do you want to be?"

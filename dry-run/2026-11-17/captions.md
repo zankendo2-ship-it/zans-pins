@@ -77,5 +77,5 @@ Link in bio 👉 www.zanshorseracing.co.uk
 
 ## Independent check (17 Nov)
 - All Ascot figures confirmed against the Knowledge Base.
-- Fixed: caption 1 wording ("1 in 11" is per runner, now says so); on-image question now matches the caption; "all ground conditions" added to the sheet; logo added to post 1; mug question re-wrapped.
+- Fixed: caption 1 wording ("1 in 11" is per runner, now says so); on-image question now matches the caption; "all ground conditions" added to the sheet; mug question re-wrapped.
 - Open, for Alex: (a) the tree photo on the website bauble designer has a faint beige mark beside the cord and the hole, so it shows in post 2; it needs fixing in the designer itself. (b) Post 3 shows the designer's mug render on a plain panel; rule 5.3 prefers a real scene for social. (c) Post 2's website line still mentions mugs while mug posts are paused.
