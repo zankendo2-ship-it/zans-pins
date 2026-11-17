@@ -88,7 +88,52 @@ Scan by script for: tip/tips/tipster/tipping (also in hashtags), guaranteed, sur
 
 ---
 
-## 3. Etsy listing rules
+## 3. Viral growth, engagement and Etsy conversion engine
+
+Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them. If a growth rule clashes with a brand, compliance, ASA/CAP, copyright or network rule (TikTok above all), the stricter rule wins. Alex still approves every post.
+
+### 3.1 Design for saves and shares first
+- Every educational post (draw bias, going stats, course maps) is a clean, high-contrast **cheat sheet or mini-infographic** worth saving before race day. One idea per graphic.
+- Figures come from the Course Knowledge Base only, with their meaning and the number of races behind them. Groups with under 20 races are not used.
+- Always include a natural save or share prompt in plain UK English, for example:
+  - "Save this before your next trip to Ascot"
+  - "Send this to the person in your syndicate who always picks the wrong stall"
+- A share prompt asks people to **send** the post to someone. It is never "tag a friend".
+
+### 3.2 Drive comments with real racing debates
+- End the caption with one easy, opinion-splitting racing question that real fans love answering, for example:
+  - "High draw or low draw on soft ground at Ascot—where do you want to be?"
+  - "What is the single best racehorse name you have ever seen on a set of silks?"
+- One question per post, and it matches the on-screen question.
+- Never use cheesy engagement bait: no "tag a friend", "comment YES", "like if you agree" or "double tap".
+
+### 3.3 Three proven content pillars (rotated weekly)
+- **Pillar A, high-save track data:** bite-sized stats from our racecourse guides (for example Ascot draw bias from our 886 Ascot Flat races, or ground conditions explained), leading smoothly to the Beginner / Advanced / Pro PDF guides.
+- **Pillar B, emotional and gift triggers:** personalised silks mugs and Christmas baubles framed around syndicate pride, favourite horses and thoughtful gifts for hard-to-buy-for racing fans (`www.zanshorseracing.co.uk` and `ZANSRacingTools`).
+- **Pillar C, iconic silks and racing nostalgia:** stories behind famous colours and historic moments that spark shares and comments, strictly obeying the copyright and trade mark rules in Section 2 (no Juddmonte colours outside the Frankel social-video exception, no owner names, nothing sold beside a famous horse's name).
+- **Rotation:** all three pillars appear every week, and the lead pillar (the one that gets the best slots) rotates A → B → C week by week.
+- Pillar limits that still apply: mug posts stay drafts until Alex restarts them; betting-themed Pillar A posts carry the social betting footer; TikTok only gets the TikTok-safe cut (history, fans, horses, merch).
+
+### 3.4 Hook and conversion discipline
+- Every graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still.
+- Every caption bridges naturally from the hook into a clear, compliant call-to-action pointing to `www.zanshorseracing.co.uk` or Etsy (`ZANSRacingTools`).
+- The approved product line, **"Make finding a winner a little easier."**, is used word for word and never strengthened. It belongs on posts selling guides and trackers. Gift posts (mugs, baubles) use a plain "design yours" call-to-action instead, because the line would not be true of a mug.
+- The call-to-action still follows the caption rules: never open with a link, a price or "GET YOURS"; Facebook link in the first comment; X link in the reply; no price on TikTok; YouTube Shorts say "Search ZANSRacingTools on Etsy"; house lines stay at the end in their set order.
+
+### 3.5 Weekly Metricool analytics loop
+- Every Monday, for the week just finished (Monday to Sunday):
+  1. Run `python3 analyze_social_performance.py --pull-plan` to get the dates and metric IDs.
+  2. Pull each source with the Metricool connector and save it as `social_data/<week-start>/<SOURCE>.json`.
+  3. Run `python3 analyze_social_performance.py --week <week-start>`. It ranks hooks, pillars and formats by saves, shares, comments and link clicks and writes the week into `social_lessons_learned.md`.
+- Read the newest week in `social_lessons_learned.md` before planning any post, and say which lesson each new post is testing.
+- A pattern only counts with at least 5 posts on each side. Smaller samples are logged as "too few to call".
+- Metricool cannot see Etsy. Etsy visits and sales come from Etsy Stats and are added by hand.
+- The lessons log is internal. Its figures are never quoted in a post, listing or reply (no results claims).
+- No keys or connector IDs go in the script, the data files or the log.
+
+---
+
+## 4. Etsy listing rules
 
 ### Research first
 - Every new listing gets live UK **and** US keyword research (Etsy market pages etsy.com/uk/market/<phrase> and etsy.com/market/<phrase>, search suggestions, a rank checker), reported separately for each country.
@@ -195,9 +240,9 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 
 ---
 
-## 4. Product templates
+## 5. Product templates
 
-### 4.1 Track DNA racecourse guides
+### 5.1 Track DNA racecourse guides
 **Before every build:** read `guides/ALEX_RULES_AND_MISTAKES.md` and the review issue in the guides repo (horse-racing-extraction-, `guides/` folder), and tick each rule before Alex sees anything.
 
 - **Three editions, each adding real value** (Advanced never repeats Beginner pages):
@@ -214,19 +259,19 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 - **Files:** Colour PDF + Print PDF. Product zip named like `ZANS-Ascot-Flat-Track-DNA-2027-Pro-Edition.zip`. PDF compression must keep transparent PNGs. Run a PDF check before sending.
 - **Rollout:** every UK + Irish Jumps and AW course, 3 editions each. Alex signs one course off before the next starts.
 
-### 4.2 Bet trackers
+### 5.2 Bet trackers
 - 6 products: Beginner / Advanced / Pro × Desktop (Excel) / Phone (Google Sheets).
 - Decimal odds, "best odds (BOG) tracking", each-way calculator, odds converter.
 - Listing photos include a "THIS EDITION" photo and a "WHICH EDITION?" block.
 - Never claim a tracker helps anyone win.
 
-### 4.3 Mugs
+### 5.3 Mugs
 - Print file 2362×1004 or 2700×1050. Export the print PNG at 2× oversample.
 - Names in UPPERCASE, mirrored either side of the handle. Any name allowed except rude words.
 - Show designs as flat 2D mockups. AI lifestyle scenes are only for social posts.
 - The whole mug must be in shot. Real scenes, not plain cards.
 
-### 4.4 Baubles
+### 5.4 Baubles
 - They hang on a **tree**, never sit on presents.
 - True scale: about a 7.5 cm disc (roughly 0.9 of a palm's knuckle width).
 - Premium bauble photos use the **real website designer artwork** mapped onto the photo, never AI-drawn. Edited text follows the object's tilt and angle. 2 checkers review every photo.
@@ -234,7 +279,7 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 
 ---
 
-## 5. Social media (Metricool)
+## 6. Social media (Metricool)
 
 ### Setup
 - One Metricool brand, 7 networks: Instagram, Facebook, TikTok, YouTube, X, Pinterest, LinkedIn.
@@ -311,7 +356,7 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 
 ---
 
-## 6. Video and image rules
+## 7. Video and image rules
 
 ### Video format (all networks)
 - **Motion in the first 1-2 seconds** (horse, finish, jockey). Text comes in only after 1 second. Never open on a static title card.
@@ -342,7 +387,7 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 
 ---
 
-## 7. Final check before anything reaches Alex
+## 8. Final check before anything reaches Alex
 
 1. Run an **independent checker** over the whole product or pack (zans-final-check). Fix everything it finds.
 2. Every figure checked against the Knowledge Base or the product. Every claim true and verified in 2 sources.
@@ -353,7 +398,7 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 
 ---
 
-## 8. Calendar anchors (re-check dates on official fixture lists)
+## 9. Calendar anchors (re-check dates on official fixture lists)
 
 Betfair Chase, Haydock 21 Nov 2026 · Coral Gold Cup, Newbury 28 Nov 2026 · King George VI Chase, Kempton 26 Dec 2026 · Dublin Racing Festival 30-31 Jan 2027 · Cheltenham Festival 16-19 Mar 2027 · Grand National Festival 8-10 Apr 2027 · Punchestown 27 Apr-1 May 2027 · Chester May Festival 5-7 May · York Dante 12-14 May · Epsom Derby 4-5 Jun · Royal Ascot 15-19 Jun · Newmarket July 8-10 Jul · Glorious Goodwood 27-31 Jul · York Ebor 18-21 Aug.
 
@@ -361,7 +406,7 @@ Gift season runs mid-October to mid-December. For each big meeting: guide listed
 
 ---
 
-## 9. Reference links (no logins needed beyond Alex's own Claude account)
+## 10. Reference links (no logins needed beyond Alex's own Claude account)
 - ZANS design system: https://claude.ai/artifact/DkxGRsbcFKhnGWwX6f7qLS
 - Course Knowledge Base (all figures): https://claude.ai/artifact/AP2pBbB9RbymKEmcfn2Kyt
 - House-style reference page: https://claude.ai/artifact/9LXwgXpKwRVxrYk3Sm6w7J
