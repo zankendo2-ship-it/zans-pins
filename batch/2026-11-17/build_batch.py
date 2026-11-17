@@ -49,10 +49,10 @@ POSTS = [
       story=f"Design a personalised silks bauble with your favourite horse's name at {SITE}. {SHOW_NOTE}",
       story_fb=f"Design a personalised silks bauble with your favourite horse's name on our website. {SHOW_NOTE}",
       story_tt=f"Design a personalised silks bauble with your favourite horse's name. {SHOW_NOTE_TT}",
-      prompt="Send this to an Ombudsman fan.", cta=SHOW_CTA, cta_fb=SHOW_CTA, question="", web=WEB_GIFTS,
-      tags=["horseracinggifts", "christmasbaubles", "personalisedbauble", "racingsilks", "horseracing"],
-      x=("With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇 A showcase design: "
-         "yours can carry any horse's name. #ChristmasBaubles #HorseRacing"),
+      prompt="Send this to an Ombudsman fan.", cta=SHOW_CTA, cta_fb=SHOW_CTA, question="Which horse's name would you put on yours? 👇", web=WEB_GIFTS,
+      tags=["horseracinggifts", "christmasbaubles", "personalisedbauble", "racingsilks", "christmasgifts"],
+      x=("With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇 A showcase design. "
+         "Which horse's name would you put on yours? #ChristmasBaubles #HorseRacing"),
       link=DESIGNER, tt_title="Hang your favourite horse on the tree 🎄 Personalised silks bauble",
       pin_title="Personalised Racehorse Name Christmas Bauble - Racing Silks Gift",
       pin=("A personalised silks bauble with your favourite horse's name. This showcase design carries Ombudsman; "
@@ -79,7 +79,7 @@ POSTS = [
          "1 in 7, the highest third about 1 in 14. Low draw or high draw over 6f at Kempton: where do you want to "
          "be? #Kempton #HorseRacing"),
       x_reply="Our Kempton Track DNA guide is coming soon. Make finding a winner a little easier.",
-      link=ETSY_SHOP,
+      link=f"https://{SITE}/",
       pin_title="Kempton Draw Bias Cheat Sheet - 6 Furlong Stall Stats from 639 All-Weather Races",
       pin=("Kempton draw bias over 6 furlongs, from 639 all-weather races since 2019. The lowest third of the stalls "
            "won about 1 in 7, the middle third about 1 in 10 and the highest third about 1 in 14. Save this before "
@@ -93,10 +93,10 @@ POSTS = [
       story=f"Customise your own silks bauble with any horse's name at {SITE}. {SHOW_NOTE}",
       story_fb=f"Customise your own silks bauble with any horse's name on our website. {SHOW_NOTE}",
       story_tt=f"Customise your own silks bauble with any horse's name. {SHOW_NOTE_TT}",
-      prompt="Send this to a Lossiemouth fan.", cta=SHOW_CTA, cta_fb=SHOW_CTA, question="", web=WEB_GIFTS,
-      tags=["horseracinggifts", "christmasbaubles", "personalisedbauble", "racingsilks", "jumpracing"],
-      x=("Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇 A showcase design: yours can carry any horse's "
-         "name. #ChristmasBaubles #HorseRacing"),
+      prompt="Send this to a Lossiemouth fan.", cta=SHOW_CTA, cta_fb=SHOW_CTA, question="Which horse's name would you put on yours? 👇", web=WEB_GIFTS,
+      tags=["horseracinggifts", "christmasbaubles", "personalisedbauble", "racingsilks", "christmasgifts"],
+      x=("Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇 A showcase design. Which horse's name would you "
+         "put on yours? #ChristmasBaubles #HorseRacing"),
       link=DESIGNER, tt_title="Your favourite horse on the Christmas tree 🎄 Personalised silks bauble",
       pin_title="Personalised Horse Name Christmas Bauble in Racing Silks - Gift for Racing Fans",
       pin=("Customise your own silks bauble with any horse's name. This showcase design carries Lossiemouth; yours can "
@@ -119,7 +119,7 @@ POSTS = [
       x=("Coming soon 🏇 Track DNA guides for Kempton, Southwell, Wolverhampton and Newcastle, built from 14,736 "
          "all-weather races since 2019. Which all-weather track do you want first? #HorseRacing #AllWeather"),
       x_reply="Beginner, Advanced and Pro editions for each track. Make finding a winner a little easier.",
-      link=ETSY_SHOP,
+      link=f"https://{SITE}/",
       pin_title="All-Weather Racecourse Guides Coming Soon - Kempton, Southwell, Wolverhampton, Newcastle",
       pin=("Coming soon: ZANS Track DNA racecourse guides for Kempton, Southwell, Wolverhampton and Newcastle, built "
            "from 14,736 all-weather races since 2019. Beginner, Advanced and Pro editions for each track: 4,739 races at "
@@ -144,7 +144,7 @@ POSTS = [
       pin=("A Christmas gift for racehorse syndicates and owners: one bauble for every member, in your silks with your "
            "horse's name. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, with a "
            "ribbon, printed the same on both sides."),
-      alt="Racing silks Christmas bauble in green and yellow hoops with the name Lucky Seven, hanging on a Christmas tree"),
+      alt="Racing silks Christmas bauble in green and yellow hoops with the name The Dream Team, hanging on a Christmas tree"),
 ]
 
 
@@ -165,7 +165,7 @@ def build(post):
     nets = {
         "instagram": dict(text=join(*body, post["web"], XMAS if xmas else "", foot, tags(post, 5), BIO)),
         "facebook": dict(text=join(*fb_body, XMAS if xmas else "", foot, tags(post, 3)),
-                         first_comment=f"{'Design yours' if not betting else 'The ZANS guides'}: {post['link']}"),
+                         first_comment=f"{'Design yours' if not betting else 'ZANS Racing'}: {post['link']}"),
         "x": dict(text=post["x"],
                   reply=" ".join(p for p in [post.get("x_reply", f"Design yours: {post['link']}"),
                                              XMAS if xmas else "", foot] if p)),

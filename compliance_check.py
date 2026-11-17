@@ -81,9 +81,11 @@ def check_post(post):
         first = text.split("\n")[0]
         if re.search(r"www\.|https?://|£|get yours", first, re.I):
             fail(net, "line 1 opens with a link, a price or GET YOURS")
-        questions = text.count("?")
-        if net != "pinterest" and questions != 1:
-            fail(net, f"{questions} questions in the caption (rule: exactly one)")
+        # One open question to answer. A rhetorical hook in line 1 is allowed on top of it.
+        hook_q = first.count("?") if net != "x" else max(0, text.count("?") - 1)
+        questions = text.count("?") - hook_q
+        if net != "pinterest" and (questions != 1 or hook_q > 1):
+            fail(net, f"{text.count('?')} question marks (rule: one open question, plus at most one in the hook)")
         if "finding a winner" in every and PRODUCT_LINE not in every:
             fail(net, "product line is not word for word")
         if "finding a winner" in every and not betting:

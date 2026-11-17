@@ -115,11 +115,13 @@ Send this to an Ombudsman fan.
 
 Silks bauble Premium, £14.99.
 
+Which horse's name would you put on yours? 👇
+
 Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #horseracing
+#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts
 
 Link in bio 👉 www.zanshorseracing.co.uk
 ```
@@ -135,6 +137,8 @@ Send this to an Ombudsman fan.
 
 Silks bauble Premium, £14.99.
 
+Which horse's name would you put on yours? 👇
+
 Wishing you a Merry Christmas 🎅
 
 #horseracinggifts #christmasbaubles #personalisedbauble
@@ -145,7 +149,7 @@ First comment: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/
 ### x · Wed 18 Nov 09:00
 
 ```
-With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇 A showcase design: yours can carry any horse's name. #ChristmasBaubles #HorseRacing
+With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇 A showcase design. Which horse's name would you put on yours? #ChristmasBaubles #HorseRacing
 ```
 
 Reply: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/ Wishing you a Merry Christmas 🎅
@@ -171,6 +175,8 @@ Send this to an Ombudsman fan.
 
 Silks bauble Premium, £14.99.
 
+Which horse's name would you put on yours? 👇
+
 Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄
 
 Wishing you a Merry Christmas 🎅
@@ -187,9 +193,11 @@ With talk of Ombudsman retiring soon, why not hang him on your tree this Christm
 
 Design a personalised silks bauble with your favourite horse's name. This one's a showcase. You pick the pattern, the colours and the name.
 
+Which horse's name would you put on yours? 👇
+
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #horseracing
+#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts
 
 Link in bio 👉 www.zanshorseracing.co.uk
 ```
@@ -240,7 +248,7 @@ Data: Kempton all-weather, Jan 2019 to Oct 2026, races with 6 or more runners, Z
 #kempton #horseracing #allweatherracing
 ```
 
-First comment: The ZANS guides: https://www.etsy.com/uk/shop/ZANSRacingTools
+First comment: ZANS Racing: https://www.zanshorseracing.co.uk/
 
 ### x · Wed 18 Nov 15:00
 
@@ -258,7 +266,7 @@ Title: Kempton Draw Bias Cheat Sheet - 6 Furlong Stall Stats from 639 All-Weathe
 Kempton draw bias over 6 furlongs, from 639 all-weather races since 2019. The lowest third of the stalls won about 1 in 7, the middle third about 1 in 10 and the highest third about 1 in 14. Save this before your next night at Kempton. The ZANS Kempton Track DNA racecourse guide is coming soon. 18+ Only. Begambleaware.org. Past track statistics do not guarantee future race outcomes. Insights are for informational and entertainment use only.
 ```
 
-Link: https://www.etsy.com/uk/shop/ZANSRacingTools
+Link: https://www.zanshorseracing.co.uk/
 
 ### linkedin · Wed 18 Nov 17:00
 
@@ -295,11 +303,13 @@ Send this to a Lossiemouth fan.
 
 Silks bauble Premium, £14.99.
 
+Which horse's name would you put on yours? 👇
+
 Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #jumpracing
+#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts
 
 Link in bio 👉 www.zanshorseracing.co.uk
 ```
@@ -315,6 +325,8 @@ Send this to a Lossiemouth fan.
 
 Silks bauble Premium, £14.99.
 
+Which horse's name would you put on yours? 👇
+
 Wishing you a Merry Christmas 🎅
 
 #horseracinggifts #christmasbaubles #personalisedbauble
@@ -325,7 +337,7 @@ First comment: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/
 ### x · Thu 19 Nov 09:00
 
 ```
-Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇 A showcase design: yours can carry any horse's name. #ChristmasBaubles #HorseRacing
+Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇 A showcase design. Which horse's name would you put on yours? #ChristmasBaubles #HorseRacing
 ```
 
 Reply: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/ Wishing you a Merry Christmas 🎅
@@ -351,6 +363,8 @@ Send this to a Lossiemouth fan.
 
 Silks bauble Premium, £14.99.
 
+Which horse's name would you put on yours? 👇
+
 Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄
 
 Wishing you a Merry Christmas 🎅
@@ -367,9 +381,11 @@ Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇
 
 Customise your own silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.
 
+Which horse's name would you put on yours? 👇
+
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #jumpracing
+#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts
 
 Link in bio 👉 www.zanshorseracing.co.uk
 ```
@@ -416,7 +432,7 @@ Which all-weather track do you want first? 👇
 #allweatherracing #horseracing #kempton
 ```
 
-First comment: The ZANS guides: https://www.etsy.com/uk/shop/ZANSRacingTools
+First comment: ZANS Racing: https://www.zanshorseracing.co.uk/
 
 ### x · Thu 19 Nov 15:00
 
@@ -434,7 +450,7 @@ Title: All-Weather Racecourse Guides Coming Soon - Kempton, Southwell, Wolverham
 Coming soon: ZANS Track DNA racecourse guides for Kempton, Southwell, Wolverhampton and Newcastle, built from 14,736 all-weather races since 2019. Beginner, Advanced and Pro editions for each track: 4,739 races at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at Southwell. 18+ Only. Begambleaware.org. Past track statistics do not guarantee future race outcomes. Insights are for informational and entertainment use only.
 ```
 
-Link: https://www.etsy.com/uk/shop/ZANSRacingTools
+Link: https://www.zanshorseracing.co.uk/
 
 ### linkedin · Thu 19 Nov 17:00
 
