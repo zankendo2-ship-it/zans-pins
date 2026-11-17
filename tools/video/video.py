@@ -3,7 +3,7 @@ no text at all. 6-8.5s: the animated ZANS snow end-card with all the branding an
 import subprocess, numpy as np, imageio_ffmpeg
 from PIL import Image, ImageFilter
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, W, H = 30, 1080, 1920
-P1, XF, TOTAL = 6.5, 0.5, 9.0
+P1, XF, TOTAL = 9.0, 0.5, 11.5
 ease = lambda x: 0 if x <= 0 else 1 if x >= 1 else x*x*(3-2*x)
 def flakes(seed, n, w, h, rmin, rmax, smin, smax):
     r = np.random.default_rng(seed)
@@ -42,19 +42,19 @@ def render(key, centre, mode):
             a = np.asarray(frame.resize((W, H), Image.BICUBIC, box=(x0, y0, x0+cw, y0+ch))).astype(np.float32)
             if mode == 'snow': a = snow(a, t, scene_snow, 14)
             fr = Image.alpha_composite(Image.fromarray(a.clip(0, 255).astype(np.uint8)).convert('RGBA'), strips)
-            bk = ease((t-3.0)/1.4)                                      # the bar eases down slowly, from 3.0s to 4.4s
+            bk = ease((t-4.0)/2.0)                                      # bauble alone for 4s, then the box glides in slowly over 2s
             if bk > 0:
-                L = bar.transform(bar.size, Image.AFFINE, (1, 0, 0, 0, 1, int((1-bk)*140)))
-                L = Image.merge('RGBA', (*L.split()[:3], L.split()[3].point(lambda x: int(x*min(1, bk*1.6)))))
+                L = bar.transform(bar.size, Image.AFFINE, (1, 0, 0, 0, 1, int((1-bk)*90)))
+                L = Image.merge('RGBA', (*L.split()[:3], L.split()[3].point(lambda x: int(x*bk))))
                 fr = Image.alpha_composite(fr, L)
-            qk = ease((t-4.8)/0.9)                                      # then the question fades up under the bauble
+            qk = ease((t-6.4)/1.0)                                      # then the question fades up under the bauble
             if qk > 0: fr = Image.alpha_composite(fr, Image.merge('RGBA', (*qc.split()[:3], qc.split()[3].point(lambda x: int(x*qk)))))
             a = np.asarray(fr.convert('RGB')).astype(np.float32)
         if t >= P1:                                                     # the Santa-hat end-card
             c = snow(card.copy(), t-P1, card_snow).clip(0, 255); k = ease((t-P1)/XF)
             a = c if k >= 1 else a*(1-k) + c*k
         a = a.clip(0, 255)
-        if f in (0, 100, 170, 250): Image.fromarray(a.astype(np.uint8)).save(f'v/{key}-frame-{f:03d}.jpg', quality=92)
+        if f in (0, 150, 230, 320): Image.fromarray(a.astype(np.uint8)).save(f'v/{key}-frame-{f:03d}.jpg', quality=92)
         p.stdin.write(a.astype(np.uint8).tobytes())
     p.stdin.close(); p.wait(); print(out)
     fh = int(MW*1350/1080); y0 = int(min(max(CY - fh*0.52, 0), MH-fh))

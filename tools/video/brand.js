@@ -32,14 +32,12 @@ const P = {
 const bar = `<div class="bar"><b>ZANS · HORSE RACING GIFTS</b><span class="pill" style="font-size:19px;padding:5px 16px">CHRISTMAS 2026</span></div><div class="stripe" style="top:60px"></div>`;
 const foot = H => `<div class="stripe" style="top:${H - 72}px"></div><div style="position:absolute;left:0;right:0;top:${H - 60}px;height:60px;background:#1C1C1C"></div>`;
 const bg = D => `<div style="position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 42%, ${D.colour}E6, ${D.colour})"></div>`;
-// compact bar: only as tall as its text, metal strip above and below, in the post's colour
-const compactBar = (D, top, sz) => `<div class="stripe" style="top:${top}px"></div>
-  <div class="block" style="top:${top + 12}px;background:${D.colour};padding:${sz.pad}px 52px ${sz.pad + 4}px">
+// text box: only as wide and tall as its words, centred, with a metal edge, in the post's colour
+const compactBar = (D, top, sz) => `<div style="position:absolute;left:0;right:0;top:${top}px;text-align:center">
+  <div style="display:inline-block;max-width:940px;background:${D.colour};border:4px solid var(--edge);border-radius:20px;padding:${sz.pad}px 38px ${sz.pad + 4}px;box-shadow:0 0 0 2px var(--inset) inset,0 18px 46px #0008;color:#fff">
     <div class="eyebrow" style="font-size:${sz.eb}px">${D.eyebrow}</div>
     <div class="big" style="font-size:${sz.big}px;margin-top:8px;white-space:nowrap;overflow:hidden">${D.big}</div>
-    <div class="sub" style="font-size:${sz.sub}px;margin-top:6px">${D.sub}</div></div>
-  <div class="stripe" id="lower" style="top:0"></div>
-  <script>const b=document.querySelector('.block');document.getElementById('lower').style.top=(b.offsetTop+b.offsetHeight)+'px'</script>`;
+    <div class="sub" style="font-size:${sz.sub}px;margin-top:6px">${D.sub}</div></div></div>`;
 const qCard = (D, top, left, width, sz) => `<div style="position:absolute;left:${left}px;width:${width}px;top:${top}px;background:#EAE2D8;border-radius:20px;padding:22px 30px;text-align:center;box-shadow:0 16px 44px #0007">
     <div class="eyebrow muted" style="font-size:${sz.eb}px">Tell us in the comments</div>
     <div class="ink" style="font-weight:700;font-size:${sz.q}px;line-height:1.12;margin-top:8px;text-wrap:balance">${D.q}</div></div>`;
@@ -53,13 +51,13 @@ const textCard = (D, H, y) => `${bg(D)}${bar}
     <div class="eyebrow muted" style="font-size:22px">Tell us in the comments</div>
     <div class="ink" style="font-weight:700;font-size:${y.qS}px;line-height:1.12;margin-top:12px">${D.q}</div></div>${foot(H)}`;
 // clip 3: the Santa-hat end-card
-const endCard = (D, H, y) => `${bg(D)}${bar}
+const endCard = (D, H, y, bottom = true) => `${bg(D)}${bar}
   <div class="eyebrow" style="position:absolute;left:0;right:0;top:${y.eb}px;text-align:center;color:#fff;font-size:26px">ZANS Racing · Tools &amp; Gifts</div>
   <img class="logo" src="${santa}" style="position:absolute;left:${(1080 - y.logoW) / 2}px;top:${y.logo}px;width:${y.logoW}px;box-shadow:0 22px 60px #0006">
   <div class="big" style="position:absolute;left:0;right:0;top:${y.wish}px;text-align:center;color:#fff;font-size:${y.wishS}px;line-height:1.0">Wishing you a<br>Merry Christmas</div>
   <div style="position:absolute;left:0;right:0;top:${y.btn}px;text-align:center"><span class="pill" style="display:inline-block;font-size:40px;padding:14px 46px;border-radius:14px">BUY NOW</span></div>
-  <div style="position:absolute;left:0;right:0;top:${y.url}px;text-align:center;color:#fff;font-weight:600;font-size:34px;letter-spacing:.12em">WWW.ZANSHORSERACING.CO.UK</div>${foot(H)}`;
-const strips = H => `<div class="stripe" style="top:0"></div><div class="stripe" style="top:${H - 12}px"></div>`;
+  <div style="position:absolute;left:0;right:0;top:${y.url}px;text-align:center;color:#fff;font-weight:600;font-size:34px;letter-spacing:.12em">WWW.ZANSHORSERACING.CO.UK</div>${bottom ? foot(H) : ''}`;
+const strips = (H, bottom = true) => `<div class="stripe" style="top:0"></div>` + (bottom ? `<div class="stripe" style="top:${H - 12}px"></div>` : '');
 (async () => {
   const b = await chromium.launch();
   const shot = async (name, w, h, html, transparent, metal) => { const M = METAL[metal || 'gold']; const p = await b.newPage({ viewport: { width: w, height: h } });
@@ -69,13 +67,13 @@ const strips = H => `<div class="stripe" style="top:0"></div><div class="stripe"
     await p.screenshot({ path: `v/${name}.png`, omitBackground: transparent }); await p.close(); return fit; };
   for (const [k, D] of Object.entries(P)) {
     // video layers (1080x1920); text between y 340 and 1600, nothing right of x 950 below y 1240
-    await shot(`${k}-v-strips`, 1080, 1920, strips(1920), true, D.metal);
-    console.log(k, 'bar', await shot(`${k}-v-bar`, 1080, 1920, compactBar(D, 340, { pad: 24, eb: 22, big: 92, sub: 44 }), true, D.metal));
+    await shot(`${k}-v-strips`, 1080, 1920, strips(1920, false), true, D.metal);
+    console.log(k, 'bar', await shot(`${k}-v-bar`, 1080, 1920, compactBar(D, 350, { pad: 22, eb: 20, big: 84, sub: 40 }), true, D.metal));
     await shot(`${k}-v-q`, 1080, 1920, qCard(D, 1452, 120, 830, { eb: 18, q: 42 }), true, D.metal);
-    await shot(`${k}-endcard`, 1080, 1920, endCard(D, 1920, { eb: 350, logo: 410, logoW: 700, wish: 1000, wishS: 94, btn: 1222, url: 1350 }), false, D.metal);
+    await shot(`${k}-endcard`, 1080, 1920, endCard(D, 1920, { eb: 350, logo: 410, logoW: 700, wish: 1000, wishS: 94, btn: 1222, url: 1350 }, false), false, D.metal);
     // feed carousel (1080x1350): 1 the photo, 2 the photo with the bar and question, 3 the Santa-hat card
     await shot(`${k}-s1-strips`, 1080, 1350, strips(1350), true, D.metal);
-    await shot(`${k}-s2-over`, 1080, 1350, strips(1350) + compactBar(D, 40, { pad: 22, eb: 20, big: 86, sub: 40 }) + qCard(D, 1150, 140, 800, { eb: 17, q: 40 }), true, D.metal);
+    await shot(`${k}-s2-over`, 1080, 1350, strips(1350) + compactBar(D, 44, { pad: 20, eb: 18, big: 76, sub: 36 }) + qCard(D, 1150, 140, 800, { eb: 17, q: 40 }), true, D.metal);
     await shot(`${k}-s3`, 1080, 1350, endCard(D, 1350, { eb: 214, logo: 262, logoW: 560, wish: 752, wishS: 84, btn: 958, url: 1060 }), false, D.metal);
   }
   await b.close();

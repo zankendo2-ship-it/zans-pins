@@ -186,16 +186,16 @@ This replaces every earlier version of 3.7. Two references set the standard: the
 
 **3. 4:5 feed carousel (1080×1350), three slides in the same order as the video**
 - **Slide 1:** the bauble photograph on its own, with only the metal strip at the top and bottom. No text.
-- **Slide 2:** the same photograph with the compact text bar at the top and the question card under the bauble.
+- **Slide 2:** the same photograph with the text box (fitted to its words, centred) at the top and the question card under the bauble.
 - **Slide 3:** the Santa-hat card: the big Santa-hat ZANS logo, "WISHING YOU A MERRY CHRISTMAS", the BUY NOW pill and the website.
 - Networks that take one image (Pinterest) get slide 1.
 
-**4. Video (9 seconds, 1080×1920)**
-- **0.0s to 3.0s:** the bauble photograph on its own, framed only by the metal strips, with a slow push-in and natural movement (snowfall outdoors, a soft shimmer in the lights indoors).
-- **3.0s to 4.4s:** the **compact text bar** eases down slowly into place at y=340 (never a fast drop). The bar is only as tall as its text: a small eyebrow, the hook in white Jost Bold capitals and one sentence, with a metal strip above and below. No empty space inside it.
-- **4.8s to 5.7s:** the question fades up on a cream card under the bauble ("Tell us in the comments").
-- **6.5s to 9.0s:** a soft cross-fade to the Santa-hat end-card in the post's colour, with falling snow and WWW.ZANSHORSERACING.CO.UK at y=1350.
-- All text sits between y=340 and y=1600, with nothing right of x=950 below y=1240, clear of the TikTok and Reels interface. The bauble is never covered.
+**4. Video (11.5 seconds, 1080×1920)**
+- **0.0s to 4.0s:** the bauble photograph on its own, with the metal strip at the top only, a slow push-in and natural movement (snowfall outdoors, a soft shimmer in the lights indoors). **No metal or black bar at the very bottom of any video frame.**
+- **4.0s to 6.0s:** the **text box** glides down slowly into place at y=350 (never a fast drop). The box is only as wide and tall as its words, centred, in the post's colour with a metal edge: a small eyebrow, the hook in white Jost Bold capitals and one sentence. No full-width band and no empty space inside it.
+- **6.4s to 7.4s:** the question fades up on a cream card under the bauble ("Tell us in the comments").
+- **9.0s to 11.5s:** a soft cross-fade to the Santa-hat end-card in the post's colour, with falling snow and WWW.ZANSHORSERACING.CO.UK at y=1350, and nothing at the very bottom.
+- All text sits between y=340 and y=1600, with nothing right of x=950 below y=1240. The bauble is never covered.
 
 **5. Process:** show Alex preview frames before rendering a batch. Run `compliance_check.py` on the captions. Nothing is scheduled until Alex approves.
 
