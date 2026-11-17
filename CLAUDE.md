@@ -186,7 +186,7 @@ Every bauble, mug and gift post matches `reference/locked-style/ombudsman-slide1
 
 **Slide 3 (6.5s to 9.5s):** exactly the `ombudsman-slide3.png` layout with falling snow: the cream-framed Santa-hat ZANS logo card, bold "WISHING YOU A MERRY CHRISTMAS", the dark BUY NOW pill and WWW.ZANSHORSERACING.CO.UK.
 
-**Audio:** our warm British female brand voiceover over slides 1 and 2 (about 6 seconds), then the jolly British Santa voice on slide 3: "Ho, ho, ho! Merry Christmas from ZANS Racing!" Current voices: edge-tts `en-GB-LibbyNeural` at +6% for the brand voice (a stand-in until the Gemini Aoede voice in Section 7 is available) and `en-GB-RyanNeural` at -14Hz pitch, +30% rate for Santa. edge-tts must be run with `--proxy "$HTTPS_PROXY"`. Music is copyright free only (`templates/music.py`, public-domain carols made in code).
+**Audio:** our warm British female brand voiceover over slides 1 and 2 (about 6 seconds), then the jolly British Santa voice on slide 3: "Ho, ho, ho! Merry Christmas from ZANS Racing!" Current voices: edge-tts `en-GB-LibbyNeural` at +6% for the brand voice (a stand-in until the Gemini Aoede voice in Section 7 is available) and `en-GB-RyanNeural` at -14Hz pitch, +30% rate for Santa. edge-tts must be run with `--proxy "$HTTPS_PROXY"`. **Subtle background music on every video**, mixed well under the voices (about 15 dB quieter) and rotated so neighbouring posts don't share a track. Copyright free only: the 8 tracks in `batch/2026-11-17/music/` are made note by note in `templates/music.py` from public-domain carols; make more the same way.
 
 **Metal:** silver for cool posts (snow, frost, winter racecourse), gold for warm posts (lit trees, candlelight, fires). Bronze stays with the Beginner guides.
 
