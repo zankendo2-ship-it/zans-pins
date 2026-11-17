@@ -1,16 +1,4 @@
 {
- "ombudsman": {
-  "l1": "Ombudsman retiring?",
-  "l2": "Put him on your tree.",
-  "vsize": 84,
-  "fsize": 80,
-  "q": "Which horse's name would you put on yours?"
- },
- "lossiemouth": {
-  "l1": "Lossiemouth fans,",
-  "l2": "would this go on your tree?",
-  "vsize": 72,
-  "fsize": 70,
-  "q": "Design yours with any horse's name."
- }
+ "ombudsman": {"l1": "Ombudsman retiring?", "l2": "Put him on your tree.", "vsize": 86, "fsize": 84},
+ "lossiemouth": {"l1": "Lossiemouth fans —", "l2": "would this go on your tree?", "vsize": 72, "fsize": 70}
 }

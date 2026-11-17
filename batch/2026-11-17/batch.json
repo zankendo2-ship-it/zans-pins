@@ -92,13 +92,10 @@
   },
   "on_image": {
    "t": "bauble",
-   "file": "post2-ombudsman-showcase",
-   "img": "bauble-ombudsman.png",
    "headline": "Ombudsman retiring? Put him on your tree.",
-   "headline_html": "Hang Ombudsman<br><em>on your tree</em>",
+   "question": "",
    "facts": "",
-   "send": "",
-   "question": "Which horse's name would you put on yours?"
+   "send": ""
   }
  },
  {
@@ -217,14 +214,10 @@
   },
   "on_image": {
    "t": "bauble",
-   "file": "post4-lossiemouth-showcase",
-   "img": "bauble-lossiemouth.png",
-   "headline": "Lossiemouth fans, would this go on your tree?",
-   "headline_html": "Lossiemouth<br><em>on your Christmas tree</em>",
-   "hsize": 88,
-   "facts": "Design yours with any horse's name.",
-   "send": "",
-   "question": "Would this go on your tree?"
+   "headline": "Lossiemouth fans — would this go on your tree?",
+   "question": "Would this go on your tree?",
+   "facts": "",
+   "send": ""
   }
  },
  {
