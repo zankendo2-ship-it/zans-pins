@@ -1,6 +1,8 @@
 // Renders the locked ZANS 3-part post for every entry in posts.json:
 //   slide 1 = the product photo with metal strips (no text), slide 2 = carousel_hook.html, slide 3 = carousel_endcard.html,
 // at 1080x1350 (feed carousel) and 1080x1920 (Reels/TikTok clips). Usage: node templates/render.js <out_dir> [post_key ...]
+// text goes dark on light post colours (yellow, white) so it stays readable
+const lum = h => { const n = parseInt(h.slice(1), 16); return (0.299*(n>>16) + 0.587*((n>>8)&255) + 0.114*(n&255))/255; };
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
 const T = __dirname, FONTDIR = path.join(T, 'fonts'), ASSETS = path.join(T, 'assets');
 const b64 = f => fs.readFileSync(f).toString('base64');
@@ -29,7 +31,7 @@ const CSS = fs.readFileSync(path.join(T, '_brand.css'), 'utf8');
     const christmas = (P.season || 'christmas') === 'christmas';
     const logo = `data:image/png;base64,${b64(path.join(ASSETS, christmas ? 'zans-logo-santa-2x.png' : 'zans-logo.png'))}`;
     for (const [fmt, L] of Object.entries(LAYOUT)) {
-      const base = { ...METAL[P.metal || 'gold'], W: L.W, H: L.H, COLOUR: P.colour || '#1F5A3D', BADGE: P.badge || (christmas ? 'CHRISTMAS 2026' : 'ZANS RACING'),
+      const base = { ...METAL[P.metal || 'gold'], W: L.W, H: L.H, COLOUR: P.colour || '#1F5A3D', INK: P.ink || (lum(P.colour || '#1F5A3D') > 0.55 ? '#1C1C1C' : '#FFFFFF'), BADGE: P.badge || (christmas ? 'CHRISTMAS 2026' : 'ZANS RACING'),
         FOOT_STRIPE: L.H - 72, FOOT_BAR: L.H - 60, FONTS };
       base.CSS = fill(CSS, base);
       const pages = {

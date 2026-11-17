@@ -286,57 +286,5 @@
    "save": "Send this to your all-weather racing mate",
    "question": "Which all-weather track do you want first?"
   }
- },
- {
-  "id": "post6",
-  "name": "Syndicate and owner bauble reminder",
-  "kind": "merch",
-  "christmas": true,
-  "showcase": false,
-  "image": "post6-syndicate-reminder.png",
-  "video": "",
-  "alt": "Racing silks Christmas bauble in green and yellow hoops with the name The Dream Team, hanging on a Christmas tree",
-  "networks": {
-   "instagram": {
-    "text": "Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.\n\nOne bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.\n\nSend this to your syndicate group chat.\n\nDesign yours at www.zanshorseracing.co.uk/bauble-designer/ or search ZANSRacingTools on Etsy. Silks bauble Premium, £14.99.\n\nHow many are in your syndicate? 👇\n\nVisit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄\n\nWishing you a Merry Christmas 🎅\n\n#racehorsesyndicate #racehorseowner #horseracinggifts #christmasbaubles #personalisedbauble\n\nLink in bio 👉 www.zanshorseracing.co.uk",
-    "when": "Fri 20 Nov 08:00"
-   },
-   "facebook": {
-    "text": "Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.\n\nOne bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.\n\nSend this to your syndicate group chat.\n\nDesign yours on our website or search ZANSRacingTools on Etsy. Silks bauble Premium, £14.99.\n\nHow many are in your syndicate? 👇\n\nWishing you a Merry Christmas 🎅\n\n#racehorsesyndicate #racehorseowner #horseracinggifts",
-    "first_comment": "Design yours: https://www.etsy.com/uk/listing/4611232428",
-    "when": "Fri 20 Nov 08:30"
-   },
-   "x": {
-    "text": "35 days to Christmas 🎄🏇 One bauble for every owner in the syndicate, in your silks with your horse's name. How many are in your syndicate? #HorseRacing #ChristmasBaubles",
-    "reply": "Design yours: https://www.etsy.com/uk/listing/4611232428 Wishing you a Merry Christmas 🎅",
-    "when": "Fri 20 Nov 09:00"
-   },
-   "pinterest": {
-    "title": "Racehorse Syndicate Christmas Gift - Personalised Silks Bauble for Owners",
-    "link": "https://www.etsy.com/uk/listing/4611232428",
-    "text": "A Christmas gift for racehorse syndicates and owners: one bauble for every member, in your silks with your horse's name. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, with a ribbon, printed the same on both sides. Wishing you a Merry Christmas 🎅",
-    "when": "Fri 20 Nov 10:30"
-   },
-   "linkedin": {
-    "text": "Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.\n\nOne bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.\n\nSend this to your syndicate group chat.\n\nDesign yours at www.zanshorseracing.co.uk/bauble-designer/ or search ZANSRacingTools on Etsy. Silks bauble Premium, £14.99.\n\nHow many are in your syndicate? 👇\n\nVisit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄\n\nWishing you a Merry Christmas 🎅\n\n#racehorsesyndicate #racehorseowner #horseracinggifts",
-    "when": "Fri 20 Nov 09:00"
-   },
-   "tiktok": {
-    "title": "35 days to Christmas 🎄 One bauble for every syndicate member",
-    "text": "Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.\n\nOne bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 silks patterns and choose your colours.\n\nHow many are in your syndicate? 👇\n\nWishing you a Merry Christmas 🎅\n\n#racehorsesyndicate #racehorseowner #horseracinggifts #christmasbaubles #personalisedbauble\n\nLink in bio 👉 www.zanshorseracing.co.uk",
-    "when": "Fri 20 Nov 09:30"
-   }
-  },
-  "on_image": {
-   "t": "bauble",
-   "file": "post6-syndicate-reminder",
-   "img": "bauble-syndicate.png",
-   "headline": "35 days left. One for every owner",
-   "headline_html": "35 days left.<br><em>One for every owner</em>",
-   "hsize": 88,
-   "facts": "Your silks · your horse's name · on every tree",
-   "send": "Send this to your syndicate group chat",
-   "question": "How many are in your syndicate?"
-  }
  }
 ]

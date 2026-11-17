@@ -91,16 +91,5 @@
   "key": "Beginner, Advanced and Pro editions for each track",
   "save": "Send this to your all-weather racing mate",
   "question": "Which all-weather track do you want first?"
- },
- "p6": {
-  "t": "bauble",
-  "file": "post6-syndicate-reminder",
-  "img": "bauble-syndicate.png",
-  "headline": "35 days left. One for every owner",
-  "headline_html": "35 days left.<br><em>One for every owner</em>",
-  "hsize": 88,
-  "facts": "Your silks · your horse's name · on every tree",
-  "send": "Send this to your syndicate group chat",
-  "question": "How many are in your syndicate?"
  }
 }

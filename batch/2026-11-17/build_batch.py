@@ -124,27 +124,7 @@ POSTS = [
       pin=("Coming soon: ZANS Track DNA racecourse guides for Kempton, Southwell, Wolverhampton and Newcastle, built "
            "from 14,736 all-weather races since 2019. Beginner, Advanced and Pro editions for each track: 4,739 races at "
            "Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at Southwell."),
-      alt="Coming soon: ZANS Track DNA guides for Kempton, Southwell, Wolverhampton and Newcastle, with the number of races studied at each"),
- dict(id="post6", name="Syndicate and owner bauble reminder", kind="merch", xmas=True, tiktok=True,
-      image="post6-syndicate-reminder.png",
-      when={"instagram": "Fri 20 Nov 08:00", "facebook": "Fri 20 Nov 08:30", "x": "Fri 20 Nov 09:00",
-            "linkedin": "Fri 20 Nov 09:00", "tiktok": "Fri 20 Nov 09:30", "pinterest": "Fri 20 Nov 10:30"},
-      hook="Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.",
-      story=("One bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 "
-             "silks patterns and choose your colours. Round ceramic, about 7.5 cm, printed both sides, with a ribbon."),
-      story_tt=("One bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from "
-                "25 silks patterns and choose your colours."),
-      prompt="Send this to your syndicate group chat.", cta=BAUBLE_CTA, cta_fb=BAUBLE_CTA_FB,
-      question="How many are in your syndicate? 👇", web=WEB_GIFTS,
-      tags=["racehorsesyndicate", "racehorseowner", "horseracinggifts", "christmasbaubles", "personalisedbauble"],
-      x=("35 days to Christmas 🎄🏇 One bauble for every owner in the syndicate, in your silks with your horse's name. "
-         "How many are in your syndicate? #HorseRacing #ChristmasBaubles"),
-      link="https://www.etsy.com/uk/listing/4611232428", tt_title="35 days to Christmas 🎄 One bauble for every syndicate member",
-      pin_title="Racehorse Syndicate Christmas Gift - Personalised Silks Bauble for Owners",
-      pin=("A Christmas gift for racehorse syndicates and owners: one bauble for every member, in your silks with your "
-           "horse's name. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, with a "
-           "ribbon, printed the same on both sides."),
-      alt="Racing silks Christmas bauble in green and yellow hoops with the name The Dream Team, hanging on a Christmas tree"),
+      alt="Coming soon: ZANS Track DNA guides for Kempton, Southwell, Wolverhampton and Newcastle, with the number of races studied at each")
 ]
 
 
