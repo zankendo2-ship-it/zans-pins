@@ -1,18 +1,16 @@
 {
  "ombudsman": {
-  "l1": "OMBUDSMAN RETIRING?",
-  "l2": "PUT HIM ON YOUR TREE 🎄",
-  "vsize": 78,
-  "fsize": 78,
-  "cta": "Design yours · any horse's name",
+  "l1": "Ombudsman retiring?",
+  "l2": "Put him on your tree.",
+  "vsize": 84,
+  "fsize": 80,
   "q": "Which horse's name would you put on yours?"
  },
  "lossiemouth": {
-  "l1": "LOSSIEMOUTH FANS —",
-  "l2": "WOULD THIS GO ON YOUR TREE?",
-  "vsize": 58,
-  "fsize": 58,
-  "cta": "Showcase · any name on yours",
-  "q": "Would this go on your tree?"
+  "l1": "Lossiemouth fans,",
+  "l2": "would this go on your tree?",
+  "vsize": 72,
+  "fsize": 70,
+  "q": "Design yours with any horse's name."
  }
 }

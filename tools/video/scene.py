@@ -13,7 +13,7 @@ def build(capture, out, seed, flip=False):
     fg = Image.open(capture).convert('RGB'); fw, fh = fg.size
     mask = Image.open('assets/bauble-tree-moody-mask.png').convert('L').resize((fw, fh), Image.LANCZOS)
     # make the silks pop inside the bauble only
-    pop = ImageEnhance.Contrast(ImageEnhance.Color(fg).enhance(1.35)).enhance(1.12)
+    pop = ImageEnhance.Contrast(ImageEnhance.Color(fg).enhance(1.12)).enhance(1.05)
     fg = Image.composite(pop, fg, mask.filter(ImageFilter.GaussianBlur(1.5)))
     a = np.asarray(fg).astype(np.float32)
     luma = a @ np.array([.299, .587, .114], dtype=np.float32)
@@ -35,8 +35,8 @@ def build(capture, out, seed, flip=False):
     edge = np.minimum.reduce([xx/140, (fw-1-xx)/140, yy/60, (fh-1-yy)/200]).clip(0, 1)
     alpha *= edge
     A = Image.fromarray((alpha*255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.8))
-    s = 0.74; fgs = fg.resize((int(fw*s), int(fh*s)), Image.LANCZOS); As = A.resize(fgs.size, Image.LANCZOS)
-    ox, oy = (W-fgs.width)//2 - 6, 470
+    s = 0.92; fgs = fg.resize((int(fw*s), int(fh*s)), Image.LANCZOS); As = A.resize(fgs.size, Image.LANCZOS)
+    ox, oy = (W-fgs.width)//2 - 6, 340
     # soft shadow behind the disc so it sits in the scene
     sh = Image.new('L', (W, H), 0); dm = mask.resize(fgs.size, Image.LANCZOS)
     sh.paste(dm, (ox+26, oy+34)); sh = sh.filter(ImageFilter.GaussianBlur(38))
