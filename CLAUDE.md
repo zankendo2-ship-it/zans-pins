@@ -176,7 +176,8 @@ This section replaces every earlier version of 3.7. Earlier edits conflicted and
 
 **2. Bright, warm lighting (no dark or muddy backgrounds)**
 - Fill the frame with vibrant golden fairy-light bokeh, a rich amber fireplace glow and bright warm highlights around the bauble, plus subtle sparkling light particles on video. It must feel festive, luxurious and eye-catching on a phone.
-- Generate the scene with FLUX Krea as a real-looking photograph of a blank glossy white ceramic bauble hanging by its red cord from a lit spruce branch, then print the exact designer artwork onto that bauble, keeping its real glaze, highlights, shadow, hole and cord (`tools/video/mapart.py`). Never a flat sticker cut-out, and the product is never AI-drawn.
+- **Never use AI to generate the bauble itself** (Alex, 17 Nov: it looks fake and plastic). Always use our real designer bauble product photo, with its genuine ribbon, pine sprig and studio lighting, and the artwork mapped onto the real bauble face by the website designer with its natural gloss and shadows. Keep the photo whole: never cut the bauble or the pine out and paste them onto another background.
+- Brighten and warm the surroundings of that real photo and add soft golden fairy-light bokeh and an amber fire glow around it (`tools/video/real.py`). AI image tools may only be used for backgrounds that contain no product.
 - The bauble is big. Never a dim, tight or flat crop.
 
 **3. Two-part video structure (8.5 seconds)**
