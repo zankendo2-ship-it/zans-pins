@@ -51,7 +51,7 @@ No passwords, API keys, connector IDs, chat/thread IDs or personal email address
 - Single-horse videos end **"Up the <horse>!"** in the voiceover, on the end card and as the closing caption line.
 - Retirement videos end **"Thank you, <horse>!"**
 - Constitution Hill videos end **"Come on Conny!"** "My favourite horse" is said sparingly (at most once a video, not on every post).
-- **Christmas items/posts:** the caption ends with "Wishing you a Merry Christmas". Nothing is added to the image (see 3.7); the Santa-hat logo stays on the website and Etsy only. Christmas music and snow appear on Christmas posts only, and snow only outdoors.
+- **Christmas items/posts:** the caption ends with "Wishing you a Merry Christmas", and Christmas videos end on the Santa-hat logo end-card (see 3.7). Nothing is added over the product scene. Christmas music and snow appear on Christmas posts only, and snow only outdoors.
 
 ---
 
@@ -164,16 +164,31 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - The caption carries **a comment-triggering question**.
 - This sits inside the TikTok Strike Shield (Section 2): gift and merch posts only, with zero mention of odds, stalls or winning.
 
-### 3.7 Visual style: a clean, high-end British gift brand (Alex, 17 Nov 2026)
-This is the look for every post from now on. A post must never look like a promotional flyer.
-- **Never again:** footer bars, banners, pills, boxes, panels, logo boxes, stacked text blocks, sub-lines, website addresses, prices, emojis or heavy drop shadows on an image or video. Alex called the first Ombudsman layout cluttered, cheap and tacky; do not repeat any part of it.
-- **One clean headline only**, at the top, in brand cream (#EAE2D8), understated and well spaced, with plenty of breathing room around the product. Nothing else is written on the picture.
-- **The product is big and is the picture.** It has to stop the scroll through the photograph itself, not through added graphics.
-- **Natural photography look.** Generate a crisp, realistic scene with FLUX Krea: a blank glossy ceramic bauble hanging naturally from a dark green spruce branch, warm golden fairy lights softly blurred behind. Then print the exact designer artwork onto that photographed bauble, keeping its real glaze, highlights, shadow, hole and cord (`tools/video/mapart.py`). It must never look like a flat sticker cut-out.
-- **Videos:** 1080×1920, 8 seconds, a slow push-in on the bauble, a soft twinkle in the scene's own fairy lights, and the one headline fading in between 1.0 and 1.5 seconds. No end card. Each video also gets a 4:5 feed photo from the same scene.
-- **Everything else lives in the caption:** the website, the call-to-action, the question, the price and "Wishing you a Merry Christmas". This replaces the older rules that put the website on the last slide and the Santa-hat logo on Christmas images.
-- The product is never AI-drawn or AI-animated: only the blank scene is generated.
-- Build scripts live in `tools/video/`. Run `compliance_check.py` on the captions and show Alex the previews before anything is booked.
+### 3.7 Visual style and the two-part video structure (Alex, 17 Nov 2026)
+Every gift post must look like a clean, high-end British gift brand, never a promotional flyer. Alex called the first Ombudsman layout cluttered, cheap and tacky; do not repeat any part of it.
+
+**Never, on any product scene (photo or video):** bottom boxes, footer bars, banners, pills, panels, logos, logo boxes, sub-lines, website addresses, prices or emojis. The product scene fills the whole frame cleanly.
+
+**Part 1: the bauble scene (0.0 to 6.0 seconds), clean and high-impact**
+- A natural photograph: generate with FLUX Krea a blank glossy ceramic bauble hanging from a dark green spruce branch, with warm golden fairy lights softly blurred behind (or a glowing fireplace and tree). Print the exact designer artwork onto that photographed bauble, keeping its real glaze, highlights, shadow, hole and cord (`tools/video/mapart.py`). It must never look like a flat sticker cut-out. The product itself is never AI-drawn or AI-animated.
+- The bauble is big and is the picture.
+- **Big, exciting hook text** at the top: much larger and bolder than body text, high contrast, brand cream #EAE2D8 for the first line and bright gold #F2CF5B for the second, with only a subtle shadow. It pops and slides in at about 0.5 seconds. No emojis.
+- A slow push-in on the bauble and a soft twinkle in the scene's own lights. Nothing else on screen.
+
+**Part 2: the branded snow end-card (6.0 to 8.5 seconds)**
+- Deep racing-green #1F5A3D card, framed top and bottom with ZANS metallic gold striping (#F2CF5B, champagne-to-bronze sheen), with soft, realistic falling snow across the whole screen.
+- **Everything sits in the upper and middle 70% of the frame**, well above the bottom 25% where the TikTok and Reels username and caption bar sit. In order, top to bottom:
+  1. "ZANS RACING · TOOLS & GIFTS" header in metallic gold.
+  2. The Santa-hat ZANS Horse Racing logo in a crisp gold-bordered cream card.
+  3. Bold warm-cream headline "Wishing you a Merry Christmas", then "Any horse's name · Custom keepsake".
+  4. A metallic gold "BUY NOW" pill (#F2CF5B fill, bold #1F5A3D text) directly above "WWW.ZANSHORSERACING.CO.UK".
+- The end-card is the only place the logo, website and button appear. Snow is allowed on the end-card.
+
+**Feed photos:** the Part 1 scene with the big hook and nothing else. The end-card can follow as a second slide.
+
+**Sound:** videos carry our brand voice with subtle music that suits the video, once a voice and music source is in place (Section 7 voice rule still applies).
+
+Build scripts live in `tools/video/`. Run `compliance_check.py` on the captions and show Alex the previews before anything is booked.
 
 ---
 
@@ -361,7 +376,7 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 6. **Hashtag limits:** TikTok 5 · Instagram 5 · Facebook 3 · X 2 · YouTube 3 · Pinterest 0 · LinkedIn 3. Never #fyp, #foryou or #viral. Never "tips" tags, anti-racing tags or bookmaker tags.
 7. **House lines go at the end, in order:** website line → (Christmas only) "Wishing you a Merry Christmas 🎅" → hashtags → **"Link in bio 👉 www.zanshorseracing.co.uk"** as the very last line.
 8. **Facebook:** no link in the post; put it in the first comment. **X:** put the link in the reply.
-9. The website address goes in the caption, not on the image or video (see 3.7). Use the course colour on race posts.
+9. The website address goes in the caption and on the video end-card only, never over the product scene (see 3.7). Use the course colour on race posts.
 10. No non-runners: re-check the card just before posting.
 
 ### Network specifics
@@ -403,7 +418,7 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 ## 7. Video and image rules
 
 ### Video format (all networks)
-- **Motion in the first 1-2 seconds** (horse, finish, jockey). Text comes in only after 1 second. Never open on a static title card.
+- **Motion in the first 1-2 seconds** (horse, finish, jockey). Text comes in only after 1 second (gift videos: the hook pops in at about 0.5 seconds, see 3.7). Never open on a static title card.
 - An on-screen question that matches the caption question.
 - Approve scene by scene with Alex first.
 - **3 music options** (one trending), and Alex picks. Never sound effects. Rotate the approved Mixkit sounds. Christmas music only on Christmas posts (from 1 Dec).

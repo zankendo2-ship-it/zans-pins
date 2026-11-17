@@ -1,4 +1,4 @@
 {
- "ombudsman": {"l1": "Ombudsman retiring?", "l2": "Put him on your tree.", "vsize": 86, "fsize": 84},
- "lossiemouth": {"l1": "Lossiemouth fans —", "l2": "would this go on your tree?", "vsize": 72, "fsize": 70}
+ "ombudsman": {"l1": "Ombudsman retiring?", "l2": "Put him on<br>your tree", "vy": 352, "v1": 76, "v2": 100, "f1": 76, "f2": 96},
+ "lossiemouth": {"l1": "Lossiemouth fans", "l2": "Would this go<br>on your tree?", "vy": 352, "v1": 88, "v2": 96, "f1": 88, "f2": 92}
 }
