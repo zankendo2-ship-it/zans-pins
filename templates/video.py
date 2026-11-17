@@ -4,10 +4,12 @@
   6.5-9.0s  slide 3: the end-card (carousel_endcard.html), falling snow
 The footer sits in the same place in all three clips, so nothing at the bottom ever moves.
 Usage: python3 templates/video.py <cards_dir> <scene.png> <key> <cx> <cy> <snow|shimmer> <out_dir> [music.m4a]"""
-import sys, subprocess, numpy as np, imageio_ffmpeg
+import os, sys, subprocess, numpy as np, imageio_ffmpeg
 from PIL import Image, ImageFilter
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, W, H = 30, 1080, 1920
 P1, P2, XF, TOTAL = 4.0, 6.5, 0.35, 9.0
+ZOOM = float(os.environ.get('ZANS_ZOOM', 0.16))      # push-in amount; 0.16 = the locked reference
+KEEP = float(os.environ.get('ZANS_KEEP_R', 380))     # radius around the product the light shimmer never touches
 ease = lambda x: 0 if x <= 0 else 1 if x >= 1 else x*x*(3-2*x)
 def flakes(seed, n, rmin, rmax, smin, smax):
     r = np.random.default_rng(seed)
@@ -23,7 +25,7 @@ def main(cards, scene, key, CX, CY, mode, out_dir, music=None):
     m = np.asarray(master).astype(np.float32)/255
     if mode == 'shimmer':
         warm = np.clip((m[..., 0]-0.6)*2.5, 0, 1) * (m[..., 0] > m[..., 2]*1.2)
-        yy, xx = np.mgrid[0:MH, 0:MW]; warm *= (((xx-CX)/380.0)**2 + ((yy-CY)/390.0)**2 > 1)
+        yy, xx = np.mgrid[0:MH, 0:MW]; warm *= (((xx-CX)/KEEP)**2 + ((yy-CY)/(KEEP*1.03))**2 > 1)
         glow = np.asarray(Image.fromarray((warm*255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(20))).astype(np.float32)/255
         phase = (np.sin(xx/150.0)*1.9 + np.cos(yy/190.0)*2.1).astype(np.float32)
     frame = Image.open(f'{cards}/{key}-9x16-frame.png').convert('RGBA')
@@ -39,7 +41,7 @@ def main(cards, scene, key, CX, CY, mode, out_dir, music=None):
         if t < P1 + XF:
             src = m if mode != 'shimmer' else (m + (glow*(0.5+0.5*np.sin(phase + t*2.2))*0.35)[..., None]*np.array([1.0, .82, .5], dtype=np.float32))
             img = Image.fromarray((src.clip(0, 1)*255).astype(np.uint8))
-            k = ease(min(t, P1+XF)/(P1+XF)); z = 1.0 + 0.16*k; cw, ch = MW/z, MH/z
+            k = ease(min(t, P1+XF)/(P1+XF)); z = 1.0 + ZOOM*k; cw, ch = MW/z, MH/z
             x0 = min(max(MW/2 + (CX-MW/2)*k - cw/2, 0), MW-cw); y0 = min(max(MH/2 + (CY-MH/2)*k - ch/2, 0), MH-ch)
             a = np.asarray(img.resize((W, H), Image.BICUBIC, box=(x0, y0, x0+cw, y0+ch))).astype(np.float32)
             if mode == 'snow': a = snow(a, t, scene_snow, 14)
