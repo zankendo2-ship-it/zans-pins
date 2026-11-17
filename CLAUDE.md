@@ -180,7 +180,9 @@ This replaces every earlier visual layout rule in this file. **The reference is 
 
 **Metal:** silver for cool posts (snow, frost, blue designs), gold for warm posts (lit trees, candlelight, fires, red, pink and green designs). Bronze stays with the Beginner guides.
 
-**Process:** compliance check on the captions, show Alex the slides and video under new, clear file names, and schedule nothing until he says yes. Music only once Alex has picked a track (options in `templates/music.py`).
+**Process:** compliance check on the captions, show Alex the slides and video under new, clear file names, and schedule nothing until he says yes. Music only once Alex has picked a track (options in `templates/music.py`). **All music must be copyright free** (Alex, 17 Nov 2026): ours is made note by note in code from public-domain carols, with no samples or recordings from anyone else.
+
+**Scenes:** mix home scenes with racing ones. Racecourse baubles hang off a hurdle, a birch fence, a rail or a gate (Alex, 17 Nov 2026). Print the design with `templates/mapart2.py`, which handles tilted and turned discs.
 
 ---
 
