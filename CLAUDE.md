@@ -174,8 +174,11 @@ This replaces every earlier version of 3.7. Two references set the standard: the
 
 **2. The branding (copied from the Track DNA guides, so every post follows through)**
 - **Top bar:** #1C1C1C, "ZANS · HORSE RACING GIFTS" in tracked Jost capitals, and a black pill with a gold border and gold IBM Plex Mono capitals on the right (for example "CHRISTMAS 2026"), like the guides' "PRO EDITION" pill.
-- **Metallic stripe** under the bar and between sections: bronze #725415 to champagne #FFF4C9 to bronze, exactly as on the guide pages.
-- **Colour block** in the post's own colour, the way each guide uses its course colour: take it from the bauble's silks (Ombudsman blue #1C4FA0; Lossiemouth rose pink #C2477E to go with her green and pink design). A small tracked eyebrow, then the hook in big white Jost Bold capitals, then one sentence in Jost.
+- **Metal strips at the top and bottom of every post and video frame**, like the guide pages, plus under the top bar and between sections. Pick the metal to suit the post's vibe:
+  - **Gold** (bronze #725415, gold #B98A36, champagne #FFF4C9) for warm posts: lit trees, candlelight, fireplaces, gift boxes, pink, red and green designs.
+  - **Silver** (#5E646B, #A9AFB6, #F7F9FB) for cool posts: frost, snow, winter racecourses, blue and white designs.
+  - The pill border and pill text use the same metal. Bronze stays reserved for the Beginner guides.
+- **Colour block** in the post's own colour, the way each guide uses its course colour: take it from the bauble's silks (Ombudsman blue #1C4FA0 with silver; Lossiemouth rose pink #C2477E with gold, to go with her green and pink design). A small tracked eyebrow, then the hook in big white Jost Bold capitals, then one sentence in Jost.
 - **Cream panel** (#EAE2D8) with the **big Santa-hat ZANS logo** and "WISHING YOU A MERRY CHRISTMAS" in Jost Bold capitals, plus "Any horse's name · zanshorseracing.co.uk".
 - Fonts: Jost (headings), Source Sans 3 (small text), IBM Plex Mono (pills). Never another display face.
 
