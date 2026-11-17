@@ -66,6 +66,23 @@ No passwords, API keys, connector IDs, chat/thread IDs or personal email address
 - Use event and course names descriptively only. Never write "Royal Ascot" on products, never "official", and use no logos or crowns. Add "not affiliated with any racecourse or organiser" on the website and profiles.
 - No fetched images or footage. Visuals must be ZANS-made (code-rendered or AI-generated). **Exception (17 Nov):** real jockey photos only if FREE and Creative-Commons licensed, credited, never bought. Never black masks over faces. Never an AI face or likeness of a real person.
 
+### Archived: Breeders' Cup 2026 (17 Nov 2026)
+- Breeders' Cup 2026 is over and archived. **Never promote it again:** no posts, pins, stories, reposts, ads or "more from ZANS" mentions of the Breeders' Cup 2026 guides or pins.
+- The files stay where they are (never delete listings or history), but nothing from the `breeders-cup` folder is booked, re-used or suggested for the queue.
+- A future Breeders' Cup edition needs a fresh yes from Alex before any work or promotion starts.
+
+### Flat turf posts paused (17 Nov 2026)
+- The Flat turf season is over. **No Flat racecourse posts apart from all-weather** (Kempton, Southwell, Wolverhampton, Newcastle and the other all-weather tracks), until Alex restarts them.
+- That covers Ascot and every other turf Flat course: no draw, ground or course posts, pins, stories or reposts, and no "Ascot Flat guide" push in captions.
+- The Ascot listings stay live on Etsy; they are just not promoted on social for now.
+
+### Social-only showcase baubles (exception approved by Alex, 17 Nov 2026)
+- A showcase bauble may carry a well-known horse's name (first two: Ombudsman, Lossiemouth) **on social posts only**, to show what the designer can do.
+- It is never listed, pictured or offered as a pre-made product on Etsy or the website, and the caption always sells "design your own with any horse's name", not that horse's bauble.
+- Never name the owner, trainer's yard colours or the silks' owner in the image, caption, alt text or hashtags. Never Juddmonte colours. No claim of any link with the horse or its connections.
+- Any news line about the horse (retirement, next run) is checked in 2 sources on the day of booking.
+- Every other rule above still applies to everything else: no famous horse names on products or Etsy.
+
 ### Gambling advertising (ASA/CAP applies even to guides)
 - Sell knowledge, never winnings. No results claims (ZANS strike rates, ROI, "x winners", "+£"). Quoting a **course** statistic from our data is fine.
 - **No paper-test or trial records on any post** (bets, won, paid out, profit).
@@ -129,6 +146,7 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - The call-to-action still follows the caption rules: never open with a link, a price or "GET YOURS"; Facebook link in the first comment; X link in the reply; no price on TikTok; YouTube Shorts say "Search ZANSRacingTools on Etsy"; house lines stay at the end in their set order.
 
 ### 3.5 Weekly Metricool analytics loop
+
 - Every Monday, for the week just finished (Monday to Sunday):
   1. Run `python3 analyze_social_performance.py --pull-plan` to get the dates and metric IDs.
   2. Pull each source with the Metricool connector and save it as `social_data/<week-start>/<SOURCE>.json`.
@@ -138,6 +156,13 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - Metricool cannot see Etsy. Etsy visits and sales come from Etsy Stats and are added by hand.
 - The lessons log is internal. Its figures are never quoted in a post, listing or reply (no results claims).
 - No keys or connector IDs go in the script, the data files or the log.
+
+### 3.6 TikTok Visual Hook Rule (strict, added 17 Nov 2026)
+- **NEVER post plain beige text-only title cards to TikTok.** They stall at about 700 views.
+- Every TikTok post uses a **rich, warm, real-life lifestyle scene**, for example a personalised silks bauble hanging on a lit Christmas tree by a fireplace.
+- A **bold, emotional 1-line story hook sits at the top of the image**, for example the Ombudsman retirement keepsake or the Lossiemouth pink-and-green-spots showcase.
+- The caption carries **a comment-triggering question**.
+- This sits inside the TikTok Strike Shield (Section 2): gift and merch posts only, with zero mention of odds, stalls or winning.
 
 ---
 

@@ -1,0 +1,111 @@
+{
+ "p1": {
+  "headline": "Their racing silks, on the tree",
+  "headline_html": "Their racing silks,<br><em>on the tree</em>",
+  "facts": "25 silks patterns · any colours · any name",
+  "send": "Send this to whoever buys the syndicate presents",
+  "question": "Whose name would you hang on the tree?",
+  "file": "post1-silks-bauble",
+  "img": "bauble-tree.png",
+  "t": "bauble"
+ },
+ "p2": {
+  "t": "bauble",
+  "file": "post2-ombudsman-showcase",
+  "img": "bauble-ombudsman.png",
+  "headline": "Hang Ombudsman on your tree",
+  "headline_html": "Hang Ombudsman<br><em>on your tree</em>",
+  "facts": "Showcase design · yours can carry any name",
+  "send": "Send this to an Ombudsman fan",
+  "question": "Why not hang him on your tree this Christmas?"
+ },
+ "p3": {
+  "t": "guide",
+  "file": "post3-kempton-draw",
+  "tag": "Kempton · All-Weather",
+  "from": "Kempton Track DNA guide: coming soon",
+  "headline": "Kempton 6f: low draws win more",
+  "sub": "639 six-furlong all-weather races since 2019.",
+  "rows": [
+   {
+    "label": "Low stalls",
+    "hint": "lowest third",
+    "fig": "1 in 7",
+    "det": "14.6% of 1,839 runners won",
+    "w": 100,
+    "hi": true
+   },
+   {
+    "label": "Middle stalls",
+    "hint": "middle third",
+    "fig": "1 in 10",
+    "det": "10.3% of 2,054 runners won",
+    "w": 71
+   },
+   {
+    "label": "High stalls",
+    "hint": "highest third",
+    "fig": "1 in 14",
+    "det": "7.1% of 2,256 runners won",
+    "w": 49
+   }
+  ],
+  "note": "Stalls in thirds per race. 6 or more runners. Jan 2019 to Oct 2026.",
+  "key": "Low draws: 11% more winners than their odds suggested",
+  "save": "Save this before your next night at Kempton",
+  "question": "Low draw or high draw over 6f at Kempton: where do you want to be?"
+ },
+ "p4": {
+  "t": "bauble",
+  "file": "post4-lossiemouth-showcase",
+  "img": "bauble-lossiemouth.png",
+  "headline": "Lossiemouth on your Christmas tree",
+  "headline_html": "Lossiemouth<br><em>on your Christmas tree</em>",
+  "hsize": 88,
+  "facts": "Showcase design · yours can carry any name",
+  "send": "Send this to a Lossiemouth fan",
+  "question": "Who wouldn't want Lossiemouth on their Christmas tree?"
+ },
+ "p5": {
+  "t": "aw",
+  "file": "post5-all-weather-coming-soon",
+  "headline": "Four all-weather guides are coming",
+  "sub": "Track DNA guides for the all-weather season.",
+  "cards": [
+   {
+    "name": "Kempton",
+    "n": "3,454",
+    "d": "races studied since 2019"
+   },
+   {
+    "name": "Southwell",
+    "n": "3,022",
+    "d": "races studied since 2019"
+   },
+   {
+    "name": "Wolverhampton",
+    "n": "4,739",
+    "d": "races studied since 2019"
+   },
+   {
+    "name": "Newcastle",
+    "n": "3,521",
+    "d": "races studied since 2019"
+   }
+  ],
+  "key": "Beginner, Advanced and Pro editions for each track",
+  "save": "Send this to your all-weather racing mate",
+  "question": "Which all-weather track do you want first?"
+ },
+ "p6": {
+  "t": "bauble",
+  "file": "post6-syndicate-reminder",
+  "img": "bauble-syndicate.png",
+  "headline": "35 days to Christmas. Syndicate sorted?",
+  "headline_html": "35 days to Christmas.<br><em>Syndicate sorted?</em>",
+  "hsize": 84,
+  "facts": "One for every owner · your silks · your horse's name",
+  "send": "Send this to your syndicate group chat",
+  "question": "How many are in your syndicate?"
+ }
+}
