@@ -74,6 +74,14 @@ No passwords, API keys, connector IDs, chat/thread IDs or personal email address
 - Paid, gifted or affiliate content is labelled "Ad" up front with the platform's paid-partnership toggle on.
 - No fake, bought or incentivised reviews (the CMA can fine up to 10% of turnover).
 
+### TikTok Strike Shield (permanent, added 17 Nov 2026)
+The TikTok account has two strikes. A third could lose the account, so this rule has no exceptions and beats every other rule in this file.
+- **NEVER schedule to TikTok:** any racecourse guide, draw bias, going stats or betting-adjacent post. That includes race previews, race-day content, form, records, picks, the longshot series and its teasers.
+- **TikTok may ONLY receive 100% safe physical gift and merch posts:** personalised silks baubles, gifts for racing fans, Christmas countdowns.
+- **Zero mention of odds, stalls or winning** in the video, the on-screen text, the caption, the title or the hashtags. No prices either.
+- Before any TikTok booking: scan the image text and caption by script for odds, stalls, draw, going, winner, winning, win, bet, price, guide and "£"; run the independent check; get Alex's yes for that exact post.
+- If there is any doubt whether a post is safe, it does not go to TikTok.
+
 ### Footers: where they go and where they don't
 | Place | Footer |
 |---|---|
@@ -112,7 +120,7 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - **Pillar B, emotional and gift triggers:** personalised silks mugs and Christmas baubles framed around syndicate pride, favourite horses and thoughtful gifts for hard-to-buy-for racing fans (`www.zanshorseracing.co.uk` and `ZANSRacingTools`).
 - **Pillar C, iconic silks and racing nostalgia:** stories behind famous colours and historic moments that spark shares and comments, strictly obeying the copyright and trade mark rules in Section 2 (no Juddmonte colours outside the Frankel social-video exception, no owner names, nothing sold beside a famous horse's name).
 - **Rotation:** all three pillars appear every week, and the lead pillar (the one that gets the best slots) rotates A → B → C week by week.
-- Pillar limits that still apply: mug posts stay drafts until Alex restarts them; betting-themed Pillar A posts carry the social betting footer; TikTok only gets the TikTok-safe cut (history, fans, horses, merch).
+- Pillar limits that still apply: mug posts stay drafts until Alex restarts them; betting-themed Pillar A posts carry the social betting footer; TikTok only gets Pillar B gift and merch posts (TikTok Strike Shield, Section 2).
 
 ### 3.4 Hook and conversion discipline
 - Every graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still.
@@ -329,7 +337,7 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 
 ### TikTok (the account has two strikes, from 6 and 13 Nov)
 - **Banned on TikTok:** race-day or "today" content, race times, "can X win", win records near a race, odds, price, bet, gamble, value, 18+, tips, selections.
-- Allowed: history, fans, horses and merch. Use a separate safe cut of each video. The end card on racing content has no website button.
+- Allowed: physical gift and merch posts only (see the TikTok Strike Shield in Section 2). History, horse and racing-news videos no longer go to TikTok.
 - Commercial-content disclosure on merch posts only. Shop wording only in the house lines at the end.
 - An independent check and Alex's yes on every TikTok post. Max 1-2 a day.
 - Safe zone on 1080×1920: keep everything inside y 340-1600, and nothing beyond x 950 below y 1240.
@@ -342,7 +350,7 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 ### Longshot series
 - Alex's 4 strongest picks, with his reasons, as an each-way Yankee at current prices. Video in the old bet-slip style with our voice, under 3 minutes. Stake/returns page with a racing-green amount box.
 - Post 1 hour before the first race, plus a results review post every evening.
-- TikTok gets a teaser only (no horses, no prices) pointing to Instagram.
+- TikTok gets nothing from this series (TikTok Strike Shield, Section 2).
 - Never name bookmakers. No record line.
 
 ### Pre-send checklist (every post)
