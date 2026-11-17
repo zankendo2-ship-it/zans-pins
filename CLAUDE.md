@@ -140,7 +140,7 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - Pillar limits that still apply: mug posts stay drafts until Alex restarts them; betting-themed Pillar A posts carry the social betting footer; TikTok only gets Pillar B gift and merch posts (TikTok Strike Shield, Section 2).
 
 ### 3.4 Hook and conversion discipline
-- Every data graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still. Gift photos and videos carry no text on the scene (3.7): their hook is the caption's first line.
+- Every data graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still. Gift posts carry their hook in the branded colour block (3.7) and in the caption's first line.
 - Every caption bridges naturally from the hook into a clear, compliant call-to-action pointing to `www.zanshorseracing.co.uk` or Etsy (`ZANSRacingTools`).
 - The approved product line, **"Make finding a winner a little easier."**, is used word for word and never strengthened. It belongs on posts selling guides and trackers. Gift posts (mugs, baubles) use a plain "design yours" call-to-action instead, because the line would not be true of a mug.
 - The call-to-action still follows the caption rules: never open with a link, a price or "GET YOURS"; Facebook link in the first comment; X link in the reply; no price on TikTok; YouTube Shorts say "Search ZANSRacingTools on Etsy"; house lines stay at the end in their set order.
@@ -160,29 +160,34 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 ### 3.6 TikTok Visual Hook Rule (strict, added 17 Nov 2026)
 - **NEVER post plain beige text-only title cards to TikTok.** They stall at about 700 views.
 - Every TikTok post uses a **rich, warm, real-life lifestyle scene**, for example a personalised silks bauble hanging on a lit Christmas tree by a fireplace.
-- The **short, emotional story hook goes in the caption's first line**; the photo itself stays clean (see 3.7), for example the Ombudsman retirement keepsake or the Lossiemouth pink-and-green-spots showcase.
+- The **short, emotional story hook sits in the branded colour block above the photo** and in the caption's first line (see 3.7), for example the Ombudsman retirement keepsake or the Lossiemouth pink-and-green-spots showcase.
 - The caption carries **a comment-triggering question**.
 - This sits inside the TikTok Strike Shield (Section 2): gift and merch posts only, with zero mention of odds, stalls or winning.
 
-### 3.7 Gift photo and video spec: pure luxury product photography (reset 17 Nov 2026)
-This replaces every earlier version of 3.7. The standard is the bauble photos Alex made in Claude Chat (Tinsel Turf over a frosty racecourse, Lucky Lady on a lit tree, Dad and Mum in gift boxes by the fire).
+### 3.7 Gift post spec: luxury photography in the Track DNA guide branding (17 Nov 2026)
+This replaces every earlier version of 3.7. Two references set the standard: the bauble photos Alex made in Claude Chat (Tinsel Turf over a frosty racecourse, Lucky Lady on a lit tree, Dad and Mum in gift boxes by the fire) and the branding of the Track DNA guides (the Ascot Flat Pro edition).
 
-**1. Pure luxury product photography, zero text on the scene**
-- Generate a full, photorealistic scene with FLUX Krea (Hugging Face) in the style and light of those references: a frosted pine branch over a snowy UK racecourse at twilight; a rustic wooden table with candlelight and dried orange slices; a cosy lit Christmas tree with brass bells and glass ornaments; gift boxes by a fire.
-- FLUX generates the scene with a **blank** glossy white ceramic disc bauble in it. Our **exact designer artwork** (from the website bauble designer, by its design code) is then printed onto that bauble, keeping its real glaze, light, shadow, hole and ribbon (`tools/video/mapart.py`). FLUX never draws the design or the name itself: it misspells names ("LUCKY LADI") and changes colours.
-- **No text, banners, footer bars, boxes, logos, prices or website on the photo.** The bauble is the star and is big in the frame.
-- Spelling: every name is checked against what Alex wrote before rendering. Lossiemouth is **LOSSIEMOUTH**.
+**1. The photograph**
+- Generate a full, photorealistic scene with FLUX Krea in the style of those references, with a **blank** glossy white ceramic disc bauble in it. Print our **exact designer artwork** (website bauble designer, by its design code) onto that bauble, keeping its real glaze, light, shadow, hole and ribbon (`tools/video/mapart.py`). FLUX never draws the design or the name: it misspells names ("LUCKY LADI") and changes colours.
+- No text, logo or box is laid over the bauble itself. The bauble is big and is the star.
+- Every name is checked against what Alex wrote before rendering. Lossiemouth is **LOSSIEMOUTH**.
 
-**2. Video (8.5 seconds, 1080×1920, Reels, TikTok and Shorts)**
-- **0.0s to 6.0s:** a slow, cinematic push-in on the pure photograph, with subtle natural movement only: gentle snowfall in outdoor scenes, a soft shimmer in the scene's own lights indoors. No text at all.
-- **6.0s to 8.5s:** cut to the approved animated ZANS snow end-card: #1F5A3D racing green, metallic gold striping top and bottom, falling snow, "ZANS RACING · TOOLS & GIFTS" in gold, the Santa-hat ZANS logo on a gold-framed cream card, bold "Wishing you a Merry Christmas", a gold BUY NOW pill (#F2CF5B fill, bold #1F5A3D text) and WWW.ZANSHORSERACING.CO.UK at y=1350px, all above the bottom 25% where the TikTok and Reels captions sit.
-- All branding and the call-to-action live on the end-card only.
+**2. The branding (copied from the Track DNA guides, so every post follows through)**
+- **Top bar:** #1C1C1C, "ZANS · HORSE RACING GIFTS" in tracked Jost capitals, and a black pill with a gold border and gold IBM Plex Mono capitals on the right (for example "CHRISTMAS 2026"), like the guides' "PRO EDITION" pill.
+- **Metallic stripe** under the bar and between sections: bronze #725415 to champagne #FFF4C9 to bronze, exactly as on the guide pages.
+- **Colour block** in the post's own colour, the way each guide uses its course colour: take it from the bauble's silks (Ombudsman blue #1C4FA0; Lossiemouth rose pink #C2477E to go with her green and pink design). A small tracked eyebrow, then the hook in big white Jost Bold capitals, then one sentence in Jost.
+- **Cream panel** (#EAE2D8) with the **big Santa-hat ZANS logo** and "WISHING YOU A MERRY CHRISTMAS" in Jost Bold capitals, plus "Any horse's name · zanshorseracing.co.uk".
+- Fonts: Jost (headings), Source Sans 3 (small text), IBM Plex Mono (pills). Never another display face.
 
-**3. 4:5 feed photos (1080×1350):** the pure photograph with zero text. The hook, the horse's story and zanshorseracing.co.uk go in the caption.
+**3. 4:5 feed photo (1080×1350):** top bar and stripe; colour block with the hook; the photograph; stripe; cream panel with the big Santa logo and the Christmas line.
 
-**4. Process:** show Alex preview frames before rendering a batch. Run `compliance_check.py` on the captions. Nothing is scheduled until Alex approves.
+**4. Video (8.5 seconds, 1080×1920)**
+- **0.0s to 6.0s:** a slow push-in on the photograph with natural movement (snowfall outdoors, a soft shimmer in the lights indoors). At about 0.5s the top bar, stripe and colour block with the hook slide down; all text sits below y=340, clear of the TikTok and Reels top bar, and the bauble stays fully in view below the block.
+- **6.0s to 8.5s:** the end-card in the post's colour, with falling snow: top bar and stripe, "ZANS RACING · TOOLS & GIFTS", the big Santa-hat logo, "WISHING YOU A MERRY CHRISTMAS" in Jost Bold capitals, a black-and-gold BUY NOW pill, and WWW.ZANSHORSERACING.CO.UK at y=1350, then the stripe and a black bottom bar. Nothing important sits in the bottom 25%.
 
-**5. Sound:** videos carry our brand voice with subtle music that suits the video, once a voice and music source is in place (the Section 7 voice rule still applies).
+**5. Process:** show Alex preview frames before rendering a batch. Run `compliance_check.py` on the captions. Nothing is scheduled until Alex approves.
+
+**6. Sound:** videos carry our brand voice with subtle music that suits the video, once a voice and music source is in place (the Section 7 voice rule still applies).
 
 ---
 
