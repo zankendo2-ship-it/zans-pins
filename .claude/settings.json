@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python*)",
+      "Bash(python3*)",
+      "Bash(ffmpeg*)",
+      "Bash(edge-tts*)",
+      "Bash(pip*)",
+      "Bash(playwright*)",
+      "Bash(node*)",
+      "Bash(git *)",
+      "Read",
+      "Write",
+      "Edit"
+    ]
+  }
+}
