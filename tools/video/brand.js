@@ -26,10 +26,29 @@ const METAL = {
   silver: { stripe: 'linear-gradient(90deg,#5E646B 0%,#A9AFB6 22%,#F7F9FB 50%,#A9AFB6 78%,#5E646B 100%)', edge: '#D3D8DD', text: '#E9EDF1', inset: '#5E646B' },
 };
 const P = {
-  ombudsman: { metal: 'silver', colour: '#1C4FA0', eyebrow: "Social showcase · any horse's name", big: 'Ombudsman retiring?', sub: 'Put him on your tree this Christmas.' },
-  lossiemouth: { metal: 'gold', colour: '#C2477E', eyebrow: "Social showcase · any horse's name", big: 'Lossiemouth fans,', sub: 'would this go on your tree?' },
+  ombudsman: { metal: 'silver', colour: '#1C4FA0', eyebrow: "Social showcase · any horse's name", big: 'Ombudsman retiring?', sub: 'Put him on your tree this Christmas.', q: "Which horse's name would you put on yours?" },
+  lossiemouth: { metal: 'gold', colour: '#C2477E', eyebrow: "Social showcase · any horse's name", big: 'Lossiemouth fans,', sub: 'green silks and pink spots.', q: 'Would this go on your tree?' },
 };
 const bar = `<div class="bar"><b>ZANS · HORSE RACING GIFTS</b><span class="pill" style="font-size:19px;padding:5px 16px">CHRISTMAS 2026</span></div><div class="stripe" style="top:60px"></div>`;
+const foot = H => `<div class="stripe" style="top:${H - 72}px"></div><div style="position:absolute;left:0;right:0;top:${H - 60}px;height:60px;background:#1C1C1C"></div>`;
+const bg = D => `<div style="position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 42%, ${D.colour}E6, ${D.colour})"></div>`;
+// clip 2: the hook and the question
+const textCard = (D, H, y) => `${bg(D)}${bar}
+  <div class="eyebrow" style="position:absolute;left:0;right:0;top:${y.eb}px;text-align:center;color:#fff;font-size:26px">${D.eyebrow}</div>
+  <div class="big" style="position:absolute;left:60px;right:60px;top:${y.big}px;text-align:center;color:#fff;font-size:${y.bigS}px;line-height:1.0">${D.big}</div>
+  <div class="sub" style="position:absolute;left:80px;right:80px;top:${y.sub}px;text-align:center;color:#fff;font-size:${y.subS}px">${D.sub}</div>
+  <div style="position:absolute;left:0;right:0;top:${y.rule}px;text-align:center"><span class="stripe" style="position:static;display:inline-block;width:260px;height:6px"></span></div>
+  <div style="position:absolute;left:90px;right:90px;top:${y.q}px;background:#EAE2D8;border-radius:22px;padding:34px 40px;text-align:center;box-shadow:0 18px 50px #0005">
+    <div class="eyebrow muted" style="font-size:22px">Tell us in the comments</div>
+    <div class="ink" style="font-weight:700;font-size:${y.qS}px;line-height:1.12;margin-top:12px">${D.q}</div></div>${foot(H)}`;
+// clip 3: the Santa-hat end-card
+const endCard = (D, H, y) => `${bg(D)}${bar}
+  <div class="eyebrow" style="position:absolute;left:0;right:0;top:${y.eb}px;text-align:center;color:#fff;font-size:26px">ZANS Racing · Tools &amp; Gifts</div>
+  <img class="logo" src="${santa}" style="position:absolute;left:${(1080 - y.logoW) / 2}px;top:${y.logo}px;width:${y.logoW}px;box-shadow:0 22px 60px #0006">
+  <div class="big" style="position:absolute;left:0;right:0;top:${y.wish}px;text-align:center;color:#fff;font-size:${y.wishS}px;line-height:1.0">Wishing you a<br>Merry Christmas</div>
+  <div style="position:absolute;left:0;right:0;top:${y.btn}px;text-align:center"><span class="pill" style="display:inline-block;font-size:40px;padding:14px 46px;border-radius:14px">BUY NOW</span></div>
+  <div style="position:absolute;left:0;right:0;top:${y.url}px;text-align:center;color:#fff;font-weight:600;font-size:34px;letter-spacing:.12em">WWW.ZANSHORSERACING.CO.UK</div>${foot(H)}`;
+const strips = H => `<div class="stripe" style="top:0"></div><div class="stripe" style="top:${H - 12}px"></div>`;
 (async () => {
   const b = await chromium.launch();
   const shot = async (name, w, h, html, transparent, metal) => { const M = METAL[metal || 'gold']; const p = await b.newPage({ viewport: { width: w, height: h } });
@@ -38,35 +57,14 @@ const bar = `<div class="bar"><b>ZANS · HORSE RACING GIFTS</b><span class="pill
       while (e.scrollWidth > e.clientWidth + 1 && s > 40) { s -= 2; e.style.fontSize = s + 'px'; } return s; }));
     await p.screenshot({ path: `v/${name}.png`, omitBackground: transparent }); await p.close(); return fit; };
   for (const [k, D] of Object.entries(P)) {
-    // 4:5 feed photo, laid out like the guide cover
-    const photo = img(`v/${k}-window.png`);
-    console.log(k, 'feed', await shot(`${k}-feed-branded`, 1080, 1350, `${bar}
-      <div class="block" style="top:72px;height:200px;background:${D.colour};padding:26px 48px 0">
-        <div class="eyebrow" style="font-size:19px">${D.eyebrow}</div>
-        <div class="big" style="font-size:82px;margin-top:10px;white-space:nowrap;overflow:hidden">${D.big}</div>
-        <div class="sub" style="font-size:34px;margin-top:6px">${D.sub}</div></div>
-      <img src="${photo}" style="position:absolute;left:0;top:272px;width:1080px;height:722px;object-fit:cover">
-      <div class="stripe" style="top:994px"></div>
-      <div class="cream" style="top:1006px;height:332px;display:flex;align-items:center;gap:36px;padding:0 48px">
-        <img class="logo" src="${santa}" style="height:280px">
-        <div><div class="big ink" style="font-size:62px;line-height:1.02">Wishing you a<br>Merry Christmas</div>
-          <div class="muted" style="font-family:Src,sans-serif;font-size:27px;margin-top:14px">Any horse's name · zanshorseracing.co.uk</div></div></div>
-      <div class="stripe" style="top:1338px"></div>`, false, D.metal));
-    // video header (0-6s): the bar, stripe and colour block slide in over the photo; text kept below y 340 (TikTok top UI)
-    console.log(k, 'vhead', await shot(`${k}-vhead`, 1080, 1920, `${bar}
-      <div class="block" style="top:72px;height:560px;background:${D.colour};padding:0 56px">
-        <div class="eyebrow" style="position:absolute;left:56px;top:300px;font-size:24px">${D.eyebrow}</div>
-        <div class="big" style="position:absolute;left:56px;right:56px;top:350px;font-size:100px;white-space:nowrap;overflow:hidden">${D.big}</div>
-        <div class="sub" style="position:absolute;left:56px;right:56px;top:468px;font-size:52px">${D.sub}</div></div>
-      <div class="stripe" style="top:632px"></div><div class="stripe" style="top:1908px"></div>`, true, D.metal));
-    // end-card (6-8.5s): the post's colour, big Santa-hat logo, Merry Christmas, BUY NOW, website at y 1350
-    await shot(`${k}-endcard`, 1080, 1920, `<div style="position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 42%, ${D.colour}EE, ${D.colour})"></div>${bar}
-      <div class="eyebrow" style="position:absolute;left:0;right:0;top:350px;text-align:center;color:#fff;font-size:26px">ZANS Racing · Tools &amp; Gifts</div>
-      <img class="logo" src="${santa}" style="position:absolute;left:190px;top:410px;width:700px;box-shadow:0 22px 60px #0006">
-      <div class="big" style="position:absolute;left:0;right:0;top:1000px;text-align:center;color:#fff;font-size:94px;line-height:1.0">Wishing you a<br>Merry Christmas</div>
-      <div style="position:absolute;left:0;right:0;top:1222px;text-align:center"><span class="pill" style="display:inline-block;font-size:40px;padding:14px 46px;border-radius:14px">BUY NOW</span></div>
-      <div style="position:absolute;left:0;right:0;top:1350px;text-align:center;color:#fff;font-weight:600;font-size:36px;letter-spacing:.12em">WWW.ZANSHORSERACING.CO.UK</div>
-      <div class="stripe" style="top:1848px"></div><div style="position:absolute;left:0;right:0;top:1860px;height:60px;background:#1C1C1C"></div>`, false, D.metal);
+    // video (1080x1920): text kept between y 340 and 1440, clear of the TikTok and Reels interface
+    await shot(`${k}-v-strips`, 1080, 1920, strips(1920), true, D.metal);
+    console.log(k, 'text', await shot(`${k}-v-text`, 1080, 1920, textCard(D, 1920, { eb: 470, big: 520, bigS: 112, sub: 770, subS: 50, rule: 880, q: 930, qS: 60 }), false, D.metal));
+    await shot(`${k}-endcard`, 1080, 1920, endCard(D, 1920, { eb: 350, logo: 410, logoW: 700, wish: 1000, wishS: 94, btn: 1222, url: 1350 }), false, D.metal);
+    // feed carousel (1080x1350): slide 1 the photo with strips, slide 2 the hook and question, slide 3 the Santa-hat card
+    await shot(`${k}-s1-strips`, 1080, 1350, strips(1350), true, D.metal);
+    await shot(`${k}-s2`, 1080, 1350, textCard(D, 1350, { eb: 330, big: 380, bigS: 104, sub: 610, subS: 46, rule: 710, q: 760, qS: 56 }), false, D.metal);
+    await shot(`${k}-s3`, 1080, 1350, endCard(D, 1350, { eb: 214, logo: 262, logoW: 560, wish: 752, wishS: 84, btn: 958, url: 1060 }), false, D.metal);
   }
   await b.close();
 })();

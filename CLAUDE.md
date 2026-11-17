@@ -169,7 +169,7 @@ This replaces every earlier version of 3.7. Two references set the standard: the
 
 **1. The photograph**
 - Generate a full, photorealistic scene with FLUX Krea in the style of those references, with a **blank** glossy white ceramic disc bauble in it. Print our **exact designer artwork** (website bauble designer, by its design code) onto that bauble, keeping its real glaze, light, shadow, hole and ribbon (`tools/video/mapart.py`). FLUX never draws the design or the name: it misspells names ("LUCKY LADI") and changes colours.
-- No text, logo or box is laid over the bauble itself. The bauble is big and is the star.
+- No text, logo or box is laid over the bauble photograph: it opens the video and the carousel on its own, framed only by the metal strips.
 - Every name is checked against what Alex wrote before rendering. Lossiemouth is **LOSSIEMOUTH**.
 
 **2. The branding (copied from the Track DNA guides, so every post follows through)**
@@ -178,15 +178,21 @@ This replaces every earlier version of 3.7. Two references set the standard: the
   - **Gold** (bronze #725415, gold #B98A36, champagne #FFF4C9) for warm posts: lit trees, candlelight, fireplaces, gift boxes, pink, red and green designs.
   - **Silver** (#5E646B, #A9AFB6, #F7F9FB) for cool posts: frost, snow, winter racecourses, blue and white designs.
   - The pill border and pill text use the same metal. Bronze stays reserved for the Beginner guides.
-- **Colour block** in the post's own colour, the way each guide uses its course colour: take it from the bauble's silks (Ombudsman blue #1C4FA0 with silver; Lossiemouth rose pink #C2477E with gold, to go with her green and pink design). A small tracked eyebrow, then the hook in big white Jost Bold capitals, then one sentence in Jost.
-- **Cream panel** (#EAE2D8) with the **big Santa-hat ZANS logo** and "WISHING YOU A MERRY CHRISTMAS" in Jost Bold capitals, plus "Any horse's name · zanshorseracing.co.uk".
+- **The post's own colour** for the text and end-card clips, the way each guide uses its course colour: take it from the bauble's silks (Ombudsman blue #1C4FA0 with silver; Lossiemouth rose pink #C2477E with gold, to go with her green and pink design). A small tracked eyebrow, then the hook in big white Jost Bold capitals, then one sentence in Jost, then the question on a cream card.
+- **The big Santa-hat ZANS logo** with "WISHING YOU A MERRY CHRISTMAS" in Jost Bold capitals closes every Christmas post.
 - Fonts: Jost (headings), Source Sans 3 (small text), IBM Plex Mono (pills). Never another display face.
 
-**3. 4:5 feed photo (1080×1350):** top bar and stripe; colour block with the hook; the photograph; stripe; cream panel with the big Santa logo and the Christmas line.
+**3. 4:5 feed carousel (1080×1350), three slides in the same order as the video**
+- **Slide 1:** the bauble photograph on its own, with only the metal strip at the top and bottom. No text.
+- **Slide 2:** the post's colour with the top bar and strips: the hook in big white Jost Bold capitals, one sentence, a short metal rule, and the question on a cream card ("Tell us in the comments").
+- **Slide 3:** the Santa-hat card: the big Santa-hat ZANS logo, "WISHING YOU A MERRY CHRISTMAS", the BUY NOW pill and the website.
+- Networks that take one image (Pinterest) get slide 1.
 
-**4. Video (8.5 seconds, 1080×1920)**
-- **0.0s to 6.0s:** a slow push-in on the photograph with natural movement (snowfall outdoors, a soft shimmer in the lights indoors). At about 0.5s the top bar, stripe and colour block with the hook slide down; all text sits below y=340, clear of the TikTok and Reels top bar, and the bauble stays fully in view below the block.
-- **6.0s to 8.5s:** the end-card in the post's colour, with falling snow: top bar and stripe, "ZANS RACING · TOOLS & GIFTS", the big Santa-hat logo, "WISHING YOU A MERRY CHRISTMAS" in Jost Bold capitals, a black-and-gold BUY NOW pill, and WWW.ZANSHORSERACING.CO.UK at y=1350, then the stripe and a black bottom bar. Nothing important sits in the bottom 25%.
+**4. Video (9 seconds, 1080×1920), three clips**
+- **0.0s to 4.0s, the bauble:** a slow push-in on the photograph with natural movement (snowfall outdoors, a soft shimmer in the lights indoors) and only the metal strip at the top and bottom. No text.
+- **4.0s to 6.5s, the hook and question:** slide 2's layout on the post's colour, with gentle snow.
+- **6.5s to 9.0s, the Santa-hat end-card:** slide 3's layout, with falling snow, and WWW.ZANSHORSERACING.CO.UK at y=1350.
+- All text sits between y=340 and y=1440, clear of the TikTok and Reels interface.
 
 **5. Process:** show Alex preview frames before rendering a batch. Run `compliance_check.py` on the captions. Nothing is scheduled until Alex approves.
 
