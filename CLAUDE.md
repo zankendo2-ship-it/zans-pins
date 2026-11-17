@@ -79,7 +79,7 @@ No passwords, API keys, connector IDs, chat/thread IDs or personal email address
 - The Ascot listings stay live on Etsy; they are just not promoted on social for now.
 
 ### Social-only showcase baubles (exception approved by Alex, 17 Nov 2026)
-- A showcase bauble may carry a well-known horse's name (first two: Ombudsman, Lossiemouth) **on social posts only**, to show what the designer can do.
+- A showcase bauble may carry a well-known horse's name (Ombudsman, Lossiemouth; added 17 Nov: No Drama This End, Jon Bon, Constitution Hill) **on social posts only**, to show what the designer can do.
 - It is never listed, pictured or offered as a pre-made product on Etsy or the website, and the caption always sells "design your own with any horse's name", not that horse's bauble.
 - Never name the owner, trainer's yard colours or the silks' owner in the image, caption, alt text or hashtags. Never Juddmonte colours. No claim of any link with the horse or its connections.
 - Any news line about the horse (retirement, next run) is checked in 2 sources on the day of booking.

@@ -26,9 +26,49 @@
  "syndicate": {
   "metal": "gold",
   "colour": "#1F5A3D",
-  "eyebrow": "Syndicate gift · 35 days to Christmas",
+  "eyebrow": "Syndicate gift · one each",
   "big": "One for every owner",
   "sub": "Your silks, your horse's name.",
   "question": "How many are in your syndicate?"
+ },
+ "no-drama-this-end": {
+  "metal": "silver",
+  "colour": "#1B2A5C",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "No drama this Christmas",
+  "sub": "Navy and white hoops, red cap.",
+  "question": "Who's your favourite chaser this winter?"
+ },
+ "jon-bon": {
+  "metal": "gold",
+  "colour": "#0E6B3B",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "Green and gold hoops",
+  "sub": "White cap, any name.",
+  "question": "Best horse you've seen in hoops?"
+ },
+ "billy": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Personalised silks bauble",
+  "big": "Billy's on the tree",
+  "sub": "Your silks, any name.",
+  "question": "Whose name would go on yours?"
+ },
+ "constitution-hill-green": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "Come on Conny!",
+  "sub": "Racing green, silks and his name.",
+  "question": "What's your favourite Conny memory?"
+ },
+ "constitution-hill-white": {
+  "metal": "silver",
+  "colour": "#1F5A3D",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "Conny on the tree",
+  "sub": "White silks, black cap.",
+  "question": "Who's the best hurdler you've ever seen?"
  }
 }
