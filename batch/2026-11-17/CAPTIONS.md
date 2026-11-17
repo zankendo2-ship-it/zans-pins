@@ -9,7 +9,7 @@ Nothing here is booked until Alex says yes. UK times.
 ```
 Personalised horse racing Christmas bauble 🎄🏇 Their racing silks, on the tree.
 
-Every syndicate has one person who is impossible to buy for. Pick from 25 silks patterns, choose the colours and add any name: theirs, their horse's or the syndicate's. It's printed the same on both sides of a round ceramic bauble, about 7.5 cm, with a ribbon.
+Every syndicate has one. The member who is impossible to buy for. Sorted: 25 silks patterns, any colours, any name. Theirs, the horse's or the syndicate's. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.
 
 Send this to whoever buys the syndicate presents.
 
@@ -31,7 +31,7 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ```
 Personalised horse racing Christmas bauble 🎄🏇 Their racing silks, on the tree.
 
-Every syndicate has one person who is impossible to buy for. Pick from 25 silks patterns, choose the colours and add any name: theirs, their horse's or the syndicate's. It's printed the same on both sides of a round ceramic bauble, about 7.5 cm, with a ribbon.
+Every syndicate has one. The member who is impossible to buy for. Sorted: 25 silks patterns, any colours, any name. Theirs, the horse's or the syndicate's. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.
 
 Send this to whoever buys the syndicate presents.
 
@@ -69,7 +69,7 @@ Link: https://www.etsy.com/uk/listing/4611232428
 ```
 Personalised horse racing Christmas bauble 🎄🏇 Their racing silks, on the tree.
 
-Every syndicate has one person who is impossible to buy for. Pick from 25 silks patterns, choose the colours and add any name: theirs, their horse's or the syndicate's. It's printed the same on both sides of a round ceramic bauble, about 7.5 cm, with a ribbon.
+Every syndicate has one. The member who is impossible to buy for. Sorted: 25 silks patterns, any colours, any name. Theirs, the horse's or the syndicate's. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.
 
 Send this to whoever buys the syndicate presents.
 
@@ -91,7 +91,7 @@ Title: Their racing silks, on the Christmas tree 🎄🏇
 ```
 Personalised horse racing Christmas bauble 🎄🏇 Their racing silks, on the tree.
 
-Every syndicate has one person who is impossible to buy for. Pick from 25 silks patterns, choose the colours and add any name: theirs, their horse's or the syndicate's.
+Every syndicate has one. The member who is impossible to buy for. Sorted: 25 silks patterns, any colours, any name. Theirs, the horse's or the syndicate's.
 
 Whose name would you hang on the tree? 👇
 
@@ -109,7 +109,7 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ```
 With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇
 
-Design a personalised silks bauble with your favourite horse's name at www.zanshorseracing.co.uk. This one is a showcase design, not a ready-made product: you pick the pattern, the colours and the name, and we print yours.
+Design a personalised silks bauble with your favourite horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.
 
 Send this to an Ombudsman fan.
 
@@ -129,7 +129,7 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ```
 With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇
 
-Design a personalised silks bauble with your favourite horse's name on our website. This one is a showcase design, not a ready-made product: you pick the pattern, the colours and the name, and we print yours.
+Design a personalised silks bauble with your favourite horse's name on our website. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.
 
 Send this to an Ombudsman fan.
 
@@ -165,7 +165,7 @@ Link: https://www.zanshorseracing.co.uk/bauble-designer/
 ```
 With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇
 
-Design a personalised silks bauble with your favourite horse's name at www.zanshorseracing.co.uk. This one is a showcase design, not a ready-made product: you pick the pattern, the colours and the name, and we print yours.
+Design a personalised silks bauble with your favourite horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.
 
 Send this to an Ombudsman fan.
 
@@ -185,7 +185,7 @@ Title: Hang your favourite horse on the tree 🎄 Personalised silks bauble
 ```
 With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇
 
-Design a personalised silks bauble with your favourite horse's name. This one is a showcase design: you pick the pattern, the colours and the name.
+Design a personalised silks bauble with your favourite horse's name. This one's a showcase. You pick the pattern, the colours and the name.
 
 Wishing you a Merry Christmas 🎅
 
@@ -199,13 +199,13 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ### instagram · Wed 18 Nov 19:00
 
 ```
-Kempton draw bias over 6 furlongs 🏇 An all-weather cheat sheet for your next night at the track.
+Kempton draw bias over 6 furlongs 🏇 One for the all-weather regulars.
 
-We went through 639 six-furlong races on the all-weather at Kempton since 2019. Horses in the lowest third of the stalls won about 1 in 7 (14.6% of 1,839 runners). The highest third won about 1 in 14 (7.1% of 2,256). Low draws also had 11% more winners than their odds suggested.
+Six furlongs at Kempton, and the stalls matter. We went through 639 all-weather races since 2019. Lowest third of the stalls: about 1 in 7 won (14.6% of 1,839 runners). Highest third: about 1 in 14 (7.1% of 2,256). Low draws also had 11% more winners than their odds suggested. Drawn wide and you've got work to do.
 
 Save this before your next night at Kempton.
 
-It comes from the work behind our Kempton Track DNA guide, coming soon. Make finding a winner a little easier. Follow us so you don't miss it.
+It's from the work behind our Kempton Track DNA guide, coming soon. Make finding a winner a little easier. Follow us so you don't miss it.
 
 Low draw or high draw over 6f at Kempton: where do you want to be? 👇
 
@@ -223,13 +223,13 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ### facebook · Wed 18 Nov 13:00
 
 ```
-Kempton draw bias over 6 furlongs 🏇 An all-weather cheat sheet for your next night at the track.
+Kempton draw bias over 6 furlongs 🏇 One for the all-weather regulars.
 
-We went through 639 six-furlong races on the all-weather at Kempton since 2019. Horses in the lowest third of the stalls won about 1 in 7 (14.6% of 1,839 runners). The highest third won about 1 in 14 (7.1% of 2,256). Low draws also had 11% more winners than their odds suggested.
+Six furlongs at Kempton, and the stalls matter. We went through 639 all-weather races since 2019. Lowest third of the stalls: about 1 in 7 won (14.6% of 1,839 runners). Highest third: about 1 in 14 (7.1% of 2,256). Low draws also had 11% more winners than their odds suggested. Drawn wide and you've got work to do.
 
 Save this before your next night at Kempton.
 
-It comes from the work behind our Kempton Track DNA guide, coming soon. Make finding a winner a little easier. Follow us so you don't miss it.
+It's from the work behind our Kempton Track DNA guide, coming soon. Make finding a winner a little easier. Follow us so you don't miss it.
 
 Low draw or high draw over 6f at Kempton: where do you want to be? 👇
 
@@ -263,13 +263,13 @@ Link: https://www.etsy.com/uk/shop/ZANSRacingTools
 ### linkedin · Wed 18 Nov 17:00
 
 ```
-Kempton draw bias over 6 furlongs 🏇 An all-weather cheat sheet for your next night at the track.
+Kempton draw bias over 6 furlongs 🏇 One for the all-weather regulars.
 
-We went through 639 six-furlong races on the all-weather at Kempton since 2019. Horses in the lowest third of the stalls won about 1 in 7 (14.6% of 1,839 runners). The highest third won about 1 in 14 (7.1% of 2,256). Low draws also had 11% more winners than their odds suggested.
+Six furlongs at Kempton, and the stalls matter. We went through 639 all-weather races since 2019. Lowest third of the stalls: about 1 in 7 won (14.6% of 1,839 runners). Highest third: about 1 in 14 (7.1% of 2,256). Low draws also had 11% more winners than their odds suggested. Drawn wide and you've got work to do.
 
 Save this before your next night at Kempton.
 
-It comes from the work behind our Kempton Track DNA guide, coming soon. Make finding a winner a little easier. Follow us so you don't miss it.
+It's from the work behind our Kempton Track DNA guide, coming soon. Make finding a winner a little easier. Follow us so you don't miss it.
 
 Low draw or high draw over 6f at Kempton: where do you want to be? 👇
 
@@ -289,7 +289,7 @@ Visit www.zanshorseracing.co.uk for horse racing guides and gifts
 ```
 Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇
 
-Customise your own silks bauble with any horse's name at www.zanshorseracing.co.uk. This one is a showcase design, not a ready-made product: you pick the pattern, the colours and the name, and we print yours.
+Customise your own silks bauble with any horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.
 
 Send this to a Lossiemouth fan.
 
@@ -309,7 +309,7 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ```
 Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇
 
-Customise your own silks bauble with any horse's name on our website. This one is a showcase design, not a ready-made product: you pick the pattern, the colours and the name, and we print yours.
+Customise your own silks bauble with any horse's name on our website. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.
 
 Send this to a Lossiemouth fan.
 
@@ -345,7 +345,7 @@ Link: https://www.zanshorseracing.co.uk/bauble-designer/
 ```
 Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇
 
-Customise your own silks bauble with any horse's name at www.zanshorseracing.co.uk. This one is a showcase design, not a ready-made product: you pick the pattern, the colours and the name, and we print yours.
+Customise your own silks bauble with any horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.
 
 Send this to a Lossiemouth fan.
 
@@ -365,7 +365,7 @@ Title: Your favourite horse on the Christmas tree 🎄 Personalised silks bauble
 ```
 Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇
 
-Customise your own silks bauble with any horse's name. This one is a showcase design: you pick the pattern, the colours and the name.
+Customise your own silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.
 
 Wishing you a Merry Christmas 🎅
 
@@ -381,7 +381,7 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ```
 All-weather racing guides are coming 🏇 Kempton, Southwell, Wolverhampton and Newcastle.
 
-Coming soon: Track DNA guides for four all-weather tracks. We have been through 14,736 all-weather races since 2019 to build them: 4,739 at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at Southwell.
+Winter's here and the floodlights are on. We've been through 14,736 all-weather races since 2019 to build four Track DNA guides: 4,739 at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at Southwell. That's a lot of cold Tuesday nights.
 
 Send this to your all-weather racing mate.
 
@@ -403,7 +403,7 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ```
 All-weather racing guides are coming 🏇 Kempton, Southwell, Wolverhampton and Newcastle.
 
-Coming soon: Track DNA guides for four all-weather tracks. We have been through 14,736 all-weather races since 2019 to build them: 4,739 at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at Southwell.
+Winter's here and the floodlights are on. We've been through 14,736 all-weather races since 2019 to build four Track DNA guides: 4,739 at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at Southwell. That's a lot of cold Tuesday nights.
 
 Send this to your all-weather racing mate.
 
@@ -441,7 +441,7 @@ Link: https://www.etsy.com/uk/shop/ZANSRacingTools
 ```
 All-weather racing guides are coming 🏇 Kempton, Southwell, Wolverhampton and Newcastle.
 
-Coming soon: Track DNA guides for four all-weather tracks. We have been through 14,736 all-weather races since 2019 to build them: 4,739 at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at Southwell.
+Winter's here and the floodlights are on. We've been through 14,736 all-weather races since 2019 to build four Track DNA guides: 4,739 at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at Southwell. That's a lot of cold Tuesday nights.
 
 Send this to your all-weather racing mate.
 
@@ -461,9 +461,9 @@ Visit www.zanshorseracing.co.uk for horse racing guides and gifts
 ### instagram · Fri 20 Nov 08:00
 
 ```
-Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas.
+Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.
 
-One bauble for every owner in the syndicate, in your silks with your horse's name. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, with a ribbon, printed the same on both sides.
+One bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.
 
 Send this to your syndicate group chat.
 
@@ -483,9 +483,9 @@ Link in bio 👉 www.zanshorseracing.co.uk
 ### facebook · Fri 20 Nov 08:30
 
 ```
-Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas.
+Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.
 
-One bauble for every owner in the syndicate, in your silks with your horse's name. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, with a ribbon, printed the same on both sides.
+One bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.
 
 Send this to your syndicate group chat.
 
@@ -521,9 +521,9 @@ Link: https://www.etsy.com/uk/listing/4611232428
 ### linkedin · Fri 20 Nov 09:00
 
 ```
-Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas.
+Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.
 
-One bauble for every owner in the syndicate, in your silks with your horse's name. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, with a ribbon, printed the same on both sides.
+One bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 silks patterns and choose your colours. Round ceramic, about 7.5 cm, printed both sides, with a ribbon.
 
 Send this to your syndicate group chat.
 
@@ -543,9 +543,9 @@ Wishing you a Merry Christmas 🎅
 Title: 35 days to Christmas 🎄 One bauble for every syndicate member
 
 ```
-Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas.
+Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.
 
-One bauble for every owner in the syndicate, in your silks with your horse's name. Pick from 25 silks patterns and choose your colours.
+One bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 silks patterns and choose your colours.
 
 How many are in your syndicate? 👇
 

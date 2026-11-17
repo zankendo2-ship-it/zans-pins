@@ -16,20 +16,20 @@ DESIGNER = f"https://{SITE}/bauble-designer/"
 BAUBLE_CTA = f"Design yours at {SITE}/bauble-designer/ or search ZANSRacingTools on Etsy. Silks bauble Premium, £14.99."
 BAUBLE_CTA_FB = "Design yours on our website or search ZANSRacingTools on Etsy. Silks bauble Premium, £14.99."
 SHOW_CTA = "Silks bauble Premium, £14.99."
-SHOW_NOTE = ("This one is a showcase design, not a ready-made product: you pick the pattern, the colours and the "
-             "name, and we print yours.")
-SHOW_NOTE_TT = "This one is a showcase design: you pick the pattern, the colours and the name."
+SHOW_NOTE = ("This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. "
+             "We print yours.")
+SHOW_NOTE_TT = "This one's a showcase. You pick the pattern, the colours and the name."
 
 POSTS = [
  dict(id="post1", name="Silks bauble", kind="merch", xmas=True, tiktok=True, image="post1-silks-bauble.png",
       when={"facebook": "Tue 17 Nov 20:00", "x": "Tue 17 Nov 20:15", "linkedin": "Tue 17 Nov 20:15",
             "instagram": "Tue 17 Nov 20:30", "tiktok": "Tue 17 Nov 20:30", "pinterest": "Tue 17 Nov 20:45"},
       hook="Personalised horse racing Christmas bauble 🎄🏇 Their racing silks, on the tree.",
-      story=("Every syndicate has one person who is impossible to buy for. Pick from 25 silks patterns, choose the "
-             "colours and add any name: theirs, their horse's or the syndicate's. It's printed the same on both sides "
-             "of a round ceramic bauble, about 7.5 cm, with a ribbon."),
-      story_tt=("Every syndicate has one person who is impossible to buy for. Pick from 25 silks patterns, choose the "
-                "colours and add any name: theirs, their horse's or the syndicate's."),
+      story=("Every syndicate has one. The member who is impossible to buy for. Sorted: 25 silks patterns, any "
+             "colours, any name. Theirs, the horse's or the syndicate's. Round ceramic, about 7.5 cm, printed both "
+             "sides, with a ribbon."),
+      story_tt=("Every syndicate has one. The member who is impossible to buy for. Sorted: 25 silks patterns, any "
+                "colours, any name. Theirs, the horse's or the syndicate's."),
       prompt="Send this to whoever buys the syndicate presents.", cta=BAUBLE_CTA, cta_fb=BAUBLE_CTA_FB,
       question="Whose name would you hang on the tree? 👇", web=WEB_GIFTS,
       tags=["horseracinggifts", "christmasbaubles", "personalisedbauble", "racingsilks", "christmasgifts"],
@@ -63,12 +63,13 @@ POSTS = [
       image="post3-kempton-draw.png",
       when={"pinterest": "Wed 18 Nov 12:30", "facebook": "Wed 18 Nov 13:00", "x": "Wed 18 Nov 15:00",
             "linkedin": "Wed 18 Nov 17:00", "instagram": "Wed 18 Nov 19:00"},
-      hook="Kempton draw bias over 6 furlongs 🏇 An all-weather cheat sheet for your next night at the track.",
-      story=("We went through 639 six-furlong races on the all-weather at Kempton since 2019. Horses in the lowest "
-             "third of the stalls won about 1 in 7 (14.6% of 1,839 runners). The highest third won about 1 in 14 "
-             "(7.1% of 2,256). Low draws also had 11% more winners than their odds suggested."),
+      hook="Kempton draw bias over 6 furlongs 🏇 One for the all-weather regulars.",
+      story=("Six furlongs at Kempton, and the stalls matter. We went through 639 all-weather races since 2019. "
+             "Lowest third of the stalls: about 1 in 7 won (14.6% of 1,839 runners). Highest third: about 1 in 14 "
+             "(7.1% of 2,256). Low draws also had 11% more winners than their odds suggested. Drawn wide and "
+             "you've got work to do."),
       prompt="Save this before your next night at Kempton.",
-      cta=("It comes from the work behind our Kempton Track DNA guide, coming soon. Make finding a winner a little "
+      cta=("It's from the work behind our Kempton Track DNA guide, coming soon. Make finding a winner a little "
            "easier. Follow us so you don't miss it."),
       question="Low draw or high draw over 6f at Kempton: where do you want to be? 👇",
       data="Data: Kempton all-weather, Jan 2019 to Oct 2026, races with 6 or more runners, ZANS results database.",
@@ -107,9 +108,9 @@ POSTS = [
       when={"pinterest": "Thu 19 Nov 12:30", "facebook": "Thu 19 Nov 13:00", "x": "Thu 19 Nov 15:00",
             "linkedin": "Thu 19 Nov 17:00", "instagram": "Thu 19 Nov 19:00"},
       hook="All-weather racing guides are coming 🏇 Kempton, Southwell, Wolverhampton and Newcastle.",
-      story=("Coming soon: Track DNA guides for four all-weather tracks. We have been through 14,736 all-weather races "
-             "since 2019 to build them: 4,739 at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at "
-             "Southwell."),
+      story=("Winter's here and the floodlights are on. We've been through 14,736 all-weather races since 2019 to "
+             "build four Track DNA guides: 4,739 at Wolverhampton, 3,521 at Newcastle, 3,454 at Kempton and 3,022 at "
+             "Southwell. That's a lot of cold Tuesday nights."),
       prompt="Send this to your all-weather racing mate.",
       cta=("Make finding a winner a little easier. Beginner, Advanced and Pro editions for each track. Follow us so "
            "you don't miss the first one."),
@@ -128,11 +129,11 @@ POSTS = [
       image="post6-syndicate-reminder.png",
       when={"instagram": "Fri 20 Nov 08:00", "facebook": "Fri 20 Nov 08:30", "x": "Fri 20 Nov 09:00",
             "linkedin": "Fri 20 Nov 09:00", "tiktok": "Fri 20 Nov 09:30", "pinterest": "Fri 20 Nov 10:30"},
-      hook="Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas.",
-      story=("One bauble for every owner in the syndicate, in your silks with your horse's name. Pick from 25 silks "
-             "patterns and choose your colours. Round ceramic, about 7.5 cm, with a ribbon, printed the same on both sides."),
-      story_tt=("One bauble for every owner in the syndicate, in your silks with your horse's name. Pick from 25 silks "
-                "patterns and choose your colours."),
+      hook="Racehorse syndicate Christmas gift 🎄🏇 35 days to Christmas and counting.",
+      story=("One bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from 25 "
+             "silks patterns and choose your colours. Round ceramic, about 7.5 cm, printed both sides, with a ribbon."),
+      story_tt=("One bauble for every owner in the syndicate. Your silks, your horse's name, on every tree. Pick from "
+                "25 silks patterns and choose your colours."),
       prompt="Send this to your syndicate group chat.", cta=BAUBLE_CTA, cta_fb=BAUBLE_CTA_FB,
       question="How many are in your syndicate? 👇", web=WEB_GIFTS,
       tags=["racehorsesyndicate", "racehorseowner", "horseracinggifts", "christmasbaubles", "personalisedbauble"],
