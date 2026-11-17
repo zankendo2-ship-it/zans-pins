@@ -32,6 +32,17 @@ const P = {
 const bar = `<div class="bar"><b>ZANS · HORSE RACING GIFTS</b><span class="pill" style="font-size:19px;padding:5px 16px">CHRISTMAS 2026</span></div><div class="stripe" style="top:60px"></div>`;
 const foot = H => `<div class="stripe" style="top:${H - 72}px"></div><div style="position:absolute;left:0;right:0;top:${H - 60}px;height:60px;background:#1C1C1C"></div>`;
 const bg = D => `<div style="position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 42%, ${D.colour}E6, ${D.colour})"></div>`;
+// compact bar: only as tall as its text, metal strip above and below, in the post's colour
+const compactBar = (D, top, sz) => `<div class="stripe" style="top:${top}px"></div>
+  <div class="block" style="top:${top + 12}px;background:${D.colour};padding:${sz.pad}px 52px ${sz.pad + 4}px">
+    <div class="eyebrow" style="font-size:${sz.eb}px">${D.eyebrow}</div>
+    <div class="big" style="font-size:${sz.big}px;margin-top:8px;white-space:nowrap;overflow:hidden">${D.big}</div>
+    <div class="sub" style="font-size:${sz.sub}px;margin-top:6px">${D.sub}</div></div>
+  <div class="stripe" id="lower" style="top:0"></div>
+  <script>const b=document.querySelector('.block');document.getElementById('lower').style.top=(b.offsetTop+b.offsetHeight)+'px'</script>`;
+const qCard = (D, top, left, width, sz) => `<div style="position:absolute;left:${left}px;width:${width}px;top:${top}px;background:#EAE2D8;border-radius:20px;padding:22px 30px;text-align:center;box-shadow:0 16px 44px #0007">
+    <div class="eyebrow muted" style="font-size:${sz.eb}px">Tell us in the comments</div>
+    <div class="ink" style="font-weight:700;font-size:${sz.q}px;line-height:1.12;margin-top:8px;text-wrap:balance">${D.q}</div></div>`;
 // clip 2: the hook and the question
 const textCard = (D, H, y) => `${bg(D)}${bar}
   <div class="eyebrow" style="position:absolute;left:0;right:0;top:${y.eb}px;text-align:center;color:#fff;font-size:26px">${D.eyebrow}</div>
@@ -57,13 +68,14 @@ const strips = H => `<div class="stripe" style="top:0"></div><div class="stripe"
       while (e.scrollWidth > e.clientWidth + 1 && s > 40) { s -= 2; e.style.fontSize = s + 'px'; } return s; }));
     await p.screenshot({ path: `v/${name}.png`, omitBackground: transparent }); await p.close(); return fit; };
   for (const [k, D] of Object.entries(P)) {
-    // video (1080x1920): text kept between y 340 and 1440, clear of the TikTok and Reels interface
+    // video layers (1080x1920); text between y 340 and 1600, nothing right of x 950 below y 1240
     await shot(`${k}-v-strips`, 1080, 1920, strips(1920), true, D.metal);
-    console.log(k, 'text', await shot(`${k}-v-text`, 1080, 1920, textCard(D, 1920, { eb: 470, big: 520, bigS: 112, sub: 770, subS: 50, rule: 880, q: 930, qS: 60 }), false, D.metal));
+    console.log(k, 'bar', await shot(`${k}-v-bar`, 1080, 1920, compactBar(D, 340, { pad: 24, eb: 22, big: 92, sub: 44 }), true, D.metal));
+    await shot(`${k}-v-q`, 1080, 1920, qCard(D, 1452, 120, 830, { eb: 18, q: 42 }), true, D.metal);
     await shot(`${k}-endcard`, 1080, 1920, endCard(D, 1920, { eb: 350, logo: 410, logoW: 700, wish: 1000, wishS: 94, btn: 1222, url: 1350 }), false, D.metal);
-    // feed carousel (1080x1350): slide 1 the photo with strips, slide 2 the hook and question, slide 3 the Santa-hat card
+    // feed carousel (1080x1350): 1 the photo, 2 the photo with the bar and question, 3 the Santa-hat card
     await shot(`${k}-s1-strips`, 1080, 1350, strips(1350), true, D.metal);
-    await shot(`${k}-s2`, 1080, 1350, textCard(D, 1350, { eb: 330, big: 380, bigS: 104, sub: 610, subS: 46, rule: 710, q: 760, qS: 56 }), false, D.metal);
+    await shot(`${k}-s2-over`, 1080, 1350, strips(1350) + compactBar(D, 40, { pad: 22, eb: 20, big: 86, sub: 40 }) + qCard(D, 1150, 140, 800, { eb: 17, q: 40 }), true, D.metal);
     await shot(`${k}-s3`, 1080, 1350, endCard(D, 1350, { eb: 214, logo: 262, logoW: 560, wish: 752, wishS: 84, btn: 958, url: 1060 }), false, D.metal);
   }
   await b.close();

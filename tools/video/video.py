@@ -3,7 +3,7 @@ no text at all. 6-8.5s: the animated ZANS snow end-card with all the branding an
 import subprocess, numpy as np, imageio_ffmpeg
 from PIL import Image, ImageFilter
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, W, H = 30, 1080, 1920
-P1, P2, XF, TOTAL = 4.0, 6.5, 0.35, 9.0
+P1, XF, TOTAL = 6.5, 0.5, 9.0
 ease = lambda x: 0 if x <= 0 else 1 if x >= 1 else x*x*(3-2*x)
 def flakes(seed, n, w, h, rmin, rmax, smin, smax):
     r = np.random.default_rng(seed)
@@ -27,7 +27,7 @@ def render(key, centre, mode):
     scene_snow = flakes(3, 70, W, H, 1.6, 4.2, 40, 110)
     card = np.asarray(Image.open(f'v/{key}-endcard.png').convert('RGB')).astype(np.float32)
     strips = Image.open(f'v/{key}-v-strips.png').convert('RGBA')
-    text = np.asarray(Image.open(f'v/{key}-v-text.png').convert('RGB')).astype(np.float32); card_snow = flakes(7, 110, W, H, 2.0, 6.0, 70, 190)
+    bar = Image.open(f'v/{key}-v-bar.png').convert('RGBA'); qc = Image.open(f'v/{key}-v-q.png').convert('RGBA'); card_snow = flakes(7, 110, W, H, 2.0, 6.0, 70, 190)
     out = f'v/{key}.mp4'
     p = subprocess.Popen([FF, '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
         '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo', '-shortest', '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p',
@@ -37,23 +37,28 @@ def render(key, centre, mode):
         if t < P1 + XF:
             src = m if mode != 'shimmer' else (m + (glow*(0.5+0.5*np.sin(phase + t*2.2))*0.35)[..., None]*np.array([1.0, .82, .5], dtype=np.float32))
             frame = Image.fromarray((src.clip(0, 1)*255).astype(np.uint8))
-            k = ease(min(t, P1+XF)/(P1+XF)); z = 1.0 + 0.16*k; cw, ch = MW/z, MH/z      # slow push-in towards the bauble
+            k = ease(min(t, P1+XF)/(P1+XF)); z = 1.0 + 0.12*k; cw, ch = MW/z, MH/z      # slow push-in towards the bauble
             x0 = min(max(MW/2 + (CX-MW/2)*k - cw/2, 0), MW-cw); y0 = min(max(MH/2 + (CY-MH/2)*k - ch/2, 0), MH-ch)
             a = np.asarray(frame.resize((W, H), Image.BICUBIC, box=(x0, y0, x0+cw, y0+ch))).astype(np.float32)
             if mode == 'snow': a = snow(a, t, scene_snow, 14)
-            a = np.asarray(Image.alpha_composite(Image.fromarray(a.clip(0, 255).astype(np.uint8)).convert('RGBA'), strips).convert('RGB')).astype(np.float32)
-        if P1 <= t < P2 + XF:                                       # clip 2: the hook and the question, on the post's colour
-            c = snow(text.copy(), t-P1, card_snow).clip(0, 255); k = ease((t-P1)/XF)
-            c2 = c if k >= 1 else a*(1-k) + c*k
-        if t >= P1: a = c2
-        if t >= P2:                                                 # clip 3: the Santa-hat end-card
-            c = snow(card.copy(), t-P2, card_snow).clip(0, 255); k = ease((t-P2)/XF)
+            fr = Image.alpha_composite(Image.fromarray(a.clip(0, 255).astype(np.uint8)).convert('RGBA'), strips)
+            bk = ease((t-3.0)/1.4)                                      # the bar eases down slowly, from 3.0s to 4.4s
+            if bk > 0:
+                L = bar.transform(bar.size, Image.AFFINE, (1, 0, 0, 0, 1, int((1-bk)*140)))
+                L = Image.merge('RGBA', (*L.split()[:3], L.split()[3].point(lambda x: int(x*min(1, bk*1.6)))))
+                fr = Image.alpha_composite(fr, L)
+            qk = ease((t-4.8)/0.9)                                      # then the question fades up under the bauble
+            if qk > 0: fr = Image.alpha_composite(fr, Image.merge('RGBA', (*qc.split()[:3], qc.split()[3].point(lambda x: int(x*qk)))))
+            a = np.asarray(fr.convert('RGB')).astype(np.float32)
+        if t >= P1:                                                     # the Santa-hat end-card
+            c = snow(card.copy(), t-P1, card_snow).clip(0, 255); k = ease((t-P1)/XF)
             a = c if k >= 1 else a*(1-k) + c*k
         a = a.clip(0, 255)
-        if f in (0, 90, 165, 250): Image.fromarray(a.astype(np.uint8)).save(f'v/{key}-frame-{f:03d}.jpg', quality=92)
+        if f in (0, 100, 170, 250): Image.fromarray(a.astype(np.uint8)).save(f'v/{key}-frame-{f:03d}.jpg', quality=92)
         p.stdin.write(a.astype(np.uint8).tobytes())
     p.stdin.close(); p.wait(); print(out)
     fh = int(MW*1350/1080); y0 = int(min(max(CY - fh*0.52, 0), MH-fh))
     s1 = master.crop((0, y0, MW, y0+fh)).resize((1080, 1350), Image.LANCZOS).convert('RGBA')
     Image.alpha_composite(s1, Image.open(f'v/{key}-s1-strips.png').convert('RGBA')).convert('RGB').save(f'v/{key}-s1.png')
+    Image.alpha_composite(s1, Image.open(f'v/{key}-s2-over.png').convert('RGBA')).convert('RGB').save(f'v/{key}-s2.png')
 render('ombudsman', (657, 1254), 'snow'); render('lossiemouth', (654, 1213), 'shimmer')
