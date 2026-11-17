@@ -303,7 +303,7 @@ Send this to a Lossiemouth fan.
 
 Silks bauble Premium, £14.99.
 
-Which horse's name would you put on yours? 👇
+Would this go on your tree? 👇
 
 Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄
 
@@ -325,7 +325,7 @@ Send this to a Lossiemouth fan.
 
 Silks bauble Premium, £14.99.
 
-Which horse's name would you put on yours? 👇
+Would this go on your tree? 👇
 
 Wishing you a Merry Christmas 🎅
 
@@ -337,7 +337,7 @@ First comment: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/
 ### x · Thu 19 Nov 09:00
 
 ```
-Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇 A showcase design. Which horse's name would you put on yours? #ChristmasBaubles #HorseRacing
+Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇 A showcase design. Would this go on your tree? #ChristmasBaubles #HorseRacing
 ```
 
 Reply: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/ Wishing you a Merry Christmas 🎅
@@ -363,7 +363,7 @@ Send this to a Lossiemouth fan.
 
 Silks bauble Premium, £14.99.
 
-Which horse's name would you put on yours? 👇
+Would this go on your tree? 👇
 
 Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄
 
@@ -381,7 +381,7 @@ Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇
 
 Customise your own silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.
 
-Which horse's name would you put on yours? 👇
+Would this go on your tree? 👇
 
 Wishing you a Merry Christmas 🎅
 

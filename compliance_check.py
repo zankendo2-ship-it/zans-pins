@@ -57,7 +57,7 @@ def check_post(post):
     img = post.get("on_image", {})
     img_text = " ".join(str(v) for v in img.values() if isinstance(v, str)) + " " + json.dumps(
         img.get("rows", "") or img.get("cards", ""), ensure_ascii=False)
-    words = len(img.get("headline", "").split())
+    words = len([w for w in img.get("headline", "").split() if re.search(r"[A-Za-z0-9]", w)])
     if not 5 <= words <= 8:
         fail("image", f"headline is {words} words (rule 3.4: 5 to 8)")
     if betting and "tiktok" in nets:

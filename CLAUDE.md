@@ -164,6 +164,17 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - The caption carries **a comment-triggering question**.
 - This sits inside the TikTok Strike Shield (Section 2): gift and merch posts only, with zero mention of odds, stalls or winning.
 
+### 3.7 Visual production rules for gift posts (added 17 Nov 2026)
+- **Wide, warm, vibrant lifestyle scene.** Pull the camera back: the silks bauble hangs prominently in the foreground of a rich, glowing Christmas tree with warm golden fairy lights, deep green pine needles and a cosy blurred fireplace behind. Never a tight, flat crop.
+- **Make the colours pop.** Boost colour and contrast on the bauble so the silks stand out sharply against the warm golden lights.
+- **Hybrid video workflow** (so we never burn heavy video credits or warp the product):
+  1. Generate only the background scene with the image generator (warm tree, flickering fireplace, soft golden bokeh, space in the centre for a hanging ornament).
+  2. Composite the exact bauble from the website designer onto it. The product itself is never AI-drawn or AI-animated.
+  3. Render the video in Python (ffmpeg): 1080×1920, 8 seconds, a slow smooth push-in on the bauble, subtle warm golden shimmer, and bold animated hook text in the brand palette (#1F5A3D green, #F2CF5B gold, #EAE2D8 cream).
+- The hook text lands between 1.0 and 1.5 seconds, after the motion has started. Everything stays inside the TikTok safe zone.
+- Each video post also gets a **high-contrast 4:5 feed photo** from the same scene.
+- Build scripts live in `tools/video/`. Run `compliance_check.py` on the captions and show Alex the previews before anything is booked.
+
 ---
 
 ## 4. Etsy listing rules
@@ -415,7 +426,8 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 - No "AI illustration" text on images.
 
 ### How images are made
-- **Free FLUX Krea** for all new images. Paid Gemini only for edits of existing images and small touch-ups.
+- **Everygen is the primary image generator** (Alex, 17 Nov 2026), used for background scenes. It needs a paid Everygen plan; on 17 Nov the account had no plan and no credits, so nothing can be generated there until Alex adds one. Never buy a plan or credits without his clear yes.
+- Fallbacks when Everygen is not available: free FLUX Krea (Hugging Face, daily quota), then Canva's image generator (credit quota). Paid Gemini only for edits of existing images and small touch-ups.
 - Before generating, check each prompt against the realism standard. Redo only the scenes that failed. Try local pixel fixes before a new generation (credit is not wasted).
 
 ---

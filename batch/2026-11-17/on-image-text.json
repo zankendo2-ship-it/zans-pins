@@ -13,10 +13,10 @@
   "t": "bauble",
   "file": "post2-ombudsman-showcase",
   "img": "bauble-ombudsman.png",
-  "headline": "Hang Ombudsman on your tree",
+  "headline": "OMBUDSMAN RETIRING? PUT HIM ON YOUR TREE 🎄",
   "headline_html": "Hang Ombudsman<br><em>on your tree</em>",
-  "facts": "Showcase design · yours can carry any name",
-  "send": "Send this to an Ombudsman fan",
+  "facts": "Design yours · any horse's name",
+  "send": "",
   "question": "Which horse's name would you put on yours?"
  },
  "p3": {
@@ -61,12 +61,12 @@
   "t": "bauble",
   "file": "post4-lossiemouth-showcase",
   "img": "bauble-lossiemouth.png",
-  "headline": "Lossiemouth on your Christmas tree",
+  "headline": "LOSSIEMOUTH FANS — WOULD THIS GO ON YOUR TREE?",
   "headline_html": "Lossiemouth<br><em>on your Christmas tree</em>",
   "hsize": 88,
-  "facts": "Showcase design · yours can carry any name",
-  "send": "Send this to a Lossiemouth fan",
-  "question": "Which horse's name would you put on yours?"
+  "facts": "Showcase · any name on yours",
+  "send": "",
+  "question": "Would this go on your tree?"
  },
  "p5": {
   "t": "aw",

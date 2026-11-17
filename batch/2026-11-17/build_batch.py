@@ -42,7 +42,7 @@ POSTS = [
            "round ceramic bauble, about 7.5 cm, with a ribbon. A Christmas gift for racing fans, owners and syndicates."),
       alt="Personalised racing silks Christmas bauble, red with white stars and the name Snow Dancer, hanging on a Christmas tree"),
  dict(id="post2", name="Ombudsman showcase bauble", kind="merch", xmas=True, tiktok=True, showcase=True,
-      image="post2-ombudsman-showcase.png",
+      image="post2-ombudsman-showcase.png", video="post2-ombudsman-showcase.mp4",
       when={"instagram": "Wed 18 Nov 08:00", "facebook": "Wed 18 Nov 08:30", "x": "Wed 18 Nov 09:00",
             "linkedin": "Wed 18 Nov 09:00", "tiktok": "Wed 18 Nov 09:30", "pinterest": "Wed 18 Nov 10:30"},
       hook="With talk of Ombudsman retiring soon, why not hang him on your tree this Christmas? 🎄🏇",
@@ -86,17 +86,17 @@ POSTS = [
            "your next night at Kempton. The ZANS Kempton Track DNA racecourse guide is coming soon."),
       alt="Kempton 6 furlong draw bias cheat sheet: low stalls 1 in 7, middle stalls 1 in 10, high stalls 1 in 14, from 639 all-weather races since 2019"),
  dict(id="post4", name="Lossiemouth showcase bauble", kind="merch", xmas=True, tiktok=True, showcase=True,
-      image="post4-lossiemouth-showcase.png",
+      image="post4-lossiemouth-showcase.png", video="post4-lossiemouth-showcase.mp4",
       when={"instagram": "Thu 19 Nov 08:00", "facebook": "Thu 19 Nov 08:30", "x": "Thu 19 Nov 09:00",
             "linkedin": "Thu 19 Nov 09:00", "tiktok": "Thu 19 Nov 09:30", "pinterest": "Thu 19 Nov 10:30"},
       hook="Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇",
       story=f"Customise your own silks bauble with any horse's name at {SITE}. {SHOW_NOTE}",
       story_fb=f"Customise your own silks bauble with any horse's name on our website. {SHOW_NOTE}",
       story_tt=f"Customise your own silks bauble with any horse's name. {SHOW_NOTE_TT}",
-      prompt="Send this to a Lossiemouth fan.", cta=SHOW_CTA, cta_fb=SHOW_CTA, question="Which horse's name would you put on yours? 👇", web=WEB_GIFTS,
+      prompt="Send this to a Lossiemouth fan.", cta=SHOW_CTA, cta_fb=SHOW_CTA, question="Would this go on your tree? 👇", web=WEB_GIFTS,
       tags=["horseracinggifts", "christmasbaubles", "personalisedbauble", "racingsilks", "christmasgifts"],
-      x=("Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇 A showcase design. Which horse's name would you "
-         "put on yours? #ChristmasBaubles #HorseRacing"),
+      x=("Who wouldn't want Lossiemouth on their Christmas tree? 🎄🏇 A showcase design. Would this go on your "
+         "tree? #ChristmasBaubles #HorseRacing"),
       link=DESIGNER, tt_title="Your favourite horse on the Christmas tree 🎄 Personalised silks bauble",
       pin_title="Personalised Horse Name Christmas Bauble in Racing Silks - Gift for Racing Fans",
       pin=("Customise your own silks bauble with any horse's name. This showcase design carries Lossiemouth; yours can "
@@ -180,7 +180,7 @@ def build(post):
     for net, data in nets.items():
         data["when"] = post["when"][net]
     return dict(id=post["id"], name=post["name"], kind=post["kind"], christmas=xmas,
-                showcase=post.get("showcase", False), image=post["image"], alt=post["alt"], networks=nets)
+                showcase=post.get("showcase", False), image=post["image"], video=post.get("video", ""), alt=post["alt"], networks=nets)
 
 
 def main():
