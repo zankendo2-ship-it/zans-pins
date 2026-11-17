@@ -426,8 +426,8 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 - No "AI illustration" text on images.
 
 ### How images are made
-- **Everygen is the primary image generator** (Alex, 17 Nov 2026), used for background scenes. It needs a paid Everygen plan; on 17 Nov the account had no plan and no credits, so nothing can be generated there until Alex adds one. Never buy a plan or credits without his clear yes.
-- Fallbacks when Everygen is not available: free FLUX Krea (Hugging Face, daily quota), then Canva's image generator (credit quota). Paid Gemini only for edits of existing images and small touch-ups.
+- **FLUX Krea on Hugging Face is the primary image generator** for all new images and background scenes (Alex, 17 Nov 2026: Hugging Face PRO, about $9 a month, so we don't pay for two platforms). Everygen is not used for images.
+- If the Hugging Face quota runs out, stop and tell Alex; don't switch to a paid tool without his yes. Paid Gemini only for edits of existing images and small touch-ups.
 - Before generating, check each prompt against the realism standard. Redo only the scenes that failed. Try local pixel fixes before a new generation (credit is not wasted).
 
 ---
