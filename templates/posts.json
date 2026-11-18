@@ -132,5 +132,46 @@
    "pattern": "quartered",
    "cap": "#D0202E"
   }
+ },
+ "h2h-gaelic-warrior-fact-to-file": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Head to head · mugs in their colours",
+  "big": "Gaelic Warrior<br>or Fact To File?",
+  "sub": "Two famous sets of colours.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#F3B5C9",
+   "second": "#6CC24A",
+   "pattern": "discs",
+   "cap": "#F3B5C9"
+  },
+  "silks2": {
+   "body": "#0E8A4B",
+   "second": "#F5D130",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
+ },
+ "h2h-grey-dawning-inothewayurthinkin": {
+  "metal": "silver",
+  "colour": "#1F5A3D",
+  "eyebrow": "Head to head · mugs in their colours",
+  "big": "Grey Dawning or<br>Inothewayurthinkin?",
+  "bigSize": 0.68,
+  "sub": "Two big names. One mug each.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#D0202E",
+   "second": "#1C1C1C",
+   "pattern": "plain",
+   "cap": "#D0202E"
+  },
+  "silks2": {
+   "body": "#0E8A4B",
+   "second": "#F5D130",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
  }
 }

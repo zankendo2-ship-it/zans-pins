@@ -30,8 +30,11 @@ def apply(cards, key):
     for fmt, bh in (('4x5', 96), ('9x16', 120)):
         f = f'{cards}/{key}-{fmt}-hook.png'; im = Image.open(f).convert('RGB'); W, H = im.size; d = ImageDraw.Draw(im)
         top0 = 72; bot1 = H - 72                       # under the top metal strip / above the bottom metal strip
-        d.rectangle([0, top0, W, top0+bh], fill=s['cap']); d.rectangle([0, top0+bh, W, top0+bh+5], fill=edge)
-        im.paste(silks_band(W, bh, s), (0, bot1-bh)); d.rectangle([0, bot1-bh-6, W, bot1-bh-1], fill=edge)
+        s2 = P.get('silks2')                            # head-to-head: first horse's silks on top, second horse's at the bottom
+        if s2: im.paste(silks_band(W, bh, s), (0, top0))
+        else: d.rectangle([0, top0, W, top0+bh], fill=s['cap'])
+        d.rectangle([0, top0+bh, W, top0+bh+5], fill=edge)
+        im.paste(silks_band(W, bh, s2 or s), (0, bot1-bh)); d.rectangle([0, bot1-bh-6, W, bot1-bh-1], fill=edge)
         im.save(f)
 if __name__ == '__main__':
     for k in sys.argv[2:]: apply(sys.argv[1], k)

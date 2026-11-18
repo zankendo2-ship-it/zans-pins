@@ -35,7 +35,7 @@ const CSS = fs.readFileSync(path.join(T, '_brand.css'), 'utf8');
         FOOT_STRIPE: L.H - 72, FOOT_BAR: L.H - 60, FONTS };
       base.CSS = fill(CSS, base);
       const pages = {
-        hook: fill(fs.readFileSync(path.join(T, 'carousel_hook.html'), 'utf8'), { ...base, ...L.hook, EYEBROW: P.eyebrow, BIG: P.big, SUB: P.sub, QUESTION: P.question }),
+        hook: fill(fs.readFileSync(path.join(T, 'carousel_hook.html'), 'utf8'), { ...base, ...L.hook, BIG_SIZE: Math.round(L.hook.BIG_SIZE * (P.bigSize || 1)), EYEBROW: P.eyebrow, BIG: P.big, SUB: P.sub, QUESTION: P.question }),
         end: fill(fs.readFileSync(path.join(T, 'carousel_endcard.html'), 'utf8'), { ...base, ...L.end, LOGO: logo, LOGO_X: (L.W - L.end.LOGO_W) / 2,
           GREETING: P.greeting || (christmas ? 'Wishing you a<br>Merry Christmas' : 'Personalised<br>racing gifts') }),
         // slide 1 frame, exactly as Alex's locked reference (05e640f): thin metal strip at the very top and very bottom only

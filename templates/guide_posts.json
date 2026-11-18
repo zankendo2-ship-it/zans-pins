@@ -355,5 +355,333 @@
     "question": "Will Old Park Star be even better over fences?"
    }
   ]
+ },
+ "ascot-jumps": {
+  "course": "ASCOT",
+  "code": "Chases · 159 races",
+  "colour": "#EC407A",
+  "text": "#C2185B",
+  "tagline": "Cheat sheet: Ascot chases",
+  "footer": "Ascot jumps Track DNA guide: coming soon",
+  "source": "Ascot chases, Jan 2019 to Mar 2026. ZANS results database.",
+  "slides": [
+   {
+    "type": "cover",
+    "sub": "Chases · what to look out for",
+    "tiles": [
+     [
+      "159",
+      "CHASES SINCE 2019"
+     ],
+     [
+      "1,114",
+      "CHASE RUNNERS"
+     ],
+     [
+      "2½f",
+      "HOME STRAIGHT"
+     ]
+    ],
+    "points": [
+     [
+      "The track",
+      "RIGHT-HANDED"
+     ],
+     [
+      "Fallers and the ground",
+      "SOFT = MORE"
+     ],
+     [
+      "Big-priced winners",
+      "RARE"
+     ],
+     [
+      "Back from a long break",
+      "GO WELL"
+     ]
+    ],
+    "strip": "Swipe, then <b>save it for Saturday</b>"
+   },
+   {
+    "type": "facts",
+    "num": "1 OF 4",
+    "eyebrow": "THE TRACK",
+    "big": "A <em>right-handed</em> triangle with stiff fences",
+    "sub": "A galloping track with a climb to the line.",
+    "rows": [
+     [
+      "DIRECTION",
+      "Right-handed"
+     ],
+     [
+      "SHAPE",
+      "Triangular"
+     ],
+     [
+      "STRAIGHT",
+      "About 2½f, uphill"
+     ],
+     [
+      "FENCES",
+      "Stiff"
+     ]
+    ],
+    "strip": "The fences here <b>take plenty of jumping</b>"
+   },
+   {
+    "type": "bars",
+    "num": "2 OF 4",
+    "eyebrow": "FALLERS BY GROUND",
+    "big": "Soft ground: <em>more than twice</em> the fallers",
+    "sub": "Chase runners that fell or unseated.",
+    "rows": [
+     [
+      "SOFT",
+      "31 of 328 runners",
+      9.5,
+      "9.5%",
+      "a"
+     ],
+     [
+      "GOOD TO SOFT",
+      "25 of 311 runners",
+      8.0,
+      "8.0%",
+      "a"
+     ],
+     [
+      "GOOD",
+      "16 of 396 runners",
+      4.0,
+      "4.0%",
+      "g"
+     ]
+    ],
+    "note": "Fell or unseated rider. Best means fewest fallers.",
+    "strip": "All chases: <b>74 of 1,114 runners</b> fell or unseated"
+   },
+   {
+    "type": "stat",
+    "num": "3 OF 4",
+    "eyebrow": "BIG-PRICED WINNERS",
+    "big": "No big-priced shocks on <em>good ground</em>",
+    "sub": "Winners at 20/1 or bigger.",
+    "figure": "3",
+    "figsub": "from 159 chases",
+    "dots": [
+     159,
+     [
+      30,
+      84,
+      131
+     ]
+    ],
+    "lines": [
+     "None on good or good to soft (106 chases).",
+     "All three came on soft or heavy."
+    ],
+    "strip": "That is about <b>1 chase in every 53</b>"
+   },
+   {
+    "type": "bars",
+    "num": "4 OF 4",
+    "eyebrow": "DAYS SINCE LAST RUN",
+    "big": "Horses back from a break <em>go well</em>",
+    "sub": "Chase runners by days since their last run.",
+    "rows": [
+     [
+      "90+ DAYS",
+      "46 of 298 won",
+      15.4,
+      "15.4%",
+      "g"
+     ],
+     [
+      "UNDER 30 DAYS",
+      "69 of 480 won",
+      14.4,
+      "14.4%",
+      "a"
+     ],
+     [
+      "30 TO 90 DAYS",
+      "44 of 331 won",
+      13.3,
+      "13.3%",
+      "r"
+     ]
+    ],
+    "note": "",
+    "strip": "90+ days off: <b>22% more winners</b> than their odds suggested"
+   },
+   {
+    "type": "end",
+    "big": "Save this before your next day at Ascot",
+    "question": "Which ground do you think makes Ascot's fences hardest, and why?"
+   }
+  ]
+ },
+ "punchestown-chases": {
+  "course": "PUNCHESTOWN",
+  "courseSize": 88,
+  "flag": false,
+  "code": "Chases · 323 races",
+  "colour": "#00A86B",
+  "text": "#007A4D",
+  "tagline": "Cheat sheet: Punchestown chases",
+  "footer": "Punchestown Track DNA guide: coming soon",
+  "source": "Punchestown chases, Jan 2019 to Oct 2026. ZANS results database.",
+  "slides": [
+   {
+    "type": "cover",
+    "sub": "Chases · what to look out for",
+    "tiles": [
+     [
+      "323",
+      "CHASES SINCE 2019"
+     ],
+     [
+      "11",
+      "FENCES A CIRCUIT"
+     ],
+     [
+      "2m",
+      "RIGHT-HANDED OVAL"
+     ]
+    ],
+    "points": [
+     [
+      "The track",
+      "UNDULATING"
+     ],
+     [
+      "Favourites and the ground",
+      "SOFT IS BEST"
+     ],
+     [
+      "Big-priced winners",
+      "1 IN 14"
+     ],
+     [
+      "Last-time-out winners",
+      "GO WELL"
+     ]
+    ],
+    "strip": "Swipe, then <b>save it for the weekend</b>"
+   },
+   {
+    "type": "facts",
+    "num": "1 OF 4",
+    "eyebrow": "THE TRACK",
+    "big": "Undulating, with an<br><em>uphill finish</em>",
+    "sub": "In County Kildare, with fair fences.",
+    "rows": [
+     [
+      "DIRECTION",
+      "Right-handed"
+     ],
+     [
+      "CIRCUIT",
+      "Oval, about 2 miles"
+     ],
+     [
+      "FENCES",
+      "11 a circuit"
+     ],
+     [
+      "FINISH",
+      "Uphill to the line"
+     ]
+    ],
+    "strip": "Our clock: chases here run <b>4% slower</b> than the typical track"
+   },
+   {
+    "type": "bars",
+    "num": "2 OF 4",
+    "eyebrow": "FAVOURITES BY GROUND",
+    "big": "Favourites do best on <em>soft ground</em>",
+    "sub": "How often the clear favourite won.",
+    "rows": [
+     [
+      "SOFT",
+      "26 of 55 won",
+      47.3,
+      "47%",
+      "g"
+     ],
+     [
+      "GOOD TO YIELDING",
+      "23 of 54 won",
+      42.6,
+      "43%",
+      "a"
+     ],
+     [
+      "HEAVY",
+      "17 of 41 won",
+      41.5,
+      "41%",
+      "a"
+     ],
+     [
+      "YIELDING",
+      "27 of 69 won",
+      39.1,
+      "39%",
+      "r"
+     ]
+    ],
+    "note": "Clear favourites only. Grounds with 40 or more chases.",
+    "strip": "All chases: <b>122 favourites won from 294</b>, about 4 in 10"
+   },
+   {
+    "type": "stat",
+    "num": "3 OF 4",
+    "eyebrow": "BIG-PRICED WINNERS",
+    "big": "Big-priced shocks<br><em>do happen here</em>",
+    "sub": "Winners at 20/1 or bigger.",
+    "figure": "23",
+    "figsub": "from 323 chases",
+    "dots": [
+     0,
+     []
+    ],
+    "lines": [
+     "9 of the 23 came on yielding ground (77 chases).",
+     "None from 23 chases on yielding to soft."
+    ],
+    "strip": "That is about <b>1 chase in every 14</b>"
+   },
+   {
+    "type": "bars",
+    "num": "4 OF 4",
+    "eyebrow": "LAST-TIME-OUT WINNERS",
+    "big": "Horses that won last time <em>go well</em>",
+    "sub": "From 3,326 chase runners.",
+    "rows": [
+     [
+      "WON LAST TIME",
+      "89 of 427 won",
+      20.8,
+      "21%",
+      "g"
+     ],
+     [
+      "DID NOT WIN",
+      "234 of 2,899 won",
+      8.1,
+      "8%",
+      "r"
+     ]
+    ],
+    "note": "Last run anywhere, over hurdles, fences or on the Flat.",
+    "strip": "Last-time winners: <b>18% more winners</b> than their odds suggested"
+   },
+   {
+    "type": "end",
+    "big": "Save this before your next day at Punchestown",
+    "question": "Which ground do you think is better at Punchestown, and why?"
+   }
+  ]
  }
 }

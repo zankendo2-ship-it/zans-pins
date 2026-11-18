@@ -1,0 +1,28 @@
+{
+ "gemini": {
+  "voice": "Aoede",
+  "style": "a warm young woman from London with a natural everyday London accent who softens her t sounds the way Londoners do, like a friendly local chatting to a mate, upbeat and conversational, not posh"
+ },
+ "lines": [
+  {
+   "file": "zp_cheer.mp3",
+   "text": "Which one are you cheering?"
+  },
+  {
+   "file": "zp_h2h-gw-ftf_1.mp3",
+   "text": "Gaelic Warrior or Fact To File?"
+  },
+  {
+   "file": "zp_h2h-gw-ftf_2.mp3",
+   "text": "Two famous sets of colours!"
+  },
+  {
+   "file": "zp_h2h-gd-ito_1.mp3",
+   "text": "Grey Dawning, or In The Way You're Thinking?"
+  },
+  {
+   "file": "zp_h2h-gd-ito_2.mp3",
+   "text": "Two big names! One mug each!"
+  }
+ ]
+}
