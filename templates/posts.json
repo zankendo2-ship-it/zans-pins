@@ -148,7 +148,7 @@
   },
   "silks2": {
    "body": "#0E8A4B",
-   "second": "#F5D130",
+   "second": "#F2C40F",
    "pattern": "hoops",
    "cap": "#FFFFFF"
   },
@@ -170,7 +170,49 @@
   },
   "silks2": {
    "body": "#0E8A4B",
-   "second": "#F5D130",
+   "second": "#F2C40F",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
+ },
+ "h2h-baubles-gaelic-warrior-fact-to-file": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Head to head · baubles in their colours",
+  "big": "Gaelic Warrior<br>or Fact To File?",
+  "sub": "Two famous sets of colours.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#F3B5C9",
+   "second": "#6CC24A",
+   "pattern": "discs",
+   "cap": "#F3B5C9"
+  },
+  "silks2": {
+   "body": "#0E8A4B",
+   "second": "#F2C40F",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  },
+  "bigSize": 0.74
+ },
+ "h2h-baubles-grey-dawning-inothewayurthinkin": {
+  "metal": "silver",
+  "colour": "#1F5A3D",
+  "eyebrow": "Head to head · baubles in their colours",
+  "big": "Grey Dawning or<br>Inothewayurthinkin?",
+  "bigSize": 0.6,
+  "sub": "Two big names. One bauble each.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#D0202E",
+   "second": "#1C1C1C",
+   "pattern": "plain",
+   "cap": "#D0202E"
+  },
+  "silks2": {
+   "body": "#0E8A4B",
+   "second": "#F2C40F",
    "pattern": "hoops",
    "cap": "#FFFFFF"
   }

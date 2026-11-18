@@ -24,6 +24,20 @@ def snow(arr, t, fl, drift=22):
         yy = (y + sp*t) % (H+40) - 20; xx = (x + drift*np.sin(ph + t*0.8)) % W; xi, yi = int(xx), int(yy)
         if 16 <= xi < W-16 and 16 <= yi < H-16: arr[yi-16:yi+17, xi-16:xi+17] += (np.exp(-(kx**2+ky**2)/(2*r*r))*255*op)[..., None]
     return arr
+STEAM = [tuple(map(float, q.split(','))) for q in os.environ.get('ZANS_STEAM', '').split(';') if q]   # "x,y;x,y" = mug mouths in the scene's own pixels
+def steam(src, t):
+    """Soft steam rising from each mug mouth: real movement from the first frame (hot drinks, never smoke)."""
+    for n, (sx, sy) in enumerate(STEAM):
+        x0, x1, y0, y1 = int(sx-170), int(sx+170), int(sy-560), int(sy+12)
+        x0, y0 = max(x0, 0), max(y0, 0); x1, y1 = min(x1, src.shape[1]), min(y1, src.shape[0])
+        yy, xx = np.mgrid[y0:y1, x0:x1].astype(np.float32); layer = np.zeros_like(xx)
+        for i in range(9):
+            ph = (t*0.33 + i/9 + n*0.37) % 1.0                        # each puff's life, 0 = at the mug, 1 = gone
+            py = sy - 20 - ph*500; px = sx + 46*np.sin(ph*5.2 + i*1.9 + n) + (i % 3 - 1)*16
+            r = 34 + ph*74; a = np.sin(np.pi*min(ph*1.25, 1.0))**1.2*(1 - ph)*0.34
+            layer += a*np.exp(-(((xx-px)/r)**2 + ((yy-py)/(r*1.55))**2))
+        src[y0:y1, x0:x1] = src[y0:y1, x0:x1]*(1 - np.clip(layer, 0, 0.5))[..., None] + np.clip(layer, 0, 0.5)[..., None]*np.array([0.96, 0.95, 0.93], np.float32)
+    return src
 def main(cards, scene, key, CX, CY, mode, out_dir, music=None):
     master = Image.open(scene).convert('RGB'); MW, MH = master.size
     m = np.asarray(master).astype(np.float32)/255
@@ -45,6 +59,7 @@ def main(cards, scene, key, CX, CY, mode, out_dir, music=None):
         t = f/FPS
         if t < P1 + XF:
             src = m if mode != 'shimmer' else (m + (glow*(0.5+0.5*np.sin(phase + t*2.2))*0.35)[..., None]*np.array([1.0, .82, .5], dtype=np.float32))
+            if STEAM: src = steam(src.copy(), t)
             img = Image.fromarray((src.clip(0, 1)*255).astype(np.uint8))
             k = ease(max(min(t, P1+XF) - OPEN_END, 0)/(P1+XF-OPEN_END)); z = 1.0 + ZOOM*k; cw, ch = MW/z, MH/z
             x0 = min(max(MW/2 + (CX-MW/2)*k - cw/2, 0), MW-cw); y0 = min(max(MH/2 + (CY-MH/2)*k - ch/2, 0), MH-ch)

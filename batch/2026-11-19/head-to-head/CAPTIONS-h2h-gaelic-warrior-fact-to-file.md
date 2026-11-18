@@ -10,7 +10,7 @@ Send this to the mate who'll be cheering the other one.
 
 Which one are you cheering? 👇
 
-Silks mug, £14.99. Search ZANSRacingTools on Etsy.
+Search ZANSRacingTools on Etsy.
 
 Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄
 
@@ -61,7 +61,7 @@ Wishing you a Merry Christmas 🎅
 
 ## Pinterest
 Title: Personalised Horse Racing Mug - Racing Silks in Any Colours, Any Name
-A personalised horse racing mug in racing silks, with any name. These showcase designs carry Gaelic Warrior in pink with green spots and Fact To File in green and yellow hoops; yours can carry any name, in any of 25 silks patterns and any colours, with a coloured handle and inside. 330 ml ceramic. A Christmas gift for racing fans, owners and syndicates. Wishing you a Merry Christmas 🎅
+A personalised horse racing mug in racing silks, with any name. These showcase designs carry Gaelic Warrior in pink with light green spots and Fact To File in green and yellow hoops; yours can carry any name, in any of 25 silks patterns and any colours, with a coloured handle and inside. 330 ml ceramic. A Christmas gift for racing fans, owners and syndicates. Wishing you a Merry Christmas 🎅
 Link: https://www.zanshorseracing.co.uk/mug-designer/
 
 ## TikTok

@@ -10,7 +10,7 @@ Send this to the mate who'll be cheering the other one.
 
 Which one are you cheering? 👇
 
-Silks mug, £14.99. Search ZANSRacingTools on Etsy.
+Search ZANSRacingTools on Etsy.
 
 Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄
 
