@@ -124,8 +124,6 @@ Wishing you a Merry Christmas 🎅
 
 Alt text: Showcase racing silks Christmas bauble in green with pink spots and the name Lossiemouth, hanging on a lit Christmas tree
 
-TikTok: not for TikTok (the hook mentions racing results; Strike Shield).
-
 ### instagram
 
 ```
@@ -206,6 +204,24 @@ Wishing you a Merry Christmas 🎅
 #horseracinggifts #christmasbaubles #personalisedbauble
 ```
 
+### tiktok
+
+Title: Her silks on the Christmas tree 🎄 Personalised silks bauble
+
+```
+Is Lossiemouth the best jumps mare ever? 🎄🏇 Here she is on a Christmas bauble.
+
+Four Cheltenham Festivals, and never beaten there. Green silks, pink spots and her name on the tree. Design a personalised silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.
+
+Which name would you have on yours? 👇
+
+Wishing you a Merry Christmas 🎅
+
+#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts
+
+Link in bio 👉 www.zanshorseracing.co.uk
+```
+
 ### youtube
 
 Title: Horse Racing Christmas Bauble: Lossiemouth Showcase 🎄
@@ -225,8 +241,6 @@ Wishing you a Merry Christmas 🎅
 ## No Drama This End showcase bauble · `no-drama-this-end-video.mp4`
 
 Alt text: Showcase racing silks Christmas bauble in navy and white hoops with a red cap and the name No Drama This End, hanging from a frosted branch at a snowy racecourse
-
-TikTok: not for TikTok (the hook mentions racing results; Strike Shield).
 
 ### instagram
 
@@ -308,6 +322,24 @@ Wishing you a Merry Christmas 🎅
 #horseracinggifts #christmasbaubles #personalisedbauble
 ```
 
+### tiktok
+
+Title: Navy and white hoops on the tree 🎄 Personalised silks bauble
+
+```
+The next big chaser? 🎄🏇 No Drama This End, on a horse racing Christmas bauble.
+
+A Grade 1 novice hurdler last season, and now he's gone over fences. Navy and white hoops, a red cap and his name. Design a personalised silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.
+
+Which name would you have on yours? 👇
+
+Wishing you a Merry Christmas 🎅
+
+#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts
+
+Link in bio 👉 www.zanshorseracing.co.uk
+```
+
 ### youtube
 
 Title: Horse Racing Christmas Bauble: No Drama This End 🎄
@@ -327,8 +359,6 @@ Wishing you a Merry Christmas 🎅
 ## Jon Bon showcase bauble · `jon-bon-video.mp4`
 
 Alt text: Showcase racing silks Christmas bauble in green and yellow hoops with a white cap and the name Jon Bon, hanging from a frosted branch at a snowy racecourse
-
-TikTok: not for TikTok (the hook mentions racing results; Strike Shield).
 
 ### instagram
 
@@ -410,6 +440,24 @@ Wishing you a Merry Christmas 🎅
 #horseracinggifts #christmasbaubles #personalisedbauble
 ```
 
+### tiktok
+
+Title: Green and yellow hoops on the tree 🎄 Personalised silks bauble
+
+```
+Britain's best chaser? 🎄🏇 Jon Bon's green and yellow hoops, on a horse racing Christmas bauble.
+
+Three Shloer Chases in a row at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.
+
+Which name would you have on yours? 👇
+
+Wishing you a Merry Christmas 🎅
+
+#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts
+
+Link in bio 👉 www.zanshorseracing.co.uk
+```
+
 ### youtube
 
 Title: Horse Racing Christmas Bauble: Green and Yellow Hoops 🎄
@@ -429,8 +477,6 @@ Wishing you a Merry Christmas 🎅
 ## Billy silks bauble · `billy-video.mp4`
 
 Alt text: Showcase racing silks Christmas bauble in yellow with black spots and the name Billy, hanging on a lit Christmas tree
-
-TikTok: not for TikTok (the hook mentions racing results; Strike Shield).
 
 ### instagram
 
@@ -510,6 +556,24 @@ Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for 
 Wishing you a Merry Christmas 🎅
 
 #horseracinggifts #christmasbaubles #personalisedbauble
+```
+
+### tiktok
+
+Title: A silks bauble for the Billy in your life 🎄
+
+```
+Champion jockey Billy 🎄🏇 A personalised horse racing Christmas bauble for the fan in your life.
+
+The youngest champion jockey in over 100 years deserves a spot on the tree. Yellow silks, black spots and a black cap. Design a personalised silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.
+
+Which name would you have on yours? 👇
+
+Wishing you a Merry Christmas 🎅
+
+#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts
+
+Link in bio 👉 www.zanshorseracing.co.uk
 ```
 
 ### youtube

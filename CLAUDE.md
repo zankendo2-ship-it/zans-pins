@@ -108,10 +108,11 @@ The TikTok account has two strikes. A third could lose the account, so this rule
 - **TikTok may ONLY receive 100% safe physical gift and merch posts:** personalised silks baubles, gifts for racing fans, Christmas countdowns.
 - **Zero mention of odds, stalls or winning** in the video, the on-screen text, the caption, the title or the hashtags. No prices either.
 - **Why the strikes happened (confirmed in Alex's TikTok app, 18 Nov 2026):** TikTok removed two videos. (1) 31 Oct, 14:15: "Breeders' Cup Pro - look inside", which sold the guide, said "how often each price wins" and carried the 18+ gamble-responsibly line (appeal refused 3 Nov). (2) 13 Nov, 11:45: "Race day: can Jonbon win a third Shloer Chase?", with the race time and win records. Alex completed TikTok's training; its notice says the warning status is removed on **27 Nov 2026 as long as there are no new violations**. Full notes in `research/2026-11-18-tiktok-strikes-and-uk-posting-times.md`.
-- **Showcase baubles whose hook is about a real horse's results or news stay off TikTok.** TikTok gets pure gift hooks only.
-- **Never put "18+" or "gamble responsibly" on a TikTok post.**
+- **All bauble posts go to TikTok, showcase baubles included** (Alex, 18 Nov 2026: "keep all the bauble posts to go on TikTok"). The TikTok caption and title stay gift-led.
+- **Never put "18+" or "gamble responsibly" on a TikTok post**, and never on any merch or gift post on any network (Alex, 18 Nov 2026: "get rid of 18+ on the posts").
 - Before any TikTok booking: scan the image text and caption by script for odds, stalls, draw, going, winner, winning, win, bet, price, guide and "£"; run the independent check; get Alex's yes for that exact post.
 - If there is any doubt whether a post is safe, it does not go to TikTok.
+- **Alex's line (18 Nov 2026):** the TikTok ban covers anything to do with betting, prices or odds. Anything with that on it can't go on TikTok. Gift posts with none of it can.
 
 ### Footers: where they go and where they don't
 | Place | Footer |
@@ -120,7 +121,7 @@ The TikTok account has two strikes. A third could lose the account, so this rule
 | Inside every ZANS product (guides, trackers) | "Have fun and always gamble responsibly." + 18+ + BeGambleAware.org + "Not betting advice" + "Past results don't guarantee future results" |
 | Social **betting** posts (not TikTok) | "18+ Only. Begambleaware.org. Past track statistics do not guarantee future race outcomes. Insights are for informational and entertainment use only." |
 | Social **merch** posts | **No** 18+ line, and no "made in the UK" |
-| Profile bios / website footer | "18+ \| Have fun and always gamble responsibly." (TikTok bio: "18+ Gamble responsibly") |
+| Profile bios / website footer | "18+ \| Have fun and always gamble responsibly." (TikTok bio: no 18+ line) |
 
 ### Word scan before anything is shown or posted
 Scan by script for: tip/tips/tipster/tipping (also in hashtags), guaranteed, sure thing, can't lose, beat the bookies, banker, lock, profit, investment, second income, winning system, "x winners", "+£", every bookmaker/racing-media name above, Wikipedia, "official", Juddmonte, youth slang. On Etsy-facing text, also flag "gamble responsibly", BeGambleAware, helpline and "18+". Negated lines ("we never promise winners") are fine. Count every character limit with code.
@@ -205,7 +206,7 @@ Every bauble, mug and gift post matches `reference/locked-style/ombudsman-slide1
 
 **Silks bands on slide 2 (locked by Alex, 18 Nov 2026: "we have locked in video B"):** the cap colour runs as a band directly under the top metal strip, and the silks colours, with their pattern, run as a band just above the bottom metal strip (`templates/silks_bands.py`, silks in `posts.json`, taken from the bauble's design code). Run it on every hook card after `render.js`.
 
-**The hook is something amazing about that horse or name** (Alex, 18 Nov 2026), like "Ombudsman retiring?": for example "Best jumps mare ever?" or "Champion jockey Billy". Research it fresh, check it in 2 sources on the day, and say it in the voiceover too. Keep the headline to two lines and the sub-line to one. Never name the owner. A hook about race results keeps that post off TikTok unless Alex says otherwise (TikTok Strike Shield).
+**The hook is something amazing about that horse or name** (Alex, 18 Nov 2026), like "Ombudsman retiring?": for example "Best jumps mare ever?" or "Champion jockey Billy". Research it fresh, check it in 2 sources on the day, and say it in the voiceover too. Keep the headline to two lines and the sub-line to one. Never name the owner. Bauble posts go to TikTok whatever the hook (Alex, 18 Nov 2026).
 
 **Metal:** silver for cool posts (snow, frost, winter racecourse), gold for warm posts (lit trees, candlelight, fires). Bronze stays with the Beginner guides.
 
