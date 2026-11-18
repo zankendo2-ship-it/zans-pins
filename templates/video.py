@@ -7,7 +7,9 @@ Usage: python3 templates/video.py <cards_dir> <scene.png> <key> <cx> <cy> <snow|
 import os, sys, subprocess, numpy as np, imageio_ffmpeg
 from PIL import Image, ImageFilter
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, W, H = 30, 1080, 1920
-P1, XF = 4.0, 0.35
+P1, XF = float(os.environ.get('ZANS_P1', 4.0)), 0.35
+OPEN = os.environ.get('ZANS_OPEN')                 # optional opening photo (e.g. a head-to-head) that fades to the main scene
+OPEN_END = float(os.environ.get('ZANS_OPEN_END', 3.6)) if OPEN else 0.0
 P2 = float(os.environ.get('ZANS_P2', 6.5))        # slide 3 starts once the woman's lines have finished (never earlier than 6.5s)
 TOTAL = float(os.environ.get('ZANS_TOTAL', 10.8)) # runs until Santa has finished; voices are never sped up to fit
 ZOOM = float(os.environ.get('ZANS_ZOOM', 0.16))      # push-in amount; 0.16 = the locked reference
@@ -30,6 +32,7 @@ def main(cards, scene, key, CX, CY, mode, out_dir, music=None):
         yy, xx = np.mgrid[0:MH, 0:MW]; warm *= (((xx-CX)/KEEP)**2 + ((yy-CY)/(KEEP*1.03))**2 > 1)
         glow = np.asarray(Image.fromarray((warm*255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(20))).astype(np.float32)/255
         phase = (np.sin(xx/150.0)*1.9 + np.cos(yy/190.0)*2.1).astype(np.float32)
+    opening = Image.open(OPEN).convert('RGB') if OPEN else None
     frame = Image.open(f'{cards}/{key}-9x16-frame.png').convert('RGBA')
     hook = np.asarray(Image.open(f'{cards}/{key}-9x16-hook.png').convert('RGB')).astype(np.float32)
     end = np.asarray(Image.open(f'{cards}/{key}-9x16-end.png').convert('RGB')).astype(np.float32)
@@ -43,9 +46,13 @@ def main(cards, scene, key, CX, CY, mode, out_dir, music=None):
         if t < P1 + XF:
             src = m if mode != 'shimmer' else (m + (glow*(0.5+0.5*np.sin(phase + t*2.2))*0.35)[..., None]*np.array([1.0, .82, .5], dtype=np.float32))
             img = Image.fromarray((src.clip(0, 1)*255).astype(np.uint8))
-            k = ease(min(t, P1+XF)/(P1+XF)); z = 1.0 + ZOOM*k; cw, ch = MW/z, MH/z
+            k = ease(max(min(t, P1+XF) - OPEN_END, 0)/(P1+XF-OPEN_END)); z = 1.0 + ZOOM*k; cw, ch = MW/z, MH/z
             x0 = min(max(MW/2 + (CX-MW/2)*k - cw/2, 0), MW-cw); y0 = min(max(MH/2 + (CY-MH/2)*k - ch/2, 0), MH-ch)
             a = np.asarray(img.resize((W, H), Image.BICUBIC, box=(x0, y0, x0+cw, y0+ch))).astype(np.float32)
+            if opening is not None and t < OPEN_END + XF:
+                ow, oh = opening.size; zo = 1.0 + 0.06*ease(t/(OPEN_END+XF)); bw, bh = ow/zo, oh/zo
+                o = np.asarray(opening.resize((W, H), Image.BICUBIC, box=((ow-bw)/2, (oh-bh)/2, (ow+bw)/2, (oh+bh)/2))).astype(np.float32)
+                ko = ease((t-OPEN_END)/XF); a = o if ko <= 0 else o*(1-ko) + a*ko
             if mode == 'snow': a = snow(a, t, scene_snow, 14)
             a = np.asarray(Image.alpha_composite(Image.fromarray(a.clip(0, 255).astype(np.uint8)).convert('RGBA'), frame).convert('RGB')).astype(np.float32)
         if P1 <= t:
