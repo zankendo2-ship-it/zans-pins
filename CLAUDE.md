@@ -119,7 +119,7 @@ The TikTok account has two strikes. A third could lose the account, so this rule
 |---|---|
 | Etsy listings, Etsy photos, shop banner | **No** 18+ / gamble-responsibly / BeGambleAware line |
 | Inside every ZANS product (guides, trackers) | "Have fun and always gamble responsibly." + 18+ + BeGambleAware.org + "Not betting advice" + "Past results don't guarantee future results" |
-| Social **betting** posts (not TikTok) | "18+ Only. Begambleaware.org. Past track statistics do not guarantee future race outcomes. Insights are for informational and entertainment use only." |
+| Social posts of every kind (betting, guide, merch) | **No** 18+ / gamble-responsibly line on any post, on any network (Alex, 18 Nov 2026: "keep the 18+ off all posts") |
 | Social **merch** posts | **No** 18+ line, and no "made in the UK" |
 | Profile bios / website footer | "18+ \| Have fun and always gamble responsibly." (TikTok bio: no 18+ line) |
 
@@ -152,7 +152,7 @@ Added 17 Nov 2026. These rules sit on top of Sections 0-2 and never loosen them.
 - **Pillar B, emotional and gift triggers:** personalised silks mugs and Christmas baubles framed around syndicate pride, favourite horses and thoughtful gifts for hard-to-buy-for racing fans (`www.zanshorseracing.co.uk` and `ZANSRacingTools`).
 - **Pillar C, iconic silks and racing nostalgia:** stories behind famous colours and historic moments that spark shares and comments, strictly obeying the copyright and trade mark rules in Section 2 (no Juddmonte colours outside the Frankel social-video exception, no owner names, nothing sold beside a famous horse's name).
 - **Rotation:** all three pillars appear every week, and the lead pillar (the one that gets the best slots) rotates A → B → C week by week.
-- Pillar limits that still apply: mug posts stay drafts until Alex restarts them; betting-themed Pillar A posts carry the social betting footer; TikTok only gets Pillar B gift and merch posts (TikTok Strike Shield, Section 2).
+- Pillar limits that still apply: mug posts stay drafts until Alex restarts them; TikTok only gets Pillar B gift and merch posts (TikTok Strike Shield, Section 2).
 
 ### 3.4 Hook and conversion discipline
 - Every data graphic has a bold, readable **5-to-8-word headline hook** that can be read on a phone in under 1.5 seconds. Count the words with code and check the phone-size still. Gift posts carry their hook on the hook card (3.7) and in the caption's first line.
@@ -397,7 +397,7 @@ Post each network at its slot, UK time, every day:
 | TikTok | 18:00 | Thu best, then Wed and Mon. Saturday is weakest |
 
 - **Approved gift posts go out one a day in the late afternoon on every network** (Alex, 18 Nov 2026): YouTube 16:00, Pinterest 16:30, LinkedIn 16:30, Facebook 17:00, X 17:00, Instagram 18:00 (Story 18:05), TikTok 18:00. **Once Alex has approved a post he does not approve it again:** it is booked live, not as a draft. The 8 bauble posts of 18 Nov are approved and booked 18 to 25 Nov (`batch/2026-11-18/bookings.json`). Videos are given to Metricool as raw GitHub links to this repo (it is public).
-- **Racecourse guide posts ("what to look out for")** follow the bauble posts (Alex, 18 Nov 2026). They use the Kempton cheat-sheet branding: `node templates/guide_cards.js <out_dir> <key>`, data in `templates/guide_posts.json`. Figures from the Course Knowledge Base only; track facts checked in 2 sources. Never on TikTok. Each new one needs Alex's yes.
+- **Racecourse guide posts ("what to look out for")** follow the bauble posts (Alex, 18 Nov 2026). They use the ZANS predictions-sheet look (Alex, 18 Nov 2026: the first green version was "flat and boring"): cream page, gold metal strips, a vibrant course-colour header bar with a metal line under it, stat tiles, pills, green/amber/red segmented bars, flag and logo. The comment question asks for an opinion and a reason ("Which ground do you think is better at Haydock, and why?"), never "for your horse": `node templates/guide_cards.js <out_dir> <key>`, data in `templates/guide_posts.json`. Figures from the Course Knowledge Base only; track facts checked in 2 sources. Never on TikTok. Each new one needs Alex's yes.
 - **Big race days: superstar-clash videos go out at 12:00 midday** on every network except TikTok (Alex, 18 Nov 2026). That day's other Facebook post moves to 14:00 so the two are at least an hour apart.
 - Re-pull the Metricool best-time data every month and adjust the slots if they move.
 
