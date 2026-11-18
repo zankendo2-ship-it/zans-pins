@@ -243,7 +243,7 @@
   "colour": "#0E6B3B",
   "eyebrow": "Social showcase · any horse's name",
   "big": "Britain's best chaser?",
-  "sub": "Three Shloer Chases in a row.",
+  "sub": "Three Shloer Chases to his name.",
   "question": "Which name would you have on yours?",
   "silks": {
    "body": "#0E6B3B",
@@ -256,6 +256,27 @@
    "second": "#F5D130",
    "pattern": "hoops",
    "cap": "#FFFFFF"
+  }
+ },
+ "h2h-constitution-hill-state-man": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Head to head · mugs in their colours",
+  "big": "Constitution Hill or<br>State Man?",
+  "bigSize": 0.57,
+  "sub": "Two champion hurdlers. One mug each.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#FFFFFF",
+   "second": "#1C1C1C",
+   "pattern": "plain",
+   "cap": "#FFFFFF"
+  },
+  "silks2": {
+   "body": "#F5D130",
+   "second": "#1C1C1C",
+   "pattern": "quartered",
+   "cap": "#F5D130"
   }
  }
 }
