@@ -1,26 +1,269 @@
 {
  "haydock-chases": {
-  "course": "HAYDOCK", "code": "Chases · 165 races", "colour": "#1E88E5", "text": "#1565C0",
+  "course": "HAYDOCK",
+  "code": "Chases · 165 races",
+  "colour": "#1E88E5",
+  "text": "#1565C0",
   "tagline": "Cheat sheet: Haydock chases",
   "footer": "Haydock Track DNA guide: coming soon",
   "source": "Haydock chases, Jan 2019 to May 2026. ZANS results database.",
   "slides": [
-   {"type": "cover", "sub": "Chases · what to look out for",
-    "tiles": [["165", "CHASES SINCE 2019"], ["10", "FENCES A CIRCUIT"], ["1m5f", "LEFT-HANDED OVAL"]],
-    "points": [["The track", "FLAT · GALLOPING"], ["Favourites and the ground", "SOFT IS BEST"], ["Big-priced winners", "RARE"], ["The age that does best", "AGE 6"]],
-    "strip": "Swipe, then <b>save it for Saturday</b>"},
-   {"type": "facts", "num": "1 OF 4", "eyebrow": "THE TRACK", "big": "A flat, <em>galloping</em> track", "sub": "Left-handed and fair, with stiff fences.",
-    "rows": [["DIRECTION", "Left-handed"], ["CIRCUIT", "Oval, about 1m5f"], ["FENCES", "10 a circuit"], ["SOFT GROUND", "A real stamina test"]],
-    "strip": "Soft ground here takes <b>more getting than it looks</b>"},
-   {"type": "bars", "num": "2 OF 4", "eyebrow": "FAVOURITES BY GROUND", "big": "Favourites like it <em>soft</em>", "sub": "How often the clear favourite won.",
-    "rows": [["SOFT", "21 of 55 won", 38.2, "38%", "g"], ["HEAVY", "11 of 32 won", 34.4, "34%", "a"], ["GOOD TO SOFT", "8 of 35 won", 22.9, "23%", "a"], ["GOOD", "4 of 21 won", 19.0, "19%", "r"]],
-    "note": "Clear favourites only, joint favourites left out.", "strip": "All chases: <b>44 favourites won from 143</b>, about 3 in 10"},
-   {"type": "stat", "num": "3 OF 4", "eyebrow": "BIG-PRICED WINNERS", "big": "Big-priced shocks are <em>rare</em>", "sub": "Winners at 20/1 or bigger.",
-    "figure": "2", "figsub": "from 165 chases", "dots": [165, [40, 110]], "lines": ["One on good to soft, one on heavy.", "None at all since 2022 (98 chases)."], "strip": "That is about <b>1 chase in every 80</b>"},
-   {"type": "bars", "num": "4 OF 4", "eyebrow": "WINNERS BY AGE", "big": "<em>Six-year-olds</em> do best", "sub": "From 1,173 chase runners aged 6 and up.",
-    "rows": [["AGE 6", "33 of 124 won", 26.6, "1 in 4", "g"], ["AGE 7", "43 of 244 won", 17.6, "1 in 6", "a"], ["AGE 8", "29 of 252 won", 11.5, "1 in 9", "a"], ["AGE 9", "25 of 218 won", 11.5, "1 in 9", "a"], ["AGE 10+", "32 of 335 won", 9.6, "1 in 10", "r"]],
-    "note": "", "strip": "Age 6: <b>21% more winners</b> than their odds suggested"},
-   {"type": "end", "big": "Save this before your next day at Haydock", "question": "Which ground do you think is better at Haydock, and why?"}
+   {
+    "type": "cover",
+    "sub": "Chases · what to look out for",
+    "tiles": [
+     [
+      "165",
+      "CHASES SINCE 2019"
+     ],
+     [
+      "10",
+      "FENCES A CIRCUIT"
+     ],
+     [
+      "1m5f",
+      "LEFT-HANDED OVAL"
+     ]
+    ],
+    "points": [
+     [
+      "The track",
+      "FLAT · GALLOPING"
+     ],
+     [
+      "Favourites and the ground",
+      "SOFT IS BEST"
+     ],
+     [
+      "Big-priced winners",
+      "RARE"
+     ],
+     [
+      "The age that does best",
+      "AGE 6"
+     ]
+    ],
+    "strip": "Swipe, then <b>save it for Saturday</b>"
+   },
+   {
+    "type": "facts",
+    "num": "1 OF 4",
+    "eyebrow": "THE TRACK",
+    "big": "A flat, <em>galloping</em> track",
+    "sub": "Left-handed and fair, with stiff fences.",
+    "rows": [
+     [
+      "DIRECTION",
+      "Left-handed"
+     ],
+     [
+      "CIRCUIT",
+      "Oval, about 1m5f"
+     ],
+     [
+      "FENCES",
+      "10 a circuit"
+     ],
+     [
+      "SOFT GROUND",
+      "A real stamina test"
+     ]
+    ],
+    "strip": "Soft ground here takes <b>more getting than it looks</b>"
+   },
+   {
+    "type": "bars",
+    "num": "2 OF 4",
+    "eyebrow": "FAVOURITES BY GROUND",
+    "big": "Favourites like it <em>soft</em>",
+    "sub": "How often the clear favourite won.",
+    "rows": [
+     [
+      "SOFT",
+      "21 of 55 won",
+      38.2,
+      "38%",
+      "g"
+     ],
+     [
+      "HEAVY",
+      "11 of 32 won",
+      34.4,
+      "34%",
+      "a"
+     ],
+     [
+      "GOOD TO SOFT",
+      "8 of 35 won",
+      22.9,
+      "23%",
+      "a"
+     ],
+     [
+      "GOOD",
+      "4 of 21 won",
+      19.0,
+      "19%",
+      "r"
+     ]
+    ],
+    "note": "Clear favourites only, joint favourites left out.",
+    "strip": "All chases: <b>44 favourites won from 143</b>, about 3 in 10"
+   },
+   {
+    "type": "stat",
+    "num": "3 OF 4",
+    "eyebrow": "BIG-PRICED WINNERS",
+    "big": "Big-priced shocks are <em>rare</em>",
+    "sub": "Winners at 20/1 or bigger.",
+    "figure": "2",
+    "figsub": "from 165 chases",
+    "dots": [
+     165,
+     [
+      40,
+      110
+     ]
+    ],
+    "lines": [
+     "One on good to soft, one on heavy.",
+     "None at all since 2022 (98 chases)."
+    ],
+    "strip": "That is about <b>1 chase in every 80</b>"
+   },
+   {
+    "type": "bars",
+    "num": "4 OF 4",
+    "eyebrow": "WINNERS BY AGE",
+    "big": "<em>Six-year-olds</em> do best",
+    "sub": "From 1,173 chase runners aged 6 and up.",
+    "rows": [
+     [
+      "AGE 6",
+      "33 of 124 won",
+      26.6,
+      "1 in 4",
+      "g"
+     ],
+     [
+      "AGE 7",
+      "43 of 244 won",
+      17.6,
+      "1 in 6",
+      "a"
+     ],
+     [
+      "AGE 8",
+      "29 of 252 won",
+      11.5,
+      "1 in 9",
+      "a"
+     ],
+     [
+      "AGE 9",
+      "25 of 218 won",
+      11.5,
+      "1 in 9",
+      "a"
+     ],
+     [
+      "AGE 10+",
+      "32 of 335 won",
+      9.6,
+      "1 in 10",
+      "r"
+     ]
+    ],
+    "note": "",
+    "strip": "Age 6: <b>21% more winners</b> than their odds suggested"
+   },
+   {
+    "type": "end",
+    "big": "Save this before your next day at Haydock",
+    "question": "Which ground do you think is better at Haydock, and why?"
+   }
+  ]
+ },
+ "old-park-star": {
+  "course": "OLD PARK STAR",
+  "courseSize": 84,
+  "flag": false,
+  "code": "Ffos Las · beginners' chase",
+  "colour": "#00BFB3",
+  "text": "#008C84",
+  "tagline": "Racing today: Wednesday 18 November",
+  "footer": "Up the Old Park Star!",
+  "source": "Runners and time checked 18 Nov 2026. Check the racecard before the off.",
+  "slides": [
+   {
+    "type": "cover",
+    "sub": "Chasing debut · Ffos Las today",
+    "gl": "WHAT TO LOOK OUT FOR",
+    "tiles": [
+     [
+      "13:48",
+      "FFOS LAS TODAY"
+     ],
+     [
+      "1st",
+      "SUPREME HURDLE 2026"
+     ],
+     [
+      "4",
+      "RUNNERS"
+     ]
+    ],
+    "points": [
+     [
+      "His first run over fences",
+      "CHASE DEBUT"
+     ],
+     [
+      "Sober Glory lines up again",
+      "SUPREME 2ND"
+     ],
+     [
+      "Nico de Boinville rides",
+      "JOCKEY"
+     ]
+    ],
+    "strip": "Up the <b>Old Park Star!</b>"
+   },
+   {
+    "type": "facts",
+    "num": "13:48",
+    "eyebrow": "CHASING DEBUT",
+    "big": "The Supreme winner goes <em>chasing</em>",
+    "sub": "His first run over fences.",
+    "rows": [
+     [
+      "RACE",
+      "Beginners' chase"
+     ],
+     [
+      "WHERE",
+      "Ffos Las, 13:48"
+     ],
+     [
+      "JOCKEY",
+      "Nico de Boinville"
+     ],
+     [
+      "TRAINER",
+      "Nicky Henderson"
+     ],
+     [
+      "BIG RIVAL",
+      "Sober Glory"
+     ]
+    ],
+    "strip": "In March he beat Sober Glory by <b>1½ lengths</b>"
+   },
+   {
+    "type": "end",
+    "big": "Old Park Star goes chasing today",
+    "question": "Will Old Park Star be even better over fences?"
+   }
   ]
  }
 }

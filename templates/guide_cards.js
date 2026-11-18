@@ -79,12 +79,12 @@ h1 em{font-style:normal;color:${TXT}}
 .url{font-family:Jost;font-weight:700;letter-spacing:.1em;font-size:36px;text-align:center;margin-top:8px}
 `;
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
-const brand = P => `<div class="brand"><div><b>ZANS RACING · HORSE RACING GUIDES</b><span>${esc(P.tagline)}</span></div>${FLAG}</div>`;
+const brand = P => `<div class="brand"><div><b>ZANS RACING · HORSE RACING GUIDES</b><span>${esc(P.tagline)}</span></div>${P.flag === false ? '' : FLAG}</div>`;
 const foot = P => `<div class="foot"><span>${esc(P.footer)}</span><b>www.zanshorseracing.co.uk</b></div>`;
 function body(P, s) {
-  if (s.type === 'cover') return brand(P) + `<img class="logo" src="${LOGO}"><div class="course">${esc(P.course)}</div><div class="csub">${esc(s.sub)}</div><div class="rule"></div>
+  if (s.type === 'cover') return brand(P) + `<img class="logo" src="${LOGO}"><div class="course" style="${P.courseSize ? `font-size:${P.courseSize}px;letter-spacing:.08em` : ''}">${esc(P.course)}</div><div class="csub">${esc(s.sub)}</div><div class="rule"></div>
     <div class="tiles">${s.tiles.map(t => `<div class="tile"><b>${esc(t[0])}</b><span>${esc(t[1])}</span></div>`).join('')}</div>
-    <div class="gl">WHAT TO LOOK OUT FOR</div><div class="list">${s.points.map((p, i) => `<div class="li"><i>${i + 1}</i>${esc(p[0])}<u>${esc(p[1])}</u></div>`).join('')}</div>
+    <div class="gl">${esc(s.gl || 'WHAT TO LOOK OUT FOR')}</div><div class="list">${s.points.map((p, i) => `<div class="li"><i>${i + 1}</i>${esc(p[0])}<u>${esc(p[1])}</u></div>`).join('')}</div>
     <div class="strip">${s.strip}</div>`;
   if (s.type === 'end') return brand(P) + `<img class="logo" src="${LOGO}" style="width:330px;margin-top:34px"><div class="save">${esc(s.big)}</div><div class="qbox"><small>TELL US IN THE COMMENTS</small><div>${esc(s.question)}</div></div><div class="rule" style="margin-top:30px"></div><div class="soon">${esc(P.footer)}</div><div class="url">WWW.ZANSHORSERACING.CO.UK</div>`;
   const head = brand(P) + `<div class="hbar"><div><span class="n">${esc(s.num)}</span><span class="c">${esc(P.course)}</span></div><span class="r">${esc(P.code)}</span></div><div class="hline"></div>`;
