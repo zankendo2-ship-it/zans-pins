@@ -62,7 +62,7 @@ Wishing you a Merry Christmas 🎅
 ## Pinterest
 Title: Personalised Horse Racing Christmas Bauble - Racing Silks, Any Name
 A personalised horse racing Christmas bauble in racing silks, with any name. These showcase designs carry Gaelic Warrior in pink with light green spots and Fact To File in green and yellow hoops; yours can carry any name, in any of 25 silks patterns and any colours. Round ceramic, about 7.5 cm, with a ribbon. A Christmas gift for racing fans, owners and syndicates. Wishing you a Merry Christmas 🎅
-Link: https://www.zanshorseracing.co.uk/bauble-designer/
+Link: https://www.etsy.com/uk/listing/4611232428
 
 ## TikTok
 Title: Gaelic Warrior or Fact To File? Baubles in their colours 🎄

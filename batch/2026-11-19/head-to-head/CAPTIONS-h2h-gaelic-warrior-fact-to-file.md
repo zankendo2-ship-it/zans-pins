@@ -62,7 +62,7 @@ Wishing you a Merry Christmas 🎅
 ## Pinterest
 Title: Personalised Horse Racing Mug - Racing Silks in Any Colours, Any Name
 A personalised horse racing mug in racing silks, with any name. These showcase designs carry Gaelic Warrior in pink with light green spots and Fact To File in green and yellow hoops; yours can carry any name, in any of 25 silks patterns and any colours, with a coloured handle and inside. 330 ml ceramic. A Christmas gift for racing fans, owners and syndicates. Wishing you a Merry Christmas 🎅
-Link: https://www.zanshorseracing.co.uk/mug-designer/
+Link: https://www.etsy.com/uk/listing/4608193933
 
 ## TikTok
 Title: Gaelic Warrior or Fact To File? Mugs in their colours 🎄

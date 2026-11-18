@@ -32,8 +32,8 @@ const jobs = JSON.parse(process.argv[3]);
         }
       }
       if (o.tea !== false) {                         // a drink in the mug, as in Alex's own photo of the real mug
-        const tea = new THREE.Mesh(new THREE.CircleGeometry(0.975, 96), new THREE.MeshPhongMaterial({ color: 0x8a5a36, shininess: 100, specular: 0x555555 }));
-        tea.rotation.x = -Math.PI / 2; tea.position.y = 2.34 / 2 - 0.07; group.add(tea);
+        const tea = new THREE.Mesh(new THREE.CircleGeometry(0.975, 96), new THREE.MeshPhongMaterial({ color: 0x6b452a, shininess: 25, specular: 0x222222 }));
+        tea.rotation.x = -Math.PI / 2; tea.position.y = 2.34 / 2 - (o.teaDrop === undefined ? 0.24 : o.teaDrop); group.add(tea);
       }
       renderer.setPixelRatio(1); renderer.setSize(N, N, false); camera.aspect = 1; camera.fov = 20; camera.position.set(0, o.camY === undefined ? 1.5 : o.camY, 9.4); camera.lookAt(0, 0, 0); camera.updateProjectionMatrix();
       tex.anisotropy = renderer.capabilities.getMaxAnisotropy(); tex.needsUpdate = true;
