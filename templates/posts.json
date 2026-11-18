@@ -151,14 +151,15 @@
    "second": "#F5D130",
    "pattern": "hoops",
    "cap": "#FFFFFF"
-  }
+  },
+  "bigSize": 0.74
  },
  "h2h-grey-dawning-inothewayurthinkin": {
   "metal": "silver",
   "colour": "#1F5A3D",
   "eyebrow": "Head to head · mugs in their colours",
   "big": "Grey Dawning or<br>Inothewayurthinkin?",
-  "bigSize": 0.68,
+  "bigSize": 0.6,
   "sub": "Two big names. One mug each.",
   "question": "Which one are you cheering?",
   "silks": {
