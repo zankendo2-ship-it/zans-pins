@@ -1,0 +1,83 @@
+{
+ "gemini": {
+  "voice": "Aoede",
+  "style": "a warm young woman from London with an everyday London accent, upbeat and conversational, not posh"
+ },
+ "lines": [
+  {
+   "post": "ombudsman",
+   "file": "zp_ombudsman_1.mp3",
+   "text": "Ombudsman retiring?"
+  },
+  {
+   "post": "ombudsman",
+   "file": "zp_ombudsman_2.mp3",
+   "text": "Put him on your tree this Christmas."
+  },
+  {
+   "post": "lossiemouth",
+   "file": "zp_lossiemouth_1.mp3",
+   "text": "Is Lossiemouth the best jumps mare ever?"
+  },
+  {
+   "post": "lossiemouth",
+   "file": "zp_lossiemouth_2.mp3",
+   "text": "Four Cheltenham Festivals, and never beaten there."
+  },
+  {
+   "post": "no-drama-this-end",
+   "file": "zp_no-drama-this-end_1.mp3",
+   "text": "The next big chaser?"
+  },
+  {
+   "post": "no-drama-this-end",
+   "file": "zp_no-drama-this-end_2.mp3",
+   "text": "No Drama This End. A Grade 1 hurdler, now over fences."
+  },
+  {
+   "post": "jon-bon",
+   "file": "zp_jon-bon_1.mp3",
+   "text": "Britain's best chaser?"
+  },
+  {
+   "post": "jon-bon",
+   "file": "zp_jon-bon_2.mp3",
+   "text": "Three Shloer Chases in a row."
+  },
+  {
+   "post": "billy",
+   "file": "zp_billy_1.mp3",
+   "text": "Champion jockey Billy!"
+  },
+  {
+   "post": "billy",
+   "file": "zp_billy_2.mp3",
+   "text": "The youngest in over a hundred years."
+  },
+  {
+   "post": "constitution-hill",
+   "file": "zp_constitution-hill_1.mp3",
+   "text": "Is this the most popular horse ever?"
+  },
+  {
+   "post": "constitution-hill",
+   "file": "zp_constitution-hill_2.mp3",
+   "text": "Pulling crowds wherever he goes."
+  },
+  {
+   "post": "constitution-hill",
+   "file": "zp_constitution-hill_3.mp3",
+   "text": "Come on Conny!"
+  },
+  {
+   "post": "silks-bauble",
+   "file": "zp_silks-bauble_1.mp3",
+   "text": "Their silks, on the tree."
+  },
+  {
+   "post": "silks-bauble",
+   "file": "zp_silks-bauble_2.mp3",
+   "text": "Any colours, any name."
+  }
+ ]
+}

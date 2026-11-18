@@ -1,0 +1,12 @@
+{
+ "gemini": {
+  "voice": "Algenib",
+  "style": "a jolly, warm, deep-voiced older British Father Christmas, kind and twinkly, unhurried, with a hearty belly laugh on the ho ho ho"
+ },
+ "lines": [
+  {
+   "file": "zp_santa_short.mp3",
+   "text": "Ho, ho, ho! Merry Christmas from ZANS Racing!"
+  }
+ ]
+}
