@@ -396,6 +396,8 @@ Post each network at its slot, UK time, every day:
 | Instagram | 18:00 | Mon to Thu |
 | TikTok | 18:00 | Thu best, then Wed and Mon. Saturday is weakest |
 
+- **Approved gift posts go out one a day in the late afternoon on every network** (Alex, 18 Nov 2026): YouTube 16:00, Pinterest 16:30, LinkedIn 16:30, Facebook 17:00, X 17:00, Instagram 18:00 (Story 18:05), TikTok 18:00. **Once Alex has approved a post he does not approve it again:** it is booked live, not as a draft. The 8 bauble posts of 18 Nov are approved and booked 18 to 25 Nov (`batch/2026-11-18/bookings.json`). Videos are given to Metricool as raw GitHub links to this repo (it is public).
+- **Racecourse guide posts ("what to look out for")** follow the bauble posts (Alex, 18 Nov 2026). They use the Kempton cheat-sheet branding: `node templates/guide_cards.js <out_dir> <key>`, data in `templates/guide_posts.json`. Figures from the Course Knowledge Base only; track facts checked in 2 sources. Never on TikTok. Each new one needs Alex's yes.
 - **Big race days: superstar-clash videos go out at 12:00 midday** on every network except TikTok (Alex, 18 Nov 2026). That day's other Facebook post moves to 14:00 so the two are at least an hour apart.
 - Re-pull the Metricool best-time data every month and adjust the slots if they move.
 

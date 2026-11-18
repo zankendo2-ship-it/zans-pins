@@ -1,0 +1,23 @@
+{
+ "haydock-chases": {
+  "course": "HAYDOCK",
+  "footer": "Haydock Track DNA guide: coming soon",
+  "source": "Haydock chases, Jan 2019 to May 2026. ZANS results database.",
+  "slides": [
+   {"type": "cover", "eyebrow": "CHEAT SHEET · JUMPS", "big": "Haydock chases: what to look out for", "sub": "4 things from 165 chases since 2019.",
+    "points": ["The track", "Favourites and the ground", "Big-priced winners", "The age that does best"], "strip": "Swipe, then save it for Saturday"},
+   {"type": "facts", "num": "1", "big": "A flat, galloping track", "sub": "Left-handed and fair, with stiff fences.",
+    "rows": [["DIRECTION", "Left-handed"], ["CIRCUIT", "Oval, about 1m5f"], ["FENCES", "10 a circuit"], ["SOFT GROUND", "A real stamina test"]],
+    "strip": "Soft ground here takes more getting than it looks"},
+   {"type": "bars", "num": "2", "big": "Favourites like it soft", "sub": "How often the clear favourite won, by ground.",
+    "rows": [["SOFT", "21 of 55 won", 38.2, "38%", true], ["HEAVY", "11 of 32 won", 34.4, "34%", false], ["GOOD TO SOFT", "8 of 35 won", 22.9, "23%", false], ["GOOD", "4 of 21 won", 19.0, "19%", false]],
+    "note": "Clear favourites only, joint favourites left out.", "strip": "All chases: 44 favourites won from 143, about 3 in 10"},
+   {"type": "stat", "num": "3", "big": "Big-priced shocks are rare", "sub": "Winners at 20/1 or bigger in Haydock chases.",
+    "figure": "2", "figsub": "from 165 chases", "lines": ["One on good to soft, one on heavy.", "None at all since 2022 (98 chases)."], "strip": "That is about 1 chase in every 80"},
+   {"type": "bars", "num": "4", "big": "Six-year-olds do best", "sub": "Winners by age, from 1,173 runners aged 6 and up.",
+    "rows": [["AGE 6", "33 of 124 won", 26.6, "1 in 4", true], ["AGE 7", "43 of 244 won", 17.6, "1 in 6", false], ["AGE 8", "29 of 252 won", 11.5, "1 in 9", false], ["AGE 9", "25 of 218 won", 11.5, "1 in 9", false], ["AGE 10+", "32 of 335 won", 9.6, "1 in 10", false]],
+    "note": "", "strip": "Age 6: 21% more winners than their odds suggested"},
+   {"type": "end", "big": "Save this before your next day at Haydock", "question": "Soft or good ground at Haydock: which do you want for your horse?"}
+  ]
+ }
+}
