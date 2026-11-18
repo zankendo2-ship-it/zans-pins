@@ -264,7 +264,7 @@
   "eyebrow": "Head to head · mugs in their colours",
   "big": "Constitution Hill or<br>State Man?",
   "bigSize": 0.57,
-  "sub": "Two champion hurdlers. One mug each.",
+  "sub": "Champion hurdlers. Come on Conny!",
   "question": "Which one are you cheering?",
   "silks": {
    "body": "#FFFFFF",
@@ -276,6 +276,27 @@
    "body": "#F5D130",
    "second": "#1C1C1C",
    "pattern": "quartered",
+   "cap": "#F5D130"
+  }
+ },
+ "h2h-majborough-marine-nationale": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Head to head · mugs in their colours",
+  "big": "Majborough or<br>Marine Nationale?",
+  "bigSize": 0.67,
+  "sub": "Two top two-mile chasers.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#0E8A4B",
+   "second": "#F2C40F",
+   "pattern": "hoops",
+   "cap": "#0E8A4B"
+  },
+  "silks2": {
+   "body": "#F5D130",
+   "second": "#1B2A5C",
+   "pattern": "sash",
    "cap": "#F5D130"
   }
  }

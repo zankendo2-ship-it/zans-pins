@@ -64,7 +64,11 @@ def main(spec):
     json.dump({"gemini": {"voice": "Aoede", "style": STYLE}, "lines": lines}, open(f'{W}/voice.json', 'w'))
     run(['python3', 'templates/voice/gemini_tts.py', V, f'{W}/voice.json'])
     for l in lines: print('  voice:', l['text'], '| heard:', heard(f"{V}/{l['file']}"))
-    out = run(['python3', 'templates/voice/mix.py', V, f'{W}/audio.m4a', spec['music'], 'zp_santa_a.mp3', lines[0]['file'], lines[1]['file'], 'zp_cheer.mp3', 'zp_ask_2.mp3']).split()
+    after = spec.get('after', [])                      # extra spoken lines after "Tell us in the comments!" (e.g. "Come on Conny!")
+    if after:
+        json.dump({"gemini": {"voice": "Aoede", "style": STYLE}, "lines": after}, open(f'{W}/voice2.json', 'w')); run(['python3', 'templates/voice/gemini_tts.py', V, f'{W}/voice2.json'])
+        for l in after: print('  voice:', l['text'], '| heard:', heard(f"{V}/{l['file']}"))
+    out = run(['python3', 'templates/voice/mix.py', V, f'{W}/audio.m4a', spec['music'], 'zp_santa_a.mp3', lines[0]['file'], lines[1]['file'], 'zp_cheer.mp3', 'zp_ask_2.mp3'] + [l['file'] for l in after]).split()
     p2, total = float(out[-2]), float(out[-1])
     for f in glob.glob(f'{V}/_t*.wav'): os.remove(f)
     # 4. the video and slides
