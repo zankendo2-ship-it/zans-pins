@@ -250,6 +250,12 @@
    "second": "#F5D130",
    "pattern": "hoops",
    "cap": "#FFFFFF"
+  },
+  "silks2": {
+   "body": "#0E6B3B",
+   "second": "#F5D130",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
   }
  }
 }
