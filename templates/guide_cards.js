@@ -87,7 +87,7 @@ function body(P, s) {
     <div class="gl">${esc(s.gl || 'WHAT TO LOOK OUT FOR')}</div><div class="list">${s.points.map((p, i) => `<div class="li"><i>${i + 1}</i>${esc(p[0])}<u>${esc(p[1])}</u></div>`).join('')}</div>
     <div class="strip">${s.strip}</div>`;
   if (s.type === 'end') return brand(P) + `<img class="logo" src="${LOGO}" style="width:330px;margin-top:34px"><div class="save">${esc(s.big)}</div><div class="qbox"><small>TELL US IN THE COMMENTS</small><div>${esc(s.question)}</div></div><div class="rule" style="margin-top:30px"></div><div class="soon">${esc(P.footer)}</div><div class="url">WWW.ZANSHORSERACING.CO.UK</div>`;
-  const head = brand(P) + `<div class="hbar"><div><span class="n">${esc(s.num)}</span><span class="c">${esc(P.course)}</span></div><span class="r">${esc(P.code)}</span></div><div class="hline"></div>`;
+  const head = brand(P) + `<div class="hbar"><div><span class="n">${esc(s.num)}</span><span class="c" style="${s.num ? '' : 'margin-left:0'}">${esc(P.course)}</span></div><span class="r">${esc(P.code)}</span></div><div class="hline"></div>`;
   const title = `<div class="eyebrow">${esc(s.eyebrow)}</div><h1>${s.big}</h1><div class="sub">${esc(s.sub)}</div>`;
   let mid = '';
   if (s.type === 'facts') mid = `<div class="rows">${s.rows.map(r => `<div class="row"><div class="lab" style="color:#5E574F">${esc(r[0])}</div><div class="val"><div class="fact">${esc(r[1])}</div></div></div>`).join('')}</div>`;

@@ -271,5 +271,89 @@
    "pattern": "spots",
    "cap": "#00A651"
   }
+ },
+ "old-park-star-tiktok": {
+  "course": "OLD PARK STAR",
+  "courseSize": 84,
+  "flag": false,
+  "code": "Novice chaser",
+  "colour": "#00A651",
+  "text": "#008A43",
+  "silks": {
+   "body": "#00A651",
+   "second": "#1F3FBF",
+   "pattern": "spots",
+   "cap": "#00A651"
+  },
+  "tagline": "Jumps season 2026-27",
+  "footer": "ZANS Racing · for horse racing fans",
+  "source": "",
+  "slides": [
+   {
+    "type": "cover",
+    "sub": "Off over fences this season",
+    "gl": "WHAT TO LOOK OUT FOR",
+    "tiles": [
+     [
+      "2026",
+      "FESTIVAL HERO"
+     ],
+     [
+      "NEW",
+      "OVER FENCES"
+     ],
+     [
+      "GREEN",
+      "ROYAL BLUE SPOTS"
+     ]
+    ],
+    "points": [
+     [
+      "A novice chaser this season",
+      "NEW"
+     ],
+     [
+      "Emerald green, royal blue spots",
+      "HIS COLOURS"
+     ],
+     [
+      "Nico de Boinville's ride",
+      "JOCKEY"
+     ]
+    ],
+    "strip": "A new chapter for <b>Old Park Star</b>"
+   },
+   {
+    "type": "facts",
+    "num": "",
+    "eyebrow": "NEW SEASON",
+    "big": "The Festival hero goes <em>over fences</em>",
+    "sub": "A new chapter this season.",
+    "rows": [
+     [
+      "TRAINER",
+      "Nicky Henderson"
+     ],
+     [
+      "JOCKEY",
+      "Nico de Boinville"
+     ],
+     [
+      "COLOURS",
+      "Emerald, blue spots"
+     ],
+     [
+      "LAST SEASON",
+      "Cheltenham Festival hero"
+     ]
+    ],
+    "strip": "From hurdles to <b>fences</b>"
+   },
+   {
+    "type": "end",
+    "big": "Old Park Star goes over fences",
+    "question": "Will Old Park Star be even better over fences?"
+   }
+  ]
  }
 }

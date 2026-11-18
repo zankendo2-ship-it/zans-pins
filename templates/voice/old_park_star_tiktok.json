@@ -1,0 +1,23 @@
+{
+ "gemini": {
+  "voice": "Aoede",
+  "style": "a warm young woman from London with an everyday London accent, upbeat and conversational, not posh"
+ },
+ "lines": [
+  {
+   "post": "old-park-star-tiktok",
+   "file": "opt_1.mp3",
+   "text": "Old Park Star is off over fences!"
+  },
+  {
+   "post": "old-park-star-tiktok",
+   "file": "opt_2.mp3",
+   "text": "The Cheltenham Festival hero! A brand new chapter this season!"
+  },
+  {
+   "post": "old-park-star-tiktok",
+   "file": "opt_3.mp3",
+   "text": "Emerald green, with royal blue spots. You can't miss him!"
+  }
+ ]
+}
