@@ -1,7 +1,7 @@
 # Sober Glory showcase bauble (18 Nov 2026, for 18:00). Facts in 2 sources: won the beginners' chase at Ffos Las today on his chasing debut. Silks: red and purple quarters, red cap (2 sources). Showcase: social only.
 
 ## Instagram
-Sober Glory wins on his chasing debut 🎄🏇 Here he is on a horse racing Christmas bauble.
+Sober Glory beats Old Park Star on his chasing debut 🎄🏇 Here he is on a horse racing Christmas bauble.
 
 What a first run over fences today. Red and purple quarters, a red cap and his name, hanging by the fence. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.
 
@@ -18,7 +18,7 @@ Wishing you a Merry Christmas 🎅
 Link in bio 👉 www.zanshorseracing.co.uk
 
 ## Facebook
-Sober Glory wins on his chasing debut 🎄🏇 Here he is on a horse racing Christmas bauble.
+Sober Glory beats Old Park Star on his chasing debut 🎄🏇 Here he is on a horse racing Christmas bauble.
 
 What a first run over fences today. Red and purple quarters, a red cap and his name, hanging by the fence. Design a personalised silks bauble with any horse's name on our website. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.
 
@@ -31,12 +31,12 @@ Wishing you a Merry Christmas 🎅
 First comment: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/
 
 ## X
-Sober Glory wins on his chasing debut 🎄🏇 His red and purple quarters on a showcase Christmas bauble. Which name would you have on yours? #ChristmasBaubles #HorseRacing
+Sober Glory beats Old Park Star on his chasing debut 🎄🏇 His red and purple quarters on a showcase Christmas bauble. Which name would you have on yours? #ChristmasBaubles #HorseRacing
 
 Reply: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/ Wishing you a Merry Christmas 🎅
 
 ## LinkedIn
-Sober Glory wins on his chasing debut 🎄🏇 Here he is on a horse racing Christmas bauble.
+Sober Glory beats Old Park Star on his chasing debut 🎄🏇 Here he is on a horse racing Christmas bauble.
 
 Red and purple quarters, a red cap and his name. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk. This one's a showcase. You pick the pattern, the colours and the name. We print yours.
 
@@ -48,7 +48,7 @@ Wishing you a Merry Christmas 🎅
 
 ## YouTube
 Title: Horse Racing Christmas Bauble: Sober Glory Showcase 🎄
-Sober Glory wins on his chasing debut 🎄🏇 Red and purple quarters, a red cap and his name on a showcase bauble. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk.
+Sober Glory beats Old Park Star on his chasing debut 🎄🏇 Red and purple quarters, a red cap and his name on a showcase bauble. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk.
 
 Which name would you have on yours? 👇
 
