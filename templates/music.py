@@ -1,8 +1,8 @@
 """Subtle Christmas backing tracks, 10.8 seconds each, soft and low. Copyright free: every note is synthesised here in code
 from carols that are in the public domain (all written before 1900). No samples or recordings from anyone else.
 Run from a folder that has a music/ subfolder: python3 templates/music.py"""
-import numpy as np, wave, subprocess, imageio_ffmpeg
-SR = 44100; DUR = 10.8
+import os, numpy as np, wave, subprocess, imageio_ffmpeg
+SR = 44100; DUR = float(os.environ.get('ZANS_MUSIC_DUR', 10.8))
 def hz(n):  # note name like 'G4'
     names = {'C':-9,'C#':-8,'D':-7,'D#':-6,'E':-5,'F':-4,'F#':-3,'G':-2,'G#':-1,'A':0,'A#':1,'B':2}
     return 440*2**((names[n[:-1]] + 12*(int(n[-1])-4))/12)

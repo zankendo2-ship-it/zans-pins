@@ -1,0 +1,16 @@
+OK   zp_billy_1.mp3 | heard: Champion jockey Billy | wanted: Champion jockey Billy!
+OK   zp_billy_2.mp3 | heard: The youngest in over a hundred years | wanted: The youngest in over a hundred years.
+OK   zp_constitution-hill_1.mp3 | heard: Is this the most popular horse ever? | wanted: Is this the most popular horse ever?
+OK   zp_constitution-hill_2.mp3 | heard: pulling crowds wherever he goes | wanted: Pulling crowds wherever he goes.
+DIFF zp_constitution-hill_3.mp3 | heard: Come on, Connie. | wanted: Come on Conny!
+OK   zp_jon-bon_1.mp3 | heard: Britain's best chaser | wanted: Britain's best chaser?
+DIFF zp_jon-bon_2.mp3 | heard: Three slower chases in a row. | wanted: Three Shloer Chases in a row.
+OK   zp_lossiemouth_1.mp3 | heard: Is Lossiemouth the best jumps mare ever? | wanted: Is Lossiemouth the best jumps mare ever?
+OK   zp_lossiemouth_2.mp3 | heard: Four Cheltenham festivals, and never beaten there | wanted: Four Cheltenham Festivals, and never beaten there.
+OK   zp_no-drama-this-end_1.mp3 | heard: The next big chaser | wanted: The next big chaser?
+DIFF zp_no-drama-this-end_2.mp3 | heard: No drama this end, a Grade One hurdler now over fences. | wanted: No Drama This End. A Grade 1 hurdler, now over fences.
+OK   zp_ombudsman_1.mp3 | heard: Ombudsman retiring? | wanted: Ombudsman retiring?
+OK   zp_ombudsman_2.mp3 | heard: Put him on your tree this Christmas | wanted: Put him on your tree this Christmas.
+OK   zp_santa_short.mp3 | heard: Ho ho ho, Merry Christmas from Zan's Racing. | wanted: Ho, ho, ho! Merry Christmas from ZANS Racing!
+OK   zp_silks-bauble_1.mp3 | heard: Their silks on the tree | wanted: Their silks, on the tree.
+DIFF zp_silks-bauble_2.mp3 | heard: Any colors, any name | wanted: Any colours, any name.

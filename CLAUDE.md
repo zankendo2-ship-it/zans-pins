@@ -184,7 +184,7 @@ Every bauble, mug and gift post matches `reference/locked-style/ombudsman-slide1
 
 **Slide 2 (4.0s to 6.5s):** exactly the `ombudsman-slide2.png` layout: metallic striping, the "ZANS · HORSE RACING GIFTS" header with the season pill, a small eyebrow, the bold uppercase hook, one sub-line, a short metal rule and the cream "TELL US IN THE COMMENTS" box with the question. Colour-matched to the silks (the bauble's main colour: Billy yellow, white Conny bauble white) or ZANS racing green #1F5A3D, with dark text on light colours.
 
-**Slide 3 (6.5s to 10.8s, long enough that the Santa line is never rushed; Alex, 18 Nov 2026):** exactly the `ombudsman-slide3.png` layout with falling snow: the cream-framed Santa-hat ZANS logo card, bold "WISHING YOU A MERRY CHRISTMAS", the dark BUY NOW pill and WWW.ZANSHORSERACING.CO.UK.
+**Slide 3 (from 6.5s, or later if the woman's lines need longer, until Santa has finished; about 12.5 to 13.5 seconds in all. Voices are never sped up or cut to fit: the video is made as long as they need; Alex, 18 Nov 2026):** exactly the `ombudsman-slide3.png` layout with falling snow: the cream-framed Santa-hat ZANS logo card, bold "WISHING YOU A MERRY CHRISTMAS", the dark BUY NOW pill and WWW.ZANSHORSERACING.CO.UK.
 
 **Audio (official ZANS brand voices, Alex, 18 Nov 2026; copied EXACTLY, never changed):**
 - Engine: Google Gemini text-to-speech through the Gemini API, model `gemini-2.5-pro-preview-tts`. Settings: responseModalities ["AUDIO"], speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName = the voice below. Nothing else.
@@ -194,6 +194,7 @@ Every bauble, mug and gift post matches `reference/locked-style/ombudsman-slide1
 - Never add anything to the STYLE text (no "excited", "energetic", "presenter", "buzzing"). New words and lines are fine. One short spoken line per clip.
 - Transcribe every clip and check it says only its line (Gemini sometimes reads its instructions aloud).
 - **Never swap in another voice or a free voice** (no edge-tts, Libby, Sonia, Ryan, Piper or ElevenLabs; Alex rejected them). If Gemini says out of credit or billing, stop and ask Alex.
+- How we run it here: `python3 templates/voice/gemini_tts.py <clips_dir> templates/voice/<script>.json` makes the clips (the key is a network secret on the zans-pins environment for generativelanguage.googleapis.com, header x-goog-api-key; it is never in this repo), then `templates/voice/mix.py` lays them over the music (music at 0.30 of its level, whole mix at -14 LUFS) and prints the slide-3 start and total length for `video.py` (`ZANS_P2`, `ZANS_TOTAL`). Every clip is transcribed with a Gemini Flash model and compared with its line.
 - Source of truth: `video_media/BRAND_VOICE.md`, engine `video_media/gemini_voice.py` and workflow `.github/workflows/video-voice.yml` in the HORSE-RACING-EXTRACTION- repo, branch `claude/project-thread-40y0lj`. The key is that repo's secret GEMINI_API_KEY; never print or paste it. Our scripts are in `templates/voice/`.
 - The voice plays over **quiet, subtle background music** (about 10 dB under the voice), no sound effects, rotated so neighbouring posts don't share a track. Copyright free only: the tracks in `batch/2026-11-17/music/` are made note by note in `templates/music.py` from public-domain carols; make more the same way.
 

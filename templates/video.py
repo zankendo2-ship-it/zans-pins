@@ -7,7 +7,9 @@ Usage: python3 templates/video.py <cards_dir> <scene.png> <key> <cx> <cy> <snow|
 import os, sys, subprocess, numpy as np, imageio_ffmpeg
 from PIL import Image, ImageFilter
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, W, H = 30, 1080, 1920
-P1, P2, XF, TOTAL = 4.0, 6.5, 0.35, 10.8   # slide 3 runs 6.5s to 10.8s so the Santa line is never rushed (Alex, 18 Nov 2026)
+P1, XF = 4.0, 0.35
+P2 = float(os.environ.get('ZANS_P2', 6.5))        # slide 3 starts once the woman's lines have finished (never earlier than 6.5s)
+TOTAL = float(os.environ.get('ZANS_TOTAL', 10.8)) # runs until Santa has finished; voices are never sped up to fit
 ZOOM = float(os.environ.get('ZANS_ZOOM', 0.16))      # push-in amount; 0.16 = the locked reference
 KEEP = float(os.environ.get('ZANS_KEEP_R', 380))     # radius around the product the light shimmer never touches
 ease = lambda x: 0 if x <= 0 else 1 if x >= 1 else x*x*(3-2*x)
