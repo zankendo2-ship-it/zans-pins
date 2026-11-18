@@ -237,5 +237,19 @@
    "pattern": "sash",
    "cap": "#1B2A5C"
   }
+ },
+ "jonbon": {
+  "metal": "silver",
+  "colour": "#0E6B3B",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "Britain's best chaser?",
+  "sub": "Three Shloer Chases in a row.",
+  "question": "Which name would you have on yours?",
+  "silks": {
+   "body": "#0E6B3B",
+   "second": "#F5D130",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
  }
 }
