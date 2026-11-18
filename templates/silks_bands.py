@@ -11,6 +11,11 @@ def silks_band(w, h, s):
         n = 5
         for i in range(n):
             if i % 2: d.rectangle([0, round(i*H/n), w*k, round((i+1)*H/n)], fill=s['second'])
+    elif s['pattern'] == 'quartered':
+        n = 12
+        for i in range(n):
+            for j in range(2):
+                if (i + j) % 2: d.rectangle([round(i*w*k/n), round(j*H/2), round((i+1)*w*k/n), round((j+1)*H/2)], fill=s['second'])
     elif s['pattern'] in ('discs', 'stars'):
         n = 9; r = H*0.27
         for i in range(n):

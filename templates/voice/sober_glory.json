@@ -1,0 +1,18 @@
+{
+ "gemini": {
+  "voice": "Aoede",
+  "style": "a warm young woman from London with an everyday London accent, upbeat and conversational, not posh"
+ },
+ "lines": [
+  {
+   "post": "sober-glory",
+   "file": "zp_sober-glory_1.mp3",
+   "text": "Sober Glory wins!"
+  },
+  {
+   "post": "sober-glory",
+   "file": "zp_sober-glory_2.mp3",
+   "text": "What a brilliant chasing debut today!"
+  }
+ ]
+}

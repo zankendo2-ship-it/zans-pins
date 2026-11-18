@@ -118,5 +118,19 @@
    "pattern": "plain",
    "cap": "#000000"
   }
+ },
+ "sober-glory": {
+  "metal": "silver",
+  "colour": "#C81E2B",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "Sober Glory wins!",
+  "sub": "A brilliant chasing debut today.",
+  "question": "Which name would you have on yours?",
+  "silks": {
+   "body": "#D0202E",
+   "second": "#5B2A86",
+   "pattern": "quartered",
+   "cap": "#D0202E"
+  }
  }
 }
