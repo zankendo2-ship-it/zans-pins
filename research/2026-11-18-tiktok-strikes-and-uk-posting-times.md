@@ -1,6 +1,21 @@
 # TikTok strikes and UK posting times (researched 18 Nov 2026)
 
-## 1. Why TikTok gave the strikes (6 and 13 Nov 2026)
+## 0. CONFIRMED from Alex's TikTok app (18 Nov 2026, Inbox > System notifications > Account updates)
+
+TikTok removed two videos for "violating our Community Guidelines":
+
+| Posted | Video (matched in Metricool by the posting time) | What was in it |
+|---|---|---|
+| 31 Oct 2026, 14:15 | "Breeders' Cup Pro - look inside" | Opened with "GET YOURS HERE", sold the Pro guide, said "how often each price wins" and "every 11.00+ winner", ended "18+ Have fun and always gamble responsibly", used #fyp #foryou |
+| 13 Nov 2026, 11:45 | "Race day: can Jonbon win a third Shloer Chase?" | "It's race day", the race time (2:20), win records ("won 17 of 24"), "Can Jonbon win" |
+
+- The appeal on the 31 Oct video was refused on 3 Nov.
+- Alex completed TikTok's training about 14 Nov. TikTok's notice: "Your warning status will be removed in 14 days or on 2026.11.27, as long as there are no new violations during this period."
+- So **nothing risky may go to TikTok before 27 Nov 2026**, and the Strike Shield stays for good after that.
+- TikTok does not state the exact rule in the notice. Both videos match its ban on marketing gambling and on "gambling information".
+- Other TikTok posts of the same kind were not removed (the 3 Nov signals post, "Cheltenham today" at 12:45 on 13 Nov), so TikTok does not catch everything. That is not a reason to risk one.
+
+## 1. Background research (written before the app check)
 
 What we can and can't know: TikTok only shows the exact video behind each strike inside the app (Settings > Support > Safety Center > Account status). From outside we can only match its rules against what the account posted.
 

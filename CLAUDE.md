@@ -107,7 +107,7 @@ The TikTok account has two strikes. A third could lose the account, so this rule
 - **NEVER schedule to TikTok:** any racecourse guide, draw bias, going stats or betting-adjacent post. That includes race previews, race-day content, form, records, picks, the longshot series and its teasers.
 - **TikTok may ONLY receive 100% safe physical gift and merch posts:** personalised silks baubles, gifts for racing fans, Christmas countdowns.
 - **Zero mention of odds, stalls or winning** in the video, the on-screen text, the caption, the title or the hashtags. No prices either.
-- **Why the strikes happened (researched 18 Nov 2026):** TikTok bans content that markets gambling and restricts "gambling information" (stats or insights meant to improve betting). Around the strike dates the account posted selections ("TODAY'S TOP 3 ZANS SIGNALS", 3 Nov), Breeders' Cup guide posts carrying an 18+ gamble-responsibly line, race previews and "Cheltenham today" race-day posts. Strikes expire after 90 days (about 4 Feb and 11 Feb 2027). Full notes in `research/2026-11-18-tiktok-strikes-and-uk-posting-times.md`.
+- **Why the strikes happened (confirmed in Alex's TikTok app, 18 Nov 2026):** TikTok removed two videos. (1) 31 Oct, 14:15: "Breeders' Cup Pro - look inside", which sold the guide, said "how often each price wins" and carried the 18+ gamble-responsibly line (appeal refused 3 Nov). (2) 13 Nov, 11:45: "Race day: can Jonbon win a third Shloer Chase?", with the race time and win records. Alex completed TikTok's training; its notice says the warning status is removed on **27 Nov 2026 as long as there are no new violations**. Full notes in `research/2026-11-18-tiktok-strikes-and-uk-posting-times.md`.
 - **Showcase baubles whose hook is about a real horse's results or news stay off TikTok.** TikTok gets pure gift hooks only.
 - **Never put "18+" or "gamble responsibly" on a TikTok post.**
 - Before any TikTok booking: scan the image text and caption by script for odds, stalls, draw, going, winner, winning, win, bet, price, guide and "£"; run the independent check; get Alex's yes for that exact post.
@@ -417,7 +417,7 @@ Post each network at its slot, UK time, every day:
 - **Every video is also a YouTube Short and a Pinterest video pin** (with its own Short title and pin title/description).
 - **LinkedIn:** lowest priority; use the corporate-gift angle (syndicates, owners' clubs, client gifts).
 
-### TikTok (the account has two strikes, from 6 and 13 Nov)
+### TikTok (two videos removed: posted 31 Oct and 13 Nov)
 - **Banned on TikTok:** race-day or "today" content, race times, "can X win", win records near a race, odds, price, bet, gamble, value, 18+, tips, selections.
 - Allowed: physical gift and merch posts only (see the TikTok Strike Shield in Section 2). History, horse and racing-news videos no longer go to TikTok.
 - Commercial-content disclosure on merch posts only. Shop wording only in the house lines at the end.
