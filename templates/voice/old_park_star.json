@@ -1,0 +1,11 @@
+{
+ "gemini": {"voice": "Aoede", "style": "a warm young woman from London with an everyday London accent, upbeat and conversational, not posh"},
+ "lines": [
+  {"post": "old-park-star", "file": "ops_1.mp3", "text": "Old Park Star goes chasing today!"},
+  {"post": "old-park-star", "file": "ops_2.mp3", "text": "The Supreme winner has his first run over fences, at Ffos Las, at one forty-eight."},
+  {"post": "old-park-star", "file": "ops_3.mp3", "text": "Nico de Boinville rides, and his old rival Sober Glory lines up again."},
+  {"post": "old-park-star", "file": "ops_4.mp3", "text": "Will he be even better over fences?"},
+  {"post": "old-park-star", "file": "ops_5.mp3", "text": "Tell us in the comments!"},
+  {"post": "old-park-star", "file": "ops_6.mp3", "text": "Up the Old Park Star!"}
+ ]
+}
