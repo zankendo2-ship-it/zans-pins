@@ -107,6 +107,9 @@ The TikTok account has two strikes. A third could lose the account, so this rule
 - **NEVER schedule to TikTok:** any racecourse guide, draw bias, going stats or betting-adjacent post. That includes race previews, race-day content, form, records, picks, the longshot series and its teasers.
 - **TikTok may ONLY receive 100% safe physical gift and merch posts:** personalised silks baubles, gifts for racing fans, Christmas countdowns.
 - **Zero mention of odds, stalls or winning** in the video, the on-screen text, the caption, the title or the hashtags. No prices either.
+- **Why the strikes happened (researched 18 Nov 2026):** TikTok bans content that markets gambling and restricts "gambling information" (stats or insights meant to improve betting). Around the strike dates the account posted selections ("TODAY'S TOP 3 ZANS SIGNALS", 3 Nov), Breeders' Cup guide posts carrying an 18+ gamble-responsibly line, race previews and "Cheltenham today" race-day posts. Strikes expire after 90 days (about 4 Feb and 11 Feb 2027). Full notes in `research/2026-11-18-tiktok-strikes-and-uk-posting-times.md`.
+- **Showcase baubles whose hook is about a real horse's results or news stay off TikTok.** TikTok gets pure gift hooks only.
+- **Never put "18+" or "gamble responsibly" on a TikTok post.**
 - Before any TikTok booking: scan the image text and caption by script for odds, stalls, draw, going, winner, winning, win, bet, price, guide and "£"; run the independent check; get Alex's yes for that exact post.
 - If there is any doubt whether a post is safe, it does not go to TikTok.
 
@@ -380,12 +383,20 @@ Bet trackers are built but not listed yet (planned launch ~£7.99). Etsy search 
 - **Never skip a day:** every network has at least one approved, non-draft post every day. If a gap appears, fill it from allowed paused topics.
 - Post at the same time each day for each series. Longshot posts go out 1 hour before the first race.
 
-### Best UK times
-- TikTok: Thursday is best (16:00 to midnight); Wednesday 15:00-23:00 and Monday 16:00 to midnight are also good. Saturday is weakest.
-- Instagram: Monday-Thursday 17:00-21:00.
-- Facebook: Tuesday/Wednesday 12:00-20:00, Thursday 12:00-14:00 and 20:00.
-- X: Tuesday-Thursday 12:00-18:00, and around the big races on race days.
-- Pinterest: Tuesday-Thursday 10:00-13:00. Pins take 6-12 weeks to reach full reach, so post festival pins 6-12 weeks ahead.
+### Best UK times (researched 18 Nov 2026: Metricool data for our brand + Sprout Social's UK study; see `research/2026-11-18-tiktok-strikes-and-uk-posting-times.md`)
+Post each network at its slot, UK time, every day:
+| Network | Daily slot | Best days |
+|---|---|---|
+| Pinterest | 10:30 | Tue to Thu. Pins take 6-12 weeks to reach full reach, so post festival pins 6-12 weeks ahead |
+| LinkedIn | 11:00 | Weekdays, Thursday best |
+| Facebook | 12:00 | Mon to Wed |
+| YouTube Shorts | 16:00 | Wed and Thu |
+| X | 17:00 | Wed, and around the big races on race days |
+| Instagram | 18:00 | Mon to Thu |
+| TikTok | 18:00 | Thu best, then Wed and Mon. Saturday is weakest |
+
+- **Big race days: superstar-clash videos go out at 12:00 midday** on every network except TikTok (Alex, 18 Nov 2026). That day's other Facebook post moves to 14:00 so the two are at least an hour apart.
+- Re-pull the Metricool best-time data every month and adjust the slots if they move.
 
 ### Caption rules (every network)
 1. **Line 1 = hook + the words people search for**, and it matches the picture. Never open with a link, a price or "GET YOURS".
