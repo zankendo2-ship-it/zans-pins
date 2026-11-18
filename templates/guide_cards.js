@@ -97,6 +97,11 @@ function body(P, s) {
   if (s.type === 'stat') mid = `<div style="flex:1;display:flex;flex-direction:column;justify-content:center;border-top:3px solid #1C1C1C;margin-top:14px"><div class="huge">${esc(s.figure)}</div><div class="hsub">${esc(s.figsub)}</div><div class="dots">${Array.from({ length: s.dots[0] }, (_, i) => `<i class="${s.dots[1].includes(i) ? 'on' : ''}"></i>`).join('')}</div>${s.lines.map(l => `<div class="ln">${esc(l)}</div>`).join('')}</div>`;
   return head + `<div class="panel">${title}${mid}</div><div class="strip">${s.strip}</div><div class="src">${esc(P.source)}</div>` + foot(P);
 }
+// Silks bands for single-horse posts (as on the bauble hook cards): cap colour under the top metal strip, silks with their pattern above the bottom one.
+function bands(P) { if (!P.silks) return ''; const S = P.silks;
+  const pat = S.pattern === 'spots' ? `background:${S.body};background-image:radial-gradient(circle,${S.second} 0 15px,transparent 16px);background-size:74px 54px;background-position:10px 0`
+    : S.pattern === 'hoops' ? `background:repeating-linear-gradient(90deg,${S.body} 0 60px,${S.second} 60px 120px)` : `background:${S.body}`;
+  return `<div style="position:absolute;left:0;right:0;top:16px;height:54px;background:${S.cap};border-bottom:3px solid #1C1C1C"></div><div style="position:absolute;left:0;right:0;bottom:16px;height:54px;${pat};border-top:3px solid #1C1C1C"></div>`; }
 (async () => {
   const out = process.argv[2] || 'out'; fs.mkdirSync(out, { recursive: true });
   const posts = JSON.parse(fs.readFileSync(path.join(T, 'guide_posts.json'), 'utf8')); const only = process.argv.slice(3);
@@ -104,7 +109,7 @@ function body(P, s) {
   for (const [key, P] of Object.entries(posts)) { if (only.length && !only.includes(key)) continue;
     const ON = lum(P.colour) > 0.6 ? '#1C1C1C' : '#FFFFFF';
     for (let i = 0; i < P.slides.length; i++) {
-      const html = `<html><head><meta charset="utf-8"><style>${css(P.colour, ON, P.text || P.colour)}</style></head><body><div class="metal" style="top:0"></div><div class="wrap">${body(P, P.slides[i])}</div><div class="metal" style="bottom:0"></div></body></html>`;
+      const html = `<html><head><meta charset="utf-8"><style>${css(P.colour, ON, P.text || P.colour)}</style></head><body><div class="metal" style="top:0"></div>${bands(P)}<div class="wrap" style="${P.silks ? 'top:86px;bottom:86px' : ''}">${body(P, P.slides[i])}</div><div class="metal" style="bottom:0"></div></body></html>`;
       await pg.setContent(html); await pg.evaluate(() => document.fonts.ready);
       const over = await pg.evaluate(() => { const w = document.querySelector('.wrap'); return w.scrollHeight - w.clientHeight; });
       const f = path.join(out, `${key}-${i + 1}.png`); await pg.screenshot({ path: f }); console.log(f, over > 0 ? `OVERFLOW ${over}px` : 'ok');

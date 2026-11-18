@@ -189,8 +189,8 @@
   "courseSize": 84,
   "flag": false,
   "code": "Ffos Las · beginners' chase",
-  "colour": "#00BFB3",
-  "text": "#008C84",
+  "colour": "#00A651",
+  "text": "#008A43",
   "tagline": "Racing today: Wednesday 18 November",
   "footer": "Up the Old Park Star!",
   "source": "Runners and time checked 18 Nov 2026. Check the racecard before the off.",
@@ -264,6 +264,12 @@
     "big": "Old Park Star goes chasing today",
     "question": "Will Old Park Star be even better over fences?"
    }
-  ]
+  ],
+  "silks": {
+   "body": "#00A651",
+   "second": "#1F3FBF",
+   "pattern": "spots",
+   "cap": "#00A651"
+  }
  }
 }
