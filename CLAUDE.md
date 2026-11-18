@@ -184,13 +184,15 @@ Every bauble, mug and gift post matches `reference/locked-style/ombudsman-slide1
 
 **Slide 2 (4.0s to 6.5s):** exactly the `ombudsman-slide2.png` layout: metallic striping, the "ZANS · HORSE RACING GIFTS" header with the season pill, a small eyebrow, the bold uppercase hook, one sub-line, a short metal rule and the cream "TELL US IN THE COMMENTS" box with the question. Colour-matched to the silks (the bauble's main colour: Billy yellow, white Conny bauble white) or ZANS racing green #1F5A3D, with dark text on light colours.
 
-**Slide 3 (from 6.5s, or later if the woman's lines need longer, until Santa has finished; about 12.5 to 13.5 seconds in all. Voices are never sped up or cut to fit: the video is made as long as they need; Alex, 18 Nov 2026):** exactly the `ombudsman-slide3.png` layout with falling snow: the cream-framed Santa-hat ZANS logo card, bold "WISHING YOU A MERRY CHRISTMAS", the dark BUY NOW pill and WWW.ZANSHORSERACING.CO.UK.
+**Slide 3 (from 6.5s, or later if the woman's lines need longer, until Santa has finished; about 15 to 17.5 seconds in all. Voices are never sped up or cut to fit: the video is made as long as they need; Alex, 18 Nov 2026):** exactly the `ombudsman-slide3.png` layout with falling snow: the cream-framed Santa-hat ZANS logo card, bold "WISHING YOU A MERRY CHRISTMAS", the dark BUY NOW pill and WWW.ZANSHORSERACING.CO.UK.
 
 **Audio (official ZANS brand voices, Alex, 18 Nov 2026; copied EXACTLY, never changed):**
 - Engine: Google Gemini text-to-speech through the Gemini API, model `gemini-2.5-pro-preview-tts`. Settings: responseModalities ["AUDIO"], speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName = the voice below. Nothing else.
 - Prompt for every line, word for word: `Say ONLY the words between the <line> tags, once, then stop. Voice: {STYLE}. Speak naturally, with normal pauses, not like a robot or an advert.` then on a new line `<line>{LINE}</line>`.
 - **Voice 1, the London woman (every normal ZANS video, slides 1 and 2):** voiceName `Aoede`. STYLE: `a warm young woman from London with an everyday London accent, upbeat and conversational, not posh`
 - **Voice 2, the ZANS Santa (Christmas posts only, slide 3):** voiceName `Algenib`. STYLE: `a jolly, warm, deep-voiced older British Father Christmas, kind and twinkly, unhurried, with a hearty belly laugh on the ho ho ho`
+- **On the middle scene the woman always ends with: "Which name would you have on yours?" then "Tell us in the comments!"** (Alex, 18 Nov 2026; clips `zp_ask_1.mp3`, `zp_ask_2.mp3` in `batch/2026-11-18/voice-clips/`).
+- **The Santa clip is "Santa A"** (Alex's pick, 18 Nov 2026): the first sentence of his approved sample `video_media/voice/santa_algenib.mp3`, "Ho ho ho! Merry Christmas from all of us at ZANS Racing!" (6.3s), saved as `batch/2026-11-18/voice-clips/zp_santa_a.mp3`. Re-use that clip; don't re-voice it.
 - Never add anything to the STYLE text (no "excited", "energetic", "presenter", "buzzing"). New words and lines are fine. One short spoken line per clip.
 - Transcribe every clip and check it says only its line (Gemini sometimes reads its instructions aloud).
 - **Never swap in another voice or a free voice** (no edge-tts, Libby, Sonia, Ryan, Piper or ElevenLabs; Alex rejected them). If Gemini says out of credit or billing, stop and ask Alex.

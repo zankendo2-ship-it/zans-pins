@@ -14,3 +14,5 @@ OK   zp_ombudsman_2.mp3 | heard: Put him on your tree this Christmas | wanted: P
 OK   zp_santa_short.mp3 | heard: Ho ho ho, Merry Christmas from Zan's Racing. | wanted: Ho, ho, ho! Merry Christmas from ZANS Racing!
 OK   zp_silks-bauble_1.mp3 | heard: Their silks on the tree | wanted: Their silks, on the tree.
 DIFF zp_silks-bauble_2.mp3 | heard: Any colors, any name | wanted: Any colours, any name.
+OK   zp_ask_1.mp3 | heard: Which name would you have on yours? | wanted: Which name would you have on yours?
+OK   zp_ask_2.mp3 | heard: Tell us in the comments | wanted: Tell us in the comments!

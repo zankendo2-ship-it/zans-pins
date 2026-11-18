@@ -78,6 +78,16 @@
    "post": "silks-bauble",
    "file": "zp_silks-bauble_2.mp3",
    "text": "Any colours, any name."
+  },
+  {
+   "post": "all",
+   "file": "zp_ask_1.mp3",
+   "text": "Which name would you have on yours?"
+  },
+  {
+   "post": "all",
+   "file": "zp_ask_2.mp3",
+   "text": "Tell us in the comments!"
   }
  ]
 }
