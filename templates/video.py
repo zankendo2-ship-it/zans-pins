@@ -1,13 +1,13 @@
 """Locked ZANS 3-part video (Alex, 17 Nov 2026), 9 seconds at 1080x1920:
   0.0-4.0s  slide 1: slow push-in on the product photo, thin metal strip top and bottom only, no text (as the locked reference)
   4.0-6.5s  slide 2: the hook card (carousel_hook.html), gentle snow
-  6.5-9.5s  slide 3: the end-card (carousel_endcard.html), falling snow
+  6.5-10.8s slide 3: the end-card (carousel_endcard.html), falling snow
 The footer sits in the same place in all three clips, so nothing at the bottom ever moves.
 Usage: python3 templates/video.py <cards_dir> <scene.png> <key> <cx> <cy> <snow|shimmer> <out_dir> [music.m4a]"""
 import os, sys, subprocess, numpy as np, imageio_ffmpeg
 from PIL import Image, ImageFilter
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, W, H = 30, 1080, 1920
-P1, P2, XF, TOTAL = 4.0, 6.5, 0.35, 9.5   # slide 3 runs 6.5s to 9.5s (Alex, 17 Nov 2026)
+P1, P2, XF, TOTAL = 4.0, 6.5, 0.35, 10.8   # slide 3 runs 6.5s to 10.8s so the Santa line is never rushed (Alex, 18 Nov 2026)
 ZOOM = float(os.environ.get('ZANS_ZOOM', 0.16))      # push-in amount; 0.16 = the locked reference
 KEEP = float(os.environ.get('ZANS_KEEP_R', 380))     # radius around the product the light shimmer never touches
 ease = lambda x: 0 if x <= 0 else 1 if x >= 1 else x*x*(3-2*x)

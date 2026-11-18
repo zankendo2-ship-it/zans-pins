@@ -5,7 +5,13 @@
   "eyebrow": "Social showcase · any horse's name",
   "big": "Ombudsman retiring?",
   "sub": "Put him on your tree this Christmas.",
-  "question": "Which horse's name would you put on yours?"
+  "question": "Which horse's name would you put on yours?",
+  "silks": {
+   "body": "#1C4FA0",
+   "second": "#FFFFFF",
+   "pattern": "plain",
+   "cap": "#FFFFFF"
+  }
  },
  "lossiemouth": {
   "metal": "gold",
@@ -13,7 +19,13 @@
   "eyebrow": "Social showcase · any horse's name",
   "big": "Lossiemouth fans,",
   "sub": "green silks and pink spots.",
-  "question": "Would this go on your tree?"
+  "question": "Would this go on your tree?",
+  "silks": {
+   "body": "#6CC24A",
+   "second": "#F3B5C9",
+   "pattern": "discs",
+   "cap": "#F3B5C9"
+  }
  },
  "silks-bauble": {
   "metal": "gold",
@@ -21,7 +33,13 @@
   "eyebrow": "Personalised silks bauble",
   "big": "Their silks, on the tree",
   "sub": "Any colours, any name.",
-  "question": "Whose name would you hang on the tree?"
+  "question": "Whose name would you hang on the tree?",
+  "silks": {
+   "body": "#C8102E",
+   "second": "#FFFFFF",
+   "pattern": "stars",
+   "cap": "#0E6B3B"
+  }
  },
  "syndicate": {
   "metal": "gold",
@@ -37,7 +55,13 @@
   "eyebrow": "Social showcase · any horse's name",
   "big": "No drama this Christmas",
   "sub": "Navy and white hoops, red cap.",
-  "question": "Who's your favourite chaser this winter?"
+  "question": "Who's your favourite chaser this winter?",
+  "silks": {
+   "body": "#FFFFFF",
+   "second": "#1B2A5C",
+   "pattern": "hoops",
+   "cap": "#C8102E"
+  }
  },
  "jon-bon": {
   "metal": "silver",
@@ -45,7 +69,13 @@
   "eyebrow": "Social showcase · any horse's name",
   "big": "Green and yellow hoops",
   "sub": "White cap, any name.",
-  "question": "Best horse you've seen in hoops?"
+  "question": "Best horse you've seen in hoops?",
+  "silks": {
+   "body": "#0E6B3B",
+   "second": "#F5D130",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
  },
  "billy": {
   "metal": "gold",
@@ -53,7 +83,13 @@
   "eyebrow": "Personalised silks bauble",
   "big": "Billy's on the tree",
   "sub": "Your silks, any name.",
-  "question": "Whose name would go on yours?"
+  "question": "Whose name would go on yours?",
+  "silks": {
+   "body": "#F5D130",
+   "second": "#1C1C1C",
+   "pattern": "discs",
+   "cap": "#1C1C1C"
+  }
  },
  "constitution-hill-green": {
   "metal": "silver",
@@ -61,7 +97,13 @@
   "eyebrow": "Social showcase · any horse's name",
   "big": "Come on Conny!",
   "sub": "Racing green, silks and his name.",
-  "question": "What's your favourite Conny memory?"
+  "question": "What's your favourite Conny memory?",
+  "silks": {
+   "body": "#FFFFFF",
+   "second": "#1C1C1C",
+   "pattern": "plain",
+   "cap": "#000000"
+  }
  },
  "constitution-hill-white": {
   "metal": "gold",
@@ -69,6 +111,12 @@
   "eyebrow": "Social showcase · any horse's name",
   "big": "Conny on the tree",
   "sub": "White silks, black cap.",
-  "question": "Who's the best hurdler you've ever seen?"
+  "question": "Who's the best hurdler you've ever seen?",
+  "silks": {
+   "body": "#FFFFFF",
+   "second": "#1C1C1C",
+   "pattern": "plain",
+   "cap": "#000000"
+  }
  }
 }
