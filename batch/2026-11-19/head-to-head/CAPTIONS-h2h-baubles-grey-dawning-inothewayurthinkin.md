@@ -1,4 +1,4 @@
-# Head to head baubles: Grey Dawning v Inothewayurthinkin (made 18 Nov 2026). Social showcase only: sells "design your own", never these two mugs. Facts and silks: research/2026-11-18-weekend-clashes.md. BOOK ONLY AFTER both are declared, and re-check that morning. Baubles are FLUX scenes with the exact designer artwork printed on (templates/mapart2.py).
+# Head to head baubles: Grey Dawning v Inothewayurthinkin (made 18 Nov 2026). Social showcase only: sells "design your own", never these two baubles. Facts and silks: research/2026-11-18-weekend-clashes.md. BOOK ONLY AFTER both are declared, and re-check that morning. Baubles are FLUX scenes with the exact designer artwork printed on (templates/mapart2.py).
 Alt text: Two personalised racing silks Christmas baubles hanging from a frosty pine branch above a snowy racecourse: red with the name Grey Dawning, and green and yellow hoops with the name Inothewayurthinkin
 
 ## Instagram
@@ -16,7 +16,7 @@ Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for 
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #personalisedmug #racingsilks #horseracing #christmasgifts
+#horseracinggifts #personalisedbauble #racingsilks #horseracing #christmasgifts
 
 Link in bio 👉 www.zanshorseracing.co.uk
 
@@ -29,7 +29,7 @@ Which one are you cheering? 👇
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #personalisedmug #horseracing
+#horseracinggifts #personalisedbauble #horseracing
 
 First comment: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/
 
@@ -47,7 +47,7 @@ Which one are you cheering? 👇
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #personalisedmug #horseracing
+#horseracinggifts #personalisedbauble #horseracing
 
 ## YouTube
 Title: Horse Racing Christmas Baubles: Grey Dawning or Inothewayurthinkin? 🎄
@@ -74,6 +74,6 @@ Which one are you cheering? 👇
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #personalisedmug #racingsilks #horseracing #christmasgifts
+#horseracinggifts #personalisedbauble #racingsilks #horseracing #christmasgifts
 
 Link in bio 👉 www.zanshorseracing.co.uk

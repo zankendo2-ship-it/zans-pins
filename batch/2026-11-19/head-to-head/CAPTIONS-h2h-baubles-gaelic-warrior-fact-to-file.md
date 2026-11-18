@@ -1,4 +1,4 @@
-# Head to head baubles: Gaelic Warrior v Fact To File (made 18 Nov 2026). Social showcase only: sells "design your own", never these two mugs. Facts and silks: research/2026-11-18-weekend-clashes.md. BOOK ONLY AFTER both are declared, and re-check that morning. Baubles are FLUX scenes with the exact designer artwork printed on (templates/mapart2.py).
+# Head to head baubles: Gaelic Warrior v Fact To File (made 18 Nov 2026). Social showcase only: sells "design your own", never these two baubles. Facts and silks: research/2026-11-18-weekend-clashes.md. BOOK ONLY AFTER both are declared, and re-check that morning. Baubles are FLUX scenes with the exact designer artwork printed on (templates/mapart2.py).
 Alt text: Two personalised racing silks Christmas baubles hanging on a lit Christmas tree: pink with light green spots and the name Gaelic Warrior, and green and yellow hoops with the name Fact To File
 
 ## Instagram
@@ -16,7 +16,7 @@ Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for 
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #personalisedmug #racingsilks #horseracing #christmasgifts
+#horseracinggifts #personalisedbauble #racingsilks #horseracing #christmasgifts
 
 Link in bio 👉 www.zanshorseracing.co.uk
 
@@ -29,7 +29,7 @@ Which one are you cheering? 👇
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #personalisedmug #horseracing
+#horseracinggifts #personalisedbauble #horseracing
 
 First comment: Design yours: https://www.zanshorseracing.co.uk/bauble-designer/
 
@@ -47,7 +47,7 @@ Which one are you cheering? 👇
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #personalisedmug #horseracing
+#horseracinggifts #personalisedbauble #horseracing
 
 ## YouTube
 Title: Horse Racing Christmas Baubles: Gaelic Warrior or Fact To File? 🎄
@@ -74,6 +74,6 @@ Which one are you cheering? 👇
 
 Wishing you a Merry Christmas 🎅
 
-#horseracinggifts #personalisedmug #racingsilks #horseracing #christmasgifts
+#horseracinggifts #personalisedbauble #racingsilks #horseracing #christmasgifts
 
 Link in bio 👉 www.zanshorseracing.co.uk
