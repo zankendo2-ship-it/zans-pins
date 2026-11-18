@@ -29,7 +29,18 @@
       "mcp__HUGGING__gr1_flux_1_krea_dev_infer",
       "SendUserFile",
       "WebSearch",
-      "WebFetch"
+      "WebFetch",
+      "Bash",
+      "Glob",
+      "Grep",
+      "Agent",
+      "Artifact",
+      "ToolSearch",
+      "Skill",
+      "mcp__Metricool_Social_Media_Management",
+      "mcp__HUGGING",
+      "mcp__claude-code-remote__send_later",
+      "mcp__claude-code-remote__read_documentation"
     ]
   }
 }
