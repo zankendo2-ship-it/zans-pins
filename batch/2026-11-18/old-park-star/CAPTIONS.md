@@ -10,8 +10,6 @@ Send this to an Old Park Star fan.
 
 Will Old Park Star be even better over fences? 👇
 
-Up the Old Park Star!
-
 #OldParkStar #horseracing #jumpracing #nationalhunt #FfosLas
 
 Link in bio 👉 www.zanshorseracing.co.uk
@@ -23,9 +21,7 @@ Nico de Boinville rides, and Sober Glory, the horse he beat by a length and a ha
 
 Will Old Park Star be even better over fences? 👇
 
-Up the Old Park Star!
-
 #OldParkStar #horseracing #jumpracing
 
 ## X
-Old Park Star goes chasing today 🏇 The Supreme winner has his first run over fences at Ffos Las (13:48), with Sober Glory against him again. Will he be even better over fences? Up the Old Park Star! #OldParkStar #HorseRacing
+Old Park Star goes chasing today 🏇 The Supreme winner has his first run over fences at Ffos Las (13:48), with Sober Glory against him again. Will he be even better over fences? #OldParkStar #HorseRacing
