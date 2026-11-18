@@ -92,6 +92,7 @@ No passwords, API keys, connector IDs, chat/thread IDs or personal email address
 - It is never listed, pictured or offered as a pre-made product on Etsy or the website, and the caption always sells "design your own with any horse's name", not that horse's bauble.
 - Never name the owner, trainer's yard colours or the silks' owner in the image, caption, alt text or hashtags. Never Juddmonte colours. No claim of any link with the horse or its connections.
 - Any news line about the horse (retirement, next run) is checked in 2 sources on the day of booking.
+- **Check the horse is alive and well BEFORE suggesting or making anything** (Alex, 18 Nov 2026, after Sir Gino was wrongly suggested): look up each horse's latest news in 2 sources first. **A horse that has died is never used on a bauble, gift or sales post**, and is never suggested for one. If a horse that has died is ever mentioned, it is with respect, as a tribute only, with nothing sold beside it, and only if Alex asks for it.
 - Every other rule above still applies to everything else: no famous horse names on products or Etsy.
 
 ### Gambling advertising (ASA/CAP applies even to guides)
