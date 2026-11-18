@@ -208,9 +208,10 @@ Every bauble, mug and gift post matches `reference/locked-style/ombudsman-slide1
 **Audio (official ZANS brand voices, Alex, 18 Nov 2026; copied EXACTLY, never changed):**
 - Engine: Google Gemini text-to-speech through the Gemini API, model `gemini-2.5-pro-preview-tts`. Settings: responseModalities ["AUDIO"], speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName = the voice below. Nothing else.
 - Prompt for every line, word for word: `Say ONLY the words between the <line> tags, once, then stop. Voice: {STYLE}. Speak naturally, with normal pauses, not like a robot or an advert.` then on a new line `<line>{LINE}</line>`.
-- **Voice 1, the London woman (every normal ZANS video, slides 1 and 2):** voiceName `Aoede`. STYLE: `a warm young woman from London with an everyday London accent, upbeat and conversational, not posh`
+- **Voice 1, the London woman (every normal ZANS video, slides 1 and 2):** voiceName `Aoede`. STYLE: `a warm young woman from London with a natural everyday London accent who softens her t sounds the way Londoners do, like a friendly local chatting to a mate, upbeat and conversational, not posh`
+- The London woman's STYLE above was chosen by Alex on 18 Nov 2026 (sample 13 of the accent samples in `batch/2026-11-18/voice-accent-samples/`). It replaces the earlier plain "everyday London accent" wording for every new clip. Clips made before then are not re-used in new videos.
 - **Voice 2, the ZANS Santa (Christmas posts only, slide 3):** voiceName `Algenib`. STYLE: `a jolly, warm, deep-voiced older British Father Christmas, kind and twinkly, unhurried, with a hearty belly laugh on the ho ho ho`
-- **On the middle scene the woman always ends with: "Which name would you have on yours?" then "Tell us in the comments!"** The cream question box on the card reads the same: "Which name would you have on yours?" (Alex, 18 Nov 2026; clips `zp_ask_1.mp3`, `zp_ask_2.mp3` in `batch/2026-11-18/voice-clips/`).
+- **On the middle scene the woman always ends with: "Which name would you have on yours?" then "Tell us in the comments!"** The cream question box on the card reads the same: "Which name would you have on yours?" (Alex, 18 Nov 2026; clips `zp_ask_1.mp3`, `zp_ask_2.mp3` in `templates/voice/clips/`, re-voiced in the new brand voice on 18 Nov 2026; script `templates/voice/ask.json`).
 - **The Santa clip is "Santa A"** (Alex's pick, 18 Nov 2026): the first sentence of his approved sample `video_media/voice/santa_algenib.mp3`, "Ho ho ho! Merry Christmas from all of us at ZANS Racing!" (6.3s), saved as `batch/2026-11-18/voice-clips/zp_santa_a.mp3`. Re-use that clip; don't re-voice it.
 - Never add anything to the STYLE text (no "excited", "energetic", "presenter", "buzzing"). New words and lines are fine. One short spoken line per clip.
 - Transcribe every clip and check it says only its line (Gemini sometimes reads its instructions aloud).
@@ -472,7 +473,7 @@ Post each network at its slot, UK time, every day:
 - An on-screen question that matches the caption question.
 - Approve scene by scene with Alex first.
 - **3 music options** (one trending), and Alex picks. Never sound effects. Rotate the approved Mixkit sounds. Christmas music only on Christmas posts (from 1 Dec).
-- Voiceover on race videos. **Our voice everywhere:** "voice 2" = the Gemini voice Aoede, style exactly "a warm young woman from London with an everyday London accent, upbeat and conversational, not posh". Never rewrite those instructions and never substitute another voice. If voice credit runs out, pause and ask Alex to top up.
+- Voiceover on race videos. **Our voice everywhere:** "voice 2" = the Gemini voice Aoede, style exactly "a warm young woman from London with a natural everyday London accent who softens her t sounds the way Londoners do, like a friendly local chatting to a mate, upbeat and conversational, not posh". Never rewrite those instructions and never substitute another voice. If voice credit runs out, pause and ask Alex to top up.
 - Make it professional, colourful, eye-catching and full of information (the Constitution River video is the benchmark). Alex finds plain static cards boring.
 - Never repeat an image within a horse video.
 - No count-up number animations.
