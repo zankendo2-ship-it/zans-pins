@@ -16,6 +16,9 @@ def silks_band(w, h, s):
         for i in range(n):
             for j in range(2):
                 if (i + j) % 2: d.rectangle([round(i*w*k/n), round(j*H/2), round((i+1)*w*k/n), round((j+1)*H/2)], fill=s['second'])
+    elif s['pattern'] == 'sash':
+        n = 3; sw = w*k/n
+        for i in range(-1, n+1): d.polygon([(i*sw, H), (i*sw+sw*0.42, H), (i*sw+sw*1.02, 0), (i*sw+sw*0.60, 0)], fill=s['second'])
     elif s['pattern'] in ('discs', 'stars'):
         n = 9; r = H*0.27
         for i in range(n):

@@ -216,5 +216,26 @@
    "pattern": "hoops",
    "cap": "#FFFFFF"
   }
+ },
+ "h2h-lossiemouth-william-munny": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Head to head · mugs in their colours",
+  "big": "Lossiemouth or<br>William Munny?",
+  "bigSize": 0.74,
+  "sub": "Two cracking sets of colours.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#F3B5C9",
+   "second": "#6CC24A",
+   "pattern": "discs",
+   "cap": "#F3B5C9"
+  },
+  "silks2": {
+   "body": "#F5D130",
+   "second": "#1B2A5C",
+   "pattern": "sash",
+   "cap": "#1B2A5C"
+  }
  }
 }
