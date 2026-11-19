@@ -3,23 +3,25 @@ and only the printed wrap is swapped for another design's flat artwork (from tem
 geometry of the mug in the photo (952x1183): the body is a cone between two ellipses."""
 import numpy as np, cv2
 REF = 'reference/real-mug-fact-to-file.jpg'
-CX = 534.5; TOP = (285.0, 261.0, 118.0); BOT = (742.0, 159.0, 81.0)      # (cy, rx, ry) of the rim and the base
+CX0, CX1 = 532.5, 507.5; CX = CX0                                          # the body's centre line leans a little in the photo: centre x at the rim and at the base
+TOP = (285.0, 263.5, 118.0); BOT = (742.0, 186.5, 81.0)                    # (cy, rx, ry) of the rim and the base
+def cxt(t): return CX0 + (CX1-CX0)*t
 def ell(t): return TOP[0] + (BOT[0]-TOP[0])*t, TOP[1] + (BOT[1]-TOP[1])*t, TOP[2] + (BOT[2]-TOP[2])*t
 def uv_map(h=1183, w=952):
     """for every pixel on the front of the body: t (0 rim .. 1 base) and u (angle, -pi/2 left edge .. +pi/2 right edge)."""
     ys, xs = np.mgrid[0:h, 0:w].astype(np.float32); lo = np.zeros((h, w), np.float32); hi = np.ones((h, w), np.float32)
     def front_y(t):
-        cy, rx, ry = ell(t); s = np.clip(1 - ((xs-CX)/rx)**2, 0, None); return cy + ry*np.sqrt(s), np.abs(xs-CX) <= rx
+        cy, rx, ry = ell(t); c = cxt(t); s = np.clip(1 - ((xs-c)/rx)**2, 0, None); return cy + ry*np.sqrt(s), np.abs(xs-c) <= rx
     y0, in0 = front_y(0.0); y1, in1 = front_y(1.0)
     for _ in range(26):
         mid = (lo+hi)/2; ym, _ = front_y(mid); go = ys > ym; lo = np.where(go, mid, lo); hi = np.where(go, hi, mid)
-    t = (lo+hi)/2; cy, rx, ry = ell(t); d = (xs-CX)/rx
+    t = (lo+hi)/2; cy, rx, ry = ell(t); d = (xs-cxt(t))/rx
     valid = (ys >= y0) & (ys <= y1 + 0.5) & (np.abs(d) < 0.995) & in0
     # pixels beside the base ellipse but inside the cone sides
     return t, np.arcsin(np.clip(d, -1, 1)), valid
-T_PTS = [0.0, 0.009, 0.182, 0.31, 0.43, 0.55, 0.65, 0.745, 0.827, 0.911, 0.979, 1.0]          # measured on the photo: where each hoop starts down the mug
+T_PTS = [0.0, 0.007, 0.182, 0.311, 0.434, 0.552, 0.654, 0.748, 0.831, 0.916, 0.984, 1.0]          # measured on the photo: where each hoop starts down the mug
 Y_PTS = [30, 38, 168, 262, 373, 486, 597, 710, 821, 934, 1045, 1080]                       # the same edges in the flat artwork (1125 rows)
-U0, X0, PX_PER_RAD, TEX_W = -0.936, 172.0, 436.0, 3015.0                                   # the name panel's left edge: angle on the photo, column in the artwork
+U0, X0, PX_PER_RAD, TEX_W = -0.867, 172.0, 473.0, 3015.0                                   # the name panel's left edge: angle on the photo, column in the artwork
 def tex_coords(t, u, mirror=False):
     """flat-artwork coordinates (0..1) for each body pixel. mirror = the other side of the handle (the cut-out is flipped left to right afterwards)."""
     ty = np.interp(t, T_PTS, Y_PTS)/1125.0; x = X0 + (u - U0)*PX_PER_RAD
@@ -32,7 +34,7 @@ def sample(flat, tx, ty):
 def body_mask(h=1183, w=952):
     ys, xs = np.mgrid[0:h, 0:w].astype(np.float32); m = np.zeros((h, w), bool)
     for t in np.linspace(0, 1, 500):
-        cy, rx, ry = ell(t); m |= ((xs-CX)/rx)**2 + ((ys-cy)/ry)**2 <= 1
+        cy, rx, ry = ell(t); m |= ((xs-cxt(t))/rx)**2 + ((ys-cy)/ry)**2 <= 1
     return m
 def cutout():
     """alpha for the whole real mug (body + handle, hole open), from the photo."""
@@ -46,8 +48,12 @@ def cutout():
     dark = cv2.morphologyEx((g < 100).astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15))).astype(bool)
     n, lab, st, _ = cv2.connectedComponentsWithStats((dark & left & ~body).astype(np.uint8)); hand = lab == (1 + np.argmax(st[1:, cv2.CC_STAT_AREA]))
     ring = cv2.morphologyEx((hand | hole).astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (31, 31))).astype(bool) & ~hole   # handle with its highlights
-    xs = np.mgrid[0:h, 0:w][1]; lugs = fg & left & ~hole & (xs > 262) & cv2.dilate(ring.astype(np.uint8), np.ones((41, 41), np.uint8)).astype(bool)        # white joins between handle and body
+    # the white joins between handle and body: whatever lies between the handle ring and the body, but never the open gap (smooth, no shards)
+    joined = cv2.morphologyEx((body | ring).astype(np.uint8), cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (47, 47))).astype(bool)
+    lugs = joined & ~cv2.dilate(hole.astype(np.uint8), cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))).astype(bool)
     m = (body | ring | lugs).astype(np.uint8)*255
+    m = cv2.morphologyEx(m, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9)))
+    m = (cv2.GaussianBlur(m, (0, 0), 3.0) > 127).astype(np.uint8)*255                         # round off any sharp corners in the outline
     return cv2.GaussianBlur(m, (0, 0), 1.2)
 def _shade(im, valid, t):
     """the real light on the body, from the photo alone: each pixel's brightness against the usual brightness of its own colour (red, yellow, green or white), smoothed."""

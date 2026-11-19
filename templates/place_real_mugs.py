@@ -12,7 +12,7 @@ def main(photo, out, spec):
         rgba = R.reskin(cv2.imread(m['flat']), m.get('mirror', False)) if m.get('flat') else R.original()
         if not m.get('flat') and m.get('mirror'): rgba = rgba[:, ::-1].copy()
         bodyh = (R.BOT[0] + R.BOT[2]) - (R.TOP[0] - R.TOP[2]); k = m['h']/bodyh
-        cxp = R.CX if not m.get('mirror') else rgba.shape[1] - R.CX; basey = R.BOT[0] + R.BOT[2]
+        cxp = R.CX1 if not m.get('mirror') else rgba.shape[1] - R.CX1; cxm = R.CX0 if not m.get('mirror') else rgba.shape[1] - R.CX0; basey = R.BOT[0] + R.BOT[2]
         small = cv2.resize(rgba, None, fx=k, fy=k, interpolation=cv2.INTER_AREA).astype(np.float32); sh, sw = small.shape[:2]
         x0 = int(round(m['base'][0] - cxp*k)); y0 = int(round(m['base'][1] - basey*k))
         col = small[..., :3]; al = small[..., 3:]/255.0
@@ -24,15 +24,16 @@ def main(photo, out, spec):
         if m.get('blur'): col = cv2.GaussianBlur(col, (0, 0), m['blur']); al = cv2.GaussianBlur(al, (0, 0), m['blur'])[..., None]
         # shadows on the table: a tight dark contact line under the base and a soft cast shadow away from the light
         shadow = np.zeros((H, W), np.float32); bx, by = m['base']; rx = R.BOT[1]*k; ry = R.BOT[2]*k
-        cv2.ellipse(shadow, (int(bx), int(by - ry*0.55)), (int(rx*1.04), int(ry*1.05)), 0, 0, 360, 0.75, -1)
-        contact = cv2.GaussianBlur(shadow, (0, 0), 5*k + 2)
+        cv2.ellipse(shadow, (int(bx), int(by - ry*0.62)), (int(rx*1.07), int(ry*1.12)), 0, 0, 360, 1.0, -1)
+        contact = cv2.GaussianBlur(shadow, (0, 0), 4*k + 1.5)
+        tight = np.zeros((H, W), np.float32); cv2.ellipse(tight, (int(bx), int(by - ry*0.80)), (int(rx*1.0), int(ry*0.95)), 0, 0, 180, 1.0, max(2, int(5*k))); contact = np.maximum(contact*0.9, cv2.GaussianBlur(tight, (0, 0), 2.2*k + 1)*1.0)
         castm = np.zeros((H, W), np.float32)
         for i, f in enumerate(np.linspace(0.15, 1.0, 9)):
             cv2.ellipse(castm, (int(bx + cast[0]*m['h']*f), int(by - ry*0.55 + cast[1]*m['h']*f)), (int(rx*(1.0 + 0.25*f)), int(ry*(1.0 + 0.2*f))), 0, 0, 360, 0.34*(1 - 0.7*f), -1)
         castm = cv2.GaussianBlur(castm, (0, 0), 16*k + 6)
         hx = int(bx + (-(R.CX - 205)*k if not m.get('mirror') else (R.CX - 205)*k))                                  # the handle's own small shadow
         cv2.ellipse(castm, (hx, int(by - ry*0.4)), (int(70*k), int(18*k)), 0, 0, 360, 0.22, -1); castm = cv2.GaussianBlur(castm, (0, 0), 6*k + 2)
-        dark = np.clip(contact*0.8 + castm, 0, 0.82)[..., None]; bg = bg*(1 - dark)
+        dark = np.clip(contact*0.85 + castm*1.25, 0, 0.88)[..., None]; bg = bg*(1 - dark)
         # a faint reflection in the polished wood, only just below the base
         refl = col[::-1]; ra = al[::-1]*np.clip(np.linspace(0.16, -0.25, sh, dtype=np.float32), 0, 1)[:, None, None]
         ry0 = int(by - (sh - basey*k)) ; 
@@ -43,7 +44,7 @@ def main(photo, out, spec):
             l = layer[ya-py:yb-py, xa-px:xb-px]; aa = a[ya-py:yb-py, xa-px:xb-px]; bg[ya:yb, xa:xb] = bg[ya:yb, xa:xb]*(1-aa) + l*aa
         paste(cv2.GaussianBlur(refl, (0, 0), 3), cv2.GaussianBlur(ra, (0, 0), 3)[..., None], x0, int(by - (sh - basey*k) - 2 + 0) + int(2*ry*0.15))
         paste(col, al, x0, y0)
-        mouths.append((int(x0 + cxp*k), int(y0 + R.TOP[0]*k)))
+        mouths.append((int(x0 + cxm*k), int(y0 + R.TOP[0]*k)))
     noise = np.random.default_rng(3).normal(0, 1.6, bg.shape).astype(np.float32); cv2.imwrite(out, np.clip(bg + noise, 0, 255).astype(np.uint8))
     print(json.dumps(mouths))
 if __name__ == '__main__':
