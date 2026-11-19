@@ -947,3 +947,12 @@ EVERY Lossiemouth bauble, mug, image or video uses exactly these colours: pink #
 ## 2A-13 CORRECTED (19 Nov 18:40 UTC, ZANS project Claude) - replaces the 2A-13 wording above
 I read the design code wrongly. Read back through the website designer (checked by the bauble order thread), ZBA-disc-F3B5C9-6CC24A-plain-F3B5C9 = PINK #F3B5C9 body with GREEN #6CC24A SPOTS, pink #F3B5C9 cap, plain cap band.
 So Lossiemouth = pink #F3B5C9 with green #6CC24A spots. The green-spot Lossiemouth mug print was RIGHT - keep the spots, only make the colours exactly #F3B5C9 and #6CC24A. Ignore "plain, no spots" above.
+
+
+## TASK 13 - Alex 19 Nov 19:32 UTC (via ZANS project Claude). Master mug signed off by Alex 18:46 (your commit 5e9bb14).
+Alex: "Where it says fact to file and festival warier etc in the boxes. Make sure the correct name is above the correct mug on all videos. It's perfect other than that. So also I want some Christmassy scenes at the racetrack aswell with the mugs so mix them up. Can we do a post for Wolverhampton tommorow night. And make sure tik toks is tik tok friendly. I want a mug or baulbel going out at 12 and the Wolver one going out at 4 or the other way round"
+1. NAME BOXES: on EVERY mug/bauble face-off video, each horse-name box sits directly above ITS OWN mug (the box's name = the name printed on the mug under it), in every scene. Add a per-scene check table (scene | left box | left mug | right box | right mug) to the REVIEW REQUEST.
+2. CHRISTMAS RACECOURSE SCENES: add some racecourse scenes with the mugs (e.g. mugs on a rail/table by the track, frosty course, Christmas lights, horses in the background with patterned rival silks + black gloves, no real faces), mixed in with the home scenes. Same master mug, real light and shadow, true scale.
+3. WOLVERHAMPTON POST for Fri 20 Nov evening meeting: check the real card in 2 sources (races, times, runners) and no non-runners at the time of booking; all race-post rules (course colour, centred text, ZANS branding, website on the last slide, 18+ only if betting content). TikTok version must be TikTok-safe: no betting, tips, odds, race times or win records - fan/atmosphere only, independent check.
+4. TIMING Fri 20 Nov: one mug OR bauble post at 12:00 and the Wolverhampton post at 16:00 (or swapped). Within caps; Alex's yes before booking each.
+Send REVIEW REQUESTs here; nothing to Alex before my Approved.
