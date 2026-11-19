@@ -4,10 +4,10 @@
 {
  "autoPublish": true,
  "draft": false,
- "text": "Britain's best chaser? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk.\n\nWhich name would you have on yours? 👇\n\nWishing you a Merry Christmas 🎅\n\n#Shorts #HorseRacing #ChristmasGifts",
+ "text": "Three Shloer Chases. Still the boss? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk.\n\nWhich name would you have on yours? 👇\n\nWishing you a Merry Christmas 🎅\n\n#Shorts #HorseRacing #ChristmasGifts",
  "firstCommentText": "",
  "media": [
-  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-18/brand-voice/jon-bon-video.mp4"
+  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-19/jonbon/jonbon-video-v5.mp4"
  ],
  "mediaAltText": [
   "Showcase racing silks Christmas bauble in green and yellow hoops with a white cap and the name Jonbon, hanging from a frosted branch at a snowy racecourse"
@@ -43,7 +43,7 @@
  "text": "A personalised silks bauble with any horse's name. This showcase design carries Jonbon in green and yellow hoops with a white cap; yours can carry any name, in any of 25 silks patterns and any colours. Round ceramic, about 7.5 cm, with a ribbon. A Christmas gift for jumps racing fans. Wishing you a Merry Christmas 🎅",
  "firstCommentText": "",
  "media": [
-  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-18/brand-voice/jon-bon-video.mp4"
+  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-19/jonbon/jonbon-video-v5.mp4"
  ],
  "mediaAltText": [
   "Showcase racing silks Christmas bauble in green and yellow hoops with a white cap and the name Jonbon, hanging from a frosted branch at a snowy racecourse"
@@ -76,10 +76,10 @@
 {
  "autoPublish": true,
  "draft": false,
- "text": "Britain's best chaser? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.\n\nSend this to the two-mile chase fan in your life.\n\nSilks bauble Premium, £14.99.\n\nWhich name would you have on yours? 👇\n\nVisit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄\n\nWishing you a Merry Christmas 🎅\n\n#horseracinggifts #christmasbaubles #personalisedbauble",
+ "text": "Three Shloer Chases. Still the boss? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.\n\nSend this to the two-mile chase fan in your life.\n\nSilks bauble Premium, £14.99.\n\nWhich name would you have on yours? 👇\n\nVisit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄\n\nWishing you a Merry Christmas 🎅\n\n#horseracinggifts #christmasbaubles #personalisedbauble",
  "firstCommentText": "",
  "media": [
-  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-18/brand-voice/jon-bon-video.mp4"
+  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-19/jonbon/jonbon-video-v5.mp4"
  ],
  "mediaAltText": [
   "Showcase racing silks Christmas bauble in green and yellow hoops with a white cap and the name Jonbon, hanging from a frosted branch at a snowy racecourse"
@@ -108,10 +108,10 @@
 {
  "autoPublish": true,
  "draft": false,
- "text": "Britain's best chaser? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name on our website. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.\n\nSend this to the two-mile chase fan in your life.\n\nSilks bauble Premium, £14.99.\n\nWhich name would you have on yours? 👇\n\nWishing you a Merry Christmas 🎅\n\n#horseracinggifts #christmasbaubles #personalisedbauble",
+ "text": "Three Shloer Chases. Still the boss? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name on our website. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.\n\nSend this to the two-mile chase fan in your life.\n\nSilks bauble Premium, £14.99.\n\nWhich name would you have on yours? 👇\n\nWishing you a Merry Christmas 🎅\n\n#horseracinggifts #christmasbaubles #personalisedbauble",
  "firstCommentText": "Design yours: https://www.zanshorseracing.co.uk/bauble-designer/",
  "media": [
-  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-18/brand-voice/jon-bon-video.mp4"
+  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-19/jonbon/jonbon-video-v5.mp4"
  ],
  "mediaAltText": [
   "Showcase racing silks Christmas bauble in green and yellow hoops with a white cap and the name Jonbon, hanging from a frosted branch at a snowy racecourse"
@@ -139,10 +139,10 @@
 {
  "autoPublish": true,
  "draft": false,
- "text": "Britain's best chaser? 🎄🏇 Three Shloer Chases to his name. Green and yellow hoops on a showcase bauble. Which name would you have on yours? #ChristmasBaubles #HorseRacing",
+ "text": "Three Shloer Chases. Still the boss? 🎄🏇 Three Shloer Chases to his name. Green and yellow hoops on a showcase bauble. Which name would you have on yours? #ChristmasBaubles #HorseRacing",
  "firstCommentText": "",
  "media": [
-  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-18/brand-voice/jon-bon-video.mp4"
+  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-19/jonbon/jonbon-video-v5.mp4"
  ],
  "mediaAltText": [
   "Showcase racing silks Christmas bauble in green and yellow hoops with a white cap and the name Jonbon, hanging from a frosted branch at a snowy racecourse"
@@ -185,10 +185,10 @@
 {
  "autoPublish": true,
  "draft": false,
- "text": "Britain's best chaser? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.\n\nSend this to the two-mile chase fan in your life.\n\nSilks bauble Premium, £14.99.\n\nWhich name would you have on yours? 👇\n\nVisit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄\n\nWishing you a Merry Christmas 🎅\n\n#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts\n\nLink in bio 👉 www.zanshorseracing.co.uk",
+ "text": "Three Shloer Chases. Still the boss? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name at www.zanshorseracing.co.uk. This one's a showcase, not a ready-made bauble. You pick the pattern, the colours and the name. We print yours.\n\nSend this to the two-mile chase fan in your life.\n\nSilks bauble Premium, £14.99.\n\nWhich name would you have on yours? 👇\n\nVisit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄\n\nWishing you a Merry Christmas 🎅\n\n#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts\n\nLink in bio 👉 www.zanshorseracing.co.uk",
  "firstCommentText": "",
  "media": [
-  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-18/brand-voice/jon-bon-video.mp4"
+  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-19/jonbon/jonbon-video-v5.mp4"
  ],
  "mediaAltText": [
   "Showcase racing silks Christmas bauble in green and yellow hoops with a white cap and the name Jonbon, hanging from a frosted branch at a snowy racecourse"
@@ -221,7 +221,7 @@
  "text": "",
  "firstCommentText": "",
  "media": [
-  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-18/brand-voice/jon-bon-video.mp4"
+  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-19/jonbon/jonbon-video-v5.mp4"
  ],
  "mediaAltText": [],
  "providers": [
@@ -248,10 +248,10 @@
 {
  "autoPublish": true,
  "draft": false,
- "text": "Britain's best chaser? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.\n\nWhich name would you have on yours? 👇\n\nWishing you a Merry Christmas 🎅\n\n#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts\n\nLink in bio 👉 www.zanshorseracing.co.uk",
+ "text": "Three Shloer Chases. Still the boss? 🎄🏇 Jonbon's green and yellow hoops, on a horse racing Christmas bauble.\n\nThree Shloer Chases to his name at Cheltenham. Not many do that. Design a personalised silks bauble with any horse's name. This one's a showcase. You pick the pattern, the colours and the name.\n\nWhich name would you have on yours? 👇\n\nWishing you a Merry Christmas 🎅\n\n#horseracinggifts #christmasbaubles #personalisedbauble #racingsilks #christmasgifts\n\nLink in bio 👉 www.zanshorseracing.co.uk",
  "firstCommentText": "",
  "media": [
-  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-18/brand-voice/jon-bon-video.mp4"
+  "https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/claude/friendly-curie-wcq9xc/batch/2026-11-19/jonbon/jonbon-video-v5.mp4"
  ],
  "mediaAltText": [
   "Showcase racing silks Christmas bauble in green and yellow hoops with a white cap and the name Jonbon, hanging from a frosted branch at a snowy racecourse"

@@ -139,7 +139,7 @@
   "eyebrow": "Gaelic Warrior v Fact To File",
   "big": "Last year: a neck.<br>Sunday: round two.",
   "bigSize": 0.6,
-  "sub": "The Gold Cup hero against his biggest rival.",
+  "sub": "Gold Cup hero v his biggest rival.",
   "question": "Which one are you cheering?",
   "silks": {
    "body": "#F3B5C9",
@@ -157,10 +157,10 @@
  "h2h-grey-dawning-inothewayurthinkin": {
   "metal": "silver",
   "colour": "#1F5A3D",
-  "eyebrow": "Head to head · mugs in their colours",
-  "big": "Grey Dawning or<br>Inothewayurthinkin?",
-  "bigSize": 0.6,
-  "sub": "Two big names. One mug each.",
+  "eyebrow": "Grey Dawning v Inothewayurthinkin",
+  "big": "A Gold Cup winner<br>comes for his crown",
+  "bigSize": 0.57,
+  "sub": "Grey Dawning defends his title.",
   "question": "Which one are you cheering?",
   "silks": {
    "body": "#D0202E",
@@ -178,9 +178,10 @@
  "h2h-baubles-gaelic-warrior-fact-to-file": {
   "metal": "gold",
   "colour": "#1F5A3D",
-  "eyebrow": "Head to head · baubles in their colours",
-  "big": "Gaelic Warrior<br>or Fact To File?",
-  "sub": "Two famous sets of colours.",
+  "eyebrow": "Gaelic Warrior v Fact To File",
+  "big": "Gold Cup hero v<br>his closest rival",
+  "bigSize": 0.63,
+  "sub": "Just a neck between them last year.",
   "question": "Which one are you cheering?",
   "silks": {
    "body": "#F3B5C9",
@@ -193,16 +194,15 @@
    "second": "#F2C40F",
    "pattern": "hoops",
    "cap": "#FFFFFF"
-  },
-  "bigSize": 0.74
+  }
  },
  "h2h-baubles-grey-dawning-inothewayurthinkin": {
   "metal": "silver",
   "colour": "#1F5A3D",
-  "eyebrow": "Head to head · baubles in their colours",
-  "big": "Grey Dawning or<br>Inothewayurthinkin?",
-  "bigSize": 0.6,
-  "sub": "Two big names. One bauble each.",
+  "eyebrow": "Grey Dawning v Inothewayurthinkin",
+  "big": "Defending champ v<br>Gold Cup winner",
+  "bigSize": 0.63,
+  "sub": "Only one finishes top of the tree.",
   "question": "Which one are you cheering?",
   "silks": {
    "body": "#D0202E",
@@ -220,10 +220,10 @@
  "h2h-lossiemouth-william-munny": {
   "metal": "gold",
   "colour": "#1F5A3D",
-  "eyebrow": "Head to head · mugs in their colours",
-  "big": "Lossiemouth or<br>William Munny?",
-  "bigSize": 0.74,
-  "sub": "Two cracking sets of colours.",
+  "eyebrow": "Lossiemouth v William Munny",
+  "big": "Can anyone stop<br>the champion mare?",
+  "bigSize": 0.6,
+  "sub": "William Munny takes her on Saturday.",
   "question": "Which one are you cheering?",
   "silks": {
    "body": "#F3B5C9",
@@ -241,9 +241,9 @@
  "jonbon": {
   "metal": "silver",
   "colour": "#0E6B3B",
-  "eyebrow": "Social showcase · any horse's name",
-  "big": "Britain's best chaser?",
-  "sub": "Three Shloer Chases to his name.",
+  "eyebrow": "Jonbon · design yours with any name",
+  "big": "Three Shloer Chases.<br>Still the boss?",
+  "sub": "Jonbon just keeps on doing it.",
   "question": "Which name would you have on yours?",
   "silks": {
    "body": "#0E6B3B",
@@ -256,16 +256,17 @@
    "second": "#F5D130",
    "pattern": "hoops",
    "cap": "#FFFFFF"
-  }
+  },
+  "bigSize": 0.68
  },
  "h2h-constitution-hill-state-man": {
   "metal": "gold",
   "colour": "#1F5A3D",
-  "eyebrow": "Head to head · mugs in their colours",
-  "big": "Constitution Hill or<br>State Man?",
-  "bigSize": 0.57,
-  "sub": "Champion hurdlers. Come on Conny!",
-  "question": "Which one are you cheering?",
+  "eyebrow": "Constitution Hill & State Man",
+  "big": "Two of my<br>favourite hurdlers",
+  "bigSize": 0.6,
+  "sub": "1st and 2nd, 2023 Champion Hurdle.",
+  "question": "Who was your favourite?",
   "silks": {
    "body": "#FFFFFF",
    "second": "#1C1C1C",
@@ -297,6 +298,132 @@
    "body": "#F5D130",
    "second": "#1B2A5C",
    "pattern": "sash",
+   "cap": "#F5D130"
+  }
+ },
+ "h2h-gaelic-warrior-fact-to-file-tiktok": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Gaelic Warrior v Fact To File",
+  "big": "Gaelic Warrior v<br>Fact To File",
+  "bigSize": 0.67,
+  "sub": "Two powerhouses with stamina to burn.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#F3B5C9",
+   "second": "#6CC24A",
+   "pattern": "discs",
+   "cap": "#F3B5C9"
+  },
+  "silks2": {
+   "body": "#0E8A4B",
+   "second": "#F2C40F",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
+ },
+ "h2h-baubles-gaelic-warrior-fact-to-file-tiktok": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Gaelic Warrior v Fact To File",
+  "big": "Gaelic Warrior or<br>Fact To File?",
+  "bigSize": 0.63,
+  "sub": "Two of the toughest stayers around.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#F3B5C9",
+   "second": "#6CC24A",
+   "pattern": "discs",
+   "cap": "#F3B5C9"
+  },
+  "silks2": {
+   "body": "#0E8A4B",
+   "second": "#F2C40F",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
+ },
+ "h2h-grey-dawning-inothewayurthinkin-tiktok": {
+  "metal": "silver",
+  "colour": "#1F5A3D",
+  "eyebrow": "Grey Dawning v Inothewayurthinkin",
+  "big": "Grey Dawning v<br>Inothewayurthinkin",
+  "bigSize": 0.6,
+  "sub": "Brilliant grey v Gold Cup hero.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#D0202E",
+   "second": "#1C1C1C",
+   "pattern": "plain",
+   "cap": "#D0202E"
+  },
+  "silks2": {
+   "body": "#0E8A4B",
+   "second": "#F2C40F",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
+ },
+ "h2h-baubles-grey-dawning-inothewayurthinkin-tiktok": {
+  "metal": "silver",
+  "colour": "#1F5A3D",
+  "eyebrow": "Grey Dawning v Inothewayurthinkin",
+  "big": "The grey v the<br>Gold Cup hero",
+  "bigSize": 0.74,
+  "sub": "Which one goes top of your tree?",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#D0202E",
+   "second": "#1C1C1C",
+   "pattern": "plain",
+   "cap": "#D0202E"
+  },
+  "silks2": {
+   "body": "#0E8A4B",
+   "second": "#F2C40F",
+   "pattern": "hoops",
+   "cap": "#FFFFFF"
+  }
+ },
+ "h2h-lossiemouth-william-munny-tiktok": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Lossiemouth v William Munny",
+  "big": "Can anyone stop<br>the champion mare?",
+  "bigSize": 0.6,
+  "sub": "Lossiemouth v William Munny.",
+  "question": "Which one are you cheering?",
+  "silks": {
+   "body": "#F3B5C9",
+   "second": "#6CC24A",
+   "pattern": "discs",
+   "cap": "#F3B5C9"
+  },
+  "silks2": {
+   "body": "#F5D130",
+   "second": "#1B2A5C",
+   "pattern": "sash",
+   "cap": "#1B2A5C"
+  }
+ },
+ "h2h-constitution-hill-state-man-tiktok": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Constitution Hill & State Man",
+  "big": "Two of my<br>favourite hurdlers",
+  "bigSize": 0.6,
+  "sub": "Constitution Hill and State Man.",
+  "question": "Who was your favourite?",
+  "silks": {
+   "body": "#FFFFFF",
+   "second": "#1C1C1C",
+   "pattern": "plain",
+   "cap": "#FFFFFF"
+  },
+  "silks2": {
+   "body": "#F5D130",
+   "second": "#1C1C1C",
+   "pattern": "quartered",
    "cap": "#F5D130"
   }
  }

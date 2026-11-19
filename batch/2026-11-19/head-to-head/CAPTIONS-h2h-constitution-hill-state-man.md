@@ -2,13 +2,13 @@
 Alt text: Two personalised racing silks mugs on a pub bar at Christmas: plain white with the name Constitution Hill, and yellow and black check with the name State Man
 
 ## Instagram
-Constitution Hill or State Man? 🏇 Two personalised horse racing mugs, each in famous colours.
+Two of my favourite hurdlers: Constitution Hill and State Man 🏇 Two personalised horse racing mugs, each in famous colours.
 
-White against yellow and black check. They finished first and second in the 2023 Champion Hurdle at Cheltenham. Design a mug in any colours, with any name, at www.zanshorseracing.co.uk. These two are showcases, not ready-made mugs. You pick the pattern, the colours, the handle and the name. We print yours.
+First and second in the 2023 Champion Hurdle at Cheltenham, and Conny won it by nine lengths. State Man has now retired after 12 Grade 1 wins and gets his send-off at Punchestown on Saturday. What a race that was! Come on Conny! Design a mug in any colours, with any name, at www.zanshorseracing.co.uk. These two are showcases, not ready-made mugs. You pick the pattern, the colours, the handle and the name. We print yours.
 
 Send this to the mate who'll be cheering the other one.
 
-Which one are you cheering? 👇
+Who was your favourite? 👇
 
 Search ZANSRacingTools on Etsy.
 
@@ -21,11 +21,11 @@ Wishing you a Merry Christmas 🎅
 Link in bio 👉 www.zanshorseracing.co.uk
 
 ## Facebook
-Constitution Hill or State Man? 🏇 Two personalised horse racing mugs, each in famous colours.
+Two of my favourite hurdlers: Constitution Hill and State Man 🏇 Two personalised horse racing mugs, each in famous colours.
 
-White against yellow and black check. They finished first and second in the 2023 Champion Hurdle at Cheltenham. Design a mug in any colours, with any name, on our website. These two are showcases, not ready-made mugs. You pick the pattern, the colours, the handle and the name. We print yours.
+First and second in the 2023 Champion Hurdle at Cheltenham, and Conny won it by nine lengths. State Man has now retired after 12 Grade 1 wins and gets his send-off at Punchestown on Saturday. What a race that was! Come on Conny! Design a mug in any colours, with any name, on our website. These two are showcases, not ready-made mugs. You pick the pattern, the colours, the handle and the name. We print yours.
 
-Which one are you cheering? 👇
+Who was your favourite? 👇
 
 Wishing you a Merry Christmas 🎅
 
@@ -34,26 +34,26 @@ Wishing you a Merry Christmas 🎅
 First comment: Design yours: https://www.zanshorseracing.co.uk/mug-designer/
 
 ## X
-Constitution Hill or State Man? 🏇 Two mugs in famous racing colours. Which one are you cheering? #HorseRacing #HorseRacingGifts
+Two of my favourite hurdlers 🏇 Constitution Hill and State Man, first and second in the 2023 Champion Hurdle. Who was your favourite? #HorseRacing #HorseRacingGifts
 
 Reply: Design yours in any colours, with any name: https://www.zanshorseracing.co.uk/mug-designer/ Wishing you a Merry Christmas 🎅
 
 ## LinkedIn
-Constitution Hill or State Man? 🏇 Two personalised horse racing mugs, each in famous colours.
+Two of my favourite hurdlers: Constitution Hill and State Man 🏇 Two personalised horse racing mugs, each in famous colours.
 
-White against yellow and black check. They finished first and second in the 2023 Champion Hurdle at Cheltenham. A mug in the syndicate's own colours, with each member's name, makes an easy Christmas gift for owners and clients. Design one at www.zanshorseracing.co.uk.
+First and second in the 2023 Champion Hurdle at Cheltenham, and Conny won it by nine lengths. State Man has now retired after 12 Grade 1 wins and gets his send-off at Punchestown on Saturday. What a race that was! Come on Conny! A mug in the syndicate's own colours, with each member's name, makes an easy Christmas gift for owners and clients. Design one at www.zanshorseracing.co.uk.
 
-Which one are you cheering? 👇
+Who was your favourite? 👇
 
 Wishing you a Merry Christmas 🎅
 
 #horseracinggifts #personalisedmug #horseracing
 
 ## YouTube
-Title: Horse Racing Mugs: Constitution Hill or State Man? 🎄
-Constitution Hill or State Man? 🏇 Two personalised horse racing mugs in famous colours. Design yours in any colours, with any name, at www.zanshorseracing.co.uk. Search ZANSRacingTools on Etsy.
+Title: Constitution Hill & State Man: Horse Racing Mugs 🎄
+Two of my favourite hurdlers: Constitution Hill and State Man 🏇 Two personalised horse racing mugs in famous colours. Design yours in any colours, with any name, at www.zanshorseracing.co.uk. Search ZANSRacingTools on Etsy.
 
-Which one are you cheering? 👇
+Who was your favourite? 👇
 
 Wishing you a Merry Christmas 🎅
 
@@ -65,12 +65,12 @@ A personalised horse racing mug in racing silks, with any name. These showcase d
 Link: https://www.etsy.com/uk/listing/4608193933
 
 ## TikTok
-Title: Constitution Hill or State Man? Mugs in their colours 🎄
-Constitution Hill or State Man? 🏇 Two personalised horse racing mugs, each in famous colours.
+Title: Constitution Hill and State Man: two favourite hurdlers 🎄
+Two of my favourite hurdlers: Constitution Hill and State Man 🏇 Two personalised horse racing mugs, each in famous colours.
 
-White against yellow and black check. Design a mug in any colours, with any name. You pick the pattern, the colours, the handle and the name.
+Plain white against yellow and black check. Two champions, two legends of the game. Come on Conny! Design a mug in any colours, with any name. You pick the pattern, the colours, the handle and the name.
 
-Which one are you cheering? 👇
+Who was your favourite? 👇
 
 Wishing you a Merry Christmas 🎅
 
