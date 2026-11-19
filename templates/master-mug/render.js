@@ -44,7 +44,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const dec = (b64, Arr) => { const s = atob(b64), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return new Arr(u.buffer); };
     const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.BufferAttribute(dec(HM.pos, Float32Array), 3)); hg.setAttribute('normal', new T.BufferAttribute(dec(HM.nrm, Float32Array), 3)); hg.setIndex(new T.BufferAttribute(dec(HM.idx, Uint32Array), 1));
     const withAlpha = (b64) => { const g2 = hg.clone(); const al = dec(b64, Float32Array), col = new Float32Array(al.length*4); for (let i = 0; i < al.length; i++) { col[i*4] = col[i*4+1] = col[i*4+2] = 1; col[i*4+3] = al[i]; } g2.setAttribute('color', new T.BufferAttribute(col, 4)); return g2; };
-    mug.add(new T.Mesh(withAlpha(HM.alpha), Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.14, envMapIntensity: o.light === 'fire' ? 0.5 : 0.28 }), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // the handle
+    mug.add(new T.Mesh(withAlpha(HM.alpha), Object.assign(glaze(o.handle || '#030303', { roughness: 0.06, clearcoatRoughness: 0.02, envMapIntensity: o.light === 'fire' ? 0.5 : 0.22 }), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // the handle
     mug.add(new T.Mesh(withAlpha(HM.alphaWhite), Object.assign(glaze('#ffffff'), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // its white roots, melting into the wall
     mug.rotation.y = (o.az || 0)*Math.PI/180;
     if (o.shadow !== false) {                       // a soft contact shadow on the table, so the mug stands instead of floating
