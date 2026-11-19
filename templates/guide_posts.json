@@ -683,5 +683,179 @@
     "question": "Which ground do you think is better at Punchestown, and why?"
    }
   ]
+ },
+ "wolverhampton-aw": {
+  "course": "WOLVERHAMPTON",
+  "code": "All-weather · 4,739 races",
+  "colour": "#00BFB3",
+  "text": "#00877F",
+  "tagline": "Cheat sheet: Wolverhampton",
+  "footer": "Wolverhampton Track DNA guide: coming soon",
+  "source": "Wolverhampton all-weather Flat, Jan 2019 to Oct 2026. ZANS results database.",
+  "slides": [
+   {
+    "type": "cover",
+    "sub": "All-weather · what to look out for",
+    "tiles": [
+     [
+      "4,739",
+      "RACES SINCE 2019"
+     ],
+     [
+      "2f",
+      "HOME STRAIGHT"
+     ],
+     [
+      "TAPETA",
+      "LEFT-HANDED OVAL"
+     ]
+    ],
+    "points": [
+     [
+      "The track",
+      "SHARP · FLOODLIT"
+     ],
+     [
+      "The draw over 5f",
+      "LOW IS BEST"
+     ],
+     [
+      "Where to race over 5f",
+      "UP FRONT"
+     ],
+     [
+      "Big-priced winners",
+      "1 RACE IN 22"
+     ]
+    ],
+    "strip": "Swipe, then <b>save it for Friday night</b>"
+   },
+   {
+    "type": "facts",
+    "num": "1 OF 4",
+    "eyebrow": "THE TRACK",
+    "big": "A <em>sharp</em> oval under the lights",
+    "sub": "Tight turns and a short run for home.",
+    "rows": [
+     [
+      "DIRECTION",
+      "Left-handed"
+     ],
+     [
+      "CIRCUIT",
+      "Oval, just under 1m"
+     ],
+     [
+      "HOME STRAIGHT",
+      "About 2 furlongs"
+     ],
+     [
+      "SURFACE",
+      "Tapeta since 2014"
+     ]
+    ],
+    "strip": "Not much straight to <b>make up ground</b>"
+   },
+   {
+    "type": "bars",
+    "num": "2 OF 4",
+    "eyebrow": "THE DRAW OVER 5F",
+    "big": "Over 5f, <em>low</em> is best",
+    "sub": "How often each third of the stalls won.",
+    "rows": [
+     [
+      "LOW STALLS",
+      "1,500 runners",
+      14.1,
+      "14%",
+      "g"
+     ],
+     [
+      "MIDDLE",
+      "1,708 runners",
+      11.5,
+      "12%",
+      "a"
+     ],
+     [
+      "HIGH STALLS",
+      "1,915 runners",
+      9.1,
+      "9%",
+      "r"
+     ]
+    ],
+    "note": "581 races over 5f with 6 or more runners.",
+    "strip": "Low stalls: <b>8% more winners</b> than their odds suggested"
+   },
+   {
+    "type": "bars",
+    "num": "3 OF 4",
+    "eyebrow": "RUNNING STYLE OVER 5F",
+    "big": "Be <em>up front</em> over 5f",
+    "sub": "How often each running style won.",
+    "rows": [
+     [
+      "LED",
+      "623 runners",
+      24.1,
+      "24%",
+      "g"
+     ],
+     [
+      "PROMINENT",
+      "1,708 runners",
+      14.4,
+      "14%",
+      "a"
+     ],
+     [
+      "MIDFIELD",
+      "646 runners",
+      9.4,
+      "9%",
+      "a"
+     ],
+     [
+      "HELD UP",
+      "1,698 runners",
+      5.9,
+      "6%",
+      "r"
+     ]
+    ],
+    "note": "634 races over 5f. Style taken from each run's race comment.",
+    "strip": "Held-up horses won <b>about 1 time in 17</b>"
+   },
+   {
+    "type": "stat",
+    "num": "4 OF 4",
+    "eyebrow": "BIG-PRICED WINNERS",
+    "big": "Shocks are <em>not that rare</em>",
+    "sub": "Winners at 20/1 or bigger.",
+    "figure": "211",
+    "figsub": "from 4,739 races",
+    "dots": [
+     110,
+     [
+      7,
+      29,
+      51,
+      73,
+      95
+     ]
+    ],
+    "lines": [
+     "That is about 1 race in every 22.",
+     "Clear favourites won 1,529 of 4,437: about 1 in 3."
+    ],
+    "strip": "On a 7 or 8 race card, a shock <b>turns up now and then</b>"
+   },
+   {
+    "type": "end",
+    "big": "Save this before Friday night at Wolverhampton",
+    "question": "Low draw or front-runner: which matters more at Wolverhampton, and why?"
+   }
+  ]
  }
 }

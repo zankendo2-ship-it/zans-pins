@@ -11,7 +11,7 @@ const LOGO = `data:image/png;base64,${b64(path.join(T, 'assets', 'zans-logo.png'
 const METAL = 'linear-gradient(90deg,#725415 0%,#B98A36 22%,#FFF4C9 50%,#B98A36 78%,#725415 100%)';
 const FLAG = '<svg width="62" height="40" viewBox="0 0 62 40"><rect width="62" height="40" fill="#fff" stroke="#1C1C1C" stroke-width="2"/><rect x="25" width="12" height="40" fill="#CE1124"/><rect y="14" width="62" height="12" fill="#CE1124"/></svg>';
 const lum = h => { const n = parseInt(h.slice(1), 16); return (0.299*(n>>16) + 0.587*((n>>8)&255) + 0.114*(n&255))/255; };
-const css = (C, ON, TXT) => `${FONTS}
+const css = (C, ON, TXT, NAME = '') => `${FONTS}
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1080px;height:1350px;overflow:hidden;background:#EAE2D8;font-family:Sans,sans-serif;color:#1C1C1C;position:relative}
 .metal{position:absolute;left:0;right:0;height:16px;background:${METAL}}
@@ -57,7 +57,7 @@ h1 em{font-style:normal;color:${TXT}}
 .tile b{display:block;font-family:Plex;font-weight:700;font-size:58px;color:${TXT};line-height:1.05}
 .tile span{font-family:Jost;font-weight:600;letter-spacing:.12em;font-size:20px;color:#5E574F}
 .logo{width:250px;border:4px solid #1C1C1C;border-radius:26px;display:block;margin:18px auto 0}
-.course{font-family:Jost;font-weight:700;letter-spacing:.14em;font-size:104px;text-align:center;color:${TXT};line-height:1;margin-top:14px}
+.course{font-family:Jost;font-weight:700;letter-spacing:${NAME.length > 10 ? '.06em' : '.14em'};font-size:${NAME.length > 10 ? Math.floor(104*10.5/NAME.length) : 104}px;text-align:center;color:${TXT};line-height:1;margin-top:14px}
 .csub{font-family:Jost;font-weight:700;font-size:40px;text-align:center;color:#5E574F;margin-top:6px}
 .rule{height:12px;background:${METAL};margin-top:18px}
 .gl{font-family:Jost;font-weight:700;letter-spacing:.12em;font-size:25px;color:${TXT};margin-top:20px;padding-bottom:6px;border-bottom:3px solid ${C}}
@@ -109,7 +109,7 @@ function bands(P) { if (!P.silks) return ''; const S = P.silks;
   for (const [key, P] of Object.entries(posts)) { if (only.length && !only.includes(key)) continue;
     const ON = lum(P.colour) > 0.6 ? '#1C1C1C' : '#FFFFFF';
     for (let i = 0; i < P.slides.length; i++) {
-      const html = `<html><head><meta charset="utf-8"><style>${css(P.colour, ON, P.text || P.colour)}</style></head><body><div class="metal" style="top:0"></div>${bands(P)}<div class="wrap" style="${P.silks ? 'top:86px;bottom:86px' : ''}">${body(P, P.slides[i])}</div><div class="metal" style="bottom:0"></div></body></html>`;
+      const html = `<html><head><meta charset="utf-8"><style>${css(P.colour, ON, P.text || P.colour, P.course)}</style></head><body><div class="metal" style="top:0"></div>${bands(P)}<div class="wrap" style="${P.silks ? 'top:86px;bottom:86px' : ''}">${body(P, P.slides[i])}</div><div class="metal" style="bottom:0"></div></body></html>`;
       await pg.setContent(html); await pg.evaluate(() => document.fonts.ready);
       const over = await pg.evaluate(() => { const w = document.querySelector('.wrap'); return w.scrollHeight - w.clientHeight; });
       const f = path.join(out, `${key}-${i + 1}.png`); await pg.screenshot({ path: f }); console.log(f, over > 0 ? `OVERFLOW ${over}px` : 'ok');
