@@ -29,3 +29,10 @@ o.save(O + 'MASTER-MUG-next-to-real-photo.jpg', quality=92); o.resize((1080, 368
 R(T + 'side.png', dict(flat=None, az=0, el=4, fov=20, drink=False, w=1400, h=1400, fill=0.72, cx=-1.2))
 l = Image.open(H + '/../../reference/mug-shape-11oz-alex-2026-11-19.jpg').convert('RGB').crop((40, 560, 880, 1440)).resize((859, 900)); a = fit(T + 'side.png', 640); o2 = Image.new('RGB', (1800, 960), (240, 240, 238)); o2.paste(l, (20, 10)); o2.paste(a, (900 + (900 - a.width)//2, 150), a)
 d = ImageDraw.Draw(o2); d.text((30, 920), "11oz SHAPE REFERENCE", fill=INK, font=f3); d.text((930, 920), "MASTER MUG, SIDE ON", fill=INK, font=f3); o2.save(O + 'MASTER-MUG-side-on-next-to-11oz-reference.jpg', quality=92)
+
+# the join on the real mug beside the model's join, same close phone camera
+R(T + 'join.png', dict(A, flat=None, shadow=False, w=2800, h=2800))
+a = Image.open(T + 'join.png').convert('RGBA'); bb = a.getbbox(); a = a.crop(bb); k = 655/(a.height); a = a.resize((int(a.width*k*2), int(a.height*k*2)), Image.LANCZOS)   # real mug is 655 px high in the photo; x2 like the real crop
+rj = Image.open(H + '/../../reference/real-mug-fact-to-file.jpg').convert('RGB').crop((89, 280, 400, 720)).resize((622, 880))
+bgj = Image.new('RGB', (622, 880), BG); bgj.paste(a, (0, -(280 - 168)*2), a); o3 = Image.new('RGB', (1284, 950), BG); o3.paste(rj, (10, 10)); o3.paste(bgj.crop((0, 0, 622, 880)), (652, 10)); d = ImageDraw.Draw(o3)
+d.text((20, 900), "REAL MUG: where the handle joins", fill=INK, font=f); d.text((662, 900), "MASTER MUG: same place, same camera", fill=INK, font=f); o3.save(O + 'MASTER-MUG-handle-join-real-v-model.jpg', quality=92)

@@ -22,7 +22,9 @@ def tube_at(p):
 tv = tube_at(v); rad = np.sqrt(v[:, 0]**2 + v[:, 2]**2); keep_v = (tv < K*1.35) & (rad > R - 0.03); keep_f = keep_v[faces].all(1); faces = faces[keep_f]
 used = np.unique(faces); remap = -np.ones(len(v), np.int64); remap[used] = np.arange(len(used)); v, n, faces = v[used], n[used], remap[faces]
 n = -n; v = v + n*0.004                                                                              # outward normals; lift a hair off the wall so nothing flickers
-al = np.clip((np.sqrt(v[:, 0]**2 + v[:, 2]**2) - R - 0.03)/0.03 + 0.5, 0, 1)                       # black glaze wherever the surface has lifted more than about 0.3 mm off the wall; render.js cuts at 0.5
+lift = np.sqrt(v[:, 0]**2 + v[:, 2]**2) - R; on = np.clip((lift - 0.012)/0.02 + 0.5, 0, 1)                 # the part that has lifted off the wall (the strap and its fillet)
+root = hd.get('whiteRoot', 0.55); sB = np.clip((lift - root)/0.05 + 0.5, 0, 1)                         # as on the real mug: the join is body-white for the first few mm, then the handle colour starts
+al = on*sB; alW = on*(1 - sB)
 json.dump({'count': int(len(v)), 'tris': int(len(faces)), 'pos': base64.b64encode(v.astype(np.float32).tobytes()).decode(), 'nrm': base64.b64encode(n.astype(np.float32).tobytes()).decode(),
-           'idx': base64.b64encode(faces.astype(np.uint32).tobytes()).decode(), 'alpha': base64.b64encode(al.astype(np.float32).tobytes()).decode()}, open(H + '/handle_mesh.json', 'w'))
+           'idx': base64.b64encode(faces.astype(np.uint32).tobytes()).decode(), 'alpha': base64.b64encode(al.astype(np.float32).tobytes()).decode(), 'alphaWhite': base64.b64encode(alW.astype(np.float32).tobytes()).decode()}, open(H + '/handle_mesh.json', 'w'))
 print('handle mesh:', len(v), 'points,', len(faces), 'triangles')
