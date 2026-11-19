@@ -22,7 +22,7 @@ def tube_at(p):
 tv = tube_at(v); rad = np.sqrt(v[:, 0]**2 + v[:, 2]**2); keep_v = (tv < K*1.35) & (rad > R - 0.03); keep_f = keep_v[faces].all(1); faces = faces[keep_f]
 used = np.unique(faces); remap = -np.ones(len(v), np.int64); remap[used] = np.arange(len(used)); v, n, faces = v[used], n[used], remap[faces]
 n = -n; v = v + n*0.004                                                                              # outward normals; lift a hair off the wall so nothing flickers
-al = np.clip((K*0.62 - tube_at(v))/(K*0.5) + 0.5, 0, 1)                                              # 1 on the strap and fillet, fading to 0 on the plain wall: render.js cuts at 0.5, a smooth edge
+al = np.clip((np.sqrt(v[:, 0]**2 + v[:, 2]**2) - R - 0.03)/0.03 + 0.5, 0, 1)                       # black glaze wherever the surface has lifted more than about 0.3 mm off the wall; render.js cuts at 0.5
 json.dump({'count': int(len(v)), 'tris': int(len(faces)), 'pos': base64.b64encode(v.astype(np.float32).tobytes()).decode(), 'nrm': base64.b64encode(n.astype(np.float32).tobytes()).decode(),
            'idx': base64.b64encode(faces.astype(np.uint32).tobytes()).decode(), 'alpha': base64.b64encode(al.astype(np.float32).tobytes()).decode()}, open(H + '/handle_mesh.json', 'w'))
 print('handle mesh:', len(v), 'points,', len(faces), 'triangles')

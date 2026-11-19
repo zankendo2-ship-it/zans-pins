@@ -2,15 +2,15 @@
  "_note": "THE ZANS MASTER MUG, locked 19 Nov 2026. Our real 11oz mug in centimetres. Do not change per video. Handle path points are [cm out from the body wall (negative = outwards), cm up from the table].",
  "diameter": 8.2,
  "height": 9.5,
- "wall": 0.4,
+ "wall": 0.3,
  "baseEdge": 0.14,
  "printTop": 0.985,
  "printBottom": 0.05,
  "drinkBelowRim": 1.3,
  "handle": {
-  "reach": 3.525,
-  "thick": 0.95,
-  "width": 1.6,
+  "reach": 3.4699999999999998,
+  "thick": 0.84,
+  "width": 1.5,
   "path": [
    [0.35, 8.45],
    [0.0, 8.45],
@@ -48,6 +48,6 @@
    [0.0, 2.3],
    [0.35, 2.3]
   ],
-  "blend": 0.32
+  "blend": 0.2
  }
 }
