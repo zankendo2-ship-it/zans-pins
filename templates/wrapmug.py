@@ -29,12 +29,13 @@ def main(photo, out, spec):
         t, u, valid = G[i]; flat = cv2.imread(m['flat']).astype(np.float32); t0, t1 = m.get('t0', 0.03), m.get('t1', 0.93); uh = m.get('uh', 1.35)
         ty = (20 + (t-t0)/(t1-t0)*(1100-20))/TEX_H
         x = TEX_W - (uh - u)*PPR if m.get('handle', 'right') == 'right' else (u + uh)*PPR
-        art = cv2.remap(flat, ((x % TEX_W)).astype(np.float32), (ty*TEX_H).astype(np.float32), cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+        art = cv2.remap(flat, ((x % TEX_W)).astype(np.float32), (ty*TEX_H).astype(np.float32), cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
         ref = m.get('white', 232.0); lum = cv2.cvtColor(im.astype(np.uint8), cv2.COLOR_BGR2GRAY).astype(np.float32)
         tintless = np.repeat(lum[..., None], 3, axis=2)*0.55 + im*0.45                             # keep most of the room's warm cast, not all of it
         hs = cv2.cvtColor(np.clip(art, 0, 255).astype(np.uint8), cv2.COLOR_BGR2HSV).astype(np.float32); hs[..., 1] *= spec.get('sat', 0.9); art = cv2.cvtColor(hs.astype(np.uint8), cv2.COLOR_HSV2BGR).astype(np.float32)
+        tintless = cv2.GaussianBlur(tintless, (0, 0), spec.get('shade_blur', 4.0))                # the room's light, without the photo's compression blocks (they showed as steps on the print's edges)
         shade = np.clip(tintless/ref, 0, 1.25); printed = np.clip(art*shade, 0, 255)
-        gl = np.clip((lum-238)/14, 0, 1)[..., None]; printed = printed*(1-gl) + 255*gl               # the photo's own highlights stay on top of the print
+        gl = np.clip((cv2.GaussianBlur(lum, (0, 0), 2.5)-spec.get('hi', 246))/9, 0, 1)[..., None]; printed = printed*(1-gl) + 255*gl               # the photo's own highlights stay on top of the print
         a = (valid & (t >= t0) & (t <= t1)).astype(np.float32)
         for j in m.get('behind', []):                                                               # never print on the part hidden by a mug in front
             tj, uj, vj = G[j]; mj = spec['mugs'][j]; ys, xs = np.mgrid[0:h, 0:w].astype(np.float32)
