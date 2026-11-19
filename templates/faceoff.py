@@ -64,12 +64,13 @@ def main(spec):
     # 3. the voice (brand voice, each clip transcribed and compared)
     V = 'templates/voice/clips'; pair = f"{slug(A['name'])}-{slug(B['name'])}"
     lines = spec.get('lines') or [{"file": f"zp_fo_{pair}_1.mp3", "text": f"{A.get('say', A['name'])} or {B.get('say', B['name'])}?"}, {"file": f"zp_fo_{slug(spec['say2'])[:40]}.mp3", "text": spec['say2']}]
-    json.dump({"gemini": {"voice": "Aoede", "style": STYLE}, "lines": lines}, open(f'{W}/voice.json', 'w'))
+    G = {"voice": "Aoede", "style": spec.get('style', STYLE), **({"wrapper": spec['wrapper']} if spec.get('wrapper') else {})}
+    json.dump({"gemini": G, "lines": lines}, open(f'{W}/voice.json', 'w'))
     run(['python3', 'templates/voice/gemini_tts.py', V, f'{W}/voice.json'])
     for l in lines: print('  voice:', l['text'], '| heard:', heard(f"{V}/{l['file']}"))
     after = spec.get('after', [])                      # extra spoken lines after "Tell us in the comments!" (e.g. "Come on Conny!")
     if after:
-        json.dump({"gemini": {"voice": "Aoede", "style": STYLE}, "lines": after}, open(f'{W}/voice2.json', 'w')); run(['python3', 'templates/voice/gemini_tts.py', V, f'{W}/voice2.json'])
+        json.dump({"gemini": G, "lines": after}, open(f'{W}/voice2.json', 'w')); run(['python3', 'templates/voice/gemini_tts.py', V, f'{W}/voice2.json'])
         for l in after: print('  voice:', l['text'], '| heard:', heard(f"{V}/{l['file']}"))
     out = run(['python3', 'templates/voice/mix.py', V, f'{W}/audio.m4a', spec['music'], 'zp_santa_a.mp3', *[l['file'] for l in lines], *spec.get('closers', ['zp_cheer.mp3', 'zp_ask_2.mp3'])] + [l['file'] for l in after]).split()
     p2, total = float(out[-2]), float(out[-1])

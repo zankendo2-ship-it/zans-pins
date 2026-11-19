@@ -8,8 +8,9 @@ import imageio_ffmpeg
 API = "https://generativelanguage.googleapis.com/v1beta/models"
 MODEL = "gemini-2.5-pro-preview-tts"
 KEY = "added-by-the-environment-network-secret"     # placeholder: the proxy swaps in the real key
-def speak(text, voice, style, out_mp3):
-    prompt = f"Say ONLY the words between the <line> tags, once, then stop. Voice: {style}. Speak naturally, with normal pauses, not like a robot or an advert.\n<line>{text}</line>"
+WRAP = "Speak naturally, with normal pauses, not like a robot or an advert."    # the locked wrapper; a script may carry its own under gemini.wrapper (Alex's 19 Nov trial)
+def speak(text, voice, style, out_mp3, wrap=WRAP):
+    prompt = f"Say ONLY the words between the <line> tags, once, then stop. Voice: {style}. {wrap}\n<line>{text}</line>"
     body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
@@ -46,7 +47,7 @@ if __name__ == "__main__":
             if f.exists(): continue
             limit = len(x["text"].split()) * 0.55 + 4
             for attempt in range(4):
-                speak(x["text"], g["voice"], g["style"], f)
+                speak(x["text"], g["voice"], g["style"], f, g.get("wrapper", WRAP))
                 d = clip_len(f)
                 print(f"{x['file']}: {d:.1f}s (limit {limit:.1f})", flush=True)
                 if d <= limit: break
