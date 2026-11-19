@@ -28,7 +28,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     let wallMat = glaze('#ffffff');
     if (flat) { const img = await new Promise(res => { const i = new Image(); i.onload = () => res(i); i.src = flat; });
       const c = document.createElement('canvas'); c.width = 3015; c.height = 1250; const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height);
-      const y0 = c.height*(1 - M.printTop), y1 = c.height*(1 - M.printBottom); g.drawImage(img, 0, 20, img.width, 1080, 0, y0, c.width, y1 - y0);
+      const y0 = c.height*(1 - M.printTop), y1 = c.height*(1 - M.printBottom); g.filter = 'saturate(1.02) contrast(1.12) brightness(0.88)'; g.drawImage(img, 0, 20, img.width, 1080, 0, y0, c.width, y1 - y0); g.filter = 'none';   // the glaze and tone curve wash colour out: pre-deepen the print so it photographs like the real mug
       const tx = new T.CanvasTexture(c); tx.encoding = T.sRGBEncoding; tx.anisotropy = 16; wallMat = glaze('#ffffff', { map: tx }); }
     const lathe = (pts, mat) => { const m = new T.Mesh(new T.LatheGeometry(pts.map(q => new T.Vector2(q[0], q[1])), 160), mat); mug.add(m); return m; };
     const arc = (cx, cy, rad, a0, a1, n = 10) => Array.from({ length: n + 1 }, (_, i) => { const a = a0 + (a1 - a0)*i/n; return [cx + rad*Math.cos(a), cy + rad*Math.sin(a)]; });
@@ -44,7 +44,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const dec = (b64, Arr) => { const s = atob(b64), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return new Arr(u.buffer); };
     const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.BufferAttribute(dec(HM.pos, Float32Array), 3)); hg.setAttribute('normal', new T.BufferAttribute(dec(HM.nrm, Float32Array), 3)); hg.setIndex(new T.BufferAttribute(dec(HM.idx, Uint32Array), 1));
     const withAlpha = (b64) => { const g2 = hg.clone(); const al = dec(b64, Float32Array), col = new Float32Array(al.length*4); for (let i = 0; i < al.length; i++) { col[i*4] = col[i*4+1] = col[i*4+2] = 1; col[i*4+3] = al[i]; } g2.setAttribute('color', new T.BufferAttribute(col, 4)); return g2; };
-    mug.add(new T.Mesh(withAlpha(HM.alpha), Object.assign(glaze(o.handle || '#030303', { roughness: 0.06, clearcoatRoughness: 0.02, envMapIntensity: o.light === 'fire' ? 0.5 : 0.22 }), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // the handle
+    mug.add(new T.Mesh(withAlpha(HM.alpha), Object.assign(glaze(o.handle || '#030303', { roughness: 0.06, clearcoatRoughness: 0.02, envMapIntensity: o.light === 'fire' ? 0.3 : 0.22 }), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // the handle
     mug.add(new T.Mesh(withAlpha(HM.alphaWhite), Object.assign(glaze('#ffffff'), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // its white roots, melting into the wall
     mug.rotation.y = (o.az || 0)*Math.PI/180;
     if (o.shadow !== false) {                       // a soft contact shadow on the table, so the mug stands instead of floating
