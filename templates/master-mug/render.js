@@ -3,7 +3,7 @@
 //   node templates/master-mug/render.js <out.png> '<json>'
 //   json: { flat: "templates/mug-flats/x.png" | null (plain white), handle: "#0a0a0a", inside: "#0a0a0a", drink: true|false,
 //           az: degrees the handle is turned from pointing left (0 = handle straight left, + = towards the camera), el: camera height in degrees,
-//           fov: 28, w: 1600, h: 1600, light: "studio"|"fire", fill: 0.9 (how much of the frame the mug fills) }
+//           fov: 28, w: 1600, h: 1600, light: "studio"|"fire", fill: 0.9 (how much of the frame the mug fills; above 1 zooms in), cx, cy, cz: the point the camera looks at, in cm (default the middle of the mug) }
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
 const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); const M = JSON.parse(fs.readFileSync(path.join(__dirname, 'mug.json'), 'utf8'));
 (async () => {
@@ -39,12 +39,12 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const dark = glaze(o.inside || '#0a0a0a', { roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.35, envMapIntensity: 0.45 });   // a soft sheen inside, no mirror-sharp reflections of the lights
     lathe([...arc(R - rimR, wallTop, rimR, 0, Math.PI), [R - wall, 0.7], [0, 0.7]], Object.assign(dark, { side: T.DoubleSide }));     // rim and inside
     if (o.drink !== false) { const d = new T.Mesh(new T.CircleGeometry(R - wall - 0.02, 96), new T.MeshPhysicalMaterial({ color: o.drinkColour || '#3a2416', roughness: 0.25, clearcoat: 0.6, envMapIntensity: 0.35 })); d.rotation.x = -Math.PI/2; d.position.y = HT - M.drinkBelowRim; mug.add(d); }
-    // the handle: one smooth D-shaped strap that flares into the body at both ends
+    // the handle: one smooth D-shaped strap with a moulded fillet where it meets the body at both ends
     const hp = M.handle.path.map(q => new T.Vector3(-R + q[0], q[1], 0)); const curve = new T.CatmullRomCurve3(hp, false, 'centripetal');
-    const N = 140, S = 28, pos = [], idx = [];
+    const N = 220, S = 48, pos = [], idx = [];
     for (let i = 0; i <= N; i++) { const t = i/N; const c = curve.getPointAt(t), tg = curve.getTangentAt(t); const nrm = new T.Vector3(-tg.y, tg.x, 0).normalize(); const bin = new T.Vector3(0, 0, 1);
-      const endK = Math.max(0, 1 - Math.min(t, 1 - t)/M.handle.flareLength); const fl = 1 + M.handle.flare*endK*endK*(3 - 2*endK);
-      for (let j = 0; j <= S; j++) { const a = j/S*Math.PI*2; const v = c.clone().addScaledVector(nrm, Math.cos(a)*M.handle.thick/2*fl).addScaledVector(bin, Math.sin(a)*M.handle.width/2*fl); pos.push(v.x, v.y, v.z); } }
+      const outD = Math.max(0, -(c.x + R)); const k = Math.max(0, 1 - outD/M.handle.filletLength); const fil = M.handle.fillet*k*k*k;   // fillet: the strap swells smoothly into the wall over the last few millimetres, like moulded ceramic
+      for (let j = 0; j <= S; j++) { const a = j/S*Math.PI*2; const v = c.clone().addScaledVector(nrm, Math.cos(a)*(M.handle.thick/2 + fil)).addScaledVector(bin, Math.sin(a)*(M.handle.width/2 + fil)); pos.push(v.x, v.y, v.z); } }
     for (let i = 0; i < N; i++) for (let j = 0; j < S; j++) { const a = i*(S + 1) + j, c2 = a + S + 1; idx.push(a, c2, a + 1, a + 1, c2, c2 + 1); }
     const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); hg.setIndex(idx); hg.computeVertexNormals();
     mug.add(new T.Mesh(hg, Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.14, envMapIntensity: 0.5 }), { side: T.DoubleSide })));
@@ -52,7 +52,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     // camera: looks at the middle of the mug from `el` degrees above; the mug fills `fill` of the frame
     const fov = o.fov || 28, el = (o.el == null ? 12 : o.el)*Math.PI/180; const cam = new T.PerspectiveCamera(fov, W/H, 1, 500);
     const span = Math.max(HT, M.diameter + M.handle.reach)*1.12; const dist = span/2/Math.tan(fov*Math.PI/360)/(o.fill || 0.9);
-    const tgt = new T.Vector3(o.cx || 0, HT/2, 0); cam.position.set(tgt.x, tgt.y + dist*Math.sin(el), dist*Math.cos(el)); cam.lookAt(tgt);
+    const tgt = new T.Vector3(o.cx || 0, o.cy == null ? HT/2 : o.cy, o.cz || 0); cam.position.set(tgt.x, tgt.y + dist*Math.sin(el), dist*Math.cos(el)); cam.lookAt(tgt);
     r.render(sc, cam); return r.domElement.toDataURL('image/png');
   }, [M, o, flat, W, H]);
   fs.writeFileSync(out, Buffer.from(url.split(',')[1], 'base64')); await b.close(); console.log('master mug ->', out);
