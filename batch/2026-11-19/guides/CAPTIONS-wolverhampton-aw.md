@@ -5,6 +5,8 @@ Figures: ZANS Course Knowledge Base, Wolverhampton all-weather Flat, 4,739 races
 Note for the reviewer: leaders win about 1 in 4 over 5f at every track (the national figure is 23.6%), because the style comes from the after-race comment; the slide says how often each style won, and does not claim Wolverhampton is unusual.
 Meeting check: Wolverhampton races on the evening of Fri 20 Nov 2026 (2 sources: a national racecards listing and the racecourse's own what's-on page, "Friday Night Racing"). No race times, runners or horses are named in the post, so there is no non-runner risk. Track facts (left-handed, oval just under a mile, about 2f straight, Tapeta since 2014): our course profile plus a second course guide.
 
+BOOKED Fri 20 Nov 2026 14:00 (Alex's yes, 19 Nov). First race: one national racecards listing gives 16:30, a second listing gives 17:30; 14:00 is more than an hour before either. Re-check the first race time on Friday morning.
+
 ## Instagram
 Wolverhampton racecourse: what to look out for 🏇 A cheat sheet for Friday night racing under the lights.
 
