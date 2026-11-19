@@ -972,3 +972,8 @@ Already booked Fri 20 Nov: Haydock cheat sheet 12:00 (IG, FB, LI, Pinterest, X);
 So: the Conny bauble IS Friday's product post - no extra bauble face-off Friday. Wolverhampton about 19:00 (before the evening racing) so it does not clash with the 16:00 Conny run. That makes 3 on IG/FB/X/LI that day - over the normal 1-2 cap; say so in the REVIEW REQUEST so Alex chooses (Wolverhampton at 19:00 as an extra, or drop/move something).
 "The horse racing predictions": check what Alex means in your chat (racing predictions/tips posts are on hold except where he restarts them; never on TikTok) and include it in the REVIEW REQUEST.
 Wolverhampton REVIEW REQUEST tonight please, so Alex can say yes tonight or early tomorrow.
+
+
+## 2A-14 RACE POSTS TIMED FROM THE REAL FIRST RACE (standing rule) - Alex 19 Nov 21:23 UTC, via ZANS project Claude
+Alex: "Why have you said to book Wolverhampton at 19:00 time when it starts well before then??" - my TASK 14 update suggested ~19:00 without checking the card. That was wrong. (Your booking at Fri 14:00, Alex's yes, commit 20:57, is fine - keep it.)
+RULE: every race/meeting post is timed from the REAL first-race time, read from the card (2 sources), and goes out at least 1 hour before the first race. Put "first race HH:MM (source 1, source 2)" in every race-post REVIEW REQUEST and booking file.
