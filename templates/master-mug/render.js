@@ -16,11 +16,11 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const r = new T.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true }); r.setSize(W, H); r.setPixelRatio(2); r.outputEncoding = T.sRGBEncoding; r.toneMapping = T.ACESFilmicToneMapping; r.toneMappingExposure = o.exposure || 1.05; document.body.appendChild(r.domElement);
     const sc = new T.Scene();
     // the room the glaze reflects: soft boxes, so the gloss looks like a photo and not a flat render
-    const env = new T.Scene(); env.background = new T.Color(o.light === 'fire' ? 0x1a120c : 0x2a2a2a);
+    const env = new T.Scene(); env.background = new T.Color(o.light === 'fire' ? 0x1a120c : 0x9a9a9a);   // studio: a bright, even room, so the white glaze is white and shades smoothly
     const panel = (x, y, z, w, h, col, k) => { const m = new T.Mesh(new T.PlaneGeometry(w, h), new T.MeshBasicMaterial({ color: new T.Color(col).multiplyScalar(k), side: T.DoubleSide })); m.position.set(x, y, z); m.lookAt(0, 0, 0); env.add(m); };
     if (o.light === 'fire') { panel(-30, 25, 30, 30, 40, 0xfff1dc, 5); panel(40, 8, 10, 18, 22, 0xff9a45, 6); panel(0, 50, 0, 60, 60, 0xffe6c8, 1.6); panel(-20, 5, -40, 50, 30, 0xffc890, 1.2); }
-    else { panel(-30, 30, 30, 34, 44, 0xffffff, 5); panel(40, 20, 15, 16, 40, 0xffffff, 3.5); panel(0, 50, 0, 70, 70, 0xffffff, 1.8); panel(0, 10, -45, 80, 40, 0xffffff, 1.0); }
-    const pm = new T.PMREMGenerator(r); sc.environment = pm.fromScene(env, 0.03).texture;
+    else { panel(-34, 34, 34, 60, 60, 0xffffff, 2.6); panel(44, 22, 18, 30, 50, 0xffffff, 1.6); panel(0, 60, 0, 120, 120, 0xffffff, 1.4); }
+    const pm = new T.PMREMGenerator(r); sc.environment = pm.fromScene(env, o.light === 'fire' ? 0.03 : 0.09).texture;
     const glaze = (col, extra = {}) => new T.MeshPhysicalMaterial(Object.assign({ color: col, roughness: 0.16, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.06, envMapIntensity: 1 }, extra));
     const mug = new T.Group(); sc.add(mug);
     // print texture: the flat artwork is the whole way round, starting and ending at the handle
@@ -36,7 +36,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     // the cylinder's v runs over the wall only; the print canvas is laid over the whole height, so shift v to match
     const uv = wallGeo.attributes.uv; for (let i = 0; i < uv.count; i++) uv.setY(i, (e + uv.getY(i)*(wallTop - e))/HT); mug.add(new T.Mesh(wallGeo, wallMat));
     lathe([[0, 0], [R - e, 0], ...arc(R - e, e, e, -Math.PI/2, 0)], glaze('#ffffff'));                                   // flat base with a small rounded edge
-    const dark = glaze(o.inside || '#0a0a0a', { roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.35, envMapIntensity: 0.45 });   // a soft sheen inside, no mirror-sharp reflections of the lights
+    const dark = glaze(o.inside || '#0a0a0a', { roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.35, envMapIntensity: o.light === 'fire' ? 0.45 : 0.25 });   // a soft sheen inside, no mirror-sharp reflections of the lights
     lathe([...arc(R - rimR, wallTop, rimR, 0, Math.PI), [R - wall, 0.7], [0, 0.7]], Object.assign(dark, { side: T.DoubleSide }));     // rim and inside
     if (o.drink !== false) { const d = new T.Mesh(new T.CircleGeometry(R - wall - 0.02, 96), new T.MeshPhysicalMaterial({ color: o.drinkColour || '#3a2416', roughness: 0.25, clearcoat: 0.6, envMapIntensity: 0.35 })); d.rotation.x = -Math.PI/2; d.position.y = HT - M.drinkBelowRim; mug.add(d); }
     // the handle: one smooth D-shaped strap with a moulded fillet where it meets the body at both ends
@@ -47,7 +47,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
       for (let j = 0; j <= S; j++) { const a = j/S*Math.PI*2; const v = c.clone().addScaledVector(nrm, Math.cos(a)*(M.handle.thick/2 + fil)).addScaledVector(bin, Math.sin(a)*(M.handle.width/2 + fil)); pos.push(v.x, v.y, v.z); } }
     for (let i = 0; i < N; i++) for (let j = 0; j < S; j++) { const a = i*(S + 1) + j, c2 = a + S + 1; idx.push(a, c2, a + 1, a + 1, c2, c2 + 1); }
     const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); hg.setIndex(idx); hg.computeVertexNormals();
-    mug.add(new T.Mesh(hg, Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.14, envMapIntensity: 0.5 }), { side: T.DoubleSide })));
+    mug.add(new T.Mesh(hg, Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.14, envMapIntensity: o.light === 'fire' ? 0.5 : 0.28 }), { side: T.DoubleSide })));
     mug.rotation.y = (o.az || 0)*Math.PI/180;
     // camera: looks at the middle of the mug from `el` degrees above; the mug fills `fill` of the frame
     const fov = o.fov || 28, el = (o.el == null ? 12 : o.el)*Math.PI/180; const cam = new T.PerspectiveCamera(fov, W/H, 1, 500);
