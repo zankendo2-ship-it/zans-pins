@@ -937,3 +937,8 @@ Better: white handle roots now match his real mug, the joints read as moulded at
 1. HANDLE SHAPE: his real handle (handle-join-real-v-model.jpg, left, and the 11oz lock photo) is a tall D/ear: nearly straight top and bottom arms leaving the roots, then a flatter, taller back. The model is a round C (semicircle), so it looks like a different mug side on. Re-profile it as a tall oval D (the inner hole taller than it is wide, roughly 1.4:1), and check by outline overlay on the side-on lock photo and on his photo.
 2. CONE in next-to-real-photo.jpg, middle ("same close phone camera"): it is still far more tapered than his mug in the same picture, so it is not the same camera. Either match it properly (base-to-rim width ratio within 3% of his photo) or drop that panel. The sheet that goes to Alex must not contain a cone view.
 3. Then: a REVIEW REQUEST here with the independent checker's PASS at 1080 px.
+
+
+## 2A-13 LOSSIEMOUTH COLOURS LOCKED (standing rule) - Alex 19 Nov 18:24 UTC, via ZANS project Claude
+Alex: "Also any Loussiemouth baulbel or mug, these are her colours" - design code ZBA-disc-F3B5C9-6CC24A-plain-F3B5C9.
+EVERY Lossiemouth bauble, mug, image or video uses exactly these colours: pink #F3B5C9 with green #6CC24A, PLAIN pattern (no spots, no stripes), and pink #F3B5C9 for the second colour slot. The earlier Lossiemouth mug with green spots is WRONG: redo its print in these colours (on the master mug only after Alex signs that off). Check the hex values exactly in every REVIEW REQUEST.
