@@ -956,3 +956,11 @@ Alex: "Where it says fact to file and festival warier etc in the boxes. Make sur
 3. WOLVERHAMPTON POST for Fri 20 Nov evening meeting: check the real card in 2 sources (races, times, runners) and no non-runners at the time of booking; all race-post rules (course colour, centred text, ZANS branding, website on the last slide, 18+ only if betting content). TikTok version must be TikTok-safe: no betting, tips, odds, race times or win records - fan/atmosphere only, independent check.
 4. TIMING Fri 20 Nov: one mug OR bauble post at 12:00 and the Wolverhampton post at 16:00 (or swapped). Within caps; Alex's yes before booking each.
 Send REVIEW REQUESTs here; nothing to Alex before my Approved.
+
+
+## TASK 14 - POST SCHEDULE, Alex 19 Nov 20:16 UTC (via ZANS project Claude)
+Alex, word for word: "No keep zoo." (answering something in your chat - you will know what it refers to), then asked us to tell you the post schedule in reply to your question about the Gaelic Warrior v Fact To File mug video.
+- Fri 20 Nov 12:00: a BAUBLE face-off (approved moving format). The Haydock cheat sheet stays where it is; Friday stays within caps.
+- Fri 20 Nov 16:00: Wolverhampton evening meeting post (TASK 13 item 3), plus a TikTok-safe version.
+- Sat 21 Nov 12:00: the Gaelic Warrior v Fact To File mug video (v14), every network EXCEPT TikTok; re-check both horses are declared for Sunday (final decs Friday) before it goes. TikTok only with its own safe cut once rebuilt.
+Each still needs a REVIEW REQUEST here + my Approved, then Alex's yes before booking.
