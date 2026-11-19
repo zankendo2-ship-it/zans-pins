@@ -36,7 +36,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     // the cylinder's v runs over the wall only; the print canvas is laid over the whole height, so shift v to match
     const uv = wallGeo.attributes.uv; for (let i = 0; i < uv.count; i++) uv.setY(i, (e + uv.getY(i)*(wallTop - e))/HT); mug.add(new T.Mesh(wallGeo, wallMat));
     lathe([[0, 0], [R - e, 0], ...arc(R - e, e, e, -Math.PI/2, 0)], glaze('#ffffff'));                                   // flat base with a small rounded edge
-    const dark = glaze(o.inside || '#0a0a0a', { roughness: 0.12, envMapIntensity: 0.55 });
+    const dark = glaze(o.inside || '#0a0a0a', { roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.35, envMapIntensity: 0.45 });   // a soft sheen inside, no mirror-sharp reflections of the lights
     lathe([...arc(R - rimR, wallTop, rimR, 0, Math.PI), [R - wall, 0.7], [0, 0.7]], Object.assign(dark, { side: T.DoubleSide }));     // rim and inside
     if (o.drink !== false) { const d = new T.Mesh(new T.CircleGeometry(R - wall - 0.02, 96), new T.MeshPhysicalMaterial({ color: o.drinkColour || '#3a2416', roughness: 0.25, clearcoat: 0.6, envMapIntensity: 0.35 })); d.rotation.x = -Math.PI/2; d.position.y = HT - M.drinkBelowRim; mug.add(d); }
     // the handle: one smooth D-shaped strap that flares into the body at both ends
@@ -47,7 +47,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
       for (let j = 0; j <= S; j++) { const a = j/S*Math.PI*2; const v = c.clone().addScaledVector(nrm, Math.cos(a)*M.handle.thick/2*fl).addScaledVector(bin, Math.sin(a)*M.handle.width/2*fl); pos.push(v.x, v.y, v.z); } }
     for (let i = 0; i < N; i++) for (let j = 0; j < S; j++) { const a = i*(S + 1) + j, c2 = a + S + 1; idx.push(a, c2, a + 1, a + 1, c2, c2 + 1); }
     const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); hg.setIndex(idx); hg.computeVertexNormals();
-    mug.add(new T.Mesh(hg, Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.1, envMapIntensity: 0.55 }), { side: T.DoubleSide })));
+    mug.add(new T.Mesh(hg, Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.14, envMapIntensity: 0.5 }), { side: T.DoubleSide })));
     mug.rotation.y = (o.az || 0)*Math.PI/180;
     // camera: looks at the middle of the mug from `el` degrees above; the mug fills `fill` of the frame
     const fov = o.fov || 28, el = (o.el == null ? 12 : o.el)*Math.PI/180; const cam = new T.PerspectiveCamera(fov, W/H, 1, 500);

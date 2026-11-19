@@ -11,8 +11,8 @@
   "reach": 3.35,
   "thick": 0.8,
   "width": 1.5,
-  "flare": 0.3,
-  "flareLength": 0.14,
+  "flare": 0.2,
+  "flareLength": 0.1,
   "path": [
    [0.3, 8.1],
    [-0.4, 8.1],
