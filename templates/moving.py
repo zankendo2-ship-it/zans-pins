@@ -18,7 +18,14 @@ def over(a, ov, k):
     if k <= 0: return a
     al = ov[..., 3:]/255.0*k; return a*(1-al) + ov[..., :3]*al
 def main(s):
-    sc = Image.open(s['scene']).convert('RGB'); MW, MH = sc.size
+    cache = {}
+    def scene(path):
+        if path not in cache: cache[path] = Image.open(path).convert('RGB')
+        return cache[path]
+    def crop(img, pos, ow, oh):                       # pos = [cx, cy, zoom]; zoom 1.0 = the picture's full width across this panel
+        cw = img.size[0]/pos[2]; ch = cw*oh/ow; cw, ch = min(cw, img.size[0]), min(cw*oh/ow, img.size[1]); cw = ch*ow/oh
+        x0 = min(max(pos[0] - cw/2, 0), img.size[0] - cw); y0 = min(max(pos[1] - ch/2, 0), img.size[1] - ch)
+        return np.asarray(img.resize((ow, oh), Image.BICUBIC, box=(x0, y0, x0+cw, y0+ch))).astype(np.float32)
     hook = np.asarray(Image.open(s['ov_hook']).convert('RGBA')).astype(np.float32); ques = np.asarray(Image.open(s['ov_question']).convert('RGBA')).astype(np.float32)
     end = np.asarray(Image.open(s['end_card']).convert('RGB')).astype(np.float32); fl = flakes(5, 80)
     body = sum(x['dur'] for x in s['shots']); total = body + s.get('end', 2.0); XF = 0.3
@@ -32,9 +39,12 @@ def main(s):
                 if tt < acc + sh['dur']: break
                 acc += sh['dur']
             k = (tt - acc)/sh['dur']; k = 0.15*k + 0.85*ease(k) if sh.get('ease', True) else k
-            cx, cy, z = [a + (b - a)*k for a, b in zip(sh['from'], sh['to'])]; cw, ch = MW/z, MH/z
-            x0 = min(max(cx - cw/2, 0), MW - cw); y0 = min(max(cy - ch/2, 0), MH - ch)
-            a = np.asarray(sc.resize((W, H), Image.BICUBIC, box=(x0, y0, x0+cw, y0+ch))).astype(np.float32)
+            lerp = lambda q: [a + (b - a)*k for a, b in zip(q['from'], q['to'])]
+            if 'split' in sh:                             # the two rivals, each in its own half, with a thin gold line between
+                L, R = sh['split']; a = np.zeros((H, W, 3), np.float32)                # one above the other: each product whole in its own half
+                a[:H//2] = crop(scene(L['scene']), lerp(L), W, H//2); a[H//2:] = crop(scene(R['scene']), lerp(R), W, H//2)
+                a[H//2-3:H//2+3] = np.array([242, 207, 91], np.float32)
+            else: a = crop(scene(sh.get('scene', s.get('scene'))), lerp(sh), W, H)
             if s.get('snow'): a = snow(a, t, fl)
             qa = s['question_at']
             a = over(a, hook, ease((t - s.get('hook_at', 1.0))/0.25)*(1 - ease((t - (qa - 0.25))/0.25)))
