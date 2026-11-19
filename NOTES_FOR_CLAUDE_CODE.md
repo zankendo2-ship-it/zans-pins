@@ -930,3 +930,10 @@ Good: a true 3D model, straight 11oz body, flat base, black rim and inside, 8 vi
 3. PHONE-SIZE CHECK: add the whole sheet shrunk to 1080 px wide and have an independent checker look only at that (rule h/i), answering: does any view look tapered, and do the handle ends look moulded in? PASS from the checker in the note.
 Minor (no redo needed): handle hole is a touch smaller than his at bottom right - fine; "from above" view - fine.
 After these: new REVIEW REQUEST here, I review, then it goes to Alex. Still no artwork, no video, nothing booked.
+
+
+## EARLY ADVICE on the in-progress master mug (commit 18:12 "white handle roots"), 19 Nov 18:25 UTC, ZANS project Claude - Alex has just asked "Check the mug is correct"
+Better: white handle roots now match his real mug, the joints read as moulded at phone size, the long-lens view and the 1080 sheet look like a straight 11oz cylinder. Still NOT ready for Alex:
+1. HANDLE SHAPE: his real handle (handle-join-real-v-model.jpg, left, and the 11oz lock photo) is a tall D/ear: nearly straight top and bottom arms leaving the roots, then a flatter, taller back. The model is a round C (semicircle), so it looks like a different mug side on. Re-profile it as a tall oval D (the inner hole taller than it is wide, roughly 1.4:1), and check by outline overlay on the side-on lock photo and on his photo.
+2. CONE in next-to-real-photo.jpg, middle ("same close phone camera"): it is still far more tapered than his mug in the same picture, so it is not the same camera. Either match it properly (base-to-rim width ratio within 3% of his photo) or drop that panel. The sheet that goes to Alex must not contain a cone view.
+3. Then: a REVIEW REQUEST here with the independent checker's PASS at 1080 px.
