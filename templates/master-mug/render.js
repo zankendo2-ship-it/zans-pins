@@ -10,8 +10,9 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
   const b = await chromium.launch({ args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   const W = o.w || 1600, H = o.h || 1600; const p = await b.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   await p.setContent('<body style="margin:0;background:transparent"></body>'); await p.addScriptTag({ path: path.join(__dirname, 'three.min.js') });
+  const HM = JSON.parse(fs.readFileSync(path.join(__dirname, 'handle_mesh.json'), 'utf8'));   // the handle and its moulded joins, built once by build_handle.py
   const flat = o.flat ? 'data:image/png;base64,' + fs.readFileSync(o.flat).toString('base64') : null;
-  const url = await p.evaluate(async ([M, o, flat, W, H]) => {
+  const url = await p.evaluate(async ([M, o, flat, W, H, HM]) => {
     const T = THREE; const R = M.diameter / 2, HT = M.height, wall = M.wall, e = M.baseEdge;
     const r = new T.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true }); r.setSize(W, H); r.setPixelRatio(2); r.outputEncoding = T.sRGBEncoding; r.toneMapping = T.ACESFilmicToneMapping; r.toneMappingExposure = o.exposure || 1.05; document.body.appendChild(r.domElement);
     const sc = new T.Scene();
@@ -39,15 +40,11 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const dark = glaze(o.inside || '#0a0a0a', { roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.35, envMapIntensity: o.light === 'fire' ? 0.45 : 0.25 });   // a soft sheen inside, no mirror-sharp reflections of the lights
     lathe([...arc(R - rimR, wallTop, rimR, 0, Math.PI), [R - wall, 0.7], [0, 0.7]], Object.assign(dark, { side: T.DoubleSide }));     // rim and inside
     if (o.drink !== false) { const d = new T.Mesh(new T.CircleGeometry(R - wall - 0.02, 96), new T.MeshPhysicalMaterial({ color: o.drinkColour || '#3a2416', roughness: 0.25, clearcoat: 0.6, envMapIntensity: 0.35 })); d.rotation.x = -Math.PI/2; d.position.y = HT - M.drinkBelowRim; mug.add(d); }
-    // the handle: one smooth D-shaped strap with a moulded fillet where it meets the body at both ends
-    const hp = M.handle.path.map(q => new T.Vector3(-R + q[0], q[1], 0)); const curve = new T.CatmullRomCurve3(hp, false, 'centripetal');
-    const N = 220, S = 48, pos = [], idx = [];
-    for (let i = 0; i <= N; i++) { const t = i/N; const c = curve.getPointAt(t), tg = curve.getTangentAt(t); const nrm = new T.Vector3(-tg.y, tg.x, 0).normalize(); const bin = new T.Vector3(0, 0, 1);
-      const outD = Math.max(0, -(c.x + R)); const k = Math.max(0, 1 - outD/M.handle.filletLength); const fil = M.handle.fillet*k*k*k;   // fillet: the strap swells smoothly into the wall over the last few millimetres, like moulded ceramic
-      for (let j = 0; j <= S; j++) { const a = j/S*Math.PI*2; const v = c.clone().addScaledVector(nrm, Math.cos(a)*(M.handle.thick/2 + fil)).addScaledVector(bin, Math.sin(a)*(M.handle.width/2 + fil)); pos.push(v.x, v.y, v.z); } }
-    for (let i = 0; i < N; i++) for (let j = 0; j < S; j++) { const a = i*(S + 1) + j, c2 = a + S + 1; idx.push(a, c2, a + 1, a + 1, c2, c2 + 1); }
-    const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); hg.setIndex(idx); hg.computeVertexNormals();
-    mug.add(new T.Mesh(hg, Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.14, envMapIntensity: o.light === 'fire' ? 0.5 : 0.28 }), { side: T.DoubleSide })));
+    // the handle: one blended surface (strap + moulded fillets into the wall), from handle_mesh.json
+    const dec = (b64, Arr) => { const s = atob(b64), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return new Arr(u.buffer); };
+    const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.BufferAttribute(dec(HM.pos, Float32Array), 3)); hg.setAttribute('normal', new T.BufferAttribute(dec(HM.nrm, Float32Array), 3)); hg.setIndex(new T.BufferAttribute(dec(HM.idx, Uint32Array), 1));
+    { const al = dec(HM.alpha, Float32Array), col = new Float32Array(al.length*4); for (let i = 0; i < al.length; i++) { col[i*4] = col[i*4+1] = col[i*4+2] = 1; col[i*4+3] = al[i]; } hg.setAttribute('color', new T.BufferAttribute(col, 4)); }   // where the black glaze ends on the wall
+    mug.add(new T.Mesh(hg, Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.14, envMapIntensity: o.light === 'fire' ? 0.5 : 0.28 }), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5, transparent: false })));
     mug.rotation.y = (o.az || 0)*Math.PI/180;
     if (o.shadow !== false) {                       // a soft contact shadow on the table, so the mug stands instead of floating
       const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d'); const gr = g.createRadialGradient(128, 128, 40, 128, 128, 126);
@@ -58,6 +55,6 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const span = Math.max(HT, M.diameter + M.handle.reach)*1.12; const dist = span/2/Math.tan(fov*Math.PI/360)/(o.fill || 0.9);
     const tgt = new T.Vector3(o.cx || 0, o.cy == null ? HT/2 : o.cy, o.cz || 0); cam.position.set(tgt.x, tgt.y + dist*Math.sin(el), dist*Math.cos(el)); cam.lookAt(tgt);
     r.render(sc, cam); return r.domElement.toDataURL('image/png');
-  }, [M, o, flat, W, H]);
+  }, [M, o, flat, W, H, HM]);
   fs.writeFileSync(out, Buffer.from(url.split(',')[1], 'base64')); await b.close(); console.log('master mug ->', out);
 })();
