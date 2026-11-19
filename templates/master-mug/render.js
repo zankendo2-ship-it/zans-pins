@@ -19,8 +19,8 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const env = new T.Scene(); env.background = new T.Color(o.light === 'fire' ? 0x1a120c : 0x9a9a9a);   // studio: a bright, even room, so the white glaze is white and shades smoothly
     const panel = (x, y, z, w, h, col, k) => { const m = new T.Mesh(new T.PlaneGeometry(w, h), new T.MeshBasicMaterial({ color: new T.Color(col).multiplyScalar(k), side: T.DoubleSide })); m.position.set(x, y, z); m.lookAt(0, 0, 0); env.add(m); };
     if (o.light === 'fire') { panel(-30, 25, 30, 30, 40, 0xfff1dc, 5); panel(40, 8, 10, 18, 22, 0xff9a45, 6); panel(0, 50, 0, 60, 60, 0xffe6c8, 1.6); panel(-20, 5, -40, 50, 30, 0xffc890, 1.2); }
-    else { panel(-34, 34, 34, 60, 60, 0xffffff, 2.6); panel(44, 22, 18, 30, 50, 0xffffff, 1.6); panel(0, 60, 0, 120, 120, 0xffffff, 1.4); panel(-22, 14, 40, 5, 70, 0xffffff, 9); }   // the last one is a tall strip light: the glaze's highlight line
-    const pm = new T.PMREMGenerator(r); sc.environment = pm.fromScene(env, o.light === 'fire' ? 0.03 : 0.09).texture;
+    else { panel(-34, 34, 34, 60, 60, 0xffffff, 2.6); panel(44, 22, 18, 30, 50, 0xffffff, 1.6); panel(0, 60, 0, 120, 120, 0xffffff, 1.4); panel(-26, 16, 40, 18, 70, 0xffffff, 3.2); }   // the last one is a tall strip light: the glaze's highlight line
+    const pm = new T.PMREMGenerator(r); sc.environment = pm.fromScene(env, o.light === 'fire' ? 0.03 : 0.16).texture;
     const glaze = (col, extra = {}) => new T.MeshPhysicalMaterial(Object.assign({ color: col, roughness: 0.16, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.06, envMapIntensity: 1 }, extra));
     const mug = new T.Group(); sc.add(mug);
     // print texture: the flat artwork is the whole way round, starting and ending at the handle
