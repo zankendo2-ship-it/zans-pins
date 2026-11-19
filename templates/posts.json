@@ -136,9 +136,10 @@
  "h2h-gaelic-warrior-fact-to-file": {
   "metal": "gold",
   "colour": "#1F5A3D",
-  "eyebrow": "Head to head · mugs in their colours",
-  "big": "Gaelic Warrior<br>or Fact To File?",
-  "sub": "Two famous sets of colours.",
+  "eyebrow": "Gaelic Warrior v Fact To File",
+  "big": "Last year: a neck.<br>Sunday: round two.",
+  "bigSize": 0.6,
+  "sub": "The Gold Cup hero against his biggest rival.",
   "question": "Which one are you cheering?",
   "silks": {
    "body": "#F3B5C9",
@@ -151,8 +152,7 @@
    "second": "#F2C40F",
    "pattern": "hoops",
    "cap": "#FFFFFF"
-  },
-  "bigSize": 0.74
+  }
  },
  "h2h-grey-dawning-inothewayurthinkin": {
   "metal": "silver",

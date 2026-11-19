@@ -25,9 +25,12 @@ def heard(f):
 def main(spec):
     K, P, A, B, SC, O = spec['key'], spec['product'], spec['a'], spec['b'], spec['scene'], spec['out']
     W = f'/tmp/zans-faceoff/{K}'; os.makedirs(W, exist_ok=True); os.makedirs(f'{O}/phone', exist_ok=True)
-    scene = f'templates/scenes/{K}.png'
+    scene = f"templates/scenes/{spec.get('scene_key', K)}.png"
     # 1. the picture
-    if P == 'mug':
+    if SC.get('reuse'):                                # copy-only redo: keep the approved picture, aim the zoom at the middle of the pair
+        cx, cy = SC['focus']
+        env = {"ZANS_STEAM": ";".join(f"{x},{y}" for x, y in SC['steam']), "ZANS_ZOOM": "0.08", "ZANS_KEEP_R": "640"} if P == 'mug' else {"ZANS_KEEP_R": "560"}
+    elif P == 'mug':
         jobs = [[f'{s}.png', h['pattern'], h['c1'], h['c2'], h['handle'], h['name'], side, {"light": SC['light'], "turn": h.get('turn', 0.5), "camY": SC.get('camY', 3.6)}]
                 for s, h, side in (('ma', A, 'left'), ('mb', B, 'right'))]
         print(run(['node', 'templates/mug3d.js', W, json.dumps(jobs)]).strip())
@@ -52,15 +55,15 @@ def main(spec):
         cx, cy = round((ax+bx)/2), round(min((ay+by)/2 - 150, 1250)); env = {"ZANS_KEEP_R": "560"}
     # 2. the cards
     posts = json.load(open('templates/posts.json'))
-    big = f"{A['name']} or<br>{B['name']}?"; longest = max(len(A['name'])+3, len(B['name'])+1)
-    posts[K] = {"metal": spec.get('metal', 'gold'), "colour": "#1F5A3D", "eyebrow": f"Head to head · {'mugs' if P == 'mug' else 'baubles'} in their colours", "big": big,
-                "bigSize": round(min(0.74, 11.4/longest), 2), "sub": spec['sub'], "question": "Which one are you cheering?",
+    big = spec.get('big', f"{A['name']} or<br>{B['name']}?"); longest = max(len(x) for x in big.split('<br>')) + 1
+    posts[K] = {"metal": spec.get('metal', 'gold'), "colour": "#1F5A3D", "eyebrow": spec.get('eyebrow', f"Head to head · {'mugs' if P == 'mug' else 'baubles'} in their colours"), "big": big,
+                "bigSize": round(min(0.74, 11.4/longest), 2), "sub": spec['sub'], "question": spec.get('question', "Which one are you cheering?"),
                 "silks": {**A['band'], "cap": A.get('cap', A['band']['body'])}, "silks2": {**B['band'], "cap": B.get('cap', B['band']['body'])}}
     json.dump(posts, open('templates/posts.json', 'w'), indent=1, ensure_ascii=False)
     run(['node', 'templates/render.js', W, K]); run(['python3', 'templates/silks_bands.py', W, K])
     # 3. the voice (brand voice, each clip transcribed and compared)
     V = 'templates/voice/clips'; pair = f"{slug(A['name'])}-{slug(B['name'])}"
-    lines = [{"file": f"zp_fo_{pair}_1.mp3", "text": f"{A.get('say', A['name'])} or {B.get('say', B['name'])}?"}, {"file": f"zp_fo_{slug(spec['say2'])[:40]}.mp3", "text": spec['say2']}]
+    lines = spec.get('lines') or [{"file": f"zp_fo_{pair}_1.mp3", "text": f"{A.get('say', A['name'])} or {B.get('say', B['name'])}?"}, {"file": f"zp_fo_{slug(spec['say2'])[:40]}.mp3", "text": spec['say2']}]
     json.dump({"gemini": {"voice": "Aoede", "style": STYLE}, "lines": lines}, open(f'{W}/voice.json', 'w'))
     run(['python3', 'templates/voice/gemini_tts.py', V, f'{W}/voice.json'])
     for l in lines: print('  voice:', l['text'], '| heard:', heard(f"{V}/{l['file']}"))
@@ -68,11 +71,11 @@ def main(spec):
     if after:
         json.dump({"gemini": {"voice": "Aoede", "style": STYLE}, "lines": after}, open(f'{W}/voice2.json', 'w')); run(['python3', 'templates/voice/gemini_tts.py', V, f'{W}/voice2.json'])
         for l in after: print('  voice:', l['text'], '| heard:', heard(f"{V}/{l['file']}"))
-    out = run(['python3', 'templates/voice/mix.py', V, f'{W}/audio.m4a', spec['music'], 'zp_santa_a.mp3', lines[0]['file'], lines[1]['file'], 'zp_cheer.mp3', 'zp_ask_2.mp3'] + [l['file'] for l in after]).split()
+    out = run(['python3', 'templates/voice/mix.py', V, f'{W}/audio.m4a', spec['music'], 'zp_santa_a.mp3', *[l['file'] for l in lines], *spec.get('closers', ['zp_cheer.mp3', 'zp_ask_2.mp3'])] + [l['file'] for l in after]).split()
     p2, total = float(out[-2]), float(out[-1])
     for f in glob.glob(f'{V}/_t*.wav'): os.remove(f)
     # 4. the video and slides
-    run(['python3', 'templates/video.py', W, scene, K, str(cx), str(cy), SC['mode'], O, f'{W}/audio.m4a'], {**env, "ZANS_P1": str(max(4.0, round(p2-5.6, 2))), "ZANS_P2": str(p2), "ZANS_TOTAL": str(total)})
+    run(['python3', 'templates/video.py', W, scene, K, str(cx), str(cy), SC['mode'], O, f'{W}/audio.m4a'], {**env, "ZANS_P1": str(max(4.0, round(min(p2-5.6, p2*0.4), 2))), "ZANS_P2": str(p2), "ZANS_TOTAL": str(total)})
     sheet = Image.new('RGB', (1080*4, 1920))
     for i, n in enumerate(('000', '060', '165', '250')): sheet.paste(Image.open(f'{O}/{K}-frame-{n}.jpg'), (i*1080, 0))
     sheet.thumbnail((1900, 900)); sheet.save(f'{W}/check.png')
@@ -85,13 +88,13 @@ def main(spec):
     mug = P == 'mug'; thing, things = ('mug', 'mugs') if mug else ('Christmas bauble', 'Christmas baubles')
     designer = 'mug-designer' if mug else 'bauble-designer'; etsy = '4608193933' if mug else '4611232428'; tag = '#personalisedmug' if mug else '#personalisedbauble'
     pick = "the pattern, the colours, the handle and the name" if mug else "the pattern, the colours and the name"
-    a, b, q = A['name'], B['name'], "Which one are you cheering? 👇"; web = "Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄"; xmas = "Wishing you a Merry Christmas 🎅"
+    a, b, q = A['name'], B['name'], spec.get('q', "Which one are you cheering?") + " 👇"; hook = spec.get('hook', f"{A['name']} or {B['name']}? 🏇"); hook_t = spec.get('hook_tiktok', hook); web = "Visit www.zanshorseracing.co.uk for horse racing gifts, the perfect present for Christmas 🎄"; xmas = "Wishing you a Merry Christmas 🎅"
     spec_txt = "with a coloured handle and inside. 330 ml ceramic." if mug else "Round ceramic, about 7.5 cm, with a ribbon."
     cap = f"""# Head to head {things}: {a} v {b}. Social showcase only: sells "design your own", never these two {things}. Facts and silks: see the review request and research files. Not booked.
 Alt text: {spec['alt']}
 
 ## Instagram
-{a} or {b}? 🏇 Two personalised horse racing {things}, each in famous colours.
+{hook} Two personalised horse racing {things}, each in famous colours.
 
 {spec['story']} Design a {thing.split()[-1]} in any colours, with any name, at www.zanshorseracing.co.uk. These two are showcases, not ready-made {things.split()[-1]}. You pick {pick}. We print yours.
 
@@ -110,7 +113,7 @@ Search ZANSRacingTools on Etsy.
 Link in bio 👉 www.zanshorseracing.co.uk
 
 ## Facebook
-{a} or {b}? 🏇 Two personalised horse racing {things}, each in famous colours.
+{hook} Two personalised horse racing {things}, each in famous colours.
 
 {spec['story']} Design a {thing.split()[-1]} in any colours, with any name, on our website. These two are showcases, not ready-made {things.split()[-1]}. You pick {pick}. We print yours.
 
@@ -123,12 +126,12 @@ Link in bio 👉 www.zanshorseracing.co.uk
 First comment: Design yours: https://www.zanshorseracing.co.uk/{designer}/
 
 ## X
-{a} or {b}? 🏇 Two {things} in famous racing colours. Which one are you cheering? #HorseRacing #HorseRacingGifts
+{spec.get('x', f'{a} or {b}? 🏇 Two {things} in famous racing colours. Which one are you cheering?')} #HorseRacing #HorseRacingGifts
 
 Reply: Design yours in any colours, with any name: https://www.zanshorseracing.co.uk/{designer}/ {xmas}
 
 ## LinkedIn
-{a} or {b}? 🏇 Two personalised horse racing {things}, each in famous colours.
+{hook} Two personalised horse racing {things}, each in famous colours.
 
 {spec['story']} A {thing.split()[-1]} in the syndicate's own colours, with each member's name, makes an easy Christmas gift for owners and clients. Design one at www.zanshorseracing.co.uk.
 
@@ -139,8 +142,8 @@ Reply: Design yours in any colours, with any name: https://www.zanshorseracing.c
 #horseracinggifts {tag} #horseracing
 
 ## YouTube
-Title: Horse Racing {'Mugs' if mug else 'Christmas Baubles'}: {a} or {b}? 🎄
-{a} or {b}? 🏇 Two personalised horse racing {things} in famous colours. Design yours in any colours, with any name, at www.zanshorseracing.co.uk. Search ZANSRacingTools on Etsy.
+Title: {spec.get('yt_title', f"Horse Racing {'Mugs' if mug else 'Christmas Baubles'}: {a} or {b}? 🎄")}
+{hook} Two personalised horse racing {things} in famous colours. Design yours in any colours, with any name, at www.zanshorseracing.co.uk. Search ZANSRacingTools on Etsy.
 
 {q}
 
@@ -154,8 +157,8 @@ A personalised horse racing {thing} in racing silks, with any name. These showca
 Link: https://www.etsy.com/uk/listing/{etsy}
 
 ## TikTok
-Title: {a} or {b}? {'Mugs' if mug else 'Baubles'} in their colours 🎄
-{a} or {b}? 🏇 Two personalised horse racing {things}, each in famous colours.
+Title: {spec.get('tt_title', f"{a} or {b}? {'Mugs' if mug else 'Baubles'} in their colours 🎄")}
+{hook_t} Two personalised horse racing {things}, each in famous colours.
 
 {spec['story_tiktok']} Design a {thing.split()[-1]} in any colours, with any name. You pick {pick}.
 
