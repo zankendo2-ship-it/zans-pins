@@ -4,7 +4,7 @@ rim and inside), its light, gloss and shadows; we only lay the print on the whit
 Usage: python3 templates/wrapmug.py <blank photo> <out.png> <spec.json>
 spec: {"mugs": [{"flat": png, "top": [cx, cy, rx, ry], "bot": [cx, cy, rx, ry]  (rim and base ellipses in 1296x2304 px),
                  "handle": "right"|"left", "uh": handle angle in radians (about 1.35 = at the edge, turned a little to the camera),
-                 "t0": 0.03, "t1": 0.93 (how far down the print runs), "behind": [index of a mug standing in front of this one]}]}"""
+                 "t0": 0.03, "t1": 0.93 (how far down the print runs), "behind": [index of a mug standing in front of this one], "root": 50 (px the white handle root sticks out from the body, for a mug that stands in front of another)}]}"""
 import json, sys, numpy as np, cv2
 TEX_W, TEX_H, PPR = 3015.0, 1125.0, 480.0
 def geom(m, h, w):
@@ -43,11 +43,12 @@ def main(photo, out, spec):
             # ...nor on that mug's handle: the dark handle (grown a little to take in its highlights) and the white roots where it joins the body
             side = 1 if mj.get('handle', 'right') == 'right' else -1; edge = mj['top'][0] + side*mj['top'][2]
             box = ((xs - edge)*side > -12) & ((xs - edge)*side < 330) & (ys > mj['top'][1] - 40) & (ys < mj['bot'][1] + 40)
-            dark = ((hsv[..., 2] < 70) & box).astype(np.uint8); dark = cv2.morphologyEx(dark, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (25, 25)))
+            rim = ((xs-mj['top'][0])/(mj['top'][2]+14))**2 + ((ys-mj['top'][1])/(mj['top'][3]+14))**2 <= 1   # that mug's own black rim and inside are not its handle
+            dark = ((hsv[..., 2] < 70) & box & ~rim).astype(np.uint8); dark = cv2.morphologyEx(dark, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (25, 25)))
             near = cv2.dilate(dark, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (121, 121))).astype(bool); dark = cv2.dilate(dark, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7)))
-            touch = (dark > 0) & ((xs - edge)*side < 75)                                             # where the handle meets the body: the white root sits just there
+            rr = mj.get('root', 50); touch = (dark > 0) & ((xs - edge)*side < rr + 25)                                             # where the handle meets the body: the white root sits just there
             rows = cv2.dilate(touch.any(axis=1).astype(np.uint8)[:, None], np.ones((49, 1), np.uint8))[:, 0].astype(bool)
-            roots = box & ((xs - edge)*side < 50) & rows[:, None] & near
+            roots = box & ((xs - edge)*side < rr) & rows[:, None] & near
             ex = np.maximum(dark, cv2.morphologyEx(roots.astype(np.uint8), cv2.MORPH_OPEN, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (31, 31)))).astype(np.float32)
             a *= 1 - np.clip(cv2.GaussianBlur(ex, (0, 0), 2.0)*1.6, 0, 1)
         a = cv2.GaussianBlur(a, (0, 0), 1.2)*glaze; a = a[..., None]
