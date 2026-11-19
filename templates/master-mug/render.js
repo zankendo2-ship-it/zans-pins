@@ -22,6 +22,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     if (o.light === 'fire') { panel(-30, 25, 30, 30, 40, 0xfff1dc, 5); panel(40, 8, 10, 18, 22, 0xff9a45, 6); panel(0, 50, 0, 60, 60, 0xffe6c8, 1.6); panel(-20, 5, -40, 50, 30, 0xffc890, 1.2); }
     else { panel(-34, 34, 34, 60, 60, 0xffffff, 2.6); panel(44, 22, 18, 30, 50, 0xffffff, 1.6); panel(0, 60, 0, 120, 120, 0xffffff, 1.4); panel(-26, 16, 40, 18, 70, 0xffffff, 3.2); }   // the last one is a tall strip light: the glaze's highlight line
     const pm = new T.PMREMGenerator(r); sc.environment = pm.fromScene(env, o.light === 'fire' ? 0.03 : 0.16).texture;
+    const lightCol = (c) => { const k = new T.Color(c); return (k.r + k.g + k.b)/3 > 0.35; };   // a white handle or inside takes the body's glaze settings, a dark one the low-reflection ones
     const glaze = (col, extra = {}) => new T.MeshPhysicalMaterial(Object.assign({ color: col, roughness: 0.16, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.06, envMapIntensity: 1 }, extra));
     const mug = new T.Group(); sc.add(mug);
     // print texture: the flat artwork is the whole way round, starting and ending at the handle
@@ -37,14 +38,14 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     // the cylinder's v runs over the wall only; the print canvas is laid over the whole height, so shift v to match
     const uv = wallGeo.attributes.uv; for (let i = 0; i < uv.count; i++) uv.setY(i, (e + uv.getY(i)*(wallTop - e))/HT); mug.add(new T.Mesh(wallGeo, wallMat));
     lathe([[0, 0], [R - e, 0], ...arc(R - e, e, e, -Math.PI/2, 0)], glaze('#ffffff'));                                   // flat base with a small rounded edge
-    const dark = glaze(o.inside || '#0a0a0a', { roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.35, envMapIntensity: o.light === 'fire' ? 0.45 : 0.25 });   // a soft sheen inside, no mirror-sharp reflections of the lights
+    const dark = lightCol(o.inside || '#0a0a0a') ? glaze(o.inside, { envMapIntensity: 0.8 }) : glaze(o.inside || '#0a0a0a', { roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.35, envMapIntensity: o.light === 'fire' ? 0.45 : 0.25 });   // a soft sheen inside, no mirror-sharp reflections of the lights
     lathe([...arc(R - rimR, wallTop, rimR, 0, Math.PI), [R - wall, 0.7], [0, 0.7]], Object.assign(dark, { side: T.DoubleSide }));     // rim and inside
     if (o.drink !== false) { const d = new T.Mesh(new T.CircleGeometry(R - wall - 0.02, 96), new T.MeshPhysicalMaterial({ color: o.drinkColour || '#3a2416', roughness: 0.25, clearcoat: 0.6, envMapIntensity: 0.35 })); d.rotation.x = -Math.PI/2; d.position.y = HT - M.drinkBelowRim; mug.add(d); }
     // the handle: one blended surface (strap + moulded fillets into the wall), from handle_mesh.json
     const dec = (b64, Arr) => { const s = atob(b64), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return new Arr(u.buffer); };
     const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.BufferAttribute(dec(HM.pos, Float32Array), 3)); hg.setAttribute('normal', new T.BufferAttribute(dec(HM.nrm, Float32Array), 3)); hg.setIndex(new T.BufferAttribute(dec(HM.idx, Uint32Array), 1));
     const withAlpha = (b64) => { const g2 = hg.clone(); const al = dec(b64, Float32Array), col = new Float32Array(al.length*4); for (let i = 0; i < al.length; i++) { col[i*4] = col[i*4+1] = col[i*4+2] = 1; col[i*4+3] = al[i]; } g2.setAttribute('color', new T.BufferAttribute(col, 4)); return g2; };
-    mug.add(new T.Mesh(withAlpha(HM.alpha), Object.assign(glaze(o.handle || '#030303', { roughness: 0.06, clearcoatRoughness: 0.02, envMapIntensity: o.light === 'fire' ? 0.3 : 0.22 }), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // the handle
+    mug.add(new T.Mesh(withAlpha(HM.alpha), Object.assign((lightCol(o.handle || '#030303') ? glaze(o.handle) : glaze(o.handle || '#030303', { roughness: 0.06, clearcoatRoughness: 0.02, envMapIntensity: o.light === 'fire' ? 0.3 : 0.22 })), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // the handle
     mug.add(new T.Mesh(withAlpha(HM.alphaWhite), Object.assign(glaze('#ffffff'), { side: T.DoubleSide, vertexColors: true, alphaTest: 0.5 })));   // its white roots, melting into the wall
     mug.rotation.y = (o.az || 0)*Math.PI/180;
     if (o.shadow !== false) {                       // a soft contact shadow on the table, so the mug stands instead of floating

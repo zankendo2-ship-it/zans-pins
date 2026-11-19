@@ -1,13 +1,13 @@
 """Stands master mugs (render.js, artwork wrapped) on an EMPTY table photo, with contact shadows and the room's light.
 python3 templates/master-mug/place.py <table photo> <out.png> '<json>'
-json: {"w":1296,"h":2304,"el":24,"tint":[1.0,0.965,0.91],"dim":0.9,"mugs":[{"flat":"templates/mug-flats/x.png","az":20,"x":430,"base":1560,"height":560}, ...]}  back mug first.
+json: {"w":1296,"h":2304,"el":24,"tint":[1.0,0.965,0.91],"dim":0.9,"mugs":[{"flat":"templates/mug-flats/x.png","handle":"#ffffff","inside":"#ffffff","az":20,"x":430,"base":1560,"height":560}, ...]}  back mug first.
 x = centre of the mug BODY, base = y of the bottom of the mug, height = mug height in pixels (bigger = nearer the camera)."""
 import json, subprocess, sys, os, tempfile, numpy as np
 from PIL import Image, ImageFilter, ImageDraw
 H = os.path.dirname(os.path.abspath(__file__)); table, out, sp = sys.argv[1], sys.argv[2], json.loads(sys.argv[3]); W, HH = sp.get('w', 1296), sp.get('h', 2304)
 bg = Image.open(table).convert('RGB').resize((W, HH), Image.LANCZOS); tint = np.array(sp.get('tint', [1.0, 0.965, 0.91]), np.float32)*sp.get('dim', 0.9); tmp = tempfile.mkdtemp()
 for i, m in enumerate(sp['mugs']):
-    o = dict(flat=m.get('flat'), az=m['az'], el=sp.get('el', 24), fov=m.get('fov', 16), w=1600, h=1600, light='fire', shadow=False, fill=0.8, exposure=1.2)
+    o = dict(flat=m.get('flat'), handle=m.get('handle', '#030303'), inside=m.get('inside', '#0a0a0a'), az=m['az'], el=sp.get('el', 24), fov=m.get('fov', 16), w=1600, h=1600, light='fire', shadow=False, fill=0.8, exposure=1.2)
     f = '%s/m%d.png' % (tmp, i); subprocess.run(['node', H + '/render.js', f, json.dumps(o)], check=True, stdout=subprocess.DEVNULL)
     a = np.asarray(Image.open(f)).astype(np.float32); al = a[..., 3] > 40; ys, xs = np.where(al)
     # the body (not the handle) sets the scale and the centre: use the widest run of rows near the base
