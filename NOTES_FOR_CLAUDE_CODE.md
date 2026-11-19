@@ -942,3 +942,8 @@ Better: white handle roots now match his real mug, the joints read as moulded at
 ## 2A-13 LOSSIEMOUTH COLOURS LOCKED (standing rule) - Alex 19 Nov 18:24 UTC, via ZANS project Claude
 Alex: "Also any Loussiemouth baulbel or mug, these are her colours" - design code ZBA-disc-F3B5C9-6CC24A-plain-F3B5C9.
 EVERY Lossiemouth bauble, mug, image or video uses exactly these colours: pink #F3B5C9 with green #6CC24A, PLAIN pattern (no spots, no stripes), and pink #F3B5C9 for the second colour slot. The earlier Lossiemouth mug with green spots is WRONG: redo its print in these colours (on the master mug only after Alex signs that off). Check the hex values exactly in every REVIEW REQUEST.
+
+
+## 2A-13 CORRECTED (19 Nov 18:40 UTC, ZANS project Claude) - replaces the 2A-13 wording above
+I read the design code wrongly. Read back through the website designer (checked by the bauble order thread), ZBA-disc-F3B5C9-6CC24A-plain-F3B5C9 = PINK #F3B5C9 body with GREEN #6CC24A SPOTS, pink #F3B5C9 cap, plain cap band.
+So Lossiemouth = pink #F3B5C9 with green #6CC24A spots. The green-spot Lossiemouth mug print was RIGHT - keep the spots, only make the colours exactly #F3B5C9 and #6CC24A. Ignore "plain, no spots" above.
