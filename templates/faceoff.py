@@ -10,7 +10,8 @@ Nothing here posts or books anything."""
 import json, os, subprocess, sys, glob, re, base64, urllib.request
 from PIL import Image
 sys.path.insert(0, 'templates'); import mapart2
-STYLE = "a warm young woman from London with a natural everyday London accent who softens her t sounds the way Londoners do, like a friendly local chatting to a mate, upbeat and conversational, not posh"
+STYLE = "a warm young woman from London with a natural everyday London accent who softens her t sounds the way Londoners do, like a friendly local chatting to a mate, upbeat and conversational, not posh, speaking at a slightly brisker pace, full of genuine excitement and enthusiasm, gripping the listener like she can't wait for this race"
+WRAPPER = "Speak naturally and energetically, with short pauses, not like a robot or an advert."   # with STYLE and tempo 1.07: the voice Alex approved on 19 Nov 2026 ("Voice is perfect")
 def run(cmd, env=None):
     r = subprocess.run(cmd, capture_output=True, text=True, env={**os.environ, **(env or {})})
     if r.returncode: sys.exit(f"FAILED {cmd[:3]}\n{r.stdout[-800:]}\n{r.stderr[-1500:]}")
@@ -31,7 +32,7 @@ def main(spec):
         cx, cy = SC['focus']
         env = {"ZANS_STEAM": ";".join(f"{x},{y}" for x, y in SC['steam']), "ZANS_ZOOM": "0.08", "ZANS_KEEP_R": "640"} if P == 'mug' else {"ZANS_KEEP_R": "560"}
     elif P == 'mug':
-        jobs = [[f'{s}.png', h['pattern'], h['c1'], h['c2'], h['handle'], h['name'], side, {"light": SC['light'], "turn": h.get('turn', 0.5), "camY": SC.get('camY', 3.6)}]
+        jobs = [[f'{s}.png', h['pattern'], h['c1'], h['c2'], h['handle'], h['name'], side, {"light": SC['light'], "turn": h.get('turn', 0.5), "camY": SC.get('camY', 3.6), "teaDrop": 0.34, **({"ring": h['ring']} if 'ring' in h else {})}]
                 for s, h, side in (('ma', A, 'left'), ('mb', B, 'right'))]
         print(run(['node', 'templates/mug3d.js', W, json.dumps(jobs)]).strip())
         ps = {"tint": SC.get('tint', [1, 0.97, 0.93] if SC['light'] == 'fire' else [0.97, 0.98, 1.0]), "glint": [1, 0.87, 0.62] if SC['light'] == 'fire' else [0.9, 0.92, 0.95],
@@ -42,7 +43,8 @@ def main(spec):
         Image.open(f'{W}/placed.png').crop((x0, y0, x0+w, y0+h)).resize((1296, 2304), Image.LANCZOS).save(scene)
         mouths = [(round((m[0]*1.5-x0)*k), round(((m[1]-m[2])*1.5+0.19*m[2]*1.5-y0)*k)) for m in SC['mugs']]
         cx = round(sum(p[0] for p in mouths)/2); cy = round(((SC['mugs'][0][1]-SC['mugs'][0][2]/2)*1.5-y0)*k)
-        env = {"ZANS_STEAM": ";".join(f"{x},{y}" for x, y in mouths), "ZANS_ZOOM": "0.08", "ZANS_KEEP_R": "640"}
+        env = {"ZANS_STEAM": ";".join(f"{x},{y}" for x, y in mouths), "ZANS_ZOOM": str(SC.get('zoom', 0.08)), "ZANS_KEEP_R": "640"}
+        if 'focus' in SC: cx, cy = SC['focus']
     else:
         js = open('templates/cap_baubles.js').read()
         jl = "const jobs=[\n" + "".join(f" ['{s}.png',0,'{h['pattern']}','{h['c1']}','{h['c2']}','{h['cap']}',{json.dumps(h['name'])},'ZBA'],\n" for s, h in (('ba', A), ('bb', B))) + "];"
@@ -64,7 +66,7 @@ def main(spec):
     # 3. the voice (brand voice, each clip transcribed and compared)
     V = 'templates/voice/clips'; pair = f"{slug(A['name'])}-{slug(B['name'])}"
     lines = spec.get('lines') or [{"file": f"zp_fo_{pair}_1.mp3", "text": f"{A.get('say', A['name'])} or {B.get('say', B['name'])}?"}, {"file": f"zp_fo_{slug(spec['say2'])[:40]}.mp3", "text": spec['say2']}]
-    G = {"voice": "Aoede", "style": spec.get('style', STYLE), **({"wrapper": spec['wrapper']} if spec.get('wrapper') else {})}
+    G = {"voice": "Aoede", "style": spec.get('style', STYLE), "wrapper": spec.get('wrapper', WRAPPER), "tempo": spec.get('tempo', 1.07)}
     json.dump({"gemini": G, "lines": lines}, open(f'{W}/voice.json', 'w'))
     run(['python3', 'templates/voice/gemini_tts.py', V, f'{W}/voice.json'])
     for l in lines: print('  voice:', l['text'], '| heard:', heard(f"{V}/{l['file']}"))

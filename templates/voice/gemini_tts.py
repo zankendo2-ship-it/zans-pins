@@ -48,6 +48,8 @@ if __name__ == "__main__":
             limit = len(x["text"].split()) * 0.55 + 4
             for attempt in range(4):
                 speak(x["text"], g["voice"], g["style"], f, g.get("wrapper", WRAP))
+                if g.get("tempo"):                               # Alex's approved pace (19 Nov 2026): a small speed-up that keeps her pitch
+                    t = f.with_suffix(".t.mp3"); subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error", "-i", str(f), "-af", f"atempo={g['tempo']}", "-b:a", "128k", str(t)], check=True); t.replace(f)
                 d = clip_len(f)
                 print(f"{x['file']}: {d:.1f}s (limit {limit:.1f})", flush=True)
                 if d <= limit: break
