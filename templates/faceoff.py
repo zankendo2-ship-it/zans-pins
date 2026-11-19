@@ -30,7 +30,7 @@ def main(spec):
     # 1. the picture
     if SC.get('reuse'):                                # copy-only redo: keep the approved picture, aim the zoom at the middle of the pair
         cx, cy = SC['focus']
-        env = {"ZANS_STEAM": ";".join(f"{x},{y}" for x, y in SC['steam']), "ZANS_ZOOM": "0.08", "ZANS_KEEP_R": "640"} if P == 'mug' else {"ZANS_KEEP_R": "560"}
+        env = {"ZANS_STEAM": ";".join(f"{x},{y}" for x, y in SC['steam']), "ZANS_ZOOM": str(SC.get('zoom', 0.08)), "ZANS_KEEP_R": "640"} if P == 'mug' else {"ZANS_KEEP_R": "560"}
     elif P == 'mug':
         jobs = [[f'{s}.png', h['pattern'], h['c1'], h['c2'], h['handle'], h['name'], side, {"light": SC['light'], "turn": h.get('turn', 0.5), "camY": SC.get('camY', 3.6), "teaDrop": 0.34, **({"ring": h['ring']} if 'ring' in h else {})}]
                 for s, h, side in (('ma', A, 'left'), ('mb', B, 'right'))]

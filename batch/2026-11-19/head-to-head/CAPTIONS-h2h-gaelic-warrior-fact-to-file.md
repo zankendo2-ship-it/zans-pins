@@ -1,5 +1,5 @@
 # Head to head mugs: Gaelic Warrior v Fact To File. Social showcase only: sells "design your own", never these two mugs. Facts and silks: see the review request and research files. Not booked.
-Alt text: Two personalised racing silks mugs on a pub table by a fire: pink with green spots and the name Gaelic Warrior, and green and yellow hoops with the name Fact To File
+Alt text: Two personalised racing silks mugs on a farmhouse table by a Christmas tree and a fire: green and yellow hoops with a red ring and the name Fact To File, and pink with green spots and the name Gaelic Warrior, both with black handles
 
 ## Instagram
 Gaelic Warrior v Fact To File: a neck in it last year, and round two is Sunday 🏇 Two personalised horse racing mugs, each in famous colours.

@@ -1,0 +1,1 @@
+{"mugs": [{"flat": null, "mirror": false, "base": [450, 1740], "h": 480}, {"flat": "templates/mug-flats/gaelic-warrior.png", "mirror": true, "base": [880, 1470], "h": 390, "blur": 0.7}], "cast": [0.55, 0.22], "gain": 1.02, "tint": [0.78, 0.88, 0.99]}
