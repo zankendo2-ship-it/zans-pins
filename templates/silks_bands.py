@@ -39,5 +39,12 @@ def apply(cards, key):
         d.rectangle([0, top0+bh, W, top0+bh+5], fill=edge)
         im.paste(silks_band(W, bh, s2 or s), (0, bot1-bh)); d.rectangle([0, bot1-bh-6, W, bot1-bh-1], fill=edge)
         im.save(f)
+def apply_end(src, out, key):
+    """Face-off end card (Alex, 19 Nov 2026): both horses' silks as bands just inside the metal strips. python3 templates/silks_bands.py --end <end.png> <out.png> <key>"""
+    P = POSTS[key]; s = P['silks']; s2 = P.get('silks2') or s; edge = EDGE[P.get('metal', 'gold')]
+    im = Image.open(src).convert('RGB'); W, H = im.size; d = ImageDraw.Draw(im); bh = 120 if H > 1500 else 96; top0 = 72; bot1 = H - 72
+    im.paste(silks_band(W, bh, s), (0, top0)); d.rectangle([0, top0+bh, W, top0+bh+5], fill=edge)
+    im.paste(silks_band(W, bh, s2), (0, bot1-bh)); d.rectangle([0, bot1-bh-6, W, bot1-bh-1], fill=edge); im.save(out)
 if __name__ == '__main__':
+    if sys.argv[1] == '--end': apply_end(*sys.argv[2:5]); sys.exit()
     for k in sys.argv[2:]: apply(sys.argv[1], k)

@@ -1,7 +1,7 @@
 """Moving-cuts video (tester for Alex, 19 Nov 2026): several quick shots cut from ONE approved product scene, each shot moving, the hook on screen from 1.0 s,
 an A-or-B question with both choices on screen, then a short end card. Usage: python3 templates/moving.py <spec.json>
 spec: {"scene": png (1296x2304), "out": mp4, "audio": m4a, "end_card": png (1080x1920), "ov_hook": png, "ov_question": png, "snow": bool, "end": seconds of end card,
-       "shots": [{"dur": s, "from": [cx, cy, zoom], "to": [cx, cy, zoom]}], "hook_at": 1.0, "question_at": seconds}  zoom 1.0 = whole scene."""
+       "shots": [{"dur": s, "from": [cx, cy, zoom], "to": [cx, cy, zoom]}], "hook_at": 1.0, "question_at": seconds, "strips": png of the metal strips (the <key>-9x16-frame.png)}  zoom 1.0 = whole scene."""
 import json, subprocess, sys, numpy as np, imageio_ffmpeg
 from PIL import Image
 FF = imageio_ffmpeg.get_ffmpeg_exe(); FPS, W, H = 30, 1080, 1920
@@ -28,6 +28,7 @@ def main(s):
         return np.asarray(img.resize((ow, oh), Image.BICUBIC, box=(x0, y0, x0+cw, y0+ch))).astype(np.float32)
     hook = np.asarray(Image.open(s['ov_hook']).convert('RGBA')).astype(np.float32); ques = np.asarray(Image.open(s['ov_question']).convert('RGBA')).astype(np.float32)
     end = np.asarray(Image.open(s['end_card']).convert('RGB')).astype(np.float32); fl = flakes(5, 80)
+    strips = np.asarray(Image.open(s['strips']).convert('RGBA')).astype(np.float32) if s.get('strips') else None   # the signature metal strip, top and bottom, on every scene
     body = sum(x['dur'] for x in s['shots']); total = body + s.get('end', 2.0); XF = 0.3
     p = subprocess.Popen([FF, '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-', '-i', s['audio'], '-t', str(total),
                           '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', s['out']], stdin=subprocess.PIPE)
@@ -49,6 +50,7 @@ def main(s):
             qa = s['question_at']
             a = over(a, hook, ease((t - s.get('hook_at', 1.0))/0.25)*(1 - ease((t - (qa - 0.25))/0.25)))
             a = over(a, ques, ease((t - qa)/0.25))
+            if strips is not None: a = over(a, strips, 1)
             if t > body: kk = ease((t - body)/XF); a = a*(1-kk) + (snow(end.copy(), t, fl) if s.get('snow_end', True) else end)*kk
         else: a = snow(end.copy(), t, fl) if s.get('snow_end', True) else end
         p.stdin.write(a.clip(0, 255).astype(np.uint8).tobytes())
