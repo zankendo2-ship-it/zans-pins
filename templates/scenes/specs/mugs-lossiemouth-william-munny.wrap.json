@@ -1,0 +1,1 @@
+{"mirror": true, "mugs": [{"flat": "templates/mug-flats/lossiemouth.png", "top": [880, 1113, 274, 56], "bot": [879, 1795, 270, 50], "handle": "left", "uh": 1.30, "root": 1}, {"flat": "templates/mug-flats/william-munny.png", "top": [449, 1008, 243, 42], "bot": [448, 1595, 240, 40], "handle": "left", "uh": 1.30, "behind": [0]}]}
