@@ -964,3 +964,11 @@ Alex, word for word: "No keep zoo." (answering something in your chat - you will
 - Fri 20 Nov 16:00: Wolverhampton evening meeting post (TASK 13 item 3), plus a TikTok-safe version.
 - Sat 21 Nov 12:00: the Gaelic Warrior v Fact To File mug video (v14), every network EXCEPT TikTok; re-check both horses are declared for Sunday (final decs Friday) before it goes. TikTok only with its own safe cut once rebuilt.
 Each still needs a REVIEW REQUEST here + my Approved, then Alex's yes before booking.
+
+
+## TASK 14 UPDATE - Fri 20 Nov already booked (Metricool check by the coordinator, 19 Nov 20:35 UTC)
+Alex 20:35: "Ok are all social media posts ready for Tommorow and remember about The horse racing predictions"
+Already booked Fri 20 Nov: Haydock cheat sheet 12:00 (IG, FB, LI, Pinterest, X); Constitution Hill bauble 16:00-18:05 (YT, Pinterest, LI, FB, X, IG, TikTok); a draft bauble pin 20:00. NOT booked: Wolverhampton, any new bauble face-off.
+So: the Conny bauble IS Friday's product post - no extra bauble face-off Friday. Wolverhampton about 19:00 (before the evening racing) so it does not clash with the 16:00 Conny run. That makes 3 on IG/FB/X/LI that day - over the normal 1-2 cap; say so in the REVIEW REQUEST so Alex chooses (Wolverhampton at 19:00 as an extra, or drop/move something).
+"The horse racing predictions": check what Alex means in your chat (racing predictions/tips posts are on hold except where he restarts them; never on TikTok) and include it in the REVIEW REQUEST.
+Wolverhampton REVIEW REQUEST tonight please, so Alex can say yes tonight or early tomorrow.
