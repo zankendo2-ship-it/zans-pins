@@ -20,12 +20,11 @@ print(subprocess.run(['python3', H + '/overlay.py', T + 'plain.png', O + 'MASTER
 subprocess.run(['python3', H + '/overlay.py', T + 'print.png', T + 'x.jpg', O + 'MASTER-MUG-half-and-half-blend-on-real-photo.jpg'], check=True)
 def fit(p, h):
     a = Image.open(p).convert('RGBA'); a = a.crop(a.getbbox()); k = h/a.height; return a.resize((int(a.width*k), h), Image.LANCZOS)
-real = Image.open(H + '/../../reference/real-mug-fact-to-file.jpg').convert('RGB').crop((40, 120, 860, 900)).resize((900, 856)); o = Image.new('RGB', (2700, 920), BG); o.paste(real, (0, 32)); d = ImageDraw.Draw(o)
-R(T + 'nat.png', dict(flat=None, az=26, el=24, fov=10, w=1400, h=1400, fill=0.8))
-for i, n in enumerate(['plain', 'nat']):
-    a = fit(T + n + '.png', 700); o.paste(a, (900 + i*900 + (900 - a.width)//2, 110), a)
-for i, t in enumerate(["ALEX'S REAL MUG (phone held close, above)", "MASTER MUG, SAME CLOSE PHONE CAMERA", "MASTER MUG, LONG LENS (as in scenes)"]): d.text((30 + i*900, 880), t, fill=INK, font=f3)
-o.save(O + 'MASTER-MUG-next-to-real-photo.jpg', quality=92); o.resize((1080, 368), Image.LANCZOS).save(O + 'MASTER-MUG-next-to-real-photo-PHONE-1080.jpg', quality=90)
+real = Image.open(H + '/../../reference/real-mug-fact-to-file.jpg').convert('RGB').crop((40, 120, 860, 900)).resize((900, 856)); o = Image.new('RGB', (1800, 920), BG); o.paste(real, (0, 32)); d = ImageDraw.Draw(o)
+R(T + 'nat.png', dict(flat=None, az=26, el=24, fov=10, w=1400, h=1400, fill=0.8)); a = fit(T + 'nat.png', 700); o.paste(a, (900 + (900 - a.width)//2, 110), a)
+for i, t in enumerate(["ALEX'S REAL MUG (phone held close, above)", "MASTER MUG, BLANK"]): d.text((30 + i*900, 880), t, fill=INK, font=f3)
+o.save(O + 'MASTER-MUG-next-to-real-photo.jpg', quality=92); o.resize((1080, 552), Image.LANCZOS).save(O + 'MASTER-MUG-next-to-real-photo-PHONE-1080.jpg', quality=90)
+R(T + 'sideov.png', dict(flat=None, drink=False, shadow=False, az=0, el=3, fov=8, w=1400, h=1400, fill=0.72, cx=-1.2)); subprocess.run(['python3', H + '/overlay_side.py', T + 'sideov.png', O + 'MASTER-MUG-outline-on-supplier-11oz-photo.jpg'], check=True)
 R(T + 'side.png', dict(flat=None, az=0, el=4, fov=20, drink=False, w=1400, h=1400, fill=0.72, cx=-1.2))
 l = Image.open(H + '/../../reference/mug-shape-11oz-alex-2026-11-19.jpg').convert('RGB').crop((40, 560, 880, 1440)).resize((859, 900)); a = fit(T + 'side.png', 640); o2 = Image.new('RGB', (1800, 960), (240, 240, 238)); o2.paste(l, (20, 10)); o2.paste(a, (900 + (900 - a.width)//2, 150), a)
 d = ImageDraw.Draw(o2); d.text((30, 920), "11oz SHAPE REFERENCE", fill=INK, font=f3); d.text((930, 920), "MASTER MUG, SIDE ON", fill=INK, font=f3); o2.save(O + 'MASTER-MUG-side-on-next-to-11oz-reference.jpg', quality=92)
