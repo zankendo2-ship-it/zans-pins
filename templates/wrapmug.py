@@ -40,6 +40,16 @@ def main(photo, out, spec):
             tj, uj, vj = G[j]; mj = spec['mugs'][j]; ys, xs = np.mgrid[0:h, 0:w].astype(np.float32)
             top = ((xs-mj['top'][0])/mj['top'][2])**2 + ((ys-mj['top'][1])/mj['top'][3])**2 <= 1
             a *= 1 - (vj | top).astype(np.float32)
+            # ...nor on that mug's handle: the dark handle (grown a little to take in its highlights) and the white roots where it joins the body
+            side = 1 if mj.get('handle', 'right') == 'right' else -1; edge = mj['top'][0] + side*mj['top'][2]
+            box = ((xs - edge)*side > -12) & ((xs - edge)*side < 330) & (ys > mj['top'][1] - 40) & (ys < mj['bot'][1] + 40)
+            dark = ((hsv[..., 2] < 70) & box).astype(np.uint8); dark = cv2.morphologyEx(dark, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (25, 25)))
+            near = cv2.dilate(dark, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (121, 121))).astype(bool); dark = cv2.dilate(dark, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7)))
+            touch = (dark > 0) & ((xs - edge)*side < 75)                                             # where the handle meets the body: the white root sits just there
+            rows = cv2.dilate(touch.any(axis=1).astype(np.uint8)[:, None], np.ones((49, 1), np.uint8))[:, 0].astype(bool)
+            roots = box & ((xs - edge)*side < 50) & rows[:, None] & near
+            ex = np.maximum(dark, cv2.morphologyEx(roots.astype(np.uint8), cv2.MORPH_OPEN, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (31, 31)))).astype(np.float32)
+            a *= 1 - np.clip(cv2.GaussianBlur(ex, (0, 0), 2.0)*1.6, 0, 1)
         a = cv2.GaussianBlur(a, (0, 0), 1.2)*glaze; a = a[..., None]
         res = res*(1-a) + printed*a
     cv2.imwrite(out, np.clip(res, 0, 255).astype(np.uint8))
