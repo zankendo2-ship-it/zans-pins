@@ -3,7 +3,7 @@
 //   node templates/master-mug/render.js <out.png> '<json>'
 //   json: { flat: "templates/mug-flats/x.png" | null (plain white), handle: "#0a0a0a", inside: "#0a0a0a", drink: true|false,
 //           az: degrees the handle is turned from pointing left (0 = handle straight left, + = towards the camera), el: camera height in degrees,
-//           fov: 28, w: 1600, h: 1600, light: "studio"|"fire", fill: 0.9 (how much of the frame the mug fills; above 1 zooms in), cx, cy, cz: the point the camera looks at, in cm (default the middle of the mug) }
+//           fov: 28, w: 1600, h: 1600, light: "studio"|"fire", shadow: true|false (soft contact shadow under the mug), fill: 0.9 (how much of the frame the mug fills; above 1 zooms in), cx, cy, cz: the point the camera looks at, in cm (default the middle of the mug) }
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
 const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); const M = JSON.parse(fs.readFileSync(path.join(__dirname, 'mug.json'), 'utf8'));
 (async () => {
@@ -19,7 +19,7 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const env = new T.Scene(); env.background = new T.Color(o.light === 'fire' ? 0x1a120c : 0x9a9a9a);   // studio: a bright, even room, so the white glaze is white and shades smoothly
     const panel = (x, y, z, w, h, col, k) => { const m = new T.Mesh(new T.PlaneGeometry(w, h), new T.MeshBasicMaterial({ color: new T.Color(col).multiplyScalar(k), side: T.DoubleSide })); m.position.set(x, y, z); m.lookAt(0, 0, 0); env.add(m); };
     if (o.light === 'fire') { panel(-30, 25, 30, 30, 40, 0xfff1dc, 5); panel(40, 8, 10, 18, 22, 0xff9a45, 6); panel(0, 50, 0, 60, 60, 0xffe6c8, 1.6); panel(-20, 5, -40, 50, 30, 0xffc890, 1.2); }
-    else { panel(-34, 34, 34, 60, 60, 0xffffff, 2.6); panel(44, 22, 18, 30, 50, 0xffffff, 1.6); panel(0, 60, 0, 120, 120, 0xffffff, 1.4); }
+    else { panel(-34, 34, 34, 60, 60, 0xffffff, 2.6); panel(44, 22, 18, 30, 50, 0xffffff, 1.6); panel(0, 60, 0, 120, 120, 0xffffff, 1.4); panel(-22, 14, 40, 5, 70, 0xffffff, 9); }   // the last one is a tall strip light: the glaze's highlight line
     const pm = new T.PMREMGenerator(r); sc.environment = pm.fromScene(env, o.light === 'fire' ? 0.03 : 0.09).texture;
     const glaze = (col, extra = {}) => new T.MeshPhysicalMaterial(Object.assign({ color: col, roughness: 0.16, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.06, envMapIntensity: 1 }, extra));
     const mug = new T.Group(); sc.add(mug);
@@ -49,6 +49,10 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); hg.setIndex(idx); hg.computeVertexNormals();
     mug.add(new T.Mesh(hg, Object.assign(glaze(o.handle || '#0a0a0a', { roughness: 0.14, envMapIntensity: o.light === 'fire' ? 0.5 : 0.28 }), { side: T.DoubleSide })));
     mug.rotation.y = (o.az || 0)*Math.PI/180;
+    if (o.shadow !== false) {                       // a soft contact shadow on the table, so the mug stands instead of floating
+      const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d'); const gr = g.createRadialGradient(128, 128, 40, 128, 128, 126);
+      gr.addColorStop(0, 'rgba(0,0,0,0.55)'); gr.addColorStop(0.55, 'rgba(0,0,0,0.28)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
+      const sh = new T.Mesh(new T.PlaneGeometry(M.diameter*1.75, M.diameter*1.75), new T.MeshBasicMaterial({ map: new T.CanvasTexture(c), transparent: true, depthWrite: false })); sh.rotation.x = -Math.PI/2; sh.position.set(0.5, 0.01, -0.2); sc.add(sh); }
     // camera: looks at the middle of the mug from `el` degrees above; the mug fills `fill` of the frame
     const fov = o.fov || 28, el = (o.el == null ? 12 : o.el)*Math.PI/180; const cam = new T.PerspectiveCamera(fov, W/H, 1, 500);
     const span = Math.max(HT, M.diameter + M.handle.reach)*1.12; const dist = span/2/Math.tan(fov*Math.PI/360)/(o.fill || 0.9);
