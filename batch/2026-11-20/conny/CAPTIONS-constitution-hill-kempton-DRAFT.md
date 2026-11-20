@@ -3,7 +3,7 @@ Screen question (main cut): "Can Constitution Hill win at Kempton?"  Voice ends:
 TikTok cut question: "Your favourite Constitution Hill moment?"
 
 Facts used (2 sources each, checked 20 Nov 2026): 2023 Champion Hurdle winner by nine lengths; now running on the Flat; the plan is a Listed race on the all-weather at Kempton on Wed 25 Nov 2026.
-HOLD POINTS: (1) it is a PLAN, not a declaration: re-check he is declared (2 sources) before booking and again on the day; if he is not, the post does not go. (2) The rider is not named anywhere (one source only). (3) No giveaway line is included: it needs Alex's promoter address and his yes first. (4) No "Make finding a winner" line, no 18+ line, no owner or media names.
+HOLD POINTS: (1) it is a PLAN: final declarations for Wednesday are not made until Tuesday. On Sunday morning, before 12:00, check in 2 sources that Kempton on Wednesday is still the plan (still entered, no change of mind from the yard); if not, the post does not go. Captions say "heads to", never declared or confirmed. (2) The rider is not named anywhere (one source only). (3) No giveaway line is included: it needs Alex's promoter address and his yes first. (4) No "Make finding a winner" line, no 18+ line, no owner or media names.
 
 ## Instagram (plus Story 12:05)
 Can Constitution Hill win at Kempton on Wednesday? 🏇 The 2023 Champion Hurdle winner is back on the Flat.
@@ -82,4 +82,5 @@ Wishing you a Merry Christmas 🎅
 
 Link in bio 👉 www.zanshorseracing.co.uk
 
-Alt text (all): Constitution Hill video from ZANS Racing asking a question about the horse
+Alt text (main cut): ZANS Racing video about Constitution Hill with the question "Can Constitution Hill win at Kempton?" in text on screen
+Alt text (TikTok cut): ZANS Racing video about Constitution Hill with the question "Your favourite Constitution Hill moment?" in text on screen
