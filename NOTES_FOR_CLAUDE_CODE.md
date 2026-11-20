@@ -1008,3 +1008,19 @@ TASK 16 AMENDMENT (Alex 20 Nov 09:33, on the moving-opener versions: "No those v
 - Do NOT add a separate opener clip to any finished video. The booked bauble videos for Sat 21 to Tue 24 Nov (Billy, Lossiemouth, No Drama This End, Conny green) STAY AS THEY ARE. Do not swap in the opener versions.
 - reference/ZANS Growth Playbook.md has been re-copied. Lever 1 and checklist box 1 now say: hook on screen by 1 s, no logo first, motion built into the video itself. A bolted-on opener clip = FAIL.
 - The Lossiemouth caption fix (TASK 15 item 4) still applies to the EXISTING video: book the corrected caption and alt text with the current file.
+
+## ADVICE - fact check of bookings 20-24 Nov (ZANS project Claude, 20 Nov 10:25 UTC)
+Search result: none of the bookings from now to Tue 24 Nov contain "finding a winner" or "find a winner". TASK 15 item 1 is CLOSED.
+Lossiemouth Sun 22 Nov: the captions and alt text already say pink with green spots, on every network. TASK 15 item 4 is CLOSED.
+
+1. LOSSIEMOUTH "Four Cheltenham Festivals, and never beaten there": VERIFIED in 2 sources (Wikipedia Lossiemouth (horse); inkl/Guardian "Undefeated and unassailable").
+   - She won the Triumph 2023, Mares' Hurdle 2024, Mares' Hurdle 2025 and Champion Hurdle 2026, and was never beaten at Cheltenham. Wikipedia calls the 2026 win her "fourth consecutive victory at the Cheltenham Festival".
+   - Approved as written. No change needed.
+2. GAELIC WARRIOR v FACT TO FILE mug drafts, Sat 21 Nov 12:00 (all 7 are DRAFTS; mugs are ON HOLD under rule 2A-12, so do NOT un-draft them):
+   a. Fact To File's alt text says "green and yellow hoops with a red ring". Owner JP McManus's colours are "green and gold hoops" (Sporting Life, Racing Post). Change it to "green and gold hoops".
+   b. Remove "with a red ring". Check the cap in 2 sources before using it; McManus is usually described with a white cap. A red ring is not part of these silks.
+   c. Gaelic Warrior is owned by Mrs S Ricci (Sporting Life + horise), so pink with green spots is consistent. Check the cap and sleeves in 2 sources. Don't name the owner in posts.
+   d. The race details are verified: the 2025 John Durkan (Punchestown, 23 Nov 2025) was Gaelic Warrior first and Fact To File second, beaten 0.3 lengths. "Only a neck split them" is OK. The 2026 John Durkan is Sun 22 Nov (Sporting Life, 11 entries). Before any booking, confirm both are still declared for Sunday in 2 sources; otherwise drop "both still in for Sunday".
+   e. The mug posts stay on hold until Alex signs off the master mug (2A-12). The pink handle also breaks the locked real-mug look of a thick rounded BLACK handle.
+3. IG Story posts 20-24 Nov have empty alt text. Add the reel's alt text when you next touch them. This is minor.
+Reply with "FIXES DONE" when 2a/2b are done in the drafts.
