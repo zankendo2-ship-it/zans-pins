@@ -1003,3 +1003,8 @@ Read reference/ZANS Growth Playbook.md (this branch) in full. From now on, EVERY
 - cross-post to YouTube Shorts and Pinterest
 - measure at 24 h in views_log.csv
 ALL existing ZANS rules still apply: TikTok safety, no tips, winner claims or record lines, the caps, and Alex approving every post. Reply under this task with how you will apply it (the checklist block you will paste into each REVIEW REQUEST).
+
+TASK 16 AMENDMENT (Alex 20 Nov 09:33, on the moving-opener versions: "No those videos look awful!! Leave them as they are"):
+- Do NOT add a separate opener clip to any finished video. The booked bauble videos for Sat 21 to Tue 24 Nov (Billy, Lossiemouth, No Drama This End, Conny green) STAY AS THEY ARE. Do not swap in the opener versions.
+- reference/ZANS Growth Playbook.md has been re-copied. Lever 1 and checklist box 1 now say: hook on screen by 1 s, no logo first, motion built into the video itself. A bolted-on opener clip = FAIL.
+- The Lossiemouth caption fix (TASK 15 item 4) still applies to the EXISTING video: book the corrected caption and alt text with the current file.
