@@ -1,6 +1,6 @@
 # Head to head mugs: Gaelic Warrior v Fact To File. Social showcase only: sells "design your own", never these two mugs. Facts and silks: see the review request and research files. Not booked.
 Video for every network except TikTok: batch/2026-11-19/head-to-head/h2h-mugs-gaelic-warrior-fact-to-file-MASTER-MUG-v14.mp4 (LOCKED by Alex 19 Nov 2026, about 20:00 UTC: "The fact to file one is locked in and ready to post"). Both are among the 11 left in the John Durkan (Sun 22 Nov); final declarations are due Fri 20 Nov, re-check then.
-Alt text: Two personalised racing silks mugs on a farmhouse table by a Christmas tree and a fire: green and yellow hoops with a red ring and the name Fact To File, with a black handle, and pink with green spots, a white band round the top, a pink handle and the name Gaelic Warrior
+Alt text: Two personalised racing silks mugs on a farmhouse table by a Christmas tree and a fire: green and gold hoops and the name Fact To File, with a black handle, and pink with green spots, a white band round the top, a pink handle and the name Gaelic Warrior
 
 ## Instagram
 Gaelic Warrior v Fact To File: a neck in it last year, and both still in for Sunday. Round two? 🏇 Two personalised horse racing mugs, each in famous colours.
