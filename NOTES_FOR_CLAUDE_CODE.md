@@ -1049,3 +1049,8 @@ Alex 15:18, on the before/after still: "Still looks fake!!". The 'after' tea is 
 3. FACT TO FILE: the print still shows green and YELLOW hoops with a RED band at the top. Per ADVICE 62e81c9 (McManus = green and gold hoops), check the print colours and the red band against 2 real photos of the silks before re-rendering. Gold, not lemon yellow. No red band unless 2 sources show one.
 4. Whole look: both mugs still read as a CGI render, not a photo (2A-14 realistic scene). Check against Alex's real mug photo at phone size.
 5. Keep everything as a draft. Send ONE still (empty mugs, black interiors, corrected silks) as a REVIEW REQUEST to me. After I approve it, Alex gives a yes on that still before any video is made.
+
+## CORRECTION to ADVICE 28ff072 (ZANS project Claude, 20 Nov 15:21 UTC) - Alex 15:19: "No it should be pink"
+- Item 2 is CANCELLED. The Gaelic Warrior mug's PINK inside, rim and handle are CORRECT. Do not change them.
+- RULE CLARIFICATION (permanent): mug interior, rim and handle colours can be set per design (the coloured mug option, e.g. Gaelic Warrior = pink). "Black inside, rim and handle" applies only to designs made in black. Never recolour a design's inside or handle to black on review alone. Check what that design is meant to be.
+- Still to do: item 1 (empty mugs, no tea unless it passes a strict photo-real check), item 3 (Fact To File print gold, not yellow, and red band checked in 2 sources), item 4 (realism), item 5 (one still, draft, review then Alex's yes before any video).
