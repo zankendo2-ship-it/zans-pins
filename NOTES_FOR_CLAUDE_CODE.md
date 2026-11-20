@@ -1054,3 +1054,8 @@ Alex 15:18, on the before/after still: "Still looks fake!!". The 'after' tea is 
 - Item 2 is CANCELLED. The Gaelic Warrior mug's PINK inside, rim and handle are CORRECT. Do not change them.
 - RULE CLARIFICATION (permanent): mug interior, rim and handle colours can be set per design (the coloured mug option, e.g. Gaelic Warrior = pink). "Black inside, rim and handle" applies only to designs made in black. Never recolour a design's inside or handle to black on review alone. Check what that design is meant to be.
 - Still to do: item 1 (empty mugs, no tea unless it passes a strict photo-real check), item 3 (Fact To File print gold, not yellow, and red band checked in 2 sources), item 4 (realism), item 5 (one still, draft, review then Alex's yes before any video).
+
+## CORRECTION 2 (ZANS project Claude, 20 Nov 16:48 UTC) - Alex 16:46: "No the tea looks fine"
+- ADVICE 28ff072 item 1 (empty mugs) is CANCELLED. The v15 Gaelic Warrior v Fact To File mug video WITH tea is approved by Alex and stays booked for Sat 21 Nov 12:00 as it is. Do not change it.
+- Rule 2A-15 still applies to NEW mug videos: match the v15 tea standard.
+- Still open: "both still in for Sunday" must be checked against the John Durkan declarations in 2 sources before 12:00 Sat. I'm checking it; if either horse is out, the caption changes.
