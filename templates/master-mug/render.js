@@ -40,7 +40,14 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
     lathe([[0, 0], [R - e, 0], ...arc(R - e, e, e, -Math.PI/2, 0)], glaze('#ffffff'));                                   // flat base with a small rounded edge
     const dark = lightCol(o.inside || '#0a0a0a') ? glaze(o.inside, { envMapIntensity: 0.8 }) : glaze(o.inside || '#0a0a0a', { roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.35, envMapIntensity: o.light === 'fire' ? 0.45 : 0.25 });   // a soft sheen inside, no mirror-sharp reflections of the lights
     lathe([...arc(R - rimR, wallTop, rimR, 0, Math.PI), [R - wall, 0.7], [0, 0.7]], Object.assign(dark, { side: T.DoubleSide }));     // rim and inside
-    if (o.drink !== false) { const d = new T.Mesh(new T.CircleGeometry(R - wall - 0.02, 96), new T.MeshPhysicalMaterial({ color: o.drinkColour || '#3a2416', roughness: 0.25, clearcoat: 0.6, envMapIntensity: 0.35 })); d.rotation.x = -Math.PI/2; d.position.y = HT - M.drinkBelowRim; mug.add(d); }
+    if (o.drink !== false) {   // real milky tea (rule 2A-15, 20 Nov 2026): lighter in the middle, darker towards the wall, a faint ring where it meets the wall, and a glossy surface that reflects the room
+      const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d'); const gr = g.createRadialGradient(256, 256, 0, 256, 256, 256);
+      const tea = o.drinkColour || ['#c9965c', '#bd874c', '#a36e38', '#804f26'];
+      if (typeof tea === 'string') { g.fillStyle = tea; g.fillRect(0, 0, 512, 512); }
+      else { gr.addColorStop(0, tea[0]); gr.addColorStop(0.55, tea[1]); gr.addColorStop(0.86, tea[2]); gr.addColorStop(0.955, tea[3]); gr.addColorStop(0.975, '#c59a6a'); gr.addColorStop(1, '#94683c'); g.fillStyle = gr; g.fillRect(0, 0, 512, 512); }
+      if (typeof tea !== 'string') { const hl = g.createRadialGradient(256, 150, 0, 256, 150, 190); hl.addColorStop(0, 'rgba(255,236,205,0.30)'); hl.addColorStop(1, 'rgba(255,236,205,0)'); g.fillStyle = hl; g.beginPath(); g.arc(256, 256, 244, 0, 7); g.fill(); }   // a soft reflection of the room's light on the far side of the surface
+      const tx = new T.CanvasTexture(c); tx.encoding = T.sRGBEncoding;
+      const d = new T.Mesh(new T.CircleGeometry(R - wall - 0.01, 128), new T.MeshPhysicalMaterial({ map: tx, roughness: 0.07, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: o.light === 'fire' ? 0.55 : 0.5 })); d.rotation.x = -Math.PI/2; d.position.y = HT - M.drinkBelowRim; mug.add(d); }
     // the handle: one blended surface (strap + moulded fillets into the wall), from handle_mesh.json
     const dec = (b64, Arr) => { const s = atob(b64), u = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) u[i] = s.charCodeAt(i); return new Arr(u.buffer); };
     const hg = new T.BufferGeometry(); hg.setAttribute('position', new T.BufferAttribute(dec(HM.pos, Float32Array), 3)); hg.setAttribute('normal', new T.BufferAttribute(dec(HM.nrm, Float32Array), 3)); hg.setIndex(new T.BufferAttribute(dec(HM.idx, Uint32Array), 1));
