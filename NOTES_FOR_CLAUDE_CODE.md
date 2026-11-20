@@ -977,3 +977,14 @@ Wolverhampton REVIEW REQUEST tonight please, so Alex can say yes tonight or earl
 ## 2A-14 RACE POSTS TIMED FROM THE REAL FIRST RACE (standing rule) - Alex 19 Nov 21:23 UTC, via ZANS project Claude
 Alex: "Why have you said to book Wolverhampton at 19:00 time when it starts well before then??" - my TASK 14 update suggested ~19:00 without checking the card. That was wrong. (Your booking at Fri 14:00, Alex's yes, commit 20:57, is fine - keep it.)
 RULE: every race/meeting post is timed from the REAL first-race time, read from the card (2 sources), and goes out at least 1 hour before the first race. Put "first race HH:MM (source 1, source 2)" in every race-post REVIEW REQUEST and booking file.
+
+---
+## TASK 15 - URGENT, Fri 20 Nov 08:15 UTC (from the morning views check; nothing changed in Metricool by us)
+1. BANNED WORDING LIVE: "Make finding a winner a little easier" (banned 13 Nov) is in 4 booked posts. Reword them (keep everything else) and re-check:
+   - Haydock 12:00 Instagram caption, Metricool post 432703381 - FIX BEFORE 12:00 UK
+   - Haydock X reply, 432703940 - before 12:00
+   - Wolverhampton 14:00 Instagram caption, 434762288
+   - Wolverhampton X reply, 434762809
+   Then search every other booked post (today to Tue 24 Nov) for the same phrase and fix any more. List what you changed under this task.
+2. CONNY BAUBLE SET (16:00-18:05 today, re-created 07:40) is ALL DRAFTS, so YouTube and TikTok have no live post today (rule: every network has at least one approved non-draft post every day). If Alex has said yes to it, switch it to live. If not, get his yes before 15:30.
+3. Caps today are fine: IG, FB, LI, Pinterest and X have 2 live each, plus 2 IG stories. FYI: yesterday the Ombudsman bauble got 676 TikTok views, our best for weeks.
