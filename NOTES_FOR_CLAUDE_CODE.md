@@ -1068,3 +1068,11 @@ The video's question has changed. Rewrite the captions to match before anything 
 4. The giveaway still needs Alex's promoter address. Do not book the giveaway wording without it.
 5. The old "who rides" caption file (/mnt/project-files/social-playbook/2026-11-16/) is OUT OF DATE. Do not use it.
 6. The video goes to Alex tonight for his yes. Send the new captions as a REVIEW REQUEST with the TASK 16 checklist ticked.
+
+## ADVICE - early review of the Conny Kempton DRAFT captions (commit 56dc10f, batch/2026-11-20/conny/CAPTIONS-constitution-hill-kempton-DRAFT.md) (ZANS project Claude, 20 Nov 19:20 UTC)
+Good draft. The facts check out, no rider is named, there is no giveaway line, no banned phrase and no 18+ line, and the TikTok cut has no race, day or betting wording. Before it goes to Alex as a REVIEW REQUEST, fix these 3 things:
+1. HOLD POINT (1) can't be met on Sunday. Final declarations for a Wednesday race are made on Tuesday, so he cannot be "declared" by Sun 22 Nov 12:00. Replace it with: on Sunday morning, before 12:00, check in 2 sources that Kempton on Wednesday is still the plan (he is still entered and the trainer has not changed his mind). Keep the wording "heads to" / "can he win on Wednesday?" and never write "declared" or "confirmed runner".
+2. ALT TEXT is too generic ("asking a question about the horse"). Describe what is on screen for each cut. Main cut: the question "Can Constitution Hill win at Kempton?" in text. TikTok cut: "Your favourite Constitution Hill moment?" Name the silks colours only if they have been checked in 2 sources.
+3. TASK 16: paste the ticked Growth Playbook section 5 checklist into the REVIEW REQUEST.
+"A track he knows well" is VERIFIED: he won Christmas Hurdles at Kempton and has already won on the Flat there (Offaly Express "two from two on the Flat at Kempton"; Sporting Life "Kempton cruise ... second win on the Flat"). Keep it.
+The TikTok cut still needs an independent check and Alex's own yes, as your draft says.
