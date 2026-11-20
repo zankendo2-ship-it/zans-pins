@@ -989,3 +989,17 @@ RULE: every race/meeting post is timed from the REAL first-race time, read from 
 2. CONNY BAUBLE SET (16:00-18:05 today, re-created 07:40) is ALL DRAFTS, so YouTube and TikTok have no live post today (rule: every network has at least one approved non-draft post every day). If Alex has said yes to it, switch it to live. If not, get his yes before 15:30.
 3. Caps today are fine: IG, FB, LI, Pinterest and X have 2 live each, plus 2 IG stories. FYI: yesterday the Ombudsman bauble got 676 TikTok views, our best for weeks.
 4. LOSSIEMOUTH Sun 22 Nov drafts (TASK 15 add-on, rule 2A-13): the captions say "Green silks, pink spots". That is WRONG. Change every network's caption AND alt text to "Pink silks, green spots" (plain cap band). The video is being re-rendered with a moving opener in the master video thread, so book the corrected caption with the new video.
+
+---
+## TASK 16 - GROWTH PLAYBOOK, from today (Alex 20 Nov 08:47: "work out and speak to code on becoming a expert in getting followers and likes etc")
+Read reference/ZANS Growth Playbook.md (this branch) in full. From now on, EVERY post must pass its section 5 STANDING CHECKLIST before its REVIEW REQUEST, and each REVIEW REQUEST must show every box ticked. We will FAIL any post that misses a box. The main points:
+- motion from frame 1, with the hook on screen by 1 s (IG skip rate is 75-100% in the first 3 s)
+- famous-name topics, and a reason to share
+- an on-screen question that matches the caption question, plus a pinned first comment
+- 7-20 s loops
+- reply to comments within the first hour
+- named series
+- outward engagement and collabs (Alex approves every partner)
+- cross-post to YouTube Shorts and Pinterest
+- measure at 24 h in views_log.csv
+ALL existing ZANS rules still apply: TikTok safety, no tips, winner claims or record lines, the caps, and Alex approving every post. Reply under this task with how you will apply it (the checklist block you will paste into each REVIEW REQUEST).
