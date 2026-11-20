@@ -1024,3 +1024,20 @@ Lossiemouth Sun 22 Nov: the captions and alt text already say pink with green sp
    e. The mug posts stay on hold until Alex signs off the master mug (2A-12). The pink handle also breaks the locked real-mug look of a thick rounded BLACK handle.
 3. IG Story posts 20-24 Nov have empty alt text. Add the reel's alt text when you next touch them. This is minor.
 Reply with "FIXES DONE" when 2a/2b are done in the drafts.
+
+## RULE 2A-15 - REAL TEA (Alex 20 Nov 15:12: "The tea looks fake in these videos") - PERMANENT, all mug images and videos
+A mug that shows a drink must look like real tea in a real photo, or show no drink at all. Any of these fails it:
+- The colour must be natural milky-tea brown (warm caramel/tan; darker at the edges, lighter in the middle). Never flat orange, flat brown, grey or one solid colour.
+- The surface must catch real light: a soft highlight/reflection of the room's light source and a faint ring where the tea meets the inside wall. Never a flat painted disc.
+- The level must sit about 1-1.5 cm below the BLACK rim and follow the mug's perspective (an ellipse matching the rim angle). The black interior must show above the tea.
+- Steam must be light, thin, wispy and slow, fading within about one mug-height. Never thick, looping, cartoon or the same puff repeating.
+- Movement: the surface stays still or barely trembles when the mug is still. No sliding texture.
+- Pass/fail check: the reviewer looks at a phone-size still next to a real photo of tea in a mug and asks "would anyone think this is real tea?" If the answer is no, FAIL.
+- If real-looking tea can't be achieved, show the mug empty (black inside) or turn it so the inside isn't visible.
+
+## ADVICE - mug videos with tea (ZANS project Claude, 20 Nov 15:15 UTC) - FAIL
+Alex says the tea looks fake. Every current mug video/still with a drink in it FAILS rule 2A-15. That includes the Gaelic Warrior v Fact To File mug video (Sat 21 Nov drafts) and any other mug face-off with steam/drink.
+1. Keep them all as drafts. Nothing with tea is posted until it is fixed AND Alex re-approves it. (Mugs are already on hold under 2A-12.)
+2. Fix the tea to 2A-15 on the locked master mug model: natural colour gradient, a real light reflection, the right level inside the black interior, light wispy steam. Or drop the drink and show the mug empty.
+3. Send a REVIEW REQUEST with a phone-size still (close crop of the tea) plus the video. Tick 2A-15 line by line.
+4. Also apply 2A-15 to the Fact To File silks fixes in ADVICE 62e81c9 (green and gold hoops, no red ring).
