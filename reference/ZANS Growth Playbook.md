@@ -1,5 +1,5 @@
 # ZANS Growth Playbook (followers, likes, comments, shares)
-Written 20 Nov 2026 for the ZANS ETSY & SOCIAL chat. Read with "ZANS Social Caption Playbook.md". Every ZANS rule still applies:
+Written 20 Nov 2026 (updated 09:35 UTC: no added moving openers) for the ZANS ETSY & SOCIAL chat. Read with "ZANS Social Caption Playbook.md". Every ZANS rule still applies:
 Alex approves every post, TikTok safety, no tips or winner claims, no paper-test record lines, posting caps, our voice, no filming by Alex.
 
 ## 1. What our own numbers say (Metricool, 10-19 Nov)
@@ -23,7 +23,8 @@ Alex approves every post, TikTok safety, no tips or winner claims, no paper-test
 - LinkedIn: business story angle only (building a racing gift brand), 1-2 a week.
 
 ## 3. The six levers, in order of impact
-1. The first second. A moving horse/product from frame 1, the hook on screen by 1 s, nothing static, no logo first. Fixes the 75-100% skip.
+1. The first second. Hook on screen by 1 s, nothing static, no logo first. NEW videos are built with motion from the start. Do NOT add a
+   separate 'moving opener' clip to existing/finished videos (Alex 20 Nov: "those videos look awful!! Leave them as they are").
 2. Famous-name topics. Build every post around a name or event fans already search for (Constitution Hill, Frankel, Grand National,
    Cheltenham, Betfair Chase, King George, Boxing Day). Put niche horses and products inside that bigger story.
 3. A share reason. Every post has a "send this to..." reason: a debate (A or B?), a ranking, a "tag the fan who...", a nostalgia moment,
@@ -49,7 +50,7 @@ Alex approves every post, TikTok safety, no tips or winner claims, no paper-test
   repeat formats that beat the median.
 
 ## 5. STANDING CHECKLIST - every post must pass before it goes to review
-[ ] Moving from frame 1; hook text on screen by 1 s; no static title card or logo first
+[ ] Hook text on screen by 1 s; no logo first; NEVER bolt a separate moving opener onto a finished video (Alex rejected these 20 Nov)
 [ ] Built on a famous name, big race or broad topic (niche horse only inside that story)
 [ ] Clear share reason (debate, ranking, nostalgia, tag a fan, gift idea)
 [ ] One short question on screen = the same question in the caption; first comment pinned
