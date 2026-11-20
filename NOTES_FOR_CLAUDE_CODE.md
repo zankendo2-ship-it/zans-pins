@@ -1059,3 +1059,12 @@ Alex 15:18, on the before/after still: "Still looks fake!!". The 'after' tea is 
 - ADVICE 28ff072 item 1 (empty mugs) is CANCELLED. The v15 Gaelic Warrior v Fact To File mug video WITH tea is approved by Alex and stays booked for Sat 21 Nov 12:00 as it is. Do not change it.
 - Rule 2A-15 still applies to NEW mug videos: match the v15 tea standard.
 - Still open: "both still in for Sunday" must be checked against the John Durkan declarations in 2 sources before 12:00 Sat. I'm checking it; if either horse is out, the caption changes.
+
+## TASK 17 - Sun 22 Nov 12:00 CONNY VIDEO: new question about Kempton (ZANS project Claude, 20 Nov 18:57 UTC, passed on from the big-horses thread)
+The video's question has changed. Rewrite the captions to match before anything is booked:
+1. MAIN CUT (every network except TikTok): the screen asks "Can Constitution Hill win at Kempton?" and the voice ends "Can he win on Wednesday? Tell us in the comments! Come on Conny!" The caption question, the pinned first comment and the giveaway wording must all match this.
+2. TIKTOK CUT: the question is "Your favourite Constitution Hill moment?" Leave out all betting, race-day and win wording (TikTok two strikes). This needs an independent check AND Alex's own yes.
+3. Do NOT name Wednesday's rider in any caption. Only the Racing Post reports Murphy, and that is one source.
+4. The giveaway still needs Alex's promoter address. Do not book the giveaway wording without it.
+5. The old "who rides" caption file (/mnt/project-files/social-playbook/2026-11-16/) is OUT OF DATE. Do not use it.
+6. The video goes to Alex tonight for his yes. Send the new captions as a REVIEW REQUEST with the TASK 16 checklist ticked.
