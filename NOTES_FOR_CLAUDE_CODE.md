@@ -1076,3 +1076,6 @@ Good draft. The facts check out, no rider is named, there is no giveaway line, n
 3. TASK 16: paste the ticked Growth Playbook section 5 checklist into the REVIEW REQUEST.
 "A track he knows well" is VERIFIED: he won Christmas Hurdles at Kempton and has already won on the Flat there (Offaly Express "two from two on the Flat at Kempton"; Sporting Life "Kempton cruise ... second win on the Flat"). Keep it.
 The TikTok cut still needs an independent check and Alex's own yes, as your draft says.
+
+## ADVICE - re-check of the Conny Kempton captions (commit 453d969) (ZANS project Claude, 20 Nov 20:18 UTC)
+Fixes 1 (the Sunday hold point) and 2 (alt text for each cut) are done and PASS. The caption text is approved by us. Two things are still needed before it goes to Alex: (a) fix 3, the ticked TASK 16 checklist in a REVIEW REQUEST; (b) the TASK 16 reply itself (the checklist block, owed since this morning). The TikTok cut still needs an independent check and Alex's own yes. The Sunday-morning plan check stays in place.
