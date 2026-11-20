@@ -45,7 +45,16 @@ const out = process.argv[2]; const o = JSON.parse(process.argv[3] || '{}'); cons
       const tea = o.drinkColour || ['#c9965c', '#bd874c', '#a36e38', '#804f26'];
       if (typeof tea === 'string') { g.fillStyle = tea; g.fillRect(0, 0, 512, 512); }
       else { gr.addColorStop(0, tea[0]); gr.addColorStop(0.55, tea[1]); gr.addColorStop(0.86, tea[2]); gr.addColorStop(0.955, tea[3]); gr.addColorStop(0.975, '#c59a6a'); gr.addColorStop(1, '#94683c'); g.fillStyle = gr; g.fillRect(0, 0, 512, 512); }
-      if (typeof tea !== 'string') { const hl = g.createRadialGradient(256, 150, 0, 256, 150, 190); hl.addColorStop(0, 'rgba(255,236,205,0.30)'); hl.addColorStop(1, 'rgba(255,236,205,0)'); g.fillStyle = hl; g.beginPath(); g.arc(256, 256, 244, 0, 7); g.fill(); }   // a soft reflection of the room's light on the far side of the surface
+      if (typeof tea !== 'string') {   // light that belongs to the room, kept in place whichever way the mug is turned (az)
+        const A = (o.az || 0)*Math.PI/180, at = (wx, wz, k) => [256 + (wx*Math.cos(A) - wz*Math.sin(A))*k, 256 + (wx*Math.sin(A) + wz*Math.cos(A))*k];   // room direction (x right, z towards the camera) -> canvas
+        g.save(); g.beginPath(); g.arc(256, 256, 250, 0, 7); g.clip();
+        const L = o.teaLight || [-0.55, -0.83];                                   // where the room's light comes from (default: back left, the tree)
+        const [sx, sy] = at(-L[0], -L[1], 62); const sh = g.createRadialGradient(sx, sy, 150, sx, sy, 300);   // the wall on the light's side throws a soft crescent of shadow onto the tea
+        sh.addColorStop(0, 'rgba(48,24,6,0)'); sh.addColorStop(0.55, 'rgba(48,24,6,0.30)'); sh.addColorStop(1, 'rgba(40,18,4,0.62)'); g.fillStyle = sh; g.fillRect(0, 0, 512, 512);
+        const [hx, hy] = at(0.12, -0.42, 256); const hl = g.createRadialGradient(hx, hy, 0, hx, hy, 150); hl.addColorStop(0, 'rgba(255,238,208,0.34)'); hl.addColorStop(1, 'rgba(255,238,208,0)'); g.fillStyle = hl; g.fillRect(0, 0, 512, 512);   // the room's glow, mirrored on the far side of the surface
+        if (o.light === 'fire') for (const [bx, bz, br, ba] of [[0.30, -0.50, 26, 0.34], [0.50, -0.30, 18, 0.26], [0.08, -0.62, 20, 0.28], [0.42, -0.58, 13, 0.22], [-0.12, -0.50, 15, 0.18]]) {   // soft out-of-focus fairy lights reflected in the tea
+          const [x, y] = at(bx, bz, 256); const q = g.createRadialGradient(x, y, 0, x, y, br); q.addColorStop(0, 'rgba(255,226,170,' + ba + ')'); q.addColorStop(0.6, 'rgba(255,214,150,' + ba*0.5 + ')'); q.addColorStop(1, 'rgba(255,214,150,0)'); g.fillStyle = q; g.fillRect(x - br, y - br, br*2, br*2); }
+        g.restore(); }
       const tx = new T.CanvasTexture(c); tx.encoding = T.sRGBEncoding;
       const d = new T.Mesh(new T.CircleGeometry(R - wall - 0.01, 128), new T.MeshPhysicalMaterial({ map: tx, roughness: 0.07, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: o.light === 'fire' ? 0.55 : 0.5 })); d.rotation.x = -Math.PI/2; d.position.y = HT - M.drinkBelowRim; mug.add(d); }
     // the handle: one blended surface (strap + moulded fillets into the wall), from handle_mesh.json
