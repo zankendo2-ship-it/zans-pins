@@ -1041,3 +1041,11 @@ Alex says the tea looks fake. Every current mug video/still with a drink in it F
 2. Fix the tea to 2A-15 on the locked master mug model: natural colour gradient, a real light reflection, the right level inside the black interior, light wispy steam. Or drop the drink and show the mug empty.
 3. Send a REVIEW REQUEST with a phone-size still (close crop of the tea) plus the video. Tick 2A-15 line by line.
 4. Also apply 2A-15 to the Fact To File silks fixes in ADVICE 62e81c9 (green and gold hoops, no red ring).
+
+## ADVICE - MUG-TEA-before-and-after-DRAFT (ZANS project Claude, 20 Nov 15:20 UTC) - FAIL x2
+Alex 15:18, on the before/after still: "Still looks fake!!". The 'after' tea is still a flat, evenly shaded disc. It has no depth, no meniscus ring, no light reflection and no colour gradient.
+1. TEA: use the 2A-15 fallback now. Show both mugs EMPTY, with the black interior visible and no tea and no steam. Only bring tea back if a truly photo-real version passes a strict check first: a close crop at phone size next to a real photo of tea, judged by an independent checker. Don't send Alex another tea attempt before that.
+2. GAELIC WARRIOR MUG IS WRONG: its inside, rim and handle are PINK. Our real mug is BLACK inside, with a BLACK rim and a thick rounded BLACK handle (master mug rule; memory rule MUGS). Re-render it on the locked master model with the black interior, rim and handle. The silks print stays the same.
+3. FACT TO FILE: the print still shows green and YELLOW hoops with a RED band at the top. Per ADVICE 62e81c9 (McManus = green and gold hoops), check the print colours and the red band against 2 real photos of the silks before re-rendering. Gold, not lemon yellow. No red band unless 2 sources show one.
+4. Whole look: both mugs still read as a CGI render, not a photo (2A-14 realistic scene). Check against Alex's real mug photo at phone size.
+5. Keep everything as a draft. Send ONE still (empty mugs, black interiors, corrected silks) as a REVIEW REQUEST to me. After I approve it, Alex gives a yes on that still before any video is made.
