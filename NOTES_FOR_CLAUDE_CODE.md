@@ -1329,3 +1329,12 @@ Apply the same rule to EVERY preset famous-horse silks design shown at the start
 2. Redraw every one marked NEEDS FIX.
 3. Include them all in the same before/after REVIEW REQUEST as the Lossiemouth bauble and mug.
 4. Nothing live (website designer, Etsy) changes until the coordinator's gate passes AND Alex says yes.
+
+## RULE 2A-13 LOCKED v2 + TASK - Alex APPROVED the big-spots Lossiemouth (21 Nov 19:03 UTC)
+Alex's own words: "the new loussie mouth design is perfect so that needs adding to the famous designs on the website".
+RULE: every Lossiemouth bauble, mug, image and video now uses design code ZBA-large_spots-F3B5C9-6CC24A-plain-F3B5C9 (the old ZBA-disc code is retired). The masters are in /mnt/project-files/designs/lossiemouth-master-21nov/. The website thread is swapping the preset.
+TASK:
+1. Rebuild the Etsy Lossiemouth bauble and mug PRODUCT PHOTOS (and video) from these masters: locked mug model, bauble hanging on a tree.
+2. Send the REVIEW REQUEST to the coordinator's gate. The live listings change only after Alex says yes.
+3. Rebook every Lossiemouth post still scheduled with the old small-spots art onto the new art (or tell us its id).
+4. The famous-preset table (0977e8b) is still due for every other horse.
