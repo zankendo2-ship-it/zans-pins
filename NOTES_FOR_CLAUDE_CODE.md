@@ -1101,3 +1101,28 @@ CORRECTION to the 08:30 fact check, item 2 (silks), 08:40 UTC: I have now read t
 
 ## STOP - TASK 17 ON HOLD (ZANS project Claude, 21 Nov 09:14 UTC, from the big-horses thread)
 Alex is unhappy with the Sun 22 Nov 12:00 Conny video. Do NOT book or draft it on any network. Ignore TASK 17 and its 09:12 update (the Kempton question and Murphy captions) until the master video thread sends a rebuilt version through scene approval. The TASK 16 checklist reply is still owed.
+
+---
+## TASK 18 (ZANS project Claude, 21 Nov 09:55 UTC) - YOU NOW BUILD THE VIDEOS. First job: Constitution Hill at Kempton (Sun 22 Nov)
+Alex 21 Nov 09:45 (his words, via the coordinator): "I want you to get it to do the PDF's and videos so it's faster". From now on you BUILD the videos yourself (ffmpeg etc.), not only captions. Everything still goes REVIEW REQUEST -> our ADVICE -> coordinator -> Alex. Nothing is booked without Alex's yes. TASK 17 stays on hold until this video passes.
+
+What Alex rejected (v7, stills in reference/conny-kempton-v7/). Fix ALL six:
+1. Rider's face reads as a black mask. Hide it naturally (turned away, helmet/goggles/shadow, back view), never a blob.
+2. "Legend" hurdle scene looks rural. Needs a big-track / Kempton Christmas Hurdle feel (stands, crowd, winter light).
+3. "Last time" scene: horse tiny and seen from behind. Show him close and powerful.
+4. End card is flat green. Put a MOVING Conny image behind "Come on Conny!" + website.
+5. Every fact needs 2 sources (below).
+6. Re-check scenes 2 and 4 (no still-image feel, no text errors).
+Plus the coordinator checklist: no stock/still opener (motion in 1-2 s), text after 1 s; right code/surface (Kempton Floodlit Stakes = FLAT on all-weather Polytrack, evening under lights, NO hurdles in that race scene); Conny is BAY; rider all-white silks + black cap, face hidden; 1080x1920, subject top half; Kempton is RIGHT-HANDED (rail on the horse's right... i.e. running clockwise); metal strip top + bottom every scene; 3 music options (Mixkit 1069, 1076, 12), no sound effects; AI label on; says WHY he is great; end voice/line "Come on Conny!".
+
+Facts (2 sources each, from our master video thread):
+- Floodlit Stakes, Kempton, Wed 25 Nov 2026, about 1m4f, all-weather Polytrack, evening. Oisin Murphy booked (Racing Post, Sporting Life).
+- Christmas Hurdle 3 in a row: 2022, 2023, 2024 (Sky Sports 26 Dec 2024; Racing Post; Jockey Club 2023). Did not run in 2025 (Sir Gino won).
+- Kempton 4 wins from 5 runs = 3 Christmas Hurdles + Flat win 25 Mar 2026 under lights with Ryan Moore; plus 4th in the G3 September Stakes, 5 Sep 2026 (daylight).
+- Champion Hurdle 2023. Southwell Flat win with Murphy.
+Main cut scenes: 1 hook "Can Constitution Hill win at Kempton?" / 2 news (race, date, Murphy) / 3 legend / 4 flat career / 5 last time (4th Sep) / 6 end "Come on Conny!!!!" + www.zanshorseracing.co.uk.
+TikTok cut: no race, date, tips or website; question "Your favourite Constitution Hill moment?"; legend, jockeys, end.
+
+IMAGES: you can't make new images? Then ask in REVIEW REQUEST exactly which images you need (one line each, size, what must be in it) and we get the image hub to make them and commit them into reference/conny-kempton-v7/. Don't use photos of other horses under his name. Never AI faces of real jockeys.
+
+Order: (a) send a SCENE-BY-SCENE storyboard REVIEW REQUEST first (one line per scene: picture, text, voice, seconds), (b) after our ADVICE, build the stills -> REVIEW REQUEST, (c) then the full mp4s (main + TikTok, 3 music options each) committed to a new folder on your branch -> REVIEW REQUEST. Speed matters: aim for (a) within 30 min.
