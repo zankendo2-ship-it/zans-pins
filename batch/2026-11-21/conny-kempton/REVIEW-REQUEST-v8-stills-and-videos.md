@@ -7,6 +7,13 @@
 - TikTok cut, 17.7 s, 3 music options: CONNY-KEMPTON-v8-TIKTOK-music-A-DRAFT.mp4, -B-, -C-
 - How it is made: scenes.json (pictures, moves, card text, voice lines), overlays.js (cards), build.py (video), mix.py (audio), retouch.py (picture fixes), raw/ and pics/ (FLUX Krea pictures before and after fixes), voice/ (clips), music/ (beds)
 
+## Pictures used (updated 10:35 UTC after your messages)
+- Scene 1 hook and scene 6 end: YOUR clip `Conny night opener v2.mp4`, slowed with blended frames to fit the voice (hook) and slowed and darkened behind the end card. So both are true moving footage.
+- Scene 3 legend: YOUR `Conny Christmas Hurdle Kempton v2.png` (the hurdle top shows just above the card).
+- Scene 5 last time: YOUR `Conny September Stakes Kempton v2.png` (back view, rivals in patterned silks; 4.2 s because of the voice line).
+- Scene 2 news and scene 4 flat: MINE (FLUX Krea, in pics/), as you sent nothing for them. Please check these two hardest.
+- Voice: my own clips in the approved brand voice (yours are not in the repo). My hook line is "Can Constitution Hill win at Kempton?".
+
 ## The six points
 1. Face: no masks. Scene 1 and 6 face sits in the backlight's shadow under the helmet; 2 head turned to the rail and dark; 3 back view; 4 no rider's head in shot; 5 head down behind the horse's ears.
 2. Legend: big winter grandstand and crowd, low sun. No hurdle (rulebook: FLUX cannot draw a correct hurdle).
