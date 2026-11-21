@@ -36,7 +36,7 @@
   },
   {
    "key": "2-news",
-   "dur": 4.95,
+   "dur": 4.5,
    "from": [
     540,
     1030,
@@ -67,14 +67,14 @@
      "Oisin Murphy booked"
     ]
    },
-   "voice": "The Floodlit Stakes at Kempton on Wednesday. Oisin Murphy booked.",
+   "voice": "The Floodlit Stakes, Wednesday. Oisin Murphy booked.",
    "clip": "hub/opener-v2.mp4",
    "sf": 1
   },
   {
    "key": "3-legend",
    "pic": "../hub/legend-v4",
-   "dur": 6.33,
+   "dur": 4.2,
    "from": [
     540,
     1215,
@@ -105,7 +105,7 @@
      ]
     ]
    },
-   "voice": "A Champion Hurdle. Three Christmas Hurdles. Four wins from five at Kempton.",
+   "voice": "A Champion Hurdle. Three Christmas Hurdles.",
    "sf": 1
   },
   {
@@ -150,7 +150,7 @@
   },
   {
    "key": "6-end",
-   "dur": 5.22,
+   "dur": 4.54,
    "dark": 0.6,
    "from": [
     540,
@@ -183,7 +183,7 @@
     "cheer": "Come on Conny!!!!",
     "url": "www.zanshorseracing.co.uk"
    },
-   "voice": "Can he win? Tell us in the comments! Come on Conny!",
+   "voice": "Tell us in the comments! Come on Conny!",
    "clip": "hub/opener-v2.mp4",
    "sf": 1
   }

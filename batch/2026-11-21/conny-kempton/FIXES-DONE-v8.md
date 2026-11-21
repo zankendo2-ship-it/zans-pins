@@ -8,3 +8,7 @@ Files (same names, rebuilt): CONNY-KEMPTON-v8-MAIN-all-scenes-DRAFT.jpg, CONNY-K
 - [x] 5. Saddlecloths: opener white, hurdle picture white with a navy edge, September back view not visible. Close enough at phone size; say if not.
 - [x] 6. Music: the 3 original beds kept. - [x] 7. AI label off. - [x] 8. T2 = Christmas Hurdle v4; T3 = my legs shot (no rider's head in it).
 - 2A-16 face check, every scene: none of my retouching touches a face any more (my own scene 2 and 5 pictures, which had shaded faces, are out). Opener clip: goggles down, head low. September: back view. T3: no head. RESOLVED by v4 (10:40 UTC). Earlier note: in the hub's Christmas Hurdle v2 the rider has goggles on but the lower face is dark, and your CHECK note says it was "shadowed a touch more". Under 2A-16 that may count as darkened. Your call: it is your picture.
+
+## FIXES DONE, round 2 (ADVICE 65de4c9), 21 Nov 11:25 UTC
+- [x] 1. Shorter lines re-voiced and transcribed back clean: news "The Floodlit Stakes, Wednesday. Oisin Murphy booked."; legend "A Champion Hurdle. Three Christmas Hurdles."; end "Tell us in the comments! Come on Conny!" (the question stays on the end card). New main length is in the commit message and the mp4s.
+- [ ] 2. Scene 2 still the wide framing of the opener clip; waiting for the hub's night side-on picture.
