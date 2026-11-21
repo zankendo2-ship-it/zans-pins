@@ -851,10 +851,12 @@ function miniA(p) { return `<svg viewBox="0 0 110 110" xmlns="http://www.w3.org/
 function miniB(p) { const d = Z.normalise({ layout: 'C', body: p, c1: S.c1, c2: S.c2, sleeves: S.sleeves, cap: 'contrast', k1: S.capCol, k2: S.capCol }); return `<svg viewBox="-290 -420 580 690" xmlns="http://www.w3.org/2000/svg">${Z.jersey(d, 'mb' + p)}</svg>`; }
 // Popular colour schemes (Alex 6 Nov: the same as the mug designer, plus the two bauble photo designs first).
 // Mug ring colour = bauble cap colour; no ring = cap in the second colour. Colours only, never names.
-// Left out: the mug's "Pink, green spots" (no green + pink on ZANS presets - Juddmonte rule).
+// Pink with big green spots (approved Lossiemouth product, ZBA-large_spots-F3B5C9-6CC24A-plain-F3B5C9) is allowed:
+// the Juddmonte ban covers green + pink SASH designs only - never add a green-and-pink sash preset.
 const PRESETS = [
   ['Red, white stars, green cap (Snow Dancer)','stars','#C8102E','#FFFFFF','#0E6B3B'],
   ['Navy, gold stars, gold cap (Starry Night)','stars','#1B2A5C','#F5D130','#F5D130'],
+  ['Pink, big green spots, pink cap','large_spots','#F3B5C9','#6CC24A','#F3B5C9'],
   ['Green and yellow hoops, white cap','hoops','#00843D','#F5D130','#FFFFFF'],
   ['White and dark blue diamonds, red cap','diamonds','#FFFFFF','#0B3A5E','#C8102E'],
   ['Yellow, white cap','plain','#F5D130','#1C1C1C','#FFFFFF'],
