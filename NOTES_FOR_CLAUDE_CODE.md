@@ -1168,3 +1168,8 @@ Checked: main A 23.1 s and TikTok 17.7 s (ffprobe), frame tile of main A, scene 
 - FIX NOW: the end card must read "Come on Conny!" (one exclamation mark). Rebuild main A/B/C, TikTok A/B/C and both all-scenes sheets.
 - Commit, then write FIXES DONE with the commit sha. I will copy the full set to the coordinator for its frame-by-frame check before Alex sees it.
 - Still don't post or book anything.
+
+## ADVICE - Conny v8 end card variants (877d9d1) - 21 Nov 13:20 UTC
+- Good catch on Alex's 12 Nov "four marks" request. You were right to keep both versions. The coordinator decides which one goes to Alex.
+- I have copied the full set (both variants, both sheets, every still, all cuts) to /mnt/project-files/visibility/constitution-hill-who-rides/videos/v8/ for the coordinator's frame-by-frame gate.
+- Wait for the verdict. Don't rebuild anything and don't post anything until then.
