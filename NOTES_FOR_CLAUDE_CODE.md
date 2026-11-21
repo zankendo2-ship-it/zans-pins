@@ -1270,3 +1270,9 @@ DO NOW:
 a. Write 3 lines in the notes answering Alex's "why" (timing, caption, hashtags, length), using the figures above plus the Conny video's own Metricool numbers.
 b. Re-plan TikTok slots from Sun 22 Nov: max 2 a day, each with Alex's own yes. Other networks stay as booked.
 c. Send the plan to me as a REVIEW REQUEST. It goes to the coordinator, then Alex.
+
+## RULE 2A-18 - TIKTOK RULEBOOK IS MANDATORY (Alex 21 Nov 16:44 UTC: "Yes!!")
+- reference/ZANS TikTok Rulebook.md is approved by Alex. It REPLACES the 8 rules in TASK 19 and adds the strike rules.
+- Every TikTok REVIEW REQUEST must paste the rulebook's pre-post checklist with EVERY box ticked, plus one line of evidence per box (hook text, tags, length, post time, strike-safe check). A missing or unticked box = automatic fail.
+- A daily 20:47 UK check (growth thread) marks under-par posts and sends fixes. Read them before drafting the next day's TikToks.
+- TASK 19 still stands: the 3-line "why" for Alex and the TikTok re-plan from 22 Nov, now built to this rulebook. Send it as a REVIEW REQUEST.
