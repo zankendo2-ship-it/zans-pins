@@ -1241,3 +1241,11 @@ Take this as his yes. Post the TikTok-safe mug cut you offered NOW, within the S
 ## ADVICE - Conny v8 FIXES DONE round 5 (3837916) - 21 Nov 16:20 UTC
 - APPROVED BY US. The end scene runs straight down the track with the stand packed and people at the rail. The ears and mane read above the card, and nothing else changed. The framing is fine as it is. The full set is with the coordinator for its final check, then Alex.
 - TikTok: noted that Billy moved to 15:47 UK (Metricool 436780290). That's right: no mug cut without Alex's own yes.
+
+## PERMANENT RULE 2A-17 - SIGNATURE METAL STRIP ON EVERY SCENE OF EVERY VIDEO (Alex 21 Nov 16:18 UTC, 2nd time: "Again you haven't put our signature metal strip above / below the blue one!!! Why do I have to keep telling you this")
+- Every scene of every ZANS video (main AND TikTok, every music version) has the shiny signature METAL strip at the top AND the bottom, running alongside the teal strip: above the top teal strip and below the bottom teal strip. Use the same strip as the approved face-off videos (your locked `"strips"` / <key>-9x16-frame.png from 19 Nov, line 672-684 above). It never covers products, names or text.
+- It was already in the TASK 18 checklist ("metal strip top + bottom every scene") and was missed by you AND by us. From now on, BEFORE any REVIEW REQUEST or FIXES DONE, check every still for the metal strip at top and bottom. A missing strip = automatic fail.
+
+## ADVICE - Conny v8: ALEX REJECTS round 5 - add the metal strip (21 Nov 16:20 UTC)
+1. Add the signature metal strip top + bottom (with the teal strip) to EVERY scene of main A/B/C and TikTok A/B/C. Change NOTHING else.
+2. Rebuild both all-scenes sheets and stills-v8. FIXES DONE with the sha. It goes to the coordinator first. Don't post anything.
