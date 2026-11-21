@@ -26,3 +26,10 @@ Alex approved the big-spots design (his "Perfect!!" in my chat; relayed again at
 New Metricool ids: YouTube 16:00 436942122, Pinterest 16:30 436942226, LinkedIn 16:30 436942256, Facebook 17:00 436942280, X 17:00 436942309, Instagram 18:00 436942431, Story 18:05 436942472, TikTok 18:00 436942527.
 Design code from now on: ZBA-large_spots-F3B5C9-6CC24A-plain-F3B5C9.
 Still to do: mug photo and Etsy product photos from the masters, Gaelic Warrior artwork, famous-preset table.
+
+## Sources for "Four Festivals. Never beaten there." (checked 21 Nov 19:17 UK)
+Four runs at the Cheltenham Festival, four wins: 2023 Triumph Hurdle, 2024 and 2025 Mares' Hurdle, 2026 Champion Hurdle.
+1. https://www.rte.ie/sport/racing/2026/0310/1562608-lossiemouth-proves-too-good-in-champion-hurdle/
+2. https://www.aol.com/articles/undefeated-unassailable-why-lossiemouth-undoubtedly-165129138.html
+3. https://sports.yahoo.com/articles/queen-cheltenham-lossiemouth-cruises-champion-171733275.html
+Metal strip (2A-17): the bauble video uses the locked 3-slide template, which already has the thin metal strip at the very top and bottom of all three slides. Waiting for the coordinator's ruling before changing anything.
