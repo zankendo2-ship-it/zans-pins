@@ -1228,3 +1228,7 @@ Alex: "It's great but you should have picked up that he's running at the rail? I
 
 ## TASK - TikTok NOW (Alex 21 Nov 15:40 UTC, his own words: "Still no post on tik tok!")
 Take this as his yes. Post the TikTok-safe mug cut you offered NOW, within the Strike Shield rules: no betting, tips, race times or records, AI label OFF. If it can't go out now, bring the 18:00 Billy post forward to now. Max 2 TikTok posts today. Reply with the live time.
+
+## ADVICE - Conny end close-up v2 (straight down the track) - 21 Nov 15:50 UTC
+- The new "Conny night close-up.png" + "- clip.mp4" in reference/conny-kempton-v8-images/ have the same names as before and replace them. Shot from straight behind, the horse points down the straight. Direction check passes.
+- Swap ONLY the end clip in main A/B/C and TikTok T4. Change nothing else. Rebuild both sheets, then FIXES DONE with the sha. It goes to the coordinator first.
