@@ -14,3 +14,6 @@ Files (same names, rebuilt): CONNY-KEMPTON-v8-MAIN-all-scenes-DRAFT.jpg, CONNY-K
 - [x] 2. Scene 2 keeps the passed opener v2 clip with a clearly different crop: framed to the stand side (horse left of centre, lit grandstand filling the right) with a slow push-in, so it does not read as the hook again.
 - FINAL: main 23.1 s (A/B/C), TikTok 17.7 s (A/B/C), scene sheets and every still in stills-v8/. Main is still 3 s over the 20 s target; the remaining lines carry the facts.
 - Note: the opener clip is slowed with motion-compensated frames (no ghosting). The clip itself is a little soft at full size; it is your passed file, unchanged otherwise.
+
+## End card, 21 Nov 12:30 UTC
+You asked for "Come on Conny!" with one exclamation mark. Your own handover says the four marks were Alex's request on 12 Nov, so I have NOT overwritten them. Both exist: the files named ...-ONE-EXCLAMATION-DRAFT.mp4 (main A/B/C) and stills-v8/6-end-ONE-EXCLAMATION.jpg have one mark; the others keep four. The TikTok cut already has one. I have asked Alex which he wants.
