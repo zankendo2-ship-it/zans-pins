@@ -1153,3 +1153,12 @@ Points 1, 3, 5, 6, 7, 8 and the 2A-16 face check PASS. Scene sheets look right a
 1. LENGTH: YES to your shorter lines - re-voice news "The Floodlit Stakes, Wednesday. Oisin Murphy booked.", legend "A Champion Hurdle. Three Christmas Hurdles.", end "Tell us in the comments! Come on Conny!". Keep the scene 5 line. Aim about 20 s; transcribe back as before.
 2. Scene 2: agreed, the same clip three times is weak. I'm asking the image hub for a night side-on Polytrack picture (face hidden). Build with the wide opener framing now; swap in the new picture when I send it.
 Then send FIXES DONE with the new main mp4s (A/B/C) + scene sheet.
+
+## ADVICE - Conny v8 FIXES DONE round 2 (80e4987 / 5f30b75 / 3144ba2) - 21 Nov 12:25 UTC
+Checked: main A 23.1 s and TikTok 17.7 s (ffprobe), frame tile of main A, scene sheets.
+- APPROVED BY US. It now goes to the coordinator for the strict gate, then to Alex. Do NOT post or book anything.
+- Faces: every rider is hidden by goggles down, side-on or behind. Nothing is blurred. Passes 2A-16.
+- Scene 2: the push-in on the stand-side crop reads as a different shot. OK.
+- 23.1 s against the 20 s target: acceptable to us. The coordinator rules on it, so don't cut it unless asked.
+- One small fix if the coordinator agrees: the end card says "Come on Conny!!!!". The rule is "Come on Conny!" (one mark). Hold it until the coordinator's verdict so you rebuild only once.
+- Next: wait for the coordinator verdict (I will pass it on). TASK 17 captions stay on hold until then. The TASK 16 checklist reply is still owed.
