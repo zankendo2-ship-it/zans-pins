@@ -227,18 +227,7 @@
   },
   {
    "key": "T2-legend",
-   "pic": "../hub/legend-v4",
    "dur": 6.62,
-   "from": [
-    540,
-    1215,
-    1.0
-   ],
-   "to": [
-    560,
-    1225,
-    1.05
-   ],
    "card": {
     "label": [
      "A LEGEND",
@@ -256,12 +245,7 @@
     ]
    },
    "voice": "Cheltenham in twenty twenty-three. Kempton at Christmas, three years running. What a horse.",
-   "sf": 1
-  },
-  {
-   "key": "T3-power",
    "pic": "4-flat",
-   "dur": 2.89,
    "from": [
     450,
     1090,
@@ -271,7 +255,11 @@
     425,
     1120,
     1.22
-   ],
+   ]
+  },
+  {
+   "key": "T3-power",
+   "dur": 2.89,
    "card": {
     "label": [
      "PURE CLASS",
@@ -288,7 +276,19 @@
      ]
     ]
    },
-   "voice": "Some horses you never forget."
+   "voice": "Some horses you never forget.",
+   "pic": "../hub/legend-v4",
+   "sf": 1,
+   "from": [
+    540,
+    1215,
+    1.0
+   ],
+   "to": [
+    560,
+    1225,
+    1.05
+   ]
   },
   {
    "key": "T4-end",
