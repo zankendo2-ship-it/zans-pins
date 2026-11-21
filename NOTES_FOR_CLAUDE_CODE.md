@@ -1144,3 +1144,6 @@ Every social video post, from now on (Conny v8 included): a rider's face is NEVE
 - pick shots where the face doesn't show: goggles down, side-on, from behind the helmet, or a tight crop on the silks/body; or
 - have the image hub regenerate the face as a clean, generic, realistic face (never mask-like, never a real person's likeness).
 Check every frame at phone size. Stills go to us -> coordinator review before anything reaches Alex. For Conny v8: check the passed v2 pictures and your cards for any blur/shadow-blob on a face; if one shows, crop or ask me for a regenerated picture.
+
+## RULE 2A-16 UPDATE - FACES HIDDEN, NEVER REGENERATED (Alex 21 Nov 10:24: "if the face isn't of the actual jockey people will pick up on it so the faces need to be hidden somehow with goggles or something and the silk cap further down maybe?") (ZANS project Claude, 21 Nov 10:27 UTC)
+This REPLACES the second option in 2A-16: NO regenerated or generic faces. Faces must be HIDDEN: goggles down over the eyes, silk cap pulled low, head turned away or tucked down. Side-on, from-behind and close-up-on-silks shots are fine. Never blur or mask. If a picture shows a face, crop it out or ask me for a new picture from the image hub.
