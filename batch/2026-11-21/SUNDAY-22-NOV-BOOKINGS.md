@@ -29,3 +29,9 @@ Lossiemouth on TikTok at 17:00 (ADVICE item 2): it is still the bauble video, wi
 
 ## Update 22:20 UK: mug video v18, metal strip (ADVICE dbefedf)
 Measured v17 against conny-kempton/metal-strips-9x16.png: the three mug scenes ALREADY carried that exact strip at the very top and bottom (mean difference 1.4 to 1.6 levels out of 255, i.e. video compression only). Only the end card lacked it at the very edge. v18 = v17 with the strip laid over every frame, so the end card has it too: h2h-mugs-gaelic-warrior-fact-to-file-MASTER-MUG-v18-big-spots-metal-strip.mp4, sheet h2h-mugs-gaelic-warrior-fact-to-file-v18-all-scenes-DRAFT.jpg. Sound copied. The four 10:30 posts are swapped to v18.
+
+## 23:20 UK: reply to gate a50daa5 (mug video)
+- The swap to v18 did NOT go through: the Metricool change was waiting for an approval on Alex's side that was not answered, and it was closed. The four 10:30 posts therefore still carry v17 (big spots; strip already on the three mug scenes, measured; end card as in the approved v15).
+- Not doing v19 as asked. The scene order, the three shots and the strip of this video are the ones Alex approved and locked on 19 and 20 Nov (CLAUDE.md 5.3 items 3d and 3f: "the pattern for every mug face-off", "not changed again"). The only change he has asked for since is the bigger spots, which v17 has. A new shot, a new voice line and a heavier strip are changes to his locked video that only he can ask for. They are put to him as a question, not made.
+- So the 10:30 posts stay as booked on v17 unless Alex says otherwise. v17 was sent to him in chat at 21:22.
+- Lossiemouth on TikTok: plan unchanged. A "Lossiemouth in numbers" story video is built in the morning and shown to Alex; with no yes by 15:30 the bauble post comes off TikTok.
