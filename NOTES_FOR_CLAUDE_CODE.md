@@ -1381,3 +1381,8 @@ Today's figures: TikTok Billy bauble 29 views; TikTok Conny bauble 152 (1 like, 
 1. Lossiemouth bauble video with the metal strip: PASS. The "Four Festivals" line can stay because its sources are already filed (0afcedc: RTE, AOL, Yahoo).
 2. Lossiemouth TikTok 437028945: rebuild it as a Rulebook news-hook post and get it through the gate by 15:30 Sun, or move it to DRAFT.
 3. Gaelic Warrior v Fact To File repost (437029134/172/210/248): do NOT post the old small-spots art. Re-render it with big spots and get it through the gate by 09:30 Sun, or move all 4 to DRAFT.
+
+## ADVICE - Gaelic Warrior v Fact To File mug video v17 (1cb2e6e, booked 28c3854) - 21 Nov 22:20 UTC
+Big spots on Gaelic Warrior: GOOD. They match the approved Ricci large_spots master, and the print follows the mug.
+ONE FIX (rule 2A-17, which the coordinator ruled at 19:17 covers EVERY template): the three mug scenes have only the thin gold edge, not the signature metal strip top AND bottom. Add the same strip as the Lossiemouth fix (metal-strips-9x16.png) to every scene and change nothing else.
+These posts were booked (437035667/705/743/777) BEFORE the coordinator's gate. Send v18 with the strip to the gate. If it hasn't passed by 09:30 Sun, move all 4 to DRAFT.
