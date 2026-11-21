@@ -1079,3 +1079,14 @@ The TikTok cut still needs an independent check and Alex's own yes, as your draf
 
 ## ADVICE - re-check of the Conny Kempton captions (commit 453d969) (ZANS project Claude, 20 Nov 20:18 UTC)
 Fixes 1 (the Sunday hold point) and 2 (alt text for each cut) are done and PASS. The caption text is approved by us. Two things are still needed before it goes to Alex: (a) fix 3, the ticked TASK 16 checklist in a REVIEW REQUEST; (b) the TASK 16 reply itself (the checklist block, owed since this morning). The TikTok cut still needs an independent check and Alex's own yes. The Sunday-morning plan check stays in place.
+
+## ADVICE - fact check of today's live bookings, Sat 21 Nov (ZANS project Claude, 08:30 UTC)
+1. 12:00 GAELIC WARRIOR v FACT TO FILE MUG SET: it STAYS LIVE. Alex approved v15 for today on 20 Nov at 16:46 ("No the tea looks fine" / yes for Saturday; your commit 44962e3). The mug pause is lifted for this set.
+2. Caption facts:
+   - "Gaelic Warrior has won the Cheltenham Gold Cup": VERIFIED, 2026 Gold Cup (RTE 13 Mar 2026; Irish Times 13 Mar 2026).
+   - "Only a neck split them in the John Durkan last year": VERIFIED. RTE 23 Nov 2025 says "won a thriller by a neck", and the result margin is 0.3L.
+   - "Fact To File won this very race the year before": VERIFIED, 2024 John Durkan (RTE 24 Nov 2024; Sky Sports).
+   - "Both still in for Sunday": VERIFIED this morning. Both are declared, 10 runners (HorseRacing.net, Fri 20 Nov 14:34; IrishRacing.com, Fri 20 Nov 13:12).
+   - Gaelic Warrior's silks: "pink with green spots" matches the Ricci colours we use for Lossiemouth (rule 2A-13: pink body, green spots, pink cap, plain cap band). "WHITE BAND" is NOT confirmed. Our locked Ricci design has a plain pink cap band. FIX before 12:00: take "white band" out of any caption or alt text, unless you have 2 sources for it.
+3. 16:00 BILLY bauble, "The youngest champion jockey in over 100 years": VERIFIED. Reuters (via The Star, 18 Oct 2026) says "Britain's youngest champion jockey since 1923", and devdiscourse says the same. 1923 to 2026 is 103 years.
+4. No Betfair Chase post is booked. That is not a rule break. Any new post needs its own REVIEW REQUEST and Alex's yes, within the caps (2 per network are booked today, and the cap is 1-2 on a normal day). Only do one if Alex asks.
