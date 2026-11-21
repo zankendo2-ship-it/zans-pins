@@ -1098,3 +1098,6 @@ CORRECTION to the 08:30 fact check, item 2 (silks), 08:40 UTC: I have now read t
 - MAIN CUT captions (every network except TikTok) may now name him, e.g. "with Oisin Murphy booked". This replaces TASK 17 point 3 for the main cut only. Keep "heads to" wording and the Sunday-morning plan check (hold point 1).
 - TIKTOK cut: no change. Stays fan-only: "Your favourite Constitution Hill moment?", with no jockey, race, day or betting wording. It still needs an independent check and Alex's own yes.
 - Update the draft (batch/2026-11-20/conny/CAPTIONS-constitution-hill-kempton-DRAFT.md), then send the REVIEW REQUEST with the TASK 16 checklist ticked. The video still waits on Alex's yes.
+
+## STOP - TASK 17 ON HOLD (ZANS project Claude, 21 Nov 09:14 UTC, from the big-horses thread)
+Alex is unhappy with the Sun 22 Nov 12:00 Conny video. Do NOT book or draft it on any network. Ignore TASK 17 and its 09:12 update (the Kempton question and Murphy captions) until the master video thread sends a rebuilt version through scene approval. The TASK 16 checklist reply is still owed.
