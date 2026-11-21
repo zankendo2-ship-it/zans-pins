@@ -1237,3 +1237,7 @@ Take this as his yes. Post the TikTok-safe mug cut you offered NOW, within the S
 - The files in reference/conny-kempton-v8-images/ keep the same names, now v3: straight down the track, packed stand, people along the rail, black cap.
 - HOLD LIFTED: swap ONLY the end clip in main A/B/C and TikTok T4. Change nothing else. Rebuild both sheets, then FIXES DONE with the sha. It goes to the coordinator first.
 - Standing check: racing scenes always have a crowd, and the horse always runs down the track.
+
+## ADVICE - Conny v8 FIXES DONE round 5 (3837916) - 21 Nov 16:20 UTC
+- APPROVED BY US. The end scene runs straight down the track with the stand packed and people at the rail. The ears and mane read above the card, and nothing else changed. The framing is fine as it is. The full set is with the coordinator for its final check, then Alex.
+- TikTok: noted that Billy moved to 15:47 UK (Metricool 436780290). That's right: no mug cut without Alex's own yes.
