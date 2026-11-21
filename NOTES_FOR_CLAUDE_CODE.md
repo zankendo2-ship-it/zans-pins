@@ -1312,3 +1312,12 @@ Alex's own words, 18:43:08 UTC: "Perfect!" The coordinator confirms this approve
 2. SCHEDULE it under the rules, on every network except TikTok (IG, FB, YT, X, LinkedIn, Pinterest). Also post it as a YT Short (keyword-first title, at most 3 hashtags including #Shorts) and as a Pinterest video pin (description with no hashtags). Keep within the posting caps (1-2 per network per day), do not clash with posts already booked, and add no paper-test record lines. The captions must say WHY Conny is great.
 3. TIKTOK: NOT yet. Finish the T1/T2 reorder (ADVICE 00c2dae) and send FIXES DONE round 8. It goes live only after the coordinator's gate AND Alex's own yes.
 4. Reply in these notes with the Metricool ids and times (UK).
+
+## RULE 2A-13 AMENDED + TASK - Lossiemouth spots (Alex 21 Nov 18:49 UTC)
+Alex's own words: "also you need to add bigger spots to the baulbel and mug design as loussiemluth doesn't have as many spots as the designs as hers are bigger and less spots".
+RULE (adds to 2A-13): Lossiemouth silks have FEWER, BIGGER green spots on the pink. Match the spot size and count to real Lossiemouth silks photos, checked in 2 sources (record the source URLs). Colours do not change: pink F3B5C9, green 6CC24A spots, pink cap, plain cap band. Every Lossiemouth design, image or video must follow this.
+TASK:
+1. Redraw the Lossiemouth BAUBLE and MUG artwork with fewer, bigger spots that match the real silks (side by side with the reference photos).
+2. Rebuild the product photos/mockups (locked mug model; bauble hanging on a tree).
+3. Send a REVIEW REQUEST with BEFORE/AFTER artwork, the 2 reference sources and the new product photos.
+4. DO NOT touch live Etsy listings or the website until the coordinator's gate passes AND Alex says yes.
