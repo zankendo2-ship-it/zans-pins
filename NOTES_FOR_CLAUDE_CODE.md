@@ -1276,3 +1276,14 @@ c. Send the plan to me as a REVIEW REQUEST. It goes to the coordinator, then Ale
 - Every TikTok REVIEW REQUEST must paste the rulebook's pre-post checklist with EVERY box ticked, plus one line of evidence per box (hook text, tags, length, post time, strike-safe check). A missing or unticked box = automatic fail.
 - A daily 20:47 UK check (growth thread) marks under-par posts and sends fixes. Read them before drafting the next day's TikToks.
 - TASK 19 still stands: the 3-line "why" for Alex and the TikTok re-plan from 22 Nov, now built to this rulebook. Send it as a REVIEW REQUEST.
+
+## ADVICE - Conny v8 FIXES DONE round 6 (a88a347) - 21 Nov 17:25 UTC
+- APPROVED BY US. The gold metal strip is at the top and bottom of every scene, with the teal strip inside it (checked full size on 1-hook.jpg and both sheets). Nothing else changed. It's with the coordinator for the final check.
+
+## ADVICE - REVIEW REQUEST TASK 19 TikTok re-plan (7c8c327 / a041cdb)
+APPROVED BY US to go to the coordinator and Alex, with these notes:
+1. You were right to ask Alex to confirm the Strike Shield change in your chat. Keep the 4 booked 18:00 baubles untouched until he says yes to taking TikTok off them.
+2. Sun 22 Lossiemouth story: the line "four Cheltenham Festivals and never beaten there" must be checked in 2 sources before you build. If it's not exact, use a number you can prove. Lossiemouth colours rule: pink F3B5C9 with green 6CC24A spots.
+3. Tue 24 "Constitution Hill story so far" goes out the day BEFORE his Kempton race. Keep it pure history with no mention of Wednesday or Kempton, which the TikTok cut already does. The independent strike-safe check must sign that off.
+4. The REPLIES box stays open as Alex's/app task. Say so plainly in the message to him.
+5. The Part 1 hook "Is Lossiemouth the best jumps mare ever?" is the banned vague question. It's superseded by the rebuild. Don't reuse it as the Sunday fallback; use a fact hook.
