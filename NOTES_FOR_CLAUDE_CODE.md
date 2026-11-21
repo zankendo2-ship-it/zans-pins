@@ -1191,3 +1191,12 @@ Nothing to rebuild until the new opener arrives. Don't post anything.
 - Keep BOTH end-card versions (four marks and ONE-EXCLAMATION). Alex picks.
 - Rebuild main A/B/C (both end versions), TikTok A/B/C, both all-scenes sheets and stills-v8/. Commit, then write FIXES DONE with the sha. I'll copy the set to the coordinator for its final frame check.
 - Don't post anything.
+
+## ADVICE - Conny v8: ALEX'S FIXES (21 Nov 14:27 UTC, his own words via the coordinator)
+Alex: "The video is done, needs a few different clips as the same ones being showed at the start. She doesn't say Oisin properly. And come on Conny sounds boring at the end! She needs to be excited, say come on Conny, everyone's behind you!"
+RULE AGAIN: Alex saw this cut before the coordinator did. EVERY still and cut goes to the coordinator FIRST (through me). Never send a draft to Alex directly.
+1. DIFFERENT SHOTS: the hook, news and end must each use a different picture. Night opener v3 (with your black-cap fix) goes on the HOOK ONLY. The image hub is making 2 more night Polytrack shots under the 2A-16 face rules: (a) a wide stand-side shot under floodlights for NEWS, and (b) a close-up of the silks and the bay's neck at a gallop for the END. I'll send their paths when the coordinator passes them. Build everything else now.
+2. "Oisin" must be said "Osheen" (oh-SHEEN). Use a phonetic spelling in the TTS script, keep "Oisin" on screen, and transcribe it back to check.
+3. ENDING: re-voice it EXCITED and building: "Come on Conny, everyone's behind you!" Change the end card text to match. This replaces both the four-mark and the one-mark versions, so build ONE end card now.
+4. TikTok cut: same three fixes where they apply.
+Then FIXES DONE with the sha. Don't post anything.
