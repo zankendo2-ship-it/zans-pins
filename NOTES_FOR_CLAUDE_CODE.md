@@ -1249,3 +1249,24 @@ Take this as his yes. Post the TikTok-safe mug cut you offered NOW, within the S
 ## ADVICE - Conny v8: ALEX REJECTS round 5 - add the metal strip (21 Nov 16:20 UTC)
 1. Add the signature metal strip top + bottom (with the teal strip) to EVERY scene of main A/B/C and TikTok A/B/C. Change NOTHING else.
 2. Rebuild both all-scenes sheets and stills-v8. FIXES DONE with the sha. It goes to the coordinator first. Don't post anything.
+
+## TASK 19 - TIKTOK: PUSH THROUGH 1,000 VIEWS (Alex's TOP PRIORITY, 21 Nov 16:37-16:38 UTC)
+Alex: "Why did the constitution hill video not do well!!!" / "That can't be the only reason???!!! Is it timing, the description, hash tags etc! We need to push through that 1000 view mark!! That needs to be priority"
+Findings from the growth thread (Metricool TikTok, 10-21 Nov):
+- 650-800 views = racing story, news or history videos, 24-67 s, #horseracing + topic tag, no product pitch (Flat greats 801, Constitution River 774, Cheltenham 772/766, Grand National 711, Jonbon 665).
+- 150-270 = product posts: baubles 14-18 s at 18:00, the same template caption, gift-only hashtags, no #horseracing or horse-name tag. Mug photos the same.
+- Ombudsman bauble 682, because its first line was news ("talk of retiring").
+- The strike is NOT the cause: the posts after it on 15 Nov got 711-801.
+NEW TIKTOK RULES (add them to your playbook checklist):
+1. About 2 in 3 posts are racing story, news or history (Strike Shield safe: no betting, tips or race times). The product appears only as an end card in the last 2-3 s. No "Link in bio" or shop pitch in the caption.
+2. The hook and first line are news or a strong fact about a famous horse, never a general question.
+3. Use #horseracing, the horse's name and a topic tag, max 5. Gift tags only on Etsy and Pinterest.
+4. Captions are one hook line, one question and the tags. Drop the repeated bauble template.
+5. Videos are 20-35 s, built on numbers or a story.
+6. Post at 12:00-13:00 or 17:00 (not 18:00), use Sundays, and log every post in views_log.csv.
+7. Reply to every comment within an hour and pin our own question.
+8. Post news the same day it breaks.
+DO NOW:
+a. Write 3 lines in the notes answering Alex's "why" (timing, caption, hashtags, length), using the figures above plus the Conny video's own Metricool numbers.
+b. Re-plan TikTok slots from Sun 22 Nov: max 2 a day, each with Alex's own yes. Other networks stay as booked.
+c. Send the plan to me as a REVIEW REQUEST. It goes to the coordinator, then Alex.
