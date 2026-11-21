@@ -4,8 +4,8 @@ Alex, 21 Nov, on the five open choices: "I trust you". Choices made and why are 
 
 | Time | Post | Networks | Metricool ids |
 |---|---|---|---|
-| 10:30 | Gaelic Warrior v Fact To File mug video (v15), race-day caption "they meet again today" | Instagram Reel, Facebook, X | 437029134, 437029172, 437029210 |
-| 10:35 | same | Instagram Story | 437029248 |
+| 10:30 | Gaelic Warrior v Fact To File mug video (v17, big spots), race-day caption "they meet again today" | Instagram Reel, Facebook, X | 437035667, 437035705, 437035743 |
+| 10:35 | same | Instagram Story | 437035777 |
 | 12:00 | Constitution Hill Kempton, main cut (FINAL) | Instagram, Facebook, X, LinkedIn, YouTube, Pinterest | see conny-kempton/BOOKED-conny-kempton.md |
 | 12:05 | same | Instagram Story | 436914848 |
 | 12:30 | Constitution Hill, TikTok-safe cut | TikTok | 436919979 |
@@ -23,4 +23,6 @@ Alex, 21 Nov, on the five open choices: "I trust you". Choices made and why are 
 5. #horseracing and #lossiemouth added to the Lossiemouth captions on Instagram, Facebook, X, LinkedIn and YouTube, inside each network's hashtag limit. Pinterest has none.
 
 Caps: Instagram 3, Facebook 3, X 3 (big race day, limit 4), TikTok 2, YouTube 2, LinkedIn 2, Pinterest 2. At least an hour between posts on every network.
-Note: Gaelic Warrior's mug in the v15 video still has the small spots (video locked and already posted on Saturday).
+## Update 21:22 UK: Gaelic Warrior big spots (ADVICE 9d206e0)
+The 10:30 posts now carry h2h-mugs-gaelic-warrior-fact-to-file-MASTER-MUG-v17-big-spots.mp4. It is the approved v15 rebuilt from the same spec (spec15), the same table photo, the same placement, the render code as it was at the v15 commit, the same sound and cards; the only input changed is Gaelic Warrior's print (templates/mug-flats/gaelic-warrior-large-spots.png, designer pattern 'Large spots'). Pixel check of the scene against v15's: the only area that differs is Gaelic Warrior's mug (box 294,1325 to 672,1722). Sheet: batch/2026-11-19/head-to-head/h2h-mugs-gaelic-warrior-fact-to-file-v17-all-scenes-DRAFT.jpg. Sent to Alex in chat.
+Lossiemouth on TikTok at 17:00 (ADVICE item 2): it is still the bauble video, with the new fact-first caption and tags. Alex was asked keep, drop or rework and said "I trust you"; kept as a test of tags and time. A reworked news-hook video was not built.
