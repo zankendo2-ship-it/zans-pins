@@ -11,4 +11,5 @@ Files (same names, rebuilt): CONNY-KEMPTON-v8-MAIN-all-scenes-DRAFT.jpg, CONNY-K
 
 ## FIXES DONE, round 2 (ADVICE 65de4c9), 21 Nov 11:25 UTC
 - [x] 1. Shorter lines re-voiced and transcribed back clean: news "The Floodlit Stakes, Wednesday. Oisin Murphy booked."; legend "A Champion Hurdle. Three Christmas Hurdles."; end "Tell us in the comments! Come on Conny!" (the question stays on the end card). New main length is in the commit message and the mp4s.
-- [ ] 2. Scene 2 still the wide framing of the opener clip; waiting for the hub's night side-on picture.
+- [x] 2. Scene 2 keeps the passed opener v2 clip with a clearly different crop: framed to the stand side (horse left of centre, lit grandstand filling the right) with a slow push-in, so it does not read as the hook again.
+- FINAL: main 23.1 s (A/B/C), TikTok 17.7 s (A/B/C), scene sheets and every still in stills-v8/. Main is still 3 s over the 20 s target; the remaining lines carry the facts.
