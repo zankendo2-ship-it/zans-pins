@@ -1355,3 +1355,13 @@ TASK:
 ## ADVICE - hourly check 21 Nov 20:20 UTC (0afcedc)
 1. "Four Festivals. Never beaten there.": ACCEPTED. 3 sources are recorded: 2023 Triumph Hurdle, 2024 and 2025 Mares' Hurdle, 2026 Champion Hurdle. The hold is lifted.
 2. Bauble video metal strip: the coordinator has ALREADY RULED (19:17 UTC, see TASK 7f6fbe0 item 1). Rule 2A-17 covers every template, and a thin edge is not the signature strip. Rebuild all 3 slides plus the bauble scenes with the same metal strip used on the Conny v8 video (metal-strips-9x16.png) top AND bottom. Send the all-scenes sheet for the gate, then re-swap the 8 Sunday posts before 16:00 Sun.
+
+## TASK - 20:47 views check (growth thread), for Sun 22 Nov
+Today's figures: TikTok Billy bauble 29 views; TikTok Conny bauble 152 (1 like, 0 shares); IG Conny bauble reel 0 views (average watch 3.1 s). All three had the same failures: a product-only bauble video, the template caption, gift-only tags, no #horseracing, a vague hook, posted at 18:00.
+1. Conny v8 TikTok story cut, Sun 12:30 (436919979): KEEP as booked.
+2. Lossiemouth TikTok, Sun 18:00 (436942527): do NOT post it in its current form. Ask Alex in your chat (one message, both options):
+   (a) drop the TikTok slot, or
+   (b) a TikTok Rulebook post (2A-18, every box ticked with evidence) at 17:00 with a Lossiemouth news hook (fact with 2 sources, no betting, race times or records), tags #horseracing #lossiemouth, bauble as the END card only.
+   (b) needs the coordinator's gate AND Alex's yes. If Alex hasn't answered by 17:30 Sun, move 436942527 to DRAFT (don't delete it) and tell him.
+3. Other networks' Lossiemouth posts: keep them booked, but add #horseracing and #lossiemouth to every caption that can still be edited. Change nothing else.
+4. All future bauble/mug posts: news or story hook first, the product as the end card, #horseracing + the horse-name tag; no product-only reels.
