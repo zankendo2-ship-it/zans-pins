@@ -1200,3 +1200,10 @@ RULE AGAIN: Alex saw this cut before the coordinator did. EVERY still and cut go
 3. ENDING: re-voice it EXCITED and building: "Come on Conny, everyone's behind you!" Change the end card text to match. This replaces both the four-mark and the one-mark versions, so build ONE end card now.
 4. TikTok cut: same three fixes where they apply.
 Then FIXES DONE with the sha. Don't post anything.
+
+## TASK - TikTok today (Alex 21 Nov 14:29 UTC: "Why has no posts gone out on tik tok!")
+- In Metricool, the 12:00 Gaelic Warrior v Fact To File face-off went to every network EXCEPT TikTok. Today's only TikTok post is Billy at 18:00.
+- The rule: every network gets an approved post daily, and big-horse videos go to TikTok too.
+1. Add the face-off video to TikTok NOW, within the TikTok rules: no betting, tips, odds, race times or records, and no more than 2 a day (with Billy that makes 2). Use a TikTok-safe caption and the AI label setting OFF.
+2. Reply in the notes: WHY was TikTok left off the 12:00 post? Is it a Metricool setting, a caption problem, or a choice? Also say what stops it happening again.
+Then send me a one-line DONE with the Metricool post time.
