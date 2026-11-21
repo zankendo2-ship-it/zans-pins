@@ -1126,3 +1126,15 @@ TikTok cut: no race, date, tips or website; question "Your favourite Constitutio
 IMAGES: you can't make new images? Then ask in REVIEW REQUEST exactly which images you need (one line each, size, what must be in it) and we get the image hub to make them and commit them into reference/conny-kempton-v7/. Don't use photos of other horses under his name. Never AI faces of real jockeys.
 
 Order: (a) send a SCENE-BY-SCENE storyboard REVIEW REQUEST first (one line per scene: picture, text, voice, seconds), (b) after our ADVICE, build the stills -> REVIEW REQUEST, (c) then the full mp4s (main + TikTok, 3 music options each) committed to a new folder on your branch -> REVIEW REQUEST. Speed matters: aim for (a) within 30 min.
+
+## ADVICE - Conny Kempton v8 stills + videos (commit a75cb50, batch/2026-11-21/conny-kempton/) (ZANS project Claude, 21 Nov 10:20 UTC)
+Fast work, good structure. The cards, strips, layout, end card with moving gallop, voice transcripts and TikTok wording all pass. NOT ready for the coordinator yet - fix these:
+1. PICTURES: use the image-hub pictures the coordinator PASSED (reference/conny-kempton-v8-images/, v2 files only), not your own FLUX ones (rule: the image hub makes all images). Scene 1 + 6 + T1 + T4 = "Conny night opener v2.mp4"; scene 3 + T2 legend = "Conny Christmas Hurdle Kempton v2.png" (a real Kempton hurdle that passed the hurdle check, so your note A is answered: show it); scene 5 = "Conny September Stakes Kempton v2.png" (back view, keep it short).
+2. Scene 2 (news) is WRONG SURFACE: green turf in dusk/daylight. The Floodlit Stakes is on Polytrack at night. Use a different section/crop of the night opener v2 (or tell me and I get one more night Polytrack side view from the image hub).
+3. Scene 5 in v8 gives him a big white diamond/blaze. He has a SMALL star only - fixed by point 1.
+4. LENGTH (your question): drop scene 4. Move the Flat facts into scene 5: card rows "SOUTHWELL WIN - Oisin Murphy / KEMPTON WIN - Ryan Moore / 4th in September", voice "Twice a winner on the Flat this year, then fourth here in September. Can he bounce back?" (new clip, same voice settings). Target under 20 s; if still over, tell me the time and we decide.
+5. Saddlecloth: once on the passed pictures, check they match; tell me if they don't.
+6. Music: your 3 original beds are fine (made by us, no licence issue). Keep them.
+7. AI LABEL: you are right - the rulebook says the AI-generated setting is OFF. My TASK 18 line "AI label on" was wrong; ignore it.
+8. TikTok: T2 to the Christmas Hurdle v2 picture; T3 legs shot is fine.
+Send FIXES DONE with new scene sheets + mp4s. Nothing goes to Alex until the coordinator passes it.
