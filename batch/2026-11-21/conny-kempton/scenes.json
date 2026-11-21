@@ -1,0 +1,349 @@
+{
+ "main": [
+  {
+   "key": "1-hook",
+   "pic": "1-hook",
+   "dur": 3.2,
+   "from": [
+    432,
+    700,
+    1.55
+   ],
+   "to": [
+    432,
+    690,
+    1.78
+   ],
+   "card": {
+    "brand": true,
+    "lines": [
+     [
+      "Can",
+      ""
+     ],
+     [
+      "Constitution Hill",
+      "hl"
+     ],
+     [
+      "win at Kempton?",
+      ""
+     ]
+    ]
+   },
+   "voice": "Can Constitution Hill win at Kempton?"
+  },
+  {
+   "key": "2-news",
+   "pic": "2-news",
+   "dur": 3.9,
+   "from": [
+    470,
+    840,
+    1.5
+   ],
+   "to": [
+    400,
+    840,
+    1.5
+   ],
+   "card": {
+    "label": [
+     "THE NEWS",
+     "CONSTITUTION HILL · KEMPTON NEXT"
+    ],
+    "lines": [
+     [
+      "Kempton",
+      ""
+     ],
+     [
+      "next!",
+      "hl"
+     ]
+    ],
+    "sub": [
+     "Floodlit Stakes · Wed 25 Nov",
+     "Oisin Murphy booked"
+    ]
+   },
+   "voice": "He heads to the Floodlit Stakes at Kempton on Wednesday, with Oisin Murphy booked."
+  },
+  {
+   "key": "3-legend",
+   "pic": "3-legend",
+   "dur": 4.6,
+   "from": [
+    440,
+    760,
+    1.35
+   ],
+   "to": [
+    420,
+    740,
+    1.55
+   ],
+   "card": {
+    "label": [
+     "A LEGEND",
+     "CONSTITUTION HILL · KEMPTON NEXT"
+    ],
+    "rows": [
+     [
+      "CHAMPION HURDLE",
+      "2023"
+     ],
+     [
+      "CHRISTMAS HURDLE",
+      "3 in a row"
+     ],
+     [
+      "KEMPTON",
+      "4 wins from 5 runs"
+     ]
+    ]
+   },
+   "voice": "Why is he special? A Champion Hurdle. Three Christmas Hurdles in a row. Four wins from five runs at Kempton."
+  },
+  {
+   "key": "4-flat",
+   "pic": "4-flat",
+   "dur": 3.3,
+   "from": [
+    450,
+    1090,
+    1.1
+   ],
+   "to": [
+    425,
+    1120,
+    1.22
+   ],
+   "card": {
+    "label": [
+     "ON THE FLAT",
+     "CONSTITUTION HILL · KEMPTON NEXT"
+    ],
+    "rows": [
+     [
+      "SOUTHWELL WIN",
+      "Oisin Murphy"
+     ],
+     [
+      "KEMPTON WIN",
+      "Ryan Moore"
+     ]
+    ],
+    "sub": [
+     "2 Flat wins this year"
+    ]
+   },
+   "voice": "And he's won twice on the Flat this year."
+  },
+  {
+   "key": "5-last",
+   "pic": "5-last",
+   "dur": 3.1,
+   "from": [
+    420,
+    560,
+    1.4
+   ],
+   "to": [
+    420,
+    540,
+    1.6
+   ],
+   "card": {
+    "label": [
+     "LAST TIME AT KEMPTON",
+     "CONSTITUTION HILL · KEMPTON NEXT"
+    ],
+    "lines": [
+     [
+      "4th in September",
+      ""
+     ]
+    ],
+    "sub": [
+     "Can he bounce back?"
+    ]
+   },
+   "voice": "Fourth here in September. Can he bounce back?"
+  },
+  {
+   "key": "6-end",
+   "pic": "1-hook",
+   "dur": 3.6,
+   "dark": 0.55,
+   "from": [
+    432,
+    720,
+    1.9
+   ],
+   "to": [
+    432,
+    700,
+    1.6
+   ],
+   "card": {
+    "brand": true,
+    "tall": true,
+    "lines": [
+     [
+      "Can",
+      ""
+     ],
+     [
+      "Constitution Hill",
+      "hl"
+     ],
+     [
+      "win at Kempton?",
+      ""
+     ]
+    ],
+    "tell": "TELL US IN THE COMMENTS",
+    "cheer": "Come on Conny!!!!",
+    "url": "www.zanshorseracing.co.uk"
+   },
+   "voice": "Can he win on Wednesday? Tell us in the comments! Come on Conny!"
+  }
+ ],
+ "tiktok": [
+  {
+   "key": "T1-hook",
+   "pic": "1-hook",
+   "dur": 3.2,
+   "from": [
+    432,
+    700,
+    1.55
+   ],
+   "to": [
+    432,
+    690,
+    1.78
+   ],
+   "card": {
+    "brand": true,
+    "lines": [
+     [
+      "Your favourite",
+      ""
+     ],
+     [
+      "Constitution Hill",
+      "hl"
+     ],
+     [
+      "moment?",
+      ""
+     ]
+    ]
+   },
+   "voice": "What's your favourite Constitution Hill moment?"
+  },
+  {
+   "key": "T2-legend",
+   "pic": "3-legend",
+   "dur": 4.6,
+   "from": [
+    440,
+    760,
+    1.35
+   ],
+   "to": [
+    420,
+    740,
+    1.55
+   ],
+   "card": {
+    "label": [
+     "A LEGEND",
+     "CONSTITUTION HILL"
+    ],
+    "rows": [
+     [
+      "CHELTENHAM",
+      "2023"
+     ],
+     [
+      "KEMPTON AT CHRISTMAS",
+      "3 years running"
+     ]
+    ]
+   },
+   "voice": "Cheltenham in twenty twenty-three. Kempton at Christmas, three years running. What a horse."
+  },
+  {
+   "key": "T3-power",
+   "pic": "4-flat",
+   "dur": 3.0,
+   "from": [
+    450,
+    1090,
+    1.1
+   ],
+   "to": [
+    425,
+    1120,
+    1.22
+   ],
+   "card": {
+    "label": [
+     "PURE CLASS",
+     "CONSTITUTION HILL"
+    ],
+    "lines": [
+     [
+      "Some horses you",
+      ""
+     ],
+     [
+      "never forget",
+      "hl"
+     ]
+    ]
+   },
+   "voice": "Some horses you never forget."
+  },
+  {
+   "key": "T4-end",
+   "pic": "1-hook",
+   "dur": 3.4,
+   "dark": 0.55,
+   "from": [
+    432,
+    720,
+    1.9
+   ],
+   "to": [
+    432,
+    700,
+    1.6
+   ],
+   "card": {
+    "brand": true,
+    "tall": true,
+    "lines": [
+     [
+      "Your favourite",
+      ""
+     ],
+     [
+      "Constitution Hill",
+      "hl"
+     ],
+     [
+      "moment?",
+      ""
+     ]
+    ],
+    "tell": "TELL US IN THE COMMENTS",
+    "cheer": "Come on Conny!"
+   },
+   "voice": "Tell us in the comments! Come on Conny!"
+  }
+ ]
+}
