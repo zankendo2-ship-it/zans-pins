@@ -20,3 +20,9 @@ Alex: Lossiemouth's real silks have fewer, bigger spots than our designs.
 - Slides and video rebuilt with the locked template: lossiemouth-slide1/2/3.png, LOSSIEMOUTH-bauble-big-green-spots-video-DRAFT.mp4 (17.3 s). The sound is the approved soundtrack lifted unchanged from batch/2026-11-18/brand-voice/lossiemouth-video.mp4; slide times unchanged (4.0 s, 10.5 s).
 - NOT swapped into the booked posts for Sun 22 Nov yet: waiting for Alex's yes.
 - Still to do: mug photo on the locked model, Gaelic Warrior artwork, presets audit.
+
+## Booked posts swapped to the new video (21 Nov 19:07 UK)
+Alex approved the big-spots design (his "Perfect!!" in my chat; relayed again at 19:03 UTC: "the new loussie mouth design is perfect"). All eight Lossiemouth bauble posts for Sun 22 Nov now carry LOSSIEMOUTH-bauble-big-green-spots-video-DRAFT.mp4. Times, captions, titles and alt text unchanged.
+New Metricool ids: YouTube 16:00 436942122, Pinterest 16:30 436942226, LinkedIn 16:30 436942256, Facebook 17:00 436942280, X 17:00 436942309, Instagram 18:00 436942431, Story 18:05 436942472, TikTok 18:00 436942527.
+Design code from now on: ZBA-large_spots-F3B5C9-6CC24A-plain-F3B5C9.
+Still to do: mug photo and Etsy product photos from the masters, Gaelic Warrior artwork, famous-preset table.
