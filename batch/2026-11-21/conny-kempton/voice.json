@@ -1,0 +1,50 @@
+{
+ "gemini": {
+  "voice": "Aoede",
+  "style": "a warm young woman from London with a natural everyday London accent who softens her t sounds the way Londoners do, like a friendly local chatting to a mate, upbeat and conversational, not posh, speaking at a slightly brisker pace, full of genuine excitement and enthusiasm, gripping the listener like she can't wait for this race",
+  "wrapper": "Speak naturally and energetically, with short pauses, not like a robot or an advert.",
+  "tempo": 1.07
+ },
+ "lines": [
+  {
+   "file": "ck_1-hook.mp3",
+   "text": "Can Constitution Hill win at Kempton?"
+  },
+  {
+   "file": "ck_2-news.mp3",
+   "text": "The Floodlit Stakes at Kempton on Wednesday. Oisin Murphy booked."
+  },
+  {
+   "file": "ck_3-legend.mp3",
+   "text": "A Champion Hurdle. Three Christmas Hurdles. Four wins from five at Kempton."
+  },
+  {
+   "file": "ck_4-flat.mp3",
+   "text": "And he's won twice on the Flat this year."
+  },
+  {
+   "file": "ck_5-last.mp3",
+   "text": "Fourth here in September. Can he bounce back?"
+  },
+  {
+   "file": "ck_6-end.mp3",
+   "text": "Can he win? Tell us in the comments! Come on Conny!"
+  },
+  {
+   "file": "ck_T1-hook.mp3",
+   "text": "What's your favourite Constitution Hill moment?"
+  },
+  {
+   "file": "ck_T2-legend.mp3",
+   "text": "Cheltenham in twenty twenty-three. Kempton at Christmas, three years running. What a horse."
+  },
+  {
+   "file": "ck_T3-power.mp3",
+   "text": "Some horses you never forget."
+  },
+  {
+   "file": "ck_T4-end.mp3",
+   "text": "Tell us in the comments! Come on Conny!"
+  }
+ ]
+}

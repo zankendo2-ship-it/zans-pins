@@ -3,7 +3,7 @@
   {
    "key": "1-hook",
    "pic": "1-hook",
-   "dur": 3.2,
+   "dur": 3.63,
    "from": [
     432,
     700,
@@ -36,7 +36,7 @@
   {
    "key": "2-news",
    "pic": "2-news",
-   "dur": 3.9,
+   "dur": 4.95,
    "from": [
     470,
     840,
@@ -67,12 +67,12 @@
      "Oisin Murphy booked"
     ]
    },
-   "voice": "He heads to the Floodlit Stakes at Kempton on Wednesday, with Oisin Murphy booked."
+   "voice": "The Floodlit Stakes at Kempton on Wednesday. Oisin Murphy booked."
   },
   {
    "key": "3-legend",
    "pic": "3-legend",
-   "dur": 4.6,
+   "dur": 6.33,
    "from": [
     440,
     760,
@@ -103,12 +103,12 @@
      ]
     ]
    },
-   "voice": "Why is he special? A Champion Hurdle. Three Christmas Hurdles in a row. Four wins from five runs at Kempton."
+   "voice": "A Champion Hurdle. Three Christmas Hurdles. Four wins from five at Kempton."
   },
   {
    "key": "4-flat",
    "pic": "4-flat",
-   "dur": 3.3,
+   "dur": 2.71,
    "from": [
     450,
     1090,
@@ -143,7 +143,7 @@
   {
    "key": "5-last",
    "pic": "5-last",
-   "dur": 3.1,
+   "dur": 4.08,
    "from": [
     420,
     560,
@@ -174,7 +174,7 @@
   {
    "key": "6-end",
    "pic": "1-hook",
-   "dur": 3.6,
+   "dur": 5.22,
    "dark": 0.55,
    "from": [
     432,
@@ -207,14 +207,14 @@
     "cheer": "Come on Conny!!!!",
     "url": "www.zanshorseracing.co.uk"
    },
-   "voice": "Can he win on Wednesday? Tell us in the comments! Come on Conny!"
+   "voice": "Can he win? Tell us in the comments! Come on Conny!"
   }
  ],
  "tiktok": [
   {
    "key": "T1-hook",
    "pic": "1-hook",
-   "dur": 3.2,
+   "dur": 3.6,
    "from": [
     432,
     700,
@@ -247,7 +247,7 @@
   {
    "key": "T2-legend",
    "pic": "3-legend",
-   "dur": 4.6,
+   "dur": 6.62,
    "from": [
     440,
     760,
@@ -279,7 +279,7 @@
   {
    "key": "T3-power",
    "pic": "4-flat",
-   "dur": 3.0,
+   "dur": 2.89,
    "from": [
     450,
     1090,
@@ -311,7 +311,7 @@
   {
    "key": "T4-end",
    "pic": "1-hook",
-   "dur": 3.4,
+   "dur": 4.54,
    "dark": 0.55,
    "from": [
     432,
