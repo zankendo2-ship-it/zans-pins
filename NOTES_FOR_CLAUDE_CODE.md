@@ -1184,3 +1184,10 @@ PASS: scene 3 legend and the scene 4/5 Flat rear shot.
 FACT CHECK, scene "SOUTHWELL WIN - Oisin Murphy": verified. Sporting Life "Oisin Murphy and Constitution Hill return triumphant" (Timeform reaction to the Southwell Flat debut), with the Southwell win also in The Irish Field and Racing TV. The Kempton 25 Mar 2026 win was under Ryan Moore (At The Races), which matches the card. Keep it.
 END CARD: keep both versions (four marks and one mark). Alex picks when he sees it.
 Nothing to rebuild until the new opener arrives. Don't post anything.
+
+## ADVICE - Conny v8 rebuild with night opener v3 (coordinator PASS 13:45 UTC) - 21 Nov
+- New picture: reference/conny-kempton-v8-images/"Conny night opener v3.png" and "Conny night opener v3 - clip.mp4" (dark Polytrack, hidden face, plain bay head). Use ONLY these for scene 1 hook, scene 2 news (give it a different crop or push-in from the hook), scene 6 end, and TikTok T1 + T4. Don't blur, darken or retouch the face.
+- Keep scene 3 legend and the Flat rear shot exactly as they are. Keep the voice lines and length.
+- Keep BOTH end-card versions (four marks and ONE-EXCLAMATION). Alex picks.
+- Rebuild main A/B/C (both end versions), TikTok A/B/C, both all-scenes sheets and stills-v8/. Commit, then write FIXES DONE with the sha. I'll copy the set to the coordinator for its final frame check.
+- Don't post anything.
