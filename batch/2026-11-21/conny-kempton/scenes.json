@@ -4,14 +4,14 @@
    "key": "1-hook",
    "dur": 3.63,
    "from": [
-    540,
-    880,
-    1.22
+    650,
+    1500,
+    1.3
    ],
    "to": [
-    540,
-    880,
-    1.34
+    640,
+    1500,
+    1.42
    ],
    "card": {
     "brand": true,
@@ -31,21 +31,21 @@
     ]
    },
    "voice": "Can Constitution Hill win at Kempton?",
-   "clip": "hub/opener-v2.mp4",
+   "clip": "hub/opener-v3.mp4",
    "sf": 1
   },
   {
    "key": "2-news",
    "dur": 4.5,
    "from": [
-    700,
-    980,
-    1.12
+    480,
+    1250,
+    1.9
    ],
    "to": [
-    660,
-    985,
-    1.26
+    520,
+    1260,
+    2.02
    ],
    "card": {
     "label": [
@@ -68,7 +68,7 @@
     ]
    },
    "voice": "The Floodlit Stakes, Wednesday. Oisin Murphy booked.",
-   "clip": "hub/opener-v2.mp4",
+   "clip": "hub/opener-v3.mp4",
    "sf": 1
   },
   {
@@ -153,14 +153,14 @@
    "dur": 4.54,
    "dark": 0.6,
    "from": [
-    540,
-    915,
+    650,
+    1370,
     1.5
    ],
    "to": [
-    540,
-    905,
-    1.34
+    640,
+    1370,
+    1.4
    ],
    "card": {
     "brand": true,
@@ -184,7 +184,7 @@
     "url": "www.zanshorseracing.co.uk"
    },
    "voice": "Tell us in the comments! Come on Conny!",
-   "clip": "hub/opener-v2.mp4",
+   "clip": "hub/opener-v3.mp4",
    "sf": 1
   }
  ],
@@ -193,14 +193,14 @@
    "key": "T1-hook",
    "dur": 3.6,
    "from": [
-    540,
-    880,
-    1.22
+    650,
+    1500,
+    1.3
    ],
    "to": [
-    540,
-    880,
-    1.34
+    640,
+    1500,
+    1.42
    ],
    "card": {
     "brand": true,
@@ -220,7 +220,7 @@
     ]
    },
    "voice": "What's your favourite Constitution Hill moment?",
-   "clip": "hub/opener-v2.mp4",
+   "clip": "hub/opener-v3.mp4",
    "sf": 1
   },
   {
@@ -293,14 +293,14 @@
    "dur": 4.54,
    "dark": 0.6,
    "from": [
-    540,
-    915,
+    650,
+    1420,
     1.5
    ],
    "to": [
-    540,
-    905,
-    1.34
+    640,
+    1420,
+    1.4
    ],
    "card": {
     "brand": true,
@@ -323,7 +323,7 @@
     "cheer": "Come on Conny!"
    },
    "voice": "Tell us in the comments! Come on Conny!",
-   "clip": "hub/opener-v2.mp4",
+   "clip": "hub/opener-v3.mp4",
    "sf": 1
   }
  ]
