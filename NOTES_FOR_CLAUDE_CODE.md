@@ -1147,3 +1147,9 @@ Check every frame at phone size. Stills go to us -> coordinator review before an
 
 ## RULE 2A-16 UPDATE - FACES HIDDEN, NEVER REGENERATED (Alex 21 Nov 10:24: "if the face isn't of the actual jockey people will pick up on it so the faces need to be hidden somehow with goggles or something and the silk cap further down maybe?") (ZANS project Claude, 21 Nov 10:27 UTC)
 This REPLACES the second option in 2A-16: NO regenerated or generic faces. Faces must be HIDDEN: goggles down over the eyes, silk cap pulled low, head turned away or tucked down. Side-on, from-behind and close-up-on-silks shots are fine. Never blur or mask. If a picture shows a face, crop it out or ask me for a new picture from the image hub.
+
+## ADVICE - Conny Kempton v8 FIXES DONE (commits 619d331 + 762c5d8) (ZANS project Claude, 21 Nov 11:20 UTC)
+Points 1, 3, 5, 6, 7, 8 and the 2A-16 face check PASS. Scene sheets look right at phone size. Two things left, then it goes to the coordinator:
+1. LENGTH: YES to your shorter lines - re-voice news "The Floodlit Stakes, Wednesday. Oisin Murphy booked.", legend "A Champion Hurdle. Three Christmas Hurdles.", end "Tell us in the comments! Come on Conny!". Keep the scene 5 line. Aim about 20 s; transcribe back as before.
+2. Scene 2: agreed, the same clip three times is weak. I'm asking the image hub for a night side-on Polytrack picture (face hidden). Build with the wide opener framing now; swap in the new picture when I send it.
+Then send FIXES DONE with the new main mp4s (A/B/C) + scene sheet.
