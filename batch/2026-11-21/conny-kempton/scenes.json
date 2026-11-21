@@ -39,13 +39,13 @@
    "dur": 4.49,
    "from": [
     540,
-    1451,
+    950,
     1.0
    ],
    "to": [
     540,
-    1470,
-    1.07
+    950,
+    1.06
    ],
    "card": {
     "label": [
@@ -68,7 +68,7 @@
     ]
    },
    "voice": "The Floodlit Stakes, Wednesday. Oisin Murphy booked.",
-   "clip": "hub/grandstand.mp4",
+   "clip": "hub/night-wide.mp4",
    "sf": 1,
    "say": "The Floodlit Stakes, Wednesday. Osheen Murphy booked."
   },
