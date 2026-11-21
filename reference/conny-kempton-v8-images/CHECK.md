@@ -24,3 +24,15 @@ Face check on the 13 Nov Conny images (item 4):
 - H: goggles. No black mask.
 - explainer 7: goggles and a natural lower face. No mask.
 None needed re-touching, so no new versions were made.
+
+## v2 (after the coordinator's review, 21 Nov ~10:20 UTC)
+- **Conny night opener v2.mp4** (2.5 s, 30 fps, silent) and **Conny night opener still v2.png** (its first frame):
+  - Regenerated with a brightly lit grandstand packed with a crowd on the right, and the white rail on the left.
+  - The track was smoothed and darkened by hand towards dark-chocolate Polytrack.
+  - A whip that the AI added for about 0.3 s was painted out frame by frame. The hooves were darkened and the cloth marks cleaned.
+  - Limit: the surface still shows hoof prints, so it is closer to Polytrack but not perfect.
+- **Conny September Stakes Kempton v2.png**:
+  - Close finish seen from behind. Conny (white silks, black helmet) is level, a green-and-yellow diamond rival is just ahead on the right, and a purple rival is level on the left.
+  - Whip removed and track darkened. The checker passed it.
+- **Conny Christmas Hurdle Kempton v2.png**: the face is shadowed a touch more. The checker passed it.
+- The independent checker passed both v2 stills. The clip failed only on the whip, which has now been removed (checked by eye, frame by frame).
