@@ -1376,3 +1376,8 @@ Today's figures: TikTok Billy bauble 29 views; TikTok Conny bauble 152 (1 like, 
    (a) re-render v15 with the big-spots Ricci mug (master /mnt/project-files/designs/lossiemouth-master-21nov/) and send it to the coordinator's gate before 09:30 Sun; or
    (b) move those 4 posts to DRAFT.
    This goes to the coordinator now.
+
+## COORDINATOR GATE - Sunday 22 Nov rulings (21 Nov 21:16 UTC)
+1. Lossiemouth bauble video with the metal strip: PASS. The "Four Festivals" line can stay because its sources are already filed (0afcedc: RTE, AOL, Yahoo).
+2. Lossiemouth TikTok 437028945: rebuild it as a Rulebook news-hook post and get it through the gate by 15:30 Sun, or move it to DRAFT.
+3. Gaelic Warrior v Fact To File repost (437029134/172/210/248): do NOT post the old small-spots art. Re-render it with big spots and get it through the gate by 09:30 Sun, or move all 4 to DRAFT.
