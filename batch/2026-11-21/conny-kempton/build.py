@@ -34,7 +34,7 @@ for i, s in enumerate(S[cut]):
     t_in = 1.0 if i == 0 else 0.35
     for k in range(n):
         u = k / max(1, n - 1); e = u * u * (3 - 2 * u) * 0.35 + u * 0.65; c = [sf * (a + (b - a) * e) if j < 2 else a + (b - a) * e for j, (a, b) in enumerate(zip(s['from'], s['to']))]
-        if clip is not None: pic = cv2.copyMakeBorder(clip[min(k, len(clip) - 1)], 0, 700, 0, 0, cv2.BORDER_REFLECT).astype(np.float32); pic[H:] *= 0.3
+        if clip is not None: pic = cv2.copyMakeBorder(clip[min(k, len(clip) - 1)], 0, 1100, 0, 0, cv2.BORDER_REFLECT).astype(np.float32); pic[H:] *= 0.3
         fr = dust(view(pic, c, s.get('dark', 1.0)), T + k / FPS); fr = over(fr, base); fr = over(fr, card, float(np.clip((k / FPS - t_in) / 0.3, 0, 1)))
         if k < 4 and i > 0: fr = fr * (0.55 + 0.15 * k)                        # a quick dip between scenes
         fr8 = np.clip(fr, 0, 255).astype(np.uint8); ff.stdin.write(fr8.tobytes())
