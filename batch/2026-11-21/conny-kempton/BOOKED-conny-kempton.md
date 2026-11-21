@@ -20,3 +20,7 @@ No clash: the Lossiemouth posts that day start at 16:00.
 ## TikTok (added 21 Nov 18:39 UK)
 Alex, 21 Nov: "Put it on tik tok to try it the conny race". Booked the TikTok-SAFE cut, not the main cut: CONNY-KEMPTON-v8-TIKTOK-music-A-DRAFT.mp4 (fixes round 8), Sun 22 Nov 12:30, Metricool id 436919979. The main cut names the race, the day and asks "can he win", which is what the 13 Nov strike was for, so it stays off TikTok unless Alex says otherwise knowing that.
 Caption: one fact line, one question, 5 tags (#horseracing #constitutionhill #jumpracing #kempton #racehorse); no shop line. Word scan of cards, voice, caption and title: no odds, stalls, draw, going, win words, bet, price, guide, £, 18+, race name, day or link. Sent to Alex in chat before booking. That day's other TikTok is the Lossiemouth bauble at 18:00 (2 a day max).
+
+## Locked (21 Nov, task c8bfb6a)
+CONNY-KEMPTON-v8-MAIN-music-A-FINAL.mp4 is the locked final (same bytes as the DRAFT file that was booked). It is not changed again. The ids and UK times above answer task c8bfb6a items 2 and 3; I cannot write to zans-social-notes, so they are recorded here.
+TikTok: fixes round 8 done (f6390e5). Alex gave his own yes in my chat to put the Conny video on TikTok; the safe cut is booked for 12:30 and he has been asked "race cut" or "keep safe". The race cut does not go to TikTok without that answer.
