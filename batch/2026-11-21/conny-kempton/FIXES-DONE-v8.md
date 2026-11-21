@@ -17,3 +17,8 @@ Files (same names, rebuilt): CONNY-KEMPTON-v8-MAIN-all-scenes-DRAFT.jpg, CONNY-K
 
 ## End card, 21 Nov 12:30 UTC
 You asked for "Come on Conny!" with one exclamation mark. Your own handover says the four marks were Alex's request on 12 Nov, so I have NOT overwritten them. Both exist: the files named ...-ONE-EXCLAMATION-DRAFT.mp4 (main A/B/C) and stills-v8/6-end-ONE-EXCLAMATION.jpg have one mark; the others keep four. The TikTok cut already has one. I have asked Alex which he wants.
+
+## FIXES DONE, round 3 (ADVICE 7f97d79), 21 Nov 2026
+- Night opener v3 clip is in the hook, the news scene (tighter crop on horse and rider), the end card, T1 and T4. Scene 3 (v4) and the September rear shot unchanged. Both end-card versions rebuilt. Main 23.1 s, TikTok 17.7 s, A/B/C each.
+- CAP: your opener v3 had a WHITE cap. Alex sent me a photo of the real horse at 14:05 with the words "Black cap", so I recoloured the cap to black in every frame (blackcap.py -> hub/opener-v3-blackcap.mp4); nothing else in the clip is touched.
+- From Alex's same photo, for your hub: the real horse wears a white sheepskin noseband and a white browband, and is a dark bay. I have NOT changed those.
