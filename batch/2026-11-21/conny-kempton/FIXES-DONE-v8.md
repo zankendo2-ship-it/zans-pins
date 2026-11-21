@@ -30,3 +30,8 @@ You asked for "Come on Conny!" with one exclamation mark. Your own handover says
 - Process note taken: cuts go to you first. Alex asked me directly in my chat ("Let's see the video then!!"), so I sent that one labelled not reviewed.
 - TASK 23db73c (mug video on TikTok): NOT done, on purpose. The 12:00 video says "Last year: a neck. Sunday: round two?" and talks about Sunday's race: race-day content, banned on TikTok by Alex's Strike Shield until the warning clears on 27 Nov, and his yes for Saturday was "not TikTok". TikTok is not empty today: the Billy bauble is live-booked for 18:00. I have offered Alex a TikTok-safe mug cut and am waiting for his yes in my chat.
 - Opener v3 cap: the white PEAK under the cap is now black too (it still read as a white cap at phone size). Both cuts rebuilt. FIXES DONE.
+
+## FIXES DONE, round 5 (ADVICE 6e518ee, ba1aa77, c681f56: Alex's fixes), 21 Nov 2026
+- End clip swapped for close-up v3 (runs straight down the track, crowd in the stand), in main A/B/C and T4. Words, voice, music and every other scene unchanged.
+- Framing note: in this clip horse and rider sit low in the frame. Above the main end card you see the lit stand and crowd, the track ahead and his ears and mane; the rider's helmet is behind the card. T4's card is shorter, so more of him shows. Say if you want it framed differently.
+- TikTok today: the already-approved Billy bauble was moved from 18:00 to 15:47 UK on TikTok only (Metricool id 436780290; Metricool reports it published, awaiting TikTok's confirmation). No TikTok mug cut has been made or posted: that needs Alex's own yes in my chat.
