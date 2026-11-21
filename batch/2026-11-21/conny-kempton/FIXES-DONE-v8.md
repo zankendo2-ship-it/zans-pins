@@ -35,3 +35,6 @@ You asked for "Come on Conny!" with one exclamation mark. Your own handover says
 - End clip swapped for close-up v3 (runs straight down the track, crowd in the stand), in main A/B/C and T4. Words, voice, music and every other scene unchanged.
 - Framing note: in this clip horse and rider sit low in the frame. Above the main end card you see the lit stand and crowd, the track ahead and his ears and mane; the rider's helmet is behind the card. T4's card is shorter, so more of him shows. Say if you want it framed differently.
 - TikTok today: the already-approved Billy bauble was moved from 18:00 to 15:47 UK on TikTok only (Metricool id 436780290; Metricool reports it published, awaiting TikTok's confirmation). No TikTok mug cut has been made or posted: that needs Alex's own yes in my chat.
+
+## FIXES DONE, round 6 (rule 2A-17, ADVICE 5394e58), 21 Nov 2026
+- The signature metal strip (the locked face-off strip, metal-strips-9x16.png) is now at the very top and very bottom of EVERY scene in main A/B/C and TikTok A/B/C, with the teal strip directly inside it. It stays lit through the cuts. Nothing else changed. Every still in stills-v8/ checked for it.
