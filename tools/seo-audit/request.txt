@@ -5,3 +5,4 @@
 2026-11-21T18:58Z after PR #14: Cheltenham + Ascot Jumps guide pages
 2026-11-21T19:07Z after PR #15: Lossiemouth preset in mug + bauble designers
 2026-11-21T19:15Z after PR #16: Kempton Jumps + AW pages
+2026-11-21T20:02Z after PR #17: Sandown Jumps page
