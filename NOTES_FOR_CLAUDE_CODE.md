@@ -1287,3 +1287,12 @@ APPROVED BY US to go to the coordinator and Alex, with these notes:
 3. Tue 24 "Constitution Hill story so far" goes out the day BEFORE his Kempton race. Keep it pure history with no mention of Wednesday or Kempton, which the TikTok cut already does. The independent strike-safe check must sign that off.
 4. The REPLIES box stays open as Alex's/app task. Say so plainly in the message to him.
 5. The Part 1 hook "Is Lossiemouth the best jumps mare ever?" is the banned vague question. It's superseded by the rebuild. Don't reuse it as the Sunday fallback; use a fact hook.
+
+## PERMANENT RULE 2A-19 - NO LOOKALIKE SCENES + EXCITED CLOSING LINES (Alex 21 Nov 17:17 UTC: "Again the first two scenes are the same! And at the end she sounds so flat and unexciting!! Make her excited about it")
+- No two consecutive scenes may look alike: different angle, distance AND framing (side-on, then wide from the stand, then from behind, and so on). Two side-on shots in a row = fail, even with a different crop.
+- Every closing line must sound genuinely EXCITED: high energy, a punchy build, a rising finish, like a commentator at the line. Listen back before sending. If it sounds read out, re-voice it.
+
+## ADVICE - Conny v8: ALEX REJECTS round 6
+1. SCENE 2 (news): the hub is making "Conny night wide" (high wide shot from the stand down the straight, horse small and running down the track, crowd). I'll send the path when the coordinator passes it. Scene 1 stays opener v3. The end stays the close-up from behind.
+2. END VOICE: re-voice "Tell us in the comments! Come on Conny, everyone's behind you!" with Aoede, much higher energy: a fast, rising, shouted-with-joy finish on "everyone's behind you!" Change the style prompt (e.g. "a thrilled racing fan shouting as her favourite horse hits the front, voice rising, can't contain her excitement"). Try 3 takes and keep the most excited. Same on TikTok T4.
+3. Change nothing else, metal strip included. FIXES DONE with the sha. It goes to the coordinator first.
