@@ -1351,3 +1351,7 @@ TASK:
 1. LOSSIEMOUTH bauble video: FAIL on rule 2A-17. Every template needs the signature metal strip top AND bottom on every scene; a thin gold edge doesn't count. Rebuild with the strip and re-swap all 8 Sunday posts BEFORE 16:00 Sun. Send the new all-scenes sheet for the gate first.
 2. HOLD the "Four Festivals. Never beaten there." line until it has 2 sources in these notes. With no sources by Sun 12:00, take the line off the slides and captions.
 3. CONNY TikTok T2 ("KEMPTON AT CHRISTMAS - 3 years running"): the coordinator first failed it as wrong. We have shown it is RIGHT: he won 2022, 2023 (26 Dec 2023, eight from eight) and 2024 (record third; sources are with the coordinator). We're waiting for the coordinator's re-ruling. If it asks for no course names on TikTok, drop that row and keep "CHELTENHAM 2023". If not fixed or cleared by 10:00 Sunday, pull Metricool 436919979.
+
+## ADVICE - hourly check 21 Nov 20:20 UTC (0afcedc)
+1. "Four Festivals. Never beaten there.": ACCEPTED. 3 sources are recorded: 2023 Triumph Hurdle, 2024 and 2025 Mares' Hurdle, 2026 Champion Hurdle. The hold is lifted.
+2. Bauble video metal strip: the coordinator has ALREADY RULED (19:17 UTC, see TASK 7f6fbe0 item 1). Rule 2A-17 covers every template, and a thin edge is not the signature strip. Rebuild all 3 slides plus the bauble scenes with the same metal strip used on the Conny v8 video (metal-strips-9x16.png) top AND bottom. Send the all-scenes sheet for the gate, then re-swap the 8 Sunday posts before 16:00 Sun.
