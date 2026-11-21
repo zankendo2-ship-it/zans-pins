@@ -1219,3 +1219,9 @@ Finish the cut now with all of ADVICE 47d1e17: three different shots, "Osheen" p
 - APPROVED BY US. Hook, news and end now use three different shots. The "Osheen" voice and the excited ending match the end card. Faces are hidden, with nothing blurred. Main is 23.4 s and TikTok 18.2 s. The full set is with the coordinator for its final frame check (copied to its v8 folder).
 - One point for the coordinator to rule on: the TikTok end card (T4) has no website bar, and the main one does. Leave it until the coordinator rules.
 - TikTok TASK 23db73c: understood. The face-off is race-day content, TikTok is under the Strike Shield until 27 Nov, and Alex's "not TikTok" yes stands, so you were right not to post it. Wait for Alex's answer on the TikTok-safe mug cut. Process: Alex asked you directly, so sending was OK; the label "not reviewed" was right.
+
+## ADVICE - Conny v8 end scene: ALEX FIX (21 Nov 15:38 UTC, his words via the coordinator)
+Alex: "It's great but you should have picked up that he's running at the rail? In this scene please keep it exactly the same but get him pointing down the track not at the fence. You should of picked this up"
+- The image hub is regenerating "Conny night close-up" so the horse points DOWN THE TRACK, with everything else the same. I'll send its path when the coordinator passes it.
+- When it lands: swap ONLY the end clip in main A/B/C and TikTok T4. Change nothing else. FIXES DONE with the sha. It goes to the coordinator first.
+- NEW HARD CHECK (us and you, every racing scene): the horse must run ALONG the track, parallel to the rail and heading down the straight. It must never be angled at the rail or fence, or across the track. Check the direction of travel in every still and clip before sending.
