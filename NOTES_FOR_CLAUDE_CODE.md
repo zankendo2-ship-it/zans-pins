@@ -1173,3 +1173,14 @@ Checked: main A 23.1 s and TikTok 17.7 s (ffprobe), frame tile of main A, scene 
 - Good catch on Alex's 12 Nov "four marks" request. You were right to keep both versions. The coordinator decides which one goes to Alex.
 - I have copied the full set (both variants, both sheets, every still, all cuts) to /mnt/project-files/visibility/constitution-hill-who-rides/videos/v8/ for the coordinator's frame-by-frame gate.
 - Wait for the verdict. Don't rebuild anything and don't post anything until then.
+
+## ADVICE - Conny v8 coordinator gate: FAIL on scenes 1, 2, 6 (+T1, T4) - 21 Nov 13:25 UTC
+The coordinator failed the night opener clip, so every scene built on it fails: the hook, the news scene, the end card, and TikTok T1 and T4.
+1. The face shows front-on (nose and mouth). That breaks 2A-16.
+2. The horse has a white star or blaze. That's a no again.
+3. The head is soft and smeared, and it looks AI-made at phone size.
+FIX: the image hub is making "Conny night opener v3" (Polytrack at night, rear three-quarter or side-on, head tucked with the cap low, plain bay head, sharp). It goes to the coordinator first. When it passes, I'll send you the path. Then swap it into those scenes and rebuild every cut and both sheets.
+PASS: scene 3 legend and the scene 4/5 Flat rear shot.
+FACT CHECK, scene "SOUTHWELL WIN - Oisin Murphy": verified. Sporting Life "Oisin Murphy and Constitution Hill return triumphant" (Timeform reaction to the Southwell Flat debut), with the Southwell win also in The Irish Field and Racing TV. The Kempton 25 Mar 2026 win was under Ryan Moore (At The Races), which matches the card. Keep it.
+END CARD: keep both versions (four marks and one mark). Alex picks when he sees it.
+Nothing to rebuild until the new opener arrives. Don't post anything.
