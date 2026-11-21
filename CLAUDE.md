@@ -498,6 +498,7 @@ Post each network at its slot, UK time, every day:
 - Approve scene by scene with Alex first.
 - **3 music options** (one trending), and Alex picks. Never sound effects. Rotate the approved Mixkit sounds. Christmas music only on Christmas posts (from 1 Dec).
 - Voiceover on race videos. **Our voice everywhere:** "voice 2" = the Gemini voice Aoede, style exactly "a warm young woman from London with a natural everyday London accent who softens her t sounds the way Londoners do, like a friendly local chatting to a mate, upbeat and conversational, not posh". Never rewrite those instructions and never substitute another voice. If voice credit runs out, pause and ask Alex to top up.
+- **Signature metal strip on every scene of every video (Alex, 21 Nov 2026, second time of asking: "you haven't put our signature metal strip above / below the blue one!!! Why do I have to keep telling you this").** The shiny ZANS metal strip runs along the very top and the very bottom of EVERY scene, main and TikTok cuts, every music version; any coloured strip sits inside it. Use the locked face-off strip (`batch/2026-11-21/conny-kempton/metal-strips-9x16.png`). Check every still for it before anything is sent for review or to Alex: a missing strip is an automatic fail.
 - Make it professional, colourful, eye-catching and full of information (the Constitution River video is the benchmark). Alex finds plain static cards boring.
 - Never repeat an image within a horse video.
 - No count-up number animations.

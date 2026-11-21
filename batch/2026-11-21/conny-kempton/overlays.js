@@ -8,7 +8,7 @@ const S = JSON.parse(fs.readFileSync(path.join(__dirname, 'scenes.json'), 'utf8'
 const CSS = font('Jost', 'jost-600.woff2', 600) + font('Jost', 'jost-700.woff2', 700) + `
 *{margin:0;padding:0;box-sizing:border-box}body{width:1080px;height:1920px;background:transparent;font-family:Jost;position:relative;overflow:hidden}
 .strip{position:absolute;left:0;width:1080px;height:26px;background:linear-gradient(180deg,#0d8c80,#5fe6d6 35%,#19b3a4 55%,#0a6f66);box-shadow:0 0 0 2px #caa64a}
-.strip.t{top:0}.strip.b{bottom:0}
+.strip.t{top:14px}.strip.b{bottom:14px}
 .fade{position:absolute;left:0;top:760px;width:1080px;height:1160px;background:linear-gradient(180deg,rgba(6,24,19,0),rgba(6,24,19,.82) 26%,rgba(6,24,19,.96) 60%)}
 .frame{position:absolute;left:26px;top:52px;width:1028px;height:1816px;border:2px solid rgba(202,166,74,.85);border-radius:6px}
 .card{position:absolute;left:70px;width:940px;bottom:330px;background:rgba(10,52,41,.90);border:2px solid #caa64a;border-radius:10px;padding:40px 44px 44px;text-align:center}

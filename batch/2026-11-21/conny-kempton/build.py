@@ -5,7 +5,8 @@ D = os.path.dirname(os.path.abspath(__file__)); S = json.load(open(D + '/scenes.
 audio = sys.argv[3] if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None; stills = sys.argv[sys.argv.index('--stills') + 1] if '--stills' in sys.argv else None
 FPS, W, H = 30, 1080, 1920; rng = np.random.default_rng(7)
 rgba = lambda f: cv2.imread(f, cv2.IMREAD_UNCHANGED).astype(np.float32)
-base = rgba(D + '/ov/base.png'); P = rng.random((150, 5))                     # dust: x, y, size, speed, phase
+base = rgba(D + '/ov/base.png'); metal = rgba(D + '/metal-strips-9x16.png')   # the signature ZANS metal strip, top and bottom, on every scene (rule 2A-17)
+ P = rng.random((150, 5))                     # dust: x, y, size, speed, phase
 def over(fr, ov, a=1.0):
     al = ov[..., 3:4] / 255.0 * a; return fr * (1 - al) + ov[..., :3] * al
 def view(pic, c, dark):
@@ -35,8 +36,9 @@ for i, s in enumerate(S[cut]):
     for k in range(n):
         u = k / max(1, n - 1); e = u * u * (3 - 2 * u) * 0.35 + u * 0.65; c = [sf * (a + (b - a) * e) if j < 2 else a + (b - a) * e for j, (a, b) in enumerate(zip(s['from'], s['to']))]
         if clip is not None: pic = cv2.copyMakeBorder(clip[min(k, len(clip) - 1)], 0, 1100, 0, 0, cv2.BORDER_REFLECT).astype(np.float32); pic[H:] *= 0.3
-        fr = dust(view(pic, c, s.get('dark', 1.0)), T + k / FPS); fr = over(fr, base); fr = over(fr, card, float(np.clip((k / FPS - t_in) / 0.3, 0, 1)))
-        if k < 4 and i > 0: fr = fr * (0.55 + 0.15 * k)                        # a quick dip between scenes
+        fr = dust(view(pic, c, s.get('dark', 1.0)), T + k / FPS)
+        if k < 4 and i > 0: fr = fr * (0.55 + 0.15 * k)                        # a quick dip between scenes (the strips stay lit)
+        fr = over(fr, base); fr = over(fr, card, float(np.clip((k / FPS - t_in) / 0.3, 0, 1))); fr = over(fr, metal)
         fr8 = np.clip(fr, 0, 255).astype(np.uint8); ff.stdin.write(fr8.tobytes())
         if stills and k == int(n * 0.72): os.makedirs(stills, exist_ok=True); cv2.imwrite(f"{stills}/{s['key']}.jpg", fr8, [cv2.IMWRITE_JPEG_QUALITY, 90])
     T += s['dur']
