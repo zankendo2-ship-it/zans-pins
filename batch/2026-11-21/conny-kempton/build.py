@@ -6,7 +6,7 @@ audio = sys.argv[3] if len(sys.argv) > 3 and not sys.argv[3].startswith('--') el
 FPS, W, H = 30, 1080, 1920; rng = np.random.default_rng(7)
 rgba = lambda f: cv2.imread(f, cv2.IMREAD_UNCHANGED).astype(np.float32)
 base = rgba(D + '/ov/base.png'); metal = rgba(D + '/metal-strips-9x16.png')   # the signature ZANS metal strip, top and bottom, on every scene (rule 2A-17)
- P = rng.random((150, 5))                     # dust: x, y, size, speed, phase
+P = rng.random((150, 5))                     # dust: x, y, size, speed, phase
 def over(fr, ov, a=1.0):
     al = ov[..., 3:4] / 255.0 * a; return fr * (1 - al) + ov[..., :3] * al
 def view(pic, c, dark):
