@@ -36,7 +36,7 @@
   },
   {
    "key": "2-news",
-   "dur": 4.5,
+   "dur": 4.49,
    "from": [
     420,
     1470,
@@ -69,7 +69,8 @@
    },
    "voice": "The Floodlit Stakes, Wednesday. Oisin Murphy booked.",
    "clip": "hub/opener-v3-blackcap.mp4",
-   "sf": 1
+   "sf": 1,
+   "say": "The Floodlit Stakes, Wednesday. Osheen Murphy booked."
   },
   {
    "key": "3-legend",
@@ -150,7 +151,7 @@
   },
   {
    "key": "6-end",
-   "dur": 4.54,
+   "dur": 4.8,
    "dark": 0.6,
    "from": [
     540,
@@ -180,12 +181,13 @@
      ]
     ],
     "tell": "TELL US IN THE COMMENTS",
-    "cheer": "Come on Conny!!!!",
+    "cheer": "Come on Conny, everyone's behind you!",
     "url": "www.zanshorseracing.co.uk"
    },
-   "voice": "Tell us in the comments! Come on Conny!",
+   "voice": "Tell us in the comments! Come on Conny, everyone's behind you!",
    "clip": "hub/opener-v3-blackcap.mp4",
-   "sf": 1
+   "sf": 1,
+   "say": "Tell us in the comments! Come on Conny, everyone's behind you!"
   }
  ],
  "tiktok": [
@@ -320,11 +322,12 @@
      ]
     ],
     "tell": "TELL US IN THE COMMENTS",
-    "cheer": "Come on Conny!"
+    "cheer": "Come on Conny, everyone's behind you!"
    },
-   "voice": "Tell us in the comments! Come on Conny!",
+   "voice": "Tell us in the comments! Come on Conny, everyone's behind you!",
    "clip": "hub/opener-v3-blackcap.mp4",
-   "sf": 1
+   "sf": 1,
+   "say": "Tell us in the comments! Come on Conny, everyone's behind you!"
   }
  ]
 }

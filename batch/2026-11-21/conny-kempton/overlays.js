@@ -22,7 +22,7 @@ const CSS = font('Jost', 'jost-600.woff2', 600) + font('Jost', 'jost-700.woff2',
 .row{display:flex;justify-content:space-between;align-items:baseline;background:#f3ede5;border-left:10px solid #19b3a4;padding:16px 22px 14px 24px;margin-top:14px;text-align:left}
 .row b{color:#12261f;font-weight:700;font-size:42px;letter-spacing:.03em}.row i{font-style:normal;color:#12261f;font-weight:600;font-size:31px}
 .tell{color:#F2CF5B;font-weight:700;letter-spacing:.14em;font-size:36px;margin-top:22px}
-.cheer{color:#F2CF5B;font-weight:700;font-size:100px;line-height:1.1;margin-top:14px}
+.cheer{color:#F2CF5B;font-weight:700;font-size:100px;line-height:1.1;margin-top:14px}.cheer.s{font-size:70px;line-height:1.12}
 .url{display:inline-block;background:linear-gradient(180deg,#22c4b4,#12a092);color:#fff;font-weight:700;font-size:38px;letter-spacing:.04em;padding:12px 34px 14px;margin-top:26px;border-radius:4px}`;
 const html = (c, withCard) => { let h = '';
   if (withCard) { if (c.brand) h += `<div class="brand"><img src="${LOGO}"><b>ZANS RACING</b></div>`;
@@ -30,7 +30,7 @@ const html = (c, withCard) => { let h = '';
     for (const [t, k] of c.lines || []) h += `<div class="l ${k} ${t.length > 15 ? 's' : ''}"><span>${esc(t)}</span></div>`;
     for (const [a, b] of c.rows || []) h += `<div class="row"><b>${esc(a)}</b><i>${esc(b)}</i></div>`;
     for (const s of c.sub || []) h += `<div class="sub">${esc(s)}</div>`;
-    if (c.tell) h += `<div class="tell">${esc(c.tell)}</div>`; if (c.cheer) h += `<div class="cheer">${esc(c.cheer)}</div>`; if (c.url) h += `<div class="url">${esc(c.url)}</div>`;
+    if (c.tell) h += `<div class="tell">${esc(c.tell)}</div>`; if (c.cheer) h += `<div class="cheer ${c.cheer.length > 20 ? 's' : ''}">${esc(c.cheer)}</div>`; if (c.url) h += `<div class="url">${esc(c.url)}</div>`;
     h = `<div class="card ${c.tall ? 'tall' : ''}">${h}</div>`; }
   return `<style>${CSS}</style>` + (withCard ? '' : '<div class="fade"></div><div class="frame"></div><div class="strip t"></div><div class="strip b"></div>') + h; };
 (async () => { const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1080, height: 1920 } }); fs.mkdirSync(path.join(__dirname, 'ov'), { recursive: true });
