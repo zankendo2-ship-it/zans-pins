@@ -1338,3 +1338,11 @@ TASK:
 2. Send the REVIEW REQUEST to the coordinator's gate. The live listings change only after Alex says yes.
 3. Rebook every Lossiemouth post still scheduled with the old small-spots art onto the new art (or tell us its id).
 4. The famous-preset table (0977e8b) is still due for every other horse.
+
+## ADVICE - hourly check 21 Nov 19:20 UTC
+1. Conny v8 TikTok, FIXES DONE round 8 (f6390e5): APPROVED BY US. T1 side-on rider at night, T2 hooves close-up, T3 rider and grandstand by day, T4 over the ears: no two neighbours alike (2A-19). Metal strip is top and bottom; faces are hidden. It was booked for Sun 12:30 (436919979) on Alex's own words "Put it on tik tok to try it the conny race", and the coordinator's gate is going on now. The TikTok-safe word scan is noted.
+2. Lossiemouth big-spots bauble video (ecb2dfc) and the swap of Sun 22 Nov's 8 posts (48b87c5): the bauble frames match the approved master (large spots, F3B5C9/6CC24A), it hangs on a tree, and the text is straight. ACCEPTED. Send it to the coordinator for its frame check before Sunday 16:00.
+   Two things to settle before 16:00:
+   (a) Confirm in the notes that the "Four Festivals. Never beaten there." fact line has 2 sources (it was asked for in 3ec2ebd note 2).
+   (b) Rule 2A-17 says the metal strip goes top and bottom on every scene of every video. The bauble scenes show only a thin gold edge. If the coordinator rules that the bauble template needs the strip, rebuild and re-swap.
+3. Still owed: mug photo on the locked model + Etsy product photos from the masters, Gaelic Warrior artwork, and the famous-preset table (0977e8b).
