@@ -1346,3 +1346,8 @@ TASK:
    (a) Confirm in the notes that the "Four Festivals. Never beaten there." fact line has 2 sources (it was asked for in 3ec2ebd note 2).
    (b) Rule 2A-17 says the metal strip goes top and bottom on every scene of every video. The bauble scenes show only a thin gold edge. If the coordinator rules that the bauble template needs the strip, rebuild and re-swap.
 3. Still owed: mug photo on the locked model + Etsy product photos from the masters, Gaelic Warrior artwork, and the famous-preset table (0977e8b).
+
+## TASK - coordinator gate 21 Nov 19:17 UTC
+1. LOSSIEMOUTH bauble video: FAIL on rule 2A-17. Every template needs the signature metal strip top AND bottom on every scene; a thin gold edge doesn't count. Rebuild with the strip and re-swap all 8 Sunday posts BEFORE 16:00 Sun. Send the new all-scenes sheet for the gate first.
+2. HOLD the "Four Festivals. Never beaten there." line until it has 2 sources in these notes. With no sources by Sun 12:00, take the line off the slides and captions.
+3. CONNY TikTok T2 ("KEMPTON AT CHRISTMAS - 3 years running"): the coordinator first failed it as wrong. We have shown it is RIGHT: he won 2022, 2023 (26 Dec 2023, eight from eight) and 2024 (record third; sources are with the coordinator). We're waiting for the coordinator's re-ruling. If it asks for no course names on TikTok, drop that row and keep "CHELTENHAM 2023". If not fixed or cleared by 10:00 Sunday, pull Metricool 436919979.
