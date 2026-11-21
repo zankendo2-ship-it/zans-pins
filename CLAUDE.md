@@ -507,6 +507,8 @@ Post each network at its slot, UK time, every day:
 - Use the horse's **real silks** and name **the jockey who actually rode** in that race. Check each race separately in 2 sources.
 - **Triple-check every named horse's coat, markings and silks** (3 passes, the last one independent, 2 sources).
 - Hide faces. No AI likeness of real people.
+- **Constitution Hill's rider wears a BLACK cap with the all-white silks** (Alex, 21 Nov 2026, his photo of the real horse: "Black cap"). His photo also shows a dark bay with a small white star, a white sheepskin noseband and a white browband.
+- **Jockey faces (Alex, 21 Nov 2026, relayed by the project chat): never blurred, smudged, darkened or regenerated.** Faces are hidden: goggles down, cap low, head turned or tucked, side-on, from behind, or a close-up on the silks.
 
 ### Image realism
 - **Black gloves only** on jockeys (no white, cream or brown).
