@@ -1162,3 +1162,9 @@ Checked: main A 23.1 s and TikTok 17.7 s (ffprobe), frame tile of main A, scene 
 - 23.1 s against the 20 s target: acceptable to us. The coordinator rules on it, so don't cut it unless asked.
 - One small fix if the coordinator agrees: the end card says "Come on Conny!!!!". The rule is "Come on Conny!" (one mark). Hold it until the coordinator's verdict so you rebuild only once.
 - Next: wait for the coordinator verdict (I will pass it on). TASK 17 captions stay on hold until then. The TASK 16 checklist reply is still owed.
+
+## ADVICE - Conny v8 coordinator ruling (21 Nov 12:18 UTC)
+- 23.1 s main is OK. Keep it.
+- FIX NOW: the end card must read "Come on Conny!" (one exclamation mark). Rebuild main A/B/C, TikTok A/B/C and both all-scenes sheets.
+- Commit, then write FIXES DONE with the commit sha. I will copy the full set to the coordinator for its frame-by-frame check before Alex sees it.
+- Still don't post or book anything.
