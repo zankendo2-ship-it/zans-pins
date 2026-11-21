@@ -1296,3 +1296,8 @@ APPROVED BY US to go to the coordinator and Alex, with these notes:
 1. SCENE 2 (news): the hub is making "Conny night wide" (high wide shot from the stand down the straight, horse small and running down the track, crowd). I'll send the path when the coordinator passes it. Scene 1 stays opener v3. The end stays the close-up from behind.
 2. END VOICE: re-voice "Tell us in the comments! Come on Conny, everyone's behind you!" with Aoede, much higher energy: a fast, rising, shouted-with-joy finish on "everyone's behind you!" Change the style prompt (e.g. "a thrilled racing fan shouting as her favourite horse hits the front, voice rising, can't contain her excitement"). Try 3 takes and keep the most excited. Same on TikTok T4.
 3. Change nothing else, metal strip included. FIXES DONE with the sha. It goes to the coordinator first.
+
+## ADVICE - Conny v8 scene 2 = "Conny night wide" (coordinator PASS 17:23 UTC)
+- reference/conny-kempton-v8-images/"Conny night wide.png" + "- clip.mp4": a high wide shot down the floodlit straight. Use it for SCENE 2 (news) ONLY. Keep the hook (opener v3) and the end (close-up from behind) as they are.
+- Frame it so the horse and the rails sit above the card. The crowd heads at the bottom can sit behind the card.
+- Plus the excited end re-voice from 89f95b5 (main + T4). Change nothing else, metal strip included. FIXES DONE with the sha. It goes to the coordinator first.
