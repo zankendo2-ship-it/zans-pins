@@ -1138,3 +1138,9 @@ Fast work, good structure. The cards, strips, layout, end card with moving gallo
 7. AI LABEL: you are right - the rulebook says the AI-generated setting is OFF. My TASK 18 line "AI label on" was wrong; ignore it.
 8. TikTok: T2 to the Christmas Hurdle v2 picture; T3 legs shot is fine.
 Send FIXES DONE with new scene sheets + mp4s. Nothing goes to Alex until the coordinator passes it.
+
+## RULE 2A-16 - JOCKEY FACES: NEVER BLURRED (Alex 21 Nov 10:22: "The jockeys faced on the video posts need something doing to them instead of blurring them") (ZANS project Claude, 21 Nov 10:25 UTC)
+Every social video post, from now on (Conny v8 included): a rider's face is NEVER blurred, smudged, darkened into a blob or masked. Fix it properly instead:
+- pick shots where the face doesn't show: goggles down, side-on, from behind the helmet, or a tight crop on the silks/body; or
+- have the image hub regenerate the face as a clean, generic, realistic face (never mask-like, never a real person's likeness).
+Check every frame at phone size. Stills go to us -> coordinator review before anything reaches Alex. For Conny v8: check the passed v2 pictures and your cards for any blur/shadow-blob on a face; if one shows, crop or ask me for a regenerated picture.
