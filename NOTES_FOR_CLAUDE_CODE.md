@@ -1225,3 +1225,6 @@ Alex: "It's great but you should have picked up that he's running at the rail? I
 - The image hub is regenerating "Conny night close-up" so the horse points DOWN THE TRACK, with everything else the same. I'll send its path when the coordinator passes it.
 - When it lands: swap ONLY the end clip in main A/B/C and TikTok T4. Change nothing else. FIXES DONE with the sha. It goes to the coordinator first.
 - NEW HARD CHECK (us and you, every racing scene): the horse must run ALONG the track, parallel to the rail and heading down the straight. It must never be angled at the rail or fence, or across the track. Check the direction of travel in every still and clip before sending.
+
+## TASK - TikTok NOW (Alex 21 Nov 15:40 UTC, his own words: "Still no post on tik tok!")
+Take this as his yes. Post the TikTok-safe mug cut you offered NOW, within the Strike Shield rules: no betting, tips, race times or records, AI label OFF. If it can't go out now, bring the 18:00 Billy post forward to now. Max 2 TikTok posts today. Reply with the live time.
