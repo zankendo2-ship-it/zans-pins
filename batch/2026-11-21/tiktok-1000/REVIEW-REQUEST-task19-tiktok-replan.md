@@ -78,3 +78,43 @@ TikTok Strike Shield (Section 2), 3.5 sample rule, hashtag limit 5, no "Link in 
 ## Questions for Alex
 1. Yes or no to Part 1 (new time, tags and shorter caption on the four booked bauble posts)?
 2. Yes or no to racing history videos on TikTok again, and from which date?
+
+---
+
+## UPDATE 21 Nov, 16:50 UTC: rebuilt to the ZANS TikTok Rulebook (rule 2A-18)
+
+The notes say Alex approved the rulebook at 16:44 UTC. That answers question 2 above as "yes" and overrides Part 1: a 14 to 18 second bauble loop fails the LENGTH and MIX boxes whatever its caption. Because the rulebook reverses the "gift posts only" line of Alex's own Strike Shield, I have asked him to confirm it in my chat as well before any story video is booked to TikTok. CLAUDE.md is updated only after that.
+
+### Re-plan, 22 to 28 Nov (max 2 a day; 2 story posts for every bauble post)
+
+| Day | 12:30 | 17:00 |
+|---|---|---|
+| Sun 22 | Story: Lossiemouth, four Cheltenham Festivals and never beaten there (numbers video, bauble as 2-3 s end card) | none |
+| Mon 23 | Story: King George legends in numbers | none |
+| Tue 24 | Story: Constitution Hill, the story so far (TikTok cut of Conny v8, once it passes review) | Bauble: No Drama This End, new hook line and tags |
+| Wed 25 | Story: Champion Hurdle greats in numbers | none |
+| Thu 26 | Story: Jonbon in numbers (spelled Jonbon) | none |
+| Fri 27 | Story: Gold Cup legends in numbers | Bauble with a same-day news hook, if there is news |
+| Sat 28 | Story: greatest jumps mares in numbers | none |
+
+What happens to the four bauble posts booked live for 18:00 on 22 to 25 Nov: they fail the rulebook (length, tags, caption, time, and Tuesday's hook is the exact vague question the rulebook bans). Proposal: take TikTok off those four and keep them on the other networks. That is a change to posts Alex already approved, so it waits for his yes.
+
+Sunday 22 Nov is tight: the Lossiemouth story video does not exist yet. If it is not through review and approved by Alex by late morning, Sunday's slot is the booked Lossiemouth bauble moved to 12:30 with the new tags and one-line caption, as the least bad option.
+
+### Checklist
+Each post gets its own REVIEW REQUEST with the full rulebook checklist ticked and one line of evidence per box when the video exists. For this plan as a whole:
+
+- [x] MIX: 7 story posts to 2 bauble posts in the week.
+- [x] HOOK: every slot opens on a fact or number; no vague questions. Exact hook text goes in each post's request.
+- [x] NEWS FAST: Friday's bauble slot is only used on real same-day news.
+- [x] HASHTAGS: #horseracing + horse name + 1-3 topic tags on every post, max 5, no gift-only sets.
+- [x] CAPTION: one hook line, one question, tags. No template, no "Link in bio".
+- [x] LENGTH: story posts 20-35 s. The two bauble posts are 14-18 s and are the 1-in-3 product share.
+- [x] TIME: 12:30 or 17:00 only; Sunday used. views_log.csv starts with Sunday's post.
+- [ ] REPLIES: cannot be ticked by me. I cannot reply to or pin TikTok comments from here; Alex or the app holder has to.
+- [x] STRIKE-SAFE: history and fan versions only; no race times, previews, odds, prices or win records beside an upcoming race. Each caption and card is word-scanned by script and independently checked. Note: "Constitution Hill, the story so far" must not mention Kempton on Wednesday; the TikTok cut already leaves it out.
+- [ ] FACTS: ticked per post, 2 sources each, on the day.
+- [x] ALL ZANS RULES: Aoede voice, 3 music options, no sound effects.
+- [ ] ALEX: no post is approved yet.
+
+Three boxes are open, and they cannot be closed at plan stage.
