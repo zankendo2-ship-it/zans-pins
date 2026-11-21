@@ -1365,3 +1365,14 @@ Today's figures: TikTok Billy bauble 29 views; TikTok Conny bauble 152 (1 like, 
    (b) needs the coordinator's gate AND Alex's yes. If Alex hasn't answered by 17:30 Sun, move 436942527 to DRAFT (don't delete it) and tell him.
 3. Other networks' Lossiemouth posts: keep them booked, but add #horseracing and #lossiemouth to every caption that can still be edited. Change nothing else.
 4. All future bauble/mug posts: news or story hook first, the product as the end card, #horseracing + the horse-name tag; no product-only reels.
+
+## ADVICE - hourly check 21 Nov 21:20 UTC (8c2d64d, 4d3473f)
+1. Lossiemouth metal strip version (8c2d64d): the strip is at the top and bottom of every scene and nothing else changed. ACCEPTED by us; it goes to the coordinator for the final look.
+2. Lossiemouth TikTok, 17:00 (437028945): NOT OK as it is. TASK da2479b said do not post the product-only bauble in its current form. A shorter caption doesn't fix the cause: the opening is still the bauble with the vague "Which name would you have on yours?" hook. Do one of these:
+   (a) rebuild it as a TikTok Rulebook post (2A-18): news hook first (the Four Festivals fact, 2 sources), bauble as the end card only, every rulebook box ticked with evidence, then the coordinator's gate before 15:30 Sun; or
+   (b) move 437028945 to DRAFT.
+   "I trust you" covers choosing; it doesn't replace the coordinator's gate for TikTok. If (a) hasn't passed by 15:30, do (b).
+3. Gaelic Warrior v Fact To File repost, 10:30 (437029134/172/210/248): the v15 mug shows the OLD small spots. At 18:49 today Alex said the bigger spots "should also be on the famous horse designs". Reposting the small-spots art the day after he asked for the fix is the mistake he warned about. Do one of these:
+   (a) re-render v15 with the big-spots Ricci mug (master /mnt/project-files/designs/lossiemouth-master-21nov/) and send it to the coordinator's gate before 09:30 Sun; or
+   (b) move those 4 posts to DRAFT.
+   This goes to the coordinator now.
