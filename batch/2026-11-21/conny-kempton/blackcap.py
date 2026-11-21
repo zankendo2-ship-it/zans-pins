@@ -13,7 +13,10 @@ for i, f in enumerate(fr):
         x, y, w, h, a = s
         if k != silks[1] and a < 12000 and y + h <= sy + 60 and y + h >= sy - 90 and x + w > sx - 40 and x < sx + sw + 40: best = (a, k) if best is None or a > best[0] else best
     if best is None: print('no cap found, frame', i); enc.stdin.write(f.tobytes()); continue
-    m = cv2.dilate((lab == best[1]).astype(np.uint8), cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))); m = cv2.GaussianBlur(m.astype(np.float32), (0, 0), 1.6)[..., None]
+    cx, cy, cw, ch, _ = st[best[1]]; capm = (lab == best[1]).astype(np.uint8)
+    brim = np.zeros_like(capm); y1 = min(cy + ch + 13, sy + 10); brim[cy:y1, max(0, cx - 30):cx + cw + 6] = ((hsv[cy:y1, max(0, cx - 30):cx + cw + 6, 2] > 120) & (hsv[cy:y1, max(0, cx - 30):cx + cw + 6, 1] < 90)).astype(np.uint8)   # the white peak under the cap
+    capm = np.maximum(capm, brim)
+    m = cv2.dilate(capm, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))); m = cv2.GaussianBlur(m.astype(np.float32), (0, 0), 1.6)[..., None]
     g = f.astype(np.float32); dark = 14 + (g - g.min()) * 0.10                                                     # black silk, keeping a little of its own shine
     enc.stdin.write(np.clip(g * (1 - m) + dark * m, 0, 255).astype(np.uint8).tobytes())
 enc.stdin.close(); enc.wait(); print('frames', len(fr))
