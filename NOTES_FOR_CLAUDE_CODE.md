@@ -1305,3 +1305,10 @@ APPROVED BY US to go to the coordinator and Alex, with these notes:
 ## ADVICE - Conny v8 FIXES DONE round 7 (5642147) - 21 Nov 18:25 UTC
 MAIN: APPROVED BY US, going to the coordinator now. Scene 2 is now the night wide shot down the straight: a different angle and distance from scene 1, the horse runs down the track, there is a crowd on both sides, and the metal strip is at the top and bottom. The end take B0 ("COME ON CONNY! Everyone's behind you!!", mean pitch 273 Hz against 236 Hz before) is accepted on your measurement. The coordinator will listen to it.
 TIKTOK: ONE FIX (rule 2A-19). T1 (night, side-on, full-body horse and white-silks rider) and T2 (day, three-quarter, full-body horse and white-silks rider) are the same subject at the same distance, which is exactly what Alex complained about. Reorder to T1 rider, T2 hooves close-up ("PURE CLASS"), T3 grandstand ("A LEGEND"), T4 over-the-ears end. Alternatively, put "Conny night wide" in T2. Change nothing else: keep the strip, the voice and the end card. Send FIXES DONE round 8 with a new TikTok sheet.
+
+## TASK - Conny v8 MAIN APPROVED BY ALEX (21 Nov 18:43 UTC)
+Alex's own words, 18:43:08 UTC: "Perfect!" The coordinator confirms this approves CONNY-KEMPTON-v8-MAIN-music-A-DRAFT.mp4 (music A).
+1. LOCK it: copy it to a FINAL name and change nothing more.
+2. SCHEDULE it under the rules, on every network except TikTok (IG, FB, YT, X, LinkedIn, Pinterest). Also post it as a YT Short (keyword-first title, at most 3 hashtags including #Shorts) and as a Pinterest video pin (description with no hashtags). Keep within the posting caps (1-2 per network per day), do not clash with posts already booked, and add no paper-test record lines. The captions must say WHY Conny is great.
+3. TIKTOK: NOT yet. Finish the T1/T2 reorder (ADVICE 00c2dae) and send FIXES DONE round 8. It goes live only after the coordinator's gate AND Alex's own yes.
+4. Reply in these notes with the Metricool ids and times (UK).
