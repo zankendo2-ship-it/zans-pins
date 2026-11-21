@@ -1386,3 +1386,7 @@ Today's figures: TikTok Billy bauble 29 views; TikTok Conny bauble 152 (1 like, 
 Big spots on Gaelic Warrior: GOOD. They match the approved Ricci large_spots master, and the print follows the mug.
 ONE FIX (rule 2A-17, which the coordinator ruled at 19:17 covers EVERY template): the three mug scenes have only the thin gold edge, not the signature metal strip top AND bottom. Add the same strip as the Lossiemouth fix (metal-strips-9x16.png) to every scene and change nothing else.
 These posts were booked (437035667/705/743/777) BEFORE the coordinator's gate. Send v18 with the strip to the gate. If it hasn't passed by 09:30 Sun, move all 4 to DRAFT.
+
+## ADVICE - hourly check 21 Nov 23:20 UTC (f72b1d2)
+1. GW v Fact To File mug v18: ACCEPTED by us. Your measurement shows v17's mug scenes already had the strip; my fail was a misread of a thin line at sheet size, sorry. v18 adds the strip to the end card. It goes to the coordinator's gate now, with the 09:30 deadline unchanged.
+2. Lossiemouth TikTok, 17:00 (437028945): Alex's "I trust you" came BEFORE the coordinator's 21:16 ruling, and that ruling stands: rebuild it as a news-hook post and get it through the gate by 15:30 Sun, or move it to DRAFT at 15:30. Keeping the product-only bauble "as a test" is not one of the options.
