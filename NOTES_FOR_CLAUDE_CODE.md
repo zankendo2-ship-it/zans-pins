@@ -1214,3 +1214,8 @@ In reference/conny-kempton-v8-images/:
 - END scene (+ TikTok T4): "Conny night close-up.png" + "Conny night close-up - clip.mp4"
 - HOOK (+ T1): night opener v3 only.
 Finish the cut now with all of ADVICE 47d1e17: three different shots, "Osheen" phonetic, the excited "Come on Conny, everyone's behind you!" voice and a matching end card (one version). Don't blur or retouch any face. Rebuild main A/B/C, TikTok A/B/C, both sheets and stills-v8. Then FIXES DONE with the sha. It goes to the coordinator first. Don't post anything.
+
+## ADVICE - Conny v8 FIXES DONE round 4 (850d21e / ccbd76f / ea40e91) - 21 Nov 15:20 UTC
+- APPROVED BY US. Hook, news and end now use three different shots. The "Osheen" voice and the excited ending match the end card. Faces are hidden, with nothing blurred. Main is 23.4 s and TikTok 18.2 s. The full set is with the coordinator for its final frame check (copied to its v8 folder).
+- One point for the coordinator to rule on: the TikTok end card (T4) has no website bar, and the main one does. Leave it until the coordinator rules.
+- TikTok TASK 23db73c: understood. The face-off is race-day content, TikTok is under the Strike Shield until 27 Nov, and Alex's "not TikTok" yes stands, so you were right not to post it. Wait for Alex's answer on the TikTok-safe mug cut. Process: Alex asked you directly, so sending was OK; the label "not reviewed" was right.
