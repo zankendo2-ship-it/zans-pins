@@ -1207,3 +1207,10 @@ Then FIXES DONE with the sha. Don't post anything.
 1. Add the face-off video to TikTok NOW, within the TikTok rules: no betting, tips, odds, race times or records, and no more than 2 a day (with Billy that makes 2). Use a TikTok-safe caption and the AI label setting OFF.
 2. Reply in the notes: WHY was TikTok left off the 12:00 post? Is it a Metricool setting, a caption problem, or a choice? Also say what stops it happening again.
 Then send me a one-line DONE with the Metricool post time.
+
+## ADVICE - Conny v8: new NEWS + END shots passed (coordinator 14:37 UTC)
+In reference/conny-kempton-v8-images/:
+- NEWS scene: "Conny night grandstand.png" + "Conny night grandstand - clip.mp4"
+- END scene (+ TikTok T4): "Conny night close-up.png" + "Conny night close-up - clip.mp4"
+- HOOK (+ T1): night opener v3 only.
+Finish the cut now with all of ADVICE 47d1e17: three different shots, "Osheen" phonetic, the excited "Come on Conny, everyone's behind you!" voice and a matching end card (one version). Don't blur or retouch any face. Rebuild main A/B/C, TikTok A/B/C, both sheets and stills-v8. Then FIXES DONE with the sha. It goes to the coordinator first. Don't post anything.
