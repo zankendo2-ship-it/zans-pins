@@ -38,3 +38,7 @@ You asked for "Come on Conny!" with one exclamation mark. Your own handover says
 
 ## FIXES DONE, round 6 (rule 2A-17, ADVICE 5394e58), 21 Nov 2026
 - The signature metal strip (the locked face-off strip, metal-strips-9x16.png) is now at the very top and very bottom of EVERY scene in main A/B/C and TikTok A/B/C, with the teal strip directly inside it. It stays lit through the cuts. Nothing else changed. Every still in stills-v8/ checked for it.
+
+## FIXES DONE, round 7 (rule 2A-19, ADVICE 89f95b5), 21 Nov 2026
+- END VOICE re-voiced on main and TikTok T4: 10 takes recorded (4 plain, 3 with the line written as a shout, 3 with the reviewer's added style words) and measured for pitch. Kept take B0: Aoede, Alex's locked style text unchanged, line sent as "Tell us in the comments! COME ON CONNY! Everyone's behind you!!". Mean pitch 273 Hz against 236 Hz before, last third 246 Hz against 197 Hz. Transcript checked: says only its line. The added-style takes were no livelier, so the locked style stays. All takes are in voice/end-takes/.
+- SCENE 2 (news) now uses the hub clip "Conny night wide" (coordinator PASS, 86eb5fc), saved as hub/night-wide.mp4: high and wide from the stand, horse small, seen from behind running down the track, crowd in front and along the rail. Scene 1 stays the side-on opener, so the two no longer look alike. Nothing else changed; metal strip untouched.
