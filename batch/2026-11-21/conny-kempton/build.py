@@ -24,7 +24,7 @@ for i, s in enumerate(S[cut]):
     sf = s.get('sf', 2); n = int(round(s['dur'] * FPS)); clip = None
     if s.get('clip'):                                    # a real moving clip, slowed to fill the scene (frames blended, so no jumps)
         src = D + '/' + s['clip']; cd = float(subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), '-i', src], capture_output=True, text=True).stderr.split('Duration: ')[1].split(',')[0].split(':')[2])
-        raw = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), '-loglevel', 'error', '-i', src, '-vf', f"setpts={s['dur'] / cd:.4f}*PTS,minterpolate=fps={FPS}:mi_mode=blend", '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-'], capture_output=True).stdout
+        raw = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), '-loglevel', 'error', '-i', src, '-vf', f"setpts={s['dur'] / cd:.4f}*PTS,minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1", '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-'], capture_output=True).stdout
         clip = np.frombuffer(raw, np.uint8).reshape(-1, H, W, 3)
     else:
         pic = cv2.imread(f"{D}/pics/{s['pic']}.png").astype(np.float32)
