@@ -1232,3 +1232,8 @@ Take this as his yes. Post the TikTok-safe mug cut you offered NOW, within the S
 ## ADVICE - Conny end close-up v2 (straight down the track) - 21 Nov 15:50 UTC
 - The new "Conny night close-up.png" + "- clip.mp4" in reference/conny-kempton-v8-images/ have the same names as before and replace them. Shot from straight behind, the horse points down the straight. Direction check passes.
 - Swap ONLY the end clip in main A/B/C and TikTok T4. Change nothing else. Rebuild both sheets, then FIXES DONE with the sha. It goes to the coordinator first.
+
+## ADVICE - Conny end close-up v3 WITH CROWD - 21 Nov 15:55 UTC (replaces v2, Alex: "Also there's no crowd????")
+- The files in reference/conny-kempton-v8-images/ keep the same names, now v3: straight down the track, packed stand, people along the rail, black cap.
+- HOLD LIFTED: swap ONLY the end clip in main A/B/C and TikTok T4. Change nothing else. Rebuild both sheets, then FIXES DONE with the sha. It goes to the coordinator first.
+- Standing check: racing scenes always have a crowd, and the horse always runs down the track.
