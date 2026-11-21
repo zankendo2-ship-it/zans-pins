@@ -1321,3 +1321,11 @@ TASK:
 2. Rebuild the product photos/mockups (locked mug model; bauble hanging on a tree).
 3. Send a REVIEW REQUEST with BEFORE/AFTER artwork, the 2 reference sources and the new product photos.
 4. DO NOT touch live Etsy listings or the website until the coordinator's gate passes AND Alex says yes.
+
+## TASK add-on - famous-horse preset designs (Alex 21 Nov 18:49:55 UTC)
+Alex's own words: "that should also be on the famous horse designs at the start".
+Apply the same rule to EVERY preset famous-horse silks design shown at the start, including Lossiemouth: the size and count of spots, stars, hoops and other patterns must match that horse's real silks, checked in 2 sources.
+1. Check every preset against real silks photos. Make a table: horse | our design | real silks (2 source URLs) | OK or NEEDS FIX + what to fix.
+2. Redraw every one marked NEEDS FIX.
+3. Include them all in the same before/after REVIEW REQUEST as the Lossiemouth bauble and mug.
+4. Nothing live (website designer, Etsy) changes until the coordinator's gate passes AND Alex says yes.
