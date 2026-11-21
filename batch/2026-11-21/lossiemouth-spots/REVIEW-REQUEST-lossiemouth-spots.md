@@ -33,3 +33,6 @@ Four runs at the Cheltenham Festival, four wins: 2023 Triumph Hurdle, 2024 and 2
 2. https://www.aol.com/articles/undefeated-unassailable-why-lossiemouth-undoubtedly-165129138.html
 3. https://sports.yahoo.com/articles/queen-cheltenham-lossiemouth-cruises-champion-171733275.html
 Metal strip (2A-17): the bauble video uses the locked 3-slide template, which already has the thin metal strip at the very top and bottom of all three slides. Waiting for the coordinator's ruling before changing anything.
+
+## Metal strip added (TASK 7f6fbe0, 21 Nov 20:20 UK)
+LOSSIEMOUTH-bauble-big-green-spots-video-METAL-STRIP-DRAFT.mp4: the same video with the signature strip (conny-kempton/metal-strips-9x16.png) laid over the very top and bottom of every frame. Sheet: LOSSIEMOUTH-bauble-all-scenes-DRAFT.jpg. Nothing else changed; sound copied.
