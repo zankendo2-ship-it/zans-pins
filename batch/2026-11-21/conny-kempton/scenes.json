@@ -36,17 +36,16 @@
   },
   {
    "key": "2-news",
-   "pic": "2-news",
    "dur": 4.95,
    "from": [
-    470,
-    840,
-    1.5
+    540,
+    1030,
+    1.0
    ],
    "to": [
-    400,
-    840,
-    1.5
+    540,
+    1040,
+    1.07
    ],
    "card": {
     "label": [
@@ -68,7 +67,9 @@
      "Oisin Murphy booked"
     ]
    },
-   "voice": "The Floodlit Stakes at Kempton on Wednesday. Oisin Murphy booked."
+   "voice": "The Floodlit Stakes at Kempton on Wednesday. Oisin Murphy booked.",
+   "clip": "hub/opener-v2.mp4",
+   "sf": 1
   },
   {
    "key": "3-legend",
@@ -108,18 +109,18 @@
    "sf": 1
   },
   {
-   "key": "4-flat",
-   "pic": "4-flat",
-   "dur": 2.71,
+   "key": "5-last",
+   "pic": "../hub/last-v2",
+   "dur": 6.25,
    "from": [
-    450,
-    1090,
-    1.1
+    540,
+    845,
+    1.0
    ],
    "to": [
-    425,
-    1120,
-    1.22
+    540,
+    865,
+    1.08
    ],
    "card": {
     "label": [
@@ -134,44 +135,17 @@
      [
       "KEMPTON WIN",
       "Ryan Moore"
-     ]
-    ],
-    "sub": [
-     "2 Flat wins this year"
-    ]
-   },
-   "voice": "And he's won twice on the Flat this year."
-  },
-  {
-   "key": "5-last",
-   "pic": "../hub/last-v2",
-   "dur": 4.08,
-   "from": [
-    540,
-    845,
-    1.0
-   ],
-   "to": [
-    540,
-    865,
-    1.08
-   ],
-   "card": {
-    "label": [
-     "LAST TIME AT KEMPTON",
-     "CONSTITUTION HILL · KEMPTON NEXT"
-    ],
-    "lines": [
+     ],
      [
-      "4th in September",
-      ""
+      "4th IN SEPTEMBER",
+      "Kempton"
      ]
     ],
     "sub": [
      "Can he bounce back?"
     ]
    },
-   "voice": "Fourth here in September. Can he bounce back?",
+   "voice": "Twice a winner on the Flat this year, then fourth here in September. Can he bounce back?",
    "sf": 1
   },
   {
