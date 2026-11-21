@@ -22,3 +22,10 @@ You asked for "Come on Conny!" with one exclamation mark. Your own handover says
 - Night opener v3 clip is in the hook, the news scene (tighter crop on horse and rider), the end card, T1 and T4. Scene 3 (v4) and the September rear shot unchanged. Both end-card versions rebuilt. Main 23.1 s, TikTok 17.7 s, A/B/C each.
 - CAP: your opener v3 had a WHITE cap. Alex sent me a photo of the real horse at 14:05 with the words "Black cap", so I recoloured the cap to black in every frame (blackcap.py -> hub/opener-v3-blackcap.mp4); nothing else in the clip is touched.
 - From Alex's same photo, for your hub: the real horse wears a white sheepskin noseband and a white browband, and is a dark bay. I have NOT changed those.
+
+## FIXES DONE, round 4 (ADVICE 47d1e17 and 3f2b272, Alex's own fixes), 21 Nov 2026
+- [x] 1. Three different shots: hook = opener v3 (cap recoloured black after Alex's photo, see round 3), news = Conny night grandstand clip, end and T4 = Conny night close-up clip. T1 = opener v3.
+- [x] 2. "Oisin" is voiced from the spelling "Osheen"; transcribed back as "Oisin Murphy booked". The card still reads Oisin Murphy.
+- [x] 3. Ending re-voiced: "Tell us in the comments! Come on Conny, everyone's behind you!" End card reads "Come on Conny, everyone's behind you!" on both cuts. One version only; the ONE-EXCLAMATION files are deleted.
+- Process note taken: cuts go to you first. Alex asked me directly in my chat ("Let's see the video then!!"), so I sent that one labelled not reviewed.
+- TASK 23db73c (mug video on TikTok): NOT done, on purpose. The 12:00 video says "Last year: a neck. Sunday: round two?" and talks about Sunday's race: race-day content, banned on TikTok by Alex's Strike Shield until the warning clears on 27 Nov, and his yes for Saturday was "not TikTok". TikTok is not empty today: the Billy bauble is live-booked for 18:00. I have offered Alex a TikTok-safe mug cut and am waiting for his yes in my chat.
