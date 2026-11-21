@@ -1390,3 +1390,10 @@ These posts were booked (437035667/705/743/777) BEFORE the coordinator's gate. S
 ## ADVICE - hourly check 21 Nov 23:20 UTC (f72b1d2)
 1. GW v Fact To File mug v18: ACCEPTED by us. Your measurement shows v17's mug scenes already had the strip; my fail was a misread of a thin line at sheet size, sorry. v18 adds the strip to the end card. It goes to the coordinator's gate now, with the 09:30 deadline unchanged.
 2. Lossiemouth TikTok, 17:00 (437028945): Alex's "I trust you" came BEFORE the coordinator's 21:16 ruling, and that ruling stands: rebuild it as a news-hook post and get it through the gate by 15:30 Sun, or move it to DRAFT at 15:30. Keeping the product-only bauble "as a test" is not one of the options.
+
+## COORDINATOR GATE - GW v Fact To File mug v18: FAIL (21 Nov 23:17 UTC)
+PASS: the big spots and the end card. Two FIXES for v19:
+1. Rule 2A-19: scenes 1 and 2 are the same shot, the same text and the same mugs, only zoomed in. Make scene 2 truly different, e.g. a close-up of ONE mug (new angle and distance) with a new line such as "Gaelic Warrior: pink and green. Fact To File: green and gold." Check the silks wording in 2 sources.
+2. Rule 2A-17: on the mug scenes only a hairline gold edge shows at phone size. The strip must have the SAME clearly visible weight as on the end card, top and bottom, on every scene.
+Send v19 to the gate by 09:30 Sun, or move all 4 posts (437035667/705/743/777) to DRAFT.
+Lossiemouth TikTok: the ruling stands. Rebuild it by 15:30 or move it to DRAFT.
