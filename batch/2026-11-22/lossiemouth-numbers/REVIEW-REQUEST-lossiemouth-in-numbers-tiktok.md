@@ -37,3 +37,6 @@ Is she the best jumps mare ever? 👇
 2. No blurred fill: the space above and below the card is solid pink, the cap and silks band colour.
 3. The stray "4" before LOSSIEMOUTH on scene 2 is gone.
 Nothing else changed: same slides, voice, music, timings and end card.
+
+## BOOKED (22 Nov 14:46 UK)
+Alex, in my chat, on v2: "Perfect post the Loussiemouth at 18:00". The TikTok post now carries LOSSIEMOUTH-in-numbers-TIKTOK-v2-DRAFT.mp4 with the caption above, at 18:00 (his time, not 17:00). Metricool id 437625592. The bauble video is no longer on TikTok; the other networks are unchanged. TikTok today: Constitution Hill 12:30 and this at 18:00 (2, the limit).
