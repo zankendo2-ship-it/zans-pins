@@ -426,5 +426,13 @@
    "pattern": "quartered",
    "cap": "#F5D130"
   }
+ },
+ "cant-find-your-silks": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "Personalised racing silks",
+  "big": "Can't find<br>your silks?",
+  "sub": "I'll design them free of charge.",
+  "question": "Whose silks should I draw next?"
  }
 }
