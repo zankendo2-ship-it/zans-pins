@@ -813,10 +813,13 @@ function capTop(cap, hoop, kind) {           // Cap A (Alex 5 Nov): plain cap, s
   return crown + hoops + seams + shine + `<circle cx="${R}" cy="30" r="24" fill="${dark}"/>` + edge + peak;
 }
 function logoTab(cy, w) { return `<rect x="${R - w / 2 - 8}" y="${f1(cy - w * 0.0667 - 6)}" width="${w + 16}" height="${f1(w * 0.1333 + 12)}" rx="7" opacity="0.92" fill="${CREAM}"/><image href="${LOGO_WIDE}" x="${R - w / 2}" y="${f1(cy - w * 0.0667)}" width="${w}" height="${f1(w * 0.1333)}"/>`; }
+function lorraineBig(c1, c2) { return `<rect width="${W}" height="${W}" fill="${c1}"/><rect x="${R - 62}" y="230" width="124" height="680" fill="${c2}"/><rect x="${R - 150}" y="318" width="300" height="78" fill="${c2}"/><rect x="${R - 205}" y="448" width="410" height="84" fill="${c2}"/>`; }
 function designA(d, id) {
-  const pat = Z.fillPattern(d.allover, d.c1, d.c2, 0, 0, W, W, scaleFor(d.allover));
-  const n = fit(d.name, 640, 210, 120, 0.03), ink = Z.darkOf(d);
-  const h = n.lines.length * n.fs * 1.05 + 120, y = 545 - h / 2;
+  // Cross of Lorraine (Alex 22 Nov): ONE big cross in the middle, like the real jersey, with the name plate moved down so both bars show
+  const big = d.allover === 'cross_of_lorraine';
+  const pat = big ? lorraineBig(d.c1, d.c2) : Z.fillPattern(d.allover, d.c1, d.c2, 0, 0, W, W, scaleFor(d.allover));
+  const n = fit(d.name, 640, big ? 170 : 210, 120, 0.03), ink = Z.darkOf(d);
+  const h = n.lines.length * n.fs * 1.05 + 120, y = big ? Math.max(548, 812 - h) : 545 - h / 2;
   let t = `<rect x="${R - 380}" y="${f1(y)}" width="760" height="${f1(h)}" rx="${f1(Math.min(90, h / 2))}" fill="${CREAM}" stroke="${GOLD}" stroke-width="12"/>`;
   n.lines.forEach((l, i) => { t += `<text x="${R}" y="${f1(y + 35 + n.fs * 0.86 + i * n.fs * 1.05)}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${f1(n.fs)}" letter-spacing="${f1(n.fs * 0.03)}" fill="${ink}">${esc(l)}</text>`; });
   t += `<text x="${R}" y="${f1(y + h - 34)}" text-anchor="middle" font-family="Jost" font-weight="600" font-size="32" letter-spacing="9.6" fill="${ink}">MERRY CHRISTMAS</text>`;
@@ -857,7 +860,7 @@ function code(d) { // ZANS bauble code: ZB<style>-<pattern>-<c1>-<c2>-<sleeves>-
 function optBtn(html, pressed, onClick, label) { const b = document.createElement('button'); b.type = 'button'; b.className = 'opt p-2 text-left'; b.setAttribute('aria-pressed', pressed); b.innerHTML = html; if (label) b.setAttribute('aria-label', label); b.onclick = onClick; return b; }
 function chip(text, pressed, onClick) { const b = optBtn(`<span class="text-sm font-semibold px-1">${esc(text)}</span>`, pressed, onClick); b.classList.add('py-1.5'); return b; }
 function swatches(el, key) { el.innerHTML = ''; Object.entries(Z.COLOURS).forEach(([n, h]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'sw'; b.style.background = h; b.title = n; b.setAttribute('aria-label', n); b.setAttribute('aria-pressed', S[key].toUpperCase() === h.toUpperCase()); b.onclick = () => { S[key] = h; render(); }; el.appendChild(b); }); }
-function miniA(p) { return `<svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="ma${p}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#ma${p})">${Z.fillPattern(p, S.c1, S.c2, 0, 0, 110, 110, scaleFor(p) * 0.35)}<rect width="110" height="22" fill="${S.capCol}"/></g><circle cx="55" cy="55" r="53" fill="none" stroke="${GOLD}" stroke-width="3"/></svg>`; }
+function miniA(p) { if (p === 'cross_of_lorraine') return `<svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="ma${p}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#ma${p})" transform="scale(0.1111)">${lorraineBig(S.c1, S.c2)}</g></svg>`; return `<svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="ma${p}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#ma${p})">${Z.fillPattern(p, S.c1, S.c2, 0, 0, 110, 110, scaleFor(p) * 0.35)}<rect width="110" height="22" fill="${S.capCol}"/></g><circle cx="55" cy="55" r="53" fill="none" stroke="${GOLD}" stroke-width="3"/></svg>`; }
 function miniB(p) { const d = Z.normalise({ layout: 'C', body: p, c1: S.c1, c2: S.c2, sleeves: S.sleeves, cap: 'contrast', k1: S.capCol, k2: S.capCol }); return `<svg viewBox="-290 -420 580 690" xmlns="http://www.w3.org/2000/svg">${Z.jersey(d, 'mb' + p)}</svg>`; }
 // Popular colour schemes (Alex 6 Nov: the same as the mug designer, plus the two bauble photo designs first).
 // Mug ring colour = bauble cap colour; no ring = cap in the second colour. Colours only, never names.
