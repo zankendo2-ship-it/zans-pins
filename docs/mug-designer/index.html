@@ -427,13 +427,13 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       const g = 240 * scale, a = 70 * scale, t = 26 * scale; let row = 0;
       for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
         for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) { s.push(`<rect x="${f1(x - t / 2)}" y="${f1(y - a)}" width="${f1(t)}" height="${f1(2 * a)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - a)}" y="${f1(y - t / 2)}" width="${f1(2 * a)}" height="${f1(t)}" fill="${c2}"/>`); }
-    } else if (pat === 'cross_of_lorraine') {
-      const g = 320 * scale, a = 108 * scale, t = 36 * scale, b1 = 48 * scale, b2 = 70 * scale; let row = 0;
+    } else if (pat === 'cross_of_lorraine') { // Alex's reference proportions (22 Nov)
+      const g = 320 * scale, u = 63.3 * scale; let row = 0;
       for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
-        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) { s.push(`<rect x="${f1(x - t / 2)}" y="${f1(y - a)}" width="${f1(t)}" height="${f1(2 * a)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - b1)}" y="${f1(y - a * 0.62)}" width="${f1(2 * b1)}" height="${f1(t * 0.85)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - b2)}" y="${f1(y - a * 0.1)}" width="${f1(2 * b2)}" height="${f1(t * 0.85)}" fill="${c2}"/>`); }
+        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) { const top = y - 1.705 * u; s.push(`<rect x="${f1(x - u / 2)}" y="${f1(top)}" width="${f1(u)}" height="${f1(3.41 * u)}" fill="${c2}"/><rect x="${f1(x - 0.94 * u)}" y="${f1(top + 0.725 * u)}" width="${f1(1.88 * u)}" height="${f1(0.56 * u)}" fill="${c2}"/><rect x="${f1(x - 1.17 * u)}" y="${f1(top + 2.16 * u)}" width="${f1(2.34 * u)}" height="${f1(0.61 * u)}" fill="${c2}"/>`); }
     } else if (pat === 'lorraine_big') { // Alex 22 Nov: ONE big chunky Cross of Lorraine per face; on a mug wrap one on each side of the mug, beside each name plate
       const wide = w > 1.8 * h, q = wide ? 0.78 : 1, top = y0 + (wide ? 0.17 : 0.1) * h, H = q * h;
-      (wide ? [x0 + w * 0.27, x0 + w * 0.73] : [x0 + w / 2]).forEach(cx => { s.push(`<rect x="${f1(cx - 0.12 * H)}" y="${f1(top)}" width="${f1(0.24 * H)}" height="${f1(0.86 * H)}" fill="${c2}"/>`); s.push(`<rect x="${f1(cx - 0.215 * H)}" y="${f1(top + 0.14 * H)}" width="${f1(0.43 * H)}" height="${f1(0.135 * H)}" fill="${c2}"/>`); s.push(`<rect x="${f1(cx - 0.27 * H)}" y="${f1(top + 0.42 * H)}" width="${f1(0.54 * H)}" height="${f1(0.135 * H)}" fill="${c2}"/>`); });
+      (wide ? [x0 + w * 0.27, x0 + w * 0.73] : [x0 + w / 2]).forEach(cx => { const u = 0.252 * H; s.push(`<rect x="${f1(cx - u / 2)}" y="${f1(top)}" width="${f1(u)}" height="${f1(3.41 * u)}" fill="${c2}"/><rect x="${f1(cx - 0.94 * u)}" y="${f1(top + 0.725 * u)}" width="${f1(1.88 * u)}" height="${f1(0.56 * u)}" fill="${c2}"/><rect x="${f1(cx - 1.17 * u)}" y="${f1(top + 2.16 * u)}" width="${f1(2.34 * u)}" height="${f1(0.61 * u)}" fill="${c2}"/>`); });
     } else if (pat === 'chevron') {
       const bh = 70 * scale, step = 380 * scale, dep = 120 * scale;
       for (let y = y0 + step / 3; y < y1 + step; y += step) {
@@ -469,7 +469,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       else if (pat === 'star') inner += star(0, 20, 100, c2);
       else if (pat === 'disc') inner += `<circle cx="0" cy="20" r="82" fill="${c2}"/>`;
       else if (pat === 'cross') inner += `<rect x="-34" y="-230" width="68" height="480" fill="${c2}"/><rect x="-140" y="-40" width="280" height="68" fill="${c2}"/>`;
-      else if (pat === 'cross_of_lorraine') inner += `<rect x="-46" y="-146" width="92" height="303" fill="${c2}"/><rect x="-79" y="-82" width="158" height="58" fill="${c2}"/><rect x="-99" y="40" width="198" height="58" fill="${c2}"/>`; // proportions measured from real silks drawings (Alex 22 Nov)
+      else if (pat === 'cross_of_lorraine') inner += `<rect x="-40.3" y="-135" width="80.5" height="274.5" fill="${c2}"/><rect x="-75.7" y="-76.6" width="151.3" height="45.1" fill="${c2}"/><rect x="-94.2" y="38.9" width="188.4" height="49.1" fill="${c2}"/>`; // exact proportions from Alex's reference silks (22 Nov): pixel-measured: upright u, height 3.41u; top bar 1.88u x 0.56u at 0.725u; lower bar 2.34u x 0.61u at 2.16u
       else if (pat === 'diabolo') inner += `<polygon points="-140,-230 140,-230 0,10" fill="${c2}"/><polygon points="-140,250 140,250 0,10" fill="${c2}"/>`;
       else if (pat === 'triple_diamond') [-110, 20, 150].forEach(y => { inner += `<polygon points="0,${y - 58} 46,${y} 0,${y + 58} -46,${y}" fill="${c2}"/>`; });
       else if (pat === 'epaulets') inner += `<polygon points="-140,-230 -40,-230 -60,-160 -140,-150" fill="${c2}"/><polygon points="140,-230 40,-230 60,-160 140,-150" fill="${c2}"/>`;
