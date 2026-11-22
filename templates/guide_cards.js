@@ -79,7 +79,7 @@ h1 em{font-style:normal;color:${TXT}}
 .url{font-family:Jost;font-weight:700;letter-spacing:.1em;font-size:36px;text-align:center;margin-top:8px}
 `;
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
-const brand = P => `<div class="brand"><div><b>ZANS RACING · HORSE RACING GUIDES</b><span>${esc(P.tagline)}</span></div>${P.flag === false ? '' : FLAG}</div>`;
+const brand = P => `<div class="brand"><div><b>${esc(P.brand || "ZANS RACING · HORSE RACING GUIDES")}</b><span>${esc(P.tagline)}</span></div>${P.flag === false ? '' : FLAG}</div>`;
 const foot = P => `<div class="foot"><span>${esc(P.footer)}</span><b>www.zanshorseracing.co.uk</b></div>`;
 function body(P, s) {
   if (s.type === 'cover') return brand(P) + `<img class="logo" src="${LOGO}"><div class="course" style="${P.courseSize ? `font-size:${P.courseSize}px;letter-spacing:.08em` : ''}">${esc(P.course)}</div><div class="csub">${esc(s.sub)}</div><div class="rule"></div>

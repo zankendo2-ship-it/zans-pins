@@ -857,5 +857,90 @@
     "question": "Low draw or front-runner: which matters more at Wolverhampton, and why?"
    }
   ]
+ },
+ "lossiemouth-numbers": {
+  "course": "LOSSIEMOUTH",
+  "courseSize": 84,
+  "flag": false,
+  "code": "Champion hurdler",
+  "colour": "#F06FA4",
+  "text": "#C2477E",
+  "silks": {
+   "body": "#F3B5C9",
+   "second": "#6CC24A",
+   "pattern": "spots",
+   "cap": "#F3B5C9"
+  },
+  "tagline": "The Cheltenham Festival in numbers",
+  "footer": "ZANS Racing",
+  "source": "",
+  "slides": [
+   {
+    "type": "cover",
+    "sub": "Four Festivals. Never beaten there.",
+    "gl": "LOSSIEMOUTH IN NUMBERS",
+    "tiles": [
+     [
+      "4",
+      "CHELTENHAM FESTIVALS"
+     ],
+     [
+      "0",
+      "DEFEATS THERE"
+     ],
+     [
+      "2026",
+      "CHAMPION HURDLE"
+     ]
+    ],
+    "points": [
+     [
+      "Triumph Hurdle",
+      "2023"
+     ],
+     [
+      "Mares' Hurdle, twice",
+      "2024 · 2025"
+     ],
+     [
+      "Champion Hurdle",
+      "2026"
+     ]
+    ],
+    "strip": "Four Festivals, <b>never beaten there</b>"
+   },
+   {
+    "type": "facts",
+    "num": "4",
+    "eyebrow": "FOUR FESTIVALS",
+    "big": "Four runs. <em>Never beaten.</em>",
+    "sub": "Her Cheltenham Festival record.",
+    "rows": [
+     [
+      "2023",
+      "Triumph Hurdle"
+     ],
+     [
+      "2024",
+      "Mares' Hurdle"
+     ],
+     [
+      "2025",
+      "Mares' Hurdle"
+     ],
+     [
+      "2026",
+      "Champion Hurdle"
+     ]
+    ],
+    "strip": "Pink silks, <b>big green spots</b>"
+   },
+   {
+    "type": "end",
+    "big": "The best jumps mare ever?",
+    "question": "Is Lossiemouth the best jumps mare ever?"
+   }
+  ],
+  "brand": "ZANS RACING · FOR RACING FANS"
  }
 }
