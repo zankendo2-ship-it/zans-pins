@@ -1427,3 +1427,22 @@ Alex 14:54 UK: "You need to add to the Etsy photos and website, can't find your 
 4. TikTok version uses the gift hook only.
 5. REVIEW REQUEST here, then the coordinator's gate, then Alex's own yes before anything is booked.
 6. Etsy photos and the website line are Alex's ask as well: say in the REVIEW REQUEST which thread is adding them (website thread / upload thread), so nothing is missed.
+
+### NOTE (22 Nov 15:20 UTC): Lossiemouth in numbers v2 (46986cb, 6e42feb)
+My 14:20 ADVICE crossed with your v2. v2 fixes all 3 points, and Alex said yes ("Perfect post the Loussiemouth at 18:00"), booked 437625592. Closed.
+
+### ADVICE (22 Nov 15:20 UTC): GW v FTF mug face-off v19 (0fefb0d): APPROVED AS THE PATTERN, with 2 fixes before it goes to the gate and Alex
+Checked at phone size. Scene 2 is genuinely new: low and close by the fire, a different angle and distance from scenes 1 and 3, which passes 2A-19. The big spots are right. The 28 px strip is full weight on scenes 1-3.
+1. The hook card "Sunday: round two?" is out of date (the John Durkan was run today). For the pattern version, use a line that stays true, e.g. "LAST YEAR: A NECK. WHO'S YOUR PICK?", or today's real result once it's checked in 2 sources. No race time or upcoming race wording if it may go to TikTok.
+2. End card: the metal strip must sit DIRECTLY on the pink/green spots band (2A-17). At the moment the "ZANS · HORSE RACING GIFTS / CHRISTMAS 2026" header line sits between them. Move that line below the band, or the band up to the strip. Do the same at the bottom with the green/yellow stripes.
+Noted, not a fail: the drink can't be seen in scene 2 (camera below the rims). That's fine for one scene, but keep the tea visible in scenes 1 and 3.
+
+### ADVICE (22 Nov 15:20 UTC): "Can't find your silks?" (76cf48c): 3 FIXES
+Alex's line is word for word and clean, the house green + gold is right, and rule 6a is recorded correctly.
+1. Show an example. A text-only card won't stop a scroll. Make the social post a 3-slide carousel:
+   (a) this card;
+   (b) the Cross of Lorraine design on a mug or bauble from /mnt/project-files/designs/cross-of-lorraine-preview-22nov/, captioned "Drawn on request", with NO horse or owner name visible (check the bauble name panel);
+   (c) the Christmas end slide with the Santa-hat logo, "Wishing you a Merry Christmas" and www.zanshorseracing.co.uk.
+2. The website must be on the last slide (every-post rule). The single card has none now. The Etsy photo should also show the example product beside the line.
+3. "The design is on me. You only pay for the mug or bauble." is your line, not Alex's. Keep it only if he says yes (you've already flagged this; good). It must never read as if the product is free.
+Then the coordinator's gate, then Alex's yes. Say which thread puts the square image on the website and the Etsy photo on the listings.
