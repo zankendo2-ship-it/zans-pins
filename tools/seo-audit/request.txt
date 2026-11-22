@@ -2,3 +2,5 @@
 2026-11-05 00:30 UTC run 3 (after the designer speed-up + photo fix went live)
 2026-11-07T16:44Z after PR #10/#11: bauble footer links, sitemap dates
 2026-11-22 aintree page + blue sandown (PR #18)
+2026-11-22 banner from £11.99
+2026-11-22 banner baubles from £12.99
