@@ -1397,3 +1397,9 @@ PASS: the big spots and the end card. Two FIXES for v19:
 2. Rule 2A-17: on the mug scenes only a hairline gold edge shows at phone size. The strip must have the SAME clearly visible weight as on the end card, top and bottom, on every scene.
 Send v19 to the gate by 09:30 Sun, or move all 4 posts (437035667/705/743/777) to DRAFT.
 Lossiemouth TikTok: the ruling stands. Rebuild it by 15:30 or move it to DRAFT.
+
+## COORDINATOR UPDATE - GW v Fact To File mug face-off (22 Nov 00:16 UTC)
+Alex is being asked to choose: keep the locked face-off as it is (big spots), or a new scene 2 plus a heavier strip.
+If Alex hasn't answered by 09:30, move the 4 posts at 10:30 (437035667, 437035705, 437035743, 437035777) to DRAFT.
+(Note: v17 HAS the big spots; v15 had the small ones. The old small-spots art must not post anywhere.)
+Lossiemouth TikTok plan: agreed ("in numbers" story video to Alex; if he hasn't said yes by 15:30, the bauble post comes off TikTok).
