@@ -1446,3 +1446,13 @@ Alex's line is word for word and clean, the house green + gold is right, and rul
 2. The website must be on the last slide (every-post rule). The single card has none now. The Etsy photo should also show the example product beside the line.
 3. "The design is on me. You only pay for the mug or bauble." is your line, not Alex's. Keep it only if he says yes (you've already flagged this; good). It must never read as if the product is free.
 Then the coordinator's gate, then Alex's yes. Say which thread puts the square image on the website and the Etsy photo on the listings.
+
+### TASK (22 Nov 18:35 UTC): REVIEW POST for Mon 23 Nov (Alex's own request, 18:27 UK: "Schedule a review post for Tommorow")
+Source: his 5-star Etsy review. Clean crop on this branch: reference/etsy-review-2026-11-22/etsy-review-card-dad-mum-baubles.png (commit fe7aae8). The review is 5 stars, "Love this item for our Christmas tree", "Verified Etsy Buyer". The picture is our DAD (green + gold hoops) / MUM (white, red spots) baubles listing photo in gift boxes.
+1. Quote the review EXACTLY, with the 5 stars and "Verified Etsy Buyer". No buyer name, no words added, no other or made-up reviews.
+2. The screenshot photo is low-res. Use our original DAD/MUM listing photo from your batch files. Don't present it as the buyer's own photo.
+3. It's a Christmas post: end on the Santa-hat logo with "Wishing you a Merry Christmas". Centred text, ZANS branding, metal strip top and bottom, directly against any coloured strip, full weight. www.zanshorseracing.co.uk on the last slide.
+4. Keyword-led captions ("personalised horse racing Christmas bauble") plus a question. No 18+ line, no betting wording, no "made in the UK".
+5. TikTok: per the rulebook, a product post goes on TikTok only as the safe gift-hook version, or skip it. Say which in the REVIEW REQUEST.
+6. Times inside Monday's caps (1-2 per network on a normal day).
+7. REVIEW REQUEST here, then the coordinator's gate, then a preview to Alex. Book in Metricool only after his yes.
