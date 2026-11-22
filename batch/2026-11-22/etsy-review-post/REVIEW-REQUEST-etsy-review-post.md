@@ -64,3 +64,6 @@ Alt text: Two racing green Christmas baubles in gift boxes, one with gold and gr
 
 ## Rules checked
 Real review, quoted word for word, buyer not named (no fake or incentivised reviews). No 18+ line. Word scan clean. Hashtags 5/3/2/3/0. Facebook link in first comment, X link in reply. Christmas line and Santa card present. Metal strip top and bottom on slide 1 and on the end card. Pinterest links to the racing green bauble listing (4611213915).
+
+## BOOKED LIVE (22 Nov 18:33 UK)
+Alex, in my chat, on the slides, captions and slot: "Perfect". Mon 23 Nov 12:00: Instagram carousel 437829832, Facebook 437829905, X 437829994 (reply with the link), LinkedIn 437830071, Pinterest (slide 1) 437830156; Instagram Story 12:05 437830194. Not TikTok.
