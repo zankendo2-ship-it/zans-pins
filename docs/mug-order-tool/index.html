@@ -76,17 +76,17 @@ ol{padding-left:22px}li{margin-bottom:6px}
   const SLEEVES = ['plain', 'contrast', 'hoops', 'stripes', 'armlets', 'spots', 'stars', 'chevrons',
     'diamonds', 'checks', 'diagonal', 'cuffs', 'armlet_cuffs', 'large_spots'];
   const CAPS = ['plain', 'contrast', 'quartered', 'hoops', 'star', 'spots', 'stars',
-    'checks', 'diamonds', 'stripes', 'halved', 'peak', 'diamond', 'large_spots'];
+    'checks', 'diamonds', 'stripes', 'halved', 'peak', 'diamond', 'large_spots', 'rings'];
   const ALLOVER = ['plain', 'hoops', 'stripes', 'spots', 'stars', 'diamonds', 'chevrons', 'checks', 'diagonal',
     'large_spots', 'quartered', 'hoop', 'stripe', 'halved', 'seams', 'braces', 'sash', 'cross_belts', 'large_diamond',
-    'triple_diamond', 'star', 'disc', 'spot_diag', 'cross', 'chevron'];
+    'triple_diamond', 'star', 'disc', 'spot_diag', 'cross', 'cross_of_lorraine', 'lorraine_big', 'chevron'];
   const NAMES = {
     plain: 'Plain', hoops: 'Hoops', stripes: 'Stripes', spots: 'Spots', stars: 'Stars', diamonds: 'Diamonds',
     chevrons: 'Chevrons', quartered: 'Quartered', large_diamond: 'Large diamonds', cross_belts: 'Cross belts',
     sash: 'Sash', braces: 'Braces', halved: 'Halves', checks: 'Check', contrast: 'Second colour',
     armlets: 'Armlets', star: 'Big stars', diagonal: 'Diagonal stripes',
     hoop: 'Broad hoop', stripe: 'Broad stripes', large_spots: 'Large spots', disc: 'Big discs', spot_diag: 'Three big spots', cross: 'Crosses',
-    cross_of_lorraine: 'Cross of Lorraine', diabolo: 'Diabolo', triple_diamond: 'Triple diamonds', epaulets: 'Epaulets',
+    cross_of_lorraine: 'Cross of Lorraine', lorraine_big: 'One big Cross of Lorraine', rings: 'Rings (target)', diabolo: 'Diabolo', triple_diamond: 'Triple diamonds', epaulets: 'Epaulets',
     seams: 'Seams', chevron: 'Broad chevrons', collar: 'Collar + hem', cuffs: 'Cuffs', armlet_cuffs: 'Armlet + cuffs',
     peak: 'Second-colour peak', diamond: 'Diamond', thirds: 'Three-colour panels'
   };
@@ -264,6 +264,13 @@ ol{padding-left:22px}li{margin-bottom:6px}
       const g = 240 * scale, a = 70 * scale, t = 26 * scale; let row = 0;
       for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
         for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) { s.push(`<rect x="${f1(x - t / 2)}" y="${f1(y - a)}" width="${f1(t)}" height="${f1(2 * a)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - a)}" y="${f1(y - t / 2)}" width="${f1(2 * a)}" height="${f1(t)}" fill="${c2}"/>`); }
+    } else if (pat === 'cross_of_lorraine') {
+      const g = 320 * scale, a = 108 * scale, t = 36 * scale, b1 = 48 * scale, b2 = 70 * scale; let row = 0;
+      for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
+        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) { s.push(`<rect x="${f1(x - t / 2)}" y="${f1(y - a)}" width="${f1(t)}" height="${f1(2 * a)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - b1)}" y="${f1(y - a * 0.62)}" width="${f1(2 * b1)}" height="${f1(t * 0.85)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - b2)}" y="${f1(y - a * 0.1)}" width="${f1(2 * b2)}" height="${f1(t * 0.85)}" fill="${c2}"/>`); }
+    } else if (pat === 'lorraine_big') { // Alex 22 Nov: ONE big chunky Cross of Lorraine per face; on a mug wrap one on each side of the mug, beside each name plate
+      const wide = w > 1.8 * h, q = wide ? 0.78 : 1, top = y0 + (wide ? 0.17 : 0.1) * h, H = q * h;
+      (wide ? [x0 + w * 0.27, x0 + w * 0.73] : [x0 + w / 2]).forEach(cx => { s.push(`<rect x="${f1(cx - 0.12 * H)}" y="${f1(top)}" width="${f1(0.24 * H)}" height="${f1(0.86 * H)}" fill="${c2}"/>`); s.push(`<rect x="${f1(cx - 0.215 * H)}" y="${f1(top + 0.14 * H)}" width="${f1(0.43 * H)}" height="${f1(0.135 * H)}" fill="${c2}"/>`); s.push(`<rect x="${f1(cx - 0.27 * H)}" y="${f1(top + 0.42 * H)}" width="${f1(0.54 * H)}" height="${f1(0.135 * H)}" fill="${c2}"/>`); });
     } else if (pat === 'chevron') {
       const bh = 70 * scale, step = 380 * scale, dep = 120 * scale;
       for (let y = y0 + step / 3; y < y1 + step; y += step) {
@@ -299,7 +306,7 @@ ol{padding-left:22px}li{margin-bottom:6px}
       else if (pat === 'star') inner += star(0, 20, 100, c2);
       else if (pat === 'disc') inner += `<circle cx="0" cy="20" r="82" fill="${c2}"/>`;
       else if (pat === 'cross') inner += `<rect x="-34" y="-230" width="68" height="480" fill="${c2}"/><rect x="-140" y="-40" width="280" height="68" fill="${c2}"/>`;
-      else if (pat === 'cross_of_lorraine') inner += `<rect x="-20" y="-150" width="40" height="320" fill="${c2}"/><rect x="-62" y="-105" width="124" height="34" fill="${c2}"/><rect x="-92" y="-25" width="184" height="34" fill="${c2}"/>`;
+      else if (pat === 'cross_of_lorraine') inner += `<rect x="-46" y="-146" width="92" height="303" fill="${c2}"/><rect x="-79" y="-82" width="158" height="58" fill="${c2}"/><rect x="-99" y="40" width="198" height="58" fill="${c2}"/>`; // proportions measured from real silks drawings (Alex 22 Nov)
       else if (pat === 'diabolo') inner += `<polygon points="-140,-230 140,-230 0,10" fill="${c2}"/><polygon points="-140,250 140,250 0,10" fill="${c2}"/>`;
       else if (pat === 'triple_diamond') [-110, 20, 150].forEach(y => { inner += `<polygon points="0,${y - 58} 46,${y} 0,${y + 58} -46,${y}" fill="${c2}"/>`; });
       else if (pat === 'epaulets') inner += `<polygon points="-140,-230 -40,-230 -60,-160 -140,-150" fill="${c2}"/><polygon points="140,-230 40,-230 60,-160 140,-150" fill="${c2}"/>`;
@@ -319,6 +326,7 @@ ol{padding-left:22px}li{margin-bottom:6px}
       else if (pat === 'contrast') inner = `<rect x="-280" y="-230" width="560" height="400" fill="${c1}"/>`;
       else if (pat === 'armlets') inner = `<rect x="-280" y="-230" width="560" height="400" fill="${c1}"/><g transform="rotate(${side === 'r' ? -18 : 18} 0 0)"><rect x="-300" y="-5" width="600" height="38" fill="${c2}"/></g>`;
       else if (pat === 'cuffs' || pat === 'armlet_cuffs') inner = `<rect x="-280" y="-230" width="560" height="400" fill="${pat === 'cuffs' ? bodyC1 : c1}"/><g transform="rotate(${side === 'r' ? -18 : 18} 0 0)">${pat === 'armlet_cuffs' ? `<rect x="-300" y="-5" width="600" height="38" fill="${c2}"/>` : ''}<rect x="-300" y="${pat === 'cuffs' ? 95 : 95}" width="600" height="60" fill="${pat === 'cuffs' ? c1 : c2}"/></g>`;
+      else if (pat === 'chevrons') { const cx = side === 'l' ? -184 : 184; let v = ''; for (let yc = -230; yc < 260; yc += 96) v += `<polygon points="-130,${yc + 105} 0,${yc} 130,${yc + 105} 130,${yc + 150} 0,${yc + 45} -130,${yc + 150}" fill="${c2}"/>`; inner = `<rect x="-280" y="-230" width="560" height="400" fill="${c1}"/><g transform="translate(${cx} -30) rotate(${side === 'l' ? 15.5 : -15.5})">${v}</g>`; } // Alex 22 Nov: real silks chevrons
       else inner = `<g transform="rotate(${side === 'r' ? -20 : 20} ${side === 'l' ? -210 : 210} -30)">${fillPattern(pat, c1, c2, -420, -420, 420, 420, 0.62)}</g>`;
       out += `<defs><clipPath id="${id}${side}"><path d="${d}"/></clipPath></defs><g clip-path="url(#${id}${side})">${inner}</g><path d="${d}" fill="none" stroke="${INK}" stroke-width="7" stroke-linejoin="round"/>`;
     });
@@ -334,6 +342,7 @@ ol{padding-left:22px}li{margin-bottom:6px}
     else if (pat === 'halved') inner += `<rect x="0" y="-410" width="170" height="160" fill="${c2}"/>`;
     else if (pat === 'peak') inner += `<rect x="-110" y="-292" width="280" height="40" fill="${c1}"/>`;
     else if (pat === 'diamond') inner += `<polygon points="0,-385 34,-340 0,-295 -34,-340" fill="${c2}"/>`;
+    else if (pat === 'rings') inner += `<circle cx="0" cy="-336" r="40" fill="none" stroke="${c2}" stroke-width="10"/><circle cx="0" cy="-336" r="15" fill="none" stroke="${c2}" stroke-width="9"/>`;
     return `<defs><clipPath id="${id}"><path d="${P.cap}"/><path d="${P.peak}"/></clipPath></defs><g clip-path="url(#${id})">${inner}</g>` +
       `<path d="${P.cap}" fill="none" stroke="${INK}" stroke-width="7" stroke-linejoin="round"/><path d="${P.peak}" fill="none" stroke="${INK}" stroke-width="7" stroke-linejoin="round"/>`;
   }
