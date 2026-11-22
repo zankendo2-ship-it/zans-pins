@@ -1,0 +1,14 @@
+- homeaintree-jumps-guide_mobile.json: {'performance': 99, 'accessibility': 98, 'best-practices': 100, 'seo': 100} | LCP 2.1 s | TBT 0 ms | CLS 0 | weight Total size was 268 KiB
+- homearticles_ascot-draw-bias_mobile.json: {'performance': 100, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 1.7 s | TBT 0 ms | CLS 0 | weight Total size was 105 KiB
+- homeascot-jumps-guide_mobile.json: {'performance': 100, 'accessibility': 98, 'best-practices': 100, 'seo': 100} | LCP 1.8 s | TBT 0 ms | CLS 0 | weight Total size was 276 KiB
+- homeascot-racecourse-guide_mobile.json: {'performance': 100, 'accessibility': 98, 'best-practices': 100, 'seo': 100} | LCP 1.7 s | TBT 0 ms | CLS 0 | weight Total size was 264 KiB
+- homecheltenham-racecourse-guide_mobile.json: {'performance': 100, 'accessibility': 98, 'best-practices': 100, 'seo': 100} | LCP 1.8 s | TBT 0 ms | CLS 0 | weight Total size was 278 KiB
+- homedesktop.json: {'performance': 100, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 0.6 s | TBT 0 ms | CLS 0 | weight Total size was 387 KiB
+- homegifts-for-racehorse-owners_mobile.json: {'performance': 100, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 1.8 s | TBT 0 ms | CLS 0 | weight Total size was 184 KiB
+- homehorse-racing-gifts_mobile.json: {'performance': 98, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 2.3 s | TBT 0 ms | CLS 0 | weight Total size was 209 KiB
+- homekempton-jumps-guide_mobile.json: {'performance': 100, 'accessibility': 98, 'best-practices': 100, 'seo': 100} | LCP 1.7 s | TBT 0 ms | CLS 0 | weight Total size was 271 KiB
+- homekempton-racecourse-guide_mobile.json: {'performance': 100, 'accessibility': 98, 'best-practices': 100, 'seo': 100} | LCP 1.7 s | TBT 0 ms | CLS 0 | weight Total size was 274 KiB
+- homemobile.json: {'performance': 95, 'accessibility': 100, 'best-practices': 100, 'seo': 100} | LCP 2.9 s | TBT 10 ms | CLS 0 | weight Total size was 346 KiB
+- homemug-designer_desktop.json: {'performance': 99, 'accessibility': 90, 'best-practices': 100, 'seo': 100} | LCP 0.9 s | TBT 40 ms | CLS 0 | weight Total size was 606 KiB
+- homemug-designer_mobile.json: {'performance': 60, 'accessibility': 90, 'best-practices': 100, 'seo': 100} | LCP 3.1 s | TBT 7,390 ms | CLS 0 | weight Total size was 606 KiB
+- homesandown-jumps-guide_mobile.json: {'performance': 100, 'accessibility': 98, 'best-practices': 100, 'seo': 100} | LCP 1.7 s | TBT 0 ms | CLS 0 | weight Total size was 275 KiB
