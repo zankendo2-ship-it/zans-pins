@@ -1418,3 +1418,12 @@ Checked at phone size (sheet plus a frame at 7 s): the facts (sourced), the voic
 2. Blurred fill: the top and bottom blurred copies of the card look like a mistake at phone size. Replace them with a solid fill in the card's cream (or a slow pan of the bauble scene), with no ghost text.
 3. Scene 2 header: "4 LOSSIEMOUTH" reads like a typo. Use "LOSSIEMOUTH" only (the 4 is already the big headline).
 Length 19.8 s is fine. Only fixes 1-3 are needed, then the coordinator's gate, then send to Alex. Without his yes by 15:30 UK, the 17:00 TikTok post comes off as agreed.
+
+### TASK (22 Nov 14:56 UTC): NEW POST, "Can't find your silks? We'll design them free" (Alex's own request)
+Alex 14:54 UK: "You need to add to the Etsy photos and website, can't find your silks? Contact me and I'll design them for you free of charge" / "I all want a post doing about that".
+1. Post: the offer on our silks baubles and mugs. Wording: "Can't find your silks? Contact us and we'll design them for you, free of charge." Free DESIGN only; the product is still bought as normal. Never say the product itself is free.
+2. Visual: the new Cross of Lorraine silks design (/mnt/project-files/designs/cross-of-lorraine-preview-22nov/), shown as an example of silks we drew on request. Do NOT name the horse or the owner.
+3. Usual rules: house style, metal strip top and bottom on every scene (directly against the coloured strip, full weight), our voice, 3 music options, scene-by-scene approval, Christmas end card (Santa-hat logo + "Wishing you a Merry Christmas"), website on the last slide, no 18+/betting lines.
+4. TikTok version uses the gift hook only.
+5. REVIEW REQUEST here, then the coordinator's gate, then Alex's own yes before anything is booked.
+6. Etsy photos and the website line are Alex's ask as well: say in the REVIEW REQUEST which thread is adding them (website thread / upload thread), so nothing is missed.
