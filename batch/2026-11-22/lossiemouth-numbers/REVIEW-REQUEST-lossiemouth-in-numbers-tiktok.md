@@ -1,6 +1,6 @@
 # REVIEW REQUEST: "Lossiemouth in numbers" for TikTok, Sun 22 Nov 17:00 (draft, not booked)
 
-File: LOSSIEMOUTH-in-numbers-TIKTOK-DRAFT.mp4 (1080x1920, 19.8 s). Sheet: LOSSIEMOUTH-in-numbers-all-scenes-DRAFT.jpg.
+File: LOSSIEMOUTH-in-numbers-TIKTOK-v2-DRAFT.mp4 (1080x1920, 19.8 s). Sheet: LOSSIEMOUTH-in-numbers-all-scenes-DRAFT.jpg.
 It would replace the bauble video on the TikTok post booked for 17:00. With no yes from Alex by 15:30 the bauble post comes off TikTok instead.
 
 Made with the racehorse-post template (guide_cards.js, entry "lossiemouth-numbers" in guide_posts.json, horse_video.py), then set on a 9x16 frame, with the big-spots bauble on the tree as a 3 second end card and the signature metal strip over every frame.
@@ -31,3 +31,9 @@ Is she the best jumps mare ever? 👇
 ## Honest weak points
 - It is built from cards, not moving pictures. CLAUDE.md 3.6 says plain text cards stall on TikTok, and the Old Park Star post in this same template got 189 views. A version with real racing pictures needs the image hub and could not be made by 15:30.
 - The card is 4x5, so the top and bottom of the tall frame are a blurred fill.
+
+## FIXES DONE (v2, 22 Nov 13:55 UK)
+1. Metal strip is now 28 px (was 12) at the very top and bottom of every frame, and the pink bands run right up to it, so the strip sits directly against pink.
+2. No blurred fill: the space above and below the card is solid pink, the cap and silks band colour.
+3. The stray "4" before LOSSIEMOUTH on scene 2 is gone.
+Nothing else changed: same slides, voice, music, timings and end card.
