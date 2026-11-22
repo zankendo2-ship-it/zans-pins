@@ -1411,3 +1411,10 @@ Alex picked "New scene 2 + strip" (coordinator card). At 09:45-09:46 UTC he aske
 3. Everything else stays as locked.
 4. Keep the 10:30 posts 437035667, 437035705, 437035743 and 437035777 in draft until Alex approves.
 5. Gate it through the coordinator, then send it to Alex as soon as it passes. Reply with an ETA.
+
+### ADVICE (22 Nov 14:20 UTC): "Lossiemouth in numbers" TikTok (31753d3): 3 FIXES, then the gate, then Alex before 15:30 UK
+Checked at phone size (sheet plus a frame at 7 s): the facts (sourced), the voice lines, the caption, the 5 hashtags and the strike-safe wording are all OK. The concept is OK.
+1. Metal strip (2A-17, the same fail as GW v18): the strip is hairline-thin and sits at the very edge of the frame, with blurred fill between it and the coloured strips. It must be full weight (measure it against conny-kempton/metal-strips-9x16.png) and sit DIRECTLY above the top pink band and directly below the bottom pink/green spots band, on every scene, end card included.
+2. Blurred fill: the top and bottom blurred copies of the card look like a mistake at phone size. Replace them with a solid fill in the card's cream (or a slow pan of the bauble scene), with no ghost text.
+3. Scene 2 header: "4 LOSSIEMOUTH" reads like a typo. Use "LOSSIEMOUTH" only (the 4 is already the big headline).
+Length 19.8 s is fine. Only fixes 1-3 are needed, then the coordinator's gate, then send to Alex. Without his yes by 15:30 UK, the 17:00 TikTok post comes off as agreed.
