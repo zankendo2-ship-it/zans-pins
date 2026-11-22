@@ -813,14 +813,16 @@ function capTop(cap, hoop, kind) {           // Cap A (Alex 5 Nov): plain cap, s
   return crown + hoops + seams + shine + `<circle cx="${R}" cy="30" r="24" fill="${dark}"/>` + edge + peak;
 }
 function logoTab(cy, w) { return `<rect x="${R - w / 2 - 8}" y="${f1(cy - w * 0.0667 - 6)}" width="${w + 16}" height="${f1(w * 0.1333 + 12)}" rx="7" opacity="0.92" fill="${CREAM}"/><image href="${LOGO_WIDE}" x="${R - w / 2}" y="${f1(cy - w * 0.0667)}" width="${w}" height="${f1(w * 0.1333)}"/>`; }
-function lorraineBig(c1, c2) { return `<rect width="${W}" height="${W}" fill="${c1}"/><rect x="${R - 75}" y="230" width="150" height="700" fill="${c2}"/><rect x="${R - 135}" y="362" width="270" height="88" fill="${c2}"/><rect x="${R - 169}" y="550" width="338" height="88" fill="${c2}"/>`; } // chunky, stepped like the real silks; upright shows above the top bar (Alex 22 Nov)
+function lorraineBig(c1, c2, plate) { // Alex 22 Nov: on the named bauble the white name plate IS the lower, wider bar of the cross
+  return `<rect width="${W}" height="${W}" fill="${c1}"/><rect x="${R - 70}" y="260" width="140" height="${plate ? 570 : 560}" fill="${c2}"/><rect x="${R - 170}" y="338" width="340" height="78" fill="${c2}"/>` + (plate ? '' : `<rect x="${R - 280}" y="480" width="560" height="110" fill="${c2}"/>`); }
 function designA(d, id) {
   // Cross of Lorraine (Alex 22 Nov): ONE big cross in the middle, like the real jersey, with the name plate moved down so both bars show
   const big = d.allover === 'cross_of_lorraine';
-  const pat = big ? lorraineBig(d.c1, d.c2) : Z.fillPattern(d.allover, d.c1, d.c2, 0, 0, W, W, scaleFor(d.allover));
-  const n = fit(d.name, 640, big ? 110 : 210, big ? 96 : 120, 0.03), ink = Z.darkOf(d);
-  const h = n.lines.length * n.fs * 1.05 + 120, y = big ? Math.max(652, 880 - h) : 545 - h / 2;
-  let t = `<rect x="${R - 380}" y="${f1(y)}" width="760" height="${f1(h)}" rx="${f1(Math.min(90, h / 2))}" fill="${CREAM}" stroke="${GOLD}" stroke-width="12"/>`;
+  const pat = big ? lorraineBig(d.c1, d.c2, true) : Z.fillPattern(d.allover, d.c1, d.c2, 0, 0, W, W, scaleFor(d.allover));
+  const pw = big ? 560 : 760; // big cross: narrower plate higher up so it sits inside the gold ring (Alex 22 Nov)
+  const n = fit(d.name, big ? 470 : 640, big ? 110 : 210, big ? 96 : 120, 0.03), ink = big ? d.c1 : Z.darkOf(d); // big cross: name in the body colour on the cross-coloured plate
+  const h = n.lines.length * n.fs * 1.05 + 120, y = big ? 470 : 545 - h / 2;
+  let t = big ? `<rect x="${R - pw / 2}" y="${f1(y)}" width="${pw}" height="${f1(h)}" rx="10" fill="${d.c2}"/>` : `<rect x="${R - pw / 2}" y="${f1(y)}" width="${pw}" height="${f1(h)}" rx="${f1(Math.min(90, h / 2))}" fill="${CREAM}" stroke="${GOLD}" stroke-width="12"/>`;
   n.lines.forEach((l, i) => { t += `<text x="${R}" y="${f1(y + 35 + n.fs * 0.86 + i * n.fs * 1.05)}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${f1(n.fs)}" letter-spacing="${f1(n.fs * 0.03)}" fill="${ink}">${esc(l)}</text>`; });
   t += `<text x="${R}" y="${f1(y + h - 34)}" text-anchor="middle" font-family="Jost" font-weight="600" font-size="32" letter-spacing="9.6" fill="${ink}">MERRY CHRISTMAS</text>`;
   return svgWrap(id, pat + capTop(d.capCol, d.capPat !== 'plain' ? hoopOf(d) : null, d.capPat) + `<circle cx="${R}" cy="${R}" r="${R - 26}" fill="none" stroke="${GOLD}" stroke-width="14"/>` + t + logoTab(big ? 918 : 885, 165));
