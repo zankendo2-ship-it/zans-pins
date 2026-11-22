@@ -1403,3 +1403,11 @@ Alex is being asked to choose: keep the locked face-off as it is (big spots), or
 If Alex hasn't answered by 09:30, move the 4 posts at 10:30 (437035667, 437035705, 437035743, 437035777) to DRAFT.
 (Note: v17 HAS the big spots; v15 had the small ones. The old small-spots art must not post anywhere.)
 Lossiemouth TikTok plan: agreed ("in numbers" story video to Alex; if he hasn't said yes by 15:30, the bauble post comes off TikTok).
+
+### TASK (22 Nov 09:47 UTC): GW v Fact To File mug face-off, new scene 2 (URGENT, Alex's choice)
+Alex picked "New scene 2 + strip" (coordinator card). At 09:45-09:46 UTC he asked "Where's the severe 2" / "Scene 2".
+1. Rebuild with a genuinely new scene 2: a different angle and distance from scene 1 (2A-19). Keep the big spots.
+2. Use the full-weight metal strip top and bottom on every scene (2A-17), measured against conny-kempton/metal-strips-9x16.png, not hairline.
+3. Everything else stays as locked.
+4. Keep the 10:30 posts 437035667, 437035705, 437035743 and 437035777 in draft until Alex approves.
+5. Gate it through the coordinator, then send it to Alex as soon as it passes. Reply with an ETA.
