@@ -434,5 +434,13 @@
   "big": "Can't find<br>your silks?",
   "sub": "I'll design them free of charge.",
   "question": "Whose silks should I draw next?"
+ },
+ "etsy-review": {
+  "metal": "gold",
+  "colour": "#1F5A3D",
+  "eyebrow": "A customer review",
+  "big": "Five stars",
+  "sub": "Love this item for our Christmas tree",
+  "question": "Who would you give one to?"
  }
 }
