@@ -179,8 +179,9 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       </div>
 
       <div class="step">
-        <h2><b>4</b> Cap colour</h2>
-        <p class="hint mt-1">The jockey cap is one plain colour. Pick any colour.</p>
+        <h2><b>4</b> Cap</h2>
+        <p class="hint mt-1">Pick the cap colour. Add hoops or rings if your cap has them (they use your second colour).</p>
+        <div class="flex flex-wrap gap-2 mt-3" id="cappat"></div>
         <div class="flex flex-wrap gap-2 mt-3" id="capsw"></div>
         <div class="flex items-center gap-3 mt-2 hint">Any other shade: <input id="capcol" type="color" value="#C8102E" style="width:64px;height:40px"></div>
       </div>
@@ -236,17 +237,17 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
   const SLEEVES = ['plain', 'contrast', 'hoops', 'stripes', 'armlets', 'spots', 'stars', 'chevrons',
     'diamonds', 'checks', 'diagonal', 'cuffs', 'armlet_cuffs', 'large_spots'];
   const CAPS = ['plain', 'contrast', 'quartered', 'hoops', 'star', 'spots', 'stars',
-    'checks', 'diamonds', 'stripes', 'halved', 'peak', 'diamond', 'large_spots'];
+    'checks', 'diamonds', 'stripes', 'halved', 'peak', 'diamond', 'large_spots', 'rings'];
   const ALLOVER = ['plain', 'hoops', 'stripes', 'spots', 'stars', 'diamonds', 'chevrons', 'checks', 'diagonal',
     'large_spots', 'quartered', 'hoop', 'stripe', 'halved', 'seams', 'braces', 'sash', 'cross_belts', 'large_diamond',
-    'triple_diamond', 'star', 'disc', 'spot_diag', 'cross', 'chevron'];
+    'triple_diamond', 'star', 'disc', 'spot_diag', 'cross', 'cross_of_lorraine', 'chevron'];
   const NAMES = {
     plain: 'Plain', hoops: 'Hoops', stripes: 'Stripes', spots: 'Spots', stars: 'Stars', diamonds: 'Diamonds',
     chevrons: 'Chevrons', quartered: 'Quartered', large_diamond: 'Large diamonds', cross_belts: 'Cross belts',
     sash: 'Sash', braces: 'Braces', halved: 'Halves', checks: 'Check', contrast: 'Second colour',
     armlets: 'Armlets', star: 'Big stars', diagonal: 'Diagonal stripes',
     hoop: 'Broad hoop', stripe: 'Broad stripes', large_spots: 'Large spots', disc: 'Big discs', spot_diag: 'Three big spots', cross: 'Crosses',
-    cross_of_lorraine: 'Cross of Lorraine', diabolo: 'Diabolo', triple_diamond: 'Triple diamonds', epaulets: 'Epaulets',
+    cross_of_lorraine: 'Cross of Lorraine', rings: 'Rings (target)', diabolo: 'Diabolo', triple_diamond: 'Triple diamonds', epaulets: 'Epaulets',
     seams: 'Seams', chevron: 'Broad chevrons', collar: 'Collar + hem', cuffs: 'Cuffs', armlet_cuffs: 'Armlet + cuffs',
     peak: 'Second-colour peak', diamond: 'Diamond', thirds: 'Three-colour panels'
   };
@@ -424,6 +425,10 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       const g = 240 * scale, a = 70 * scale, t = 26 * scale; let row = 0;
       for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
         for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) { s.push(`<rect x="${f1(x - t / 2)}" y="${f1(y - a)}" width="${f1(t)}" height="${f1(2 * a)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - a)}" y="${f1(y - t / 2)}" width="${f1(2 * a)}" height="${f1(t)}" fill="${c2}"/>`); }
+    } else if (pat === 'cross_of_lorraine') {
+      const g = 320 * scale, a = 108 * scale, t = 36 * scale, b1 = 48 * scale, b2 = 70 * scale; let row = 0;
+      for (let y = y0 + g / 2; y < y1 + g; y += g * 0.87, row++)
+        for (let x = x0 + (row % 2 ? g / 2 : 0); x < x1 + g; x += g) { s.push(`<rect x="${f1(x - t / 2)}" y="${f1(y - a)}" width="${f1(t)}" height="${f1(2 * a)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - b1)}" y="${f1(y - a * 0.62)}" width="${f1(2 * b1)}" height="${f1(t * 0.85)}" fill="${c2}"/>`); s.push(`<rect x="${f1(x - b2)}" y="${f1(y - a * 0.1)}" width="${f1(2 * b2)}" height="${f1(t * 0.85)}" fill="${c2}"/>`); }
     } else if (pat === 'chevron') {
       const bh = 70 * scale, step = 380 * scale, dep = 120 * scale;
       for (let y = y0 + step / 3; y < y1 + step; y += step) {
@@ -459,7 +464,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       else if (pat === 'star') inner += star(0, 20, 100, c2);
       else if (pat === 'disc') inner += `<circle cx="0" cy="20" r="82" fill="${c2}"/>`;
       else if (pat === 'cross') inner += `<rect x="-34" y="-230" width="68" height="480" fill="${c2}"/><rect x="-140" y="-40" width="280" height="68" fill="${c2}"/>`;
-      else if (pat === 'cross_of_lorraine') inner += `<rect x="-20" y="-150" width="40" height="320" fill="${c2}"/><rect x="-62" y="-105" width="124" height="34" fill="${c2}"/><rect x="-92" y="-25" width="184" height="34" fill="${c2}"/>`;
+      else if (pat === 'cross_of_lorraine') inner += `<rect x="-46" y="-146" width="92" height="303" fill="${c2}"/><rect x="-79" y="-82" width="158" height="58" fill="${c2}"/><rect x="-99" y="40" width="198" height="58" fill="${c2}"/>`; // proportions measured from real silks drawings (Alex 22 Nov)
       else if (pat === 'diabolo') inner += `<polygon points="-140,-230 140,-230 0,10" fill="${c2}"/><polygon points="-140,250 140,250 0,10" fill="${c2}"/>`;
       else if (pat === 'triple_diamond') [-110, 20, 150].forEach(y => { inner += `<polygon points="0,${y - 58} 46,${y} 0,${y + 58} -46,${y}" fill="${c2}"/>`; });
       else if (pat === 'epaulets') inner += `<polygon points="-140,-230 -40,-230 -60,-160 -140,-150" fill="${c2}"/><polygon points="140,-230 40,-230 60,-160 140,-150" fill="${c2}"/>`;
@@ -480,6 +485,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
       else if (pat === 'contrast') inner = `<rect x="-280" y="-230" width="560" height="400" fill="${c1}"/>`;
       else if (pat === 'armlets') inner = `<rect x="-280" y="-230" width="560" height="400" fill="${c1}"/><g transform="rotate(${side === 'r' ? -18 : 18} 0 0)"><rect x="-300" y="-5" width="600" height="38" fill="${c2}"/></g>`;
       else if (pat === 'cuffs' || pat === 'armlet_cuffs') inner = `<rect x="-280" y="-230" width="560" height="400" fill="${pat === 'cuffs' ? bodyC1 : c1}"/><g transform="rotate(${side === 'r' ? -18 : 18} 0 0)">${pat === 'armlet_cuffs' ? `<rect x="-300" y="-5" width="600" height="38" fill="${c2}"/>` : ''}<rect x="-300" y="${pat === 'cuffs' ? 95 : 95}" width="600" height="60" fill="${pat === 'cuffs' ? c1 : c2}"/></g>`;
+      else if (pat === 'chevrons') { const cx = side === 'l' ? -184 : 184; let v = ''; for (let yc = -230; yc < 260; yc += 96) v += `<polygon points="-130,${yc + 105} 0,${yc} 130,${yc + 105} 130,${yc + 150} 0,${yc + 45} -130,${yc + 150}" fill="${c2}"/>`; inner = `<rect x="-280" y="-230" width="560" height="400" fill="${c1}"/><g transform="translate(${cx} -30) rotate(${side === 'l' ? 15.5 : -15.5})">${v}</g>`; } // Alex 22 Nov: real silks chevrons
       else inner = `<g transform="rotate(${side === 'r' ? -20 : 20} ${side === 'l' ? -210 : 210} -30)">${fillPattern(pat, c1, c2, -420, -420, 420, 420, 0.62)}</g>`;
       out += `<defs><clipPath id="${id}${side}"><path d="${d}"/></clipPath></defs><g clip-path="url(#${id}${side})">${inner}</g><path d="${d}" fill="none" stroke="${INK}" stroke-width="7" stroke-linejoin="round"/>`;
     });
@@ -495,6 +501,7 @@ input[type=text],input[type=number]{background:#FBF7F0;border:1.5px solid var(--
     else if (pat === 'halved') inner += `<rect x="0" y="-410" width="170" height="160" fill="${c2}"/>`;
     else if (pat === 'peak') inner += `<rect x="-110" y="-292" width="280" height="40" fill="${c1}"/>`;
     else if (pat === 'diamond') inner += `<polygon points="0,-385 34,-340 0,-295 -34,-340" fill="${c2}"/>`;
+    else if (pat === 'rings') inner += `<circle cx="0" cy="-336" r="40" fill="none" stroke="${c2}" stroke-width="10"/><circle cx="0" cy="-336" r="15" fill="none" stroke="${c2}" stroke-width="9"/>`;
     return `<defs><clipPath id="${id}"><path d="${P.cap}"/><path d="${P.peak}"/></clipPath></defs><g clip-path="url(#${id})">${inner}</g>` +
       `<path d="${P.cap}" fill="none" stroke="${INK}" stroke-width="7" stroke-linejoin="round"/><path d="${P.peak}" fill="none" stroke="${INK}" stroke-width="7" stroke-linejoin="round"/>`;
   }
@@ -790,30 +797,36 @@ function fit(name, maxW, maxH, maxFs, ls) {
   return best;
 }
 function jerseyAt(d, cx, cy, h, id) { const sc = h / 648; return `<g transform="translate(${f1(cx)},${f1(cy + 73.6 * sc)}) scale(${Math.round(sc * 1000) / 1000})">${Z.jersey(d, id)}</g>`; }
-const scaleFor = p => (['quartered','halved','stripe','sash','large_diamond','triple_diamond','star','disc','cross','chevron','braces','seams','cross_belts'].includes(p) ? 0.55 : p === 'spot_diag' ? 0.4 : 1.15);
+const scaleFor = p => (['quartered','halved','stripe','sash','large_diamond','triple_diamond','star','disc','cross','chevron','braces','seams','cross_belts','cross_of_lorraine'].includes(p) ? 0.55 : p === 'spot_diag' ? 0.4 : 1.15);
 
 /* ---------- the two bauble designs (990 x 990 print, same on both sides) ---------- */
-function capTop(cap) {           // Cap A (Alex 5 Nov): plain cap, seams, button, shine, darker peak, gold edges
+// Cap hoops (Alex 22 Nov): two hoops in the jersey's second colour (first colour if the cap is already that colour).
+const hoopOf = d => (d.c2.toUpperCase() === d.capCol.toUpperCase() ? d.c1 : d.c2);
+function capTop(cap, hoop, kind) {           // Cap A (Alex 5 Nov): plain cap, seams, button, shine, darker peak, gold edges
   const lo = lum(cap) < 0.2, dark = lo ? shade(cap, 1.3) : shade(cap, 0.7), light = shade(cap, lo ? 1.6 : 1.25), by = 225;
   const crown = `<path d="M0,0 H${W} V${by - 40} Q${R},${by + 25} 0,${by - 40} Z" fill="${cap}"/>`;
   const seams = [-330, -150, 150, 330].map(dx => `<path d="M${R},28 Q${R + dx * 0.45},${f1(by * 0.35)} ${R + dx},${f1(by - 18 - Math.abs(dx) * 0.06)}" fill="none" stroke="${dark}" stroke-width="7" stroke-linecap="round"/>`).join('');
   const shine = `<path d="M${R - 300},${by - 70} Q${R - 230},70 ${R - 40},48" fill="none" stroke="${light}" stroke-width="16" stroke-linecap="round" opacity="0.7"/>`;
   const edge = `<path d="M0,${by - 40} Q${R},${by + 25} ${W},${by - 40}" fill="none" stroke="${GOLD}" stroke-width="8"/>`;
   const peak = `<path d="M${R - 270},${by - 6} Q${R},${by + 34} ${R + 270},${by - 6} Q${R + 250},${by + 70} ${R},${by + 78} Q${R - 250},${by + 70} ${R - 270},${by - 6} Z" fill="${dark}" stroke="${GOLD}" stroke-width="6"/>`;
-  return crown + seams + shine + `<circle cx="${R}" cy="30" r="24" fill="${dark}"/>` + edge + peak;
+  const hoops = hoop && kind === 'rings' ? `<ellipse cx="${R}" cy="112" rx="170" ry="62" fill="none" stroke="${hoop}" stroke-width="20"/><ellipse cx="${R}" cy="112" rx="62" ry="22" fill="none" stroke="${hoop}" stroke-width="18"/>` : hoop ? `<defs><clipPath id="crownclip"><path d="M0,0 H${W} V${by - 40} Q${R},${by + 25} 0,${by - 40} Z"/></clipPath></defs><g clip-path="url(#crownclip)"><rect x="0" y="82" width="${W}" height="34" fill="${hoop}"/><rect x="0" y="146" width="${W}" height="34" fill="${hoop}"/></g>` : '';
+  return crown + hoops + seams + shine + `<circle cx="${R}" cy="30" r="24" fill="${dark}"/>` + edge + peak;
 }
 function logoTab(cy, w) { return `<rect x="${R - w / 2 - 8}" y="${f1(cy - w * 0.0667 - 6)}" width="${w + 16}" height="${f1(w * 0.1333 + 12)}" rx="7" opacity="0.92" fill="${CREAM}"/><image href="${LOGO_WIDE}" x="${R - w / 2}" y="${f1(cy - w * 0.0667)}" width="${w}" height="${f1(w * 0.1333)}"/>`; }
+function lorraineBig(c1, c2) { return `<rect width="${W}" height="${W}" fill="${c1}"/><rect x="${R - 75}" y="230" width="150" height="700" fill="${c2}"/><rect x="${R - 135}" y="362" width="270" height="88" fill="${c2}"/><rect x="${R - 169}" y="550" width="338" height="88" fill="${c2}"/>`; } // chunky, stepped like the real silks; upright shows above the top bar (Alex 22 Nov)
 function designA(d, id) {
-  const pat = Z.fillPattern(d.allover, d.c1, d.c2, 0, 0, W, W, scaleFor(d.allover));
-  const n = fit(d.name, 640, 210, 120, 0.03), ink = Z.darkOf(d);
-  const h = n.lines.length * n.fs * 1.05 + 120, y = 545 - h / 2;
+  // Cross of Lorraine (Alex 22 Nov): ONE big cross in the middle, like the real jersey, with the name plate moved down so both bars show
+  const big = d.allover === 'cross_of_lorraine';
+  const pat = big ? lorraineBig(d.c1, d.c2) : Z.fillPattern(d.allover, d.c1, d.c2, 0, 0, W, W, scaleFor(d.allover));
+  const n = fit(d.name, 640, big ? 110 : 210, big ? 96 : 120, 0.03), ink = Z.darkOf(d);
+  const h = n.lines.length * n.fs * 1.05 + 120, y = big ? Math.max(652, 880 - h) : 545 - h / 2;
   let t = `<rect x="${R - 380}" y="${f1(y)}" width="760" height="${f1(h)}" rx="${f1(Math.min(90, h / 2))}" fill="${CREAM}" stroke="${GOLD}" stroke-width="12"/>`;
   n.lines.forEach((l, i) => { t += `<text x="${R}" y="${f1(y + 35 + n.fs * 0.86 + i * n.fs * 1.05)}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${f1(n.fs)}" letter-spacing="${f1(n.fs * 0.03)}" fill="${ink}">${esc(l)}</text>`; });
   t += `<text x="${R}" y="${f1(y + h - 34)}" text-anchor="middle" font-family="Jost" font-weight="600" font-size="32" letter-spacing="9.6" fill="${ink}">MERRY CHRISTMAS</text>`;
-  return svgWrap(id, pat + capTop(d.capCol) + `<circle cx="${R}" cy="${R}" r="${R - 26}" fill="none" stroke="${GOLD}" stroke-width="14"/>` + t + logoTab(885, 165));
+  return svgWrap(id, pat + capTop(d.capCol, d.capPat !== 'plain' ? hoopOf(d) : null, d.capPat) + `<circle cx="${R}" cy="${R}" r="${R - 26}" fill="none" stroke="${GOLD}" stroke-width="14"/>` + t + logoTab(big ? 918 : 885, 165));
 }
 function designB(d, id) {
-  const jd = Object.assign({}, d, { cap: 'contrast', k1: d.capCol, k2: d.capCol });
+  const jd = Object.assign({}, d, d.capPat !== 'plain' ? { cap: d.capPat, k1: d.capCol, k2: hoopOf(d) } : { cap: 'contrast', k1: d.capCol, k2: d.capCol });
   const n = fit(d.name, 600, 150, 96, 0.04);
   let t = ''; const one = n.lines.length === 1, top = one ? 715 : 680;
   n.lines.forEach((l, i) => { t += `<text x="${R}" y="${f1(top + i * n.fs * 1.02)}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${f1(n.fs)}" letter-spacing="${f1(n.fs * 0.04)}" fill="${GOLD}">${esc(l)}</text>`; });
@@ -830,24 +843,24 @@ const DEF = {
   A: { pat: 'stars', body: 'stars', c1: '#C8102E', c2: '#FFFFFF', sleeves: 'plain', capCol: '#0E6B3B', name: 'Snow Dancer' },
   B: { pat: 'stars', body: 'stars', c1: '#1B2A5C', c2: '#F5D130', sleeves: 'plain', capCol: '#F5D130', name: 'Starry Night' } };
 const untouched = () => Object.keys(DEF[S.style]).every(k => S[k] === DEF[S.style][k]);
-const S = Object.assign({ style: 'A', view: 'flat', scene: 'soft' }, DEF.A);
+const S = Object.assign({ style: 'A', view: 'flat', scene: 'soft', capPat: 'plain' }, DEF.A);
 function design() {
   const n = Z.checkName(S.name);
   const d = Z.normalise({ layout: 'B', body: S.style === 'A' ? S.pat : S.body, allover: S.pat, c1: S.c1, c2: S.c2, sleeves: S.sleeves, cap: 'contrast', k1: S.capCol, k2: S.capCol });
   if (S.style === 'B') d.body = S.body;
-  d.capCol = S.capCol; d.name = n.ok ? n.text : 'YOUR NAME'; // a refused name is never drawn
+  d.capCol = S.capCol; d.capPat = S.capPat; d.name = n.ok ? n.text : 'YOUR NAME'; // a refused name is never drawn
   return d;
 }
-function code(d) { // ZANS bauble code: ZB<style>-<pattern>-<c1>-<c2>-<sleeves>-<cap colour>
+function code(d) { // ZANS bauble code: ZB<style>-<pattern>-<c1>-<c2>-<sleeves>-<cap colour>[-caphoops|caprings-<hoop/ring colour>]
   const hx = h => h.replace('#', '').toUpperCase();
-  return ['ZB' + S.style, S.style === 'A' ? S.pat : S.body, hx(d.c1), hx(d.c2), S.style === 'A' ? 'plain' : S.sleeves, hx(S.capCol)].join('-');
+  return ['ZB' + S.style, S.style === 'A' ? S.pat : S.body, hx(d.c1), hx(d.c2), S.style === 'A' ? 'plain' : S.sleeves, hx(S.capCol)].concat(S.capPat !== 'plain' ? ['cap' + S.capPat, hx(hoopOf(d))] : []).join('-'); // the extra part only appears for a hooped cap, so older codes are unchanged
 }
 
 /* ---------- controls ---------- */
 function optBtn(html, pressed, onClick, label) { const b = document.createElement('button'); b.type = 'button'; b.className = 'opt p-2 text-left'; b.setAttribute('aria-pressed', pressed); b.innerHTML = html; if (label) b.setAttribute('aria-label', label); b.onclick = onClick; return b; }
 function chip(text, pressed, onClick) { const b = optBtn(`<span class="text-sm font-semibold px-1">${esc(text)}</span>`, pressed, onClick); b.classList.add('py-1.5'); return b; }
 function swatches(el, key) { el.innerHTML = ''; Object.entries(Z.COLOURS).forEach(([n, h]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'sw'; b.style.background = h; b.title = n; b.setAttribute('aria-label', n); b.setAttribute('aria-pressed', S[key].toUpperCase() === h.toUpperCase()); b.onclick = () => { S[key] = h; render(); }; el.appendChild(b); }); }
-function miniA(p) { return `<svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="ma${p}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#ma${p})">${Z.fillPattern(p, S.c1, S.c2, 0, 0, 110, 110, scaleFor(p) * 0.35)}<rect width="110" height="22" fill="${S.capCol}"/></g><circle cx="55" cy="55" r="53" fill="none" stroke="${GOLD}" stroke-width="3"/></svg>`; }
+function miniA(p) { if (p === 'cross_of_lorraine') return `<svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="ma${p}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#ma${p})" transform="scale(0.1111)">${lorraineBig(S.c1, S.c2)}</g></svg>`; return `<svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg"><clipPath id="ma${p}"><circle cx="55" cy="55" r="53"/></clipPath><g clip-path="url(#ma${p})">${Z.fillPattern(p, S.c1, S.c2, 0, 0, 110, 110, scaleFor(p) * 0.35)}<rect width="110" height="22" fill="${S.capCol}"/></g><circle cx="55" cy="55" r="53" fill="none" stroke="${GOLD}" stroke-width="3"/></svg>`; }
 function miniB(p) { const d = Z.normalise({ layout: 'C', body: p, c1: S.c1, c2: S.c2, sleeves: S.sleeves, cap: 'contrast', k1: S.capCol, k2: S.capCol }); return `<svg viewBox="-290 -420 580 690" xmlns="http://www.w3.org/2000/svg">${Z.jersey(d, 'mb' + p)}</svg>`; }
 // Popular colour schemes (Alex 6 Nov: the same as the mug designer, plus the two bauble photo designs first).
 // Mug ring colour = bauble cap colour; no ring = cap in the second colour. Colours only, never names.
@@ -895,6 +908,7 @@ function renderControls() {
   });
   const P = $('patterns'); P.innerHTML = '';
   Z.ALLOVER /* Alex 6 Nov: same 25 patterns as the mug designer, both baubles */.forEach(p => P.appendChild(optBtn(`<div class="mini">${S.style === 'A' ? miniA(p) : miniB(p)}</div><div class="text-xs font-semibold mt-1 text-center">${Z.NAMES[p] || p}</div>`, (S.style === 'A' ? S.pat : S.body) === p, () => { S.pat = p; S.body = p; render(); }, Z.NAMES[p])));
+  const CPT = $('cappat'); CPT.innerHTML = ''; [['plain', 'Plain cap'], ['hoops', 'Cap with hoops'], ['rings', 'Cap with rings']].forEach(([k, t]) => CPT.appendChild(chip(t, S.capPat === k, () => { S.capPat = k; render(); })));
   swatches($('c1'), 'c1'); swatches($('c2'), 'c2'); swatches($('capsw'), 'capCol');
   $('pick1').value = S.c1; $('pick2').value = S.c2; $('capcol').value = S.capCol;
   $('sleevestep').hidden = S.style !== 'B';
