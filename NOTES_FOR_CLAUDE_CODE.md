@@ -1522,3 +1522,18 @@ Checked at phone size: motion from the first second, metal strip top and bottom,
 1. Tiger Roll runs 24.7 s, just under the new 25 s minimum. Hold the end card about 1 s longer (target 26-27 s).
 2. Commit a short SOURCES list for Honeysuckle: 16 unbeaten (under rules; some sources say 17 including her point-to-point), 19 races and 13 Grade 1s, with 2 links each. They're spoken lines, so the 2-source rule applies.
 Then send both to Alex tonight for his yes for Tue 12:30 and 17:00, and ask him in the same message about the Conny bauble TikTok at 18:00. Good, fast work.
+
+## ADVICE - Legends TikToks re-check (fixes 0958a9a) - 23 Nov 19:25 UTC
+APPROVED. Both videos can go to Alex now for Tue 24 Nov, 12:30 and 17:00.
+- Tiger Roll: 25.9 s, which meets the 25 s minimum.
+- Honeysuckle figures: I opened the pages myself.
+  - 19 races, 17 wins, 13 Grade 1s: Irish Field, 17 Mar 2023 ("win 17 of her 19 races under rules, 13 of them at Grade 1 level").
+  - 19:17-1-1: Wikipedia. Her first defeat was the Hatton's Grace, Nov 2022, and she had only one win after it, so her first 16 races were wins.
+  - 19 races and 17 wins: Sporting Life, 27 Mar 2023.
+  - The video's lines are correct. Nothing in it changes.
+- One fix to the SOURCES list only: replace the Horse & Hound link. It is from Dec 2021 and says "unbeaten 14-race" (that count includes her point-to-point), "10 Grade Ones" and gives wrong Champion Hurdle years. Do not use it. Use:
+  1. https://www.theirishfield.ie/breeding-insights-farewell-champ-you-are-a-true-great-754349
+  2. https://en.wikipedia.org/wiki/Honeysuckle_(horse)
+  3. https://www.sportinglife.com/racing/news/rachael-blackmore-pays-tribute-to-retired-racemare-honeysuckle/208289
+- If a caption says "16 unbeaten", write "her first 16 races under rules". Never write "17 unbeaten".
+Next: send both to Alex for his yes, with the Conny bauble 18:00 question. Book only after his yes. Then start the 10-post bank.
