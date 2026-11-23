@@ -1748,3 +1748,36 @@ Then send FIXES DONE. After that: gate, ChatGPT, then Alex with the slot change,
 - Part A (listing data): I'm asking the upload thread, which reads Etsy, for the 3 listings' live title, 13 tags, photo 1, price, delivery and personalisation wording. I'll paste them into these notes, and then you finish A.
 - Rule 12 (ignore ChatGPT): asking Alex in your own chat is right. Alex's 20:09 words in the project chat were "Ok keep talking to chat gpt and working with it while I'm not active".
 - D (T1-T3 previews and stills): after the review TikTok and the products.
+
+## DATA for TASK 2c8c5a6 Part A: live gift listings (Etsy API readback by the upload thread, 23 Nov 18:42 UTC, read only)
+CORRECTION: delivery is now FREE to the UK and Ireland, not £3.95 / £6.95 as your CLAUDE.md says. Fix the pack.
+
+### 1) Silks mug 4608193933, £14.99
+- Title: Horse Racing Christmas Gift Mug, Premium Jockey Silks with Name, Racehorse Owner Syndicate Cup
+- Tags: jockey silks mug, horse racing mug, racing silks mug, racehorse xmas gift, racehorse mug, racehorse owner mug, racehorse owner gift, jockey silks gift, jockey colours mug, horse racing xmas, horse racing lover, horse racing gift, racing coffee mug
+- Photo 1: silks mugs ZEUS, SASHA and SEA HORSE on the racecourse rail (2700x2025)
+- Personalisation 1, "Design code from our mug designer": paste the code from zanshorseracing.co.uk/mug-designer, or write your pattern and two colours (required)
+- Personalisation 2, "Name on the mug": name for both sides of the handle, up to 28 characters (required)
+
+### 2) Silks bauble 4611232428, £14.99
+- Title: Horse Racing Christmas Gift, Premium Jockey Silks Bauble with Name, Personalised Racehorse Owner Ornament
+- Tags: jockey silks bauble, racing silks bauble, jockey bauble, silks ornament, jockey ornament, horse racing bauble, racehorse bauble, jockey silks xmas, horse racing xmas, racehorse xmas gift, personalised bauble, horse racing gift, racehorse keepsake
+- Photo 1: two silks baubles, Blitzen's Bolt and Tinsel Turf, on a tree by the fire (1448x1086)
+- Personalisation 1, "Design code from our bauble designer": paste the code from zanshorseracing.co.uk/bauble-designer (starts ZBA), or write your pattern, two colours and cap colour (required)
+- Personalisation 2, "Name on the bauble": horse, syndicate or any name, up to 28 characters (required)
+
+### 3) Racing green bauble 4611213915, £12.99
+- Title: Horse Racing Christmas Gift, Green & Gold Ornament with Name, Personalised Racehorse Tree Decoration
+- Tags: horse racing xmas, horse racing gift, racehorse ornament, horse racing bauble, horse racing tree, racehorse decoration, christmas racehorse, jockey jersey bauble, jockey cap bauble, racing keepsake, racehorse xmas gift, racing tree bauble, horse racing decor
+- Photo 1: Dad and Mum green baubles in gift boxes (1448x1086)
+- Personalisation 1, "Design code from our bauble designer": paste the code (starts ZBB), or write your jersey pattern, two colours, sleeves and cap colour (required)
+- Personalisation 2, "Name on the bauble": horse, syndicate or any name, up to 28 characters (required)
+
+### Delivery (all 3)
+- Free to the UK and Ireland.
+- Etsy estimate 2-3 days delivery, 3-10 days processing.
+- Description line: "Made to order: please allow up to 10 working days for us to make and send it, plus delivery time. Order early for Christmas."
+- UK buyers may see VAT added on top of the listing price.
+
+Photo 1 files: use your own originals if you made them. If not, say so in STATUS and the visibility thread will commit them to zans-pins.
+Note for the order-by line: with up to 10 working days of making, "order by Mon 7 Dec" needs checking against Royal Mail's last posting dates before Alex sees it.
