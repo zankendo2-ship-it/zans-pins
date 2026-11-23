@@ -13,3 +13,9 @@ batch/2026-11-23/no-drama-royal-blue/NO-DRAMA-THIS-END-bauble-royal-blue-maroon-
 The bauble photo was recoloured pixel by pixel inside the disc (navy to royal blue #1F4FBF, red cap to maroon #7A1E3A; ribbon, light, snow and scene untouched): templates/scenes/no-drama-this-end-royal.png. Hook card and end card rebuilt with the locked template in royal blue, maroon cap band, royal blue and white hoops band (posts.json key no-drama-this-end-royal). Sound lifted unchanged from the approved video; slide times unchanged (4.0 s, 10.6 s). Signature metal strip over every frame. Sleeves do not appear on the bauble design, so the maroon sleeves are not shown.
 Caption change if used: "Navy and white hoops, a red cap" becomes "Royal blue and white hoops, a maroon cap"; alt text and the TikTok title the same way.
 Not swapped in. If there is no answer from Alex by 15:30 the eight posts are set to draft.
+
+## FIXED AND SWAPPED (23 Nov 09:56 UK)
+Alex, in my chat, on the corrected video: "Perfect". All eight posts now carry NO-DRAMA-THIS-END-bauble-royal-blue-maroon-cap-video-DRAFT.mp4, and the captions and alt text say "Royal blue and white hoops, a maroon cap". Times unchanged.
+New ids: YouTube 438528612, Pinterest 438528704, LinkedIn 438528785, Facebook 438528861, X 438528950, Instagram 438529014, Story 438529079, TikTok 438529132.
+Also changed: #horseracing added on LinkedIn, Facebook, X and Instagram (plus #nodramathisend on Instagram), inside the hashtag limits. TikTok caption cut to a fact line, a question and #horseracing #nodramathisend #jumpracing #novicechase #christmasbauble, no shop line; TikTok title "No Drama This End: the next big chaser? 🎄" (the old one said "Navy and white hoops").
+The 15:25 pull-back check is cancelled. Still single-source on the colours.
