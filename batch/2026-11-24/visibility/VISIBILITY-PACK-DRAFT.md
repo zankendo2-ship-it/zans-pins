@@ -2,10 +2,23 @@
 
 Made 23 Nov 2026, 20:50 UTC. Nothing is posted, booked, edited on Etsy or changed on the website.
 
-## A. Gift listing pack: BLOCKED on Etsy data
-Etsy refuses requests from this session (403), and no copy of the three listings' live titles, tags, photo 1, delivery or personalisation wording is in this repo. I will not write them from memory.
-What I need pasted into the notes (or committed): for 4608193933, 4611232428 and 4611213915, the current title, the 13 tags, photo 1, the price shown, the delivery line and the personalisation wording. With that I make the table, the 4:5 search-tile crops and one change per listing.
-What the repo does hold (CLAUDE.md): silks mug £14.99; silks bauble £14.99 / £12.99; racing green bauble £14.99 / £12.99; delivery UK £3.95 (+£1 each extra), Ireland £6.95 (+£2); processing "up to 10 working days"; personalisation boxes "Design code from our mug designer" and "Name on the mug" (limit 28).
+## A. Gift listing pack (data: Etsy readback by the upload thread, 23 Nov 18:42 UTC, note 2df8907)
+Delivery on all three: FREE to the UK and Ireland; Etsy estimate 2 to 3 days delivery after 3 to 10 days processing; description line "Made to order: please allow up to 10 working days for us to make and send it, plus delivery time. Order early for Christmas." UK buyers may see VAT added. (CLAUDE.md still says £3.95 / £6.95; it is corrected once Alex confirms.)
+
+| | Silks mug | Silks bauble | Racing green bauble |
+|---|---|---|---|
+| URL | https://www.etsy.com/uk/listing/4608193933 | https://www.etsy.com/uk/listing/4611232428 | https://www.etsy.com/uk/listing/4611213915 |
+| Price | £14.99 | £14.99 | £12.99 |
+| Current title | Horse Racing Christmas Gift Mug, Premium Jockey Silks with Name, Racehorse Owner Syndicate Cup | Horse Racing Christmas Gift, Premium Jockey Silks Bauble with Name, Personalised Racehorse Owner Ornament | Horse Racing Christmas Gift, Green & Gold Ornament with Name, Personalised Racehorse Tree Decoration |
+| 13 tags | jockey silks mug, horse racing mug, racing silks mug, racehorse xmas gift, racehorse mug, racehorse owner mug, racehorse owner gift, jockey silks gift, jockey colours mug, horse racing xmas, horse racing lover, horse racing gift, racing coffee mug | jockey silks bauble, racing silks bauble, jockey bauble, silks ornament, jockey ornament, horse racing bauble, racehorse bauble, jockey silks xmas, horse racing xmas, racehorse xmas gift, personalised bauble, horse racing gift, racehorse keepsake | horse racing xmas, horse racing gift, racehorse ornament, horse racing bauble, horse racing tree, racehorse decoration, christmas racehorse, jockey jersey bauble, jockey cap bauble, racing keepsake, racehorse xmas gift, racing tree bauble, horse racing decor |
+| Photo 1 | ZEUS, SASHA and SEA HORSE mugs on the racecourse rail (2700x2025) | Blitzen's Bolt and Tinsel Turf baubles on a tree by the fire (1448x1086) | Dad and Mum green baubles in gift boxes (1448x1086) |
+| Personalisation | "Design code from our mug designer" (code from zanshorseracing.co.uk/mug-designer, or pattern and two colours); "Name on the mug" (28) | "Design code from our bauble designer" (starts ZBA, or pattern, two colours and cap colour); "Name on the bauble" (28) | "Design code from our bauble designer" (starts ZBB, or jersey pattern, two colours, sleeves and cap colour); "Name on the bauble" (28) |
+| ONE proposed change | Title: add the word buyers type, "Personalised", and put the product first: **Personalised Horse Racing Mug - Jockey Silks with Name, Christmas Gift for Racehorse Owner or Syndicate** (103 characters, 15 words: one over the under-15 rule, so drop "or" if kept strict) | Tag: "jockey bauble" is on our trap list (it brings up the wrong products). Swap it for **silks tree bauble** (17 characters) | Title: it never says "bauble", the UK search word. **Horse Racing Christmas Bauble - Green & Gold Ornament with Name, Personalised Racehorse Tree Decoration** (103 characters, 13 words) |
+
+Limits of this part, stated plainly:
+- The proposals come from our own rulebook (trap list, title rules). Live UK and US keyword research, which rule 4 requires before any listing edit, cannot be done from this session (Etsy refuses it). They are suggestions for the upload thread to test, not ready-to-apply edits.
+- The 4:5 search-tile crops are NOT made: the three photo 1 files are not in this repo (they were made in other threads). Please commit them and I crop them the same hour.
+- "Draft asset" for each change is the wording above; no new photo is needed for any of the three.
 
 ## B. 7-day gift plan, 24 to 30 Nov (extends the pins and TikTok bank tasks; nothing booked)
 Every post carries "UK: recommend ordering by Mon 7 Dec". Pinterest, FB and X carry the exact listing link; IG and TikTok point to the bio. TikTok stays at 2 a day and gift posts there carry no price. The ordering line needs Alex's yes before use: it is a new customer-facing claim and Printify's own Christmas cut-off should be checked first.
