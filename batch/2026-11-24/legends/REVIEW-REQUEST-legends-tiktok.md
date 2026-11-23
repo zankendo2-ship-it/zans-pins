@@ -46,3 +46,9 @@ Weak points to judge:
 3. The valley course in Honeysuckle scene 3 is a made-up course under the caption "The Cheltenham Festival"; it is not Cheltenham.
 4. No horse close-ups, so less emotion than a real replay would give.
 5. The music is the race bed used before; the three-option music rule has not been run.
+
+## JOINT FIXES 85926b5
+- [x] Honeysuckle scene 3: the caption "THE CHELTENHAM FESTIVAL" over a made-up course is replaced by "ON THE BIGGEST STAGE". The words "4 FESTIVALS / NEVER BEATEN THERE" and the spoken line stay.
+- Two-source check of the figures. I cannot open racing sites from this session (network block), so I have not re-read them myself tonight:
+  - Honeysuckle (first 16 races unbeaten, 19 races, 13 Grade 1s, 4 Festival victories 2020 to 2023): the reviewer opened three sources on 23 Nov (ADVICE 19:25 UTC: Irish Field 17 Mar 2023, a general reference page, a racing news site 27 Mar 2023).
+  - Tiger Roll (Grand Nationals 2018 and 2019; first back-to-back since Red Rum in 1973 and 1974, 45 years; Festival victories 2014, 2017, 2018, 2019, 2021): confirmed in the reviewer's ADVICE of 18:25 UTC and by this session's research helper earlier on 23 Nov. Source links for Tiger Roll are NOT listed in this file; if the gate needs two links on file, the reviewer or the growth thread should add them, as I cannot fetch them.

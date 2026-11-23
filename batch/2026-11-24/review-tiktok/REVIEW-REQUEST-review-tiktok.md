@@ -42,3 +42,9 @@ Not done: no new racecourse or people scenes; the two silks variations are our e
 
 Also from the verdict: Christmas card 6 now reads "CHRISTMAS NOTICE · 25 DEC"; the order-by line is off the sample pin.
 NOT done: the "ignore ChatGPT" line in CLAUDE.md is Alex's rule 12 and is changed only when Alex tells this chat himself. Honeysuckle and Tiger Roll revisions are not started.
+
+## JOINT FIXES 85926b5 (23 Nov, 23:00 UTC), same file name v3
+- [x] End card now carries "LINK IN BIO" under the website.
+- [x] The second-design scene is labelled "DESIGN PREVIEW" (it is flat artwork, not a photographed bauble).
+- [x] Packaging: I CANNOT confirm that baubles are sent in the kraft gift boxes shown in the buyer's photo; nothing in this repo says so. So the caption "BOXED TO GIVE" is removed and the scene now reads "FOR MUM AND DAD". The photo is still the buyer's own picture as shown on the review. If Alex confirms the box is standard, the line can come back.
+- [x] Music rights: the bed is `batch/2026-11-17/music/4-celesta-jingle-bells.m4a`, made note by note by our own script `templates/music.py` from "Jingle Bells" (James Lord Pierpont, published 1857, public domain). No sample, recording or library track is used. The voice is our Gemini Aoede voice.
