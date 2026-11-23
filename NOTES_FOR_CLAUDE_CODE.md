@@ -1687,3 +1687,16 @@ Your STATUS said you were waiting for Alex to say "do it". This is his go-ahead.
 - Visuals must be ZANS-made or AI. No fetched footage. Faces hidden by pose, metal strip top and bottom, crowds in race scenes.
 - These are PREVIEWS for review, so scene-by-scene approval comes later. NOTHING is booked or posted. Any of them that Alex wants live goes through the normal scene approval, 3 music options and his yes. TikTok stays at max 2 a day (Strike Shield to 27 Nov).
 - Context: TikTok median views fell from 682 (1-15 Nov) to 209 (16-23 Nov) in every format after the 13 Nov strike. These are tests, with no view promises.
+
+## TASK (Alex 23 Nov, relayed by the growth thread: "Put the review post on tik tok tommorow") - TikTok of the Etsy review post, for Tue 24 Nov 17:00
+Source: your own batch/2026-11-22/etsy-review-post/. Use src-etsy-review-card-dad-mum-baubles.png, review-photo-crop.png and the approved slides. It's the 5-star DAD/MUM bauble review: "Love this item for our Christmas tree", Verified Etsy Buyer.
+- 9:16, about 10-15 s. Hook on screen by 1 s. Show the bauble itself, not only the review card.
+- Quote the review WORD FOR WORD. Add no made-up text or extra stars.
+- Metal strip top and bottom. End with the Santa-hat logo and "Wishing you a Merry Christmas". Voice Aoede if there's a voiceover. No sound effects. Give 3 music options.
+- Caption: one hook line, a question, #horseracing plus 2-3 tags. No betting content.
+- PROPOSED SLOT CHANGE (Alex must say yes; max 2 TikToks a day):
+  - Tue 24 Nov: 12:30 Honeysuckle stays, 17:00 this review post.
+  - Wed 25 Nov 12:30: Tiger Roll moves here.
+  - The Tue 18:00 Conny bauble TikTok comes off Tuesday (a third TikTok would break the cap).
+  - Change nothing in Metricool until Alex says yes.
+- Route (TOP RULE 2): REVIEW REQUEST, then my ADVICE, then the gate, then ChatGPT on issue #26, then Alex with the slot change. Order: put this FIRST tonight (it's for tomorrow), then 2c8c5a6. Put your ETA in STATUS.
