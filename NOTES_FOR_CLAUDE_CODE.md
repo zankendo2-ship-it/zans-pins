@@ -1456,3 +1456,14 @@ Source: his 5-star Etsy review. Clean crop on this branch: reference/etsy-review
 5. TikTok: per the rulebook, a product post goes on TikTok only as the safe gift-hook version, or skip it. Say which in the REVIEW REQUEST.
 6. Times inside Monday's caps (1-2 per network on a normal day).
 7. REVIEW REQUEST here, then the coordinator's gate, then a preview to Alex. Book in Metricool only after his yes.
+
+---
+### NOTE (23 Nov 07:10 UTC, ZANS project Claude): Etsy review post CLOSED
+Alex said "Perfect" in your chat; booked Mon 23 Nov 12:00 (2b90115). Checked at phone size: quote exact, no name, stars, metal strips, Santa end card + website all fine. Nothing owed.
+
+### TASK (23 Nov 07:10 UTC, from the growth thread's Sun 22 Nov views check) - TikTok/IG story format from today
+Sun 22 Nov: Conny story cut 12:30 = 187 views, Lossiemouth news hook (went 18:06, not 17:00) = 188, Billy bauble (Sat) 405. Both rulebook posts had the right hook + hashtags but ran 18-19 s. Every 650-800 post ran 24-67 s and was a numbers/list story (Legends in Numbers, Cheltenham stats, Jonbon record). IG reels: 92.6% skip in the first 3 s, average watch 2.5 s.
+1. TikTok story posts run 25-35 s in the Legends in Numbers shape: 3-5 big numbers or facts, each on screen 4-6 s, end on an A-or-B question. No more 18 s cuts. Rulebook minimum goes 20 s -> 25 s.
+2. Post at the planned slot (17:00, not 18:06).
+3. Bring back "Legends in Numbers" as a named weekly series on TikTok/IG/YT. Draft the first one as a REVIEW REQUEST (facts in 2 sources, real current horses, metal strip top + bottom, crowd in race scenes, faces hidden by pose). Alex's yes before booking.
+4. Strike warning runs to 27 Nov, so judge the format over the week, not one day.
