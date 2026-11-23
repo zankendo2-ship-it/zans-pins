@@ -31,3 +31,25 @@ Known weak points, for the reviewer to judge:
 5. Insides and backs not designed yet.
 
 ETA for products (part C): second REVIEW REQUEST by Wed 25 Nov 12:00 UK.
+
+## UPDATE 23 Nov, 20:00 UTC: now 20 designs (note d336730)
+
+Cards 8 to 20 added, same folder and naming; the contact sheet now shows all 20 (22 files, as card 7 has three example silks).
+
+| # | Card | Idea |
+|---|---|---|
+| 8 | stable-door | Horse over a stable door with a wreath: "Merry Christmas from everyone at the yard" |
+| 9 | santa-hat | Horse in a Santa hat: "Ho ho horse" |
+| 10 | fireside | Jockey's boots and saddle by the fire: "Boots off. Feet up. Back in the saddle Boxing Day." |
+| 11 | robin | Robin on a snowy running rail: "Season's Greetings from the rails" |
+| 12 | gingerbread-stakes | Gingerbread racehorses: "The Gingerbread Stakes. They're under starter's icing" |
+| 13 | lucky-horseshoe | Horseshoe wreath on a green stable door: "Good luck and a Merry Christmas" |
+| 14 | snow-globe | Racehorse in a snow globe: "Let it snow" |
+| 15 | silks-stockings | Stockings sewn from silks: "The stockings were hung in their colours with care" |
+| 16 | parade-ring-tree | Christmas tree in the parade ring: "Merry & Bright" |
+| 17 | all-i-want | Two horses nose to nose: "All I want for Christmas is you" |
+| 18 | morning-gallops | String on the snowy gallops at sunrise: "Peace on the gallops" |
+| 19 | christmas-day-racecard | Type only: Christmas Day as a racecard |
+| 20 | going-report | Type only: "Going: Merry (mulled in places)" |
+
+Extra weak points: card 12's icing jockeys are blobs (it reads as home baking, but judge it); card 16 shows grooms' faces very small; card 14's saddlecloth carries a FLUX-drawn "1"; card 17's sprig is pine, so the wording avoids "mistletoe"; card 13 says "Good luck", which is a greeting, not a betting claim. A morning-gallops picture with visible riders' faces was binned and replaced by the silhouette version.
