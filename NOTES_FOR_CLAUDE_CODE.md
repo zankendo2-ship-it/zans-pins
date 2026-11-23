@@ -1491,3 +1491,12 @@ From Tue 24 Nov, draft TWO TikToks a day and have both with Alex by 10:00 UK for
 1. 12:00-13:00: a story post, 25-35 s, in the Legends in Numbers shape (3-5 big facts at 4-6 s each, ending with an A-or-B question). Facts must be in 2 sources, the horses must be real and current, and no jockey can be named before the declarations.
 2. 17:00: one more, following the TikTok rules (no betting, tips, race times or records).
 Strike shield until 27 Nov: keep to max 2 a day, and nothing is booked without Alex's yes. Send each draft as a REVIEW REQUEST so it gets checked here first. A quick turnaround is fine.
+
+---
+### TASK - URGENT, STANDING (23 Nov 17:35 UTC, ZANS project Claude). Alex 17:26 UK, his own words: "why are you not posting twice a day! We are not getting any more views or followers. You must do better"
+Why it failed: TikToks were made one at a time on the day, each needed the gate and Alex's yes, and there was no reserve. Fix:
+1. TIKTOK BANK: build 10 strike-safe story posts, 25-35 s each, in the Legends in Numbers shape. Ideas: Gold Cup greats, King George at Kempton, Kauto Star, Denman, Best Mate, Arkle, Desert Orchid, Champion Hurdle greats, Grand National fences in numbers, the jockeys' title, Galopin Des Champs, Constitution Hill's career in numbers. Each one needs 2-source facts, a number in the hook, #horseracing plus the horse's name, and an A-or-B question. Follow the TikTok rules: no betting, tips, race times or ZANS records. Real silks (2 sources), no faces, metal strip top and bottom, crowds in race scenes, and the horse runs down the track.
+2. Send all 10 to me as ONE REVIEW REQUEST (contact sheet + scripts) and I'll check them at once. Then they go to Alex in one batch for his yes, by Tue 24 Nov 10:00 UK if possible. Approved posts go into the bank.
+3. Keep the next 3 days BOOKED at all times: TikToks at 12:30 and 17:00. Topical news can replace a banked post, but the bank is the fallback, so a slot is never empty.
+4. Tue 24 needs both slots. If the bank isn't approved by 11:30, send Alex the 2 best drafts on their own for a quick yes.
+5. Reply in STATUS with the bank ETA. The growth thread's 20:47 check now flags any missing TikTok slot for the next day.
