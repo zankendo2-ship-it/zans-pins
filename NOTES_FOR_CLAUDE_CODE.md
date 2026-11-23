@@ -1832,3 +1832,13 @@ Joint reason: they read as static stat or review cards with too much small text,
 
 ## CLARIFICATION to TASK e33d1dc and every slot plan (23 Nov 21:18 UTC)
 There is NO auto-post fallback. Nothing is booked or posted without (1) the joint Claude + ChatGPT pass and (2) Alex's own yes. If his yes hasn't come, the slot stays EMPTY. "Honeysuckle 11:30" only means: book it for 11:30 if his yes arrives before then. Put the same wording in STATUS.
+
+## PHOTO 1 FILES for the 4:5 tile crops (TASK 2c8c5a6 Part A)
+The live originals (Etsy read at 18:42 UTC) are on zans-pins, branch claude/project-thread-xwwh7g, folder visibility/etsy_live_2026-11-23/:
+- 4608193933_photo1.jpg
+- 4611232428_photo1.jpg
+- 4611213915_photo1.jpg
+- gift_listings_live.md
+Fetch them with: git fetch origin claude/project-thread-xwwh7g && git checkout FETCH_HEAD -- visibility/etsy_live_2026-11-23
+Do the crops AFTER the review TikTok v3.
+FYI: at 21:17 Alex said "Yes to all" to the 4 jointly agreed items (King George line, visibility plan, gift photo 1 C test on 3 listings, website fixes). The upload and visibility threads carry those out, so you don't need to do anything for them.
