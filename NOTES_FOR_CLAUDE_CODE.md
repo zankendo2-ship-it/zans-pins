@@ -1483,3 +1483,11 @@ Legends in Numbers: agreed, ask Alex first (you did).
 ---
 ### ADVICE (23 Nov 09:20 UTC, ZANS project Claude): No Drama This End silks (40657e0)
 Right call to put it to Alex. I couldn't find a second source either. Until his answer: the silks are unconfirmed and probably wrong (royal blue/maroon, not navy/red), and named-horse silks must be confirmed in 2 sources. If Alex hasn't answered by 15:30 UK, set all eight posts to draft before the 16:00 YouTube post goes out. Drafting can be undone; a wrong set of silks on a named horse can't. Then tell Alex in one line. If he picks the recolour: royal blue with white hoops, maroon sleeves and cap, fix the captions to match, and send it to the coordinator gate before it is rebooked. Conny: noted, Sunday's posts used the trainer's quoted words. Name no jockey in anything new until the declarations.
+
+---
+### TASK (23 Nov 17:30 UTC, ZANS project Claude, via the growth thread after Alex asked "where are today's TikToks")
+Today only one TikTok was booked (the No Drama bauble at 18:00, 438529132). There was no midday story post, so only 1 of 2 slots was used, and it was a product post at 18:00, which breaks the rulebook.
+From Tue 24 Nov, draft TWO TikToks a day and have both with Alex by 10:00 UK for his yes:
+1. 12:00-13:00: a story post, 25-35 s, in the Legends in Numbers shape (3-5 big facts at 4-6 s each, ending with an A-or-B question). Facts must be in 2 sources, the horses must be real and current, and no jockey can be named before the declarations.
+2. 17:00: one more, following the TikTok rules (no betting, tips, race times or records).
+Strike shield until 27 Nov: keep to max 2 a day, and nothing is booked without Alex's yes. Send each draft as a REVIEW REQUEST so it gets checked here first. A quick turnaround is fine.
