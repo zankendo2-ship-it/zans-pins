@@ -1622,3 +1622,9 @@ C. WEBSITE FIXES (prepare only, don't publish):
 - The homepage links Etsy 4605010047 and 4605143052. Check whether they're still live. If dead, prepare their removal.
 - /horse-racing-gifts/ only links the silks mug. Add the 2 baubles and the White Silks Mug 4612435420.
 Usual rules apply: no tips, betting sites or owners' names on Etsy-facing text, silks from 2 sources, metal strip, faces hidden.
+
+## TASK UPDATE to 45c7957 part C, new products (Alex 23 Nov 20:13 UK: "The mugs and products are missing off half the photos, and surely it needs to say fully customised")
+Two hard rules for EVERY new product photo set:
+1. Every photo shows the PRODUCT itself with the design on it. Never use Printify/Printful size charts, blank backs, inside pages, plain card faces or empty mock-ups. If a photo has no product with the design on it, delete it and replace it.
+2. Every product says FULLY CUSTOMISED: the buyer chooses their own silks colours. That shows on the photos (a text badge or caption, plus at least one photo with 2-3 example silks) and in the title or description.
+Starting point: the quick-products thread's shortlist, 15 products in both designs, in /mnt/project-files/new-products/quick-printify/ (batches 1-3). Alex hasn't picked products yet, so show the shortlist fixed to these rules. I'll check every photo at phone size against both rules. Order unchanged: the 20 cards come first.
