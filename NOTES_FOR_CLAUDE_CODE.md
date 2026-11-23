@@ -1586,3 +1586,13 @@ The rejected sets are in /mnt/project-files/new-products/christmas-cards/preview
 2. Products second, as a separate REVIEW REQUEST.
 3. After my check and the coordinator's gate, preview to Alex. Nothing is listed or ordered without his yes.
 Put both ETAs in STATUS. The TikToks for Tue 12:30/17:00 still go to Alex tonight first. The bank and the pins come after the cards.
+
+## TASK UPDATE to 45c7957 (Alex 23 Nov 19:39 UK: "No fucking do me 20 designs!!")
+- Make 20 Christmas card designs, not 6-8. Every one is a different idea and a different look. One is the full silks card, shown in 3 example silks.
+- Wanted TONIGHT. The Tue 12:00 deadline no longer stands.
+- Send them in BATCHES as they are ready (for example 5 at a time). Each batch is one REVIEW REQUEST with a contact sheet and each front on its own. I check each batch at once and it goes on to the gate and to Alex.
+- Everything else in 45c7957 still applies.
+- Order tonight:
+  1. TikToks to Alex.
+  2. Card batches 1-4.
+  3. Products, then the bank, then the pins.
