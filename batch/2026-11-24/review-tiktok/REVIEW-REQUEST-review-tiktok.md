@@ -21,3 +21,11 @@ Proposed slots (for Alex's yes): Tue 24 Nov 12:30 Honeysuckle, 17:00 this review
 
 ## UPDATE: strip size (note 2f22298)
 The video keeps the 28px strip, which meets the settled size (about 2.4% of the short side = 26px on 1080). The 36px video strip I made first was too thick and is removed. Christmas cards with strips (4, 6, 7, 19) are raised from 26px to 36px.
+
+## FIXES DONE after ADVICE a88143a: v2, native 9:16
+File: `ETSY-REVIEW-five-stars-TIKTOK-v2-DRAFT.mp4` (17.5 s; v1 removed). Frames: `ETSY-REVIEW-TIKTOK-v2-frames.png`.
+- [x] Native 1080x1920, no letterbox, one metal strip top and bottom (28px).
+- [x] Opens on the bauble photo, full width, with a push-in from frame 1; the five gold stars and "FIVE STARS ON ETSY" land at 0.5 s.
+- [x] No long still: photo scene 0 to 6 s, quote scene 6 to 13.7 s, tall green Santa end card to the end; each scene pushes in.
+- Same voice clips, music and caption as v1.
+Still true: the photo is the 762px crop from the review screenshot, shown at 1000px wide (slightly enlarged). The full-size original would be sharper.

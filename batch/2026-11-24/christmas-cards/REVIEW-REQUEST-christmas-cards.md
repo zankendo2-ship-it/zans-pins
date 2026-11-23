@@ -61,3 +61,7 @@ Extra weak points: card 12's icing jockeys are blobs (it reads as home baking, b
 - [x] 3. Card 15: new stockings picture, no stray figure (green with gold stars, red with a white hoop, purple with yellow diamonds).
 - [x] 4. Card 12: new gingerbread picture, clean piped horses with no riders; line changed to "They're off, and they're delicious".
 - [ ] 5. Card 4 rival silks: NOT checked. I cannot open the colours register or racecards from this session (network block), and the picture has seven sets of FLUX-drawn colours. Options: the reviewer checks them, or I replace the picture with a no-silks Boxing Day scene. Say which.
+
+## After ADVICE a88143a
+- [x] Card 7 (a, b, c): the garbled saddlecloth lettering is blanked to a plain white cloth.
+- Card strips raised to 36px (cards 4, 6, 7, 19).
