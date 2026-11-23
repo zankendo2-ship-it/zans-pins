@@ -1,0 +1,26 @@
+{
+ "gemini": {
+  "voice": "Aoede",
+  "style": "a warm young woman from London with a natural everyday London accent who softens her t sounds the way Londoners do, like a friendly local chatting to a mate, upbeat and conversational, not posh, speaking at a slightly brisker pace, full of genuine excitement and enthusiasm, gripping the listener like she can't wait for this race",
+  "wrapper": "Speak naturally and energetically, with short pauses, not like a robot or an advert.",
+  "tempo": 1.07
+ },
+ "lines": [
+  {
+   "file": "l1.mp3",
+   "text": "Tiger Roll. Two Grand Nationals, back to back!"
+  },
+  {
+   "file": "l2.mp3",
+   "text": "Twenty eighteen, then twenty nineteen. The first to do it since Red Rum, forty-five years earlier!"
+  },
+  {
+   "file": "l3.mp3",
+   "text": "And five victories at the Cheltenham Festival, from a hurdle to the cross country!"
+  },
+  {
+   "file": "l4.mp3",
+   "text": "Tiger Roll or Red Rum: who's the greater Grand National hero? Tell us in the comments!"
+  }
+ ]
+}

@@ -942,5 +942,227 @@
    }
   ],
   "brand": "ZANS RACING · FOR RACING FANS"
+ },
+ "legend-honeysuckle": {
+  "courseSize": 84,
+  "flag": false,
+  "brand": "ZANS RACING · FOR RACING FANS",
+  "tagline": "Legends in numbers",
+  "footer": "ZANS Racing",
+  "source": "",
+  "course": "HONEYSUCKLE",
+  "code": "Champion mare",
+  "colour": "#4FB3E8",
+  "text": "#1F7FB5",
+  "silks": {
+   "body": "#8FD0F2",
+   "second": "#FFFFFF",
+   "pattern": "plain",
+   "cap": "#8FD0F2"
+  },
+  "slides": [
+   {
+    "type": "cover",
+    "sub": "Sixteen races. Never beaten.",
+    "gl": "HONEYSUCKLE IN NUMBERS",
+    "tiles": [
+     [
+      "16",
+      "UNBEATEN IN A ROW"
+     ],
+     [
+      "4",
+      "CHELTENHAM FESTIVALS"
+     ],
+     [
+      "2",
+      "CHAMPION HURDLES"
+     ]
+    ],
+    "points": [
+     [
+      "Champion Hurdle",
+      "2021 · 2022"
+     ],
+     [
+      "Irish Champion Hurdle",
+      "2020 · 21 · 22"
+     ],
+     [
+      "Hatton's Grace Hurdle",
+      "2019 · 20 · 21"
+     ]
+    ],
+    "strip": "Her first 16 races: <b>never beaten</b>"
+   },
+   {
+    "type": "facts",
+    "num": "",
+    "eyebrow": "THE CAREER",
+    "big": "Sixteen in a row. <em>Never beaten.</em>",
+    "sub": "From her first race to her sixteenth.",
+    "rows": [
+     [
+      "FIRST 16 RACES",
+      "Never beaten"
+     ],
+     [
+      "CAREER",
+      "19 races"
+     ],
+     [
+      "TOP LEVEL",
+      "13 Grade 1s"
+     ],
+     [
+      "IN THE SADDLE",
+      "Rachael Blackmore"
+     ]
+    ],
+    "strip": "Champion Hurdle: <b>2021 and 2022</b>"
+   },
+   {
+    "type": "facts",
+    "num": "",
+    "eyebrow": "CHELTENHAM",
+    "big": "Four Festivals. <em>Never beaten there.</em>",
+    "sub": "Her Cheltenham Festival record.",
+    "rows": [
+     [
+      "2020",
+      "Mares' Hurdle"
+     ],
+     [
+      "2021",
+      "Champion Hurdle"
+     ],
+     [
+      "2022",
+      "Champion Hurdle"
+     ],
+     [
+      "2023",
+      "Mares' Hurdle"
+     ]
+    ],
+    "strip": "Retired in 2023, <b>on a high</b>"
+   },
+   {
+    "type": "end",
+    "big": "Honeysuckle or Lossiemouth?",
+    "question": "Honeysuckle or Lossiemouth: who's the better mare?"
+   }
+  ]
+ },
+ "legend-tiger-roll": {
+  "courseSize": 84,
+  "flag": false,
+  "brand": "ZANS RACING · FOR RACING FANS",
+  "tagline": "Legends in numbers",
+  "footer": "ZANS Racing",
+  "source": "",
+  "course": "TIGER ROLL",
+  "code": "Grand National hero",
+  "colour": "#B0224A",
+  "text": "#8E1B3A",
+  "silks": {
+   "body": "#8E1B3A",
+   "second": "#FFFFFF",
+   "pattern": "plain",
+   "cap": "#8E1B3A"
+  },
+  "slides": [
+   {
+    "type": "cover",
+    "sub": "Two Grand Nationals in a row.",
+    "gl": "TIGER ROLL IN NUMBERS",
+    "tiles": [
+     [
+      "2",
+      "GRAND NATIONALS"
+     ],
+     [
+      "5",
+      "FESTIVAL VICTORIES"
+     ],
+     [
+      "45",
+      "YEARS SINCE RED RUM"
+     ]
+    ],
+    "points": [
+     [
+      "Grand National",
+      "2018 · 2019"
+     ],
+     [
+      "Cross Country Chase",
+      "2018 · 19 · 21"
+     ],
+     [
+      "Triumph Hurdle",
+      "2014"
+     ]
+    ],
+    "strip": "Back to back at Aintree: <b>2018 and 2019</b>"
+   },
+   {
+    "type": "facts",
+    "num": "",
+    "eyebrow": "AINTREE",
+    "big": "Back to back. <em>First since Red Rum.</em>",
+    "sub": "Two Grand Nationals in a row.",
+    "rows": [
+     [
+      "2018",
+      "Grand National"
+     ],
+     [
+      "2019",
+      "Grand National"
+     ],
+     [
+      "BEFORE HIM",
+      "Red Rum, 1973 and 1974"
+     ],
+     [
+      "THE GAP",
+      "45 years"
+     ]
+    ],
+    "strip": "Small horse, <b>huge heart</b>"
+   },
+   {
+    "type": "facts",
+    "num": "",
+    "eyebrow": "CHELTENHAM",
+    "big": "Five Festival <em>victories</em>",
+    "sub": "From a hurdle to the cross country.",
+    "rows": [
+     [
+      "2014",
+      "Triumph Hurdle"
+     ],
+     [
+      "2017",
+      "National Hunt Chase"
+     ],
+     [
+      "2018 · 2019",
+      "Cross Country Chase"
+     ],
+     [
+      "2021",
+      "Cross Country Chase"
+     ]
+    ],
+    "strip": "Retired in <b>2022</b>"
+   },
+   {
+    "type": "end",
+    "big": "Tiger Roll or Red Rum?",
+    "question": "Tiger Roll or Red Rum: who's the greater Grand National hero?"
+   }
+  ]
  }
 }
