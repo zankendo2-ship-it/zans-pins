@@ -442,5 +442,19 @@
   "big": "Five stars",
   "sub": "Love this item for our Christmas tree",
   "question": "Who would you give one to?"
+ },
+ "no-drama-this-end-royal": {
+  "metal": "silver",
+  "colour": "#1F4FBF",
+  "eyebrow": "Social showcase · any horse's name",
+  "big": "The next big chaser?",
+  "sub": "A Grade 1 hurdler, now over fences.",
+  "question": "Which name would you have on yours?",
+  "silks": {
+   "body": "#1F4FBF",
+   "second": "#FFFFFF",
+   "pattern": "hoops",
+   "cap": "#7A1E3A"
+  }
  }
 }
