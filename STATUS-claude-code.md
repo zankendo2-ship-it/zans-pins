@@ -1,12 +1,16 @@
-# STATUS from the Claude Code chat (23 Nov 2026, 20:15 UTC)
+# STATUS from the Claude Code chat (23 Nov 2026, 21:20 UTC)
 
-- Legends TikToks (Honeysuckle, Tiger Roll): approved by review, sent to Alex, waiting for his yes. Not booked.
-- Christmas cards: 20 designs done, `batch/2026-11-24/christmas-cards/` (review request and contact sheet there). Contact sheet sent to Alex for a first look.
-- New products (TASK 45c7957 part C, update 111885e): BLOCKED on the shortlist. `/mnt/project-files/new-products/quick-printify/` is not mounted in this session. Please paste the 15-product shortlist (product, provider, cost delivered) into the notes file, or commit it to `zans-social-notes`. Noted: every photo shows the product with the design on it, and every product says FULLY CUSTOMISED on photos and in the listing. ETA: review request within about 3 hours of getting the shortlist.
-- TASK 2c8c5a6 (pack for ChatGPT's review): not started. Alex's standing rule is that this chat ignores ChatGPT's requests; waiting for Alex to say "do it".
-- TikTok bank of 10: not started; waiting for Alex after tomorrow's two posts (Sunday's two story posts got 188 and 187 views).
-- Etsy pins (10): queued after cards and products.
-- Pinterest: still connected in Metricool (account present, pins booked for 24 and 25 Nov).
-- No Drama This End: both artworks marked do not reuse; nothing deleted.
-- Booked named-horse posts: Constitution Hill bauble (24 Nov) white silks, black cap, matches Alex's photo. Jonbon (25 Nov): captions spell "Jon Bon" and the "Three Shloer Chases in a row" line is unconfirmed; asked Alex fix or pull.
-- I cannot send messages to the reviewing session from here (send fails), so this file is my reply channel.
+**No auto-post fallback. Nothing is booked without Alex's own yes. Without his yes, the slot stays empty.** (The joint Claude + ChatGPT pass is followed as a review step once Alex confirms it in this chat; his rule 12 still stands here until he does.)
+
+| Job | State | Where |
+|---|---|---|
+| Legends TikToks (Honeysuckle, Tiger Roll) | Approved earlier, sent to Alex, no answer. Joint verdict now says revise: not started, asked Alex rebuild or use | `batch/2026-11-24/legends/` |
+| Etsy review TikTok | v3 pushed for re-check (review, tree, second design, gift boxes, end card) | `batch/2026-11-24/review-tiktok/` |
+| Christmas cards | 20 designs, fixes done, card 6 now "CHRISTMAS NOTICE", strips 36px | `batch/2026-11-24/christmas-cards/` |
+| Visibility pack | Part A table and suggestions, 7-day plan, website notes, sample pin (order-by line removed). Search-tile crops wait for the photo 1 files | `batch/2026-11-24/visibility/` |
+| New products (17 on the shortlist) | Not started; next after the TikToks | |
+| TikTok tests T1 to T3, gift stills | Not started | |
+| TikTok bank of 10, 10 Etsy pins | Not started | |
+
+Waiting on Alex: TikTok slots; confirm working with ChatGPT; rebuild or use the two Legends videos; No Drama posts leave or delete; Jonbon fix or pull; silks-offer line keep or cut; delivery free or £3.95 / £6.95.
+I cannot send messages to the reviewing session from here (send fails); this file and my commits are the reply channel.
