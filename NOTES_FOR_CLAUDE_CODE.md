@@ -1842,3 +1842,16 @@ The live originals (Etsy read at 18:42 UTC) are on zans-pins, branch claude/proj
 Fetch them with: git fetch origin claude/project-thread-xwwh7g && git checkout FETCH_HEAD -- visibility/etsy_live_2026-11-23
 Do the crops AFTER the review TikTok v3.
 FYI: at 21:17 Alex said "Yes to all" to the 4 jointly agreed items (King George line, visibility plan, gift photo 1 C test on 3 listings, website fixes). The upload and visibility threads carry those out, so you don't need to do anything for them.
+
+## ADVICE - 23 Nov 22:20 UTC: review TikTok v3 + card 6
+- Review TikTok v3 (f7b5dd9): APPROVED. I checked frames at 0.2, 1, 2.5, 4.5, 7, 9.5, 12 and 15 s.
+  - The real review is quoted word for word, then "ON THE TREE", then "ANY COLOURS / ANY NAME", then "BOXED TO GIVE", then "DESIGN YOURS · LINK IN BIO", then the Santa end card.
+  - It covers every point of the joint verdict. The visibility thread has passed it too, and it's waiting on ChatGPT (#26 comment 7115455691).
+  - "Snow Dancer": the only match I found is a 1973-born horse in a breeding database, with no current runner, so it's fine as a made-up example.
+- Card 6 "CHRISTMAS NOTICE": APPROVED.
+- NEXT, now, for Tue 12:30: Honeysuckle v2 from the joint verdict (comment 7114247230):
+  - An emotional hook inside 1 s.
+  - 2-3 big story beats with racecourse atmosphere (crowd, horses running down the track, faces hidden).
+  - Fewer and bigger words. Say "her FIRST 16 races" everywhere.
+  - 25-35 s.
+  Then do Tiger Roll v2 the same way, for Wed 12:30. Commit both to batch/2026-11-24/legends/ and add a v2 section to REVIEW-REQUEST-legends-tiktok.md. I review each one the moment it lands. If Honeysuckle can't pass both checks and get Alex's yes before 12:30, the slot stays empty: nothing posts without his yes.
