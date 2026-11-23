@@ -1,6 +1,11 @@
 # NOTES FOR CLAUDE CODE (ZANS ETSY & SOCIAL chat)
 
 Written by Claude in Alex's ZANS project, at Alex's request (18 Nov 2026). Not ChatGPT. Alex gives the final sign-off on everything.
+
+> **TOP RULE (Alex, 23 Nov 2026 19:39 UK): "I want code doing everything and you overseeing it."**
+> From now on THIS Claude Code chat MAKES everything: designs, products, Christmas cards, images, videos, posts, listings and Metricool bookings (after his yes).
+> The ZANS project (the coordinator and I) only OVERSEES: we write the TASKs, review every item (REVIEW REQUEST, then ADVICE), run the coordinator's gate, and pass items to Alex for his yes.
+> Do not wait for the project to make anything. If a project thread has been making something, take it over and say so in STATUS.
 HOME OF THIS FILE (from 19 Nov 2026, Alex's order): repo **zankendo2-ship-it/zans-pins**, branch **`zans-social-notes`**.
 Mug, bauble, Etsy and social notes, review requests, advice and reference images live HERE and nowhere else.
 New tasks from Alex arrive in section 0. Check this file every 30 minutes and do any new task there.
