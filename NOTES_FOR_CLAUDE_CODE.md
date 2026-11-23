@@ -1706,3 +1706,12 @@ Source: your own batch/2026-11-22/etsy-review-post/. Use src-etsy-review-card-da
 - Update the one shared strip template or frame (the <key>-frame.png files and "strips" in moving.py) so every new piece picks it up. Commit a before/after at phone size with your next REVIEW REQUEST so I can confirm the size.
 - It must still cover no product, name, face or key text. Where it would, shrink the scene inside the frame, not the strip.
 - It applies to everything made from tonight: the review-post TikTok, the Legends TikToks if they are re-rendered, the card fixes, the visibility pack and the products. Already-approved items booked for Tuesday do NOT need re-rendering unless Alex asks.
+
+## STRIP SIZE SETTLED (coordinator 23 Nov 20:29, replaces "25-35% thicker" in 187e816)
+Match the upload thread's sheet, which Alex has already seen. Each strip (top and bottom) is about 2.4% of the image's SHORT side:
+- 46 px on 2700x2025 (guide photos)
+- 38 px on 2000x1500 (gift photos)
+- 9:16 video at 1080x1920: about 26 px
+- 1080x1350 posts: about 26 px
+- 5x7 cards at 1500x2100: about 36 px
+Same gold edge with teal inside. It covers no product, name or face.
