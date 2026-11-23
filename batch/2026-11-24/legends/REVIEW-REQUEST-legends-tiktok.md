@@ -21,3 +21,28 @@ Note: Red Rum is named in a history comparison only, with nothing sold.
   1. (removed: the Horse & Hound piece is from Dec 2021 and out of date; the reviewer replaced it with the Irish Field, a general reference page and a form profile, which the reviewer opened and checked on 23 Nov, note eb8bd64)
   2. https://www.theirishfield.ie/breeding-insights-farewell-champ-you-are-a-true-great-754349
   Note: I could not open these pages myself from this session (network block); the figures came from the helper's reading and should be opened once by the reviewer before the post goes live.
+
+## v2 of both, after the joint verdict (23 Nov, 22:40 UTC). Drafts, not booked.
+Files: `HONEYSUCKLE-in-numbers-TIKTOK-v2-DRAFT.mp4` (24.6 s), `TIGER-ROLL-in-numbers-TIKTOK-v2-DRAFT.mp4` (25.9 s). Frame sheets: `HONEYSUCKLE-v2-frames.png`, `TIGER-ROLL-v2-frames.png`. v1 files kept.
+
+What changed:
+- Native 1080x1920, full-bleed racecourse scenes instead of cream stat cards; every scene pushes in; one metal strip top and bottom.
+- Hook in the first second, in big words over a roaring crowd / a big field coming at the camera.
+- Fewer, bigger words: three lines a scene at most.
+- Honeysuckle now says and shows "HER FIRST 16 RACES" (new voice clip `h1b.mp3`, transcribed: "Honeysuckle, her first 16 races, never beaten."). Other clips unchanged and already checked.
+
+| | Honeysuckle | Tiger Roll |
+|---|---|---|
+| 1 | Roaring crowd: HER FIRST 16 RACES / NEVER BEATEN | Big field head-on: 2 GRAND NATIONALS / BACK TO BACK |
+| 2 | Number one post at dusk: 19 RACES / 13 GRADE 1s / Rachael Blackmore in the saddle | Crowd with Union flags: 2018 · 2019 / FIRST SINCE RED RUM / 45 years earlier |
+| 3 | Packed valley course: 4 FESTIVALS / NEVER BEATEN THERE | Empty course at dawn: 5 FESTIVAL VICTORIES |
+| 4 | HONEYSUCKLE or LOSSIEMOUTH? Who's the better mare? | TIGER ROLL or RED RUM? The greater Grand National hero? |
+
+Rules checked: every picture is FLUX Krea from this session, no fetched footage; neither horse is pictured (no coat, markings or silks to get wrong), scenes are atmosphere only; no owner named; past tense; nothing sold; no odds, prices, race times or bet words; text inside the TikTok safe zone (y 340 to 1600).
+Binned: a crowd scene with an American flag, a paddock horse with the wrong colouring, a silhouette where the rider's face showed.
+Weak points to judge:
+1. Crowd scenes show AI faces of racegoers in profile (Honeysuckle scene 1, Tiger Roll scene 2). They are not real people and none looks under 25, but CLAUDE.md says Alex sees each lifestyle scene before use.
+2. Honeysuckle scene 1 has unreadable FLUX lettering on the far grandstand boards; Tiger Roll scene 2's Union flags are slightly off in their geometry.
+3. The valley course in Honeysuckle scene 3 is a made-up course under the caption "The Cheltenham Festival"; it is not Cheltenham.
+4. No horse close-ups, so less emotion than a real replay would give.
+5. The music is the race bed used before; the three-option music rule has not been run.
