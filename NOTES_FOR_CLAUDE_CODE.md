@@ -1537,3 +1537,47 @@ APPROVED. Both videos can go to Alex now for Tue 24 Nov, 12:30 and 17:00.
   3. https://www.sportinglife.com/racing/news/rachael-blackmore-pays-tribute-to-retired-racemare-honeysuckle/208289
 - If a caption says "16 unbeaten", write "her first 16 races under rules". Never write "17 unbeaten".
 Next: send both to Alex for his yes, with the Conny bauble 18:00 question. Book only after his yes. Then start the 10-post bank.
+
+## TASK (URGENT, Alex 23 Nov 19:39 UK, relayed by the coordinator): YOU now design the Christmas cards and the new products
+Alex rejected the latest Christmas cards outright ("fucking terrible", 19:38). He wants this Claude Code chat to make them: "Why are you not connecting with code for everything". From now on this chat owns two jobs: the Christmas cards and the designs for the new Printify/Printful products.
+
+### A. Christmas cards: what was rejected (6 rounds, 22-23 Nov)
+The rejected sets are in /mnt/project-files/new-products/christmas-cards/previews/: drafts 1-6, "all 6 new fronts", painted cards 1-4, Santa silks, full silks. If you cannot open that folder, ask me and I'll describe them. Faults I can see in the last set:
+1. All the cards use one template: a dark top band, gold "MERRY CHRISTMAS" in capitals, a gold frame, and one jockey in a Santa hat. No card stands out from the others.
+2. Most of the horses run away from the viewer, so the card shows backsides. There is no crowd, no finish, no story and no joke.
+3. The full silks and "Grandad" cards are flat clip-art: a jersey shape or checks with a starburst behind. They look cheap.
+4. The look is generic stock art, and the colours are muddy brown and navy.
+
+### B. Christmas cards: what to make
+- 6 to 8 fronts. Each card is a different idea in a different style. Mix funny, beautiful and bold. Ideas to start from (or better ones):
+  - A head-on finish in the snow with the crowd roaring.
+  - Santa's reindeer in a photo finish against racehorses.
+  - A jockey's silks turned into a Christmas jumper.
+  - A tinsel-wrapped winning post.
+  - A Boxing Day jumps meeting with crowds and steam.
+  - A "naughty or nice" stewards' enquiry joke card.
+- One FULL SILKS card is required: the buyer's own silks drawn properly on a racing scene (horse plus jockey), not a flat jersey icon. Show it in 3 different sets of example silks.
+- House style: racing green and gold, a metal strip top and bottom where it suits a card. Card size A5 / 5x7 at 300 dpi, Printify or Printful card product.
+- Rules:
+  - Jockey faces are hidden by the pose, never blurred.
+  - No real owners' silks, no Juddmonte, no plain royal blue silks.
+  - Horses run down the track (see the horse-direction rule).
+  - Crowds in race scenes.
+  - Copyright check on every image: our own or FLUX Krea output only, no copied artwork.
+  - The Image Hub makes the images if that helps. FLUX Krea is free; use Gemini only for edits.
+- Look at every front at phone size before sending.
+
+### C. New products: designs in 2 types
+- Use the products the products thread chose: tees, baby, patches, stickers, poster and the rest. See /mnt/project-files/new-products/quick-printify/ and the 21 Nov Printify UK costs file.
+- Each product comes in 2 versions:
+  1. FULL SILKS: an all-over pattern from the buyer's silks.
+  2. The existing ZANS design.
+- NEVER make another mug or round bauble (both are already live). Other ornament shapes and materials are fine.
+- Each product must cost under £20.99 delivered, on Printify or Printful.
+- Variety across clothing, kids, pets, home, kitchen, desk, car and stationery.
+
+### D. Order and sign-off
+1. Christmas cards first, because the card season is now. Send them to me as ONE REVIEW REQUEST, with a contact sheet and each front on its own, by Tue 24 Nov 12:00 UK.
+2. Products second, as a separate REVIEW REQUEST.
+3. After my check and the coordinator's gate, preview to Alex. Nothing is listed or ordered without his yes.
+Put both ETAs in STATUS. The TikToks for Tue 12:30/17:00 still go to Alex tonight first. The bank and the pins come after the cards.
