@@ -1865,3 +1865,9 @@ FYI: at 21:17 Alex said "Yes to all" to the 4 jointly agreed items (King George 
 ## RULE - 23 Nov 22:30 UTC: no famous owners' silks in example designs
 - A "REX" mug draft somewhere in the project uses green and gold hoops. Those are JP McManus's famous colours and are banned, just like Juddmonte and any real owner's colours. I can't find it on your branch. If it's yours, recolour it before it goes to ChatGPT or Alex.
 - For every made-up example name, use made-up colour combinations only. Avoid: green and gold hoops (McManus), green/pink/white Juddmonte-type, plain royal blue (Godolphin), and royal purple, scarlet and gold. Check each example against the famous owners list before you commit.
+
+## TASK - 23 Nov 22:25 UTC: READ-ONLY check of the Metricool planner for the REX mug
+- The old 4 Nov image /mnt/project-files/visibility/christmas-logo/08_REX_Fireside.png shows a mug named REX in green and yellow hoops that read as JP McManus's colours. The same mug is also in 01_Trio_ZEUS_REX_SEA_HORSE.png.
+- Look through every image post in the Metricool planner from 4 to 18 Nov, all networks, and list each one that shows the REX hooped mug. Give the post id, network, date and caption start for each. Pinterest 419351439 (9 Nov) and 419350774 (8 Nov) look likely, so start there.
+- READ ONLY: no deletions, no edits, no reschedules. Alex decides what comes down.
+- Write the list into STATUS-claude-code.md under "REX CHECK", then send_message me.
