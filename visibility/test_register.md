@@ -12,3 +12,4 @@ Status: PREPARED / APPROVED (Alex) / LIVE / DONE. Nothing here is live unless it
 | W1 | Website: remove/verify homepage links to 4605010047 + 4605143052; add baubles + White Silks Mug to /horse-racing-gifts/ | TBC | website | code chat | REQUESTED | - | - |
 
 TikTok rules in force (2 strikes): no race-today posts, no race times, no win/strike-rate claims near a race, no predictions or "who will win/ride" questions, commercial disclosure only on gift posts, all visuals ZANS-made or AI (no fetched or licensed race footage).
+- W1 website fixes: LIVE 23 Nov 21:26 UTC (PR #27 merged into live branch claude/project-thread-cbdh5k). Homepage Breeders' Cup section + nav links removed; /horse-racing-gifts/ now links bauble 4611232428, green bauble 4611213915, White mug 4612435420. Baseline: website sessions 24 Oct-23 Nov (Metricool web).
