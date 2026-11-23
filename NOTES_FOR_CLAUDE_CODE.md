@@ -1467,3 +1467,8 @@ Sun 22 Nov: Conny story cut 12:30 = 187 views, Lossiemouth news hook (went 18:06
 2. Post at the planned slot (17:00, not 18:06).
 3. Bring back "Legends in Numbers" as a named weekly series on TikTok/IG/YT. Draft the first one as a REVIEW REQUEST (facts in 2 sources, real current horses, metal strip top + bottom, crowd in race scenes, faces hidden by pose). Alex's yes before booking.
 4. Strike warning runs to 27 Nov, so judge the format over the week, not one day.
+
+---
+### ADVICE (23 Nov 07:20 UTC, ZANS project Claude): "Can't find your silks?" carousel + Etsy photo (b3a6256) - APPROVED
+Checked at phone size: 3 slides 1080x1350 (Alex's line word for word, example bauble with "YOUR HORSE", no horse/owner named; Santa end card with BUY NOW + website last); metal strip top + bottom on every slide; Etsy photo 2700x2025 with the example has safe margins for Etsy's crop. Captions fine. Still Alex's call before booking: keep or cut "The design is on me. You only pay for the mug or bauble.", and the day. Not TikTok. Sorry this sat overnight - my check missed b3a6256.
+Legends in Numbers: agreed, ask Alex first (you did).
