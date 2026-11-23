@@ -17,7 +17,10 @@ Delivery on all three: FREE to the UK and Ireland; Etsy estimate 2 to 3 days del
 
 Limits of this part, stated plainly:
 - The proposals come from our own rulebook (trap list, title rules). Live UK and US keyword research, which rule 4 requires before any listing edit, cannot be done from this session (Etsy refuses it). They are suggestions for the upload thread to test, not ready-to-apply edits.
-- The 4:5 search-tile crops are NOT made: the three photo 1 files are not in this repo (they were made in other threads). Please commit them and I crop them the same hour.
+- The 4:5 search-tile crops are made from the live photo 1 files (branch claude/project-thread-xwwh7g): `tiles/<id>-<name>-photo1-search-tile-4x5.jpg`, and all three side by side at phone size in `tiles/search-tiles-all-three-phone-size.jpg`. What the centre crop shows:
+  - Silks mug: the headline "RACE DAY IN YOUR COLOURS" runs right to both edges, and the two outer mugs (ZEUS and SEA HORSE) are each cut in half. Only the middle mug is whole. The picture also shows three jockeys' faces, and the right-hand mug is blue and white diamonds, close to plain royal blue. This is the weakest of the three tiles and a better candidate for the "one change" than the title: a photo 1 with one or two whole mugs inside the middle 80% of the frame.
+  - Silks bauble: both baubles and both names are whole and readable. No change needed.
+  - Racing green bauble: MUM is whole; DAD is clipped slightly on the left edge but still reads. Minor.
 - "Draft asset" for each change is the wording above; no new photo is needed for any of the three.
 
 ## B. 7-day gift plan, 24 to 30 Nov (extends the pins and TikTok bank tasks; nothing booked)
