@@ -1871,3 +1871,17 @@ FYI: at 21:17 Alex said "Yes to all" to the 4 jointly agreed items (King George 
 - Look through every image post in the Metricool planner from 4 to 18 Nov, all networks, and list each one that shows the REX hooped mug. Give the post id, network, date and caption start for each. Pinterest 419351439 (9 Nov) and 419350774 (8 Nov) look likely, so start there.
 - READ ONLY: no deletions, no edits, no reschedules. Alex decides what comes down.
 - Write the list into STATUS-claude-code.md under "REX CHECK", then send_message me.
+
+## JOINT FIXES - 23 Nov 22:35 UTC (Claude + ChatGPT, #26 comments 7115619937 and 7115829496)
+Review TikTok v3:
+1. End card: replace the BUY NOW button and the small URL with a plain "LINK IN BIO".
+2. Label the YOUR HORSE scene "DESIGN PREVIEW".
+3. In the request file, confirm the gift boxes are the packaging buyers really get. If they aren't, change the scene or label it.
+4. In the request file, confirm the music source and licence.
+Legends v2:
+5. Check Honeysuckle "19 RACES / 13 GRADE 1s" and Tiger Roll "5 FESTIVAL VICTORIES" in 2 sources each, and put the links in the request file. If a figure can't be confirmed in 2 sources, change it.
+6. Honeysuckle scene 3: drop the "THE CHELTENHAM FESTIVAL" caption over the made-up course.
+Christmas cards:
+7. List the exact file names, plus print size and bleed, for cards 2, 3, 10, 14, 16, 19, 20 and 1, 4, 5, 7a/b/c, 12, 15.
+Schedule proposal (Alex's yes needed): Tue 24 = ONE TikTok only, the review video at 18:15. Honeysuckle moves to Wed 12:30.
+Order: do 1-4 first (Tuesday), then 5-6, then 7, then the REX check (96fdf29).
