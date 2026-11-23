@@ -29,3 +29,16 @@ File: `ETSY-REVIEW-five-stars-TIKTOK-v2-DRAFT.mp4` (17.5 s; v1 removed). Frames:
 - [x] No long still: photo scene 0 to 6 s, quote scene 6 to 13.7 s, tall green Santa end card to the end; each scene pushes in.
 - Same voice clips, music and caption as v1.
 Still true: the photo is the 762px crop from the review screenshot, shown at 1000px wide (slightly enlarged). The full-size original would be sharper.
+
+## v3 after JOINT VERDICT d74a4cf
+File: `ETSY-REVIEW-five-stars-TIKTOK-v3-DRAFT.mp4` (17.5 s, native 9:16; v2 removed). Frames: `ETSY-REVIEW-TIKTOK-v3-frames.png`.
+- 0 to 2.5 s: five big stars and the review, word for word, with the buyer's photo.
+- 2.5 to 6 s: the silks bauble on the tree by candlelight ("ON THE TREE").
+- 6 to 9.5 s: a second design ("ANY COLOURS / ANY NAME").
+- 9.5 to 13.7 s: the DAD and MUM baubles in their gift boxes ("BOXED TO GIVE", "DESIGN YOURS · LINK IN BIO").
+- 13.7 s to end: the green Santa end card.
+Fewer, bigger words on every scene; every scene pushes in. Same approved voice clips and music.
+Not done: no new racecourse or people scenes; the two silks variations are our existing example designs (Snow Dancer and Your Horse), and the second is flat artwork in a circle, not a photographed bauble.
+
+Also from the verdict: Christmas card 6 now reads "CHRISTMAS NOTICE · 25 DEC"; the order-by line is off the sample pin.
+NOT done: the "ignore ChatGPT" line in CLAUDE.md is Alex's rule 12 and is changed only when Alex tells this chat himself. Honeysuckle and Tiger Roll revisions are not started.

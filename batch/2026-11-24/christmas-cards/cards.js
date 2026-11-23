@@ -36,7 +36,7 @@ const cards = {
 '6-stewards-enquiry': `<div style="position:absolute;inset:0;background:#F3EDE5"></div>
 <div style="position:absolute;left:0;right:0;top:0;height:36px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:36px;background:${metal}"></div>
 <div style="position:absolute;left:110px;right:110px;top:150px;bottom:150px;border:8px solid #1C1C1C;padding:70px 50px;text-align:center;color:#1C1C1C">
-<div style="font-weight:600;letter-spacing:14px;font-size:44px">OFFICIAL NOTICE · 25 DEC</div>
+<div style="font-weight:600;letter-spacing:14px;font-size:44px">CHRISTMAS NOTICE · 25 DEC</div>
 <div style="height:8px;background:#1C1C1C;margin:44px 0"></div>
 <div style="font-weight:700;font-size:176px;line-height:.92;color:#B3202A">STEWARDS' ENQUIRY</div>
 <div class="serif" style="font-style:italic;font-size:110px;margin-top:50px">Naughty or nice?</div>
