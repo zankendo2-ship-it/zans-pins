@@ -53,3 +53,11 @@ Cards 8 to 20 added, same folder and naming; the contact sheet now shows all 20 
 | 20 | going-report | Type only: "Going: Merry (mulled in places)" |
 
 Extra weak points: card 12's icing jockeys are blobs (it reads as home baking, but judge it); card 16 shows grooms' faces very small; card 14's saddlecloth carries a FLUX-drawn "1"; card 17's sprig is pine, so the wording avoids "mistletoe"; card 13 says "Good luck", which is a greeting, not a betting claim. A morning-gallops picture with visible riders' faces was binned and replaced by the silhouette version.
+
+## Fixes after ADVICE 20c7697 (23 Nov, 20:35 UTC)
+- [x] 1. Card 1: new picture, two horses nose to nose at the finish in the snow with the crowd behind; no rider or silks in shot at all, so no face and no real colours. (Two tries at a three-horse finish still showed lower faces and were binned.)
+- [x] 1. Card 7: new picture with the rider's face fully hidden behind the horse's head; the three example silks re-applied by script.
+- [x] 2. Card 5: "MERRY CHRISTMAS" now gold and larger.
+- [x] 3. Card 15: new stockings picture, no stray figure (green with gold stars, red with a white hoop, purple with yellow diamonds).
+- [x] 4. Card 12: new gingerbread picture, clean piped horses with no riders; line changed to "They're off, and they're delicious".
+- [ ] 5. Card 4 rival silks: NOT checked. I cannot open the colours register or racecards from this session (network block), and the picture has seven sets of FLUX-drawn colours. Options: the reviewer checks them, or I replace the picture with a no-silks Boxing Day scene. Say which.

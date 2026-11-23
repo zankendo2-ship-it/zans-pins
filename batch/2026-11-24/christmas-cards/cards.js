@@ -6,7 +6,7 @@ const metal = 'linear-gradient(90deg,#8a6a22,#f2cf5b 18%,#fff3c8 32%,#c9a13b 50%
 const base = `${font('Jost', 600, 'jost-600.woff2')}${font('Jost', 700, 'jost-700.woff2')}*{box-sizing:border-box;margin:0}body{width:1500px;height:2100px;position:relative;overflow:hidden;font-family:'Jost'}
 .bg{position:absolute;inset:0;background-size:cover;background-position:center}.serif{font-family:'Liberation Serif','FreeSerif',serif}`;
 const cards = {
-'1-flying-finish': `<div class="bg" style="background-image:url(${img('finish.webp')})"></div>
+'1-flying-finish': `<div class="bg" style="background-image:url(${img('finish2.png')})"></div>
 <div style="position:absolute;left:0;right:0;bottom:0;height:900px;background:linear-gradient(transparent,rgba(10,30,20,.88) 55%)"></div>
 <div style="position:absolute;left:90px;right:90px;bottom:120px;color:#fff;text-align:center">
 <div class="serif" style="font-style:italic;font-size:210px;line-height:.95">Merry Christmas</div>
@@ -32,7 +32,7 @@ const cards = {
 <div style="position:absolute;left:0;right:0;bottom:0;height:520px;background:linear-gradient(transparent,rgba(0,0,0,.75))"></div>
 <div style="position:absolute;left:0;right:0;bottom:120px;text-align:center;color:#fff">
 <div class="serif" style="font-style:italic;font-size:130px">Rudolph, by a nose.</div>
-<div style="font-weight:600;letter-spacing:14px;font-size:48px;color:#FF5A5A;margin-top:18px">MERRY CHRISTMAS</div></div>`,
+<div style="font-weight:600;letter-spacing:14px;font-size:52px;color:#F2CF5B;margin-top:18px">MERRY CHRISTMAS</div></div>`,
 '6-stewards-enquiry': `<div style="position:absolute;inset:0;background:#F3EDE5"></div>
 <div style="position:absolute;left:0;right:0;top:0;height:26px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:${metal}"></div>
 <div style="position:absolute;left:110px;right:110px;top:150px;bottom:150px;border:8px solid #1C1C1C;padding:70px 50px;text-align:center;color:#1C1C1C">
@@ -73,7 +73,7 @@ ${shade('bottom', 380, .7)}<div style="position:absolute;left:0;right:0;bottom:9
 '12-gingerbread-stakes': `<div style="position:absolute;inset:0;background:#B3202A"></div>
 <div style="position:absolute;left:80px;right:80px;top:330px;bottom:80px;background-image:url(${img('gingerbread.webp')});background-size:cover;background-position:center;border:14px solid #fff"></div>
 <div style="position:absolute;left:0;right:0;top:70px;text-align:center;color:#fff"><div style="font-weight:700;font-size:98px;line-height:1;white-space:nowrap">THE GINGERBREAD STAKES</div>
-<div class="serif" style="font-style:italic;font-size:70px;margin-top:10px;color:#FFE9A8">They're under starter's icing</div></div>`,
+<div class="serif" style="font-style:italic;font-size:70px;margin-top:10px;color:#FFE9A8">They're off, and they're delicious</div></div>`,
 '13-lucky-horseshoe': `${full('horseshoe.webp')}${shade('top', 420, .75)}
 <div style="position:absolute;left:0;right:0;top:80px;text-align:center;color:#F2CF5B"><div style="font-weight:700;font-size:128px;letter-spacing:6px;line-height:1">GOOD LUCK</div></div>
 ${shade('bottom', 460, .8)}<div style="position:absolute;left:0;right:0;bottom:100px;text-align:center;color:#fff"><div class="serif" style="font-style:italic;font-size:118px">and a Merry Christmas</div></div>`,
