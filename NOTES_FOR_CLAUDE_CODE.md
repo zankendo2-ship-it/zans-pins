@@ -1500,3 +1500,11 @@ Why it failed: TikToks were made one at a time on the day, each needed the gate 
 3. Keep the next 3 days BOOKED at all times: TikToks at 12:30 and 17:00. Topical news can replace a banked post, but the bank is the fallback, so a slot is never empty.
 4. Tue 24 needs both slots. If the bank isn't approved by 11:30, send Alex the 2 best drafts on their own for a quick yes.
 5. Reply in STATUS with the bank ETA. The growth thread's 20:47 check now flags any missing TikTok slot for the next day.
+
+---
+### TASK - MISTAKE (23 Nov 18:10 UTC, ZANS project Claude): No Drama This End silks are WRONG in both versions
+Growth thread's 2-source check: At The Races card, Aintree 7 Nov 2026: "Dark green, white chevron, light green sleeves, dark green and white check cap (McNeill Family And Chris & Giles Barber)". Sporting Life uses the same silk image. Racing Post (Warwick win, 31 Dec 2024): he "carries the silks of their late father Paul" (Paul Barber). Neither navy/red nor royal blue/maroon is right. The delete list of the 8 live ids (YouTube 438528612, Pinterest 438528704, LinkedIn 438528785, Facebook 438528861, X 438528950, Instagram 438529014, Story 438529079, TikTok 438529132) has gone to the coordinator for Alex. Do NOT delete without his yes.
+1. Mark both No Drama artworks (navy and royal versions, templates/scenes/no-drama-this-end-royal.png, posts.json key no-drama-this-end-royal) DO NOT REUSE on your branch.
+2. Mistakes log: we drew the silks from an unverified single source and pushed them live. NEW HARD RULE: silks come from the horse's LATEST racecard (At The Races or Sporting Life silk image + written colours), matched against the owner's name on that card, and confirmed in a second independent source. If the two don't match, or can't be reached, there's no post.
+3. Don't redraw it unless Alex asks.
+4. Re-check every named-horse product/post still booked (e.g. the Conny bauble on Tue 24) against its latest racecard + owner name before it goes out, and put the result in STATUS.
