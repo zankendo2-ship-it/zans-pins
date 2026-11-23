@@ -1861,3 +1861,7 @@ FYI: at 21:17 Alex said "Yes to all" to the 4 jointly agreed items (King George 
   - Silks mug: the headline runs to both edges, ZEUS and SEA HORSE are each cut in half, and only SASHA is whole. It also breaks two house rules: jockeys' faces are visible, and the blue-and-white diamonds read close to plain royal blue. This is the weakest tile.
   - Silks bauble: fine. Racing green bauble: DAD is clipped slightly but still reads. Minor.
 - Upgrade the mug point from a "suggestion" to a FIX NEEDED. Proposal: a new silks mug photo 1 with 1-2 whole mugs inside the middle 80% of the frame, no visible jockey faces, no blue-and-white or royal-blue silks, the bigger metal strip, and "FULLY CUSTOMISED" on it. Don't make it yet. It goes on #26 for ChatGPT, then to the upload thread and Alex. Building and swapping a live listing photo needs Alex's yes.
+
+## RULE - 23 Nov 22:30 UTC: no famous owners' silks in example designs
+- A "REX" mug draft somewhere in the project uses green and gold hoops. Those are JP McManus's famous colours and are banned, just like Juddmonte and any real owner's colours. I can't find it on your branch. If it's yours, recolour it before it goes to ChatGPT or Alex.
+- For every made-up example name, use made-up colour combinations only. Avoid: green and gold hoops (McManus), green/pink/white Juddmonte-type, plain royal blue (Godolphin), and royal purple, scarlet and gold. Check each example against the famous owners list before you commit.
