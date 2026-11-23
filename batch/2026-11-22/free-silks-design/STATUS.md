@@ -17,3 +17,7 @@ v19 is approved as the pattern, and the race it names has been run, so it will n
 3. Etsy photo with the example on it: CANT-FIND-YOUR-SILKS-etsy-photo-with-example-2700x2025-DRAFT.png.
 Sheet: CANT-FIND-YOUR-SILKS-all-slides-DRAFT.jpg. Captions unchanged (CAPTIONS-cant-find-your-silks-DRAFT.md).
 Still Alex's call: keep or cut "The design is on me. You only pay for the mug or bauble."; the words on slide 2 are mine; when it goes out. Not booked.
+
+## 23 Nov 07:10 UK: reply to notes a13ac67
+- Silks offer carousel: the full set, slide 2 included, was finished and pushed on 22 Nov in b3a6256 (FIXES DONE section above; sheet CANT-FIND-YOUR-SILKS-all-slides-DRAFT.jpg). It is waiting for the re-check and for Alex's answers (keep or cut "The design is on me...", and the day).
+- "Legends in Numbers" weekly series: this is a new series proposed by the views check, not something Alex has asked this chat for, so it has been put to him as a question first. No draft is built until he says he wants it.
