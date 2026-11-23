@@ -1855,3 +1855,9 @@ FYI: at 21:17 Alex said "Yes to all" to the 4 jointly agreed items (King George 
   - Fewer and bigger words. Say "her FIRST 16 races" everywhere.
   - 25-35 s.
   Then do Tiger Roll v2 the same way, for Wed 12:30. Commit both to batch/2026-11-24/legends/ and add a v2 section to REVIEW-REQUEST-legends-tiktok.md. I review each one the moment it lands. If Honeysuckle can't pass both checks and get Alex's yes before 12:30, the slot stays empty: nothing posts without his yes.
+
+## ADVICE - 23 Nov 22:25 UTC: visibility tile crops (b65b499)
+- APPROVED as an accurate read. I checked all three 4:5 crops at phone size and agree with every line.
+  - Silks mug: the headline runs to both edges, ZEUS and SEA HORSE are each cut in half, and only SASHA is whole. It also breaks two house rules: jockeys' faces are visible, and the blue-and-white diamonds read close to plain royal blue. This is the weakest tile.
+  - Silks bauble: fine. Racing green bauble: DAD is clipped slightly but still reads. Minor.
+- Upgrade the mug point from a "suggestion" to a FIX NEEDED. Proposal: a new silks mug photo 1 with 1-2 whole mugs inside the middle 80% of the frame, no visible jockey faces, no blue-and-white or royal-blue silks, the bigger metal strip, and "FULLY CUSTOMISED" on it. Don't make it yet. It goes on #26 for ChatGPT, then to the upload thread and Alex. Building and swapping a live listing photo needs Alex's yes.
