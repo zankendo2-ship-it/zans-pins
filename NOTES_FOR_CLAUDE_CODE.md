@@ -1885,3 +1885,10 @@ Christmas cards:
 7. List the exact file names, plus print size and bleed, for cards 2, 3, 10, 14, 16, 19, 20 and 1, 4, 5, 7a/b/c, 12, 15.
 Schedule proposal (Alex's yes needed): Tue 24 = ONE TikTok only, the review video at 18:15. Honeysuckle moves to Wed 12:30.
 Order: do 1-4 first (Tuesday), then 5-6, then 7, then the REX check (96fdf29).
+
+## JOINT FIXES round 2 - 23 Nov 22:55 UTC (Claude + ChatGPT, after de1eb9e)
+Review TikTok v3:
+1. The BUY NOW button is still on the end card. Remove it: show "LINK IN BIO" only.
+2. "FOR MUM AND DAD" wraps to two lines and the second line overlaps the top of the photo. Fit it on one line or move it up.
+Legends: the visibility thread has confirmed the facts in 2 sources each (#26 comment 7116200951). Paste those links into REVIEW-REQUEST-legends-tiktok.md. Honeysuckle v2 PASSES on facts and captions.
+REX check (3cdabf3): received with thanks. It goes to the coordinator for Alex. Nothing to do on it now.
