@@ -18,5 +18,6 @@ Weak points: the review card holds still for 13.7 s (only the voice moves it alo
 
 Proposed slots (for Alex's yes): Tue 24 Nov 12:30 Honeysuckle, 17:00 this review post, Tiger Roll to Wed 25 Nov 12:30, Constitution Hill bauble TikTok off Tuesday.
 
-## UPDATE: thicker metal strip (RULE 187e816)
-The video now carries the new 36px strip (was 28px, about 30% thicker, same artwork scaled): `templates/assets/metal-strip-36px-9x16.png`. Before and after at phone size: `metal-strip-before-28px-after-36px-phone-size.png`. Not yet done: the strip heights inside `render.js`, `guide_cards.js`, the Christmas cards and the Etsy photo templates; each is raised when next rebuilt.
+
+## UPDATE: strip size (note 2f22298)
+The video keeps the 28px strip, which meets the settled size (about 2.4% of the short side = 26px on 1080). The 36px video strip I made first was too thick and is removed. Christmas cards with strips (4, 6, 7, 19) are raised from 26px to 36px.

@@ -22,8 +22,8 @@ const cards = {
 <div class="serif" style="font-style:italic;font-size:92px;color:#B3202A;margin-top:14px">I'd rather wear my silks.</div></div>`,
 '4-boxing-day': `<div style="position:absolute;inset:0;background:#1F5A3D"></div>
 <div style="position:absolute;left:0;right:0;top:0;height:1500px;background-image:url(${img('boxing.webp')});background-size:cover;background-position:center 30%"></div>
-<div style="position:absolute;left:0;right:0;top:1500px;height:26px;background:${metal}"></div>
-<div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:${metal}"></div>
+<div style="position:absolute;left:0;right:0;top:1500px;height:36px;background:${metal}"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:36px;background:${metal}"></div>
 <div style="position:absolute;left:0;right:0;top:1610px;text-align:center;color:#fff">
 <div style="font-weight:700;font-size:205px;line-height:.9;letter-spacing:4px;white-space:nowrap;color:#F2CF5B">BOXING DAY</div>
 <div class="serif" style="font-style:italic;font-size:86px;margin-top:26px">The best day of Christmas</div></div>`,
@@ -34,7 +34,7 @@ const cards = {
 <div class="serif" style="font-style:italic;font-size:130px">Rudolph, by a nose.</div>
 <div style="font-weight:600;letter-spacing:14px;font-size:52px;color:#F2CF5B;margin-top:18px">MERRY CHRISTMAS</div></div>`,
 '6-stewards-enquiry': `<div style="position:absolute;inset:0;background:#F3EDE5"></div>
-<div style="position:absolute;left:0;right:0;top:0;height:26px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:${metal}"></div>
+<div style="position:absolute;left:0;right:0;top:0;height:36px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:36px;background:${metal}"></div>
 <div style="position:absolute;left:110px;right:110px;top:150px;bottom:150px;border:8px solid #1C1C1C;padding:70px 50px;text-align:center;color:#1C1C1C">
 <div style="font-weight:600;letter-spacing:14px;font-size:44px">OFFICIAL NOTICE · 25 DEC</div>
 <div style="height:8px;background:#1C1C1C;margin:44px 0"></div>
@@ -47,8 +47,8 @@ const cards = {
 <div class="serif" style="font-style:italic;font-size:66px;margin-top:44px;color:#5E574F">Merry Christmas</div></div>`,
 };
 for (const k of ['a', 'b', 'c']) cards[`7-your-own-silks-example-${k}`] = `<div class="bg" style="background-image:url(${img(`silks-${k}.png`)})"></div>
-<div style="position:absolute;left:0;right:0;top:0;height:26px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:${metal}"></div>
-<div style="position:absolute;left:0;right:0;top:26px;height:330px;background:linear-gradient(rgba(243,237,229,.97) 80%,transparent)"></div><div style="position:absolute;left:0;right:0;top:64px;text-align:center;color:#1F5A3D">
+<div style="position:absolute;left:0;right:0;top:0;height:36px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:36px;background:${metal}"></div>
+<div style="position:absolute;left:0;right:0;top:36px;height:330px;background:linear-gradient(rgba(243,237,229,.97) 80%,transparent)"></div><div style="position:absolute;left:0;right:0;top:64px;text-align:center;color:#1F5A3D">
 <div style="font-weight:600;letter-spacing:14px;font-size:42px">MERRY CHRISTMAS FROM</div>
 <div style="font-weight:700;font-size:136px;line-height:1.05;margin-top:2px">${{ a: 'THE SYNDICATE', b: 'GRANDAD', c: 'TEAM LUCKY' }[k]}</div></div>
 <div style="position:absolute;left:0;right:0;bottom:0;height:560px;background:linear-gradient(transparent,rgba(20,50,35,.85) 60%)"></div>
@@ -91,7 +91,7 @@ ${shade('bottom', 420, .8)}<div style="position:absolute;left:0;right:0;bottom:1
 <div style="position:absolute;left:0;right:0;top:120px;text-align:center;color:#fff;text-shadow:0 3px 24px rgba(90,30,10,.55)"><div style="font-weight:600;letter-spacing:18px;font-size:48px">PEACE ON THE GALLOPS</div>
 <div class="serif" style="font-style:italic;font-size:170px;line-height:1;margin-top:16px">Merry Christmas</div></div>`,
 '19-christmas-day-racecard': `<div style="position:absolute;inset:0;background:#1F5A3D"></div>
-<div style="position:absolute;left:0;right:0;top:0;height:26px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:${metal}"></div>
+<div style="position:absolute;left:0;right:0;top:0;height:36px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:36px;background:${metal}"></div>
 <div style="position:absolute;left:100px;right:100px;top:120px;color:#fff">
 <div style="font-weight:600;letter-spacing:14px;font-size:44px;color:#F2CF5B">TODAY'S CARD · 25 DECEMBER</div>
 <div style="font-weight:700;font-size:168px;line-height:.95;margin-top:16px">CHRISTMAS<br>DAY RUNNERS</div>
