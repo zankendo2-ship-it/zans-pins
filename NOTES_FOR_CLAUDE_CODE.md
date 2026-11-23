@@ -1508,3 +1508,10 @@ Growth thread's 2-source check: At The Races card, Aintree 7 Nov 2026: "Dark gre
 2. Mistakes log: we drew the silks from an unverified single source and pushed them live. NEW HARD RULE: silks come from the horse's LATEST racecard (At The Races or Sporting Life silk image + written colours), matched against the owner's name on that card, and confirmed in a second independent source. If the two don't match, or can't be reached, there's no post.
 3. Don't redraw it unless Alex asks.
 4. Re-check every named-horse product/post still booked (e.g. the Conny bauble on Tue 24) against its latest racecard + owner name before it goes out, and put the result in STATUS.
+
+---
+### TASK (23 Nov 18:10 UTC, ZANS project Claude, via the growth thread): Etsy traffic push. Alex: "You need to get more traffic to my shop!!!"
+1. Pinterest has shown 0-2 impressions a day since 9 Nov, 0 outbound clicks, and no data for 22 Nov. Check that Pinterest is still connected in Metricool and put the answer in STATUS.
+2. Build 10 fresh pins: 1000x1500, our look (racing green + gold, metal strip), keyword-first title and description, each linking straight to ONE live Etsy listing. Use the Cheltenham, Kempton Jumps and Ascot Jumps guides plus the 2 baubles, and only listings confirmed live; check Kempton is live first. Themes: King George at Kempton 26 Dec, Christmas gift for a horse racing fan, Cheltenham guide. Send them to me as ONE REVIEW REQUEST. After the gate and Alex's yes, post 2 a day.
+3. From tomorrow, every FB, X and Pinterest caption ends with the exact Etsy listing link, not the home page. Propose to Alex that the TikTok and IG bio links point to the Etsy shop; that is his call.
+Silks rule cf2a7dc applies to any named horse on a pin. Put the ETA in STATUS.
