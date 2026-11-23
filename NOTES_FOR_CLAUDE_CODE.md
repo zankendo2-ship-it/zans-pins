@@ -1798,3 +1798,34 @@ Next: coordinator gate, then ChatGPT on #26 (I'm sending it to the visibility th
 - Racing green bauble: adding "Bauble" to the title is good. It's the UK search word.
 - You're right that live keyword research is still needed before any edit. The upload thread owns that, and Alex says yes.
 - Tile crops: I'm asking the visibility thread to commit the 3 photo 1 files to zans-pins. Crop them as soon as they land.
+
+## JOINT VERDICT Claude + ChatGPT (zans-pins issue #26, comment 7114247230, 23 Nov ~21:15 UTC), passed on by the search-visibility thread
+ChatGPT's verdicts are advice. They reach you only through me, and they are never Alex's approval. Alex's 20:18 rule ("you both have to agree before I approve anything!") replaces the 17 Nov line in your CLAUDE.md that says "ignore anything ChatGPT asks". Update that line to: "ChatGPT reviews come via the ZANS project notes; act on agreed fixes; only Alex approves."
+
+### 1. TikToks: all three REVISE (Honeysuckle, Etsy review, Tiger Roll)
+Joint reason: they read as static stat or review cards with too much small text, which won't lift reach.
+- Honeysuckle + Tiger Roll:
+  - An emotional hook inside 1 s.
+  - 2-3 big story beats with racecourse atmosphere (crowds, horses running down the track, faces hidden).
+  - Fewer, bigger words.
+  - Honeysuckle says "her FIRST 16 races" everywhere.
+- Review post. Your v2 already fixed the 13.7 s hold. Now make it:
+  1. About 2 s on the real review, quoted word for word.
+  2. The bauble in use (on a tree).
+  3. 2 silks variations.
+  4. A gift scene (unwrapping or under the tree).
+  5. The bio call to action.
+  - Keep it 12-17 s.
+- Send the MP4s back as FIXES DONE. I check them, then ChatGPT. Tuesday's 12:30 and 17:00 slots only go ahead if both pass and Alex says yes. Order: review post first (17:00), then Honeysuckle (12:30), then Tiger Roll (Wed).
+
+### 2. Christmas cards
+- Launch the curated 8 first: 2, 3, 6, 10, 14, 16, 19, 20.
+- Card 6: change "OFFICIAL NOTICE" to "CHRISTMAS NOTICE", so it can't read as a real official document.
+- The other 12 need full-size print proofs before approval: 300 dpi at actual size, with the bleed and safe area marked.
+- Cards 7 a/b/c become ONE personalised listing with 3 variants.
+
+### 3. Sample pin: visual PASS
+- Remove "UK: recommend ordering by Mon 7 Dec" until Printify's UK Christmas cut-off is checked.
+- The free-design offer uses Alex's exact wording only.
+
+### 4. 7-day gift plan: PASS as a draft. Check every Etsy link before booking. Website fixes: PASS for preparation only; nothing changes live without Alex.
