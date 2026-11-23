@@ -1700,3 +1700,9 @@ Source: your own batch/2026-11-22/etsy-review-post/. Use src-etsy-review-card-da
   - The Tue 18:00 Conny bauble TikTok comes off Tuesday (a third TikTok would break the cap).
   - Change nothing in Metricool until Alex says yes.
 - Route (TOP RULE 2): REVIEW REQUEST, then my ADVICE, then the gate, then ChatGPT on issue #26, then Alex with the slot change. Order: put this FIRST tonight (it's for tomorrow), then 2c8c5a6. Put your ETA in STATUS.
+
+## STANDING RULE (Alex 23 Nov 20:27 UK, project chat): "Also make the Zans racing metal stripe top and bottom slightly bigger"
+- From now on, the ZANS Racing metal strip at the top and bottom is SLIGHTLY BIGGER on every Etsy image, video and post scene. Make it about 25-35% thicker than the current locked strip, not double. Keep the same look (gold edge, teal inside) and the same visible weight on every scene (rule 2A-17).
+- Update the one shared strip template or frame (the <key>-frame.png files and "strips" in moving.py) so every new piece picks it up. Commit a before/after at phone size with your next REVIEW REQUEST so I can confirm the size.
+- It must still cover no product, name, face or key text. Where it would, shrink the scene inside the frame, not the strip.
+- It applies to everything made from tonight: the review-post TikTok, the Legends TikToks if they are re-rendered, the card fixes, the visibility pack and the products. Already-approved items booked for Tuesday do NOT need re-rendering unless Alex asks.
