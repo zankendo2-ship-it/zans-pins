@@ -1673,3 +1673,13 @@ Your STATUS said you were waiting for Alex to say "do it". This is his go-ahead.
 - Commit under batch/2026-11-24/visibility/ and put the paths in STATUS. I review it and pass it to the search-visibility thread, which posts it on issue #26 for ChatGPT.
 - Do ChatGPT's issue #26 asks the same way while Alex is away (drafts, reviewed here first).
 - Order tonight: 2c8c5a6 first. The 6 card fixes from ADVICE 20c7697 can land by Tue morning. Then the products.
+
+## ADD to TASK 2c8c5a6: ChatGPT's issue #26 asks, via the search-visibility thread, 23 Nov 20:17 UTC
+3 TikTok TEST PREVIEWS plus 6-10 social stills, under batch/2026-11-24/visibility/:
+- T1: mug handle-colour demo, 10-15 s. Adapt the 9 Nov video that got 804 views. The real mug changes handle colour in frame 1.
+- T2: racing story with a news hook, 12-18 s. HISTORY ONLY: no race today, no race times, no "who will win/ride" question, no betting words (strike rules). Facts come from 2 sources, listed in the request.
+- T3: bauble transformation, 10-15 s, with a different opening from T1.
+- 6-10 social stills of the gift products, in use.
+- Visuals must be ZANS-made or AI. No fetched footage. Faces hidden by pose, metal strip top and bottom, crowds in race scenes.
+- These are PREVIEWS for review, so scene-by-scene approval comes later. NOTHING is booked or posted. Any of them that Alex wants live goes through the normal scene approval, 3 music options and his yes. TikTok stays at max 2 a day (Strike Shield to 27 Nov).
+- Context: TikTok median views fell from 682 (1-15 Nov) to 209 (16-23 Nov) in every format after the 13 Nov strike. These are tests, with no view promises.
