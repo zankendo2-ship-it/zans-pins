@@ -1,0 +1,377 @@
+{
+ "chrome": "156.0.8078.47",
+ "run_utc": "2026-11-05T00:22:20.913Z",
+ "hero": [
+  {
+   "page": "/horse-racing-gifts/",
+   "width": 390,
+   "layout": "below",
+   "expect": "below",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 16,
+    "top": 208,
+    "right": 374,
+    "bottom": 812,
+    "width": 358
+   },
+   "img": {
+    "left": 16,
+    "top": 848,
+    "right": 374,
+    "bottom": 1468,
+    "width": 358
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 390
+  },
+  {
+   "page": "/horse-racing-gifts/",
+   "width": 1024,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 16,
+    "top": 171,
+    "right": 494,
+    "bottom": 717,
+    "width": 478
+   },
+   "img": {
+    "left": 530,
+    "top": 134,
+    "right": 1008,
+    "bottom": 754,
+    "width": 478
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 1024
+  },
+  {
+   "page": "/horse-racing-gifts/",
+   "width": 1280,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 126,
+    "top": 171,
+    "right": 622,
+    "bottom": 717,
+    "width": 496
+   },
+   "img": {
+    "left": 658,
+    "top": 134,
+    "right": 1154,
+    "bottom": 754,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 1280
+  },
+  {
+   "page": "/horse-racing-gifts/",
+   "width": 1440,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 206,
+    "top": 171,
+    "right": 702,
+    "bottom": 717,
+    "width": 496
+   },
+   "img": {
+    "left": 738,
+    "top": 134,
+    "right": 1234,
+    "bottom": 754,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 1440
+  },
+  {
+   "page": "/horse-racing-gifts/",
+   "width": 1920,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 446,
+    "top": 171,
+    "right": 942,
+    "bottom": 717,
+    "width": 496
+   },
+   "img": {
+    "left": 978,
+    "top": 134,
+    "right": 1474,
+    "bottom": 754,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 1920
+  },
+  {
+   "page": "/gifts-for-racehorse-owners/",
+   "width": 390,
+   "layout": "below",
+   "expect": "below",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 16,
+    "top": 225,
+    "right": 374,
+    "bottom": 829,
+    "width": 358
+   },
+   "img": {
+    "left": 16,
+    "top": 865,
+    "right": 374,
+    "bottom": 1485,
+    "width": 358
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 390
+  },
+  {
+   "page": "/gifts-for-racehorse-owners/",
+   "width": 1024,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 16,
+    "top": 143,
+    "right": 494,
+    "bottom": 745,
+    "width": 478
+   },
+   "img": {
+    "left": 530,
+    "top": 134,
+    "right": 1008,
+    "bottom": 754,
+    "width": 478
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 1024
+  },
+  {
+   "page": "/gifts-for-racehorse-owners/",
+   "width": 1280,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 126,
+    "top": 143,
+    "right": 622,
+    "bottom": 745,
+    "width": 496
+   },
+   "img": {
+    "left": 658,
+    "top": 134,
+    "right": 1154,
+    "bottom": 754,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 1280
+  },
+  {
+   "page": "/gifts-for-racehorse-owners/",
+   "width": 1440,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 206,
+    "top": 143,
+    "right": 702,
+    "bottom": 745,
+    "width": 496
+   },
+   "img": {
+    "left": 738,
+    "top": 134,
+    "right": 1234,
+    "bottom": 754,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 1440
+  },
+  {
+   "page": "/gifts-for-racehorse-owners/",
+   "width": 1920,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 446,
+    "top": 143,
+    "right": 942,
+    "bottom": 745,
+    "width": 496
+   },
+   "img": {
+    "left": 978,
+    "top": 134,
+    "right": 1474,
+    "bottom": 754,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero-600.webp",
+   "page_width": 1920
+  },
+  {
+   "page": "/racing-syndicate-gifts/",
+   "width": 390,
+   "layout": "below",
+   "expect": "below",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 16,
+    "top": 225,
+    "right": 374,
+    "bottom": 797,
+    "width": 358
+   },
+   "img": {
+    "left": 16,
+    "top": 833,
+    "right": 374,
+    "bottom": 993,
+    "width": 358
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-trio-800.webp",
+   "page_width": 390
+  },
+  {
+   "page": "/racing-syndicate-gifts/",
+   "width": 1024,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 16,
+    "top": 134,
+    "right": 494,
+    "bottom": 648,
+    "width": 478
+   },
+   "img": {
+    "left": 530,
+    "top": 285,
+    "right": 1008,
+    "bottom": 497,
+    "width": 478
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-trio-800.webp",
+   "page_width": 1024
+  },
+  {
+   "page": "/racing-syndicate-gifts/",
+   "width": 1280,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 126,
+    "top": 134,
+    "right": 622,
+    "bottom": 648,
+    "width": 496
+   },
+   "img": {
+    "left": 658,
+    "top": 281,
+    "right": 1154,
+    "bottom": 501,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-trio-800.webp",
+   "page_width": 1280
+  },
+  {
+   "page": "/racing-syndicate-gifts/",
+   "width": 1440,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 206,
+    "top": 134,
+    "right": 702,
+    "bottom": 648,
+    "width": 496
+   },
+   "img": {
+    "left": 738,
+    "top": 281,
+    "right": 1234,
+    "bottom": 501,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-trio-800.webp",
+   "page_width": 1440
+  },
+  {
+   "page": "/racing-syndicate-gifts/",
+   "width": 1920,
+   "layout": "beside",
+   "expect": "beside",
+   "ok": true,
+   "sideways_scroll": false,
+   "text": {
+    "left": 446,
+    "top": 134,
+    "right": 942,
+    "bottom": 648,
+    "width": 496
+   },
+   "img": {
+    "left": 978,
+    "top": 281,
+    "right": 1474,
+    "bottom": 501,
+    "width": 496
+   },
+   "img_src": "https://www.zanshorseracing.co.uk/img/silks-mugs-trio-800.webp",
+   "page_width": 1920
+  }
+ ],
+ "designer": {
+  "tailwind_cdn_script": false,
+  "built_in_css": true,
+  "canvas": true,
+  "fallback_message_shown": false,
+  "draws_while_idle_5s": 0,
+  "three_requests": 1,
+  "errors": [],
+  "ok": true
+ },
+ "all_ok": true
+}

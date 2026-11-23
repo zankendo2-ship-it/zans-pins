@@ -1,0 +1,6 @@
+- A_desktop.json: perf 88 | FCP 1.5 s | LCP 1.6 s | TBT 100 ms | CLS 0 | SI 1.5 s | TTI 1.6 s
+- A_mobile.json: perf 30 | FCP 6.8 s | LCP 7.6 s | TBT 10,950 ms | CLS 0 | SI 6.8 s | TTI 20.0 s
+- B_desktop.json: perf 95 | FCP 0.6 s | LCP 1.4 s | TBT 100 ms | CLS 0 | SI 0.7 s | TTI 1.5 s
+- B_mobile.json: perf 39 | FCP 3.3 s | LCP 7.5 s | TBT 13,270 ms | CLS 0 | SI 3.3 s | TTI 19.5 s
+- live_desktop.json: perf 78 | FCP 1.5 s | LCP 1.6 s | TBT 90 ms | CLS 0.209 | SI 1.5 s | TTI 1.7 s
+- live_mobile.json: perf 27 | FCP 7.9 s | LCP 8.5 s | TBT 5,800 ms | CLS 0.01 | SI 7.9 s | TTI 16.5 s
