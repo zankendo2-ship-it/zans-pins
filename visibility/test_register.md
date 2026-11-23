@@ -15,3 +15,13 @@ TikTok rules in force (2 strikes): no race-today posts, no race times, no win/st
 
 
 Pending copy change (joint REVISE, needs Alex yes): gifts page delivery text - remove 'order by Mon 7 Dec'; replace '£14.99 plus postage' with 'Made to order - see Etsy checkout for the current delivery estimate'; free UK/IE delivery only once checkout confirms.
+
+E3 baseline (Etsy API readback by upload thread, 23 Nov 22:52 UTC; API has no date-range visits/views -> views = lifetime, favourites = current, orders/items/item revenue = receipts 24 Oct-23 Nov, item price only):
+| Listing | Role | Lifetime views | Favourites | Orders / items / item revenue (24 Oct-23 Nov) |
+|---|---|---|---|---|
+| 4611232428 silks bauble | TEST | 21 | 1 | 0 |
+| 4611213915 racing green bauble | TEST | 64 | 1 | 3 / 4 / £51.96 |
+| 4608193933 silks mug | control | 57 | 0 | 1 / 1 / £0.20 (likely discounted/test order, unchecked) |
+| 4609859882 Christmas silks mug | control | 3 | 0 | 0 |
+| 4612435420 white mug | control | 6 | 0 | 0 |
+Readings on 30 Nov + 7 Dec = change in lifetime views + favourites, orders since 23 Nov 21:30 UTC. True 30-day visits need Alex's Etsy Stats (phone).
