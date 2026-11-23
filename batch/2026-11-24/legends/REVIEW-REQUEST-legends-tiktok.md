@@ -18,6 +18,6 @@ Note: Red Rum is named in a history comparison only, with nothing sold.
 ## Fixes after ADVICE 605609f (23 Nov, 18:20 UTC)
 - [x] Tiger Roll end card held 1.2 s longer; video is now about 25.9 s.
 - [x] Honeysuckle sources (first 16 races unbeaten, 19 races, 13 Grade 1s), as found by the research helper and the search of 23 Nov:
-  1. https://www.horseandhound.co.uk/features/honeysuckle-racehorse-unbeaten-mare-770725
+  1. (removed: the Horse & Hound piece is from Dec 2021 and out of date; the reviewer replaced it with the Irish Field, a general reference page and a form profile, which the reviewer opened and checked on 23 Nov, note eb8bd64)
   2. https://www.theirishfield.ie/breeding-insights-farewell-champ-you-are-a-true-great-754349
   Note: I could not open these pages myself from this session (network block); the figures came from the helper's reading and should be opened once by the reviewer before the post goes live.
