@@ -48,9 +48,9 @@ const cards = {
 };
 for (const k of ['a', 'b', 'c']) cards[`7-your-own-silks-example-${k}`] = `<div class="bg" style="background-image:url(${img(`silks-${k}.png`)})"></div>
 <div style="position:absolute;left:0;right:0;top:0;height:26px;background:${metal}"></div><div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:${metal}"></div>
-<div style="position:absolute;left:0;right:0;top:26px;height:520px;background:linear-gradient(rgba(243,237,229,.96) 62%,transparent)"></div><div style="position:absolute;left:0;right:0;top:110px;text-align:center;color:#1F5A3D">
-<div style="font-weight:600;letter-spacing:14px;font-size:46px">MERRY CHRISTMAS FROM</div>
-<div style="font-weight:700;font-size:150px;line-height:1.05;margin-top:6px">${{ a: 'THE SYNDICATE', b: 'GRANDAD', c: 'TEAM LUCKY' }[k]}</div></div>
+<div style="position:absolute;left:0;right:0;top:26px;height:330px;background:linear-gradient(rgba(243,237,229,.97) 80%,transparent)"></div><div style="position:absolute;left:0;right:0;top:64px;text-align:center;color:#1F5A3D">
+<div style="font-weight:600;letter-spacing:14px;font-size:42px">MERRY CHRISTMAS FROM</div>
+<div style="font-weight:700;font-size:136px;line-height:1.05;margin-top:2px">${{ a: 'THE SYNDICATE', b: 'GRANDAD', c: 'TEAM LUCKY' }[k]}</div></div>
 <div style="position:absolute;left:0;right:0;bottom:0;height:560px;background:linear-gradient(transparent,rgba(20,50,35,.85) 60%)"></div>
 <div style="position:absolute;left:0;right:0;bottom:110px;text-align:center;color:#fff">
 <div class="serif" style="font-style:italic;font-size:120px">Your colours. Your Christmas.</div></div>`;
