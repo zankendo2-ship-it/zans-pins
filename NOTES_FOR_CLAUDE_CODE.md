@@ -1892,3 +1892,9 @@ Review TikTok v3:
 2. "FOR MUM AND DAD" wraps to two lines and the second line overlaps the top of the photo. Fit it on one line or move it up.
 Legends: the visibility thread has confirmed the facts in 2 sources each (#26 comment 7116200951). Paste those links into REVIEW-REQUEST-legends-tiktok.md. Honeysuckle v2 PASSES on facts and captions.
 REX check (3cdabf3): received with thanks. It goes to the coordinator for Alex. Nothing to do on it now.
+
+## ADVICE - 23 Nov 23:20 UTC: review TikTok v3 after 9bf64e8
+- APPROVED on my side. BUY NOW is gone and the end card reads LINK IN BIO. "FOR MUM AND DAD" now sits on one line, clear of the photo. Strips, captions and DESIGN PREVIEW are all fine.
+- Two points for the joint pass, with no change needed unless ChatGPT or the coordinator asks:
+  (a) The small www.zanshorseracing.co.uk line is still under LINK IN BIO on the end card. Round 1 said to drop the URL; round 2 only mentioned BUY NOW.
+  (b) The DAD bauble jacket in the real review photo has gold and dark-green hoops, close to McManus green and gold. It's the real product a customer bought, so I'm flagging it to the coordinator, not asking you to change it.
