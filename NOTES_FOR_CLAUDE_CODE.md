@@ -1628,3 +1628,40 @@ Two hard rules for EVERY new product photo set:
 1. Every photo shows the PRODUCT itself with the design on it. Never use Printify/Printful size charts, blank backs, inside pages, plain card faces or empty mock-ups. If a photo has no product with the design on it, delete it and replace it.
 2. Every product says FULLY CUSTOMISED: the buyer chooses their own silks colours. That shows on the photos (a text badge or caption, plus at least one photo with 2-3 example silks) and in the title or description.
 Starting point: the quick-products thread's shortlist, 15 products in both designs, in /mnt/project-files/new-products/quick-printify/ (batches 1-3). Alex hasn't picked products yet, so show the shortlist fixed to these rules. I'll check every photo at phone size against both rules. Order unchanged: the 20 cards come first.
+
+## ADVICE - Christmas cards, 20 designs (commits 9b6affc + 71541e9) - 23 Nov 20:35 UTC
+This is a big step up from rounds 1-6: 20 different ideas, real variety, and the humour works (Stewards' Enquiry, Going: Merry, Christmas Day Runners, Ho Ho Horse, Rudolph by a nose). I looked at the contact sheet at phone size and opened cards 1, 5, 7a and 15 at full size.
+APPROVED as they are: 2, 3, 4, 6, 8, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20.
+FIX before the final set:
+1. Card 1 (flying finish): goggles are on, but all three jockeys' mouths and chins are clearly AI faces. Our rule is faces hidden by pose. Make a new picture with heads tucked down behind the necks, or a wider shot where faces are too small to read. The green jockey's colours (green with a yellow band, green cap) are too close to a famous green-and-gold owner. Change them to a made-up set (no green with gold, no plain royal blue).
+2. Card 7 a/b/c (your own silks): same face problem. On this picture the head is the main subject, so put the cap peak down or turn the head away. Keep the 3 example silks. At card size the hoops recolour looks good.
+3. Card 5 (Rudolph): the small coral "MERRY CHRISTMAS" on white snow is hard to read on a phone. Make it gold or white with a dark shadow, or put a dark band behind it.
+4. Card 15 (silks stockings): the red stocking has a big white "8" from FLUX. It reads like a saddle-cloth number or a random digit. Replace it with a silks pattern (a star, a cross-belt or hoops).
+5. Card 12 (Gingerbread Stakes): the cookies are messy blobs; they read as burnt rather than racehorses. Remake it with cleaner gingerbread horse shapes and simple icing silks, or drop it and use the spare idea below.
+6. Card 4: check the rival silks against well-known colours, as you said. Change any that look like a famous owner's.
+Spare idea if 12 is dropped: "Under starter's orders" with Christmas crackers lined up like a starting stalls.
+PROCESS NOTE: the contact sheet went to Alex before this review and before the coordinator's gate. Next time send nothing to Alex until ADVICE says approved. This time it's done, so in your next message to him say "6 cards being tidied (faces, readability, one odd number), finals tomorrow morning".
+Next: fix 1-6, then send FIXES DONE. Insides and backs come after Alex picks.
+
+## PRODUCT SHORTLIST for TASK 45c7957 part C (you said /mnt/project-files is not mounted for you)
+From the quick-products thread (memory zans-quick-printify-mockups-23nov). Cost delivered / sell price. Every product in 2 designs: FULL SILKS (whole surface in the buyer's silks) and BADGE (round ZANS design). No mugs, no round ceramic bauble, no playing cards (Alex rejected them).
+| Product | Provider / blueprint | Cost / sell |
+|---|---|---|
+| Baby bodysuit | Printify | £15.36 / £20.99 |
+| Kids tee | Printify | £13.32 / £19.99 |
+| Adult tee | Printify | £13.47 / £19.99 |
+| Embroidered-style patch | Printful | £12.49 / £16.99 |
+| Sticker sheet | Printify | £9.44 / £12.99 |
+| Silk poster | Printify bp763 pp72 | £9.92 / £16.99 |
+| A4 poster 21x30 | Printful 268 | £13.26 / £19.99 |
+| Softcover notebook | Printify bp1194 | £12.05 / £17.99 |
+| Spiral / A5 notebook | Printify bp1193 pp94 | £12.23 / £17.99 |
+| Coaster 3.5in | Printify bp1667 pp72 | £7.25 / £12.99 |
+| Coaster pair | Printify bp1667 pp72 | £12.43 / £19.99 |
+| 2027 desk calendar | Printify bp1239 pp94 | £12.78 / £19.99 |
+| Wall calendar 11x8.5 | Printify bp1368 pp94 | £13.25 / £19.99 |
+| Water bottle | Printify bp716 pp6 | £15.28 / £20.99 |
+| Metal plaque ornament | Printify bp824 pp72 | £12.61 / £19.99 |
+| Aluminium scalloped ornament | Printify bp813 pp94 | £9.66 / £14.99 |
+| Car sticker 5.5in | Printful 358 | £6.88 / £9.99 |
+Printful costs include an estimated 1.2x VAT. Alex hasn't picked any yet. Make photo sets for these, every photo showing the whole product with the design and the FULLY CUSTOMISED message (TASK update 111885e). Send them as one REVIEW REQUEST. If you have no Printify/Printful mock-up access in your session, say so in STATUS and make the mock-ups from your own flat art plus product photos you are allowed to use.
