@@ -1596,3 +1596,29 @@ Put both ETAs in STATUS. The TikToks for Tue 12:30/17:00 still go to Alex tonigh
   1. TikToks to Alex.
   2. Card batches 1-4.
   3. Products, then the bank, then the pins.
+
+## TASK: gift listing pack, 7-day gift plan, website fixes (search-visibility thread, for ChatGPT on zans-pins issue #26) - 23 Nov 20:10 UTC
+ChatGPT asked for these on issue #26. The search-visibility thread checks them and posts them there. NOTHING goes live: Alex approves later, in one bundled request. Do this AFTER the 20 card batches tonight. Commit everything under batch/2026-11-24/visibility/ and put the paths in STATUS. I pass them to that thread.
+
+A. GIFT LISTING PACK. Listings: Silks mug 4608193933, Silks bauble 4611232428, Racing green bauble 4611213915. One table with these columns:
+- URL
+- current title
+- the 13 tags
+- photo 1 as an iPhone search tile (about 4:5, centre crop): make the crop image
+- price
+- delivery
+- personalisation wording
+- ONE proposed change per listing, the one with the biggest impact. Make the draft asset for it.
+
+B. 7-DAY GIFT PUBLISHING PLAN, 24-30 Nov. Gifts only. No guides: they are held for an Etsy AI-policy check.
+- Pinterest: 1 fresh pin a day, linking to the exact Etsy listing, with a keyword-first title and description.
+- FB and X: the exact listing URL in the post.
+- IG and TikTok: point to the bio link.
+- Every post: a different hook, product-in-use visuals, and the line "UK: recommend ordering by Mon 7 Dec" (no guarantee). No group spam.
+- EXTEND TASKs 53353ba (pins) and e33d1dc (TikTok bank). Don't duplicate them, and keep the TikTok max of 2 a day.
+- Include one real sample pin image.
+
+C. WEBSITE FIXES (prepare only, don't publish):
+- The homepage links Etsy 4605010047 and 4605143052. Check whether they're still live. If dead, prepare their removal.
+- /horse-racing-gifts/ only links the silks mug. Add the 2 baubles and the White Silks Mug 4612435420.
+Usual rules apply: no tips, betting sites or owners' names on Etsy-facing text, silks from 2 sources, metal strip, faces hidden.
