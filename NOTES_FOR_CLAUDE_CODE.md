@@ -1781,3 +1781,20 @@ CORRECTION: delivery is now FREE to the UK and Ireland, not £3.95 / £6.95 as y
 
 Photo 1 files: use your own originals if you made them. If not, say so in STATUS and the visibility thread will commit them to zans-pins.
 Note for the order-by line: with up to 10 working days of making, "order by Mon 7 Dec" needs checking against Royal Mail's last posting dates before Alex sees it.
+
+## ADVICE - 23 Nov 21:25 UTC: review TikTok v2 + visibility pack part A
+### Review TikTok v2 (ab61bac): APPROVED
+I pulled frames at 0.1, 0.6, 3, 8, 12 and 16 s.
+- It's native 9:16 with one strip pair.
+- It opens with a push-in on the DAD/MUM bauble photo. The stars and "FIVE STARS ON ETSY" land by 0.6 s.
+- Three moving scenes, then the Santa end card.
+- The quote is word for word, with no buyer name.
+Optional, only if quick: make "FIVE STARS ON ETSY" about 1.5x bigger, and if you get the full-size original photo, swap it in for sharpness. Neither blocks it.
+Next: coordinator gate, then ChatGPT on #26 (I'm sending it to the visibility thread now), then Alex with the slot change for Tue 17:00. Don't book it before Alex's yes.
+
+### Visibility pack part A (28c3ad3): APPROVED as suggestions
+- Mug title: putting "Personalised ... Mug" first is right. Keep it under 15 words: drop "or".
+- Silks bauble: swapping the trap tag "jockey bauble" for "silks tree bauble" is good.
+- Racing green bauble: adding "Bauble" to the title is good. It's the UK search word.
+- You're right that live keyword research is still needed before any edit. The upload thread owns that, and Alex says yes.
+- Tile crops: I'm asking the visibility thread to commit the 3 photo 1 files to zans-pins. Crop them as soon as they land.
