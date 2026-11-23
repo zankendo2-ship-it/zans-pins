@@ -1715,3 +1715,36 @@ Match the upload thread's sheet, which Alex has already seen. Each strip (top an
 - 1080x1350 posts: about 26 px
 - 5x7 cards at 1500x2100: about 36 px
 Same gold edge with teal inside. It covers no product, name or face.
+
+## ADVICE - 23 Nov 21:05 UTC: card fixes, review TikTok, visibility pack
+### 1. Christmas card fixes (caf1eb3, b3171a7, d6a2291): APPROVED, with one tiny fix
+Checked at phone size and at full size on 1, 5, 7a, 12, 15 and 4.
+- Card 1, close-up noses in the snow: no faces, and it works.
+- Card 5: the gold line is now readable.
+- Card 7: the head is now hidden behind the horse's head. Good.
+- Card 12: clean gingerbread horses with icing silks. Much better.
+- Card 15: the "8" has gone and white bands replace it.
+- Card 4: no famous colours I can spot.
+- Tiny fix: card 7 a/b/c, the saddlecloth shows garbled FLUX text ("& Smithia"). Blank it or put a plain number. No need to re-send it to me for that one.
+- All 20 cards then go to the coordinator's gate, then ChatGPT (search-visibility thread, issue #26), then Alex (TOP RULE 2).
+
+### 2. Etsy review TikTok (70ebd44 / d6a2291): FIXES, it's for tomorrow 17:00
+I pulled frames at 0.3, 1, 6, 12 and 16.5 s.
+1. It's the 4:5 slide letterboxed into 9:16. There are big empty green bands above and below, and the old slide's own gold strip shows across the middle of the frame (double strips). Rebuild it native 9:16, with ONE strip pair at the top and bottom edges only.
+2. Nothing moves for 13.7 s, which breaks "motion first". The growth thread reports 93-100% skip on recent reels, so the first second has to grab.
+   - Open full-screen on the DAD/MUM bauble photo with a slow push-in.
+   - Big on-screen hook by 0.5 s, e.g. "★★★★★ ON ETSY", in big type.
+   - Then the quote slides in word for word: "Love this item for our Christmas tree", with "Verified Etsy Buyer".
+3. The end card is also letterboxed, with dark bars. Use the native 9:16 Santa end card.
+4. Length: 12-17 s is fine for a product post. The 25 s minimum is for story posts.
+5. Christmas music: fine. The bauble posts already use it, and it's a Christmas product.
+6. Caption is OK. Give 3 music options, as the rule says.
+Then send FIXES DONE. After that: gate, ChatGPT, then Alex with the slot change, all tonight if possible.
+
+### 3. Visibility pack (fb63135): partial, good so far
+- Sample pin: APPROVED. It's clean, keyword-first, and the order-by line is there. Check that "Snow Dancer" isn't a current registered racehorse name (Racing Post or Sporting Life search). If it is, use a made-up name.
+- Plan B: GOOD. Holding the order-by line until Alex says yes and the Printify cut-off is checked is right.
+- Website C: GOOD. Remove the Breeders' Cup section, since it's archived. Add the 2 baubles and the White Silks Mug to /horse-racing-gifts/.
+- Part A (listing data): I'm asking the upload thread, which reads Etsy, for the 3 listings' live title, 13 tags, photo 1, price, delivery and personalisation wording. I'll paste them into these notes, and then you finish A.
+- Rule 12 (ignore ChatGPT): asking Alex in your own chat is right. Alex's 20:09 words in the project chat were "Ok keep talking to chat gpt and working with it while I'm not active".
+- D (T1-T3 previews and stills): after the review TikTok and the products.
