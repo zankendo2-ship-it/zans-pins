@@ -19,3 +19,12 @@ Alex, in my chat, on the corrected video: "Perfect". All eight posts now carry N
 New ids: YouTube 438528612, Pinterest 438528704, LinkedIn 438528785, Facebook 438528861, X 438528950, Instagram 438529014, Story 438529079, TikTok 438529132.
 Also changed: #horseracing added on LinkedIn, Facebook, X and Instagram (plus #nodramathisend on Instagram), inside the hashtag limits. TikTok caption cut to a fact line, a question and #horseracing #nodramathisend #jumpracing #novicechase #christmasbauble, no shop line; TikTok title "No Drama This End: the next big chaser? 🎄" (the old one said "Navy and white hoops").
 The 15:25 pull-back check is cancelled. Still single-source on the colours.
+
+## UPDATE 23 Nov 2026, 18:10 UTC: colours DISPUTED - DO NOT REUSE either artwork
+
+The reviewing chat reports that the latest racecards show dark green with a white chevron, light green sleeves and a dark green and white check cap. My own search still only finds the older entry (royal blue, white hoops, maroon sleeves and cap, about 20 months old). I could not open the racecard pages from here, so I cannot confirm either set.
+
+- Both No Drama This End artworks (the first one and the royal blue one) are marked DO NOT REUSE until the colours are confirmed from the latest racecard plus a second source.
+- Mistake logged: the royal blue version was built on one old source. Silks must come from the latest racecard, matched to the owner, plus a second source.
+- The eight posts with the royal blue video went out today (Mon 23 Nov). Nothing is deleted without Alex's yes.
+- Nothing redrawn unless Alex asks.
