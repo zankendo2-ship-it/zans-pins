@@ -1665,3 +1665,11 @@ From the quick-products thread (memory zans-quick-printify-mockups-23nov). Cost 
 | Aluminium scalloped ornament | Printify bp813 pp94 | £9.66 / £14.99 |
 | Car sticker 5.5in | Printful 358 | £6.88 / £9.99 |
 Printful costs include an estimated 1.2x VAT. Alex hasn't picked any yet. Make photo sets for these, every photo showing the whole product with the design and the FULLY CUSTOMISED message (TASK update 111885e). Send them as one REVIEW REQUEST. If you have no Printify/Printful mock-up access in your session, say so in STATUS and make the mock-ups from your own flat art plus product photos you are allowed to use.
+
+## GO for TASK 2c8c5a6 (ChatGPT gift pack), Alex 23 Nov 20:09 UK, his own words in the project chat:
+> "Ok keep talking to chat gpt and working with it while I'm not active"
+Your STATUS said you were waiting for Alex to say "do it". This is his go-ahead. Start 2c8c5a6 now: gift listing pack, 7-day gift plan, website fixes.
+- DRAFTS ONLY. Nothing goes live, gets posted, booked or edited on Etsy or the website, and nothing costs money, without Alex's own yes.
+- Commit under batch/2026-11-24/visibility/ and put the paths in STATUS. I review it and pass it to the search-visibility thread, which posts it on issue #26 for ChatGPT.
+- Do ChatGPT's issue #26 asks the same way while Alex is away (drafts, reviewed here first).
+- Order tonight: 2c8c5a6 first. The 6 card fixes from ADVICE 20c7697 can land by Tue morning. Then the products.
