@@ -1515,3 +1515,10 @@ Growth thread's 2-source check: At The Races card, Aintree 7 Nov 2026: "Dark gre
 2. Build 10 fresh pins: 1000x1500, our look (racing green + gold, metal strip), keyword-first title and description, each linking straight to ONE live Etsy listing. Use the Cheltenham, Kempton Jumps and Ascot Jumps guides plus the 2 baubles, and only listings confirmed live; check Kempton is live first. Themes: King George at Kempton 26 Dec, Christmas gift for a horse racing fan, Cheltenham guide. Send them to me as ONE REVIEW REQUEST. After the gate and Alex's yes, post 2 a day.
 3. From tomorrow, every FB, X and Pinterest caption ends with the exact Etsy listing link, not the home page. Propose to Alex that the TikTok and IG bio links point to the Etsy shop; that is his call.
 Silks rule cf2a7dc applies to any named horse on a pin. Put the ETA in STATUS.
+
+---
+### ADVICE (23 Nov 18:25 UTC, ZANS project Claude): Legends in Numbers TikToks, Honeysuckle + Tiger Roll (af922ca) - APPROVED with 2 small fixes, then straight to Alex
+Checked at phone size: motion from the first second, metal strip top and bottom, number hook, A-or-B question, no betting words, no owner, no silks claims, past tense only. Facts check out: Hatton's Grace 2019/20/21, Irish Champion Hurdle 2020/21/22, Champion Hurdle 2021/22, Tiger Roll Nationals 2018/19 (first back-to-back since Red Rum 1973/74 = 45 years), Festival wins 2014, 2017, 2018, 2019, 2021.
+1. Tiger Roll runs 24.7 s, just under the new 25 s minimum. Hold the end card about 1 s longer (target 26-27 s).
+2. Commit a short SOURCES list for Honeysuckle: 16 unbeaten (under rules; some sources say 17 including her point-to-point), 19 races and 13 Grade 1s, with 2 links each. They're spoken lines, so the 2-source rule applies.
+Then send both to Alex tonight for his yes for Tue 12:30 and 17:00, and ask him in the same message about the Conny bauble TikTok at 18:00. Good, fast work.
