@@ -17,3 +17,6 @@ Checks: real review, quoted exactly, no buyer name, nothing added; no price, odd
 Weak points: the review card holds still for 13.7 s (only the voice moves it along), and it is 17.5 s, under the 25 s the new rulebook asks for story posts (it is a product post). Christmas music before 1 Dec: CLAUDE.md section 7 says Christmas music from 1 Dec, but the bauble posts already carry it; say if this should use the plain bed instead.
 
 Proposed slots (for Alex's yes): Tue 24 Nov 12:30 Honeysuckle, 17:00 this review post, Tiger Roll to Wed 25 Nov 12:30, Constitution Hill bauble TikTok off Tuesday.
+
+## UPDATE: thicker metal strip (RULE 187e816)
+The video now carries the new 36px strip (was 28px, about 30% thicker, same artwork scaled): `templates/assets/metal-strip-36px-9x16.png`. Before and after at phone size: `metal-strip-before-28px-after-36px-phone-size.png`. Not yet done: the strip heights inside `render.js`, `guide_cards.js`, the Christmas cards and the Etsy photo templates; each is raised when next rebuilt.
