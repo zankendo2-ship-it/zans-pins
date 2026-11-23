@@ -10,7 +10,7 @@ const css = `${font('Jost', 600, 'jost-600.woff2')}${font('Jost', 700, 'jost-700
 const stars = s => `<div style="font-size:${s}px;letter-spacing:${s / 6}px;color:#F2CF5B;line-height:1">★★★★★</div>`;
 const endbg = `data:image/png;base64,${b64('/tmp/endg/etsy-review-9x16-end.png')}`;
 const F = {
- end: `<div style="position:absolute;inset:0;background:url(${endbg}) center/cover"></div><div style="position:absolute;left:0;right:0;top:1500px;font-weight:700;font-size:60px;letter-spacing:6px;color:#F2CF5B">LINK IN BIO</div>`,
+ end: `<div style="position:absolute;inset:0;background:url(${endbg}) center/cover"></div><div style="position:absolute;left:300px;width:480px;top:1205px;height:120px;background:rgb(44,100,72)"></div><div style="position:absolute;left:0;right:0;top:1222px;font-weight:700;font-size:64px;letter-spacing:6px;color:#F2CF5B">LINK IN BIO</div>`,
  r: `<div style="position:absolute;left:0;right:0;top:360px">${stars(150)}</div>
   <div class="big" style="top:560px;font-size:104px">“Love this item for our Christmas tree”</div>
   <div style="position:absolute;left:0;right:0;top:930px;font-weight:600;font-size:44px;color:#E0D6C9">Verified Etsy Buyer</div>
@@ -22,7 +22,7 @@ const F = {
   <div class="big" style="top:340px;font-size:112px;color:#F2CF5B">ANY COLOURS</div>
   <div class="big" style="top:1420px;font-size:112px">ANY NAME</div><div style="position:absolute;left:0;right:0;top:1550px;font-weight:600;letter-spacing:8px;font-size:34px;color:#E0D6C9">DESIGN PREVIEW</div>`,
  g: `<img src="${photo}" style="position:absolute;left:90px;top:520px;width:900px;border-radius:18px;border:8px solid #F3EDE5">
-  <div class="big" style="top:345px;font-size:104px">FOR MUM AND DAD</div>
+  <div class="big" style="top:370px;font-size:86px;white-space:nowrap">FOR MUM AND DAD</div>
   <div class="big" style="top:1470px;font-size:64px;color:#F2CF5B">DESIGN YOURS · LINK IN BIO</div>`,
 };
 (async () => { const b = await chromium.launch(); for (const [k, v] of Object.entries(F)) { const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });

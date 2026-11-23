@@ -52,3 +52,13 @@ Weak points to judge:
 - Two-source check of the figures. I cannot open racing sites from this session (network block), so I have not re-read them myself tonight:
   - Honeysuckle (first 16 races unbeaten, 19 races, 13 Grade 1s, 4 Festival victories 2020 to 2023): the reviewer opened three sources on 23 Nov (ADVICE 19:25 UTC: Irish Field 17 Mar 2023, a general reference page, a racing news site 27 Mar 2023).
   - Tiger Roll (Grand Nationals 2018 and 2019; first back-to-back since Red Rum in 1973 and 1974, 45 years; Festival victories 2014, 2017, 2018, 2019, 2021): confirmed in the reviewer's ADVICE of 18:25 UTC and by this session's research helper earlier on 23 Nov. Source links for Tiger Roll are NOT listed in this file; if the gate needs two links on file, the reviewer or the growth thread should add them, as I cannot fetch them.
+
+## Source links (copied from the reviewer's check on issue 26, comment 7116200951; opened by the reviewer, not by this session)
+Honeysuckle: 19 races under rules, 17 victories, 13 Grade 1s, 4 Festival victories from 4 starts.
+1. https://www.theirishfield.ie/breeding-insights-farewell-champ-you-are-a-true-great-754349
+2. https://greatbritishracinginternational.com/news/thank-you-honeysuckle
+"First 16 races unbeaten" is the reviewer's own tally from her season-by-season record (first defeat Nov 2022); no page states 16 outright.
+Tiger Roll: five Festival victories, the fifth in the 2021 Cross Country.
+1. https://www.racingpost.com/news/tiger-roll-stuns-easysland-to-join-cheltenham-greats-with-fifth-festival-win/476164
+2. https://sportinglife.com/racing/news/festival-flashbacks-watch-tiger-rolls-five-cheltenham-festival-victories/198709
+These links are internal working sources only; no site is named in any post.

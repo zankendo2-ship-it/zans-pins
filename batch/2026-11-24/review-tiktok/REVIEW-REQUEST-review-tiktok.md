@@ -48,3 +48,8 @@ NOT done: the "ignore ChatGPT" line in CLAUDE.md is Alex's rule 12 and is change
 - [x] The second-design scene is labelled "DESIGN PREVIEW" (it is flat artwork, not a photographed bauble).
 - [x] Packaging: I CANNOT confirm that baubles are sent in the kraft gift boxes shown in the buyer's photo; nothing in this repo says so. So the caption "BOXED TO GIVE" is removed and the scene now reads "FOR MUM AND DAD". The photo is still the buyer's own picture as shown on the review. If Alex confirms the box is standard, the line can come back.
 - [x] Music rights: the bed is `batch/2026-11-17/music/4-celesta-jingle-bells.m4a`, made note by note by our own script `templates/music.py` from "Jingle Bells" (James Lord Pierpont, published 1857, public domain). No sample, recording or library track is used. The voice is our Gemini Aoede voice.
+
+## JOINT FIXES round 2 (9d415e8), same file name v3
+- [x] BUY NOW button removed from the end card; "LINK IN BIO" sits in its place above the website.
+- [x] "FOR MUM AND DAD" is on one line, clear of the photo.
+Note: the end card in this video now differs from the locked Santa end card (which carries BUY NOW). That is a change to Alex's locked layout for this one TikTok and needs his yes.
