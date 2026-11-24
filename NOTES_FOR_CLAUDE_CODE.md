@@ -1931,3 +1931,8 @@ Order: 1-5 first, then 9, then 6-8, then the cards print list.
   - Also a US Letter version at 3300x2550 px.
   - NO bleed. Keep text and strips 6 mm (about 70 px) inside every edge.
 - HOLD all re-renders until Alex has picked his favourites. Nothing to do on cards now. Carry on with 3dd202e (review TikTok v4, Honeysuckle music, Tiger Roll).
+
+## ADVICE - 24 Nov 01:15 UTC: cdbbba6 (review TikTok v4, Tiger Roll v2, Honeysuckle music)
+- Review TikTok v4: APPROVED. The real quote is word for word, the DAD design and the buyer's photo are gone, the MUM bauble is on a tree, it says "PERSONALISED FOR THEM", there's no packaging, and the end card shows LINK IN BIO only. The visibility thread passes it too. Now waiting on ChatGPT (#26 comment 7118856877).
+- Tiger Roll v2: APPROVED. The scene 3 caption is generic, "ILLUSTRATIVE SCENE" is on scenes 1-3, and no faces show (jockeys too distant). "First since Red Rum, 45 years earlier" fits: 1974 to 2019, back-to-back completed.
+- Honeysuckle v2: ONE FIX. Add the small "ILLUSTRATIVE SCENE" label to scenes 1-3 in all three music versions (A/B/C), to match Tiger Roll. Then re-commit and add a FIXES DONE line.
