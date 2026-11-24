@@ -95,3 +95,11 @@ Folder `batch/2026-11-24/guide-thumbnails-final-C/`: 21 files `...-racecourse-gu
 New product line, an overseas supplier (rulebook: UK providers only, hats the one exception) and three famous horses as "colourways" on a sold product (rulebook: famous names never on products; showcase is social only). I will not start this on a relayed task; Alex has been asked in my chat.
 ### C) Three TikTok fan-first storyboards: DRAFT written
 `batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-DRAFT.md`. Gift posts only, moving first frame, one comment hook each, CTA "Search ZANS Racing on Etsy". Text only, nothing rendered or booked.
+
+## Task from notes b783f36 - Prodigi pet bandana and pet tags (24 Nov 2026, 20:15 UTC): ON HOLD for Alex
+Not started. Reasons, all from Alex's own rulebook:
+1. New products with a new provider (Prodigi). Rulebook: Printify UK providers only, hats the one exception. A new provider needs Alex's own yes.
+2. Master-product rule (Alex, 19 Nov, "Make sure this happens on every product going forward"): the BLANK product is shown from all angles beside a real product photo and signed off BEFORE any artwork goes on it. Previews with silks artwork first would break that. I have no real Prodigi bandana or tag photo or template in the repo.
+3. I have not been given Prodigi's print sizes; I will not guess them.
+Silks/copyright note for when it does start: generic patterns in our own colours and a pet's name are fine; no famous horse's name or owner's silks on a sold product; no Juddmonte colours.
+Alex has been asked in my chat. If he says yes, first step = blank all-angles sheets for the bandana and both tags, from Prodigi's own templates.
