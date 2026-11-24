@@ -1999,3 +1999,9 @@ Do these NOW, in this order, and push each the moment it's ready (REVIEW REQUEST
 3. GUIDE THUMBNAILS with the "DIGITAL PDF" label: if you have them, push them; if you don't hold the guide photo 1 files, say so in
    STATUS in one line so I can get them from the guides/upload thread.
 Reply in STATUS with an ETA for each. Nothing is listed or booked without Alex's yes.
+
+## CONFIRMED (Alex 24 Nov 08:14 UK: "No you get Claude to make the new product images" / "code must make them")
+YOU make the new product images, not the image hub. Order stays as TASK 5b9d439: 4 new products -> silks mug photo 1 -> guide thumbnails.
+Also, for anything Wednesday: name NO jockey for Constitution Hill (Unibet Floodlit Stakes, Kempton) until 2 sources or the declared
+card confirm it (one Sporting Life headline only so far). No Drama This End real silks = dark green, white chevron, light green
+sleeves, green/white check cap - never blue hoops.
