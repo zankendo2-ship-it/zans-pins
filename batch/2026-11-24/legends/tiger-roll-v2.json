@@ -9,9 +9,9 @@
 "html": "<div class='k' style='top:350px;color:ACC'>TIGER ROLL</div><div class='t' style='top:430px;font-size:150px'>2 GRAND<br>NATIONALS</div><div class='t' style='top:760px;font-size:118px;color:ACC'>BACK TO BACK</div><div style='position:absolute;left:0;right:0;top:1500px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
 },
 "2": {
-"bg": "crowd-flags.webp",
+"bg": "two-riders-rear-tiger-roll-red-rum.png",
 "pos": "bot",
-"html": "<div class='t' style='top:1180px;font-size:150px'>2018 · 2019</div><div class='t' style='top:1350px;font-size:88px;color:ACC'>FIRST SINCE RED RUM</div><div class='k' style='top:1480px'>45 YEARS EARLIER</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+"html": "<div class='t' style='top:1180px;font-size:150px'>2018 · 2019</div><div class='t' style='top:1350px;font-size:88px;color:ACC'>FIRST SINCE RED RUM</div><div class='k' style='top:1480px'>45 YEARS EARLIER</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div><div style='position:absolute;left:215px;top:470px;width:300px;text-align:center;font-weight:700;font-size:40px;letter-spacing:3px;text-shadow:0 2px 12px #000'>TIGER ROLL</div><div style='position:absolute;left:590px;top:490px;width:300px;text-align:center;font-weight:700;font-size:40px;letter-spacing:3px;text-shadow:0 2px 12px #000'>RED RUM</div>"
 },
 "3": {
 "bg": "dawn-course.webp",
