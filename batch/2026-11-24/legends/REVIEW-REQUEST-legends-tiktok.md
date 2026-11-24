@@ -111,3 +111,9 @@ File: `TIGER-ROLL-in-numbers-TIKTOK-v3-1-real-silks-DRAFT-48k.mp4` (25.9 s, 48 k
 - [x] Tiger Roll's white armlets are now solid white bands on both upper arms, clearly visible at phone size.
 - Red Rum's colours unchanged, as confirmed by the reviewer in two sources: maroon body and sleeves, yellow diamond, plain yellow cap.
 To judge: the armlets are flat white blocks with square ends, so they look a little stuck-on at full size; at phone size they read as armbands.
+
+## Tiger Roll v3.2 (JOINT FIX 01096ad). FIXES DONE.
+File: `TIGER-ROLL-in-numbers-TIKTOK-v3-2-real-silks-DRAFT-48k.mp4` (25.9 s, 48 kHz; v3.1 removed). Frames: `TIGER-ROLL-v3-frames.png`.
+- [x] Armlets are now bands across each upper arm, clipped to the sleeve's own outline, so nothing sticks out past the arm.
+- [x] The armlets, the star (jacket and cap) and the diamond all take the jacket's shading and folds (kept no darker than 72% so the white still reads as white).
+Redrawn from the plain-white original, so the colours and positions are otherwise as in v3.1.
