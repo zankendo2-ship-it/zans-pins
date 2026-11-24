@@ -77,3 +77,10 @@ Folder `batch/2026-11-24/guide-thumbnails-final-B/`: 21 files `<COURSE>-<TYPE>-<
 - Exactly the v3 masters (optional bigger-cover tweak NOT applied, so the 21 match what Alex was shown).
 - Checked on 300px tiles: all 21 read, nothing cut, KEMPTON ALL-WEATHER heading fits.
 - The 21 in layout A stay in `guide-thumbnails-final/`. Alex has been asked A or B in my chat and has not answered. Nothing on Etsy.
+
+## REVIEW REQUEST - all 21 guide thumbnails, layout C, DRAFT (24 Nov 2026, 18:10 UTC)
+Folder `batch/2026-11-24/guide-thumbnails-final-C/`: 21 files `...-racecourse-guide-thumbnail-LAYOUT-C-DRAFT.jpg` (2700x2025), `ALL-21-guide-thumbnails-LAYOUT-C-300px-phone-tiles-CONTACT-SHEET.jpg` (ordered Beginner, Advanced, Pro per course), builder `build_C.js`.
+- DIGITAL PDF DOWNLOAD removed completely.
+- Edition badge much bigger (820x214, was 480x126), centred at the bottom above the strip.
+- Everything else as layout B. One small knock-on: the cover is 906x1100 (was 947x1150) so the big badge does not half-cover the ZANS logo printed on each cover.
+- Checked on 300px tiles: all 21 read, nothing cut. Nothing on Etsy.
