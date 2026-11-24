@@ -27,3 +27,10 @@ To judge:
 - 62 px edition-metal strips, edition box and "DIGITAL PDF DOWNLOAD" kept.
 - Before and after (source on top, new below) for Aintree Advanced, Ascot Flat Beginner and Kempton All-Weather Pro: `BEFORE-top-AFTER-bottom-aintree-advanced-ascot-flat-beginner-kempton-aw-pro.jpg`. Phone tiles of all 21: `GUIDE-THUMBNAILS-new-heading-phone-tile-contact-sheet.jpg`.
 The "To judge" notes of the previous section about a 128 px one-line heading no longer apply.
+
+## HEADING v3 (ADVICE a212739). FIXES DONE. Same 21 file names, rebuilt.
+- Three lines: course name 226 px in the course colour; then two gold lines, TYPE and RACECOURSE GUIDE, each 134 px (59% of the course name).
+- Widths: RACECOURSE GUIDE 1370 px on all 21; the widest course name, CHELTENHAM, 1563 px. Both sit inside the 1620 px phone crop and well inside the middle 85% of the 2700 px picture (2295 px).
+- The cover picture is smaller to make room: 628x764 (it was 702x852, so about 90%).
+- Strips, edition box and "DIGITAL PDF DOWNLOAD" kept. Before/after and phone-tile sheets rebuilt under the same names.
+To judge: the three heading lines sit close together (the gold lines are 4 px apart from the course name's baseline area); say if they need more air, which would cost the cover another few percent.

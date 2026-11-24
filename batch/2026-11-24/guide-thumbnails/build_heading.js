@@ -11,11 +11,12 @@ const grad = m => `linear-gradient(90deg,${m[0]},${m[1]} 18%,${m[2]} 32%,${m[3]}
 body{width:2700px;height:2025px;position:relative;overflow:hidden;font-family:Jost;text-align:center;background:radial-gradient(ellipse at 50% 50%,${m.centre},${m.edge} 90%)}
 .s{position:absolute;left:0;right:0;height:62px;background:${grad(METAL[ed])}}.h{position:absolute;left:0;right:0;font-weight:700;line-height:1;white-space:nowrap;text-shadow:0 6px 18px rgba(0,0,0,.35)}</style></head><body>
 <div class="s" style="top:0"></div><div class="s" style="bottom:0"></div>
-<div class="h" style="top:92px;font-size:226px;color:${m.col}">${course}</div>
-<div class="h" style="top:328px;font-size:84px;letter-spacing:2px;color:#F2CF5B">${type} RACECOURSE GUIDE</div>
-<img src="data:image/png;base64,${b64(`/tmp/gt/${key}-cover.png`)}" style="position:absolute;left:1001px;top:462px;width:698px;height:850px;box-shadow:0 22px 60px rgba(0,0,0,.5)">
-<img src="data:image/png;base64,${b64(`/tmp/gt/${key}-box.png`)}" style="position:absolute;left:910px;top:1372px;width:880px;height:230px;border-radius:26px">
-<div style="position:absolute;left:0;right:0;top:1672px;font-weight:600;font-size:92px;letter-spacing:12px;color:#F3EDE5">DIGITAL PDF DOWNLOAD</div>
+<div class="h" style="top:78px;font-size:226px;color:${m.col}">${course}</div>
+<div class="h" style="top:300px;font-size:134px;color:#F2CF5B">${type}</div>
+<div class="h" style="top:438px;font-size:134px;color:#F2CF5B">RACECOURSE GUIDE</div>
+<img src="data:image/png;base64,${b64(`/tmp/gt/${key}-cover.png`)}" style="position:absolute;left:1036px;top:606px;width:628px;height:764px;box-shadow:0 22px 60px rgba(0,0,0,.5)">
+<img src="data:image/png;base64,${b64(`/tmp/gt/${key}-box.png`)}" style="position:absolute;left:910px;top:1408px;width:880px;height:230px;border-radius:26px">
+<div style="position:absolute;left:0;right:0;top:1690px;font-weight:600;font-size:92px;letter-spacing:12px;color:#F3EDE5">DIGITAL PDF DOWNLOAD</div>
 </body></html>`); await p.waitForTimeout(200);
     const w = await p.evaluate(() => [...document.querySelectorAll('.h')].map(e => { const r = document.createRange(); r.selectNodeContents(e); return Math.round(r.getBoundingClientRect().width); }));
     const out = `${course}-${type}-${ed}-${id}-heading-racecourse-guide-strip-62px-${ed.toLowerCase()}.jpg`.replace(/ /g, '-');
