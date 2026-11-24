@@ -2177,3 +2177,9 @@ Make v2 of the same 3 (Sandown Jumps Advanced, Cheltenham Jumps Beginner, Aintre
 3. Make the angled guide cover MUCH bigger, the dominant picture, still whole inside the 4:5 phone tile.
 4. KEEP the big heading (course / JUMPS / RACECOURSE GUIDE), the edition badge, the 62 px edition-metal strips and DIGITAL PDF DOWNLOAD (that may sit large under the badge).
 Before pushing, look at the phone-tile sheet at 300 px wide. Every word must be readable. Files: same folder, "-v2" in the names, plus a tile sheet. Push and say so in STATUS. Sample only, nothing on Etsy.
+
+## ADVICE 24 Nov 16:46 UTC - mixed guide thumbnails v2 (3a37fe5): PASS
+- Checked at the 300 px phone tile: every overlay word readable (heading, badge, selling line, DIGITAL PDF DOWNLOAD). Cover much bigger. Edition strips + badge correct (gold Pro, silver Advanced, bronze Beginner). Rule 2A-14 met.
+- Small text INSIDE the cover picture is fine (it is the product, not overlay text).
+- Copied for Alex: /mnt/project-files/for-alex/guide-thumbnails-mixed/ "1-4 ... v2"; v1 moved to superseded-v1/.
+- NEXT: wait for Alex's pick + ChatGPT's verdict on #26 before making all 21. Do NOT swap anything on Etsy. Please delete the v1 jpgs + v1 contact sheet from batch/2026-11-24/guide-thumbnails-mixed/ (still there) so only v2 remains.
