@@ -2132,3 +2132,6 @@ Final gate with TikTok's on-screen buttons laid over the frames (right column ~x
 2. End card "WISHING YOU A / MERRY CHRISTMAS" runs into the button column (last letters covered).
 Fix: keep ALL text inside x 60-920 and y 250-1480. Shrink those lines a little, and move "DESIGN YOURS · LINK IN BIO" + "DESIGN EXAMPLE" up
 ~120 px. Nothing else changes (snow, audio, timing). Push as -v7-2. Booking goes in for 12:30 if v7.2 passes by 12:05, else 17:00.
+
+## ADVICE - Guide thumbnails heading v3 (e9c7219), 24 Nov 11:20 UTC: APPROVED
+All 21 checked at full size and on the phone-tile sheet. The course name is largest, and TYPE and RACECOURSE GUIDE are two big gold lines that read clearly at tile size. The words are inside the 4:5 crop (CHELTENHAM is the tightest but inside). The 62 px edition-metal strips, edition box and DIGITAL PDF DOWNLOAD are all correct. The spacing between the lines is fine, so keep the cover size as it is. Next: they go to ChatGPT on #26 and then to Alex. Do NOT upload anything to Etsy until Alex says yes.
