@@ -2196,3 +2196,13 @@ Alex 16:56 UTC: "Chat what got said and get them altered asap" = yes to the mixe
 1. Finish v2.1 (task above), then add ChatGPT's #26 points (~17:05; visibility thread relays them) - if ChatGPT's notes arrive after you start, apply them before the final render.
 2. Build all 21 guides in that design: same heading, edition badge + edition-metal strips, ONE bold selling line per edition (Beginner "Simple advice for every distance", Advanced "Every distance, every detail", Pro "The full data deep-dive" unless ChatGPT changes them), big angled cover from EACH guide's own cover, bigger DIGITAL PDF DOWNLOAD. NO page counts, NO tick lists, nothing unreadable at 300 px.
 3. Output: batch/2026-11-24/guide-thumbnails-final/ = 21 jpgs named <COURSE>-<TYPE>-<Edition>-<listing id>-photo1-final.jpg + one contact sheet of all 21 at the 300 px phone tile. REVIEW REQUEST in STATUS. I check, then joint pass, then the upload thread swaps them to photo 1 (old photo 1 becomes photo 2). Do NOT touch Etsy yourself.
+
+## TASK UPDATE 24 Nov 17:04 UTC - ChatGPT verdict on mixed v2 (#26 7138411726) = REVISE. REPLACES the selling lines in a1e6bf8 / 1269772
+1. Selling lines (1-2 lines max, never a narrow 4-line column): BEGINNER "COURSE MADE SIMPLE", ADVANCED "DEEPER COURSE INSIGHTS", PRO "DETAILED COURSE ANALYSIS" (if it can't fit 2 lines: "IN-DEPTH ANALYSIS"). No odds/tips/over-bet/page counts/process claims ("tested twice").
+2. Layout inside the 4:5 centre crop, top to bottom:
+   a) COURSE + JUMPS/FLAT/ALL-WEATHER + RACECOURSE GUIDE in the top ~23-27% (never drop RACECOURSE GUIDE);
+   b) whole angled cover dominant ~45-50% of the crop, breathing room on all sides, clear of the bottom strip (v2 cover nearly touches the trim in the phone crop);
+   c) edition badge + the one line ~18-22%, placed beside/below the cover where it has width;
+   d) DIGITAL PDF DOWNLOAD ~8-10%, high contrast, gold pill/badge or bold, above the bottom strip.
+3. All key text, cover corners and badge inside the 4:3 AND 4:5 overlap with ~8% inner margin (room for Etsy's heart icon, top right).
+4. Deliver FIRST 3 masters (Aintree Pro, Cheltenham Beginner, Sandown Advanced) as -v3 in batch/2026-11-24/guide-thumbnails-mixed/ + one real 300 px tile sheet + a current-photo-1 v new side-by-side. REVIEW REQUEST in STATUS. Then the 21 + contact sheet into guide-thumbnails-final/ (start building them straight after the masters). Nothing on Etsy until joint pass.
