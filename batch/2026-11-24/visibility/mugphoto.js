@@ -10,5 +10,6 @@ const metal = 'linear-gradient(90deg,#8a6a22,#f2cf5b 18%,#fff3c8 32%,#c9a13b 50%
 <div style="position:absolute;left:540px;width:1620px;top:110px">
 <span style="display:inline-block;border:5px solid #F2CF5B;color:#F2CF5B;font-weight:600;letter-spacing:10px;font-size:52px;padding:10px 34px">PERSONALISED SILKS MUG</span>
 <div style="font-weight:700;font-size:128px;line-height:1.02;margin-top:26px">YOUR NAME.<br><span style="color:#F2CF5B">YOUR COLOURS.</span></div></div>
+<div style="position:absolute;left:540px;width:1620px;top:1800px"><span style="display:inline-block;background:#F2CF5B;color:#1C1C1C;font-weight:700;letter-spacing:8px;font-size:64px;padding:14px 40px;border-radius:10px">FULLY CUSTOMISED</span></div>
 </body></html>`); await p.waitForTimeout(300);
   await p.screenshot({ path: path.join(__dirname, 'SILKS-MUG-photo1-replacement-2700x2025-DRAFT.jpg'), type: 'jpeg', quality: 92 }); await b.close(); })();

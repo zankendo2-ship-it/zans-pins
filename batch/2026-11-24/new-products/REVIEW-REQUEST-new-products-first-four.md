@@ -16,3 +16,12 @@ How they were made, and what that means:
 - Shading on the coloured versions is flatter than a real photo, and the three-example photo leaves empty space under the pictures.
 - The ZANS design used is the red "YOUR HORSE" example from the bauble designer, as a stand-in for "the existing ZANS design".
 Not done: the other 13 shortlist products; titles, tags and descriptions; prices checked against Printify today.
+
+## FIXES DONE after ADVICE 96c2813 (24 Nov)
+- [x] Patterns now carry the photo's own shading and folds (broad shading plus fine fabric detail from the blank), so they sit in the cloth, not on it.
+- [x] Baby bodysuit: the grey leftovers at the neck flaps, cuffs and poppers are gone (outline now takes in the shaded parts).
+- [x] Adult tee: new blank on a plain oak table, so no grey box and no stray card (FLUX seed 283796993).
+- [x] ZANS design: the MERRY CHRISTMAS line is removed from the plate (`work/zans-design-no-christmas-line.png`); the name sits a little high in the plate as a result.
+- [x] Photo 02: the empty space is filled with three step boxes (pick your pattern, pick your two colours, we make it for you).
+- Prices, from the shortlist in the notes (cost delivered / proposed sell): baby bodysuit £15.36 / £20.99; kids' tee £13.32 / £19.99; adult tee £13.47 / £19.99; patch £12.49 / £16.99 (Printful, includes an estimated 1.2x VAT). I have not re-checked these against Printify or Printful today, and Etsy fees are not taken off.
+Still true: concept photos, not provider mock-ups; no blank all-angles sign-off yet.

@@ -16,8 +16,9 @@ const side = (n, v, eyebrow, big, sub, note) => `${strips}<img src="${img(n, v)}
 const three = (n, name) => `${strips}<div style="position:absolute;left:0;right:0;top:${S + 50}px;text-align:center"><span class="badge" style="font-size:64px">FULLY CUSTOMISED</span>
  <div style="font-weight:700;font-size:104px;margin-top:30px">${name} IN YOUR OWN SILKS</div></div>
  ${['a', 'b', 'c'].map((v, i) => `<img src="${img(n, 'silks-' + v)}" style="position:absolute;left:${60 + i * 880}px;top:520px;width:820px;height:820px;border-radius:14px;border:8px solid #F3EDE5">`).join('')}
- <div style="position:absolute;left:0;right:0;top:1420px;text-align:center"><div style="font-weight:600;font-size:66px">Three examples. Yours is made in <span style="color:#F2CF5B">your colours</span>.</div>
- <div style="font-weight:600;font-size:54px;color:#E0D6C9;margin-top:30px">Hoops, spots, diamonds and more · any two colours</div></div>`;
+ <div style="position:absolute;left:0;right:0;top:1400px;text-align:center"><div style="font-weight:600;font-size:66px">Three examples. Yours is made in <span style="color:#F2CF5B">your colours</span>.</div>
+ <div style="display:flex;justify-content:center;gap:50px;margin-top:60px">${['1 · PICK YOUR PATTERN', '2 · PICK YOUR TWO COLOURS', '3 · WE MAKE IT FOR YOU'].map(t => `<div style="border:5px solid #F2CF5B;border-radius:14px;padding:44px 40px;width:800px;font-weight:700;font-size:54px;letter-spacing:3px">${t}</div>`).join('')}</div>
+ <div style="font-weight:600;font-size:50px;color:#E0D6C9;margin-top:56px">Hoops, spots, diamonds and more</div></div>`;
 const PR = [['baby-bodysuit', 'BABY BODYSUIT'], ['kids-tee', "KIDS' T-SHIRT"], ['adult-tee', 'T-SHIRT'], ['patch', 'PATCH']];
 (async () => { const b = await chromium.launch();
   for (const [n, name] of PR) { const pages = {
