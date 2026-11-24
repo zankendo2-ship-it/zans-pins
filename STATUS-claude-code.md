@@ -55,3 +55,10 @@ Folder `batch/2026-11-24/guide-thumbnails-final/`: 21 files `<COURSE>-<TYPE>-<Ed
 - Design = mixed v2.1: v3 heading, edition badge, one selling line (Beginner "Simple advice for every distance", Advanced "Every distance, every detail", Pro "The full data deep-dive"), each guide's own cover angled, DIGITAL PDF DOWNLOAD on a gold pill, 62px edition-metal strips. No page counts, no tick lists.
 - Checked on the 300px tiles: all 21 read cleanly, covers inside the 4:5 crop, word scan clean (no tips, betting or 18+ words in the sales text).
 - ChatGPT's #26 points not yet received, so not applied. The "Alex said go" was relayed, not typed in my chat: nothing is uploaded to Etsy and nothing will be without Alex's own yes.
+
+## REVIEW REQUEST - guide thumbnails layout B (v3 masters) v layout A (v2.1) (24 Nov 2026, 17:12 UTC)
+Folder `batch/2026-11-24/guide-thumbnails-mixed/`: three `MIXED-...-centred-cover-one-line-v3.jpg`, builder `build_v3.js` (`node build_v3.js all` renders all 21), sheet `MIXED-A-v2.1-versus-B-v3-300px-phone-tiles.jpg`.
+- B: heading in the top quarter, one-line selling line (COURSE MADE SIMPLE / DEEPER COURSE INSIGHTS / DETAILED COURSE ANALYSIS), centred angled cover, edition badge + DIGITAL PDF DOWNLOAD gold pill in one row above the bottom strip, about 8% inner margin.
+- Honest limit: the whole cover is about 33% of the 4:5 crop in B (40% in A). 45-50% is not possible with the heading in the top quarter plus a selling line and a pill, unless they sit on top of the cover.
+- Letters on the 300px tile: A's selling line is bigger (about 13px) than B's (about 10px); B is tidier and has clear edges for Etsy's heart.
+- The 21 are NOT rebuilt in B: waiting for Alex to pick A or B in my chat. The 21 in A are in `guide-thumbnails-final/`. Nothing on Etsy.
