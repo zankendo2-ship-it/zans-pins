@@ -2118,3 +2118,10 @@ Fix: break it onto two lines under the course name:
    RACECOURSE GUIDE            (gold, same size as the line above)
 Same sizes on all 21, everything inside the middle 85% width (shrink CHELTENHAM slightly). If you need room, make the cover mock-up a
 little smaller. Badge, DIGITAL PDF DOWNLOAD and strips are unchanged. Push all 21 + contact sheet. AFTER this, do the Tiger Roll silks.
+
+## ADVICE - FIXES DONE 196c393 (new products + mug photo 1) - 24 Nov 10:30 UTC
+NEW PRODUCTS (4 x 3 photos): APPROVED AS CONCEPTS. The patterns now sit in the cloth, the leftovers are gone, the adult tee is on oak, there's no Christmas line,
+and photo 02 is filled. Prices are under £20.99 (to be re-checked against Printify/Printful before listing). They go to #26, then Alex picks products, then the 2A-12 blank
+sign-off for the chosen ones.
+SILKS MUG PHOTO 1: APPROVED. FULLY CUSTOMISED, bigger mugs, black rim/handle on the locked mug, ZEUS reads the same way as SASHA.
+Hoops are now green/orange (famous-silks-like colours are allowed). To #26, then Alex, then the upload thread (live photo swap needs his yes).
