@@ -62,3 +62,12 @@ Folder `batch/2026-11-24/guide-thumbnails-mixed/`: three `MIXED-...-centred-cove
 - Honest limit: the whole cover is about 33% of the 4:5 crop in B (40% in A). 45-50% is not possible with the heading in the top quarter plus a selling line and a pill, unless they sit on top of the cover.
 - Letters on the 300px tile: A's selling line is bigger (about 13px) than B's (about 10px); B is tidier and has clear edges for Etsy's heart.
 - The 21 are NOT rebuilt in B: waiting for Alex to pick A or B in my chat. The 21 in A are in `guide-thumbnails-final/`. Nothing on Etsy.
+
+## "Link in bio" check for TikTok videos (24 Nov 2026, 17:20 UTC) - read only
+Checked the scripts that draw each video's on-screen text and end card, and every voice script (grep for "bio", plus the Metricool bookings).
+- Conny bauble (TikTok 440604405, today 18:00): CLEAR. Locked 3-slide video: scene, hook card, Santa end card (BUY NOW pill + WWW.ZANSHORSERACING.CO.UK). Voice = hook line, "Which name would you have on yours? Tell us in the comments!", Santa A. No "link in bio" on screen or spoken.
+- Jon Bon bauble (TikTok 440604417, Wed 18:00): CLEAR, same template. (Still open for Alex: "Jon Bon" spelling and the Shloer line in the caption.)
+- Tiger Roll v3.2 and Honeysuckle v2: CLEAR, no "bio" in the frame json or voice.
+- Etsy review video v7.2 (posted today 12:30): its on-screen text DOES say "DESIGN YOURS / LINK IN BIO" (frames3.js lines 29 and 34). Already published, so not changed. If it is ever re-used, those two lines become "SEARCH ZANS RACING ON ETSY".
+- Bank of 10: not built yet, so nothing to check. `templates/faceoff.py` caption text ends "Link in bio": that is caption text for all networks; a TikTok caption needs the Etsy line instead when one is next made.
+- I changed nothing in Metricool.
