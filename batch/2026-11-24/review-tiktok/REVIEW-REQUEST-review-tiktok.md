@@ -71,3 +71,7 @@ File: `ETSY-REVIEW-five-stars-TIKTOK-v5-DRAFT.mp4` (18.7 s). Frames: `ETSY-REVIE
 - [x] "DESIGN EXAMPLE" label on the MUM tree scene.
 - [x] End card unchanged from v4 (Merry Christmas, LINK IN BIO).
 Scenes: review over the bauble 0 to 4.7 s; design preview to 7.7 s; MUM design example to 14.9 s; end card.
+
+## ADD-ON d97115e. FIXES DONE.
+- [x] Scene 1 line "Verified Etsy Buyer" now reads "Etsy review ★★★★★". DESIGN EXAMPLE stays on the MUM scene.
+- CORRECTION to everything above in this file: the boxed DAD and MUM picture is NOT the buyer's photo. It is our own listing photo 1 for the racing green bauble (4611213915), which Etsy shows beside the review. Wherever this file says "the buyer's photo", read "our listing photo shown with the review". It is no longer used in the video.

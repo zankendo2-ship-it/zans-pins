@@ -2,7 +2,7 @@
 
 Alex (relayed, 22 Nov 18:27): "Schedule a review post for Tommorow".
 Files: ETSY-REVIEW-slide1-1080x1350-DRAFT.png, ETSY-REVIEW-slide2-end-1080x1350-DRAFT.png, sheet ETSY-REVIEW-all-slides-DRAFT.jpg.
-Slide 1: the buyer's photo, five stars, the review quoted exactly ("Love this item for our Christmas tree") and "Verified Etsy Buyer". No name, nothing added. Slide 2: the locked Santa end card with BUY NOW and the website.
+Slide 1: our own listing photo as shown beside the review (not a buyer photo), five stars, the review quoted exactly ("Love this item for our Christmas tree") and "Verified Etsy Buyer". No name, nothing added. Slide 2: the locked Santa end card with BUY NOW and the website.
 
 Photo: the original DAD/MUM listing photo is NOT in this repo or session, so slide 1 uses the picture cropped from the review screenshot (762x748) shown at 700 px wide, which is slightly under its own size, so it is not blown up. If the full-size original is committed to reference/, slide 1 is rebuilt with it in a minute.
 

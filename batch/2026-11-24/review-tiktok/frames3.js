@@ -14,7 +14,7 @@ const F = {
   <div style="position:absolute;left:0;right:0;top:0;height:860px;background:linear-gradient(rgb(13,26,18) 78%,transparent)"></div>
   <div style="position:absolute;left:0;right:0;top:350px">${stars(120)}</div>
   <div class="big" style="top:500px;font-size:92px">“Love this item for our Christmas tree”</div>
-  <div style="position:absolute;left:0;right:0;top:730px;font-weight:600;font-size:40px;color:#E0D6C9">Verified Etsy Buyer</div>`,
+  <div style="position:absolute;left:0;right:0;top:730px;font-weight:600;font-size:40px;color:#E0D6C9">Etsy review ★★★★★</div>`,
  e: `<img src="${ex}" style="position:absolute;left:115px;top:520px;width:850px;border-radius:50%;border:8px solid #F2CF5B">
   <div class="big" style="top:340px;font-size:112px;color:#F2CF5B">ANY COLOURS</div>
   <div class="big" style="top:1420px;font-size:112px">ANY NAME</div><div style="position:absolute;left:0;right:0;top:1550px;font-weight:600;letter-spacing:8px;font-size:34px;color:#E0D6C9">DESIGN PREVIEW</div>`,
