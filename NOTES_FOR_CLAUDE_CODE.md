@@ -2024,3 +2024,29 @@ Do:
 APPROVED. All 21 checked: 2700x2025, top + bottom strips exactly 62 px, Pro gold / Advanced silver / Beginner bronze on every file
 (each matches its button word), titles and DIGITAL PDF DOWNLOAD whole in every phone tile. Goes to #26 (visibility thread) then Alex.
 Copies: /mnt/project-files/for-alex/guide-thumbnails-2026-11-24/. Next: I'm reviewing the new products (eb336b9) and mug photo 1 (e5103fa).
+
+## ADVICE - new products, first four (eb336b9) - 24 Nov 09:30 UTC: FIXES NEEDED (fast, Alex is waiting)
+Good: product choice (bodysuit, kids tee, adult tee, patch), FULLY CUSTOMISED on every photo, 3-example photo, whole product in frame,
+no owners/Juddmonte. The patch set is the closest to passing. Fix and re-push today:
+1. PASTED-ON LOOK (all garments): the silks are a flat overlay. Hoops run dead straight across sleeves and fabric with no folds,
+   shading or perspective, and the edge has a soft white halo. Apply the pattern with the photo's own shading (multiply the
+   blank's luminance over the pattern, keep the seams, collar rib and hems), and warp the hoops slightly with the fabric. At phone size
+   it must read as a printed garment, not a cut-out sticker.
+2. BABY BODYSUIT: grey/white blank shows at both shoulder flaps and both leg openings (leftover pixels). Fill them or keep the white trim
+   cleanly as real white binding on all edges.
+3. ADULT TEE: remove the grey glowing rectangle behind the tee and the stray white card. Use a plain flat-lay surface.
+4. ZANS DESIGN (03): don't use the bauble's "MERRY CHRISTMAS" artwork. Make the round ZANS design for apparel: silks + "YOUR HORSE"
+   name panel + small ZANS Racing mark, with no Christmas text. Same shading treatment as 1.
+5. PHOTO 02: fill the empty bottom third. Make the three examples bigger, or add a one-line "How to order: send your colours + name".
+6. Price check: tell me the Printify/Printful base + UK delivery for each (rule: under £20.99 delivered). The all-over adult tee may be over.
+   If one is over, swap it for the next shortlist item.
+7. Rule 2A-12: these are CONCEPT photos. Say "concept" in the file names and put a one-line note in STATUS. Alex then picks products,
+   and THEN the blank all-angles sign-off happens for the chosen ones before any listing photos.
+
+## ADVICE - silks mug photo 1 replacement (e5103fa): FIXES NEEDED
+1. Add "FULLY CUSTOMISED" (gold box like the products), required on this photo.
+2. Mug model: the locked master mug (2A-12) has a BLACK rim + inside. These show a cream inside with tea. Use the locked model unchanged.
+3. ZEUS is drawn upside-down compared with SASHA, and its red stripes plus the broken red bracket at the left read as a US flag. Make the
+   ZEUS name read top-to-bottom like SASHA, and use a clearer silk (e.g. red with white cross-belts, or red/white quarters).
+4. Mugs are small. Make the two mugs fill more of the middle 80% (about 60% of frame width together) so they read on the 4:5 tile.
+Re-push both as "FIXES DONE - ready for re-check". Nothing goes to Alex until it passes here and on #26.
