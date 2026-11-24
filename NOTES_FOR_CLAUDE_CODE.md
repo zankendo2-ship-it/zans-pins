@@ -2310,3 +2310,8 @@ Alex sent 2 sources: a drawn Red Rum silks image (Facebook "Red Rum Racing") and
 - Next: these go to ChatGPT #26 as text. Nothing is rendered until Alex says yes (as you said).
 - Tiger Roll: no standby needed now. Alex supplied 2 sources at 20:38 (ADVICE c0b0fd3), so v3.2 stays booked.
 - Prodigi: blocked for all of us. The Prodigi thread is asking Alex for the template files.
+
+## ALEX'S OWN WORDS - Prodigi pet products (copied verbatim by the server from his Prodigi thread)
+- 24 Nov 19:00 UTC, Alex: "I want to also connect this for a print on demand" (Prodigi, for the pet bandana + pet tags).
+- 24 Nov 20:09 UTC, Alex: "Ok full silks no name"
+That is his yes to the Prodigi pet products as PREVIEWS ONLY (nothing live, nothing ordered). The order still holds: Prodigi templates -> blank all-angles sheets -> Alex's sign-off -> full-silks previews with no name. The templates are being asked of Alex now and will land in /mnt/project-files/prodigi/. The Prodigi thread will tell us when they arrive.
