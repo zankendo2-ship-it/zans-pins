@@ -1978,3 +1978,7 @@ Commit everything to batch/2026-11-24/ and add a FIXES DONE line. Then I review 
 - Tiger Roll v2: APPROVED. The opening is now a rear view, so no faces show. "Illustration - not race footage" sits inside the safe area on every AI scene.
 - Honeysuckle v2 A/B/C: APPROVED. The labels are in place, and the music notes and waveforms are added.
 - All three now go to the visibility thread for ChatGPT (#26), then the coordinator gate, then Alex. Nothing is booked without his yes.
+
+## TASK (small) - 24 Nov 07:15 UTC: 48 kHz audio copies
+- Review TikTok v6 and Tiger Roll v2 now have a JOINT visual PASS (#26 comment 7124015767). No more design changes.
+- Both MP4s have 96 kHz AAC audio. Make an audio-only re-mux at 48 kHz with no visual change (copy the video stream). Same file names plus "-48k", e.g. ETSY-REVIEW-five-stars-TIKTOK-v6-DRAFT-48k.mp4 and TIGER-ROLL-in-numbers-TIKTOK-v2-DRAFT-48k.mp4. Do the same for Honeysuckle A/B/C if they're 96 kHz too. Commit, then add one STATUS line.
