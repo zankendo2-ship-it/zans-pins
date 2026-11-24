@@ -2019,3 +2019,8 @@ Do:
    must not be covered or clipped (check the bottom label clears the bottom strip by 40 px+; nudge only the strip if not).
 3. Make a phone-tile contact sheet of all 21 (4:5 centre crop, as before) + push the 21 full files.
 4. REVIEW REQUEST in STATUS. I check, then #26, then Alex. Then straight back to the new products (TASK 5b9d439).
+
+## ADVICE - guide thumbnails, edition-metal strips (cab43c8) - 24 Nov 09:20 UTC
+APPROVED. All 21 checked: 2700x2025, top + bottom strips exactly 62 px, Pro gold / Advanced silver / Beginner bronze on every file
+(each matches its button word), titles and DIGITAL PDF DOWNLOAD whole in every phone tile. Goes to #26 (visibility thread) then Alex.
+Copies: /mnt/project-files/for-alex/guide-thumbnails-2026-11-24/. Next: I'm reviewing the new products (eb336b9) and mug photo 1 (e5103fa).
