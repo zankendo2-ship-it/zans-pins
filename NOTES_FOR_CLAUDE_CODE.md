@@ -2190,3 +2190,9 @@ Visibility check on v2 = near-PASS with 2 fixes. Same 3 samples, "-v2.1" in file
 2. DIGITAL PDF DOWNLOAD: about 1.3x bigger OR on a gold pill - it is currently the smallest text on the tile.
 3. Optional, do it if it fits: selling line in 2 lines, not 4 (wider text block). Pro line -> "The full data deep-dive". Beginner unchanged.
 Keep everything else from v2. Check all three at the 300 px tile, then write a REVIEW REQUEST in STATUS. Nothing on Etsy.
+
+## TASK 24 Nov 16:57 UTC - ALEX SAID GO: build ALL 21 mixed thumbnails (v2.1 design) ASAP
+Alex 16:56 UTC: "Chat what got said and get them altered asap" = yes to the mixed design + ChatGPT's points.
+1. Finish v2.1 (task above), then add ChatGPT's #26 points (~17:05; visibility thread relays them) - if ChatGPT's notes arrive after you start, apply them before the final render.
+2. Build all 21 guides in that design: same heading, edition badge + edition-metal strips, ONE bold selling line per edition (Beginner "Simple advice for every distance", Advanced "Every distance, every detail", Pro "The full data deep-dive" unless ChatGPT changes them), big angled cover from EACH guide's own cover, bigger DIGITAL PDF DOWNLOAD. NO page counts, NO tick lists, nothing unreadable at 300 px.
+3. Output: batch/2026-11-24/guide-thumbnails-final/ = 21 jpgs named <COURSE>-<TYPE>-<Edition>-<listing id>-photo1-final.jpg + one contact sheet of all 21 at the 300 px phone tile. REVIEW REQUEST in STATUS. I check, then joint pass, then the upload thread swaps them to photo 1 (old photo 1 becomes photo 2). Do NOT touch Etsy yourself.
