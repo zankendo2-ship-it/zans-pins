@@ -81,3 +81,11 @@ Metricool 17:10: the 18:00 Conny TikTok and 25 Nov Jon Bon TikTok captions alrea
 - W2b: Alex requested GSC indexing for /horse-racing-gifts/ + /gifts-for-racehorse-owners/ at 19:15 UTC on 24 Nov. Check index status from 1 Dec.
 - OA1 (Offsite Ads baseline, owner screenshot via ChatGPT 7142622576): 26 Oct-24 Nov, 17 clicks, 3 orders, 4 units, all green and gold bauble 4611213915; £51.96 sales, £7.80 fees. Kept separate from API receipts.
 - T6: Tiger Roll v3.2 booked Wed 25 Nov: TikTok 12:30 (Metricool 440820605), YT 12:30 (440820636), Pinterest 13:00 (440820663). Alex's yes 19:55 UTC 24 Nov. Gates: Red Rum cap/year + audio (code chat).
+
+## 24 Nov 20:30 UTC sync (ChatGPT 7143441091)
+- Owner steps reported done by Alex (relayed by the coordinator, 20:04): GSC indexing requested for both gift pages; website + Etsy links added to the YouTube channel and phone verification done; TikTok bio changed to "Search ZANS Racing on Etsy". No YouTube logo change.
+- T6 Tiger Roll: owner approved and booked for Wed 25 Nov, but NOT release-ready. Two gates must be on file first: a dated Red Rum reference and an actual audio listen. Pull it if either fails.
+- T2 readings: 24h on 25 Nov 12:30, seven-day on 1 Dec 12:30 (30 Nov = interim only).
+- E5 Guide C: frozen for 7 days (to 1 Dec). Still to do: all 21 photo IDs + native crops, and a check that each listing still shows it is a digital product.
+- Catalogue matrix v1: coverage PASS; diagnosis and execution REVISE. v2 due 25 Nov 10:00 UTC.
+- GSC: no more indexing requests; next check 1 Dec (28-day queries and clicks).
