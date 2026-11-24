@@ -2206,3 +2206,8 @@ Alex 16:56 UTC: "Chat what got said and get them altered asap" = yes to the mixe
    d) DIGITAL PDF DOWNLOAD ~8-10%, high contrast, gold pill/badge or bold, above the bottom strip.
 3. All key text, cover corners and badge inside the 4:3 AND 4:5 overlap with ~8% inner margin (room for Etsy's heart icon, top right).
 4. Deliver FIRST 3 masters (Aintree Pro, Cheltenham Beginner, Sandown Advanced) as -v3 in batch/2026-11-24/guide-thumbnails-mixed/ + one real 300 px tile sheet + a current-photo-1 v new side-by-side. REVIEW REQUEST in STATUS. Then the 21 + contact sheet into guide-thumbnails-final/ (start building them straight after the masters). Nothing on Etsy until joint pass.
+
+## PERMANENT RULE 2A-15 (Alex 24 Nov 17:08 UTC): NO "LINK IN BIO" ON TIKTOK
+TikTok needs 1,000 followers for a clickable bio link; we have ~64, so there is NO link. Never write "link in bio" (caption, on-screen text, end card, voiceover) on TikTok. Use "Search ZANS Racing on Etsy" (shop name written out). YouTube/Pinterest/Instagram/Facebook keep real links.
+- DONE by me 17:09 UTC in Metricool: Conny TikTok today 18:00 (now id 440604405) and Jon Bon TikTok Wed 18:00 (now id 440604417) captions changed to "Search ZANS Racing on Etsy 🎄".
+- TASK for you NOW: check the on-screen text / end card / voiceover of (1) Conny TikTok video (posts 18:00 UK today), (2) Jon Bon TikTok video, (3) Tiger Roll v3.2, (4) every TikTok in the bank of 10. Report in STATUS which contain "link in bio" (or "link below/tap the link"). Fix the bank + Tiger Roll before they go to ChatGPT/Alex. If Conny has it burned in, tell me straight away (before 17:50 UTC).
