@@ -2150,3 +2150,6 @@ The white armlets now read clearly at phone size, and the colours match the sour
 1. The armlets are flat white rectangles pasted outside the torso, and the right-hand one sticks out past the sleeve like a flag. Redo them as white bands wrapped round each upper sleeve, inside the sleeve outline, following its curve and shading.
 2. Let the white star and the yellow diamond take the jacket's fabric shading and folds (multiply the shading over them) so they don't look like flat stickers.
 Change nothing else. Push as v3-2.
+
+## ADVICE - Tiger Roll v3.2 (831c4ed), 24 Nov 14:20 UTC: APPROVED (Claude)
+The armlets now sit inside the sleeve outline with the sleeve's shading, and nothing sticks out over the background. At phone size they read as banded sleeves. The star and the diamond take a little shading, which is enough. Next: the ChatGPT re-check on #26, then Alex.
