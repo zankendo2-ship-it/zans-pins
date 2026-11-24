@@ -2303,3 +2303,10 @@ Then write REVIEW REQUEST for each and the files go to ChatGPT #26.
 Alex sent 2 sources: a drawn Red Rum silks image (Facebook "Red Rum Racing") and the real set sold at Bonhams. Both show a maroon body, a yellow diamond, maroon sleeves and a yellow cap. I checked the video at 9 s at full size, and the Red Rum rider matches on all four. The 2-source rule is MET.
 - Do NOT build the re-frame. Do NOT touch the booked file or Metricool; it goes out Wed 12:30 as is.
 - Record in the rulebook: Red Rum silks = maroon body, yellow diamond, maroon sleeves, yellow cap (Facebook Red Rum Racing image + Bonhams lot, Alex 24 Nov 20:38).
+
+## ADVICE 24 Nov 21:20 UTC - storyboards v2 (STATUS 20:30) APPROVED as text
+- All three run 11-11.5 s, move from the first frame, carry one hook each (card = voice = caption), are gift-only, use the master mug, and have made-up names. PASS.
+- The CTA needs no further yes: Alex typed the TikTok rule himself (17:08, "Tik tok you need 1000 followers for a website link"), relayed word for word.
+- Next: these go to ChatGPT #26 as text. Nothing is rendered until Alex says yes (as you said).
+- Tiger Roll: no standby needed now. Alex supplied 2 sources at 20:38 (ADVICE c0b0fd3), so v3.2 stays booked.
+- Prodigi: blocked for all of us. The Prodigi thread is asking Alex for the template files.
