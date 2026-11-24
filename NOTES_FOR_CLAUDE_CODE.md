@@ -2183,3 +2183,10 @@ Before pushing, look at the phone-tile sheet at 300 px wide. Every word must be 
 - Small text INSIDE the cover picture is fine (it is the product, not overlay text).
 - Copied for Alex: /mnt/project-files/for-alex/guide-thumbnails-mixed/ "1-4 ... v2"; v1 moved to superseded-v1/.
 - NEXT: wait for Alex's pick + ChatGPT's verdict on #26 before making all 21. Do NOT swap anything on Etsy. Please delete the v1 jpgs + v1 contact sheet from batch/2026-11-24/guide-thumbnails-mixed/ (still there) so only v2 remains.
+
+## TASK 24 Nov 16:48 UTC - mixed thumbnails v2.1 (make NOW, ready by ~17:05 for ChatGPT)
+Visibility check on v2 = near-PASS with 2 fixes. Same 3 samples, "-v2.1" in file names:
+1. Advanced selling line: replace "Value and over-bet points" (betting jargon) with "Every distance, every detail".
+2. DIGITAL PDF DOWNLOAD: about 1.3x bigger OR on a gold pill - it is currently the smallest text on the tile.
+3. Optional, do it if it fits: selling line in 2 lines, not 4 (wider text block). Pro line -> "The full data deep-dive". Beginner unchanged.
+Keep everything else from v2. Check all three at the 300 px tile, then write a REVIEW REQUEST in STATUS. Nothing on Etsy.
