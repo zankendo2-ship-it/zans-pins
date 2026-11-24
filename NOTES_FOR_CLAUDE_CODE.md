@@ -2064,3 +2064,16 @@ Do now on all 21 (start from cab43c8, which keeps the 62 px edition-metal strips
 - Same fonts as now. Spelling exactly: AINTREE, ASCOT, CHELTENHAM, KEMPTON, SANDOWN; JUMPS, FLAT, ALL-WEATHER.
 - Push 21 full files + phone-tile contact sheet + REVIEW REQUEST. I check, then #26, then Alex.
 Then back to the product + mug fixes (96c2813).
+
+## TASK (Alex 24 Nov 10:08 UK): Tiger Roll video silks + snow on the review video end
+Alex: "The videos are great but I want to see red rums silks and tiger rolls silks on a horse. Also at the end of the reviews video I want
+it to be snowing down the screen"
+1. TIGER ROLL TikTok v2: add a scene/shot of a horse in TIGER ROLL's real silks, and one in RED RUM's real silks (Red Rum is the Grand
+   National comparison). SILKS RULE: colours + cap from 2 independent sources each (e.g. Sporting Life/Racing Post/ATR record, Wikipedia,
+   race photo). Write both sources in the REVIEW REQUEST. Never name the owners on screen. Coat colour + markings from 2 sources too
+   (Red Rum bay; Tiger Roll bay, small; check). Horse runs the right way down the track, jockey face hidden by pose, crowd in race scenes,
+   "Illustration - not race footage" label stays.
+2. REVIEW TikTok v6: the END CARD gets snow falling down the screen (Alex's explicit ask, overrides the indoor no-snow rule for this card).
+   Bold and clearly visible on a phone, soft white flakes, the end card text stays readable.
+3. Push both as REVIEW REQUESTs with the 48 kHz audio. I check, then #26, then Alex (attached files).
+Order: guide thumbnail heading (440f5a4) first, then this, then the product + mug fixes (96c2813).
