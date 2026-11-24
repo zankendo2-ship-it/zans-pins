@@ -80,3 +80,4 @@ Metricool 17:10: the 18:00 Conny TikTok and 25 Nov Jon Bon TikTok captions alrea
 - P01: Alex submitted a TikTok Shop UK individual seller application (under review, 24 Nov).
 - W2b: Alex requested GSC indexing for /horse-racing-gifts/ + /gifts-for-racehorse-owners/ at 19:15 UTC on 24 Nov. Check index status from 1 Dec.
 - OA1 (Offsite Ads baseline, owner screenshot via ChatGPT 7142622576): 26 Oct-24 Nov, 17 clicks, 3 orders, 4 units, all green and gold bauble 4611213915; £51.96 sales, £7.80 fees. Kept separate from API receipts.
+- T6: Tiger Roll v3.2 booked Wed 25 Nov: TikTok 12:30 (Metricool 440820605), YT 12:30 (440820636), Pinterest 13:00 (440820663). Alex's yes 19:55 UTC 24 Nov. Gates: Red Rum cap/year + audio (code chat).
