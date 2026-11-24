@@ -71,3 +71,6 @@ Tiger Roll (`TIGER-ROLL-in-numbers-TIKTOK-v2-DRAFT.mp4`, rebuilt, 25.9 s):
 - [x] Scenes 1 to 3 carry a small "ILLUSTRATIVE SCENE" label.
 - [x] Scene 1 looked at enlarged (the field of horses at twice size): about fourteen riders, heads down with goggles; each face is a few pixels and cannot be read as a person at phone size. Silks are FLUX colours: yellow caps on navy and on purple, pink and white, green with a green cap, blue, red. I can see no green with gold hoops, no green with a pink sash, no plain royal blue set and no claret and blue. I cannot check them against a colours register from this session, so this is an eye check only.
 Honeysuckle scenes do not carry the "illustrative" label yet; say if they should.
+
+## After ADVICE dc43e10
+- [x] Honeysuckle scenes 1 to 3 now carry the small "ILLUSTRATIVE SCENE" label in all three music versions (A, B, C rebuilt). The single-music v2 file is removed so only A, B and C remain.
