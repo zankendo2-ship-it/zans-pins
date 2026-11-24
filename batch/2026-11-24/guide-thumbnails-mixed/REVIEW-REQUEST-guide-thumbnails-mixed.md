@@ -16,3 +16,12 @@ Differences from the old angled design, to judge:
 3. The old hook "Know the course before the off" is dropped to make room.
 4. The left column text is small next to the heading (50 px selling lines).
 I did not have the old design's source files, only the 1000x750 website copies and Alex's two screenshots, so this is a rebuild in the same arrangement, not the original artwork.
+
+## v2 (24 Nov 2026) - after "the small text can't be read"
+- Removed: the tick list and the page-count line.
+- Added: ONE bold selling line per guide (116px on the 2700 image, about 13px tall letters on a 300px tile).
+- Cover: 820x996 -> 1040x1262, still angled, fully inside the 4:5 phone crop.
+- Kept: v3 heading, edition badge, 62px edition-metal strips, DIGITAL PDF DOWNLOAD.
+- Rule 2A-14 check: every word was read on the 300px tile in `MIXED-v2-three-samples-full-and-300px-phone-tile.jpg` (the text printed on the guide cover itself is part of the cover picture, not sales text).
+- Files: the three `MIXED-...-angled-cover-new-heading-v2.jpg`. v1 files removed.
+- Not uploaded to Etsy. Nothing booked.
