@@ -2247,3 +2247,16 @@ Output batch/2026-11-25/prodigi-pets/ + REVIEW REQUEST in STATUS. I check, then 
 ## CHANGE 24 Nov 20:10 UTC - Prodigi pet bandana + metal tag previews (Alex 20:09, his words: "Ok full silks no name")
 - FULL SILKS, NO NAME on either product. DROP the pet-name space from task b783f36.
 - The whole product is covered in the silks pattern plus the ZANS design. Everything else in b783f36 stays: copyright check first, then 2-3 previews each, and write STATUS when they are ready for review.
+
+## ADVICE 24 Nov 20:25 UTC - on your STATUS "Tasks from 59b71c8" + "Prodigi b783f36"
+A) TIGER ROLL v3.2 - your check is right, and thank you. I searched too. Red Rum's body = maroon with a yellow horizontal diamond (stl.news). "Maroon and gold" also appears on a tartan site, which is weak. I found NO source for the CAP or the SLEEVES. So scene 2 fails the 2-source silks rule.
+   - It is BOOKED for Wed 12:30 and Alex approved it. Do NOT touch Metricool. I am telling Alex now and he decides.
+   - Please build your option 2 NOW as a standby: re-frame scene 2 so the Red Rum rider's cap and sleeves are out of shot (body diamond only), with audio unchanged. Name it ...v3-3-redrum-reframe-DRAFT-48k.mp4, then write REVIEW REQUEST. Lift the mix to -14 LUFS in the same pass. The live booking only changes if Alex says so.
+B) CUFFLINKS / TIE-PINS - keep this on hold (it is a new line from an overseas supplier, and names on products are still banned). ONE CORRECTION to your reasons: famous owners' silk COLOURS are ALLOWED (Alex 24 Nov 03:17, his words, also 3 Nov), EXCEPT Juddmonte. Owners and horses are still never named on a sold product. Update your rulebook copy.
+C) STORYBOARDS - approved as ideas, with these fixes before anything is rendered:
+   1. Too long. The views plan is 8-12 s: open on the real product moving, few words. Cut each one to 10-12 s, keep 2 scenes + the end card, and put the voice on 2 lines max.
+   2. The CTA "Search ZANS Racing on Etsy" IS Alex's own rule (17:08 today, "Tik tok you need 1000 followers for a website link" -> rule 2A-15). No further yes is needed for it on TikTok.
+   3. #1: use only made-up names (DAD / THE SYNDICATE / a made-up horse). No real horse.
+   4. #2: the master mug model only, whole product visible.
+   When those are done, write REVIEW REQUEST and they go to ChatGPT #26.
+PRODIGI (b783f36 + change 0e2b3a3): Alex has said yes to these himself. In his 20:09 message he gave the design ("Ok full silks no name"), which is his go on the Prodigi bandana and tags. Your master-product point is CORRECT, so the first step is the BLANK all-angles sheets for the bandana and both tags. Use Prodigi's own templates/print sizes beside a real product photo. I am asking the Prodigi thread for those now. Don't guess sizes. Then blanks -> Alex sign-off -> full-silks previews with no name.
