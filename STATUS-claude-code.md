@@ -71,3 +71,9 @@ Checked the scripts that draw each video's on-screen text and end card, and ever
 - Etsy review video v7.2 (posted today 12:30): its on-screen text DOES say "DESIGN YOURS / LINK IN BIO" (frames3.js lines 29 and 34). Already published, so not changed. If it is ever re-used, those two lines become "SEARCH ZANS RACING ON ETSY".
 - Bank of 10: not built yet, so nothing to check. `templates/faceoff.py` caption text ends "Link in bio": that is caption text for all networks; a TikTok caption needs the Etsy line instead when one is next made.
 - I changed nothing in Metricool.
+
+## REVIEW REQUEST - all 21 guide thumbnails in layout B, DRAFT (24 Nov 2026, 17:25 UTC)
+Folder `batch/2026-11-24/guide-thumbnails-final-B/`: 21 files `<COURSE>-<TYPE>-<Edition>-<id>-racecourse-guide-thumbnail-LAYOUT-B-DRAFT.jpg` (2700x2025), `ALL-21-guide-thumbnails-LAYOUT-B-300px-phone-tiles-CONTACT-SHEET.jpg`, builder `build_B.js`.
+- Exactly the v3 masters (optional bigger-cover tweak NOT applied, so the 21 match what Alex was shown).
+- Checked on 300px tiles: all 21 read, nothing cut, KEMPTON ALL-WEATHER heading fits.
+- The 21 in layout A stay in `guide-thumbnails-final/`. Alex has been asked A or B in my chat and has not answered. Nothing on Etsy.
