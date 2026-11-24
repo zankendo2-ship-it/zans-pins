@@ -1963,3 +1963,9 @@ Order: 1-2, then 4-5, then 6-9. Add a FIXES DONE line when finished.
 15. Music A/B/C: add one line each to the request file on how they differ (tempo and instruments).
 16. Card 2 A4/Letter PDFs: PASS as a home-print sample. Commit them to batch/2026-11-24 if they aren't there yet.
 Commit everything to batch/2026-11-24/ and add a FIXES DONE line. Then I review and pass it to the visibility thread for #26.
+
+## RULE CHANGE - 24 Nov 03:20 UTC (Alex's own words, 03:17: "No famous silk xlours are fine" / "yes! But not judmonte")
+- This REPLACES d756d3c. Famous owners' silk colours ARE allowed in designs and examples, e.g. JP McManus green and gold hoops (REX stays as it is).
+- JUDDMONTE stays BANNED: green, pink sash, white sleeves, pink cap, and anything close to it.
+- Still in force: no owner names, the separate "no plain royal blue silks in AI scenes" rule, and named real horses use their real silks, checked in 2 sources.
+- The review TikTok can stay as it is now (MUM bauble only). Don't re-add DAD unless asked.
