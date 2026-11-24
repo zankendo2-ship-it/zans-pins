@@ -2050,3 +2050,17 @@ no owners/Juddmonte. The patch set is the closest to passing. Fix and re-push to
    ZEUS name read top-to-bottom like SASHA, and use a clearer silk (e.g. red with white cross-belts, or red/white quarters).
 4. Mugs are small. Make the two mugs fill more of the middle 80% (about 60% of frame width together) so they read on the 4:5 tile.
 Re-push both as "FIXES DONE - ready for re-check". Nothing goes to Alex until it passes here and on #26.
+
+## TASK (TOP PRIORITY, Alex 24 Nov 10:05 UK) + PERMANENT RULE 2A-13: guide thumbnail heading
+Alex: "They need to say this in large writing "AINTREE JUMPS RACECOURSE GUIDE" for example"
+RULE 2A-13 (every guide thumbnail, now and future): the heading reads "<COURSE> <TYPE> RACECOURSE GUIDE" in LARGE writing,
+e.g. AINTREE JUMPS RACECOURSE GUIDE, ASCOT FLAT RACECOURSE GUIDE, KEMPTON ALL-WEATHER RACECOURSE GUIDE.
+Do now on all 21 (start from cab43c8, which keeps the 62 px edition-metal strips):
+- Line 1: COURSE, same big size and course colour as now. Line 2: "<TYPE> RACECOURSE GUIDE" in gold, LARGE. It must read clearly in
+  the 4:5 phone tile (cap height at least ~60% of line 1; "KEMPTON ALL-WEATHER RACECOURSE GUIDE" is the longest, so size all 21 to fit it,
+  the same size on every tile). Fit inside the middle 80% width, so nothing is cut by the 4:5 crop.
+- Make room by shrinking/moving the guide cover picture a little. The edition button, DIGITAL PDF DOWNLOAD and the strips stay, and nothing
+  touches the strips (40 px+ clear).
+- Same fonts as now. Spelling exactly: AINTREE, ASCOT, CHELTENHAM, KEMPTON, SANDOWN; JUMPS, FLAT, ALL-WEATHER.
+- Push 21 full files + phone-tile contact sheet + REVIEW REQUEST. I check, then #26, then Alex.
+Then back to the product + mug fixes (96c2813).
