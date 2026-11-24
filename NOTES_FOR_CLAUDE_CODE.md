@@ -2077,3 +2077,14 @@ it to be snowing down the screen"
    Bold and clearly visible on a phone, soft white flakes, the end card text stays readable.
 3. Push both as REVIEW REQUESTs with the 48 kHz audio. I check, then #26, then Alex (attached files).
 Order: guide thumbnail heading (440f5a4) first, then this, then the product + mug fixes (96c2813).
+
+## TASK ORDER CHANGE + BOOKING (Alex 24 Nov 10:09 UK: "Make sure stuff is scheduled for today and posted as I won't be active now until later")
+Alex approved the videos ("The videos are great") with his 2 changes (65b8eeb), and asked for today's posts to be scheduled.
+1. FIRST: REVIEW TikTok v6 with SNOW on the end card (part 2 of 65b8eeb). Push as soon as it's done. I check it, then #26.
+2. When both pass: BOOK it in Metricool for TODAY 18:15 UK on TikTok + YouTube Short + Pinterest pin (rule: every video goes out on all three),
+   with the jointly approved caption. Check the daily caps (TikTok max 2/day; Conny bauble already goes at 18:00 on Instagram/TikTok, so
+   keep 18:15, not earlier). Post the Metricool ids in STATUS. Leave No Drama This End as it is (Alex: "Leave the no drama this end").
+3. Then the guide thumbnail heading (440f5a4), then Tiger Roll with the real Tiger Roll + Red Rum silks (65b8eeb part 1). Tiger Roll books for
+   WED 25 Nov 12:30 once it passes me + #26.
+4. Honeysuckle: NOT booked today (Alex hasn't seen it). It waits for its ChatGPT verdict + Alex. Then music A, unless ChatGPT strongly prefers another.
+5. Then the product + mug fixes (96c2813).
