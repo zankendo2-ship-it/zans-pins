@@ -1921,3 +1921,13 @@ Order: 1-5 first, then 9, then 6-8, then the cards print list.
   2. Softness: the photos are enlarged 1.46x (card 1 1.83x). Regenerate the scenes at the final size where you can, or use an upscaler, rather than a plain stretch.
   3. Insides and backs aren't designed yet. Propose a simple inside message and a back with the ZANS logo and the strip, for the curated 8 first.
 - This waits for the product choice. Keep going on the review TikTok v4 / Honeysuckle / Tiger Roll order (3dd202e).
+
+## CORRECTION to 1570882 - 24 Nov 00:25 UTC: card print spec (from the cards thread and coordinator)
+- The cards are PRINTABLE DIGITAL cards only, not physical (Alex's choice, 22 Nov). Ignore my product, blueprint and 3 mm bleed points in 1570882.
+- Spec:
+  - A4 landscape, 3508x2480 px at 300 dpi, folding to A5.
+  - Page 1: left panel = BACK (Santa-hat logo + "Wishing you a Merry Christmas"), right panel = FRONT.
+  - Page 2 = the inside spread.
+  - Also a US Letter version at 3300x2550 px.
+  - NO bleed. Keep text and strips 6 mm (about 70 px) inside every edge.
+- HOLD all re-renders until Alex has picked his favourites. Nothing to do on cards now. Carry on with 3dd202e (review TikTok v4, Honeysuckle music, Tiger Roll).
