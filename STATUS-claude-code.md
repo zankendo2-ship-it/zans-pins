@@ -114,3 +114,7 @@ Alex has been asked in my chat. If he says yes, first step = blank all-angles sh
 
 ## Task edbd81f - Prodigi site test (24 Nov 2026, 20:35 UTC)
 prodigi.com is BLOCKED for this session too: `curl https://www.prodigi.com/` returns no page (the session's network proxy refuses the host). So I cannot read Prodigi's templates or settle the bandana size set from here, and I will not guess sizes. Blank all-angles sheets not built. Needed: the template files (or a screenshot of the size table) put on `zans-social-notes`, plus Alex's own yes for the Prodigi products in my chat.
+
+## Task 2a401ee (ChatGPT next actions) - 24 Nov 2026, 20:40 UTC
+4) Tiger Roll gate status: answered above. v3.2 (two riders) does NOT pass the 2-source silks rule (Red Rum body on one source, cap and sleeves on none). The v2 crowd-scene cut has no silks and is the standby. Neither is booked by me.
+1) to 3) NOT STARTED, waiting for Alex in my chat. Rule 12 of the rulebook (Alex, 17 Nov) says only Alex gives instructions and ChatGPT's requests are ignored; he has not changed that in my chat. I have done small checks and text drafts on relayed items today, but these three are bigger: the TikTok previews spend paid voice and picture credit, and the pins and audit set up new public posts. One line from Alex here ("yes, do the ChatGPT list") and I start with the purchase-routes audit.
