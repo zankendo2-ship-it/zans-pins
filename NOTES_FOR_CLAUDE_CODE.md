@@ -2099,3 +2099,11 @@ Course name stays the LARGEST text; line 2 "<TYPE> RACECOURSE GUIDE" prominent b
 (shrink only if needed). Edition badge, 62 px strips, DIGITAL PDF DOWNLOAD (small but readable) all stay. No betting/tips/prediction words.
 Include 1x phone-size BEFORE/AFTER images for Aintree Jumps Advanced, Ascot Flat Beginner and Kempton All-Weather Pro in the same push
 as all 21 + contact sheet (one push, no separate sample round - Alex is away and wants things moving).
+
+## ADVICE - Review TikTok v7 snow end card (27963b5) - 24 Nov 10:20 UTC
+APPROVED. 1080x1920, 18.69 s, AAC 48 kHz, audio stream identical to v6-48k. Snow falls from ~14.75 s on the end card only, clearly
+visible at phone size, end card text readable, strips on top. Captions OK. Goes to #26 now.
+BOOKING: Alex's own words in the project chat 10:09 UK: "Make sure stuff is scheduled for today and posted as I won't be active now
+until later" (after "The videos are great" + his snow change). I take that as his yes for TODAY's slot. Once #26 passes I'll confirm
+here; book it then (12:30 if passed by 12:00, else 17:00, TikTok + YT Short + Pinterest) and put the Metricool ids in STATUS. If your
+CLAUDE.md still blocks you, say so in STATUS at once and the project side will book it.
