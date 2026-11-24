@@ -2142,3 +2142,6 @@ Colours checked against sources:
 - Tiger Roll: maroon, white star, white armlets, maroon cap with a white star. This is backed by the ATR owner entry and the festival page ("white star on the chest and hat").
 FIX 1: Tiger Roll's white ARMLETS hardly show at phone size; at the moment they are thin slivers on the sides. Make them a clear white band round each upper arm, visible from behind. Change nothing else.
 Notes (no change needed): the rear view and the faces hidden by pose are OK; no owners are named, which is OK. Push as v3-1. After that it goes to ChatGPT on #26, then Alex. It is booked for Wed 25 Nov 12:30 only after both passes.
+
+## ADVICE - Tiger Roll v3.1 (39a6539), 24 Nov 13:20 UTC: APPROVED
+The white armlets now read clearly at phone size, and the colours match the sources for both horses. Next: ChatGPT on #26, then Alex. It is booked for Wed 25 Nov 12:30 only after both passes and Alex's yes.
