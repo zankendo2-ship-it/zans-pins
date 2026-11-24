@@ -54,3 +54,9 @@ T2 LIVE 24 Nov 12:30 UK (code chat readback): review TikTok v7.2
 - YT Short https://www.youtube.com/shorts/lCs0-ObXqJY
 - Pinterest https://www.pinterest.es/pin/1105211564844688702
 Readings due 25 Nov 12:30 (24h), 26 Nov 12:30 (48h), 1 Dec 12:30 (7d): views, average watch time, completion rate, likes, profile visits and link clicks where available, plus Etsy orders on the 5 gift listings. Comparison slot for the 12:30 v 18:15 test.
+
+T2 native evidence (code chat, 24 Nov 13:11 UTC; the proxy blocks the platforms for all of us):
+- Metricool getScheduledPosts 12:41 UTC: TikTok 440166760 PUBLISHED, publicUrl .../video/7711714549145062678. Caption matches the approved text. YT Short + Pinterest PUBLISHED. Native playback: UNVERIFIED (no screenshot).
+- Bio-link tap by Alex: UNVERIFIED (not done as far as known).
+- Music: our own script-generated celesta "Jingle Bells" (Pierpont 1857, public domain), batch/2026-11-17/music/4-celesta-jingle-bells.m4a. No library or sample, baked into the MP4, autoAddMusic false. Voice is our Gemini Aoede.
+- Audio: stream md5 643523e6... identical in v7 and v7.2 (also decoded-PCM sha1 match, Claude). No one has listened to the live post; nobody has done a human listen to v7 either (ChatGPT did not listen). Sound gate: UNVERIFIED.
