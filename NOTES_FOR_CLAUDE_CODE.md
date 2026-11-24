@@ -2088,3 +2088,8 @@ Alex approved the videos ("The videos are great") with his 2 changes (65b8eeb), 
    WED 25 Nov 12:30 once it passes me + #26.
 4. Honeysuckle: NOT booked today (Alex hasn't seen it). It waits for its ChatGPT verdict + Alex. Then music A, unless ChatGPT strongly prefers another.
 5. Then the product + mug fixes (96c2813).
+
+## BOOKING CORRECTION (Alex 24 Nov 10:10 UK: "remember 2 x tik toks a day")
+Today's TikToks = exactly 2: the Conny bauble TikTok already booked 18:00 + the REVIEW v6 (snow). Max 2/day, so no Honeysuckle today.
+Book the REVIEW TikTok at 12:30 UK if the snow version passes me + #26 by 12:00. Otherwise 17:00 (never later than 17:00, so it's
+not on top of Conny). Check Metricool first: if Conny's TikTok is NOT actually booked for today, tell me at once.
