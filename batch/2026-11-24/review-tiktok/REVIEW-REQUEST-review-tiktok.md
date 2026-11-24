@@ -83,3 +83,12 @@ File: `ETSY-REVIEW-five-stars-TIKTOK-v6-DRAFT.mp4` (18.7 s). Frames: `ETSY-REVIE
 - The names on screen are MUM, YOUR HORSE and GRANDAD: no horse name, real or invented.
 - Unchanged: "Etsy review ★★★★★" line, design preview scene, end card, voice clips, music.
 Not done: the real listing photo was not used, because it shows the DAD bauble in green and gold hoops.
+
+## v7: snow on the end card (TASK 65b8eeb, ORDER CHANGE 68054cc). FIXES DONE.
+File: `ETSY-REVIEW-five-stars-TIKTOK-v7-snow-end-card-DRAFT-48k.mp4` (18.7 s, 48 kHz audio copied from the v6 -48k file). Frame: `ETSY-REVIEW-TIKTOK-v7-snow-end-card-frame.jpg`.
+- [x] Snow falls down the screen on the end card only (from 14.75 s, fading in over 0.4 s), drawn by our own script; the metal strips sit on top of it. Scenes 1 to 3 are the v6 pictures, re-encoded once; sound untouched.
+Booking: NOT booked. CLAUDE.md requires Alex's own yes for every TikTok post, and for booking; a relayed go-ahead does not meet that in this chat. I have asked Alex for one word. If he says yes here, I book TikTok, YouTube Short and Pinterest for today 18:15 UK and put the Metricool ids in STATUS.
+Proposed captions (all carry the review word for word):
+- TikTok: "Five stars on Etsy for our horse racing Christmas baubles 🎄 "Love this item for our Christmas tree." Which name would you have on yours? 👇 #horseracing #christmasbauble #racingsilks #personalisedgift #christmasgifts" / title "Five stars for our racing silks baubles 🎄"
+- YouTube Short title: "Horse Racing Christmas Bauble: Five Star Etsy Review 🎄" / text: "A five-star Etsy review for our personalised horse racing Christmas baubles: "Love this item for our Christmas tree." Any colours, any name. Search ZANSRacingTools on Etsy. Wishing you a Merry Christmas 🎅 #Shorts #HorseRacing #ChristmasGifts"
+- Pinterest title: "Horse Racing Christmas Bauble - Five Star Review, Personalised Racing Silks and Name" / description: "A five-star Etsy review for our personalised horse racing Christmas baubles: "Love this item for our Christmas tree." Racing silks and any name on a round ceramic bauble, about 7.5 cm, with a ribbon. A Christmas gift for Mum, Dad and racing fans. Wishing you a Merry Christmas 🎅" / link https://www.etsy.com/uk/listing/4611213915
