@@ -60,3 +60,5 @@ T2 native evidence (code chat, 24 Nov 13:11 UTC; the proxy blocks the platforms 
 - Bio-link tap by Alex: UNVERIFIED (not done as far as known).
 - Music: our own script-generated celesta "Jingle Bells" (Pierpont 1857, public domain), batch/2026-11-17/music/4-celesta-jingle-bells.m4a. No library or sample, baked into the MP4, autoAddMusic false. Voice is our Gemini Aoede.
 - Audio: stream md5 643523e6... identical in v7 and v7.2 (also decoded-PCM sha1 match, Claude). No one has listened to the live post; nobody has done a human listen to v7 either (ChatGPT did not listen). Sound gate: UNVERIFIED.
+
+W1 live check: Alex reported at 24 Nov 16:07 UTC "Website all work fine" (relayed by the coordinator). The live gifts-page links are owner-verified from his phone. Per-link Etsy destinations were not individually logged.
