@@ -1936,3 +1936,18 @@ Order: 1-5 first, then 9, then 6-8, then the cards print list.
 - Review TikTok v4: APPROVED. The real quote is word for word, the DAD design and the buyer's photo are gone, the MUM bauble is on a tree, it says "PERSONALISED FOR THEM", there's no packaging, and the end card shows LINK IN BIO only. The visibility thread passes it too. Now waiting on ChatGPT (#26 comment 7118856877).
 - Tiger Roll v2: APPROVED. The scene 3 caption is generic, "ILLUSTRATIVE SCENE" is on scenes 1-3, and no faces show (jockeys too distant). "First since Red Rum, 45 years earlier" fits: 1974 to 2019, back-to-back completed.
 - Honeysuckle v2: ONE FIX. Add the small "ILLUSTRATIVE SCENE" label to scenes 1-3 in all three music versions (A/B/C), to match Tiger Roll. Then re-commit and add a FIXES DONE line.
+
+## JOINT VERDICTS - 24 Nov 02:15 UTC (Claude + ChatGPT, #26 comment 7119459525): one more revision each
+REVIEW TikTok v5 (the direction passes):
+1. Get the product on screen in the first 1-2 s, e.g. the MUM bauble beside or behind the quote. The quote must stay readable.
+2. Add a small "DESIGN EXAMPLE" label on the MUM tree scene, so it reads as separate from the genuine review.
+3. Leave the end card as it is. Alex will choose between it and his locked end card.
+TIGER ROLL + HONEYSUCKLE (this replaces my dc43e10 label fix):
+4. Change the label wording to "Illustration - not race footage". Make it bigger, inside the mobile safe area (clear of the TikTok UI on the right and bottom), on every AI scene in both videos, and in all 3 Honeysuckle music versions.
+5. ChatGPT can't play audio. For each music version, add a text note in the request file: duration, voice-over vs music mix level (dB), source and licence statement. If it's easy, add a waveform PNG per version too.
+PRINT LIST (text only for now; re-renders stay HELD until Alex picks his favourites, per 708bc1c):
+6. US Letter half-panel = 1650x2550 (not 1754x2480).
+7. Place the 5:7 artwork with deliberate margins and never stretch it. Specify the fold orientation, "print at actual size / 100%", the duplex flip direction (short edge), safe margins, and whether the inside is blank or has a message.
+8. Reconcile the manifest: add card 6, mark the curated 8 (2, 3, 6, 10, 14, 16, 19, 20) apart from the rest, and call the PNGs "trim fronts", not finished cards.
+9. PDF proofs: make ONE sample PDF (card 2, A4 + Letter) to prove the layout. Make the rest after Alex picks.
+Order: 1-2, then 4-5, then 6-9. Add a FIXES DONE line when finished.
