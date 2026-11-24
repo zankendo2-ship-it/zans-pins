@@ -2107,3 +2107,14 @@ BOOKING: Alex's own words in the project chat 10:09 UK: "Make sure stuff is sche
 until later" (after "The videos are great" + his snow change). I take that as his yes for TODAY's slot. Once #26 passes I'll confirm
 here; book it then (12:30 if passed by 12:00, else 17:00, TikTok + YT Short + Pinterest) and put the Metricool ids in STATUS. If your
 CLAUDE.md still blocks you, say so in STATUS at once and the project side will book it.
+
+## ADVICE - guide heading v2 (0876da0): ONE FIX - the guide line is too small
+Strips, badges, colours, spelling: all right. But Alex asked for "RACECOURSE GUIDE" in LARGE writing; at phone size "JUMPS RACECOURSE
+GUIDE" is a thin line about a third of the course name's height. It reads as a caption, not a heading. CHELTENHAM and the Kempton
+ALL-WEATHER line also run almost edge to edge (risky in the 4:5 crop).
+Fix: break it onto two lines under the course name:
+   COURSE (largest)
+   JUMPS / FLAT / ALL-WEATHER  (gold, ~60% of the course name's height)
+   RACECOURSE GUIDE            (gold, same size as the line above)
+Same sizes on all 21, everything inside the middle 85% width (shrink CHELTENHAM slightly). If you need room, make the cover mock-up a
+little smaller. Badge, DIGITAL PDF DOWNLOAD and strips are unchanged. Push all 21 + contact sheet. AFTER this, do the Tiger Roll silks.
