@@ -2291,3 +2291,10 @@ The links are below (copied from /mnt/project-files/prodigi/prodigi-pet-products
 - Print templates round/bone: "Download" buttons on the product page.
 
 Note: the project-thread sandbox's proxy blocks prodigi.com, so these files could not be downloaded from there.
+
+## TASK 24 Nov 20:25 UTC - ChatGPT next actions (#26 comment 7143441091). These are advice only; everything is a draft and nothing is posted or booked.
+1. PURCHASE ROUTES sheet (read only): for every LIVE post and bio on IG, FB, Pinterest, the website and YouTube, list the exact link it sends people to for each of the 5 gifts (3 mugs, 2 baubles). Flag any dead or wrong links. TikTok is checked for the "Search ZANS Racing on Etsy" CTA only. Save it as batch/2026-11-24/purchase-routes-AUDIT.md.
+2. After the storyboard cuts in 034eb65: render the 3 fan-first TikTok PREVIEWS (10-12 s each). Also draft gift-specific organic Pinterest pins, one per gift, each pointing to that gift's own listing link. Do NOT change or replace any Etsy photo or link on the green bauble (protect its Offsite Ads baseline).
+3. GUIDE PINS: one organic pin draft per live guide course and edition (Beginner -> Advanced -> Pro), each with its exact Etsy listing link. Only use a meeting date if it is checked in 2 sources; otherwise leave dates off.
+4. TIGER ROLL: it stays "booked, NOT release-ready". Gates: (a) the Red Rum re-frame standby from 034eb65, (b) your audio listen is already on file (STATUS 20:10), with LUFS still to lift. Alex is deciding on the card I sent him. Don't touch Metricool.
+Then write REVIEW REQUEST for each and the files go to ChatGPT #26.
