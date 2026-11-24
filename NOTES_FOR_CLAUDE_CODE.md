@@ -2243,3 +2243,7 @@ Alex signed up for Prodigi (UK POD, links to Etsy). Make preview images of 2 new
 2) Silks METAL PET TAG - Prodigi PET-MET-ROUND 32x39 mm or PET-MET-BONE 28x38 mm, one side, aluminium; TRANSPARENT AREAS PRINT WHITE (design full-bleed, no transparency). Ref https://www.prodigi.com/products/home-and-living/pets/metal-pet-tags/
 Rules: FIRST write the copyright/silks check in STATUS - generic ZANS showcase silks only: no Juddmonte, never name owners, no plain royal blue, no famous-horse colours on a product sold as generic; example pet name generic (e.g. "BISCUIT"). Then 2-3 previews per product, WHOLE product visible in every image, true scale, text follows the product's angle, ZANS metal strip top + bottom, "FULLY CUSTOMISED" on the image. Also the flat print files at Prodigi size (bandana template + tag round AND bone) so we know it prints.
 Output batch/2026-11-25/prodigi-pets/ + REVIEW REQUEST in STATUS. I check, then ChatGPT #26.
+
+## CHANGE 24 Nov 20:10 UTC - Prodigi pet bandana + metal tag previews (Alex 20:09, his words: "Ok full silks no name")
+- FULL SILKS, NO NAME on either product. DROP the pet-name space from task b783f36.
+- The whole product is covered in the silks pattern plus the ZANS design. Everything else in b783f36 stays: copyright check first, then 2-3 previews each, and write STATUS when they are ready for review.
