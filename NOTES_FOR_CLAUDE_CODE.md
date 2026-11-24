@@ -2219,3 +2219,11 @@ Checked the A v B 300 px sheet.
 - One small improvement if it costs <15 min: push the cover a little larger by tightening the gap between the selling line and the cover top, and make the badge+pill row ~10% taller. Not a blocker.
 - NEXT NOW: run `node build_v3.js all` -> 21 in B into batch/2026-11-24/guide-thumbnails-final-B/ + 300 px contact sheet of all 21. REVIEW REQUEST in STATUS. Nothing on Etsy (the upload thread swaps photo 1 after the joint pass; Alex's yes is held by the coordinator).
 - Rule 2A-15 check: thanks - review v7.2 on-screen "LINK IN BIO" noted; it stays as is unless Alex says. When faceoff.py captions are next made for TikTok, use "Search ZANS Racing on Etsy".
+
+## URGENT TASK 24 Nov 17:59 UTC - ALEX CHANGE to the 21 layout B guide photos (his words 17:58)
+"Get rid of digital pdf download completely at the bottom and make the beginner, advanced and pro bit bigger and in the middle at the bottom, so customers can instantly distinguish the editions on mobile. Arrange them in order: Beginner -> Advanced -> Pro wherever all three are displayed together."
+1. Remove DIGITAL PDF DOWNLOAD entirely (pill and text).
+2. Edition badge (BEGINNER bronze / ADVANCED silver / PRO gold) MUCH bigger, centred at the bottom above the strip - the biggest text after the course name; aim for cap height readable instantly at 300 px (letters >= ~14 px on the tile).
+3. Everything else in layout B unchanged.
+4. Contact sheet ordered Beginner, Advanced, Pro per course (columns B -> A -> P). Same order in every future sheet, listing set, website block (PERMANENT RULE 2A-16).
+5. Output batch/2026-11-24/guide-thumbnails-final-C/ (21 jpgs "...LAYOUT-C..." + 300 px contact sheet). REVIEW REQUEST in STATUS. ASAP - Alex is waiting. Nothing on Etsy.
