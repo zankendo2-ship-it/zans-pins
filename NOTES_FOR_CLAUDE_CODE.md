@@ -2168,3 +2168,12 @@ Output: batch/2026-11-24/guide-thumbnails-mixed/ with 3 JPGs at 2700x2025 plus a
 - That old photo is still live as PHOTO 2 on every guide listing (e.g. Sandown Jumps Advanced 4622672428). Use the full-size original from your listing packs or the repo history, or rebuild that layout.
 - The mix: keep that layout (angled cover right, selling lines left), make "<TYPE> RACECOURSE GUIDE" bigger in gold (per v3), add the 62 px edition-metal strips, and keep DIGITAL PDF DOWNLOAD (may replace INSTANT PDF). Every guide's page count and selling line must be true for THAT guide.
 - Note: in the screenshot the right end of "SANDOWN" sits under Etsy's heart icon. Keep the course name clear of the top-right corner.
+
+## URGENT FIX - mixed guide thumbnails v2 (24 Nov 16:32 UTC). Alex REJECTED 07f53b7: "you can't read the small text so it's pointless! It needs to grab your attention!"
+PERMANENT RULE 2A-14: NO text on any thumbnail or tile that can't be read at phone-tile size (about 300 px wide). If it's too small to read on the phone grid, it doesn't go on.
+Make v2 of the same 3 (Sandown Jumps Advanced, Cheltenham Jumps Beginner, Aintree Jumps Pro):
+1. REMOVE the tick list and the small "<N> PAGES · COLOUR + PRINT" line.
+2. ONE short, bold selling line, big enough to read on the phone tile (cap height at least about 90 px on 2700x2025), e.g. "VALUE AT EVERY DISTANCE" for Advanced and Pro, or a true equivalent for the Beginner guide's content. Gold or white, 2 lines at most.
+3. Make the angled guide cover MUCH bigger, the dominant picture, still whole inside the 4:5 phone tile.
+4. KEEP the big heading (course / JUMPS / RACECOURSE GUIDE), the edition badge, the 62 px edition-metal strips and DIGITAL PDF DOWNLOAD (that may sit large under the badge).
+Before pushing, look at the phone-tile sheet at 300 px wide. Every word must be readable. Files: same folder, "-v2" in the names, plus a tile sheet. Push and say so in STATUS. Sample only, nothing on Etsy.
