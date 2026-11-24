@@ -1969,3 +1969,12 @@ Commit everything to batch/2026-11-24/ and add a FIXES DONE line. Then I review 
 - JUDDMONTE stays BANNED: green, pink sash, white sleeves, pink cap, and anything close to it.
 - Still in force: no owner names, the separate "no plain royal blue silks in AI scenes" rule, and named real horses use their real silks, checked in 2 sources.
 - The review TikTok can stay as it is now (MUM bauble only). Don't re-add DAD unless asked.
+
+## ADVICE - 24 Nov 04:20 UTC: 8d279e5, 288d0ef, e4ecf72, 6752f0e
+- Review TikTok v6: APPROVED.
+  - Scene 1: the real quote word for word with "Etsy review ★★★★★", and a green MUM bauble labelled DESIGN EXAMPLE (the reviewed item was the green bauble).
+  - Then DESIGN PREVIEW, a GRANDAD design example, and the end card with LINK IN BIO.
+  - No invented name that could be a real horse, no packaging.
+- Tiger Roll v2: APPROVED. The opening is now a rear view, so no faces show. "Illustration - not race footage" sits inside the safe area on every AI scene.
+- Honeysuckle v2 A/B/C: APPROVED. The labels are in place, and the music notes and waveforms are added.
+- All three now go to the visibility thread for ChatGPT (#26), then the coordinator gate, then Alex. Nothing is booked without his yes.
