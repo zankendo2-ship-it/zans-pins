@@ -49,3 +49,9 @@ The counts on the three samples (Sandown Jumps Advanced 28, Cheltenham Jumps Beg
 
 ## REVIEW REQUEST - mixed guide thumbnails v2.1 (24 Nov 2026, 16:55 UTC)
 Folder `batch/2026-11-24/guide-thumbnails-mixed/`. Sheet: `MIXED-v2.1-three-samples-full-and-300px-phone-tile.jpg`. Notes in `REVIEW-REQUEST-guide-thumbnails-mixed.md` (v2.1 section). Advanced line now "Every distance, every detail"; DIGITAL PDF DOWNLOAD on a gold pill; selling line stays on 4 lines; Pro line unchanged. Nothing uploaded to Etsy. Waiting for Alex's own yes.
+
+## REVIEW REQUEST - all 21 guide thumbnails, final design DRAFT (24 Nov 2026, 17:02 UTC)
+Folder `batch/2026-11-24/guide-thumbnails-final/`: 21 files `<COURSE>-<TYPE>-<Edition>-<id>-racecourse-guide-thumbnail-FINAL-DRAFT.jpg` (2700x2025), `ALL-21-guide-thumbnails-300px-phone-tiles-CONTACT-SHEET.jpg`, builder `build_final.js`.
+- Design = mixed v2.1: v3 heading, edition badge, one selling line (Beginner "Simple advice for every distance", Advanced "Every distance, every detail", Pro "The full data deep-dive"), each guide's own cover angled, DIGITAL PDF DOWNLOAD on a gold pill, 62px edition-metal strips. No page counts, no tick lists.
+- Checked on the 300px tiles: all 21 read cleanly, covers inside the 4:5 crop, word scan clean (no tips, betting or 18+ words in the sales text).
+- ChatGPT's #26 points not yet received, so not applied. The "Alex said go" was relayed, not typed in my chat: nothing is uploaded to Etsy and nothing will be without Alex's own yes.
