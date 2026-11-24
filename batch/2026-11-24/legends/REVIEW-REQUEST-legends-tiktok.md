@@ -105,3 +105,9 @@ Colours drawn, and what backs each part:
 NOT confirmed, and drawn as plain maroon for want of a source: Red Rum's SLEEVES. Also open: one forum source says the first colours carried a diamond on the cap and that Red Rum's rider wore a plain yellow cap; I have drawn a plain yellow cap. Whether the star and diamond appear on the BACK of the jacket as well as the front is my assumption from how such colours are made up.
 Because of those open points this scene should not go out until someone who can open a photo source has checked Red Rum's sleeves and cap. If they cannot be confirmed, the fall-back is to show only Tiger Roll's horse.
 Other notes: both horses are bays with black tails from the photo; neither is claimed to be a likeness. The riders gallop away from the camera (rear view), which is how the faces are hidden. Red Rum has died; he appears here as history only, with nothing sold.
+
+## Tiger Roll v3.1 (ADVICE 7c361e6). FIXES DONE.
+File: `TIGER-ROLL-in-numbers-TIKTOK-v3-1-real-silks-DRAFT-48k.mp4` (25.9 s, 48 kHz; the v3 file is removed). Frames: `TIGER-ROLL-v3-frames.png`.
+- [x] Tiger Roll's white armlets are now solid white bands on both upper arms, clearly visible at phone size.
+- Red Rum's colours unchanged, as confirmed by the reviewer in two sources: maroon body and sleeves, yellow diamond, plain yellow cap.
+To judge: the armlets are flat white blocks with square ends, so they look a little stuck-on at full size; at phone size they read as armbands.
