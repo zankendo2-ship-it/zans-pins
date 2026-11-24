@@ -2260,3 +2260,34 @@ C) STORYBOARDS - approved as ideas, with these fixes before anything is rendered
    4. #2: the master mug model only, whole product visible.
    When those are done, write REVIEW REQUEST and they go to ChatGPT #26.
 PRODIGI (b783f36 + change 0e2b3a3): Alex has said yes to these himself. In his 20:09 message he gave the design ("Ok full silks no name"), which is his go on the Prodigi bandana and tags. Your master-product point is CORRECT, so the first step is the BLANK all-angles sheets for the bandana and both tags. Use Prodigi's own templates/print sizes beside a real product photo. I am asking the Prodigi thread for those now. Don't guess sizes. Then blanks -> Alex sign-off -> full-silks previews with no name.
+
+## TASK 24 Nov 20:20 UTC - Prodigi blanks: source files (from the Prodigi thread)
+The links are below (copied from /mnt/project-files/prodigi/prodigi-pet-products-links.md): sizes, SKUs, materials, range PDFs, blank-asset zips, product photo zips.
+1. Try to download them. prodigi.com is blocked from my sandbox and the Prodigi thread's. If yours is blocked too, say so in STATUS at once and Alex will save the templates from his Prodigi dashboard.
+2. The print templates (bandana S/M/L, round tag, bone tag) sit behind "Download" buttons with no direct URL.
+3. Prodigi gives TWO bandana size sets: 64x20 / 80x25 / 85x28 cm v 150x95 / 220x140 / 280x170 mm. Settle which is right from the template file itself and say which in STATUS.
+4. Then: blank all-angles sheets (bandana S/M/L, round + bone tag) beside a real Prodigi product photo -> REVIEW REQUEST. No artwork yet.
+--- links file ---
+# Prodigi pet products - spec + asset links (checked 24 Nov 2026)
+
+## Dog bandana (SKU PET-BANDANA-SML / -MED / -LRG)
+- Sizes (product page + range PDF): S 64 x 20 cm, M 80 x 25 cm, L 85 x 28 cm. The variant table says 150x95 / 220x140 / 280x170 mm instead. The two don't match, so check against the template.
+- 100% spun polyester jersey, edge-to-edge dye sublimation on the front, hemmed. Made in the UK. 120 h production. From £6.00 ex VAT.
+- Artwork: jpg/pdf, 300 dpi recommended. Pixel size, bleed and safe area are not published; they will be in the templates.
+- Page: https://www.prodigi.com/products/home-and-living/pets/dog-bandanas/
+- Range PDF: https://www.prodigi.com/download/product-range/Prodigi%20Dog%20bandanas.pdf
+- Blank assets (for mock-ups): https://www.prodigi.com/download/blanks/prodigi-pet-bandanas-blank-assets.zip
+- Photo assets: https://www.prodigi.com/download/product-range/dog-bandanas/prodigi-dog-bandanas-photo-assets.zip
+- Single photos: https://www.prodigi.com/download/product-range/dog-bandanas/Prodigi-dog-bandanas-blank.jpg (also -small, -medium, -large, -01, -02 .jpg)
+- Print templates S/M/L: "Download" buttons on the product page (direct URLs not in the page text).
+
+## Metal pet tag (SKU PET-MET-ROUND 32x39 mm, PET-MET-BONE 28x38 mm)
+- Aluminium, clear gloss, one side printed by dye sublimation. Transparent areas print WHITE. Made in the UK. 120 h. From £5.00 ex VAT.
+- Page: https://www.prodigi.com/products/home-and-living/pets/metal-pet-tags/
+- Range PDF: https://www.prodigi.com/download/product-range/Prodigi%20Metal%20pet%20tags.pdf
+- Blank assets: https://www.prodigi.com/download/blanks/prodigi-pet-tag-blank-assets.zip
+- Photo assets: https://www.prodigi.com/download/product-range/metal-pet-tags/prodigi-metal-pet-tags-photo-assets.zip
+- Single photos: https://www.prodigi.com/download/product-range/metal-pet-tags/Prodigi_Pet_Tag_Round.jpg (also _Round_back, _Bone, _Bone_back .jpg)
+- Print templates round/bone: "Download" buttons on the product page.
+
+Note: the project-thread sandbox's proxy blocks prodigi.com, so these files could not be downloaded from there.
