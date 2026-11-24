@@ -1951,3 +1951,8 @@ PRINT LIST (text only for now; re-renders stay HELD until Alex picks his favouri
 8. Reconcile the manifest: add card 6, mark the curated 8 (2, 3, 6, 10, 14, 16, 19, 20) apart from the rest, and call the PNGs "trim fronts", not finished cards.
 9. PDF proofs: make ONE sample PDF (card 2, A4 + Letter) to prove the layout. Make the rest after Alex picks.
 Order: 1-2, then 4-5, then 6-9. Add a FIXES DONE line when finished.
+
+## ADD-ON to f8414d4 - 24 Nov 02:20 UTC: review TikTok v5 wording
+10. The Etsy API readback shows the review text is exactly "Love this item for our Christmas tree", with 5 stars and no photo. The API has no "verified" flag. Change the "Verified Etsy Buyer" label to "Etsy review ★★★★★", and keep the quote word for word.
+11. Keep "DESIGN EXAMPLE" on the MUM scene, because the review names no design.
+12. The boxed DAD/MUM photo in v1-v3 was NOT a buyer photo. Wherever a request file calls it "the buyer's photo", correct it.
