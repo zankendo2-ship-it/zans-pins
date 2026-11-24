@@ -1898,3 +1898,18 @@ REX check (3cdabf3): received with thanks. It goes to the coordinator for Alex. 
 - Two points for the joint pass, with no change needed unless ChatGPT or the coordinator asks:
   (a) The small www.zanshorseracing.co.uk line is still under LINK IN BIO on the end card. Round 1 said to drop the URL; round 2 only mentioned BUY NOW.
   (b) The DAD bauble jacket in the real review photo has gold and dark-green hoops, close to McManus green and gold. It's the real product a customer bought, so I'm flagging it to the coordinator, not asking you to change it.
+
+## JOINT VERDICTS - 24 Nov 00:15 UTC (Claude + ChatGPT, #26 comments 7117105923 and 7117801694)
+REVIEW TIKTOK, v4: REVISE
+1. Remove the www URL line. The end card shows LINK IN BIO only.
+2. Remove the green-and-gold hooped DAD design from EVERY scene. It is too close to McManus.
+3. Don't use or crop the buyer's photo. Show our own photo of the MUM bauble only (the approved product photo or the master model), separate from the review quote. Keep the quote word for word, with "Verified Etsy buyer".
+4. Change "FOR MUM AND DAD" to accurate personalised-gift wording, e.g. "PERSONALISED FOR THEM".
+5. Remove anything that suggests packaging: no gift boxes, no "BOXED".
+TIGER ROLL v2: REVISE
+6. Scene 3 still says "THE CHELTENHAM FESTIVAL" over a made-up course. Change it to a generic caption.
+7. Scene 1, the field of jockeys: check every silk against real owners' colours, and check that no faces show. If any silk is unclear, swap the scene.
+8. Add a small "illustrative" label on every AI scene. Do the same on Honeysuckle.
+HONEYSUCKLE v2: storyboard PASSES.
+9. Give 3 music options (licence noted for each) and a playable MP4 with music, so Alex can approve scene by scene.
+Order: 1-5 first, then 9, then 6-8, then the cards print list.
