@@ -69,3 +69,9 @@ P01 owner phone checks, 24 Nov 17:08 UTC (Alex, relayed by the coordinator):
 - Website gifts page: PASS (16:07).
 - YouTube, Instagram bio, Facebook: UNVERIFIED.
 Metricool 17:10: the 18:00 Conny TikTok and 25 Nov Jon Bon TikTok captions already say "Search ZANS Racing on Etsy". On-screen text being checked by the code chat.
+
+## 24 Nov 17:20 UTC updates
+- E4 (step change): ALL 21 guide listings got the v3 photo 1 (big "<COURSE> <CODE> RACECOURSE GUIDE" heading, bronze/silver/gold strip by edition, DIGITAL PDF DOWNLOAD), 16:03-16:05 UTC 24 Nov. Approval: Alex 16:00:38 UTC ("get the pdf and mugs / baulbeks all changed on Etsy thumbnails now"). The old photo 1 is now photo 2. Report: reports/etsy/main_photo_guides_v3_2026-11-24.json. The mixed v2 replacement is pending.
+- P04: the £0.20 REX order = Alex's test buy on 2 Nov, EXCLUDED. The silks mug has 0 real orders 25 Oct-24 Nov.
+- P01: TikTok FEATURE BLOCKED (65/1,000 followers). Scheduled TikToks are clean ("Search ZANS Racing on Etsy"). IG Reels say "Link in bio"; the IG bio link is unverified. X Conny 24 Nov 17:00 FAILED (duplicate content).
+- P08: Search Console unavailable from this session; the owner step was requested. SEO source gaps are verified (home description guides only; gifts title/H1 mugs only; "7 December" + "plus postage").
