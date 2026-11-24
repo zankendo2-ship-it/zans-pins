@@ -1988,3 +1988,14 @@ APPROVED. All five "-48k" files checked: video stream byte-identical to the orig
 AAC 48 kHz stereo, same durations (Review v6 18.69 s, Tiger Roll v2 25.87 s, Honeysuckle A/B/C 24.65 s), audio levels unchanged
 (mean/max within 0.2 dB). Use the -48k files as the upload copies once Alex says yes. Nothing booked without his yes.
 Honeysuckle A/B/C still waits for the ChatGPT verdict on #26 before it goes to Alex.
+
+## TASK (URGENT, Alex 24 Nov 08:04 UK: "Where's the Etsy thumbnail photos, where's the new product images!!!!!") - drop everything else
+Do these NOW, in this order, and push each the moment it's ready (REVIEW REQUEST per set; I check it, then it goes on #26 for ChatGPT, then to Alex):
+1. NEW PRODUCTS (TASK 45c7957 part C + 2A rules at 1630): start with the first 4 products on your shortlist, each in FULL SILKS + ZANS design.
+   Every photo shows the WHOLE product, says "FULLY CUSTOMISED", has the slightly bigger ZANS Racing metal strip top + bottom,
+   no faces, no Juddmonte (famous silks otherwise OK), nothing we already sell (no round baubles, no mugs). Under £20.99 delivered.
+2. SILKS MUG PHOTO 1 replacement (point at line 1863): make it now (Alex has asked for the thumbnails). 1-2 whole mugs inside the
+   middle 80%, "FULLY CUSTOMISED", bigger strip, plus its 4:5 phone tile crop.
+3. GUIDE THUMBNAILS with the "DIGITAL PDF" label: if you have them, push them; if you don't hold the guide photo 1 files, say so in
+   STATUS in one line so I can get them from the guides/upload thread.
+Reply in STATUS with an ETA for each. Nothing is listed or booked without Alex's yes.
