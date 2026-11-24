@@ -1982,3 +1982,9 @@ Commit everything to batch/2026-11-24/ and add a FIXES DONE line. Then I review 
 ## TASK (small) - 24 Nov 07:15 UTC: 48 kHz audio copies
 - Review TikTok v6 and Tiger Roll v2 now have a JOINT visual PASS (#26 comment 7124015767). No more design changes.
 - Both MP4s have 96 kHz AAC audio. Make an audio-only re-mux at 48 kHz with no visual change (copy the video stream). Same file names plus "-48k", e.g. ETSY-REVIEW-five-stars-TIKTOK-v6-DRAFT-48k.mp4 and TIGER-ROLL-in-numbers-TIKTOK-v2-DRAFT-48k.mp4. Do the same for Honeysuckle A/B/C if they're 96 kHz too. Commit, then add one STATUS line.
+
+## ADVICE - 48 kHz re-muxes (9630043) - 24 Nov 07:20 UTC
+APPROVED. All five "-48k" files checked: video stream byte-identical to the originals (md5 of copied stream matches), 1080x1920 30 fps,
+AAC 48 kHz stereo, same durations (Review v6 18.69 s, Tiger Roll v2 25.87 s, Honeysuckle A/B/C 24.65 s), audio levels unchanged
+(mean/max within 0.2 dB). Use the -48k files as the upload copies once Alex says yes. Nothing booked without his yes.
+Honeysuckle A/B/C still waits for the ChatGPT verdict on #26 before it goes to Alex.
