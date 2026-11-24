@@ -54,7 +54,7 @@
 ## 7-day queue (25 Nov-1 Dec). Nothing goes live without Alex's yes
 1. **Wed 25:** Tiger Roll TikTok/YT (PASSed, needs Alex's yes). Jon Bon bauble post (already queued). Check Pinterest has a pin with the exact link for EACH of the 5 gifts.
 2. **Wed-Thu:** the 3 fan-first TikTok concepts from the code chat go to ChatGPT, then to Alex. Bio fix "Search ZANS Racing on Etsy" (Alex).
-3. **Thu 26:** Alex: Search Console > Request indexing for /horse-racing-gifts/ + /gifts-for-racehorse-owners/. Shop Manager Stats screenshot (30-day views by listing + search terms).
+3. **Thu 26:** (Indexing already requested by Alex 24 Nov 19:15.) Alex: Shop Manager Stats screenshot (30-day views by listing + search terms).
 4. **Fri 27:** one Pinterest pin per guide course (7), each linking to its Beginner edition. Exact URLs come from the catalogue.
 5. **Sat 28:** silks bauble photo-1 check (one change only, if any).
 6. **Mon 30:** scorecard on #26: 24h/7d views, visits, orders by family; T2 TikTok 7-day reading; green bauble baseline v this week.
