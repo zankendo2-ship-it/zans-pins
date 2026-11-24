@@ -84,3 +84,14 @@ Folder `batch/2026-11-24/guide-thumbnails-final-C/`: 21 files `...-racecourse-gu
 - Edition badge much bigger (820x214, was 480x126), centred at the bottom above the strip.
 - Everything else as layout B. One small knock-on: the cover is 906x1100 (was 947x1150) so the big badge does not half-cover the ZANS logo printed on each cover.
 - Checked on 300px tiles: all 21 read, nothing cut. Nothing on Etsy.
+
+## Tasks from notes 59b71c8 (24 Nov 2026, 20:10 UTC)
+### A) Tiger Roll v3.2 - audio and Red Rum check: NOT fully passed
+- Audio: finished file transcribed with Gemini Flash. Heard: "Tiger Roll, two Grand Nationals back-to-back 2018 then 2019, the first to do it since Red Rum 45 years earlier. And five victories at the Cheltenham Festival, from a hurdle to the cross country. Tiger Roll or Red Rum, who is the greater Grand National hero? Tell us in the comments." = the four lines, nothing extra. H.264 + AAC 48 kHz, 25.9 s, whole mix -15.3 LUFS (target -14, so 1.3 quieter than our standard), true peak -1.5 dBFS, last 1.25 s silent.
+- Years: Red Rum won in 1973, 1974 and 1977 (general encyclopaedia entry; Aintree's own 50th-anniversary release of March 2023). Back to back = 1973-74; 1974 to 2019 = 45 years. PASS.
+- Red Rum's colours: body "maroon jacket with a yellow horizontal diamond" found in ONE dated article (Aug 2026). The CAP was not described in any source two searches returned. Our scene shows a yellow cap: UNCONFIRMED. Sleeves also unconfirmed.
+- So the scene does not meet the 2-source silks rule yet. Options: (1) someone supplies a second dated source for body, sleeves and cap; (2) I re-frame scene 2 so the Red Rum rider's cap and sleeves are out of shot; (3) swap that scene for one with no silks. Not booked; needs Alex's yes anyway.
+### B) Cufflinks and tie-pins with an Alibaba supplier sheet: NOT STARTED, on hold for Alex
+New product line, an overseas supplier (rulebook: UK providers only, hats the one exception) and three famous horses as "colourways" on a sold product (rulebook: famous names never on products; showcase is social only). I will not start this on a relayed task; Alex has been asked in my chat.
+### C) Three TikTok fan-first storyboards: DRAFT written
+`batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-DRAFT.md`. Gift posts only, moving first frame, one comment hook each, CTA "Search ZANS Racing on Etsy". Text only, nothing rendered or booked.
