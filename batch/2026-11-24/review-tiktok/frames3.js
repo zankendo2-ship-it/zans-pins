@@ -24,7 +24,7 @@ const F = {
   <div style="position:absolute;left:0;right:0;bottom:0;height:560px;background:linear-gradient(transparent,rgba(8,24,16,.88) 60%)"></div>
   <div class="big" style="top:370px;font-size:70px;white-space:nowrap">PERSONALISED FOR THEM</div>
   <div class="big" style="top:1470px;font-size:64px;color:#F2CF5B">DESIGN YOURS · LINK IN BIO</div><div style="position:absolute;left:0;right:0;top:1400px;font-weight:600;letter-spacing:8px;font-size:34px;color:#E0D6C9;text-shadow:0 2px 10px #000">DESIGN EXAMPLE</div>`,
- end: `<div style="position:absolute;inset:0;background:url(${endbg}) center/cover"></div><div style="position:absolute;left:230px;width:620px;top:1215px;height:190px;background:rgb(42,98,71);box-shadow:0 0 50px 45px rgb(42,98,71)"></div><div style="position:absolute;left:0;right:0;top:1250px;font-weight:700;font-size:76px;letter-spacing:6px;color:#F2CF5B">LINK IN BIO</div>`,
+ end: `<div style="position:absolute;inset:0;background:url(${endbg}) center/cover"></div><div style="position:absolute;left:60px;width:960px;top:1205px;height:230px;background:rgb(42,98,71);box-shadow:0 0 40px 36px rgb(42,98,71)"></div><div style="position:absolute;left:0;right:0;top:1250px;font-weight:700;font-size:76px;letter-spacing:6px;color:#F2CF5B">LINK IN BIO</div>`,
 };
 (async () => { const b = await chromium.launch(); for (const [k, v] of Object.entries(F)) { const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   await p.setContent(`<html><head><style>${css}</style></head><body>${v}</body></html>`); await p.waitForTimeout(250); await p.screenshot({ path: `/tmp/r6-${k}.png` }); await p.close(); } await b.close(); })();

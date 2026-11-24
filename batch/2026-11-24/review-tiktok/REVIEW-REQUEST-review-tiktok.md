@@ -92,3 +92,8 @@ Proposed captions (all carry the review word for word):
 - TikTok: "Five stars on Etsy for our horse racing Christmas baubles 🎄 "Love this item for our Christmas tree." Which name would you have on yours? 👇 #horseracing #christmasbauble #racingsilks #personalisedgift #christmasgifts" / title "Five stars for our racing silks baubles 🎄"
 - YouTube Short title: "Horse Racing Christmas Bauble: Five Star Etsy Review 🎄" / text: "A five-star Etsy review for our personalised horse racing Christmas baubles: "Love this item for our Christmas tree." Any colours, any name. Search ZANSRacingTools on Etsy. Wishing you a Merry Christmas 🎅 #Shorts #HorseRacing #ChristmasGifts"
 - Pinterest title: "Horse Racing Christmas Bauble - Five Star Review, Personalised Racing Silks and Name" / description: "A five-star Etsy review for our personalised horse racing Christmas baubles: "Love this item for our Christmas tree." Racing silks and any name on a round ceramic bauble, about 7.5 cm, with a ribbon. A Christmas gift for Mum, Dad and racing fans. Wishing you a Merry Christmas 🎅" / link https://www.etsy.com/uk/listing/4611213915
+
+## v7.1: ghost letters removed from the end card. FIXES DONE.
+File: `ETSY-REVIEW-five-stars-TIKTOK-v7-snow-end-card-DRAFT-48k-v7-1.mp4` (18.7 s, 48 kHz).
+- [x] The faint "W" and "K" were the two ends of the old website line showing past the cover-up patch. The patch is now 960 px wide (it was 620), so the whole line is covered. Checked on a contrast-boosted crop of the end card at 17 s: no letters left. A very faint rectangle edge of the patch can be seen only at 4x contrast, not at normal viewing.
+- Nothing else changed. Rebuilt from the same frames, voice and music as v6/v7, with the snow overlay.
