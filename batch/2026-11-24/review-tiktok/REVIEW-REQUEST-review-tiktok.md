@@ -64,3 +64,10 @@ File: `ETSY-REVIEW-five-stars-TIKTOK-v4-DRAFT.mp4` (21.7 s, native 9:16). Frames
 Scenes: review (stars and the quote, word for word) 0 to 4.7 s; Snow Dancer on the tree to 7.8 s; design preview to 10.8 s; MUM bauble on the tree to 18 s; end card.
 Voice: the old line about Dad and Mum is dropped. New Aoede clips, each transcribed and matching: "Here it is, on the tree!", "Any colours. Any name.", "Personalised, just for them!"; then the approved "Which name would you have on yours? / Tell us in the comments!" and "Wishing you a Merry Christmas!". Same music.
 Weak points: scene 1 is words on green with no picture for 4.7 s; white with red spots on the MUM jersey is a made-up example and I have not checked it against any register; the end card is no longer Alex's locked end card (no BUY NOW, no URL), which needs his yes.
+
+## v5 after JOINT VERDICTS f8414d4. FIXES DONE.
+File: `ETSY-REVIEW-five-stars-TIKTOK-v5-DRAFT.mp4` (18.7 s). Frames: `ETSY-REVIEW-TIKTOK-v5-frames.png`.
+- [x] Product on screen from the first frame: the Snow Dancer bauble on the tree sits under the stars and the quote, which stay on a dark band and readable. The separate "ON THE TREE" scene and its voice line are dropped, so no picture repeats.
+- [x] "DESIGN EXAMPLE" label on the MUM tree scene.
+- [x] End card unchanged from v4 (Merry Christmas, LINK IN BIO).
+Scenes: review over the bauble 0 to 4.7 s; design preview to 7.7 s; MUM design example to 14.9 s; end card.

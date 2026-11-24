@@ -74,3 +74,16 @@ Honeysuckle scenes do not carry the "illustrative" label yet; say if they should
 
 ## After ADVICE dc43e10
 - [x] Honeysuckle scenes 1 to 3 now carry the small "ILLUSTRATIVE SCENE" label in all three music versions (A, B, C rebuilt). The single-music v2 file is removed so only A, B and C remain.
+
+## After JOINT VERDICTS f8414d4. FIXES DONE.
+- [x] Label reworded to "Illustration - not race footage", 36 px on a dark plate, on every AI scene (1 to 3) of Tiger Roll and of all three Honeysuckle music versions. It sits at y 360 or y 1500, centred, inside the safe area and clear of the right-hand and bottom TikTok buttons. Check sheet: `LEGENDS-v2-label-check-frames.png`.
+- Music notes (measured on the finished files with ffmpeg ebur128):
+
+| Version | File | Length | Whole mix | True peak | Music under voice | Source and licence |
+|---|---|---|---|---|---|---|
+| A | `HONEYSUCKLE-in-numbers-TIKTOK-v2-music-A-DRAFT.mp4` | 24.6 s | -14.0 LUFS | -1.4 dBFS | bed at 0.30 gain = 10.5 dB below its own level (bed alone -16.9 LUFS) | `batch/2026-11-21/conny-kempton/music/race-bed-A.mp3`, made note by note by our own code; no samples, no existing tune; ours to use |
+| B | `...-music-B-DRAFT.mp4` | 24.6 s | -14.0 LUFS | -1.3 dBFS | same gain (bed alone -17.1 LUFS) | `race-bed-B.mp3`, same origin |
+| C | `...-music-C-DRAFT.mp4` | 24.6 s | -14.0 LUFS | -1.3 dBFS | same gain (bed alone -16.8 LUFS) | `race-bed-C.mp3`, same origin |
+| Tiger Roll | `TIGER-ROLL-in-numbers-TIKTOK-v2-DRAFT.mp4` | 25.9 s | -14 LUFS target | not re-measured | same gain | `batch/2026-11-18/old-park-star/race-bed.wav`, made by `templates/music_race.py`, same origin |
+Voice: Gemini Aoede clips, unchanged. Waveform pictures: `HONEYSUCKLE-v2-music-A-waveform.png`, `-B-`, `-C-`.
+Honest gap: I have not written down how A, B and C differ musically (tempo, key); they were made on 21 Nov and I did not re-derive that tonight.
