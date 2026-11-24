@@ -2162,3 +2162,9 @@ Make 3 SAMPLES only, one per edition: SANDOWN JUMPS Advanced, CHELTENHAM JUMPS B
 3. All words inside the 4:5 phone crop (1620 px centre of 2700), and readable at phone-tile size.
 If you can't find the old angled design files, they are the older Etsy listing photos (before the 23 Nov photo 1 set). Look in this repo's history and the guide listing packs. If they're not there, say so in STATUS straight away and build the angled cover from the guide's cover page.
 Output: batch/2026-11-24/guide-thumbnails-mixed/ with 3 JPGs at 2700x2025 plus a phone-tile sheet. Write a REVIEW REQUEST, then push. Sample only: NOTHING goes to Etsy. The swap of all 21 is paused.
+
+## TASK 179b870 addendum (16:20 UTC): the OLD design is found
+- Alex's phone screenshots are on this branch (zans-social-notes) in assets/guide-thumbs-mixed-reference-2026-11-24/. Screenshot 1 shows the old Sandown Jumps Advanced tile in the shop grid: "SANDOWN" big, then "JUMPS" + "RACECOURSE GUIDE" in smaller type. On the left is the silver ADVANCED badge, the gold selling line "Value at every distance and every going", and "28 PAGES · COLOUR + PRINT". On the right is a big angled guide cover with an "INSTANT PDF" tag.
+- That old photo is still live as PHOTO 2 on every guide listing (e.g. Sandown Jumps Advanced 4622672428). Use the full-size original from your listing packs or the repo history, or rebuild that layout.
+- The mix: keep that layout (angled cover right, selling lines left), make "<TYPE> RACECOURSE GUIDE" bigger in gold (per v3), add the 62 px edition-metal strips, and keep DIGITAL PDF DOWNLOAD (may replace INSTANT PDF). Every guide's page count and selling line must be true for THAT guide.
+- Note: in the screenshot the right end of "SANDOWN" sits under Etsy's heart icon. Keep the course name clear of the top-right corner.
