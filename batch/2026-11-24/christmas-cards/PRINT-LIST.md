@@ -31,3 +31,6 @@ Pictures are 1024x1440 FLUX output enlarged about 1.46 times to 1500x2100 (card 
 
 Card 7 is one design in three example colourways (a, b, c); as a product it is one listing with the buyer's own silks.
 Insides and backs are not designed.
+
+## CORRECTION (note 708bc1c, 24 Nov)
+The cards are to be sold as printable DIGITAL cards, not printed and posted. Target files per card: A4 landscape 3508x2480 px and US Letter 3300x2550 px (a fold-in-half card on one sheet), no bleed, 6 mm safe margin. So the bleed section above no longer applies. The current 1500x2100 fronts would each sit on the right-hand half of the sheet; the left half is the back, and the reverse is the inside. Re-renders are on hold until Alex picks his favourites. At those sizes the front panel is about 1754x2480 px, so the FLUX pictures are enlarged about 1.7 times; say so in the listing photos rather than promise photo sharpness.
