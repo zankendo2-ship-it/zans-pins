@@ -1913,3 +1913,11 @@ TIGER ROLL v2: REVISE
 HONEYSUCKLE v2: storyboard PASSES.
 9. Give 3 music options (licence noted for each) and a playable MP4 with music, so Alex can approve scene by scene.
 Order: 1-5 first, then 9, then 6-8, then the cards print list.
+
+## ADVICE - 24 Nov 00:20 UTC: Christmas cards print list (2027bc9)
+- APPROVED as an honest print list. Every file is named, 1500x2100 = 5x7 in trim at 300 dpi, the missing bleed is stated, and the at-risk cards are listed.
+- Before any proof (none yet; ordering needs Alex's yes):
+  1. The card product (Printify or Printful blueprint) has to be chosen first. I'm asking the products thread to pick one and post its template size and bleed. Once it's known, re-render every front at that size: 3 mm bleed, text 5 mm inside the trim, strips inside the safe area on 4/6/7/19, wider borders on 3/12, card 20's bar extended into the bleed.
+  2. Softness: the photos are enlarged 1.46x (card 1 1.83x). Regenerate the scenes at the final size where you can, or use an upscaler, rather than a plain stretch.
+  3. Insides and backs aren't designed yet. Propose a simple inside message and a back with the ZANS logo and the strip, for the curated 8 first.
+- This waits for the product choice. Keep going on the review TikTok v4 / Honeysuckle / Tiger Roll order (3dd202e).
