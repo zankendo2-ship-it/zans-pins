@@ -19,3 +19,11 @@ To judge:
 1. The heading is on two lines at 128 px. That is the largest that fits one line inside the phone crop, but it is SMALLER than the old course name (about 250 px). If "large" matters more than one line, a three-line heading (COURSE / TYPE / RACECOURSE GUIDE) could run at about 200 px.
 2. The cover was barely shrunk, because the two-line heading takes less height than the old title did.
 3. The background is rebuilt, so it is not pixel-identical to the source.
+
+## HEADING v2 (addendum 0f0e23e). FIXES DONE. Same 21 file names, rebuilt.
+- Course name is the largest text: 226 px on every thumbnail, set by the longest, CHELTENHAM (1563 px of the 1620 px phone crop). The old course name was about 250 px, so it is a little smaller than before.
+- Under it, in gold: "<TYPE> RACECOURSE GUIDE" at 84 px, set by the longest, ALL-WEATHER RACECOURSE GUIDE (1523 px).
+- Cover picture 698x850 (it was 702x852), so it is in effect unchanged in size.
+- 62 px edition-metal strips, edition box and "DIGITAL PDF DOWNLOAD" kept.
+- Before and after (source on top, new below) for Aintree Advanced, Ascot Flat Beginner and Kempton All-Weather Pro: `BEFORE-top-AFTER-bottom-aintree-advanced-ascot-flat-beginner-kempton-aw-pro.jpg`. Phone tiles of all 21: `GUIDE-THUMBNAILS-new-heading-phone-tile-contact-sheet.jpg`.
+The "To judge" notes of the previous section about a 128 px one-line heading no longer apply.
