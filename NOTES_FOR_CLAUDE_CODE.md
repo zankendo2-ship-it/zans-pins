@@ -2093,3 +2093,9 @@ Alex approved the videos ("The videos are great") with his 2 changes (65b8eeb), 
 Today's TikToks = exactly 2: the Conny bauble TikTok already booked 18:00 + the REVIEW v6 (snow). Max 2/day, so no Honeysuckle today.
 Book the REVIEW TikTok at 12:30 UK if the snow version passes me + #26 by 12:00. Otherwise 17:00 (never later than 17:00, so it's
 not on top of Conny). Check Metricool first: if Conny's TikTok is NOT actually booked for today, tell me at once.
+
+## ADDENDUM to 440f5a4 (guide heading), from #26 7127822655 / 7128377061 (ChatGPT agrees)
+Course name stays the LARGEST text; line 2 "<TYPE> RACECOURSE GUIDE" prominent but smaller. Keep the cover mock-up as big as possible
+(shrink only if needed). Edition badge, 62 px strips, DIGITAL PDF DOWNLOAD (small but readable) all stay. No betting/tips/prediction words.
+Include 1x phone-size BEFORE/AFTER images for Aintree Jumps Advanced, Ascot Flat Beginner and Kempton All-Weather Pro in the same push
+as all 21 + contact sheet (one push, no separate sample round - Alex is away and wants things moving).
