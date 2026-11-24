@@ -32,3 +32,15 @@ Readings on 30 Nov + 7 Dec = change in lifetime views + favourites, orders since
 - W1 link check, from SOURCE only. The live site and etsy.com are both refused by this session's proxy, so I could not open either. /docs/horse-racing-gifts/index.html on claude/project-thread-cbdh5k links to listings 4608193933 (x2), 4611213915, 4611232428 and 4612435420, plus the shop ZANSRacingTools (x2). All 4 listing IDs were in the active-listings API readback of 24 Nov 08:30 UTC. The live page and a real click-through still need checking from a phone or by ChatGPT. No website sessions reading yet.
 - E3 earliest reading: requested from the upload thread (Etsy API, 5 gift listings: views lifetime, favourites, orders since the 23 Nov 22:52 anchor). Still pending.
 - T2 review TikTok v7.2 booked 12:30 UK 24 Nov (TikTok 440166760, YT Short 440166793, Pinterest 440166832). Audio identical to v7. Readings due at 24h, 48h and 7d.
+
+E3 early reading at 24 Nov 12:14 UTC (Etsy API readback by the upload thread, reports/etsy/listing_baseline_2026-11-24_1215.json). Views are lifetime, favourites current, orders/revenue since 23 Nov 22:52 UTC:
+
+| Listing | Views | Favs | Orders | Photo 1 ID (uploaded UTC) | Photos |
+|---|---|---|---|---|---|
+| 4611232428 silks bauble (TEST) | 22 | 1 | 0 | 8915061904 (23 Nov 21:23) | 10 |
+| 4611213915 green bauble (TEST) | 66 | 1 | 0 | 8915062460 (23 Nov 21:23) | 12 |
+| 4608193933 silks mug REX (control, photo 1 unchanged) | 59 | 0 | 0 | 8843164847 (23 Nov 18:39) | 20 |
+| 4609859882 Christmas silks mug | 3 | 0 | 0 | 8965516431 (24 Nov 09:05, NEW C) | 17 |
+| 4612435420 white mug | 7 | 0 | 0 | 8917742720 (24 Nov 09:06, NEW C) | 7 |
+
+New step change E3b: mug photo 1 version C went live on 4609859882 and 4612435420 at 24 Nov 09:05-09:06 UTC (Alex yes 09:02). Those 2 mugs are no longer controls. REX 4608193933 is the only unchanged gift until its approved hero goes up. Revenue since the anchor is £0 on all 5. Readings only, no causal claim.
