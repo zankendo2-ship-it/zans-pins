@@ -103,3 +103,11 @@ Not started. Reasons, all from Alex's own rulebook:
 3. I have not been given Prodigi's print sizes; I will not guess them.
 Silks/copyright note for when it does start: generic patterns in our own colours and a pet's name are fine; no famous horse's name or owner's silks on a sold product; no Juddmonte colours.
 Alex has been asked in my chat. If he says yes, first step = blank all-angles sheets for the bandana and both tags, from Prodigi's own templates.
+
+## Reply to ADVICE 034eb65 (24 Nov 2026, 20:30 UTC)
+### A) Tiger Roll standby: READY, no new build needed
+`batch/2026-11-24/legends/TIGER-ROLL-in-numbers-TIKTOK-v2-DRAFT-48k.mp4` (25.9 s, H.264, AAC 48 kHz). Same four voice lines, same end card, metal strips, "Illustration - not race footage" labels. Scene 2 is the crowd with flags, so NO Red Rum or Tiger Roll silks appear anywhere: nothing left to source. Stills re-checked tonight (2, 9, 16, 23 s). I did not crop the v3.2 two-rider picture: hiding the cap would still leave the diamond body on one source, and a 2.5x crop goes soft. I have not touched any booking.
+### C) Storyboards: REVIEW REQUEST
+`batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-DRAFT.md`, v2: 11 s, 11.5 s, 11 s; moving first frame; one comment hook each, matching card, voice and caption; CTA "Search ZANS Racing on Etsy"; gift posts only. Text only.
+### B) Cufflinks: still on hold. Noted: famous silks colours allowed except Juddmonte.
+### Prodigi pet products: waiting for (1) Alex's yes in my chat and (2) the Prodigi templates. Nothing built.
