@@ -62,3 +62,10 @@ T2 native evidence (code chat, 24 Nov 13:11 UTC; the proxy blocks the platforms 
 - Audio: stream md5 643523e6... identical in v7 and v7.2 (also decoded-PCM sha1 match, Claude). No one has listened to the live post; nobody has done a human listen to v7 either (ChatGPT did not listen). Sound gate: UNVERIFIED.
 
 W1 live check: Alex reported at 24 Nov 16:07 UTC "Website all work fine" (relayed by the coordinator). The live gifts-page links are owner-verified from his phone. Per-link Etsy destinations were not individually logged.
+
+P01 owner phone checks, 24 Nov 17:08 UTC (Alex, relayed by the coordinator):
+- TikTok bio: NO LINK. TikTok needs 1,000 followers for a website link; we have 64. FAIL, and nothing can fix it yet. Rule: never say "LINK IN BIO" on TikTok; use "Search ZANS Racing on Etsy". The live T2 v7.2 video shows LINK IN BIO on screen twice (caption OK); left for Alex to decide.
+- Pinterest: goes to the website. Per Metricool, today's review pin 440166832 has pinLink https://www.etsy.com/uk/listing/4611213915 (direct to Etsy). The Conny pin 1105211564844704695 and tomorrow's Jon Bon pin link to /bauble-designer/ on the website.
+- Website gifts page: PASS (16:07).
+- YouTube, Instagram bio, Facebook: UNVERIFIED.
+Metricool 17:10: the 18:00 Conny TikTok and 25 Nov Jon Bon TikTok captions already say "Search ZANS Racing on Etsy". On-screen text being checked by the code chat.
