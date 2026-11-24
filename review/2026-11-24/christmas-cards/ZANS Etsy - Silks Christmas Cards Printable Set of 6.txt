@@ -2,8 +2,8 @@ ZANS Etsy listing text - Silks Christmas Cards, printable set of 6
 Made 24 Nov 2026. Every length counted with code. Keywords checked live on Etsy UK + .com market pages on 24 Nov.
 DRAFT - needs the coordinator gate, ChatGPT check and Alex's yes before anything is listed.
 
-=== TITLE (114 of 140 characters) ===
-Horse Racing Christmas Cards Printable, Set of 6 Jockey Silks Designs - A5 Folded PDF, Hoops Checks Diamonds Spots
+=== TITLE (95 of 140 characters) ===
+Printable Horse Racing Christmas Cards, Six Jockey Silks Designs, Folded A5 PDF, Racehorse Gift
 
 === 13 TAGS (paste as one line; Etsy splits them) ===
 horse racing xmas, racing silks card, jockey silks card, printable xmas cards, christmas card set, horse christmas card, racehorse xmas card, jockey silks xmas, equestrian xmas card, christmas cards pdf, horse racing gift, racing fan gift, a5 christmas cards
@@ -66,7 +66,7 @@ Who made it? I did · What is it? A finished product · When was it made? 2020-2
 
 === DIGITAL FILE (1 file) ===
 ZANS-Silks-Christmas-Cards-Printable-6-Designs.zip (about 17 MB, under Etsy's 20 MB limit): 6 A4 PDFs, 6 US Letter PDFs, How to print PDF.
-The loose 'How to print your silks Christmas card.pdf' in '3 Files to upload' is ONLY for the custom listing (its instant download), not this one.
+The loose 'How to print your silks Christmas card.pdf' in '3 Files to upload' is for the custom listing's order files, not this one.
 
 === ATTRIBUTES (only what Etsy shows) ===
 Holiday: Christmas · Occasion: leave blank · Primary colour: Red · Secondary colour: White · Can be personalised: No · Orientation: Portrait · Number of pieces / cards: 6 · Theme: Horses, Sports
@@ -84,8 +84,8 @@ Horse Racing Gifts
 Seen on live market pages: racing silks card, jockey silks card, horse christmas card, horse racing gift, racing fan gift, christmas card set (as christmas card printable). Untested short forms: horse racing xmas, jockey silks xmas, racehorse xmas card, equestrian xmas card, christmas cards pdf, a5 christmas cards. In January swap horse racing gift, racing fan gift and the xmas tags.
 
 === PHOTO ORDER AND ALT TEXT ===
-01 ALT (214): Horse racing Christmas cards printable: three jockey silks cards standing on a table, red and white hoops, a hoops card with the jersey in the middle and red with white spots, under the words Silks Christmas Cards.
+01 ALT (209): Printable horse racing Christmas cards: three jockey silks cards standing on a table, red and white hoops, a hoops card with the jersey in the middle and red with white spots, with the words 6 Printable Cards.
 02 ALT (194): All 6 printable horse racing Christmas card designs laid out: red and white hoops, navy and white checks, gold and red diamonds, red with white spots and two cards with the jersey in the middle.
 03 ALT (192): Front and inside of the printable silks Christmas card: red and white hoops with the jersey in the middle, and the message page saying Merry Christmas and a Happy New Year with a small jersey.
 04 ALT (177): How the printable jockey silks Christmas card prints: the A4 sheet with back and front side by side, then folded into an A5 card in navy and white checks. A4 and US Letter PDFs.
-05 ALT (103): ZANS Horse Racing Christmas logo, a horse in a Santa hat, with the words Wishing you a Merry Christmas.
+05 ALT (153): The back of every card: the ZANS Horse Racing Christmas logo, a horse in a Santa hat, with Wishing you a Merry Christmas and ZANS Racing Tools and Gifts.

@@ -2,22 +2,22 @@ ZANS Etsy listing text - Custom racing silks Christmas card (racing green, your 
 Made 24 Nov 2026. Every length counted with code. Keywords checked live on Etsy UK + .com market pages on 24 Nov.
 DRAFT - needs the coordinator gate, ChatGPT check and Alex's yes before anything is listed.
 
-=== TITLE (126 of 140 characters) ===
-Custom Racing Silks Christmas Card, Personalised in Your Own Jockey Colours - Printable Digital Download, Racehorse Owner Gift
+=== TITLE (100 of 140 characters) ===
+Personalised Racing Silks Christmas Card, Custom Jockey Colours, Printable PDF, Racehorse Owner Gift
 
 === 13 TAGS (paste as one line; Etsy splits them) ===
 custom racing silks, personalised silks, jockey silks card, racing silks gift, racehorse owner gift, custom jockey silks, horse racing xmas, racing silks print, jockey silks gift, personalised xmas, horse christmas card, custom xmas card, horse racing gift
 Counts: custom racing silks 19, personalised silks 18, jockey silks card 17, racing silks gift 17, racehorse owner gift 20, custom jockey silks 19, horse racing xmas 17, racing silks print 18, jockey silks gift 17, personalised xmas 17, horse christmas card 20, custom xmas card 16, horse racing gift 17
 
-=== DESCRIPTION (2673 characters) ===
+=== DESCRIPTION (2738 characters) ===
 Custom racing silks Christmas card, personalised in your own jockey colours: a racing green card with your silks (jersey and cap) drawn in the middle, gold sparkles and MERRY CHRISTMAS in gold, sent to you as a printable PDF to print and fold at home.
 
-We draw your silks from the colours and pattern you send, send you a picture to approve, then send your print-ready PDFs. Your instant download is the How to print guide; your personalised card PDFs come through Etsy messages once you approve the picture. Digital file only, nothing is posted.
+We draw your silks from the colours and pattern you send, send you a picture to approve, then deliver your print-ready PDFs to your Etsy purchases when we complete your order. Digital file only, nothing is posted.
 
 HOW TO ORDER
 1. In the personalisation box, write your jersey pattern and colours, the sleeves and the cap colour, e.g. "red and white hoops, hoops on sleeves, black cap".
 2. We draw your silks and send you a picture to check, usually within 1 working day.
-3. Once you're happy, we send your PDFs through Etsy messages, ready to print.
+3. Once you're happy, we complete your order and your PDFs appear in your Etsy purchases, ready to print.
 Any pattern: plain, hoops, stripes, spots, checks, diamonds, chevrons, quartered, sash, cross belts, halves, seams and more.
 For Christmas, order by 21 December so your files arrive in time to print.
 
@@ -29,6 +29,7 @@ EVERY CARD HAS
 WHAT YOU GET
 - Your card on A4 (folds to A5, 148 x 210 mm) and on US Letter (folds to 5.5 x 7.8 in), as PDFs
 - A one-page How to print guide
+This is a made-to-order digital file, so there is no instant download: your files arrive once we complete your order.
 Print as many copies as you like for your own use.
 
 HOW TO PRINT
@@ -54,11 +55,8 @@ Wishing you a Merry Christmas
 === CATEGORY ===
 Paper & Party Supplies > Paper > Greeting Cards > Christmas Cards.
 
-=== HOW IT IS DELIVERED (CHECK BEFORE LISTING) ===
-Etsy instant downloads can't be personalised. Two ways to list it:
-(a) Digital listing with a placeholder PDF (the how-to-print guide) as the download, personalisation ON, and the custom PDFs sent through Etsy messages; or
-(b) physical listing type with £0 delivery, 1-2 working days processing, files sent by message.
-Recommended: (a), so the buyer gets the print guide straight away. The coordinator should confirm this fits Etsy's rules before it goes live.
+=== HOW IT IS DELIVERED ===
+Digital listing, made to order (ChatGPT's advice, 24 Nov). In 'Digital files', choose that you'll send the files when the order is ready (made-to-order digital), so there is no instant download. When the buyer approves the picture, upload their 2 PDFs (A4 + US Letter) and the How to print PDF when you complete the order, and they appear in the buyer's purchases. Check this option shows on Alex's listing form before publishing.
 
 === CORE DETAILS ===
 Who made it? I did · What is it? A finished product · When was it made? Made to order
@@ -84,8 +82,8 @@ Horse Racing Gifts
 Seen on live market pages: custom racing silks, custom jockey silks, racing silks gift, jockey silks gift, racing silks print, racehorse owner gift, jockey silks card, horse christmas card, horse racing gift. Untested: horse racing xmas, personalised silks, personalised xmas, custom xmas card.
 
 === PHOTO ORDER AND ALT TEXT ===
-01 ALT (198): Custom racing silks Christmas card in racing green: three example cards with jockey silks in red and white hoops, navy and white checks and gold and red diamonds, under Christmas Card In Your Silks.
-02 ALT (180): Personalised jockey silks Christmas cards in racing green with gold MERRY CHRISTMAS: three examples in different silks and cap colours to show any colours and pattern can be drawn.
+01 ALT (175): Personalised racing silks Christmas card in racing green standing on a table: example silks in red and white hoops with a black cap, gold sparkles and MERRY CHRISTMAS in gold.
+02 ALT (174): Personalised jockey silks Christmas cards in racing green with gold MERRY CHRISTMAS: three examples in different silks and cap colours, drawn in your own colours and pattern.
 03 ALT (167): Front and inside of the custom silks Christmas card: the racing green front with red and white hoops silks, and the message page with a small jersey in the same silks.
-04 ALT (171): How to order the custom racing silks Christmas card in 3 steps: send us your silks, we draw them and send a picture to check, then print at home from A4 or US Letter PDFs.
-05 ALT (103): ZANS Horse Racing Christmas logo, a horse in a Santa hat, with the words Wishing you a Merry Christmas.
+04 ALT (117): How to order the custom racing silks Christmas card in 3 easy steps: send us your silks, we draw them, print at home.
+05 ALT (153): The back of every card: the ZANS Horse Racing Christmas logo, a horse in a Santa hat, with Wishing you a Merry Christmas and ZANS Racing Tools and Gifts.
