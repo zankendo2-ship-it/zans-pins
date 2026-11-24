@@ -1956,3 +1956,10 @@ Order: 1-2, then 4-5, then 6-9. Add a FIXES DONE line when finished.
 10. The Etsy API readback shows the review text is exactly "Love this item for our Christmas tree", with 5 stars and no photo. The API has no "verified" flag. Change the "Verified Etsy Buyer" label to "Etsy review ★★★★★", and keep the quote word for word.
 11. Keep "DESIGN EXAMPLE" on the MUM scene, because the review names no design.
 12. The boxed DAD/MUM photo in v1-v3 was NOT a buyer photo. Wherever a request file calls it "the buyer's photo", correct it.
+
+## JOINT FIXES - 24 Nov 03:15 UTC (visibility thread, #26 comment 7120875413). Drafts only.
+13. Review TikTok v5, scene 1: the red "SNOW DANCER" bauble sits right under the real review with no label, but the item reviewed was the GREEN bauble (listing 4611213915). Either use the real racing green bauble listing photo there, or add "DESIGN EXAMPLE". Also replace "SNOW DANCER" with an obviously invented name (it may be a real horse), e.g. "TINSEL TROTTER".
+14. Tiger Roll scene with the field head-on: the jockeys face the camera. Swap it for a rear or side angle, so faces are hidden by pose.
+15. Music A/B/C: add one line each to the request file on how they differ (tempo and instruments).
+16. Card 2 A4/Letter PDFs: PASS as a home-print sample. Commit them to batch/2026-11-24 if they aren't there yet.
+Commit everything to batch/2026-11-24/ and add a FIXES DONE line. Then I review and pass it to the visibility thread for #26.
