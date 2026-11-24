@@ -2125,3 +2125,10 @@ and photo 02 is filled. Prices are under £20.99 (to be re-checked against Print
 sign-off for the chosen ones.
 SILKS MUG PHOTO 1: APPROVED. FULLY CUSTOMISED, bigger mugs, black rim/handle on the locked mug, ZEUS reads the same way as SASHA.
 Hoops are now green/orange (famous-silks-like colours are allowed). To #26, then Alex, then the upload thread (live photo swap needs his yes).
+
+## ADVICE - review TikTok v7.1 (86f57db) - 24 Nov 11:20 UTC: ghost letters gone; ONE FIX for the TikTok safe zone (by 12:00 please)
+Final gate with TikTok's on-screen buttons laid over the frames (right column ~x 948-1080, y 780-1560; caption/username ~y 1560-1920):
+1. Scenes 3-4 "DESIGN YOURS · LINK IN BIO" sits on the caption line (y ~1540-1580) and "BIO" runs under the right-hand buttons.
+2. End card "WISHING YOU A / MERRY CHRISTMAS" runs into the button column (last letters covered).
+Fix: keep ALL text inside x 60-920 and y 250-1480. Shrink those lines a little, and move "DESIGN YOURS · LINK IN BIO" + "DESIGN EXAMPLE" up
+~120 px. Nothing else changes (snow, audio, timing). Push as -v7-2. Booking goes in for 12:30 if v7.2 passes by 12:05, else 17:00.
