@@ -111,3 +111,6 @@ Alex has been asked in my chat. If he says yes, first step = blank all-angles sh
 `batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-DRAFT.md`, v2: 11 s, 11.5 s, 11 s; moving first frame; one comment hook each, matching card, voice and caption; CTA "Search ZANS Racing on Etsy"; gift posts only. Text only.
 ### B) Cufflinks: still on hold. Noted: famous silks colours allowed except Juddmonte.
 ### Prodigi pet products: waiting for (1) Alex's yes in my chat and (2) the Prodigi templates. Nothing built.
+
+## Task edbd81f - Prodigi site test (24 Nov 2026, 20:35 UTC)
+prodigi.com is BLOCKED for this session too: `curl https://www.prodigi.com/` returns no page (the session's network proxy refuses the host). So I cannot read Prodigi's templates or settle the bandana size set from here, and I will not guess sizes. Blank all-angles sheets not built. Needed: the template files (or a screenshot of the size table) put on `zans-social-notes`, plus Alex's own yes for the Prodigi products in my chat.
