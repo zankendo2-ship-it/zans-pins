@@ -44,3 +44,9 @@ E3 early reading at 24 Nov 12:14 UTC (Etsy API readback by the upload thread, re
 | 4612435420 white mug | 7 | 0 | 0 | 8917742720 (24 Nov 09:06, NEW C) | 7 |
 
 New step change E3b: mug photo 1 version C went live on 4609859882 and 4612435420 at 24 Nov 09:05-09:06 UTC (Alex yes 09:02). Those 2 mugs are no longer controls. REX 4608193933 is the only unchanged gift until its approved hero goes up. Revenue since the anchor is £0 on all 5. Readings only, no causal claim.
+
+T2 LIVE 24 Nov 12:30 UK (code chat readback): review TikTok v7.2
+- TikTok https://www.tiktok.com/@zansracingtools/video/7711714549145062678
+- YT Short https://www.youtube.com/shorts/lCs0-ObXqJY
+- Pinterest https://www.pinterest.es/pin/1105211564844688702
+Readings due 25 Nov 12:30 (24h), 26 Nov 12:30 (48h), 1 Dec 12:30 (7d): views, average watch time, completion rate, likes, profile visits and link clicks where available, plus Etsy orders on the 5 gift listings. Comparison slot for the 12:30 v 18:15 test.
