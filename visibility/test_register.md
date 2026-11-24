@@ -27,3 +27,8 @@ E3 EARLY POST-CHANGE ANCHOR - NOT a pre-treatment baseline (snapshot 23 Nov 22:5
 Readings on 30 Nov + 7 Dec = change in lifetime views + favourites, orders since 23 Nov 21:30 UTC. True 30-day visits need Alex's Etsy Stats (phone).
 
 *Mug controls become NON-STATIC if the REX recolour / podium deletes go live - log that change with its own time; no causal comparison of mugs v baubles. Also: green bauble 4611213915 live photos show a green/gold hooped DAD example (McManus-like) - if replaced, log a new version + time and reset that listing's baseline. Still missing: per-listing visits/clicks (Etsy Stats, Alex's phone), W1 website baseline, TikTok account status + audience active hours.
+
+24 Nov 12:15 UTC check (visibility thread):
+- W1 link check, from SOURCE only. The live site and etsy.com are both refused by this session's proxy, so I could not open either. /docs/horse-racing-gifts/index.html on claude/project-thread-cbdh5k links to listings 4608193933 (x2), 4611213915, 4611232428 and 4612435420, plus the shop ZANSRacingTools (x2). All 4 listing IDs were in the active-listings API readback of 24 Nov 08:30 UTC. The live page and a real click-through still need checking from a phone or by ChatGPT. No website sessions reading yet.
+- E3 earliest reading: requested from the upload thread (Etsy API, 5 gift listings: views lifetime, favourites, orders since the 23 Nov 22:52 anchor). Still pending.
+- T2 review TikTok v7.2 booked 12:30 UK 24 Nov (TikTok 440166760, YT Short 440166793, Pinterest 440166832). Audio identical to v7. Readings due at 24h, 48h and 7d.
