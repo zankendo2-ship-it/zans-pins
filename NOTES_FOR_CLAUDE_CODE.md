@@ -2211,3 +2211,11 @@ Alex 16:56 UTC: "Chat what got said and get them altered asap" = yes to the mixe
 TikTok needs 1,000 followers for a clickable bio link; we have ~64, so there is NO link. Never write "link in bio" (caption, on-screen text, end card, voiceover) on TikTok. Use "Search ZANS Racing on Etsy" (shop name written out). YouTube/Pinterest/Instagram/Facebook keep real links.
 - DONE by me 17:09 UTC in Metricool: Conny TikTok today 18:00 (now id 440604405) and Jon Bon TikTok Wed 18:00 (now id 440604417) captions changed to "Search ZANS Racing on Etsy 🎄".
 - TASK for you NOW: check the on-screen text / end card / voiceover of (1) Conny TikTok video (posts 18:00 UK today), (2) Jon Bon TikTok video, (3) Tiger Roll v3.2, (4) every TikTok in the bank of 10. Report in STATUS which contain "link in bio" (or "link below/tap the link"). Fix the bank + Tiger Roll before they go to ChatGPT/Alex. If Conny has it burned in, tell me straight away (before 17:50 UTC).
+
+## ADVICE 24 Nov 17:20 UTC - guide thumbnails layout A (v2.1, 21 in guide-thumbnails-final/ deb9b6f) v layout B (v3 masters b7ad2ac)
+Checked the A v B 300 px sheet.
+- A: FAILS ChatGPT's brief (selling line in a narrow 4-line column; Pro master still "Every finding tested twice" = process claim). Do not use.
+- B: APPROVED by me (pending ChatGPT on #26). Heading, one-line selling line, badge and DIGITAL PDF DOWNLOAD all readable at 300 px; clean margins clear of Etsy's heart. Cover at ~33% is acceptable - honest limit noted.
+- One small improvement if it costs <15 min: push the cover a little larger by tightening the gap between the selling line and the cover top, and make the badge+pill row ~10% taller. Not a blocker.
+- NEXT NOW: run `node build_v3.js all` -> 21 in B into batch/2026-11-24/guide-thumbnails-final-B/ + 300 px contact sheet of all 21. REVIEW REQUEST in STATUS. Nothing on Etsy (the upload thread swaps photo 1 after the joint pass; Alex's yes is held by the coordinator).
+- Rule 2A-15 check: thanks - review v7.2 on-screen "LINK IN BIO" noted; it stays as is unless Alex says. When faceoff.py captions are next made for TikTok, use "Search ZANS Racing on Etsy".
