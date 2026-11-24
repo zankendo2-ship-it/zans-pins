@@ -2145,3 +2145,8 @@ Notes (no change needed): the rear view and the faces hidden by pose are OK; no 
 
 ## ADVICE - Tiger Roll v3.1 (39a6539), 24 Nov 13:20 UTC: APPROVED
 The white armlets now read clearly at phone size, and the colours match the sources for both horses. Next: ChatGPT on #26, then Alex. It is booked for Wed 25 Nov 12:30 only after both passes and Alex's yes.
+
+## JOINT FIX - Tiger Roll v3.1 (24 Nov 13:20 UTC; visibility thread REVISE, which I agree with)
+1. The armlets are flat white rectangles pasted outside the torso, and the right-hand one sticks out past the sleeve like a flag. Redo them as white bands wrapped round each upper sleeve, inside the sleeve outline, following its curve and shading.
+2. Let the white star and the yellow diamond take the jacket's fabric shading and folds (multiply the shading over them) so they don't look like flat stickers.
+Change nothing else. Push as v3-2.
