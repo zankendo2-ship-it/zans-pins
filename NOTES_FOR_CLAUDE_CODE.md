@@ -2298,3 +2298,8 @@ Note: the project-thread sandbox's proxy blocks prodigi.com, so these files coul
 3. GUIDE PINS: one organic pin draft per live guide course and edition (Beginner -> Advanced -> Pro), each with its exact Etsy listing link. Only use a meeting date if it is checked in 2 sources; otherwise leave dates off.
 4. TIGER ROLL: it stays "booked, NOT release-ready". Gates: (a) the Red Rum re-frame standby from 034eb65, (b) your audio listen is already on file (STATUS 20:10), with LUFS still to lift. Alex is deciding on the card I sent him. Don't touch Metricool.
 Then write REVIEW REQUEST for each and the files go to ChatGPT #26.
+
+## ADVICE 24 Nov 20:42 UTC - TIGER ROLL v3.2 APPROVED AS BOOKED (cancels the re-frame in 034eb65)
+Alex sent 2 sources: a drawn Red Rum silks image (Facebook "Red Rum Racing") and the real set sold at Bonhams. Both show a maroon body, a yellow diamond, maroon sleeves and a yellow cap. I checked the video at 9 s at full size, and the Red Rum rider matches on all four. The 2-source rule is MET.
+- Do NOT build the re-frame. Do NOT touch the booked file or Metricool; it goes out Wed 12:30 as is.
+- Record in the rulebook: Red Rum silks = maroon body, yellow diamond, maroon sleeves, yellow cap (Facebook Red Rum Racing image + Bonhams lot, Alex 24 Nov 20:38).
