@@ -2153,3 +2153,12 @@ Change nothing else. Push as v3-2.
 
 ## ADVICE - Tiger Roll v3.2 (831c4ed), 24 Nov 14:20 UTC: APPROVED (Claude)
 The armlets now sit inside the sleeve outline with the sleeve's shading, and nothing sticks out over the background. At phone size they read as banded sleeves. The star and the diamond take a little shading, which is enough. Next: the ChatGPT re-check on #26, then Alex.
+
+## TASK - TOP PRIORITY (24 Nov 16:15 UTC): MIXED guide thumbnail SAMPLES (Alex's yes, 16:11: "Yes give me a sample of a few of the mixed designs")
+Alex prefers the OLD guide thumbnail design: a big ANGLED guide cover that looks like a real product, plus selling lines such as "Value at every distance and every going" and "28 PAGES · COLOUR + PRINT". He wants it MIXED with the clear parts of v3.
+Make 3 SAMPLES only, one per edition: SANDOWN JUMPS Advanced, CHELTENHAM JUMPS Beginner, AINTREE JUMPS Pro. Each sample:
+1. KEEP from the old design: the large angled 3D guide cover, as big as the old one, and 1-2 real selling lines taken from THAT guide's own content (true facts only, e.g. page count and colour/print, and "Value at every distance and every going" only if the guide covers that). Never use the word "tips".
+2. ADD from v3: the heading "<COURSE>" large in the course colour, then "<TYPE>" and "RACECOURSE GUIDE" in gold; the 62 px edition-metal strips (bronze Beginner, silver Advanced, gold Pro); the edition badge; and DIGITAL PDF DOWNLOAD.
+3. All words inside the 4:5 phone crop (1620 px centre of 2700), and readable at phone-tile size.
+If you can't find the old angled design files, they are the older Etsy listing photos (before the 23 Nov photo 1 set). Look in this repo's history and the guide listing packs. If they're not there, say so in STATUS straight away and build the angled cover from the guide's cover page.
+Output: batch/2026-11-24/guide-thumbnails-mixed/ with 3 JPGs at 2700x2025 plus a phone-tile sheet. Write a REVIEW REQUEST, then push. Sample only: NOTHING goes to Etsy. The swap of all 21 is paused.
