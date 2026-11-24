@@ -1,0 +1,145 @@
+diff --git a/docs/gifts-for-racehorse-owners/index.html b/docs/gifts-for-racehorse-owners/index.html
+index 9f91266..eeb9a2a 100644
+--- a/docs/gifts-for-racehorse-owners/index.html
++++ b/docs/gifts-for-racehorse-owners/index.html
+@@ -20,7 +20,7 @@
+ @font-face{font-family:'Source Sans 3 Fallback';font-style:normal;font-weight:500 649;src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('LiberationSans-Bold'),local('Arimo Bold'),local('Arimo-Bold');size-adjust:89.76%;ascent-override:114.08%;descent-override:44.56%;line-gap-override:0%}
+ @font-face{font-family:'Source Sans 3 Fallback';font-style:normal;font-weight:650 900;src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('LiberationSans-Bold'),local('Arimo Bold'),local('Arimo-Bold');size-adjust:92.21%;ascent-override:111.05%;descent-override:43.38%;line-gap-override:0%}
+ @font-face{font-family:'IBM Plex Mono Fallback';font-style:normal;font-weight:100 900;src:local('Courier New'),local('CourierNewPSMT'),local('Liberation Mono'),local('LiberationMono'),local('Cousine');size-adjust:99.98%;ascent-override:102.52%;descent-override:27.5%;line-gap-override:0%}picture{display:contents}source{display:none}.flinks{line-height:1.9}.flinks a{color:inherit;text-decoration:underline;text-underline-offset:2px}</style>
+-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.zanshorseracing.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Horse racing gifts", "item": "https://www.zanshorseracing.co.uk/horse-racing-gifts/"}, {"@type": "ListItem", "position": 3, "name": "Gifts for racehorse owners", "item": "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What makes a good racehorse owner gift?", "acceptedAnswer": {"@type": "Answer", "text": "Anything that shows off their own horse. A mug in the horse's silks with its name by the handle gets used every day, which a framed photo on the wall never does."}}, {"@type": "Question", "name": "Can I match the owner's exact racing colours?", "acceptedAnswer": {"@type": "Answer", "text": "Pick from 25 silks patterns and 18 colours, or choose any other shade. The live preview shows the mug before you order."}}, {"@type": "Question", "name": "Can I put the horse's name on the mug?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Type any name (rude words are blocked) and it is printed either side of the handle."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "Each mug is made to order in 3 to 5 working days, then posted from the UK. Etsy shows the delivery estimate for your order at checkout."}}]}]}</script>
++<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.zanshorseracing.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Horse racing gifts", "item": "https://www.zanshorseracing.co.uk/horse-racing-gifts/"}, {"@type": "ListItem", "position": 3, "name": "Gifts for racehorse owners", "item": "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What makes a good racehorse owner gift?", "acceptedAnswer": {"@type": "Answer", "text": "Anything that shows off their own horse. A mug in the horse's silks with its name by the handle gets used every day, which a framed photo on the wall never does."}}, {"@type": "Question", "name": "Can I match the owner's exact racing colours?", "acceptedAnswer": {"@type": "Answer", "text": "Pick from 25 silks patterns and 18 colours, or choose any other shade. The live preview shows the mug before you order."}}, {"@type": "Question", "name": "Can I put the horse's name on the mug?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Type any name (rude words are blocked) and it is printed either side of the handle."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "Each mug is made to order and posted from the UK. Etsy shows the delivery estimate for your order at checkout."}}]}]}</script>
+ <style>
+ :root{--green:#1F5A3D;--green2:#123826;--gold:#D8B45A;--cream:#F3EDE5;--ink:#1C1C1C;--muted:#C9C2B6;--display:'Jost','Jost Fallback',system-ui,sans-serif;--body:'Source Sans 3','Source Sans 3 Fallback',system-ui,sans-serif;--mono:'IBM Plex Mono','IBM Plex Mono Fallback',monospace;color-scheme:dark}
+ *{box-sizing:border-box}
+@@ -84,12 +84,12 @@ footer .in{padding-block:28px} footer p{margin:4px 0}
+ </div></section>
+ <section id="christmas"><div class="in">
+ <p class="eyebrow">Christmas delivery</p><h2>Order in time for Christmas</h2>
+-<p><b>We recommend ordering by Monday 7 December</b> for UK delivery before Christmas. Each mug is made to order in 3 to 5 working days, then posted from the UK. Etsy shows the delivery estimate for your order at checkout.</p>
++<p>Every mug and bauble is made to order and posted from the UK. Etsy shows the delivery estimate for your address at checkout, so please check it there before you order if you need it by a certain date.</p>
+ <p><a href="/horse-racing-gifts/">See all our horse racing gifts →</a></p>
+ </div></section>
+ <section id="faq"><div class="in">
+ <p class="eyebrow">Questions</p><h2>Racehorse owner gift questions</h2>
+-<details><summary>What makes a good racehorse owner gift?</summary><p>Anything that shows off their own horse. A mug in the horse's silks with its name by the handle gets used every day, which a framed photo on the wall never does.</p></details><details><summary>Can I match the owner's exact racing colours?</summary><p>Pick from 25 silks patterns and 18 colours, or choose any other shade. The live preview shows the mug before you order.</p></details><details><summary>Can I put the horse's name on the mug?</summary><p>Yes. Type any name (rude words are blocked) and it is printed either side of the handle.</p></details><details><summary>How long does it take?</summary><p>Each mug is made to order in 3 to 5 working days, then posted from the UK. Etsy shows the delivery estimate for your order at checkout.</p></details>
++<details><summary>What makes a good racehorse owner gift?</summary><p>Anything that shows off their own horse. A mug in the horse's silks with its name by the handle gets used every day, which a framed photo on the wall never does.</p></details><details><summary>Can I match the owner's exact racing colours?</summary><p>Pick from 25 silks patterns and 18 colours, or choose any other shade. The live preview shows the mug before you order.</p></details><details><summary>Can I put the horse's name on the mug?</summary><p>Yes. Type any name (rude words are blocked) and it is printed either side of the handle.</p></details><details><summary>How long does it take?</summary><p>Each mug is made to order and posted from the UK. Etsy shows the delivery estimate for your order at checkout.</p></details>
+ </div></section>
+ </main>
+ <footer><div class="in"><p class="flinks"><a href="/horse-racing-gifts/">Horse racing gifts</a> · <a href="/mug-designer/">Silks mug designer</a> · <a href="/bauble-designer/">Silks bauble designer</a> · <a href="/gifts-for-racehorse-owners/">Gifts for racehorse owners</a> · <a href="/racing-syndicate-gifts/">Racing syndicate gifts</a> · <a href="/ascot-racecourse-guide/">Ascot racecourse guide</a> · <a href="/articles/ascot-draw-bias/">Ascot draw bias</a> · <a href="/articles/going-explained/">The going explained</a> · <a href="/breeders-cup-guide/">Breeders&#39; Cup guide</a> · <a href="/ascot-jumps-guide/">Ascot jumps guide</a> · <a href="/cheltenham-racecourse-guide/">Cheltenham racecourse guide</a> · <a href="/kempton-jumps-guide/">Kempton jumps guide</a> · <a href="/kempton-racecourse-guide/">Kempton all-weather guide</a> · <a href="/sandown-jumps-guide/">Sandown jumps guide</a> · <a href="/aintree-jumps-guide/">Aintree jumps guide</a></p><p><b>ZANS Racing Tools &amp; Gifts</b> · Horse racing guides, tools and gifts · Leicester, England</p><p>Not affiliated with any racecourse, racing body or bookmaker.</p><p>© 2026 ZANS Racing Tools &amp; Gifts</p></div></footer>
+diff --git a/docs/horse-racing-gifts/index.html b/docs/horse-racing-gifts/index.html
+index dd16830..68120fe 100644
+--- a/docs/horse-racing-gifts/index.html
++++ b/docs/horse-racing-gifts/index.html
+@@ -1,11 +1,11 @@
+ <!doctype html>
+ <html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+-<title>Horse Racing Gifts UK | Personalised Silks Mugs | ZANS</title>
+-<meta name="description" content="Horse racing gifts for Christmas: a personalised mug in your own racing silks with your horse's name, for owners, syndicates and racing fans. Printed in the UK.">
++<title>Personalised Horse Racing Gifts | Silks Mugs &amp; Christmas Baubles | ZANS</title>
++<meta name="description" content="Personalised horse racing gifts for Christmas: mugs and tree baubles in your own racing silks with your horse's name, for owners, syndicates and racing fans. Printed in the UK.">
+ <link rel="canonical" href="https://www.zanshorseracing.co.uk/horse-racing-gifts/">
+ <meta property="og:type" content="website"><meta property="og:url" content="https://www.zanshorseracing.co.uk/horse-racing-gifts/"><meta property="og:site_name" content="ZANS Racing Tools &amp; Gifts">
+-<meta property="og:title" content="Horse Racing Gifts UK | Personalised Silks Mugs | ZANS">
+-<meta property="og:description" content="A mug printed in your own racing silks with your horse's name. The horse racing Christmas present for owners, syndicates and racing fans.">
++<meta property="og:title" content="Personalised Horse Racing Gifts | Silks Mugs &amp; Christmas Baubles | ZANS">
++<meta property="og:description" content="Mugs and Christmas baubles printed in your own racing silks with your horse's name. Horse racing gifts for owners, syndicates and racing fans.">
+ <meta property="og:image" content="https://www.zanshorseracing.co.uk/img/zans-gifts-share.jpg"><meta name="twitter:card" content="summary_large_image">
+ <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/img/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="preload" href="/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin><style id="zans-fonts">@font-face{font-family:'Jost';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/jost-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@@ -24,6 +24,8 @@
+ <script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zanshorseracing.co.uk/"},{"@type":"ListItem","position":2,"name":"Horse racing gifts","item":"https://www.zanshorseracing.co.uk/horse-racing-gifts/"}]},
+ {"@type":"Product","name":"Personalised Horse Racing Silks Mug","description":"11oz ceramic mug printed in racing silks colours you choose, with your horse's name either side of the handle. Handle and inside in one solid colour.","image":["https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg","https://www.zanshorseracing.co.uk/img/silks-mugs-trio.png"],"brand":{"@type":"Brand","name":"ZANS Racing Tools & Gifts"},"offers":{"@type":"Offer","price":"14.99","priceCurrency":"GBP","availability":"https://schema.org/InStock","url":"https://www.etsy.com/uk/listing/4608193933"}},
++{"@type":"Product","name":"Personalised Racing Silks Christmas Bauble","description":"Round ceramic Christmas tree bauble printed in your horse's racing silks and cap with the horse's name.","image":["https://www.zanshorseracing.co.uk/img/xmas-baubles-workshop.jpg"],"brand":{"@type":"Brand","name":"ZANS Racing Tools & Gifts"},"offers":{"@type":"Offer","price":"14.99","priceCurrency":"GBP","availability":"https://schema.org/InStock","url":"https://www.etsy.com/uk/listing/4611232428"}},
++{"@type":"Product","name":"Racing Green and Gold Christmas Bauble","description":"Racing green and gold ceramic Christmas bauble with a jockey's jersey and cap in your colours and any name.","image":["https://www.zanshorseracing.co.uk/img/xmas-baubles-workshop.jpg"],"brand":{"@type":"Brand","name":"ZANS Racing Tools & Gifts"},"offers":{"@type":"Offer","price":"12.99","priceCurrency":"GBP","availability":"https://schema.org/InStock","url":"https://www.etsy.com/uk/listing/4611213915"}},
+ {"@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"What is a good gift for a racehorse owner?","acceptedAnswer":{"@type":"Answer","text":"Something with their own horse on it. A mug printed in the horse's racing silks with its name by the handle is personal, useful every day and different from the usual framed photo."}},
+ {"@type":"Question","name":"Can I get a mug in my horse's racing colours?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pick the pattern and colours in our free mug designer, type the horse's name, choose the handle colour, then order on Etsy."}},
+@@ -74,20 +76,28 @@ footer .in{padding-block:28px} footer p{margin:4px 0}
+ <div class="in crumb"><a href="/">Home</a> / Horse racing gifts</div>
+ <div class="hero"><div class="in">
+ <div><span class="tag">NEW FOR CHRISTMAS</span><p class="eyebrow">Horse racing gifts</p>
+-<h1>Horse Racing Gifts: a Mug in Your Own Racing Silks</h1>
+-<p class="lede">The best horse racing gifts are personal. Design a mug printed in your horse's racing silks, with the name either side of the handle. A Christmas present for racehorse owners, syndicate members and anyone who loves a day at the races.</p>
+-<p><b>£14.99</b> · 11oz ceramic mug · printed to order in the UK</p>
++<h1>Horse Racing Gifts: Mugs and Baubles in Your Own Racing Silks</h1>
++<p class="lede">The best horse racing gifts are personal. Design a mug or a Christmas tree bauble printed in your horse's racing silks, with the horse's name. A Christmas present for racehorse owners, syndicate members and anyone who loves a day at the races.</p>
++<p><b>Silks mug £14.99</b> · 11oz ceramic mug · printed to order in the UK</p>
+ <a class="btn" href="/mug-designer/">Design your mug free</a><a class="btn line" href="https://www.etsy.com/uk/listing/4608193933" target="_blank" rel="noopener">Order on Etsy</a></div>
+ <picture><source type="image/webp" srcset="/img/silks-mugs-hero-600.webp 600w, /img/silks-mugs-hero-940.webp 940w" sizes="(max-width: 900px) calc(100vw - 32px), 500px"><img src="/img/silks-mugs-hero.jpg" alt="Personalised horse racing gift mug printed in jockey silks with the horse's name by the handle" width="940" height="1672"></picture>
+ </div></div>
+ 
++<section id="baubles"><div class="in" style="display:grid;gap:18px;align-items:center;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
++<picture><source type="image/webp" srcset="/img/xmas-baubles-workshop-600.webp 600w, /img/xmas-baubles-workshop-800.webp 800w, /img/xmas-baubles-workshop-1000.webp 1000w" sizes="(max-width: 700px) calc(100vw - 32px), 520px"><img src="/img/xmas-baubles-workshop.jpg" alt="Two ZANS personalised horse racing Christmas baubles: a silks bauble with a racehorse name and a racing green and gold bauble with a jockey's jersey" width="1448" height="1086" loading="lazy" style="width:100%;height:auto;border-radius:4px"></picture>
++<div><p class="eyebrow">Christmas baubles</p><h2>A Christmas bauble in your racing silks</h2>
++<p>A round ceramic tree bauble printed in your horse's racing silks and cap with the horse's name, or a racing green and gold bauble with a jockey's jersey in your colours and any name. Design it free, then order on Etsy.</p>
++<p><b>Silks bauble £14.99</b> · <b>Green and gold bauble £12.99</b> · printed to order in the UK</p>
++<a class="btn" href="https://www.etsy.com/uk/listing/4611232428" target="_blank" rel="noopener">Buy the silks bauble on Etsy</a> <a class="btn line" href="https://www.etsy.com/uk/listing/4611213915" target="_blank" rel="noopener">Buy the green and gold bauble on Etsy</a> <a class="btn line" href="/bauble-designer/">Design your bauble free</a></div>
++</div></section>
++
+ <section id="who"><div class="in">
+ <p class="eyebrow">Gift ideas by person</p><h2>Horse racing gift ideas for everyone on your list</h2>
+ <div class="cards">
+ <div class="card"><h3>Gifts for racehorse owners</h3><p>Put their horse's colours and name on the mug they reach for every morning. It's the gift that says you know which horse matters.</p><a href="/gifts-for-racehorse-owners/">Racehorse owner gift ideas →</a></div>
+ <div class="card"><h3>Racing syndicate gifts</h3><p>Matching mugs for every member, all in the syndicate's silks with the horse's name. Design once, copy the design code and order as many as you need.</p><a href="/racing-syndicate-gifts/">Syndicate gift ideas →</a></div>
+ <div class="card"><h3>Gifts for horse racing fans</h3><p>No horse of their own? Make up colours and a name they'll love, such as a family nickname or their dream racehorse.</p><a href="/mug-designer/">Make one up →</a></div>
+-<div class="card"><h3>Secret Santa and stocking fillers</h3><p>£14.99 plus postage, ideal for the racing fan at work. Our racecourse guide PDFs are an instant-download stocking filler for racegoers too.</p><a href="/#guides">See the racecourse guides →</a></div>
++<div class="card"><h3>Secret Santa and stocking fillers</h3><p>A silks mug or bauble is ideal for the racing fan at work; Etsy shows the delivery cost at checkout. Our racecourse guide PDFs are an instant-download stocking filler for racegoers too.</p><a href="/#guides">See the racecourse guides →</a></div>
+ </div></div></section>
+ 
+ <section id="how" class="wide"><div class="in">
+@@ -110,7 +120,7 @@ footer .in{padding-block:28px} footer p{margin:4px 0}
+ 
+ <section id="christmas"><div class="in">
+ <p class="eyebrow">Christmas delivery</p><h2>Order in time for Christmas</h2>
+-<p><b>We recommend ordering by Monday 7 December</b> for UK delivery before Christmas. Each mug is made to order in 3 to 5 working days, then posted from the UK. Etsy shows the delivery estimate for your order at checkout.</p>
++<p>Every mug and bauble is made to order and posted from the UK. Etsy shows the delivery estimate for your address at checkout, so please check it there before you order if you need it by a certain date.</p>
+ </div></section>
+ 
+ <section id="faq"><div class="in">
+diff --git a/docs/index.html b/docs/index.html
+index cedefc7..c14333b 100644
+--- a/docs/index.html
++++ b/docs/index.html
+@@ -1,7 +1,7 @@
+ <!doctype html>
+ <html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Horse Racing Guides, Tools & Gifts | ZANS Racing</title>
+-<meta name="description" content="Racecourse guide PDFs for UK and Irish horse racing: draw, going, course maps and stats. Beginner, Advanced and Pro editions. Instant download.">
++<meta name="description" content="ZANS Racing Tools &amp; Gifts: personalised horse racing mugs and Christmas baubles in your racing silks, plus detailed UK racecourse PDF guides. Shop gifts and guides.">
+ <meta property="og:title" content="Horse Racing Racecourse Guides PDF | UK & Irish | ZANS"><meta property="og:description" content="Racecourse guide PDFs for UK and Irish horse racing: draw, going, course maps and stats. Beginner, Advanced and Pro editions. Instant download."><meta property="og:type" content="website"><meta property="og:image" content="https://www.zanshorseracing.co.uk/img/zans-share.png">
+ <link rel="canonical" href="https://www.zanshorseracing.co.uk/"><meta property="og:url" content="https://www.zanshorseracing.co.uk/"><meta property="og:site_name" content="ZANS Racing Tools &amp; Gifts"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/img/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <link rel="preload" href="/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin><style id="zans-fonts">@font-face{font-family:'Jost';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/jost-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+diff --git a/docs/racing-syndicate-gifts/index.html b/docs/racing-syndicate-gifts/index.html
+index 74fb4dd..bc11caa 100644
+--- a/docs/racing-syndicate-gifts/index.html
++++ b/docs/racing-syndicate-gifts/index.html
+@@ -85,7 +85,7 @@ footer .in{padding-block:28px} footer p{margin:4px 0}
+ </div></div></section>
+ <section id="christmas"><div class="in">
+ <p class="eyebrow">Christmas delivery</p><h2>Order in time for Christmas</h2>
+-<p><b>We recommend ordering by Monday 7 December</b> for UK delivery before Christmas. Each mug is made to order in 3 to 5 working days, then posted from the UK. Etsy shows the delivery estimate for your order at checkout.</p>
++<p>Every mug and bauble is made to order and posted from the UK. Etsy shows the delivery estimate for your address at checkout, so please check it there before you order if you need it by a certain date.</p>
+ <p><a href="/horse-racing-gifts/">See all our horse racing gifts →</a></p>
+ </div></section>
+ <section id="faq"><div class="in">
+diff --git a/docs/sitemap.xml b/docs/sitemap.xml
+index 8c06269..878a71b 100644
+--- a/docs/sitemap.xml
++++ b/docs/sitemap.xml
+@@ -1,11 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+-  <url><loc>https://www.zanshorseracing.co.uk/</loc><lastmod>2026-11-21</lastmod><priority>1.0</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg</image:loc></image:image></url>
+-  <url><loc>https://www.zanshorseracing.co.uk/horse-racing-gifts/</loc><lastmod>2026-11-07</lastmod><priority>0.9</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg</image:loc></image:image></url>
++  <url><loc>https://www.zanshorseracing.co.uk/</loc><lastmod>2026-11-24</lastmod><priority>1.0</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg</image:loc></image:image></url>
++  <url><loc>https://www.zanshorseracing.co.uk/horse-racing-gifts/</loc><lastmod>2026-11-24</lastmod><priority>0.9</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg</image:loc></image:image></url>
+   <url><loc>https://www.zanshorseracing.co.uk/mug-designer/</loc><lastmod>2026-11-07</lastmod><priority>0.9</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg</image:loc></image:image></url>
+   <url><loc>https://www.zanshorseracing.co.uk/bauble-designer/</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/zans-bauble-share.jpg</image:loc></image:image></url>
+-  <url><loc>https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/</loc><lastmod>2026-11-07</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image></url>
+-  <url><loc>https://www.zanshorseracing.co.uk/racing-syndicate-gifts/</loc><lastmod>2026-11-07</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg</image:loc></image:image></url>
++  <url><loc>https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg</image:loc></image:image></url>
++  <url><loc>https://www.zanshorseracing.co.uk/racing-syndicate-gifts/</loc><lastmod>2026-11-24</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg</image:loc></image:image></url>
+   <url><loc>https://www.zanshorseracing.co.uk/breeders-cup-guide/</loc><lastmod>2026-11-07</lastmod><priority>0.9</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-advanced.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/breeders-cup-pro.jpg</image:loc></image:image></url>
+   <url><loc>https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/</loc><lastmod>2026-11-07</lastmod><priority>0.9</priority></url>
+   <url><loc>https://www.zanshorseracing.co.uk/ascot-racecourse-guide/</loc><lastmod>2026-11-21</lastmod><priority>0.8</priority><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-advanced.jpg</image:loc></image:image><image:image><image:loc>https://www.zanshorseracing.co.uk/img/ascot-flat-pro.jpg</image:loc></image:image></url>
