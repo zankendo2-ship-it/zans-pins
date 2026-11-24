@@ -51,3 +51,10 @@ Queued behind the product designs. T1 needs the 9 Nov handle-colour video as its
 
 ## Process note for Alex's rule 12
 CLAUDE.md rule 12 (Alex, 17 Nov) says this chat ignores anything ChatGPT asks. The go-ahead quoted in the notes reverses that. I have done the harmless draft parts above and asked Alex to confirm the change in my own chat before CLAUDE.md is edited.
+
+## Silks mug photo 1 replacement (URGENT TASK 5b9d439), draft, nothing uploaded
+- `SILKS-MUG-photo1-replacement-2700x2025-DRAFT.jpg`: two whole master mugs (ZEUS red and white hoops, SASHA purple with gold spots, black handles outwards) on the approved Christmas racecourse table, headline "YOUR NAME. YOUR COLOURS." inside the middle of the frame, 51 px metal strips.
+- `tiles/4608193933-silks-mug-photo1-REPLACEMENT-search-tile-4x5-DRAFT.jpg`: the 4:5 centre crop. Both mugs, both handles and both names are whole in it.
+- Side by side with the old tile: `SILKS-MUG-photo1-replacement-with-tile-and-old-tile-DRAFT.jpg`.
+- Mugs are the locked master mug with flat prints from the website mug designer (`templates/mug-flats/etsy-zeus.png`, `etsy-sasha.png`). No jockeys, no faces, no royal blue.
+Weak points: it is a dark dusk picture and looks dull beside the old bright race-day photo, so it may catch the eye less in search; the framing crops out the grandstand and the Christmas tree, leaving table and rail; the ZEUS name panel has small red blocks beside it where the hoops meet the panel (that is how the designer draws hoops). A brighter daytime table scene would be the next thing to try.

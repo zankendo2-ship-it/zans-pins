@@ -33,3 +33,8 @@ Possible re-uses of the same pictures (same themes, generic alt text, so the pic
 Limits: only text was checked. About 60 other mug image posts in the window have generic alt text ("Personalised horse racing mug in jockey silks - ...") or none, and the mug videos have none, so REX could be in a picture without being named. No image was opened.
 Also seen, for the same reason as REX (colours near a real owner's or plain royal blue): 419347828 Pinterest 7 Nov, alt "Royal blue striped horse racing mug with CHARLOTTE"; 418089612 Pinterest 6 Nov, "Green horse racing mug with red rim and MIKEL".
 The REX mug is not in this chat's files; it was not made here.
+
+## URGENT TASK 5b9d439 (24 Nov, 08:40 UTC)
+1. New product photos, first four (baby bodysuit, kids' tee, adult tee, patch): DONE as drafts, `batch/2026-11-24/new-products/` (12 photos, contact sheet, review request). Contact sheet sent to Alex. Remaining 13 shortlist products: ETA about 3 hours once Alex says which he wants.
+2. Silks mug photo 1 replacement and 4:5 tile: DONE as a draft, `batch/2026-11-24/visibility/SILKS-MUG-photo1-replacement-2700x2025-DRAFT.jpg` and `tiles/...REPLACEMENT...`. Sent to Alex.
+3. Guide thumbnails with a DIGITAL PDF label: NOT DONE. This chat does not hold the guide cover or listing photo files (they live with the guides chat and repo). If the current photo 1 of each guide listing is committed to zans-pins, I add the label within the hour.
