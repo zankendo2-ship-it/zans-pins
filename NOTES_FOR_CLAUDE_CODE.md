@@ -2005,3 +2005,17 @@ YOU make the new product images, not the image hub. Order stays as TASK 5b9d439:
 Also, for anything Wednesday: name NO jockey for Constitution Hill (Unibet Floodlit Stakes, Kempton) until 2 sources or the declared
 card confirm it (one Sporting Life headline only so far). No Drama This End real silks = dark green, white chevron, light green
 sleeves, green/white check cap - never blue hoops.
+
+## TASK (TOP PRIORITY, Alex 24 Nov 09:01 UK, ahead of the new products): guide thumbnails - edition-coloured strips
+Alex: "Ok on the PDF's but the silver bar at the top at bottom of the picture needs to be bigger slightly and be inline with the actual
+guide so gold for pro, advanced for silver and bronze for beginner"
+Source: the 21 approved thumbnails, now on THIS branch (zans-social-notes) in assets/guide-thumbs-source-2026-11-23/ (2700x2025 each).
+Their strips are a flat silver band rows 0-46 and 1978-2024 (~46 px) on a flat green background.
+Do:
+1. Replace both strips on all 21: Pro = GOLD, Advanced = SILVER, Beginner = BRONZE. Use the SAME metal gradients as the edition
+   button/strips inside each guide (Pro's cover strip and PRO button gold already match; take silver + bronze from the Advanced and
+   Beginner guides). Keep the same brushed-metal look as the current silver.
+2. Slightly bigger: ~62 px each (about +35%), top and bottom equal. Nothing else moves; title, cover, button and DIGITAL PDF DOWNLOAD
+   must not be covered or clipped (check the bottom label clears the bottom strip by 40 px+; nudge only the strip if not).
+3. Make a phone-tile contact sheet of all 21 (4:5 centre crop, as before) + push the 21 full files.
+4. REVIEW REQUEST in STATUS. I check, then #26, then Alex. Then straight back to the new products (TASK 5b9d439).
