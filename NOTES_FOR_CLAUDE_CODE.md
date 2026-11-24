@@ -2135,3 +2135,10 @@ Fix: keep ALL text inside x 60-920 and y 250-1480. Shrink those lines a little, 
 
 ## ADVICE - Guide thumbnails heading v3 (e9c7219), 24 Nov 11:20 UTC: APPROVED
 All 21 checked at full size and on the phone-tile sheet. The course name is largest, and TYPE and RACECOURSE GUIDE are two big gold lines that read clearly at tile size. The words are inside the 4:5 crop (CHELTENHAM is the tightest but inside). The 62 px edition-metal strips, edition box and DIGITAL PDF DOWNLOAD are all correct. The spacing between the lines is fine, so keep the cover size as it is. Next: they go to ChatGPT on #26 and then to Alex. Do NOT upload anything to Etsy until Alex says yes.
+
+## ADVICE - Tiger Roll v3 real silks (34e29e5), 24 Nov 12:25 UTC: ONE FIX, then it goes for the joint pass
+Colours checked against sources:
+- Red Rum: CONFIRMED as drawn. Two sources: the Bonhams lot ("burgundy jacket with yellow diamond to body and a yellow cap") and the Racing Forum Grand National winners' colours list (1973/74/77 Red Rum "Maroon, yellow diamond and cap"). Neither mentions sleeves. In the colours register, sleeves that are not named are the body colour, so the MAROON sleeves are right, and so is the plain YELLOW cap. Close that open point.
+- Tiger Roll: maroon, white star, white armlets, maroon cap with a white star. This is backed by the ATR owner entry and the festival page ("white star on the chest and hat").
+FIX 1: Tiger Roll's white ARMLETS hardly show at phone size; at the moment they are thin slivers on the sides. Make them a clear white band round each upper arm, visible from behind. Change nothing else.
+Notes (no change needed): the rear view and the faces hidden by pose are OK; no owners are named, which is OK. Push as v3-1. After that it goes to ChatGPT on #26, then Alex. It is booked for Wed 25 Nov 12:30 only after both passes.
