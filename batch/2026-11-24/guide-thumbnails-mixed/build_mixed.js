@@ -5,7 +5,7 @@ const meta = JSON.parse(fs.readFileSync('/tmp/gt/meta.json'));
 const METAL = { Pro: ['#8a6a22', '#f2cf5b', '#fff3c8', '#c9a13b'], Advanced: ['#6f7377', '#c9ccd0', '#ffffff', '#a3a7ac'], Beginner: ['#6b3f1d', '#c98a4b', '#f3cfa6', '#a8642e'] };
 const grad = m => `linear-gradient(90deg,${m[0]},${m[1]} 18%,${m[2]} 32%,${m[3]} 50%,${m[2]} 68%,${m[1]} 82%,${m[0]})`;
 const SELL = {
-  'SANDOWN JUMPS Advanced - 4622672428': [28, ['Value and over-bet points', 'Every main distance', 'Smart money and big prices', "Big-race winners' colours"]],
+  'SANDOWN JUMPS Advanced - 4622672428': [28, ['Every distance, every detail', 'Every main distance', 'Smart money and big prices', "Big-race winners' colours"]],
   'CHELTENHAM JUMPS Beginner - 4622511316': [18, ['Simple advice for every distance', 'The course map, explained', 'Jumps racing in pictures', 'Jockeys, trainers and colours']],
   'AINTREE JUMPS Pro - 4623069940': [135, ['Every finding tested twice', 'Price calibration and big prices', '2027 Aintree returner list', 'Findings register and case studies']] };
 (async () => { const b = await chromium.launch();
@@ -24,8 +24,8 @@ body{width:2700px;height:2025px;position:relative;overflow:hidden;font-family:Jo
 <img src="${cov}" style="position:absolute;left:1108px;top:636px;width:1040px;height:1262px;transform:rotate(3.2deg);box-shadow:0 24px 60px rgba(0,0,0,.5)">
 <img src="data:image/png;base64,${b64(`/tmp/gt/${key}-box.png`)}" style="position:absolute;left:560px;top:668px;width:530px;height:139px;border-radius:22px">
 <div style="position:absolute;left:560px;top:860px;width:540px;font-weight:700;font-size:116px;line-height:1.04;text-shadow:0 5px 16px rgba(0,0,0,.4)">${lines[0]}</div>
-<div style="position:absolute;left:560px;top:1690px;width:560px;font-weight:700;font-size:70px;letter-spacing:2px;line-height:1.08;color:#F2CF5B">DIGITAL PDF<br>DOWNLOAD</div>
+<div style="position:absolute;left:556px;top:1636px;width:540px;padding:22px 0 24px;text-align:center;border-radius:26px;background:linear-gradient(90deg,#8a6a22,#f2cf5b 18%,#fff3c8 32%,#c9a13b 50%,#fff3c8 68%,#f2cf5b 82%,#8a6a22);box-shadow:0 10px 26px rgba(0,0,0,.45);font-weight:700;font-size:74px;letter-spacing:1px;line-height:1.06;color:#14301f">DIGITAL PDF<br>DOWNLOAD</div>
 </body></html>`); await p.waitForTimeout(250);
-    const out = `MIXED-${course}-${type}-${ed}-${id}-angled-cover-new-heading-v2.jpg`.replace(/ /g, '-');
+    const out = `MIXED-${course}-${type}-${ed}-${id}-angled-cover-new-heading-v2.1.jpg`.replace(/ /g, '-');
     await p.screenshot({ path: path.join(__dirname, out), type: 'jpeg', quality: 95 }); await p.close(); console.log(out); }
   await b.close(); })();

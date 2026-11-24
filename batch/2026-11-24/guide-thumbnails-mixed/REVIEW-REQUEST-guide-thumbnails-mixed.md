@@ -25,3 +25,11 @@ I did not have the old design's source files, only the 1000x750 website copies a
 - Rule 2A-14 check: every word was read on the 300px tile in `MIXED-v2-three-samples-full-and-300px-phone-tile.jpg` (the text printed on the guide cover itself is part of the cover picture, not sales text).
 - Files: the three `MIXED-...-angled-cover-new-heading-v2.jpg`. v1 files removed.
 - Not uploaded to Etsy. Nothing booked.
+
+## v2.1 (24 Nov 2026, 16:55 UTC)
+- Advanced line changed to "Every distance, every detail" (the old one used betting words).
+- DIGITAL PDF DOWNLOAD now sits on a gold pill (74px dark text), so it stands out on the 300px tile.
+- Selling line kept on 4 lines: 2 lines would not fit beside the bigger cover inside the phone crop.
+- Pro line kept as "Every finding tested twice" (optional change not taken).
+- Files: three `MIXED-...-angled-cover-new-heading-v2.1.jpg` and `MIXED-v2.1-three-samples-full-and-300px-phone-tile.jpg`. v2 files kept beside them.
+- Checked at a 300px tile: all sales text readable, cover inside the crop. Not on Etsy.

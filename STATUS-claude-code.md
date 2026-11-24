@@ -46,3 +46,6 @@ Still unconfirmed for the Tiger Roll scene: Tiger Roll's sleeves and cap, Red Ru
 
 ## Guide page counts for the mixed thumbnails (24 Nov, 16:35 UTC): NOT verified
 The counts on the three samples (Sandown Jumps Advanced 28, Cheltenham Jumps Beginner 18, Aintree Jumps Pro 135) are copied from the old angled thumbnails. The guide PDFs are not in this repo or on the branches I can read, so I cannot count their pages. Whoever holds the PDFs (the guides chat) needs to confirm all 21 counts before any rollout; I will not roll the mixed layout out to the other 18 until then.
+
+## REVIEW REQUEST - mixed guide thumbnails v2.1 (24 Nov 2026, 16:55 UTC)
+Folder `batch/2026-11-24/guide-thumbnails-mixed/`. Sheet: `MIXED-v2.1-three-samples-full-and-300px-phone-tile.jpg`. Notes in `REVIEW-REQUEST-guide-thumbnails-mixed.md` (v2.1 section). Advanced line now "Every distance, every detail"; DIGITAL PDF DOWNLOAD on a gold pill; selling line stays on 4 lines; Pro line unchanged. Nothing uploaded to Etsy. Waiting for Alex's own yes.
