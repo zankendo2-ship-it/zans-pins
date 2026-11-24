@@ -1,0 +1,1656 @@
+{
+ "run_utc": "2026-11-07 16:57 UTC",
+ "dns": {
+  "zanshorseracing.co.uk A": [
+   "185.199.108.153",
+   "185.199.109.153"
+  ],
+  "zanshorseracing.co.uk AAAA": "none (NoAnswer)",
+  "zanshorseracing.co.uk CNAME": "none (NoAnswer)",
+  "zanshorseracing.co.uk TXT": [
+   "\"google-site-verification=anPLcyaZDzumIrZ2GG95ufYhOl7IcBrvQ7hXRt0w39E\"",
+   "\"v=spf1 include:_spf-eu.ionos.com ~all\""
+  ],
+  "zanshorseracing.co.uk CAA": "none (NoAnswer)",
+  "zanshorseracing.co.uk MX": [
+   "10 mx00.ionos.co.uk.",
+   "10 mx01.ionos.co.uk."
+  ],
+  "www.zanshorseracing.co.uk A": [
+   "185.199.108.153",
+   "185.199.109.153",
+   "185.199.110.153",
+   "185.199.111.153"
+  ],
+  "www.zanshorseracing.co.uk AAAA": [
+   "2606:50c0:8000::153",
+   "2606:50c0:8001::153",
+   "2606:50c0:8002::153",
+   "2606:50c0:8003::153"
+  ],
+  "www.zanshorseracing.co.uk CNAME": [
+   "zankendo2-ship-it.github.io."
+  ],
+  "www.zanshorseracing.co.uk TXT": "none (NoAnswer)",
+  "www.zanshorseracing.co.uk CAA": [
+   "0 issue \"digicert.com\"",
+   "0 issue \"letsencrypt.org\"",
+   "0 issue \"sectigo.com\"",
+   "0 issuewild \"digicert.com\"",
+   "0 issuewild \"letsencrypt.org\"",
+   "0 issuewild \"sectigo.com\""
+  ],
+  "www.zanshorseracing.co.uk MX": "none (NoAnswer)",
+  "zanshorseracing.co.uk NS": [
+   "ns1035.ui-dns.biz.",
+   "ns1060.ui-dns.org.",
+   "ns1075.ui-dns.de.",
+   "ns1084.ui-dns.com."
+  ],
+  "mwww.zanshorseracing.co.uk TXT": "none (NXDOMAIN)"
+ },
+ "tls": {
+  "www.zanshorseracing.co.uk": {
+   "ok": true,
+   "notAfter": "Jan 28 06:46:26 2027 GMT",
+   "issuer": {
+    "countryName": "US",
+    "organizationName": "Let's Encrypt",
+    "commonName": "YR2"
+   },
+   "san": [
+    "www.zanshorseracing.co.uk",
+    "zanshorseracing.co.uk"
+   ]
+  },
+  "zanshorseracing.co.uk": {
+   "ok": true,
+   "notAfter": "Jan 28 06:46:26 2027 GMT",
+   "issuer": {
+    "countryName": "US",
+    "organizationName": "Let's Encrypt",
+    "commonName": "YR2"
+   },
+   "san": [
+    "www.zanshorseracing.co.uk",
+    "zanshorseracing.co.uk"
+   ]
+  }
+ },
+ "redirects": {
+  "http://zanshorseracing.co.uk/": [
+   {
+    "url": "http://zanshorseracing.co.uk/",
+    "status": 301,
+    "location": "https://www.zanshorseracing.co.uk/"
+   },
+   {
+    "url": "https://www.zanshorseracing.co.uk/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://zanshorseracing.co.uk/": [
+   {
+    "url": "https://zanshorseracing.co.uk/",
+    "status": 301,
+    "location": "https://www.zanshorseracing.co.uk/"
+   },
+   {
+    "url": "https://www.zanshorseracing.co.uk/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "http://www.zanshorseracing.co.uk/": [
+   {
+    "url": "http://www.zanshorseracing.co.uk/",
+    "status": 301,
+    "location": "https://www.zanshorseracing.co.uk/"
+   },
+   {
+    "url": "https://www.zanshorseracing.co.uk/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://zankendo2-ship-it.github.io/zans-pins/": [
+   {
+    "url": "https://zankendo2-ship-it.github.io/zans-pins/",
+    "status": 301,
+    "location": "https://www.zanshorseracing.co.uk/"
+   },
+   {
+    "url": "https://www.zanshorseracing.co.uk/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://zankendo2-ship-it.github.io/zans-pins/mug-designer/": [
+   {
+    "url": "https://zankendo2-ship-it.github.io/zans-pins/mug-designer/",
+    "status": 301,
+    "location": "https://www.zanshorseracing.co.uk/mug-designer/"
+   },
+   {
+    "url": "https://www.zanshorseracing.co.uk/mug-designer/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/horse-racing-gifts": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/horse-racing-gifts",
+    "status": 301,
+    "location": "https://www.zanshorseracing.co.uk/horse-racing-gifts/"
+   },
+   {
+    "url": "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/index.html": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/index.html",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/mug-designer/index.html": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/mug-designer/index.html",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://zanshorseracing.co.uk/mug-designer/": [
+   {
+    "url": "https://zanshorseracing.co.uk/mug-designer/",
+    "status": 301,
+    "location": "https://www.zanshorseracing.co.uk/mug-designer/"
+   },
+   {
+    "url": "https://www.zanshorseracing.co.uk/mug-designer/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/this-page-does-not-exist/": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/this-page-does-not-exist/",
+    "status": 404,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/favicon.ico": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/favicon.ico",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/robots.txt": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/robots.txt",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/sitemap.xml": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/sitemap.xml",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/mug-designer-test/": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/mug-designer-test/",
+    "status": 200,
+    "location": null
+   }
+  ],
+  "https://www.zanshorseracing.co.uk/mug-order-tool/": [
+   {
+    "url": "https://www.zanshorseracing.co.uk/mug-order-tool/",
+    "status": 200,
+    "location": null
+   }
+  ]
+ },
+ "robots_txt": {
+  "status": 200,
+  "body": "User-agent: *\nAllow: /\n\nSitemap: https://www.zanshorseracing.co.uk/sitemap.xml\n"
+ },
+ "sitemap": {
+  "status": 200,
+  "content_type": "application/xml",
+  "count": 11,
+  "urls": [
+   "https://www.zanshorseracing.co.uk/",
+   "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+   "https://www.zanshorseracing.co.uk/mug-designer/",
+   "https://www.zanshorseracing.co.uk/bauble-designer/",
+   "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+   "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/",
+   "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+   "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+   "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+   "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+   "https://www.zanshorseracing.co.uk/articles/going-explained/"
+  ]
+ },
+ "pages": {
+  "https://www.zanshorseracing.co.uk/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/",
+   "secs": 0.01,
+   "bytes": 46631,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "3",
+   "server": "GitHub.com",
+   "title": "Horse Racing Guides, Tools & Gifts | ZANS Racing",
+   "description": "Racecourse guide PDFs for UK and Irish horse racing: draw, going, course maps and stats. Beginner, Advanced and Pro editions. Instant download.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/"
+   ],
+   "h1": [
+    "Horse Racing Racecourse Guides: UK Flat and All-Weather"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/zans-share.png",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-winter.webp",
+     "alt": "Winter Winner silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-tinsel.webp",
+     "alt": "Tinsel Turf silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing horse racing guides",
+     "w": "60",
+     "h": "58",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-santa.png",
+     "alt": "ZANS Horse Racing logo wearing a Santa hat",
+     "w": "150",
+     "h": "123",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/xmas-baubles-workshop.jpg",
+     "alt": "Two personalised horse racing Christmas baubles in racing silks, Tinsel Turf and Winter Winner, in Santa's workshop",
+     "w": "1448",
+     "h": "1086",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg",
+     "alt": "Personalised horse racing gift mug printed in jockey silks with the horse's name by the handle",
+     "w": "940",
+     "h": "1672",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-big.jpg",
+     "alt": "ZANS Racing horse racing guides logo",
+     "w": "560",
+     "h": "545",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg",
+     "alt": "Ascot Racecourse Guide by ZANS, horse racing PDF for Flat racing, draw and going explained, Beginner Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/ascot-flat-advanced.jpg",
+     "alt": "Ascot Racecourse Guide by ZANS, horse racing PDF for Flat racing, draw and going explained, Advanced Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/ascot-flat-pro.jpg",
+     "alt": "Ascot Racecourse Guide by ZANS, horse racing PDF for Flat racing, draw and going explained, Pro Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg",
+     "alt": "Breeders' Cup 2026 guide by ZANS, Keeneland horse racing PDF, Beginner Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/breeders-cup-advanced.jpg",
+     "alt": "Breeders' Cup 2026 guide by ZANS, Keeneland horse racing PDF, Advanced Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/breeders-cup-pro.jpg",
+     "alt": "Breeders' Cup 2026 guide by ZANS, Keeneland horse racing PDF, Pro Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 1255
+  },
+  "https://www.zanshorseracing.co.uk/horse-racing-gifts/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+   "secs": 0.01,
+   "bytes": 16880,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "2",
+   "server": "GitHub.com",
+   "title": "Horse Racing Gifts UK | Personalised Silks Mugs | ZANS",
+   "description": "Horse racing gifts for Christmas: a personalised mug in your own racing silks with your horse's name, for owners, syndicates and racing fans. Printed in the UK.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/"
+   ],
+   "h1": [
+    "Horse Racing Gifts: a Mug in Your Own Racing Silks"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/zans-gifts-share.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing logo",
+     "w": "48",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg",
+     "alt": "Personalised horse racing gift mug printed in jockey silks with the horse's name by the handle",
+     "w": "940",
+     "h": "1672",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg",
+     "alt": "Three personalised racing silks mugs in different colours and patterns",
+     "w": "1553",
+     "h": "688",
+     "loading": "lazy"
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 544
+  },
+  "https://www.zanshorseracing.co.uk/mug-designer/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/mug-designer/",
+   "secs": 0.02,
+   "bytes": 531927,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "1",
+   "server": "GitHub.com",
+   "title": "Personalised Horse Racing Gift Mug in Your Silks | ZANS",
+   "description": "Personalised horse racing mug printed in your own jockey silks with your horse's name. A horse racing Christmas present for owners, syndicates and racing fans.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/mug-designer/"
+   ],
+   "h1": [
+    "Personalised Horse Racing Silks Mug"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/zans-gifts-share.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-mug-designer.png",
+     "alt": "ZANS Racing logo",
+     "w": "140",
+     "h": "116",
+     "loading": null
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 492
+  },
+  "https://www.zanshorseracing.co.uk/bauble-designer/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/bauble-designer/",
+   "secs": 0.11,
+   "bytes": 145710,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "0",
+   "server": "GitHub.com",
+   "title": "Personalised Horse Racing Christmas Bauble in Your Silks | ZANS",
+   "description": "Design a personalised horse racing Christmas bauble in your own jockey silks with your horse's name, then see it on a Christmas tree. Printed in the UK.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/bauble-designer/"
+   ],
+   "h1": [
+    "Personalised Horse Racing Christmas Bauble"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/zans-bauble-share.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-santa.png",
+     "alt": "ZANS Horse Racing logo wearing a Santa hat",
+     "w": "180",
+     "h": "148",
+     "loading": null
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 341
+  },
+  "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+   "secs": 0.12,
+   "bytes": 15472,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "0",
+   "server": "GitHub.com",
+   "title": "Gifts for Racehorse Owners | Personalised Silks Mug | ZANS",
+   "description": "Gift ideas for racehorse owners: a personalised mug printed in their own racing silks with their horse's name by the handle. Printed in the UK.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/"
+   ],
+   "h1": [
+    "Gifts for Racehorse Owners: Their Horse, on Their Mug"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/zans-gifts-share.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing logo",
+     "w": "48",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg",
+     "alt": "Personalised racehorse owner gift mug printed in racing silks with the horse's name",
+     "w": "940",
+     "h": "1672",
+     "loading": null
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 476
+  },
+  "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/",
+   "secs": 0.13,
+   "bytes": 15151,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "0",
+   "server": "GitHub.com",
+   "title": "Racing Syndicate Gifts | Matching Personalised Silks Mugs | ZANS",
+   "description": "Racing syndicate gifts: matching mugs for every member, printed in your syndicate's silks with your horse's name. Design once, order as many as you need.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "h1": [
+    "Racing Syndicate Gifts: Matching Mugs in Your Silks"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/zans-gifts-share.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing logo",
+     "w": "48",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg",
+     "alt": "Three personalised racing silks mugs in different colours and patterns",
+     "w": "1553",
+     "h": "688",
+     "loading": null
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 430
+  },
+  "https://www.zanshorseracing.co.uk/breeders-cup-guide/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+   "secs": 0.11,
+   "bytes": 34759,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "0",
+   "server": "GitHub.com",
+   "title": "Breeders' Cup 2026 Guide PDF | Every Race in UK Time | ZANS",
+   "description": "Breeders' Cup 2026 guide PDF: all 14 Keeneland races in UK time, main contenders, every runner with its colours. Beginner, Advanced and Pro editions.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ],
+   "h1": [
+    "Breeders' Cup 2026 Guide: Keeneland, 30-31 October"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-winter.webp",
+     "alt": "Winter Winner silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-tinsel.webp",
+     "alt": "Tinsel Turf silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing horse racing guides",
+     "w": "60",
+     "h": "58",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/limited-edition-seal.png",
+     "alt": "Limited Edition Breeders' Cup 2026 gold seal",
+     "w": "360",
+     "h": "360",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg",
+     "alt": "Breeders' Cup 2026 guide by ZANS, Keeneland horse racing PDF, Beginner Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/breeders-cup-advanced.jpg",
+     "alt": "Breeders' Cup 2026 guide by ZANS, Keeneland horse racing PDF, Advanced Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/breeders-cup-pro.jpg",
+     "alt": "Breeders' Cup 2026 guide by ZANS, Keeneland horse racing PDF, Pro Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 569
+  },
+  "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+   "secs": 0.13,
+   "bytes": 34549,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "0",
+   "server": "GitHub.com",
+   "title": "Breeders' Cup 2026 UK Times: Every Race, Friday and Saturday",
+   "description": "What time is the Breeders' Cup in the UK? Every 2026 race at Keeneland in UK time, Friday 30 and Saturday 31 October, with the Classic at 22:16.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/"
+   ],
+   "h1": [
+    "Breeders' Cup 2026: Every Race in UK Time"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok",
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-winter.webp",
+     "alt": "Winter Winner silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-tinsel.webp",
+     "alt": "Tinsel Turf silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing horse racing guides",
+     "w": "60",
+     "h": "58",
+     "loading": null
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 623
+  },
+  "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+   "secs": 0.11,
+   "bytes": 34502,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "0",
+   "server": "GitHub.com",
+   "title": "Ascot Racecourse Guide PDF | Draw, Going & Stats | ZANS",
+   "description": "Ascot racecourse guide PDF for Flat racing: draw by trip and field size, going, course map, top jockeys and trainers. Beginner, Advanced and Pro.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/"
+   ],
+   "h1": [
+    "Ascot Racecourse Guide: Flat Racing, Beginner to Pro"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-winter.webp",
+     "alt": "Winter Winner silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-tinsel.webp",
+     "alt": "Tinsel Turf silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing horse racing guides",
+     "w": "60",
+     "h": "58",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg",
+     "alt": "Ascot Racecourse Guide by ZANS, horse racing PDF for Flat racing, draw and going explained, Beginner Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/ascot-flat-advanced.jpg",
+     "alt": "Ascot Racecourse Guide by ZANS, horse racing PDF for Flat racing, draw and going explained, Advanced Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/ascot-flat-pro.jpg",
+     "alt": "Ascot Racecourse Guide by ZANS, horse racing PDF for Flat racing, draw and going explained, Pro Edition cover",
+     "w": "1000",
+     "h": "750",
+     "loading": "lazy"
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 565
+  },
+  "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+   "secs": 0.11,
+   "bytes": 34565,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "0",
+   "server": "GitHub.com",
+   "title": "Ascot Draw Bias Explained: Which Stalls Do Best? | ZANS",
+   "description": "Does the draw matter at Ascot? Our results data shows how high, middle and low stalls do on the straight and round course, by trip and field size.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/"
+   ],
+   "h1": [
+    "Ascot Draw Bias Explained"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok",
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-winter.webp",
+     "alt": "Winter Winner silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-tinsel.webp",
+     "alt": "Tinsel Turf silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing horse racing guides",
+     "w": "60",
+     "h": "58",
+     "loading": null
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 744
+  },
+  "https://www.zanshorseracing.co.uk/articles/going-explained/": {
+   "status": 200,
+   "final_url": "https://www.zanshorseracing.co.uk/articles/going-explained/",
+   "secs": 0.12,
+   "bytes": 33715,
+   "content_type": "text/html; charset=utf-8",
+   "cache_control": "max-age=600",
+   "content_encoding": "gzip",
+   "x_robots_tag": null,
+   "last_modified": "Sat, 07 Nov 2026 16:57:17 GMT",
+   "age": "0",
+   "server": "GitHub.com",
+   "title": "Going in Horse Racing: Ground Conditions Explained | ZANS",
+   "description": "The going means the ground conditions. Firm, good, soft and heavy explained, plus all-weather standard going and why the ground matters to a horse.",
+   "robots": null,
+   "canonical": [
+    "https://www.zanshorseracing.co.uk/articles/going-explained/"
+   ],
+   "h1": [
+    "Going in Horse Racing: Ground Conditions Explained"
+   ],
+   "og_image": "https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg",
+   "icons": [
+    "/favicon.ico",
+    "/img/icon-192.png",
+    "/apple-touch-icon.png"
+   ],
+   "jsonld": [
+    "ok",
+    "ok"
+   ],
+   "images": [
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-winter.webp",
+     "alt": "Winter Winner silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-bauble-tinsel.webp",
+     "alt": "Tinsel Turf silks bauble",
+     "w": "46",
+     "h": "46",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/banner-santa.webp",
+     "alt": "ZANS logo in a Santa hat",
+     "w": "50",
+     "h": "41",
+     "loading": null
+    },
+    {
+     "src": "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg",
+     "alt": "ZANS Racing horse racing guides",
+     "w": "60",
+     "h": "58",
+     "loading": null
+    }
+   ],
+   "internal_links": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ],
+   "text_words": 645
+  }
+ },
+ "assets": {
+  "https://www.zanshorseracing.co.uk/apple-touch-icon.png": {
+   "status": 200,
+   "bytes": 28547,
+   "type": "image/png",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/favicon.ico": {
+   "status": 200,
+   "bytes": 6670,
+   "type": "image/vnd.microsoft.icon",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/fonts/jost-latin.woff2": {
+   "status": 200,
+   "bytes": 26588,
+   "type": "font/woff2",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/fonts/source-sans-3-latin.woff2": {
+   "status": 200,
+   "bytes": 28804,
+   "type": "font/woff2",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/ascot-flat-advanced.jpg": {
+   "status": 200,
+   "bytes": 85024,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/ascot-flat-beginner.jpg": {
+   "status": 200,
+   "bytes": 82699,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/ascot-flat-pro.jpg": {
+   "status": 200,
+   "bytes": 89849,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/banner-bauble-tinsel.webp": {
+   "status": 200,
+   "bytes": 4100,
+   "type": "image/webp",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/banner-bauble-winter.webp": {
+   "status": 200,
+   "bytes": 3168,
+   "type": "image/webp",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/banner-santa.webp": {
+   "status": 200,
+   "bytes": 2724,
+   "type": "image/webp",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/breeders-cup-advanced.jpg": {
+   "status": 200,
+   "bytes": 94505,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/breeders-cup-beginner.jpg": {
+   "status": 200,
+   "bytes": 94869,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/breeders-cup-pro.jpg": {
+   "status": 200,
+   "bytes": 97391,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/icon-192.png": {
+   "status": 200,
+   "bytes": 31715,
+   "type": "image/png",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/limited-edition-seal.png": {
+   "status": 200,
+   "bytes": 218294,
+   "type": "image/png",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/silks-mugs-hero.jpg": {
+   "status": 200,
+   "bytes": 247238,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/silks-mugs-trio-1553.jpg": {
+   "status": 200,
+   "bytes": 117547,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/xmas-baubles-workshop.jpg": {
+   "status": 200,
+   "bytes": 324212,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/zans-bauble-share.jpg": {
+   "status": 200,
+   "bytes": 109969,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/bauble-designer/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/zans-gifts-share.jpg": {
+   "status": 200,
+   "bytes": 99690,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/zans-logo-180.jpg": {
+   "status": 200,
+   "bytes": 7676,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/zans-logo-big.jpg": {
+   "status": 200,
+   "bytes": 40019,
+   "type": "image/jpeg",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/zans-logo-mug-designer.png": {
+   "status": 200,
+   "bytes": 60897,
+   "type": "image/png",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/mug-designer/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/zans-logo-santa.png": {
+   "status": 200,
+   "bytes": 124243,
+   "type": "image/png",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/bauble-designer/"
+   ]
+  },
+  "https://www.zanshorseracing.co.uk/img/zans-share.png": {
+   "status": 200,
+   "bytes": 410044,
+   "type": "image/png",
+   "cache_control": "max-age=600",
+   "used_on": [
+    "https://www.zanshorseracing.co.uk/"
+   ]
+  }
+ },
+ "external_links": {
+  "https://www.etsy.com/listing/4608193933/personalised-horse-racing-silks-mug": {
+   "status": 200,
+   "final": "https://www.etsy.com/listing/4608193933/personalised-horse-racing-silks-mug",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/mug-designer/"
+   ]
+  },
+  "https://www.etsy.com/listing/4611232428": {
+   "status": 200,
+   "final": "https://www.etsy.com/listing/4611232428/horse-racing-bauble-personalised-jockey",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/bauble-designer/"
+   ]
+  },
+  "https://www.etsy.com/uk/listing/4601073843": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/listing/4601073843/ascot-racecourse-guide-for-beginners",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/"
+   ]
+  },
+  "https://www.etsy.com/uk/listing/4604430033": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/listing/4604430033/ascot-racecourse-guide-pro-price-bands",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/"
+   ]
+  },
+  "https://www.etsy.com/uk/listing/4604440668": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/listing/4604440668/ascot-racecourse-guide-advanced-draw",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/"
+   ]
+  },
+  "https://www.etsy.com/uk/listing/4605010047": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/listing/4605010047/breeders-cup-2026-guide-for-beginners",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.etsy.com/uk/listing/4605143052": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/listing/4605143052/breeders-cup-2026-guide-pro-keeneland",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.etsy.com/uk/listing/4608193933": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/listing/4608193933/personalised-horse-racing-silks-mug",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/mug-designer/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.etsy.com/uk/listing/4611213915": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/listing/4611213915/horse-racing-bauble-green-gold",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/"
+   ]
+  },
+  "https://www.etsy.com/uk/listing/4611232428": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/listing/4611232428/horse-racing-bauble-personalised-jockey",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/"
+   ]
+  },
+  "https://www.etsy.com/uk/shop/ZANSRacingTools": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/shop/ZANSRacingTools",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/articles/ascot-draw-bias/",
+    "https://www.zanshorseracing.co.uk/articles/breeders-cup-uk-times/",
+    "https://www.zanshorseracing.co.uk/articles/going-explained/",
+    "https://www.zanshorseracing.co.uk/ascot-racecourse-guide/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/",
+    "https://www.zanshorseracing.co.uk/gifts-for-racehorse-owners/",
+    "https://www.zanshorseracing.co.uk/horse-racing-gifts/",
+    "https://www.zanshorseracing.co.uk/racing-syndicate-gifts/"
+   ]
+  },
+  "https://www.etsy.com/uk/shop/ZANSRacingTools#reviews": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/shop/ZANSRacingTools#reviews",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/"
+   ]
+  },
+  "https://www.etsy.com/uk/shop/ZANSRacingTools?search_query=breeders+cup": {
+   "status": 200,
+   "final": "https://www.etsy.com/uk/shop/ZANSRacingTools?search_query=breeders+cup",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/",
+    "https://www.zanshorseracing.co.uk/breeders-cup-guide/"
+   ]
+  },
+  "https://www.pinterest.com/zanshorseracing/": {
+   "status": 200,
+   "final": "https://www.pinterest.com/zanshorseracing/",
+   "rel": [
+    "noopener"
+   ],
+   "pages": [
+    "https://www.zanshorseracing.co.uk/"
+   ]
+  }
+ },
+ "googlebot_same_as_visitor": {
+  "googlebot_status": 200,
+  "same_bytes": true
+ },
+ "pagespeed": {
+  "https://www.zanshorseracing.co.uk/ mobile": {
+   "status": 429,
+   "body": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.\",\n    \"errors\": [\n      {\n        \"message\": \"Quota exceeded for quota metric 'Queries' and li"
+  },
+  "https://www.zanshorseracing.co.uk/ desktop": {
+   "status": 429,
+   "body": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.\",\n    \"errors\": [\n      {\n        \"message\": \"Quota exceeded for quota metric 'Queries' and li"
+  },
+  "https://www.zanshorseracing.co.uk/mug-designer/ mobile": {
+   "status": 429,
+   "body": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.\",\n    \"errors\": [\n      {\n        \"message\": \"Quota exceeded for quota metric 'Queries' and li"
+  },
+  "https://www.zanshorseracing.co.uk/mug-designer/ desktop": {
+   "status": 429,
+   "body": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.\",\n    \"errors\": [\n      {\n        \"message\": \"Quota exceeded for quota metric 'Queries' and li"
+  },
+  "https://www.zanshorseracing.co.uk/horse-racing-gifts/ mobile": {
+   "status": 429,
+   "body": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.\",\n    \"errors\": [\n      {\n        \"message\": \"Quota exceeded for quota metric 'Queries' and li"
+  },
+  "https://www.zanshorseracing.co.uk/horse-racing-gifts/ desktop": {
+   "status": 429,
+   "body": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.\",\n    \"errors\": [\n      {\n        \"message\": \"Quota exceeded for quota metric 'Queries' and li"
+  }
+ }
+}

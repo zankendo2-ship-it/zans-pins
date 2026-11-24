@@ -34,7 +34,7 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p "reports/seo-audit/$STAMP/lighthouse"
-          for p in "" "horse-racing-gifts/" "mug-designer/" "ascot-racecourse-guide/" "articles/ascot-draw-bias/" "gifts-for-racehorse-owners/"; do
+          for p in "" "horse-racing-gifts/" "mug-designer/" "ascot-racecourse-guide/" "cheltenham-racecourse-guide/" "ascot-jumps-guide/" "kempton-jumps-guide/" "kempton-racecourse-guide/" "sandown-jumps-guide/" "aintree-jumps-guide/" "articles/ascot-draw-bias/" "gifts-for-racehorse-owners/"; do
             n=$(echo "home$p" | tr '/' '_')
             npx -y lighthouse@12 "https://www.zanshorseracing.co.uk/$p" --quiet --chrome-flags="--headless=new --no-sandbox" \
               --only-categories=performance,seo,best-practices,accessibility --output=json \
