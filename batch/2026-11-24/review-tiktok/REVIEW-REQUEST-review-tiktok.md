@@ -97,3 +97,10 @@ Proposed captions (all carry the review word for word):
 File: `ETSY-REVIEW-five-stars-TIKTOK-v7-snow-end-card-DRAFT-48k-v7-1.mp4` (18.7 s, 48 kHz).
 - [x] The faint "W" and "K" were the two ends of the old website line showing past the cover-up patch. The patch is now 960 px wide (it was 620), so the whole line is covered. Checked on a contrast-boosted crop of the end card at 17 s: no letters left. A very faint rectangle edge of the patch can be seen only at 4x contrast, not at normal viewing.
 - Nothing else changed. Rebuilt from the same frames, voice and music as v6/v7, with the snow overlay.
+
+## v7.2: TikTok safe zone (URGENT 4f58159). FIXES DONE.
+File: `ETSY-REVIEW-five-stars-TIKTOK-v7-snow-end-card-DRAFT-48k-v7-2.mp4` (18.7 s, 48 kHz). Check sheet with the safe box (x 60 to 920, y 250 to 1480) drawn in pink on the last frame of each scene, i.e. at full zoom: `ETSY-REVIEW-TIKTOK-v7-2-safe-zone-check.png`.
+- [x] Every caption is now in a 690 px column and sized so that it stays inside the box even at the end of each push-in: stars, the quote, "Etsy review", ANY COLOURS / ANY NAME, PERSONALISED / FOR THEM, DESIGN YOURS / LINK IN BIO (now two lines, off the caption line), DESIGN EXAMPLE and DESIGN PREVIEW labels.
+- [x] End card: "WISHING YOU A MERRY CHRISTMAS" re-set smaller in our own type inside the box, LINK IN BIO under it; the small header text at the very top of the card is covered. Ghost letters still gone.
+- Moved to fit: the design preview disc is smaller; the GRANDAD scene is shifted up so the bauble sits above the captions; DESIGN EXAMPLE on the MUM scene sits above the bauble.
+Not inside the box, and left as they are: the printed wording ON the MUM bauble (it hangs below y 1480 in scene 1), and the right edge of the logo card on the end card, which reaches about x 925 at full zoom. These are product and logo artwork, not captions. Voice, music and snow unchanged.
