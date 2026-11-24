@@ -53,3 +53,14 @@ NOT done: the "ignore ChatGPT" line in CLAUDE.md is Alex's rule 12 and is change
 - [x] BUY NOW button removed from the end card; "LINK IN BIO" sits in its place above the website.
 - [x] "FOR MUM AND DAD" is on one line, clear of the photo.
 Note: the end card in this video now differs from the locked Santa end card (which carries BUY NOW). That is a change to Alex's locked layout for this one TikTok and needs his yes.
+
+## v4 after JOINT VERDICTS 3dd202e
+File: `ETSY-REVIEW-five-stars-TIKTOK-v4-DRAFT.mp4` (21.7 s, native 9:16). Frames: `ETSY-REVIEW-TIKTOK-v4-frames.png`. v3 kept for comparison.
+- [x] URL removed from the end card; it reads "WISHING YOU A MERRY CHRISTMAS / LINK IN BIO" only. No BUY NOW.
+- [x] The buyer's photo is gone from every scene, and with it the DAD green-and-gold hoops and the boxes.
+- [x] Our own MUM bauble photo: a new FLUX tree scene with a blank disc (tree recipe, word for word, seed 186175725; blank kept as `templates/scenes/pool/disc-tree-bells-blank.webp`), printed with the website designer's own artwork by `mapart2.py`. Design code read back from the designer: `ZBB-spot_diag-FFFFFF-C8102E-plain-C8102E`, name MUM (white jersey, three red spots, red cap, on racing green). Scene: `templates/scenes/mum-green-tree-bells.png`.
+- [x] "FOR MUM AND DAD" is now "PERSONALISED FOR THEM", one line.
+- [x] No boxes or packaging anywhere.
+Scenes: review (stars and the quote, word for word) 0 to 4.7 s; Snow Dancer on the tree to 7.8 s; design preview to 10.8 s; MUM bauble on the tree to 18 s; end card.
+Voice: the old line about Dad and Mum is dropped. New Aoede clips, each transcribed and matching: "Here it is, on the tree!", "Any colours. Any name.", "Personalised, just for them!"; then the approved "Which name would you have on yours? / Tell us in the comments!" and "Wishing you a Merry Christmas!". Same music.
+Weak points: scene 1 is words on green with no picture for 4.7 s; white with red spots on the MUM jersey is a made-up example and I have not checked it against any register; the end card is no longer Alex's locked end card (no BUY NOW, no URL), which needs his yes.

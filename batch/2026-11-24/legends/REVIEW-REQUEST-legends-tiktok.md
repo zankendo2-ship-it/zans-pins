@@ -62,3 +62,12 @@ Tiger Roll: five Festival victories, the fifth in the 2021 Cross Country.
 1. https://www.racingpost.com/news/tiger-roll-stuns-easysland-to-join-cheltenham-greats-with-fifth-festival-win/476164
 2. https://sportinglife.com/racing/news/festival-flashbacks-watch-tiger-rolls-five-cheltenham-festival-victories/198709
 These links are internal working sources only; no site is named in any post.
+
+## After JOINT VERDICTS 3dd202e
+Honeysuckle:
+- [x] Three music options, each a full playable MP4 (H.264, AAC, 1080x1920, faststart): `HONEYSUCKLE-in-numbers-TIKTOK-v2-music-A-DRAFT.mp4`, `-music-B-`, `-music-C-`. The beds are `batch/2026-11-21/conny-kempton/music/race-bed-A/B/C.mp3`, our own code-made tracks (no samples). None is a "trending" sound; I cannot add TikTok's own sounds from here.
+Tiger Roll (`TIGER-ROLL-in-numbers-TIKTOK-v2-DRAFT.mp4`, rebuilt, 25.9 s):
+- [x] Scene 3 caption is now the generic "AND AT THE FESTIVAL" over the dawn course.
+- [x] Scenes 1 to 3 carry a small "ILLUSTRATIVE SCENE" label.
+- [x] Scene 1 looked at enlarged (the field of horses at twice size): about fourteen riders, heads down with goggles; each face is a few pixels and cannot be read as a person at phone size. Silks are FLUX colours: yellow caps on navy and on purple, pink and white, green with a green cap, blue, red. I can see no green with gold hoops, no green with a pink sash, no plain royal blue set and no claret and blue. I cannot check them against a colours register from this session, so this is an eye check only.
+Honeysuckle scenes do not carry the "illustrative" label yet; say if they should.
