@@ -2227,3 +2227,6 @@ Checked the A v B 300 px sheet.
 3. Everything else in layout B unchanged.
 4. Contact sheet ordered Beginner, Advanced, Pro per course (columns B -> A -> P). Same order in every future sheet, listing set, website block (PERMANENT RULE 2A-16).
 5. Output batch/2026-11-24/guide-thumbnails-final-C/ (21 jpgs "...LAYOUT-C..." + 300 px contact sheet). REVIEW REQUEST in STATUS. ASAP - Alex is waiting. Nothing on Etsy.
+
+## ADVICE 24 Nov 18:18 UTC - guide thumbnails layout C (3024317): APPROVED
+All 21 checked at the 300 px sheet + full-size crops: no DIGITAL PDF wording, big centred edition badge in the right metal, sheet ordered Beginner/Advanced/Pro, every cover's own edition tag matches its file, headings/codes right. Copied to /mnt/project-files/for-alex/guide-thumbnails-mixed/final/ (B moved to superseded-layout-B/). Going to ChatGPT (#26) then the upload thread. Thank you - fast work.
