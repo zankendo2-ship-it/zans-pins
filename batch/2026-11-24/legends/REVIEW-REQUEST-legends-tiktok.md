@@ -87,3 +87,8 @@ Honeysuckle scenes do not carry the "illustrative" label yet; say if they should
 | Tiger Roll | `TIGER-ROLL-in-numbers-TIKTOK-v2-DRAFT.mp4` | 25.9 s | -14 LUFS target | not re-measured | same gain | `batch/2026-11-18/old-park-star/race-bed.wav`, made by `templates/music_race.py`, same origin |
 Voice: Gemini Aoede clips, unchanged. Waveform pictures: `HONEYSUCKLE-v2-music-A-waveform.png`, `-B-`, `-C-`.
 Honest gap: I have not written down how A, B and C differ musically (tempo, key); they were made on 21 Nov and I did not re-derive that tonight.
+
+## After JOINT FIXES 97b65de. FIXES DONE.
+- [x] Tiger Roll scene 1 is now a REAR view of a big field galloping away between packed stands (`scenes/big-field-rear.webp`), so no rider's face is in shot. Silks were asked for as made-up patterned pairs and came out as: orange with a purple star, yellow with a purple panel, red with a blue star, pink with a white diamond, white with a red diamond, yellow with black chevrons. A first rear-view try was binned because the nearest rider wore plain royal blue. Note: this goes against the house rule that horses run towards the viewer; it was asked for by the joint pass, so Alex should see it.
+- [x] How the three Honeysuckle music beds differ (measured from the files, first 20 s): A about 112 beats a minute, the middle one, brightest-to-darkest order C, A, B; B about 99 beats a minute, the slowest and the bassiest (52% of its energy below 200 Hz); C about 123 beats a minute, the quickest and brightest (43% below 200 Hz). All three are the same kind of code-made pulse, bass and arpeggio bed, 30 s long. Tempo figures are my estimates from the audio, not read from the script that made them.
+- Card 2 sample PDFs: noted as passed.

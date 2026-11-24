@@ -75,3 +75,11 @@ Scenes: review over the bauble 0 to 4.7 s; design preview to 7.7 s; MUM design e
 ## ADD-ON d97115e. FIXES DONE.
 - [x] Scene 1 line "Verified Etsy Buyer" now reads "Etsy review ★★★★★". DESIGN EXAMPLE stays on the MUM scene.
 - CORRECTION to everything above in this file: the boxed DAD and MUM picture is NOT the buyer's photo. It is our own listing photo 1 for the racing green bauble (4611213915), which Etsy shows beside the review. Wherever this file says "the buyer's photo", read "our listing photo shown with the review". It is no longer used in the video.
+
+## v6 after JOINT FIXES 97b65de. FIXES DONE.
+File: `ETSY-REVIEW-five-stars-TIKTOK-v6-DRAFT.mp4` (18.7 s). Frames: `ETSY-REVIEW-TIKTOK-v6-frames-plus-tiger-roll-scene-1.png` (first four frames).
+- [x] Scene 1 no longer uses the SNOW DANCER bauble. It shows the green MUM bauble on the tree (the racing green listing's own design, printed from the website designer's artwork), labelled DESIGN EXAMPLE, under the stars and the quote.
+- [x] So no picture repeats, the later product scene is a new one: a green GRANDAD bauble hanging at a snowy racecourse at twilight (twilight recipe word for word, seed 1667926286, blank kept as `templates/scenes/pool/disc-twilight-course-blank-2.webp`; design code read back from the designer `ZBB-hoops-F28C28-17806D-plain-17806D`, orange with teal hoops, teal cap, a made-up set). Also labelled DESIGN EXAMPLE. Scene file `templates/scenes/grandad-green-twilight-course.png`.
+- The names on screen are MUM, YOUR HORSE and GRANDAD: no horse name, real or invented.
+- Unchanged: "Etsy review ★★★★★" line, design preview scene, end card, voice clips, music.
+Not done: the real listing photo was not used, because it shows the DAD bauble in green and gold hoops.

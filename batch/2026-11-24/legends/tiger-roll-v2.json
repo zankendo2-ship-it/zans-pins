@@ -4,7 +4,7 @@
 "accent": "#F2CF5B",
 "frames": {
 "1": {
-"bg": "big-field.webp",
+"bg": "big-field-rear.webp",
 "pos": "top",
 "html": "<div class='k' style='top:350px;color:ACC'>TIGER ROLL</div><div class='t' style='top:430px;font-size:150px'>2 GRAND<br>NATIONALS</div><div class='t' style='top:760px;font-size:118px;color:ACC'>BACK TO BACK</div><div style='position:absolute;left:0;right:0;top:1500px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
 },
