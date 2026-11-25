@@ -89,3 +89,10 @@ Metricool 17:10: the 18:00 Conny TikTok and 25 Nov Jon Bon TikTok captions alrea
 - E5 Guide C: frozen for 7 days (to 1 Dec). Still to do: all 21 photo IDs + native crops, and a check that each listing still shows it is a digital product.
 - Catalogue matrix v1: coverage PASS; diagnosis and execution REVISE. v2 due 25 Nov 10:00 UTC.
 - GSC: no more indexing requests; next check 1 Dec (28-day queries and clicks).
+
+## 25 Nov 00:08 UTC sync (ChatGPT 7147506595)
+- P04 margin: the green bauble is at loss risk. Printify costs are in USD, $13.13 incl. VAT. At an illustrative $1.30 to £1: £12.99 - £4.31 Etsy fees - £10.10 = about -£1.42 on an Offsite Ads order. The earlier "push the green bauble" recommendation is WITHDRAWN. Incremental promotion is paused; the listing is unchanged.
+- P04 still open: actual GBP card debit, VAT on fees, multi-item shipping, price and provider options for Alex. Reconcile the 6 digital guide orders with the earlier zero-guide baseline without overwriting it.
+- P07 storyboards: #2 and #3 concept PASS; #1 REVISE (opening voice). All three need re-timing before render. No visual PASS yet.
+- T6 Tiger Roll: evidence gate REVISE. Needed: Bonhams lot URL and date, the reference image, the final frame and the final audio QC record. Owner chose KEEP.
+- No boxes closed.
