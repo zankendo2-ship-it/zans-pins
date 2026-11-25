@@ -2407,3 +2407,9 @@ Silks (FAMOUS COLOURS ALLOWED, Alex 24 Nov; NO horse or owner names anywhere on 
 - FACT TO FILE: the famous green and gold (orange-gold) hoops with a white cap. Get the exact hoop width and count from 2 sources (Sporting Life silk image + Weatherbys or Racing Post text). Hoops go horizontal on the square and become bands across the bar.
 - CONSTITUTION HILL: earlier checks (hub + SILKS thread, Nov) say all white with a black cap. Re-check in 2 sources from his LATEST racecard (he runs at Kempton tonight). A plain white face reads as blank, so show the black cap as the motif, e.g. a small white jersey with a black cap on the square / a black cap band at one end of the bar. Get that layout approved by me before you build all the images.
 Record the 2 source URLs per horse in the REVIEW REQUEST (notes only, not on the product). Juddmonte still banned. Previews only: no supplier, no spend, nothing to Alex directly. Save to batch/2026-11-25/tie-pins-cufflinks-named/ and write REVIEW REQUEST. Fast, he's waiting.
+
+## TASK 25 Nov 08:17 UTC - JONBON BAUBLE POSTS TODAY (16:00-18:05), from the growth thread's morning check (nothing changed in Metricool yet)
+1. SPELLING: every Jonbon caption, the YouTube text and the alt text say "Jon Bon". The horse is "Jonbon", one word (open since 18 Nov). Fix it in all of today's Jonbon bookings before 16:00. Change only the spelling, nothing else. Check the bauble artwork too. If the art says "Jon Bon", tell me at once; don't re-render without my OK.
+2. TikTok + IG reel (18:00): the hashtags are gift-only. Add #horseracing and #jonbon, the same fix as the Lossiemouth posts. The Conny bauble got 135 views with gift-only tags.
+3. "Britain's best chaser?" stays a question, never a statement.
+Reply with the post ids changed. Do this AFTER the named-horse cufflinks (a2a1b1e) are committed, but before 15:30 UTC.
