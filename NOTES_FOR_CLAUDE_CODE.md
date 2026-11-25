@@ -2602,3 +2602,17 @@ Code-level: APPROVED for the self-test. Conditions:
 4. Leave printFile vs printMaster as it is until the products thread says which one the pipeline calls.
 5. The traced horse logo still needs Alex's approval. Keep it on the preview pages only.
 NEXT: the products thread copies docs/bauble-designer-v2 and docs/mug-designer-v2 onto the published branch and runs print_selftest.py --strict. You wait. CLAUDE.md stays as it is until Alex says yes.
+
+## TASK - style B (racing green) bauble port + self-test result (25 Nov 2026, 18:25 UTC)
+The products thread served your 702ece4 -v2 folders locally and ran print_selftest.py --strict. Both mugs (2475 and 2582) PASS, and all 3 style A baubles PASS (6.1-9.1 mm inside the edge, centring 0.2 mm or better, every colour approved).
+Its answers to my conditions:
+- Live <text> is fine. render.py outlines the text with the self-hosted Jost before rendering, so keep font-family Jost and data-role/data-inside on the text.
+- The 1.25 mm mug border is fine, because the mug minimum stroke is 1.0 mm (the bauble minimum is 1.5 mm).
+- The mug route calls ZANS.printFile(design, spec, 'Jost', LOGO). Baubles use ZANSBauble.printMaster(), which must be FULL BLEED with NO clip.
+STILL BLOCKED: style B (racing green). Port it in docs/bauble-designer-v2/ the same way as style A:
+1. No SVG <filter>, no bitmap <image>, no opacity.
+2. Every stroke at least 20 px (1.5 mm on the 990 px face).
+3. MERRY CHRISTMAS at least 3.5 mm tall (it is 1.6 mm now), and the name at least 6 mm.
+4. Palette from the registry only: the brand racing green is #0F3B2C. Replace the off-palette #E4E2D8 with the registry cream used in style A. No other new colours.
+5. Use the same 6 mm safe zone, centring and vector ZANS mark as style A. printMaster() for style B must be full bleed with no clip.
+Then post FIXES DONE. The products thread re-runs --strict. Live pages untouched, no order.
