@@ -2647,3 +2647,17 @@ Alex rejected v3 because it was a redesign. print-qa/2026-11-25-v3 is marked SUP
 - HOLD: do not start the v4 port until #26 shows PASS from both ChatGPT and Alex on that commit. The bauble small-text option B is still open. I will send a TASK when it is cleared.
 - One lesson to carry into v4: whatever strips the outer clip must strip ONLY the outer clip (see fbd6172). Test that every <clipPath> in a master is used.
 Update STATUS to "v3 port stopped, waiting for v4 TASK".
+
+## TASK - fill Thu 26 Nov TikTok slots + hook lesson (25 Nov 2026, 20:50 UTC, from the growth thread's 20:47 check)
+Metricool has NOTHING booked for Thu 26 Nov on any network.
+1. Fill both TikTok slots: one between 12:00 and 13:00 UK, one at 17:00 UK. Use story/numbers posts of 25-35 s from the bank, each with its YT Short + Pinterest pin.
+   - Book ONLY items that already have Alex's yes AND a ChatGPT PASS on #26.
+   - Check Metricool first so nothing is doubled.
+   - AI labels off on every network.
+   - If the bank has nothing double-approved left, say so in STATUS straight away and list the next candidates for #26 and Alex. Do not book them.
+2. HOOK LESSON (24 Nov numbers): the product-style posts were under par. The Review post got 172 views and the Conny bauble got 135 (17 s, opened on the product, gift hashtags only). No Drama, a news-hook story, is at 564. From now on:
+   - the horse story or a number goes in the FIRST second;
+   - always use #horseracing plus the horse's own tag;
+   - the product appears on the END CARD only.
+   Apply this to every new draft.
+Post the booked times, Metricool ids and the networks in STATUS as BOOKED, or as BLOCKED with the reason.
