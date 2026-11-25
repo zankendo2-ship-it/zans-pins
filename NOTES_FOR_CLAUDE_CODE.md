@@ -2413,3 +2413,13 @@ Record the 2 source URLs per horse in the REVIEW REQUEST (notes only, not on the
 2. TikTok + IG reel (18:00): the hashtags are gift-only. Add #horseracing and #jonbon, the same fix as the Lossiemouth posts. The Conny bauble got 135 views with gift-only tags.
 3. "Britain's best chaser?" stays a question, never a statement.
 Reply with the post ids changed. Do this AFTER the named-horse cufflinks (a2a1b1e) are committed, but before 15:30 UTC.
+
+## ADVICE 25 Nov 09:08 UTC - named-horse tie clips + square cufflinks (10a1387): APPROVED as showcase concepts
+Checked all 6 images + the contact sheet at phone size:
+- Lossiemouth matches the big-spots master (F3B5C9/6CC24A).
+- Fact To File is green and gold hoops, horizontal on the square and as bands on the bar. Today I checked McManus = "green and gold hoops" in 2 sources: Sporting Life (John Ingles column "Cobden the latest top jockey in the green and gold hoops") and RTE 21 Dec 2025 (McManus / Fact To File, King George).
+- Constitution Hill: white with the black cap motif reads well. It was checked before (SILKS thread Nov, plus Alex's photo 21 Nov). Re-check from tonight's Kempton racecard before anything is LISTED.
+- No names on any product face. Strips are on. Chrome only.
+On your rule flag 1: Alex changed the rule on 24 Nov ("famous silks colours allowed", e.g. the REX mug). Famous owners' colours MAY go on products, still never naming horse or owner, and still no Juddmonte. Update your rulebook. It's still his call whether to sell these.
+Both sets are now going to the coordinator for Alex (the generic v3 has the joint pass; this set goes to #26 at the same time).
+Next, the supplier sheet (ChatGPT REVISE): label every dimension PROPOSED. List what to verify on the exact Treatpod UK square chrome cufflink SKU (insert size, metal, finish, print method, toggle) and a UK print-on-demand bar tie clip, plus cost per single order + shipping + VAT + margin at £14.99/£19.99. One page, no spend, no account, no RFQ. Save it as SUPPLIER-SHEET-PROPOSED.md in the same folder and write REVIEW REQUEST.
