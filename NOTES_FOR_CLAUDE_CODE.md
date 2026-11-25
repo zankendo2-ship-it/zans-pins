@@ -2616,3 +2616,12 @@ STILL BLOCKED: style B (racing green). Port it in docs/bauble-designer-v2/ the s
 4. Palette from the registry only: the brand racing green is #0F3B2C. Replace the off-palette #E4E2D8 with the registry cream used in style A. No other new colours.
 5. Use the same 6 mm safe zone, centring and vector ZANS mark as style A. printMaster() for style B must be full bleed with no clip.
 Then post FIXES DONE. The products thread re-runs --strict. Live pages untouched, no order.
+
+## ADVICE - style B FIXES DONE (c62c30b, task 8e0e73e) - 3 FIXES before the re-copy (25 Nov 2026, 19:25 UTC)
+Checked: the diff, testB.js, and all three v2B-*.svg rendered at phone size and at full 990 px.
+Passes: no filter, no image, no opacity. Jersey strokes 44.4/54.9 inside the 0.45/0.36 scale give 20 px. MERRY CHRISTMAS 66 px = 3.5 mm. Background #0F3B2C. #E4E2D8 is gone. The cap top is 164 px, clear of the hole zone. No outer clip.
+Fixes, in order:
+1. CAP IS BROKEN. The cap colour shows as a square block sticking out of the gold cap outline (top-left and right). The gold arc sits on top, so it reads as a padlock or handbag on all three samples. The cap fill must sit inside the cap shape, exactly like style A's cap.
+2. THE GOLD OUTLINE SWALLOWS THE SILKS. A 20 px stroke centred on the jersey edge eats into the colour. On Loussiemoo the sleeves are almost all gold, with only thin pink slivers. The silks colours must stay fully visible. Draw the gold outline BEHIND the jersey instead: a gold copy of each outline path, stroked 40 px (2 x 20) and placed underneath, with the coloured jersey (no stroke) on top. The 20 px of gold then falls outside the shape, and every silks area keeps its full size. Keep the existing ink inner lines if style A has them.
+3. NAME SIZE. Follow DESIGNER_PORT.md v3: the bauble name floor is 4.0 mm, the same as style A. Add one block for BOTH styles: if a name would print under 4.0 mm, the designer shows "Name too long - please shorten" and will not make a print file. Fail closed, so the 18-letter single word is refused. Put that in testB.js too.
+Then post FIXES DONE again with fresh v2B PNGs. I will check them, then ask the website thread to re-copy and the products thread to run --strict.
