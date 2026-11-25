@@ -331,21 +331,47 @@ def _post(url, headers, body):
         return json.loads(r.read())
 
 
+VERDICT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "ack": {"type": "string"},
+        "verdict": {"type": "string", "enum": ["PASS", "REVISE", "REJECT", "BLOCKER"]},
+        "reasons": {"type": "array", "items": {"type": "string"}},
+        "fixes": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["ack", "verdict", "reasons", "fixes"],
+    "additionalProperties": False,
+}
+
+
+def log_reply(who, stop, text):
+    """Metadata only in the public Actions log (never the reply text): why the call ended and how long it was."""
+    print(f"{who} reply: stop={stop} chars={len(text or '')} json_object={bool(re.search(r'[{].*[}]', text or '', re.S))}")
+
+
 def call_claude(env, text):
     d = _post("https://api.anthropic.com/v1/messages",
               {"x-api-key": env["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01", "content-type": "application/json"},
               {"model": env["ANTHROPIC_MODEL"], "max_tokens": MAX_OUTPUT_TOKENS,
                "thinking": {"type": "between_tools"},   # Sonnet 5.5: thinking off, so the cap goes to the verdict
+               "output_config": {"format": {"type": "json_schema", "schema": VERDICT_SCHEMA}},
                "messages": [{"role": "user", "content": text}]})
-    return "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
+    out = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
+    log_reply("Claude", d.get("stop_reason"), out)
+    return out
 
 
 def call_openai(env, text):
     d = _post("https://api.openai.com/v1/chat/completions",
               {"Authorization": "Bearer " + env["OPENAI_API_KEY"], "Content-Type": "application/json"},
               {"model": env["OPENAI_MODEL"], "max_completion_tokens": MAX_OUTPUT_TOKENS,
+               "response_format": {"type": "json_schema",
+                                   "json_schema": {"name": "verdict", "strict": True, "schema": VERDICT_SCHEMA}},
                "messages": [{"role": "user", "content": text}]})
-    return d["choices"][0]["message"]["content"]
+    c = d["choices"][0]
+    out = c["message"].get("content") or ""
+    log_reply("OpenAI", c.get("finish_reason"), out)
+    return out
 
 
 def mock_caller(script):

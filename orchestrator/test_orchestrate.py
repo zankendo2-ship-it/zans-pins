@@ -461,3 +461,22 @@ def test_live_slot_reserves_hard_worst_and_calls_capped_by_it(monkeypatch):
     slot = [c for c in calls if c[0] == "POST"][0][2]["body"]
     assert "usd=2.4500" in slot
     assert seen["budget"] == o.WORST_RUN_USD == 2.45
+
+
+def test_both_calls_ask_for_schema_json_and_log_metadata_only(monkeypatch, capsys):
+    sent = []
+
+    def fake_post(url, headers, body):
+        sent.append(body)
+        if "anthropic" in url:
+            return {"stop_reason": "end_turn", "content": [{"type": "text", "text": '{"secret":"reply text"}'}]}
+        return {"choices": [{"finish_reason": "stop", "message": {"content": '{"secret":"reply text"}'}}]}
+    monkeypatch.setattr(o, "_post", fake_post)
+    env = {"ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k", "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}
+    o.call_claude(env, "x")
+    o.call_openai(env, "x")
+    assert sent[0]["output_config"]["format"]["schema"] is o.VERDICT_SCHEMA
+    assert sent[1]["response_format"]["json_schema"]["schema"] is o.VERDICT_SCHEMA
+    assert sent[1]["response_format"]["json_schema"]["strict"] is True
+    log = capsys.readouterr().out
+    assert "stop=end_turn" in log and "stop=stop" in log and "reply text" not in log
