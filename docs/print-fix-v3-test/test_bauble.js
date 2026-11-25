@@ -1,4 +1,5 @@
 const { chromium } = require('playwright'); const fs = require('fs');
+const clipcheck = m => { const def = [...m.matchAll(/<clipPath id="([^"]+)"/g)].map(x => x[1]), use = [...m.matchAll(/clip-path="url\(#([^)]+)\)"/g)].map(x => x[1]); return { unused: def.filter(d => !use.includes(d)), undefined: use.filter(u => !def.includes(u)), outer: use.includes('mc') }; };
 (async () => { const b = await chromium.launch(); const p = await b.newPage(); const errs = []; p.on('pageerror', e => errs.push(String(e)));
   await p.goto('http://127.0.0.1:8765/bauble-designer-v2/', { waitUntil: 'load' }); await p.waitForTimeout(1500);
   const out = {};
@@ -7,6 +8,6 @@ const { chromium } = require('playwright'); const fs = require('fs');
       const m = ZANSBauble.printMaster(); const url = await ZANSBauble.printFile(1); const i = new Image(); i.src = url; await i.decode();
       return { m, w: i.width, h: i.height, url, code: ZANSBauble.code() }; }, [pat, c1, c2, cap, name]);
     fs.writeFileSync(`${process.argv[2]}/v2-${ref}.svg`, r.m); fs.writeFileSync(`${process.argv[2]}/v2-${ref}.png`, Buffer.from(r.url.split(',')[1], 'base64'));
-    const m = r.m; out[ref] = { code: r.code, png: [r.w, r.h], svg_len: m.length, has_image: /<image/.test(m), has_style: /<style/.test(m), has_opacity: /opacity=/.test(m), has_filter: /<filter/.test(m), has_clip: /clip-path=/.test(m),
+    const m = r.m; out[ref] = { clips: clipcheck(m), code: r.code, png: [r.w, r.h], svg_len: m.length, has_image: /<image/.test(m), has_style: /<style/.test(m), has_opacity: /opacity=/.test(m), has_filter: /<filter/.test(m), has_clip: /clip-path=/.test(m),
       min_stroke: Math.min(...[...m.matchAll(/stroke-width="([\d.]+)"/g)].map(x => +x[1])), fills: [...new Set([...m.matchAll(/(?:fill|stroke)="(#[0-9A-Fa-f]{6})"/g)].map(x => x[1].toUpperCase()))] }; }
   console.log(JSON.stringify(out, null, 1), 'errors:', errs); await b.close(); })();

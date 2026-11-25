@@ -198,3 +198,6 @@ Task 8e0e73e: `docs/bauble-designer-v2/index.html` updated; ticked list, figures
 
 ## FIXES DONE (2) - style B bauble, ADVICE 74c6148 (25 Nov 2026, 21:40 UTC)
 All 3 fixes made in `docs/bauble-designer-v2/index.html`: cap clip is one path; gold outline drawn behind the jersey (silks at full size); names under 4.0 mm blocked in both styles, fail closed. Fresh PNGs and SVGs + sheet in `docs/print-fix-v3-test/` (`v2B-*.png`, `v2B-four-samples-sheet.jpg`); ticked list at the foot of the review request file there. I could not reproduce the cap block in Chromium: please confirm in your renderer.
+
+## FIXES DONE (3) - style B cap clip in printMaster() (25 Nov 2026, 22:10 UTC)
+ADVICE fbd6172: `__master` now strips only the outer `#mc` clip and its unused definition; clip defined/used test added to both test scripts and passing for style A and B. Masters re-rendered from the SVGs themselves: `docs/print-fix-v3-test/v2B-*-MASTER.png` + `v2B-MASTER-four-samples-sheet.jpg`. Details at the foot of the review request file.

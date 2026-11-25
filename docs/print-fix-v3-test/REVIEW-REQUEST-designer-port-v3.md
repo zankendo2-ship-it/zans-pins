@@ -55,3 +55,11 @@ Fresh files in this folder: `v2B-starry-night.png/.svg`, `v2B-loussiemoo.png/.sv
 - [x] 3. Name floor for BOTH styles, fail closed: if the name would print under 4.0 mm (53 px capital height), the page shows "Name too long - please shorten" under the name box, and `ZANSBauble.printFile()` and `ZANSBauble.printMaster()` throw that error, so no file is made. `ZANSBauble.nameOK()` returns true/false. In `testB.js`: "Inothewayurthinkin" is BLOCKED in style B and in style A; the other four pass (5.3 to 7.9 mm).
 - [x] Re-tested: no filter, image or opacity; key content 6.1 to 7.2 mm inside the edge; cap top 164 px; style A masters for the 3 printed baubles unchanged; 0 page errors.
 To know: `fixC.js` (style A) dropped the special Cross of Lorraine layout the live designer has (one big cross with the name plate as its lower bar); on the preview that pattern now uses the standard name panel. That came with the reference file; flagging it, not changing it.
+
+## FIXES DONE (3) - cap clip in printMaster(), ADVICE fbd6172 (25 Nov 2026, 22:10 UTC)
+- [x] Cause confirmed: the reference `__master()` removed the outer clip and then the next clip whose id ended in "c", which on style B was the cap clip `#mjc`. My earlier PNGs came from `printFile()`, which has its own clip removal, so they hid it.
+- [x] Fix: `window.__master` is re-defined in the preview page to remove ONLY ` clip-path="url(#mc)"` and the now-unused `<clipPath id="mc">` definition.
+- [x] New check in `testB.js` and `test_bauble.js`: every `<clipPath>` defined is used, every clip used is defined, and the outer `#mc` is gone. Result: unused [], undefined [], outer false on all 4 style B samples and all 3 style A masters.
+- [x] Style A masters re-checked: no clip-path, thinnest stroke 20 px, 0 page errors; only difference from before is the unused `mc` definition being gone.
+- [x] Proof it shows in the MASTER this time: `v2B-*-MASTER.png` are rendered from the `printMaster()` SVG files themselves (not from `printFile`); sheet `v2B-MASTER-four-samples-sheet.jpg`. The caps are correct on all four.
+- Name block still works: "Inothewayurthinkin" blocked.

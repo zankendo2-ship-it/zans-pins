@@ -1117,6 +1117,9 @@ designB = function (d, id) {
   return svgWrap(id, '<rect width="' + W + '" height="' + W + '" fill="#0F3B2C"/><g data-safe="1" data-centre="x" data-label="jersey">' + j + '</g>' + t + horseMark(R, logoCy, mark));
 };
 
+/* ---------- print master: remove ONLY the outer round clip (#mc) and its unused definition ----------
+   The reference __master() also stripped the next clip whose id ended in "c", which on style B was the cap clip (#mjc). */
+window.__master = function () { return printSVG(design(), 'm').replace(' clip-path="url(#mc)"', '').replace(/<defs><clipPath id="mc"><circle[^>]*\/><\/clipPath><\/defs>/, ''); };
 /* ---------- name size floor, BOTH styles (fail closed) ----------
    DESIGNER_PORT.md v3: a bauble name must print at least 4.0 mm tall (53 px capital height on the 990 px face; Jost capitals are 0.7 of the font size).
    A longer name shows "Name too long - please shorten" and NO print file or master is made. */
