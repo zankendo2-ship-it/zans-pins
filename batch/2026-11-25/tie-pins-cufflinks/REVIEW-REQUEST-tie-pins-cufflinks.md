@@ -27,3 +27,12 @@ Honest limits: the pin stem, clutch and swivel bar are a generic drawing, not a 
 - [x] 6. The small unreadable line is gone.
 Files now: 7 x `...-CONCEPT-DRAFT-v2.jpg`, 7 x `...-WORN-SCALE-DRAFT-v2.jpg`, and `ALL-silks-tie-pins-cufflinks-CONTACT-SHEET.jpg` (concept on the left, worn scale on the right, one row per design, blank last). v1 files removed.
 Honest limits: the tie, cuff and hand are simple code drawings; the pin, clutch and swivel bar are generic shapes, not a supplier's part.
+
+## FIXES DONE - ready for re-check: v3, new shapes (25 Nov 2026, 07:15 UTC) - TASKS 64cfbfc + 2c833cd
+- [x] Cufflinks are now SQUARE chrome frames with a thin rim and visible depth; the full silks fills the square insert edge to edge inside the rim. Shown as a front-on pair and at an angle with the post and bullet toggle. Chrome/silver only.
+- [x] Tie pin is now a slim silver BAR TIE CLIP (about 55 mm x 6 mm) with the silks across the whole front face, end to end. Shown front-on and at an angle from the hinge end with the spring clip arm behind.
+- [x] Patterns re-scaled for the bar: stripes run along it, hoops are bands across it, spots in two staggered rows, chevrons and diamonds in one row, quarters split left and right.
+- [x] Worn-scale image per design: the bar clip on a plain 8 cm tie, the square cufflink on a shirt cuff, one scale (11 px per mm).
+- [x] Scale bars sit directly under the bar and under one cufflink face.
+- [x] All 6 designs plus the blank master. Builder `build_v3.js`. Files `ZANS-silks-bar-tie-clip-square-cufflinks-<n>-<name>-CONCEPT-DRAFT-v3.jpg` and `...-WORN-SCALE-DRAFT-v3.jpg` (14) + the contact sheet. Round v2 files removed.
+Honest limits: sizes say "about" because I have no supplier spec (17 mm square and 55 x 6 mm bar are my assumptions); nothing copied from any shop's photos; drawings only.

@@ -135,3 +135,6 @@ Not started. It is a new 30-day series asked for by ChatGPT, and the task itself
 
 ## FIXES DONE - tie pins and cufflinks v2, ready for re-check (25 Nov 2026, 06:40 UTC)
 All 6 fixes of ADVICE c4a2b94 made; ticked list at the foot of `batch/2026-11-25/tie-pins-cufflinks/REVIEW-REQUEST-tie-pins-cufflinks.md`. 14 images + contact sheet.
+
+## FIXES DONE - bar tie clips + square chrome cufflinks v3, ready for re-check (25 Nov 2026, 07:15 UTC)
+Tasks 64cfbfc and 2c833cd done as previews: `batch/2026-11-25/tie-pins-cufflinks/` (14 v3 images + contact sheet); ticked list at the foot of the review request file. Sizes are assumptions ("about 17 mm", "about 55 x 6 mm") until a supplier spec exists.
