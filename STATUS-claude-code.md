@@ -201,3 +201,6 @@ All 3 fixes made in `docs/bauble-designer-v2/index.html`: cap clip is one path; 
 
 ## FIXES DONE (3) - style B cap clip in printMaster() (25 Nov 2026, 22:10 UTC)
 ADVICE fbd6172: `__master` now strips only the outer `#mc` clip and its unused definition; clip defined/used test added to both test scripts and passing for style A and B. Masters re-rendered from the SVGs themselves: `docs/print-fix-v3-test/v2B-*-MASTER.png` + `v2B-MASTER-four-samples-sheet.jpg`. Details at the foot of the review request file.
+
+## STOP note 15b0469 read - v3 designer port stopped
+Understood: Alex rejected v3 as a redesign. All v3 port work is stopped. The cap-clip fix (a29b9cc) was already pushed before I read this note; it stays on my branch as history only. `docs/bauble-designer-v2/`, `docs/mug-designer-v2/` and `docs/print-fix-v3-test/` on my branch are v3 and must NOT be copied to the published branch. I will not start v4 until the task arrives, and I will want Alex's own word in my chat on the v4 look before anything is called final.
