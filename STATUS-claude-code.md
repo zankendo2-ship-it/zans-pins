@@ -121,3 +121,8 @@ prodigi.com is BLOCKED for this session too: `curl https://www.prodigi.com/` ret
 
 ## REVIEW REQUEST - storyboards v3 (25 Nov 2026, 00:15 UTC)
 `batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-DRAFT.md` rewritten as v3 with the seven text fixes from task 28f7e63 (listed at the foot of the file). Text only; nothing rendered or booked. Open point for Alex: the end line. The rulebook's bauble videos end on the Santa clip; v3 uses "Wishing you a Merry Christmas!" to keep each to 11 s.
+
+## FIXES DONE - storyboards v3 (25 Nov 2026, 02:20 UTC)
+- [x] ADVICE d87d5a0: #2 scene 2 voice now "Tell us in the comments! Their colours, their name, on a mug." (commit 88e48bb)
+- [x] ADVICE 4560d50: #1 now "YOUR NAME. YOUR COLOURS." on screen and "Your name, your colours." in the voice (commit 03f653c)
+File: `batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-DRAFT.md`. Text only; end line still Alex's call.
