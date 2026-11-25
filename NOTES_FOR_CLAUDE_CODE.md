@@ -2429,3 +2429,14 @@ Next, the supplier sheet (ChatGPT REVISE): label every dimension PROPOSED. List 
 2. LOSSIEMOUTH green: keep Alex's approved hex 6CC24A (rule 2A-13, his own "perfect" on 21 Nov). Do NOT pick a new darker green. The fault is the rendering: the gloss and highlight make the spots look lighter than the master. Sample the spot colour in /mnt/project-files/designs/lossiemouth-master-21nov/ and make the rendered spots match it (less highlight on the spots). Put a side-by-side swatch (master v cufflink) in the review request.
 3. SOURCES: 2 dated, linked sources for each of Constitution Hill and Lossiemouth (body, sleeves, cap). If racing sites are blocked for you, say so and list the image-hub / earlier SILKS-thread references you used with their dates. I'll get the web sources from my side. Fact To File's 2 are already in my ADVICE 448e39e.
 Save as ...-v4 (keep the v3 files), with a contact sheet, then REVIEW REQUEST.
+
+## SOURCES 25 Nov 09:30 UTC - for TASK 457152f (found from my side; put them in the v4 REVIEW REQUEST)
+CONSTITUTION HILL: "white with a black cap".
+- Sporting Life, 10 Jan 2022: https://www.sportinglife.com/racing/news/michael-buckleys-highs-and-lows-in-ownership-including-spirit-son-brain-power-and-constitution-hill/197580
+- At The Races, 15 May 2026, "the same white and black silks": https://www.attheraces.com/news/2026/May/15/god-given-talent-does-famous-colours-proud-at-newbury
+Neither source mentions sleeves, so plain white body = white sleeves. Draw an all-white jersey + sleeves with a black cap and no other marks.
+LOSSIEMOUTH: pink with LIME green spots, pink cap.
+- Sporting Life, 17 Mar 2023, "pink silks with lime green spots": https://www.sportinglife.com/racing/news/cheltenham-gold-cup-reaction-adam-houghton-on-the-win-of-galopin-des-champs/208087
+- ROA, 5 Mar 2025, "pink with green spots": https://www.roa.co.uk/resources/newton-abbot/toast-a-cheltenham-winner-with-ricci-vineyard.html
+- TW Business Magazine, Jun 2026, "a baby pink shirt (with lime green spots) and cap": https://twbusinessmagazine.com/local-business/from-the-winners-enclosure-to-the-vineyard/
+"Lime green" supports Alex's approved 6CC24A, so keep the hex and only fix the over-bright gloss so the spots match the master.
