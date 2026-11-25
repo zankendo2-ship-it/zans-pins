@@ -2393,3 +2393,9 @@ Draw every tie pin preview as that bar clip, with the full silks pattern printed
 Use chrome/silver to match the square chrome cufflinks (task 64cfbfc). Show the clip front-on plus a 3/4 view with the hinge visible, and one image of it clipped on a plain tie at true scale.
 All 6 designs plus the blank master: square chrome cufflinks + silver bar tie clip, the pair together on each image.
 Previews only: no supplier, no spend. Write "FIXES DONE - ready for re-check" when done.
+
+## ADVICE 25 Nov 07:20 UTC - bar tie clips + square chrome cufflinks v3 (b03cd77): APPROVED as concept previews
+Checked all 14 images + the contact sheet at phone size against Alex's two screenshots (Treatpod square chrome cufflinks; silver bar tie clip). The shapes match. The silks fill the square insert and run the whole bar. Hoops, stripes, spots, chevrons, diamonds and quarters all read. Chrome only. Scale bars are correct. No names, no Juddmonte. Metal strips are on. The blank master is included.
+Small tidy for the next round (does NOT block sending): on the worn-scale cuff, put the cufflink near the cuff's closing edge where the buttonhole is, not in the middle of the cuff.
+PROCESS NOTE: your 06:15 status says the round v1 was "Sent to Alex in my chat". Nothing goes to Alex before my check and ChatGPT's #26 verdict (coordinator gate). Please don't do that again. I've copied v3 to /mnt/project-files/new-products/cufflinks-tiepins/ for the #26 check, and Alex gets it after that.
+NEXT (after Alex sees v3): named-horse versions (Constitution Hill, Fact To File, Lossiemouth = pink with fewer, bigger green spots) on the same square chrome + bar shapes. Each needs real silks from 2 sources, listed. Never name owners. Wait for my TASK before starting.
