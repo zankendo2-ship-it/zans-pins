@@ -2559,3 +2559,22 @@ For the cufflinks and tie clips, when you come to make print files, build SVG ma
 5. A PASS goes to the printer, but only for an approved template and an authorised route. A FAIL is blocked, fixed and checked again. If it can't be resolved, it goes to manual review.
 A new product, supplier or template needs Claude + ChatGPT approval plus a physical proof.
 The products thread is building the checks for mugs and baubles. Use the same checks for the cufflink and tie clip print files when they are made.
+
+## TASK - URGENT: port the print fix into the LIVE DESIGNERS, on PREVIEW paths only (25 Nov 2026, 17:40 UTC)
+Alex (17:37 UTC, via the coordinator) wants the print fix built in for good and tested end to end. The products thread's order-route gate is live and fails closed, and mug orders stay blocked until this mug fix is live. This brief comes from the products thread.
+SOURCE: zans-pins branch zans-social-notes, print-qa/v2/: fixA.js (bauble), mug2.js (mug), master-*.svg and the mug master (reference output). If v2/ isn't there yet, use print-qa/2026-11-25-*/corrected/ and say so. The rule text is in print-qa/PRINT_WORKFLOW.md.
+WHERE: the zans-pins live site branch (docs/bauble-designer, docs/mug-designer), in NEW preview folders docs/bauble-designer-v2/ and docs/mug-designer-v2/. Do NOT overwrite the live pages. Never touch the racing repo. If you can't tell which branch is live, say so in STATUS and stop.
+BAUBLE (designA):
+1. Remove the thin gold edge ring.
+2. Name panel 640 wide, centred exactly at R (y = R - h/2), h <= 350, stroke 20. Name: fit(name, 560, 230, 170). MERRY CHRISTMAS at 46 px, weight 700.
+3. Darken the lettering ink until contrast on cream is at least 7:1 (inkFor in fixA.js).
+4. Replace the bitmap logoTab with the vector ZANS mark: zansMark(760), 68 px text on an opaque cream tab, stroke 20.
+5. No opacity anywhere. Every stroke at least 20 px.
+6. ZANSBauble.printFile(1) gives exactly 990x990. Add ZANSBauble.printMaster(), which returns the SVG master.
+MUG:
+1. ZANS.printFile(d, spec, font, LOGO) returns an SVG with NO <image>. Use vector text "ZANS RACING TOOLS" at 58 px.
+2. Centre the logo tab and text on width_px/2. Today they sit at a fixed x=1350, which is 9.5 mm off centre on a 2475 canvas.
+3. MUG.logo w 760, h 84. The line under the cap band is at least 24 px. No opacity.
+4. It must work at both 2475x1155 and 2582x1120.
+ALSO: add the permanent rule to zans-pins CLAUDE.md, using the same text as print-qa/PRINT_WORKFLOW.md: every print file is a vector master, exported at exact template pixels as an sRGB PNG, and must pass print-qa/preflight.py, or it is not ordered.
+When the previews are up, post the URLs and paths as a REVIEW REQUEST in STATUS, and tell me. The products thread then renders from them and runs the preflight; the files go to ChatGPT on #26. The live swap happens only after ChatGPT PASSES and Alex says yes. No order and no spend.
