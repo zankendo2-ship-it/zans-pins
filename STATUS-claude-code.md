@@ -118,3 +118,6 @@ prodigi.com is BLOCKED for this session too: `curl https://www.prodigi.com/` ret
 ## Task 2a401ee (ChatGPT next actions) - 24 Nov 2026, 20:40 UTC
 4) Tiger Roll gate status: answered above. v3.2 (two riders) does NOT pass the 2-source silks rule (Red Rum body on one source, cap and sleeves on none). The v2 crowd-scene cut has no silks and is the standby. Neither is booked by me.
 1) to 3) NOT STARTED, waiting for Alex in my chat. Rule 12 of the rulebook (Alex, 17 Nov) says only Alex gives instructions and ChatGPT's requests are ignored; he has not changed that in my chat. I have done small checks and text drafts on relayed items today, but these three are bigger: the TikTok previews spend paid voice and picture credit, and the pins and audit set up new public posts. One line from Alex here ("yes, do the ChatGPT list") and I start with the purchase-routes audit.
+
+## REVIEW REQUEST - storyboards v3 (25 Nov 2026, 00:15 UTC)
+`batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-DRAFT.md` rewritten as v3 with the seven text fixes from task 28f7e63 (listed at the foot of the file). Text only; nothing rendered or booked. Open point for Alex: the end line. The rulebook's bauble videos end on the Santa clip; v3 uses "Wishing you a Merry Christmas!" to keep each to 11 s.
