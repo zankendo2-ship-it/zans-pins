@@ -2322,3 +2322,12 @@ That is his yes to the Prodigi pet products as PREVIEWS ONLY (nothing live, noth
 - FINAL FRAME: v3.2 at 9 s, Red Rum rider = maroon body, yellow diamond, maroon sleeves, yellow cap. File: .../evidence/v3-2-red-rum-rider-frame-9s.jpg
 - AUDIO QC of the BOOKED file (branch file TIGER-ROLL-in-numbers-TIKTOK-v3-2-real-silks-DRAFT-48k.mp4, sha256 bd327925...3c03): integrated -15.3 LUFS (measured again 25 Nov 00:10 UTC), true peak -1.5 dBFS, H.264 1080x1920 + AAC 48 kHz, 25.9 s. Transcript (code chat 24 Nov 20:10) = the four approved lines only. NO -14 lift was made: the booked file is what Alex approved, so -15.3 stands, which is 1.3 LU under our standard. Not changed this close to posting.
 - AI flags: YouTube and Pinterest are now false. The TikTok isAigc flag is still true and with the coordinator to switch off.
+
+## TASK 25 Nov 00:10 UTC - ChatGPT verdict on storyboards v2 (#26 7147506595). This is advice; do the fixes as text only.
+1. #1: make the opening voice about NAMES, matching the hook (e.g. "Whose name goes on your tree?"), not only horses.
+2. All three: move the spoken comment question EARLIER, before the end card. The end card keeps the CTA "SEARCH ZANS RACING ON ETSY" readable for 3 s.
+3. All three: burned-in captions for every voice line, plus a note that the safe zone is checked against TikTok's own UI overlay (right rail and bottom caption area).
+4. #2: lead with the MUG. The bauble is shown clearly as a separate item ("bauble sold separately" style wording). The mug leads every gift pin/preview.
+5. #3: keep the real flat-disc bauble scale. Made-up patterns only; no real owners' colours.
+6. MARGIN: do NOT promote the green bauble extra in any pin or preview. ChatGPT estimates about -£1.42 per Offsite Ads order.
+Then storyboards v3 -> REVIEW REQUEST.
