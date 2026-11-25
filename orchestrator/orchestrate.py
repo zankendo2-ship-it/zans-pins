@@ -4,17 +4,21 @@
 A person starts one review by hand (workflow_dispatch). This script:
   1. checks every guard (enabled flag, allowlisted actor, keys present for live mode, caps);
   2. checks the artifact links are immutable (github.com blob/raw URL pinned to a 40-hex commit SHA);
-  3. de-duplicates: if the issue already carries a summary for the same task + artifacts hash, it stops;
+  3. de-duplicates: if the issue already carries a summary for the same mode + task + artifacts hash, it stops;
+  3b. reserves a durable run slot (a marker comment on issue #26) BEFORE any paid call, so failed or aborted
+     runs still count toward the daily cap;
   4. runs up to MAX_ROUNDS rounds. In each round Claude reviews first, then OpenAI, and each sees the
-     other's latest verdict. Each must return JSON {"ack": "...", "verdict": "PASS|REVISE|REJECT|BLOCKER",
+     other's latest verdict. The first REJECT or BLOCKER stops the run at once (no further paid call). Each must return JSON {"ack": "...", "verdict": "PASS|REVISE|REJECT|BLOCKER",
      "reasons": [...], "fixes": [...]};
-  5. stops on: both PASS (AGREED), any REJECT/BLOCKER, the round cap, the request cap or the time cap;
+  5. stops on: both PASS (AGREED), the first REJECT/BLOCKER, the round cap, the request cap or the time cap;
   6. posts ONE summary comment on the issue with GITHUB_TOKEN. Comments made with GITHUB_TOKEN do not
      trigger other workflows, so the orchestrator cannot loop itself.
 
 It never deploys, publishes, orders, spends (beyond the capped API calls) or edits files. Issue comments and
 artifact text are passed to the models as UNTRUSTED DATA inside delimiters and are never printed to logs.
-Mock mode (default) makes no network calls to either model and is what the tests use.
+Mock mode (default) makes no network calls to either model; its summary says it is SYNTHETIC with zero paid calls.
+Only text artifacts are accepted: these API calls cannot see images or video, so a visual PASS is impossible and
+binary links are refused (fail closed).
 """
 import hashlib
 import json
@@ -30,15 +34,20 @@ MAX_REQUESTS = 2 * MAX_ROUNDS          # one Claude + one OpenAI call per round
 MAX_OUTPUT_TOKENS = 1500
 REQUEST_TIMEOUT_S = 120
 MAX_WALL_S = 600
-MAX_CONTEXT_CHARS = 24000              # shared issue context sent to each model (newest comments kept)
+MAX_CONTEXT_CHARS = 12000              # issue comments sent to each model (newest comments kept)
+MAX_CHECKLIST_CHARS = 14000            # issue #26 body = canonical checklist, loaded separately, never dropped
 MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = refused, not truncated)
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_RUNS_PER_DAY = 5                   # hard ceiling; repo variable may only lower it
-MAX_INPUT_TOKENS_PER_RUN = 120_000     # estimated (chars / 4) across all calls; refused before any call
+MAX_LIVE_RUNS_PER_DAY = 1              # hard ceiling (pilot): paid runs per UTC day; repo variable may only lower it
+MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
+MAX_INPUT_TOKENS_PER_RUN = 120_000     # conservative bound (chars / CHARS_PER_TOKEN) over every actual call
+CHARS_PER_TOKEN = 2.5                  # deliberately low (English ~4, code/JSON ~3) so the bound over-counts
+ALLOWED_ISSUE = "26"                   # the only issue the orchestrator reads and posts on
+SLOT = "zans-orch-slot"
 ALLOWED_OWNERS = ("zankendo2-ship-it",)
-TEXT_EXT = (".md", ".txt", ".json", ".csv", ".py", ".svg", ".yml", ".yaml", ".html")
+TEXT_EXT = (".md", ".txt", ".json", ".csv", ".py", ".yml", ".yaml")   # no images/SVG/HTML: no visual PASS
 RULES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ZANS_RULES.md")
 MARKER = "zans-orch"
 VERDICTS = ("PASS", "REVISE", "REJECT", "BLOCKER")
@@ -73,17 +82,25 @@ def load_rules(path=RULES_FILE):
 RULES = load_rules()
 
 
-def runs_today(comments, today):
-    return sum(1 for c in comments if f"<!-- {MARKER}:" in (c.get("body") or "")
-               and str(c.get("created_at", "")).startswith(today))
+def slot_tag(mode, today, h):
+    return f"<!-- {SLOT}:{mode}:{today}:{h} -->"
 
 
-def day_cap(env):
+def runs_today(comments, today, mode):
+    """Counts reserved slots (posted before any paid call), not summaries, so failed runs count too."""
+    pre = f"<!-- {SLOT}:{mode}:{today}:"
+    return sum(1 for c in comments if pre in (c.get("body") or ""))
+
+
+def day_cap(env, mode):
+    hard = MAX_LIVE_RUNS_PER_DAY if mode == "live" else MAX_MOCK_RUNS_PER_DAY
+    if mode != "live":
+        return hard
     try:
-        n = int(env.get("ZANS_ORCH_MAX_RUNS_PER_DAY", MAX_RUNS_PER_DAY))
+        n = int(env.get("ZANS_ORCH_MAX_RUNS_PER_DAY", hard))
     except ValueError:
-        n = MAX_RUNS_PER_DAY
-    return max(0, min(n, MAX_RUNS_PER_DAY))
+        n = hard
+    return max(0, min(n, hard))
 
 
 def raw_url(u):
@@ -104,10 +121,8 @@ def fetch_artifacts(urls, getter=None):
         owner, raw = raw_url(u)
         if owner.lower() not in ALLOWED_OWNERS:
             raise Stop("REFUSED: artifact is outside the allowed GitHub owner.")
-        path = raw.split("?")[0].lower()
-        if not path.endswith(TEXT_EXT):
-            blocks.append(f"[{u}] (binary file: not sent to the model; review by link and description only)")
-            continue
+        if not is_text(u):
+            raise Stop(NO_VISUAL)
         data = getter(raw, MAX_ARTIFACT_BYTES + 1)
         if len(data) > MAX_ARTIFACT_BYTES:
             raise Stop("REFUSED: an artifact is over the per-file size cap.")
@@ -118,13 +133,22 @@ def fetch_artifacts(urls, getter=None):
     return "\n\n".join(blocks)
 
 
+NO_VISUAL = ("REFUSED: only text files can be reviewed. These API calls cannot see images, video or rendered "
+             "designs, so no visual PASS is possible. Send a text report instead (e.g. preflight JSON/MD).")
+
+
+def is_text(u):
+    return raw_url(u)[1].split("?")[0].lower().endswith(TEXT_EXT)
+
+
 def _get_bytes(url, limit):
     with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "zans-orch"}), timeout=60) as r:
         return r.read(limit)
 
 
 def estimate_tokens(*texts):
-    return sum(len(t) for t in texts) // 4
+    """Conservative upper bound: over-counts on purpose."""
+    return -(-sum(len(t) for t in texts) * 10 // int(CHARS_PER_TOKEN * 10))
 
 
 def guard(env, mode):
@@ -153,11 +177,14 @@ def check_artifacts(urls):
         raise Stop(f"REFUSED: {len(bad)} artifact link(s) are not pinned to a 40-character commit SHA.")
     if any(raw_url(u)[0].lower() not in ALLOWED_OWNERS for u in urls):
         raise Stop("REFUSED: artifact is outside the allowed GitHub owner.")
+    if not all(is_text(u) for u in urls):
+        raise Stop(NO_VISUAL)
     return urls
 
 
-def run_hash(task, urls):
-    return hashlib.sha256(json.dumps([task.strip(), sorted(urls)]).encode()).hexdigest()[:16]
+def run_hash(task, urls, mode="live"):
+    """Mode is part of the key, so a mock run never blocks the live run of the same task."""
+    return hashlib.sha256(json.dumps([mode, task.strip(), sorted(urls)]).encode()).hexdigest()[:16]
 
 
 def already_done(comments, h):
@@ -182,9 +209,10 @@ def build_context(comments):
     return "\n\n".join(reversed(parts))
 
 
-def prompt(who, task, urls, context, other, files=""):
+def prompt(who, task, urls, context, other, files="", checklist=""):
     return (f"You are the {who} reviewer in the ZANS two-reviewer check.\n{RULES}\n\n"
             f"TASK (from the owner's trigger): {task}\n\nARTIFACTS (immutable links):\n" + "\n".join(urls) +
+            ("\n\nCANONICAL CHECKLIST (issue #26 body, loaded in full):\n" + untrusted(checklist) if checklist else "") +
             ("\n\nARTIFACT CONTENTS:\n" + untrusted(files) if files else "") +
             "\n\nISSUE CONTEXT:\n" + untrusted(context) +
             ("\n\nOTHER REVIEWER'S LATEST VERDICT:\n" + untrusted(json.dumps(other)) if other else "") +
@@ -192,18 +220,29 @@ def prompt(who, task, urls, context, other, files=""):
             '"reasons": ["..."], "fixes": ["..."]}')
 
 
+BAD = {"ack": "", "verdict": "BLOCKER", "reasons": ["reply was not valid verdict JSON"], "fixes": []}
+
+
 def parse_verdict(text):
     m = re.search(r"\{.*\}", text or "", re.S)
     try:
-        d = json.loads(m.group(0)) if m else {}
+        d = json.loads(m.group(0)) if m else None
     except ValueError:
-        d = {}
-    v = str(d.get("verdict", "")).upper()
-    if v not in VERDICTS:
-        return {"ack": "", "verdict": "BLOCKER", "reasons": ["reply was not valid verdict JSON"], "fixes": []}
-    return {"ack": str(d.get("ack", ""))[:300], "verdict": v,
-            "reasons": [str(x)[:400] for x in d.get("reasons", [])][:8],
-            "fixes": [str(x)[:400] for x in d.get("fixes", [])][:8]}
+        d = None
+    if not isinstance(d, dict):
+        return dict(BAD)
+    v, ack, reasons, fixes = d.get("verdict"), d.get("ack", ""), d.get("reasons", []), d.get("fixes", [])
+    if (not isinstance(v, str) or v.upper() not in VERDICTS or not isinstance(ack, str)
+            or not isinstance(reasons, list) or not isinstance(fixes, list)
+            or not all(isinstance(x, str) for x in reasons + fixes)):
+        return dict(BAD)
+    return {"ack": ack[:300], "verdict": v.upper(),
+            "reasons": [x[:400] for x in reasons][:8], "fixes": [x[:400] for x in fixes][:8]}
+
+
+# Largest verdict a reviewer can pass on (used for the up-front token bound).
+MAX_VERDICT_CHARS = len(json.dumps({"ack": "x" * 300, "verdict": "BLOCKER",
+                                    "reasons": ["x" * 400] * 8, "fixes": ["x" * 400] * 8}))
 
 
 def _post(url, headers, body):
@@ -234,54 +273,65 @@ def mock_caller(script):
     return lambda env, text: json.dumps(next(it))
 
 
-def review(env, task, urls, comments, claude, openai, clock=time.monotonic, files=""):
-    base = prompt("Claude", task, urls, build_context(comments), None, files)
-    if estimate_tokens(base) * MAX_REQUESTS > MAX_INPUT_TOKENS_PER_RUN:
-        raise Stop("REFUSED: estimated input tokens for this run are over the cap. Send fewer or smaller files.")
-    start, requests, rounds = clock(), 0, []
+def review(env, task, urls, comments, claude, openai, clock=time.monotonic, files="", checklist=""):
+    context = build_context(comments)
+    worst = prompt("Claude", task, urls, context, None, files, checklist) + "x" * (MAX_VERDICT_CHARS + 200)
+    if estimate_tokens(worst) * MAX_REQUESTS > MAX_INPUT_TOKENS_PER_RUN:
+        raise Stop("REFUSED: worst-case input tokens for this run are over the cap. Send fewer or smaller files.")
+    start, requests, used, rounds = clock(), 0, 0, []
     last_claude = last_openai = None
     outcome = "NO AGREEMENT after the round cap - needs a person"
     for n in range(1, MAX_ROUNDS + 1):
         row = {"round": n}
+        rounds.append(row)
         for who, fn in (("Claude", claude), ("OpenAI", openai)):
             if requests >= MAX_REQUESTS:
                 raise Stop("STOPPED: request cap reached.")
             if clock() - start > MAX_WALL_S:
                 raise Stop("STOPPED: time cap reached.")
             other = last_openai if who == "Claude" else last_claude
-            try:
-                v = parse_verdict(fn(env, prompt(who, task, urls, build_context(comments), other, files)))
-            except (urllib.error.URLError, KeyError, ValueError, TimeoutError) as e:
-                v = {"ack": "", "verdict": "BLOCKER", "reasons": [f"{who} call failed: {type(e).__name__}"], "fixes": []}
+            text = prompt(who, task, urls, context, other, files, checklist)
+            cost = estimate_tokens(text)          # actual prompt, including the other reviewer's verdict
+            if used + cost > MAX_INPUT_TOKENS_PER_RUN:
+                raise Stop("STOPPED: input token cap reached.")
+            used += cost
             requests += 1
+            try:
+                v = parse_verdict(fn(env, text))
+            except (urllib.error.URLError, KeyError, IndexError, TypeError, ValueError, TimeoutError) as e:
+                v = {"ack": "", "verdict": "BLOCKER", "reasons": [f"{who} call failed: {type(e).__name__}"], "fixes": []}
             row[who] = v
             if who == "Claude":
                 last_claude = v
             else:
                 last_openai = v
-        rounds.append(row)
-        verdicts = {row["Claude"]["verdict"], row["OpenAI"]["verdict"]}
-        if verdicts == {"PASS"}:
+            if v["verdict"] in ("REJECT", "BLOCKER"):   # stop at once: no further paid call
+                return ("STOPPED: rejected" if v["verdict"] == "REJECT" else "STOPPED: blocker raised"), rounds, requests
+        if {row["Claude"]["verdict"], row["OpenAI"]["verdict"]} == {"PASS"}:
             outcome = "AGREED: both PASS (still needs Alex's own yes before anything goes live)"
-            break
-        if "BLOCKER" in verdicts:
-            outcome = "STOPPED: blocker raised"
-            break
-        if "REJECT" in verdicts:
-            outcome = "STOPPED: rejected"
             break
     return outcome, rounds, requests
 
 
 def summary(h, task, urls, outcome, rounds, requests, mode):
-    lines = [f"<!-- {MARKER}:{h} -->", f"**ZANS two-reviewer check ({mode}) | {outcome}**", "",
-             f"Task: {task[:300]}", "Artifacts:"] + [f"- {u}" for u in urls] + [""]
+    mock = mode != "live"
+    head = (f"**ZANS two-reviewer check (SYNTHETIC MOCK) | {outcome}**" if mock
+            else f"**ZANS two-reviewer check (live) | {outcome}**")
+    lines = [f"<!-- {MARKER}:{h} -->", head, ""]
+    if mock:
+        lines += ["**SYNTHETIC MOCK RUN: zero paid API calls. The verdicts below are scripted test data. "
+                  "This is NOT a review of the artifacts and gives no verdict on them.**", ""]
+    lines += [f"Task: {task[:300]}", "Artifacts:"] + [f"- {u}" for u in urls] + [""]
     for r in rounds:
         for who in ("Claude", "OpenAI"):
+            if who not in r:
+                lines.append(f"- Round {r['round']} {who}: not called (run already stopped).")
+                continue
             v = r[who]
             lines.append(f"- Round {r['round']} {who}: **{v['verdict']}**. {v['ack']}")
             lines += [f"  - reason: {x}" for x in v["reasons"]] + [f"  - fix: {x}" for x in v["fixes"]]
-    lines += ["", f"API requests used: {requests} of {MAX_REQUESTS}. Nothing was deployed, published, ordered or spent "
+    paid = 0 if mock else requests
+    lines += ["", f"Paid API requests: {paid} of {MAX_REQUESTS}. Nothing was deployed, published, ordered or spent "
               "beyond these capped calls.", "", "---", "_Generated by [Claude Code](https://claude.ai/code)_"]
     return "\n".join(lines)
 
@@ -295,6 +345,17 @@ def gh(env, method, path, body=None):
         return json.loads(r.read())
 
 
+def comments_since(env, repo, issue, since):
+    """Every comment created or updated since `since` (UTC ISO), all pages up to a hard limit."""
+    out = []
+    for page in range(1, 11):
+        batch = gh(env, "GET", f"repos/{repo}/issues/{issue}/comments?since={since}&per_page=100&page={page}")
+        out += batch
+        if len(batch) < 100:
+            return out
+    raise Stop("STOPPED: too many comments today to count run slots safely.")
+
+
 def main(env=None):
     env = dict(os.environ if env is None else env)
     mode = env.get("ORCH_MODE", "mock").strip()
@@ -304,29 +365,39 @@ def main(env=None):
     repo = env.get("GITHUB_REPOSITORY", "")
     try:
         guard(env, mode)
-        if not task or not issue.isdigit():
-            raise Stop("REFUSED: a task and an issue number are required.")
+        if not task:
+            raise Stop("REFUSED: a task is required.")
+        if issue != ALLOWED_ISSUE:
+            raise Stop(f"REFUSED: the orchestrator only runs on issue #{ALLOWED_ISSUE}.")
         check_artifacts(urls)
-        h = run_hash(task, urls)
+        h = run_hash(task, urls, mode)
         meta = gh(env, "GET", f"repos/{repo}/issues/{issue}")
+        checklist = meta.get("body") or ""
+        if len(checklist) > MAX_CHECKLIST_CHARS:
+            raise Stop("REFUSED: the issue checklist is over its size cap, so it cannot be loaded in full.")
         last = max(1, -(-int(meta.get("comments", 0)) // 100))
         comments = []
         for page in range(max(1, last - 1), last + 1):   # newest ~100-200 comments
             comments += gh(env, "GET", f"repos/{repo}/issues/{issue}/comments?per_page=100&page={page}")
         if already_done(comments, h):
-            raise Stop(f"SKIPPED: this task + artifact set was already reviewed ({h}).")
+            raise Stop(f"SKIPPED: this task + artifact set was already reviewed in {mode} mode ({h}).")
         today = time.strftime("%Y-%m-%d", time.gmtime())
-        if runs_today(comments, today) >= day_cap(env):
-            raise Stop("STOPPED: daily run cap reached.")
+        if runs_today(comments_since(env, repo, issue, today + "T00:00:00Z"), today, mode) >= day_cap(env, mode):
+            raise Stop(f"STOPPED: daily {mode} run cap reached.")
         files = fetch_artifacts(urls) if mode == "live" else ""
-        issue_body = meta.get("body") or ""
-        comments = [{"id": "issue", "user": {"login": "issue body"}, "created_at": "", "body": issue_body[:6000]}] + comments
         if mode == "live":
             claude, openai = call_claude, call_openai
         else:
-            claude = mock_caller([{"ack": "mock", "verdict": "PASS", "reasons": ["dry run"], "fixes": []}] * MAX_ROUNDS)
-            openai = mock_caller([{"ack": "mock", "verdict": "PASS", "reasons": ["dry run"], "fixes": []}] * MAX_ROUNDS)
-        outcome, rounds, requests = review(env, task, urls, comments, claude, openai, files=files)
+            claude = mock_caller([{"ack": "synthetic", "verdict": "PASS", "reasons": ["scripted mock"], "fixes": []}] * MAX_ROUNDS)
+            openai = mock_caller([{"ack": "synthetic", "verdict": "PASS", "reasons": ["scripted mock"], "fixes": []}] * MAX_ROUNDS)
+        # Reserve the slot BEFORE any paid call: if the run fails or is cancelled later, it still counts.
+        gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
+           {"body": f"{slot_tag(mode, today, h)}\nZANS two-reviewer check: {mode} run slot reserved ({h}). "
+                    "The summary follows; if none appears, the run failed and the slot is still used.\n\n---\n"
+                    "_Generated by [Claude Code](https://claude.ai/code)_"})
+        outcome, rounds, requests = review(env, task, urls, comments, claude, openai, files=files, checklist=checklist)
+        if mode != "live" and outcome.startswith("AGREED"):
+            outcome = "MOCK COMPLETE: scripted PASS/PASS, pipeline works (no real verdict)"
         gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
            {"body": summary(h, task, urls, outcome, rounds, requests, mode)})
         print(f"done: {outcome} ({requests} requests)")  # outcome only - no prompt or comment text in logs

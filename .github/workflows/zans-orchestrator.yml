@@ -9,14 +9,16 @@ on:
   workflow_dispatch:
     inputs:
       issue:
-        description: Issue number to read and post the summary on
+        description: Issue number (only 26 is accepted)
         required: true
         default: "26"
+        type: choice
+        options: ["26"]
       task:
         description: What to review (one or two sentences)
         required: true
       artifacts:
-        description: Space-separated links pinned to a 40-character commit SHA
+        description: Space-separated TEXT file links pinned to a 40-character commit SHA (no images/video)
         required: true
       mode:
         description: mock = dry run, no API calls; live = calls Claude + OpenAI (capped)
@@ -36,17 +38,20 @@ permissions:
 jobs:
   review:
     if: inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04          # pinned image, not ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Dry-run tests (must pass before any call)
-        run: pip install -q pytest && python -m pytest -q orchestrator
+      # No third-party actions: plain git checkout of this exact commit, the image's own Python.
+      - name: Checkout this commit (read-only, no token)
+        run: |
+          git init -q .
+          git fetch -q --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" "${GITHUB_SHA}"
+          git checkout -q FETCH_HEAD
+      - name: Dry-run tests (must pass before any call; deps pinned by hash)
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install -q --require-hashes --no-deps -r orchestrator/requirements-test.txt
+          /tmp/venv/bin/python -m pytest -q orchestrator
       - name: Review
         env:
           ZANS_ORCH_ENABLED: ${{ vars.ZANS_ORCH_ENABLED }}
@@ -61,4 +66,4 @@ jobs:
           ORCH_ISSUE: ${{ inputs.issue }}
           ORCH_TASK: ${{ inputs.task }}
           ORCH_ARTIFACTS: ${{ inputs.artifacts }}
-        run: python orchestrator/orchestrate.py
+        run: /tmp/venv/bin/python orchestrator/orchestrate.py

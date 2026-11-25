@@ -5,7 +5,8 @@ import pytest
 import orchestrator.orchestrate as o
 
 SHA = "a" * 40
-URL = f"https://github.com/zankendo2-ship-it/zans-pins/blob/{SHA}/visibility/x.png?raw=true"
+URL = f"https://github.com/zankendo2-ship-it/zans-pins/blob/{SHA}/visibility/x.md?raw=true"
+PNG = f"https://github.com/zankendo2-ship-it/zans-pins/blob/{SHA}/visibility/x.png?raw=true"
 ENV = {"ZANS_ORCH_ENABLED": "true", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_ACTOR": "zankendo2-ship-it"}
 
 
@@ -137,30 +138,67 @@ def test_main_live_disabled_exits_clean_without_network(capsys):
     assert "DISABLED" in capsys.readouterr().out
 
 
-def test_main_mock_end_to_end(monkeypatch, capsys):
-    calls = []
-
+def fake_github(calls, comments=(), since=()):
     def fake_gh(env, method, path, body=None):
         calls.append((method, path, body))
-        if method == "GET":
-            return {"comments": 0, "body": "issue body"} if path.endswith("/26") else []
-        return {"id": 1}
-    monkeypatch.setattr(o, "gh", fake_gh)
-    env = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
-           "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_TOKEN": "t"}
-    assert o.main(env) == 0
-    assert [c[0] for c in calls] == ["GET", "GET", "POST"] and "AGREED" in calls[-1][2]["body"]
-    out = capsys.readouterr().out
-    assert "review x" not in out  # task/comment text never logged
+        if method == "POST":
+            return {"id": 1}
+        if path.endswith("/26"):
+            return {"comments": len(comments), "body": "CHECKLIST BODY"}
+        return list(since) if "since=" in path else list(comments)
+    return fake_gh
+
+
+MOCK_ENV = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
+            "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_TOKEN": "t"}
+
+
+def test_main_mock_end_to_end(monkeypatch, capsys):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    assert o.main(MOCK_ENV) == 0
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert len(posts) == 2 and "zans-orch-slot:mock:" in posts[0]      # slot reserved first
+    assert "SYNTHETIC MOCK" in posts[1] and "zero paid API calls" in posts[1] and "NOT a review" in posts[1]
+    assert "Paid API requests: 0" in posts[1] and "AGREED" not in posts[1]
+    assert "review x" not in capsys.readouterr().out  # task/comment text never logged
 
 
 def test_main_skips_duplicate(monkeypatch, capsys):
-    h = o.run_hash("review x", [URL])
-    monkeypatch.setattr(o, "gh", lambda env, m, path, b=None: {"comments": 1} if path.endswith("/26")
-                        else [{"body": f"<!-- zans-orch:{h} -->"}])
-    env = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
-           "GITHUB_REPOSITORY": "r/r", "GITHUB_TOKEN": "t"}
-    assert o.main(env) == 0 and "SKIPPED" in capsys.readouterr().out
+    h = o.run_hash("review x", [URL], "mock")
+    monkeypatch.setattr(o, "gh", fake_github([], comments=[{"body": f"<!-- zans-orch:{h} -->"}]))
+    assert o.main(MOCK_ENV) == 0 and "SKIPPED" in capsys.readouterr().out
+
+
+def test_mock_does_not_block_live_dedup():
+    assert o.run_hash("t", [URL], "mock") != o.run_hash("t", [URL], "live")
+    assert not o.already_done([{"body": f"<!-- zans-orch:{o.run_hash('t', [URL], 'mock')} -->"}],
+                              o.run_hash("t", [URL], "live"))
+
+
+def test_only_issue_26(monkeypatch, capsys):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    assert o.main({**MOCK_ENV, "ORCH_ISSUE": "27"}) == 1
+    assert "only runs on issue #26" in capsys.readouterr().out and calls == []
+
+
+def test_checklist_loaded_separately_and_never_dropped():
+    big = [{"id": i, "user": {"login": "x"}, "body": "z" * 4000} for i in range(50)]
+    seen = {}
+
+    def claude(env, text):
+        seen.setdefault("p", text)
+        return json.dumps(V("PASS"))
+    o.review(ENV, "t", [URL], big, claude, o.mock_caller([V("PASS")]), checklist="CANON-ITEM-1")
+    assert "CANONICAL CHECKLIST" in seen["p"] and "CANON-ITEM-1" in seen["p"]
+
+
+def test_oversized_checklist_refused(monkeypatch, capsys):
+    def fake_gh(env, method, path, body=None):
+        return {"comments": 0, "body": "x" * (o.MAX_CHECKLIST_CHARS + 1)} if path.endswith("/26") else []
+    monkeypatch.setattr(o, "gh", fake_gh)
+    assert o.main(MOCK_ENV) == 1 and "checklist is over" in capsys.readouterr().out
 
 
 def test_demo_revise_then_pass_then_stop():
@@ -174,19 +212,48 @@ def test_request_cap_is_six():
     assert o.MAX_REQUESTS == 6
 
 
-def test_daily_run_cap(monkeypatch, capsys):
+def test_daily_cap_counts_reserved_slots_not_summaries(monkeypatch, capsys):
     today = __import__("time").strftime("%Y-%m-%d", __import__("time").gmtime())
-    old = [{"body": f"<!-- zans-orch:x{i} -->", "created_at": today + "T01:00:00Z"} for i in range(5)]
-    monkeypatch.setattr(o, "gh", lambda env, m, path, b=None: {"comments": 5} if path.endswith("/26") else old)
-    env = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "new task", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
-           "GITHUB_REPOSITORY": "r/r", "GITHUB_TOKEN": "t"}
-    assert o.main(env) == 1 and "daily run cap" in capsys.readouterr().out
+    # a failed live run leaves only its slot marker (no summary) - it must still count
+    slots = [{"body": o.slot_tag("live", today, "dead")}]
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
+    env = {**MOCK_ENV, "ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
+           "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}
+    assert o.main(env) == 1 and "daily live run cap" in capsys.readouterr().out
+    assert not [c for c in calls if c[0] == "POST"]
 
 
-def test_day_cap_variable_can_only_lower():
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}) == o.MAX_RUNS_PER_DAY
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "2"}) == 2
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}) == o.MAX_RUNS_PER_DAY
+def test_mock_slots_do_not_use_live_slot():
+    today = "2026-11-25"
+    assert o.runs_today([{"body": o.slot_tag("mock", today, "a")}], today, "live") == 0
+    assert o.runs_today([{"body": o.slot_tag("live", today, "a")}], today, "live") == 1
+
+
+def test_slot_reserved_before_any_paid_call(monkeypatch):
+    order = []
+    monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: order.append(("gh", m)) or (
+        {"comments": 0, "body": ""} if path.endswith("/26") else ([] if m == "GET" else {"id": 1})))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "file text")
+
+    def boom(env, text):
+        order.append(("model", "call"))
+        raise TimeoutError()
+    monkeypatch.setattr(o, "call_claude", boom)
+    monkeypatch.setattr(o, "call_openai", boom)
+    env = {**MOCK_ENV, "ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
+           "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}
+    o.main(env)
+    assert order.index(("gh", "POST")) < order.index(("model", "call"))
+    assert order.count(("model", "call")) == 1        # failed Claude call = BLOCKER, OpenAI never called
+
+
+def test_live_day_cap_hard_one_and_variable_only_lowers():
+    assert o.MAX_LIVE_RUNS_PER_DAY == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 1
+    assert o.day_cap({}, "mock") == o.MAX_MOCK_RUNS_PER_DAY
 
 
 def test_file_size_caps():
@@ -200,11 +267,20 @@ def test_file_size_caps():
         o.fetch_artifacts([URL] * 7, getter=ok)
 
 
-def test_binary_files_not_sent_and_text_fetched_from_pinned_raw():
+@pytest.mark.parametrize("ext", ["png", "jpg", "mp4", "svg", "html", "pdf"])
+def test_images_video_fail_closed_no_visual_pass(ext):
+    u = f"https://github.com/zankendo2-ship-it/r/blob/{SHA}/a.{ext}"
+    with pytest.raises(o.Stop, match="no visual PASS"):
+        o.check_artifacts([u])
+    with pytest.raises(o.Stop, match="no visual PASS"):
+        o.fetch_artifacts([u], getter=lambda url, limit: b"x")
+
+
+def test_text_fetched_from_pinned_raw():
     seen = []
-    out = o.fetch_artifacts([URL, f"https://github.com/zankendo2-ship-it/r/blob/{SHA}/a.md"],
+    out = o.fetch_artifacts([f"https://github.com/zankendo2-ship-it/r/blob/{SHA}/a.md"],
                             getter=lambda url, limit: seen.append(url) or b"hello")
-    assert "binary file" in out and "hello" in out
+    assert "hello" in out
     assert seen == [f"https://raw.githubusercontent.com/zankendo2-ship-it/r/{SHA}/a.md"]
 
 
@@ -212,6 +288,46 @@ def test_token_estimate_cap():
     with pytest.raises(o.Stop, match="input tokens"):
         o.review(ENV, "t", [URL], [], o.mock_caller([V("PASS")]), o.mock_caller([V("PASS")]),
                  files="z" * (o.MAX_INPUT_TOKENS_PER_RUN * 4))
+
+
+def test_token_bound_counts_every_actual_call_including_other_verdict():
+    long = {"ack": "a" * 300, "verdict": "REVISE", "reasons": ["r" * 400] * 8, "fixes": ["f" * 400] * 8}
+    sizes = []
+
+    def rec(script):
+        it = iter(script)
+
+        def fn(env, text):
+            sizes.append(len(text))
+            return json.dumps(next(it))
+        return fn
+    o.review(ENV, "t", [URL], [], rec([long] * 3), rec([long] * 3))
+    assert len(sizes) == 6 and sizes[1] > sizes[0] + 6000      # later calls carry the other verdict
+    assert o.estimate_tokens("x" * 1000) >= 400               # conservative: <= 2.5 chars per token
+
+
+def test_stop_on_first_reject_without_calling_second_provider():
+    called = []
+    openai = lambda env, text: called.append(1) or json.dumps(V("PASS"))
+    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REJECT")]), openai)
+    assert out == "STOPPED: rejected" and req == 1 and called == []
+    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("BLOCKER")]), openai)
+    assert out == "STOPPED: blocker raised" and req == 1 and called == []
+
+
+@pytest.mark.parametrize("reply", [
+    '{"verdict": ["PASS"]}', '{"verdict": "PASS", "reasons": "ok"}', '{"verdict": "PASS", "fixes": [1]}',
+    '{"verdict": "PASS", "ack": 5}', '["PASS"]', '{"verdict": null}'])
+def test_json_field_types_validated(reply):
+    assert o.parse_verdict(reply)["verdict"] == "BLOCKER"
+
+
+def test_workflow_pins_runner_and_deps_and_uses_no_third_party_actions():
+    import pathlib
+    wf = (pathlib.Path(__file__).parent.parent / ".github/workflows/zans-orchestrator.yml").read_text()
+    assert "uses:" not in wf and "ubuntu-24.04" in wf and "--require-hashes" in wf
+    req = (pathlib.Path(__file__).parent / "requirements-test.txt").read_text()
+    assert "pytest==" in req and "--hash=sha256:" in req
 
 
 def test_shared_rules_file_loaded():
