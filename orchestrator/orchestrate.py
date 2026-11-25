@@ -182,7 +182,12 @@ def estimate_tokens(*texts):
     """Upper bound on input tokens for one call. Counts the bytes of the JSON-escaped text as sent
     (json.dumps with ASCII escaping: non-ASCII and control characters become 6-byte \\uXXXX escapes), which is
     never less than its UTF-8 bytes; a byte-level BPE token is at least one byte. Plus fixed per-call overhead."""
-    return sum(len(json.dumps(t)) for t in texts) + PER_CALL_OVERHEAD_TOKENS
+    return sum(len(json.dumps(t)) for t in texts) + PER_CALL_OVERHEAD_TOKENS + request_extra_tokens()
+
+
+def request_extra_tokens():
+    """Bytes of everything sent besides the prompt (model, limits, thinking and the serialized schema), larger of the two providers."""
+    return max(len(json.dumps(extra)) for extra in REQUEST_EXTRAS)
 
 
 def worst_case_usd(input_tokens, requests=None):
@@ -350,16 +355,23 @@ LAST_STOP = {}   # provider stop reason of each reviewer's latest reply (metadat
 
 def log_reply(who, stop, text):
     """Metadata only in the public Actions log (never the reply text): why the call ended and how long it was."""
-    print(f"{who} reply: stop={stop} chars={len(text or '')} json_object={bool(re.search(r'[{].*[}]', text or '', re.S))}")
+    print(f"{who} reply: stop={clean(str(stop), 40)} chars={len(text or '')} json_object={bool(re.search(r'[{].*[}]', text or '', re.S))}")
+
+
+CLAUDE_EXTRA = {"model": "x" * 64, "max_tokens": MAX_OUTPUT_TOKENS,
+                "thinking": {"type": "between_tools"},   # Sonnet 5.5: thinking off ("disabled" is a 400 on it)
+                "output_config": {"format": {"type": "json_schema", "schema": VERDICT_SCHEMA}}}
+OPENAI_EXTRA = {"model": "x" * 64, "max_completion_tokens": MAX_OUTPUT_TOKENS,
+                "response_format": {"type": "json_schema",
+                                    "json_schema": {"name": "verdict", "strict": True, "schema": VERDICT_SCHEMA}}}
+REQUEST_EXTRAS = (CLAUDE_EXTRA, OPENAI_EXTRA)
+COMPLETE = {"Claude": "end_turn", "OpenAI": "stop"}   # any other stop/finish reason (max_tokens, refusal, length, ...) = BLOCKER
 
 
 def call_claude(env, text):
     d = _post("https://api.anthropic.com/v1/messages",
               {"x-api-key": env["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01", "content-type": "application/json"},
-              {"model": env["ANTHROPIC_MODEL"], "max_tokens": MAX_OUTPUT_TOKENS,
-               "thinking": {"type": "between_tools"},   # Sonnet 5.5: thinking off, so the cap goes to the verdict
-               "output_config": {"format": {"type": "json_schema", "schema": VERDICT_SCHEMA}},
-               "messages": [{"role": "user", "content": text}]})
+              {**CLAUDE_EXTRA, "model": env["ANTHROPIC_MODEL"], "messages": [{"role": "user", "content": text}]})
     out = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
     log_reply("Claude", d.get("stop_reason"), out)
     LAST_STOP["Claude"] = d.get("stop_reason")
@@ -369,10 +381,7 @@ def call_claude(env, text):
 def call_openai(env, text):
     d = _post("https://api.openai.com/v1/chat/completions",
               {"Authorization": "Bearer " + env["OPENAI_API_KEY"], "Content-Type": "application/json"},
-              {"model": env["OPENAI_MODEL"], "max_completion_tokens": MAX_OUTPUT_TOKENS,
-               "response_format": {"type": "json_schema",
-                                   "json_schema": {"name": "verdict", "strict": True, "schema": VERDICT_SCHEMA}},
-               "messages": [{"role": "user", "content": text}]})
+              {**OPENAI_EXTRA, "model": env["OPENAI_MODEL"], "messages": [{"role": "user", "content": text}]})
     c = d["choices"][0]
     out = c["message"].get("content") or ""
     log_reply("OpenAI", c.get("finish_reason"), out)
@@ -424,8 +433,12 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
             try:
                 LAST_STOP.clear()
                 v = parse_verdict(fn(env, text))
-                if v == BAD and LAST_STOP.get(who):
-                    v = {**v, "reasons": [f"reply was not valid verdict JSON (stop reason: {clean(str(LAST_STOP[who]), 40)})"]}
+                stop = LAST_STOP.get(who)
+                if stop is not None and stop != COMPLETE[who]:
+                    v = {"ack": "", "verdict": "BLOCKER", "fixes": [],
+                         "reasons": [f"reply incomplete or refused (stop reason: {clean(str(stop), 40)})"]}
+                elif v == BAD and stop:
+                    v = {**v, "reasons": [f"reply was not valid verdict JSON (stop reason: {clean(str(stop), 40)})"]}
             except (urllib.error.URLError, KeyError, IndexError, TypeError, ValueError, TimeoutError) as e:
                 v = {"ack": "", "verdict": "BLOCKER", "reasons": [f"{who} call failed: {type(e).__name__}"], "fixes": []}
             row[who] = v

@@ -372,7 +372,7 @@ def test_worst_case_cost_over_owner_budget_refused_before_any_call():
 
 def test_utf8_byte_bound_is_at_least_bytes():
     assert o.estimate_tokens("é" * 100) >= 200          # 2 bytes each
-    assert o.estimate_tokens("") == o.PER_CALL_OVERHEAD_TOKENS + 2          # '""'
+    assert o.estimate_tokens("") == o.PER_CALL_OVERHEAD_TOKENS + o.request_extra_tokens() + 2   # schema + params counted
     assert o.estimate_tokens("\x00" * 100) >= 600                       # control chars escape to 6 bytes
     assert o.estimate_tokens("\U0001F40E" * 10) >= 120                   # emoji -> surrogate pair escapes
     assert o.WORST_USD_PER_M_IN >= 8 and o.WORST_USD_PER_M_OUT >= 40   # >= every allowed model's list price
@@ -502,3 +502,26 @@ def test_daily_live_ceiling_is_3_and_variable_can_only_lower_it():
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
+
+
+def test_incomplete_or_refused_reply_is_blocker_even_if_parseable(monkeypatch):
+    good = '{"ack":"a","verdict":"PASS","reasons":["ok"],"fixes":[]}'
+    for stop in ("max_tokens", "refusal", "pause_turn"):
+        monkeypatch.setattr(o, "_post", lambda u, h, b, s=stop: {"stop_reason": s, "content": [{"type": "text", "text": good}]})
+        outcome, rounds, req = o.review({"ANTHROPIC_API_KEY": "k", "ANTHROPIC_MODEL": "m"}, "t", [URL], [], o.call_claude,
+                                        lambda e, t: pytest.fail("must stop"))
+        assert req == 1 and rounds[0]["Claude"]["verdict"] == "BLOCKER" and stop in rounds[0]["Claude"]["reasons"][0]
+    monkeypatch.setattr(o, "_post", lambda u, h, b: {"choices": [{"finish_reason": "length", "message": {"content": good}}]})
+    o.LAST_STOP.clear()
+    o.call_openai({"OPENAI_API_KEY": "k", "OPENAI_MODEL": "m"}, "x")
+    assert o.LAST_STOP["OpenAI"] == "length" != o.COMPLETE["OpenAI"]
+
+
+def test_request_body_is_exactly_extras_plus_model_and_prompt(monkeypatch, capsys):
+    sent = []
+    monkeypatch.setattr(o, "_post", lambda u, h, b: sent.append(b) or {"stop_reason": "end_turn\n\x1b[31m", "content": []})
+    o.call_claude({"ANTHROPIC_API_KEY": "k", "ANTHROPIC_MODEL": "claude-sonnet-5-5"}, "p")
+    body = sent[0]
+    assert body["thinking"] == {"type": "between_tools"} and body["max_tokens"] == o.MAX_OUTPUT_TOKENS
+    assert set(body) == {"model", "max_tokens", "thinking", "output_config", "messages"}
+    assert "\x1b" not in capsys.readouterr().out          # stop metadata sanitized before logging
