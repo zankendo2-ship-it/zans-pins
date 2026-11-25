@@ -253,9 +253,9 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
     assert order.count(("model", "call")) == 1        # failed Claude call = BLOCKER, OpenAI never called
 
 
-def test_live_day_cap_hard_one_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 1
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
+def test_live_day_cap_hard_three_and_variable_only_lowers():
+    assert o.MAX_LIVE_RUNS_PER_DAY == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -372,7 +372,7 @@ def test_worst_case_cost_over_owner_budget_refused_before_any_call():
 
 def test_utf8_byte_bound_is_at_least_bytes():
     assert o.estimate_tokens("é" * 100) >= 200          # 2 bytes each
-    assert o.estimate_tokens("") == o.PER_CALL_OVERHEAD_TOKENS + 2          # '""'
+    assert o.estimate_tokens("") == o.PER_CALL_OVERHEAD_TOKENS + o.request_extra_tokens() + 2   # schema + params counted
     assert o.estimate_tokens("\x00" * 100) >= 600                       # control chars escape to 6 bytes
     assert o.estimate_tokens("\U0001F40E" * 10) >= 120                   # emoji -> surrogate pair escapes
     assert o.WORST_USD_PER_M_IN >= 8 and o.WORST_USD_PER_M_OUT >= 40   # >= every allowed model's list price
@@ -461,3 +461,67 @@ def test_live_slot_reserves_hard_worst_and_calls_capped_by_it(monkeypatch):
     slot = [c for c in calls if c[0] == "POST"][0][2]["body"]
     assert "usd=2.4500" in slot
     assert seen["budget"] == o.WORST_RUN_USD == 2.45
+
+
+def test_both_calls_ask_for_schema_json_and_log_metadata_only(monkeypatch, capsys):
+    sent = []
+
+    def fake_post(url, headers, body):
+        sent.append(body)
+        if "anthropic" in url:
+            return {"stop_reason": "end_turn", "content": [{"type": "text", "text": '{"secret":"reply text"}'}]}
+        return {"choices": [{"finish_reason": "stop", "message": {"content": '{"secret":"reply text"}'}}]}
+    monkeypatch.setattr(o, "_post", fake_post)
+    env = {"ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k", "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}
+    o.call_claude(env, "x")
+    o.call_openai(env, "x")
+    assert sent[0]["output_config"]["format"]["schema"] is o.VERDICT_SCHEMA
+    assert sent[1]["response_format"]["json_schema"]["schema"] is o.VERDICT_SCHEMA
+    assert sent[1]["response_format"]["json_schema"]["strict"] is True
+    log = capsys.readouterr().out
+    assert "stop=end_turn" in log and "stop=stop" in log and "reply text" not in log
+
+
+ANTHROPIC_STRUCTURED_REPLY = {   # shape of a Messages API reply with output_config json_schema
+    "stop_reason": "end_turn",
+    "content": [{"type": "text", "text": '{"ack":"read rules","verdict":"PASS","reasons":["clear and consistent"],"fixes":[]}'}]}
+
+
+def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypatch):
+    env = {"ANTHROPIC_API_KEY": "k", "ANTHROPIC_MODEL": "m"}
+    monkeypatch.setattr(o, "_post", lambda u, h, b: ANTHROPIC_STRUCTURED_REPLY)
+    assert o.parse_verdict(o.call_claude(env, "x"))["verdict"] == "PASS"
+    cut = {"stop_reason": "max_tokens", "content": [{"type": "text", "text": '{"ack":"a","verdict":"PASS","reasons":["lo'}]}
+    monkeypatch.setattr(o, "call_claude", lambda e, t: (o.LAST_STOP.update(Claude="max_tokens"), cut["content"][0]["text"])[1])
+    monkeypatch.setattr(o, "call_openai", lambda e, t: pytest.fail("must stop at Claude's blocker"))
+    outcome, rounds, req = o.review(env, "t", [URL], [], o.call_claude, o.call_openai)
+    assert req == 1 and "stop reason: max_tokens" in rounds[0]["Claude"]["reasons"][0]
+
+
+def test_daily_live_ceiling_is_3_and_variable_can_only_lower_it():
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
+
+
+def test_incomplete_or_refused_reply_is_blocker_even_if_parseable(monkeypatch):
+    good = '{"ack":"a","verdict":"PASS","reasons":["ok"],"fixes":[]}'
+    for stop in ("max_tokens", "refusal", "pause_turn"):
+        monkeypatch.setattr(o, "_post", lambda u, h, b, s=stop: {"stop_reason": s, "content": [{"type": "text", "text": good}]})
+        outcome, rounds, req = o.review({"ANTHROPIC_API_KEY": "k", "ANTHROPIC_MODEL": "m"}, "t", [URL], [], o.call_claude,
+                                        lambda e, t: pytest.fail("must stop"))
+        assert req == 1 and rounds[0]["Claude"]["verdict"] == "BLOCKER" and stop in rounds[0]["Claude"]["reasons"][0]
+    monkeypatch.setattr(o, "_post", lambda u, h, b: {"choices": [{"finish_reason": "length", "message": {"content": good}}]})
+    o.LAST_STOP.clear()
+    o.call_openai({"OPENAI_API_KEY": "k", "OPENAI_MODEL": "m"}, "x")
+    assert o.LAST_STOP["OpenAI"] == "length" != o.COMPLETE["OpenAI"]
+
+
+def test_request_body_is_exactly_extras_plus_model_and_prompt(monkeypatch, capsys):
+    sent = []
+    monkeypatch.setattr(o, "_post", lambda u, h, b: sent.append(b) or {"stop_reason": "end_turn\n\x1b[31m", "content": []})
+    o.call_claude({"ANTHROPIC_API_KEY": "k", "ANTHROPIC_MODEL": "claude-sonnet-5-5"}, "p")
+    body = sent[0]
+    assert body["thinking"] == {"type": "between_tools"} and body["max_tokens"] == o.MAX_OUTPUT_TOKENS
+    assert set(body) == {"model", "max_tokens", "thinking", "output_config", "messages"}
+    assert "\x1b" not in capsys.readouterr().out          # stop metadata sanitized before logging

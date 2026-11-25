@@ -42,7 +42,7 @@ MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = ref
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_LIVE_RUNS_PER_DAY = 1              # hard ceiling (pilot): paid runs per UTC day; repo variable may only lower it
+MAX_LIVE_RUNS_PER_DAY = 3              # hard ceiling: paid runs per UTC day; repo variable may only lower it
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
 MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
 PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
@@ -182,7 +182,12 @@ def estimate_tokens(*texts):
     """Upper bound on input tokens for one call. Counts the bytes of the JSON-escaped text as sent
     (json.dumps with ASCII escaping: non-ASCII and control characters become 6-byte \\uXXXX escapes), which is
     never less than its UTF-8 bytes; a byte-level BPE token is at least one byte. Plus fixed per-call overhead."""
-    return sum(len(json.dumps(t)) for t in texts) + PER_CALL_OVERHEAD_TOKENS
+    return sum(len(json.dumps(t)) for t in texts) + PER_CALL_OVERHEAD_TOKENS + request_extra_tokens()
+
+
+def request_extra_tokens():
+    """Bytes of everything sent besides the prompt (model, limits, thinking and the serialized schema), larger of the two providers."""
+    return max(len(json.dumps(extra)) for extra in REQUEST_EXTRAS)
 
 
 def worst_case_usd(input_tokens, requests=None):
@@ -289,7 +294,8 @@ def prompt(who, task, urls, context, other, files="", checklist=""):
             "\n\nISSUE CONTEXT:\n" + untrusted(context) +
             ("\n\nOTHER REVIEWER'S LATEST VERDICT:\n" + untrusted(json.dumps(other)) if other else "") +
             '\n\nReply with JSON only: {"ack": "one line", "verdict": "PASS|REVISE|REJECT|BLOCKER", '
-            '"reasons": ["..."], "fixes": ["..."]}')
+            '"reasons": ["..."], "fixes": ["..."]}. No other text, no code fences. At most 6 reasons and 6 fixes, '
+            'each one sentence under 250 characters, so the whole reply stays well under the output limit.')
 
 
 BAD = {"ack": "", "verdict": "BLOCKER", "reasons": ["reply was not valid verdict JSON"], "fixes": []}
@@ -331,21 +337,56 @@ def _post(url, headers, body):
         return json.loads(r.read())
 
 
+VERDICT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "ack": {"type": "string"},
+        "verdict": {"type": "string", "enum": ["PASS", "REVISE", "REJECT", "BLOCKER"]},
+        "reasons": {"type": "array", "items": {"type": "string"}},
+        "fixes": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["ack", "verdict", "reasons", "fixes"],
+    "additionalProperties": False,
+}
+
+
+LAST_STOP = {}   # provider stop reason of each reviewer's latest reply (metadata only)
+
+
+def log_reply(who, stop, text):
+    """Metadata only in the public Actions log (never the reply text): why the call ended and how long it was."""
+    print(f"{who} reply: stop={clean(str(stop), 40)} chars={len(text or '')} json_object={bool(re.search(r'[{].*[}]', text or '', re.S))}")
+
+
+CLAUDE_EXTRA = {"model": "x" * 64, "max_tokens": MAX_OUTPUT_TOKENS,
+                "thinking": {"type": "between_tools"},   # Sonnet 5.5: thinking off ("disabled" is a 400 on it)
+                "output_config": {"format": {"type": "json_schema", "schema": VERDICT_SCHEMA}}}
+OPENAI_EXTRA = {"model": "x" * 64, "max_completion_tokens": MAX_OUTPUT_TOKENS,
+                "response_format": {"type": "json_schema",
+                                    "json_schema": {"name": "verdict", "strict": True, "schema": VERDICT_SCHEMA}}}
+REQUEST_EXTRAS = (CLAUDE_EXTRA, OPENAI_EXTRA)
+COMPLETE = {"Claude": "end_turn", "OpenAI": "stop"}   # any other stop/finish reason (max_tokens, refusal, length, ...) = BLOCKER
+
+
 def call_claude(env, text):
     d = _post("https://api.anthropic.com/v1/messages",
               {"x-api-key": env["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01", "content-type": "application/json"},
-              {"model": env["ANTHROPIC_MODEL"], "max_tokens": MAX_OUTPUT_TOKENS,
-               "thinking": {"type": "between_tools"},   # Sonnet 5.5: thinking off, so the cap goes to the verdict
-               "messages": [{"role": "user", "content": text}]})
-    return "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
+              {**CLAUDE_EXTRA, "model": env["ANTHROPIC_MODEL"], "messages": [{"role": "user", "content": text}]})
+    out = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
+    log_reply("Claude", d.get("stop_reason"), out)
+    LAST_STOP["Claude"] = d.get("stop_reason")
+    return out
 
 
 def call_openai(env, text):
     d = _post("https://api.openai.com/v1/chat/completions",
               {"Authorization": "Bearer " + env["OPENAI_API_KEY"], "Content-Type": "application/json"},
-              {"model": env["OPENAI_MODEL"], "max_completion_tokens": MAX_OUTPUT_TOKENS,
-               "messages": [{"role": "user", "content": text}]})
-    return d["choices"][0]["message"]["content"]
+              {**OPENAI_EXTRA, "model": env["OPENAI_MODEL"], "messages": [{"role": "user", "content": text}]})
+    c = d["choices"][0]
+    out = c["message"].get("content") or ""
+    log_reply("OpenAI", c.get("finish_reason"), out)
+    LAST_STOP["OpenAI"] = c.get("finish_reason")
+    return out
 
 
 def mock_caller(script):
@@ -390,7 +431,14 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
             used += cost
             requests += 1
             try:
+                LAST_STOP.clear()
                 v = parse_verdict(fn(env, text))
+                stop = LAST_STOP.get(who)
+                if stop is not None and stop != COMPLETE[who]:
+                    v = {"ack": "", "verdict": "BLOCKER", "fixes": [],
+                         "reasons": [f"reply incomplete or refused (stop reason: {clean(str(stop), 40)})"]}
+                elif v == BAD and stop:
+                    v = {**v, "reasons": [f"reply was not valid verdict JSON (stop reason: {clean(str(stop), 40)})"]}
             except (urllib.error.URLError, KeyError, IndexError, TypeError, ValueError, TimeoutError) as e:
                 v = {"ack": "", "verdict": "BLOCKER", "reasons": [f"{who} call failed: {type(e).__name__}"], "fixes": []}
             row[who] = v
