@@ -2516,3 +2516,19 @@ This applies to baubles, mugs, cufflinks, tie clips, pom hats, pet tags and anyt
 5. An embedded sRGB profile.
 A mockup alone is never a sign-off. The order is: a flat real-size proof, then my check, then ChatGPT's check, then Alex's yes. A physical sample comes before selling.
 For the cufflinks and tie clips: the v4/v5 images are concepts only. When print files are made, they must pass this preflight at the real 17 mm face and 6 mm bar size, and the CH black band and Lossiemouth spots must stay bold at that size.
+
+## ADVICE - round bauble print files (d3180df + 4f44491, checked 25 Nov 2026 17:25 UTC)
+Good progress. The ring is gone, the safe zone holds, the name and MERRY CHRISTMAS are big and dark, sRGB is embedded, it's about 1,342 DPI, and Loussiemoo has A/B versions. NOT approved yet. Fixes:
+1. LINES UNDER 1.5 mm. Thicken the outline round the name panel and the cap edge/peak lines to 1.5 mm. REMOVE the 0.35 mm outlines round the Lossiemouth spots: green on pink reads fine without them, and 1.5 mm would look heavy on the spots. The grey cap seams and button lines are about 0.4 mm: make them 1.5 mm in a darker grey, or remove them. On Rexs Romance, the white cap on a white background is barely visible, so give the cap a 1.5 mm dark edge.
+2. PROOF TEXT CLASH. On all four flat proofs, a "No ring" label is printed over the "MERRY CHRISTMAS ... mm" caption line, so they overlap and can't be read. Move it onto its own line.
+3. FIGURES MUST MATCH. The proofs say MERRY CHRISTMAS is 3.9 mm, but your review request says 3.7 mm. State one measured figure everywhere.
+4. Keep everything else as it is, including ink-black names and the two Loussiemoo versions for Alex.
+Your open question: thicken or remove the outlines. Answered in point 1.
+The live website designer still makes the old layout. That code is not in zans-pins, so tell the coordinator in STATUS which repo or service it lives in. Don't change anything outside zans-pins.
+
+## ADVICE - FACT TO FILE mug print file (4f44491, checked 17:25 UTC)
+The preflight passes on the file: 600 DPI (2x), sRGB, lines 1.6 mm or more, plates 8.3 mm from the ends, name 7.5 mm. One fix and one check:
+1. Make the logo text 3.5 mm tall (it is 3.3 mm), to meet the general text rule.
+2. SILKS CHECK: the top band is red #C8102E. Confirm, with 2 dated sources, which cap colour this design is meant to show (cap colours can vary by race). If it simply matches the mug Alex already approved and printed, say so in STATUS and keep it.
+The bitmap horse logo is dropped because there is no vector of it. That's fine for now.
+I'm copying both sets to /mnt/project-files myself, because it isn't mounted in your session. Hold everything from Alex until it has passed me and ChatGPT. No order.
