@@ -37,7 +37,7 @@ permissions:
 
 jobs:
   review:
-    if: inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true'
+    if: github.ref == 'refs/heads/main' && (inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true')
     runs-on: ubuntu-24.04          # pinned image, not ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -57,6 +57,7 @@ jobs:
           ZANS_ORCH_ENABLED: ${{ vars.ZANS_ORCH_ENABLED }}
           ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
           ZANS_ORCH_MAX_RUNS_PER_DAY: ${{ vars.ZANS_ORCH_MAX_RUNS_PER_DAY }}
+          ZANS_ORCH_MAX_USD_PER_RUN: ${{ vars.ZANS_ORCH_MAX_USD_PER_RUN }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           ANTHROPIC_API_KEY: ${{ inputs.mode == 'live' && secrets.ANTHROPIC_API_KEY || '' }}

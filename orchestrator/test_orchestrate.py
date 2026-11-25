@@ -149,8 +149,14 @@ def fake_github(calls, comments=(), since=()):
     return fake_gh
 
 
+LIVE_EXTRA = {"ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
+              "ANTHROPIC_MODEL": "claude-sonnet-5-5", "OPENAI_MODEL": "gpt-6.2-astra", "GITHUB_REF": "refs/heads/main",
+              "ZANS_ORCH_MAX_RUNS_PER_DAY": "1", "ZANS_ORCH_MAX_USD_PER_RUN": "3"}
 MOCK_ENV = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
             "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_TOKEN": "t"}
+
+
+LIVE_ENV = {**MOCK_ENV, **LIVE_EXTRA}
 
 
 def test_main_mock_end_to_end(monkeypatch, capsys):
@@ -218,8 +224,7 @@ def test_daily_cap_counts_reserved_slots_not_summaries(monkeypatch, capsys):
     slots = [{"body": o.slot_tag("live", today, "dead")}]
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
-    env = {**MOCK_ENV, "ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
-           "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}
+    env = LIVE_ENV
     assert o.main(env) == 1 and "daily live run cap" in capsys.readouterr().out
     assert not [c for c in calls if c[0] == "POST"]
 
@@ -241,8 +246,7 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
         raise TimeoutError()
     monkeypatch.setattr(o, "call_claude", boom)
     monkeypatch.setattr(o, "call_openai", boom)
-    env = {**MOCK_ENV, "ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
-           "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}
+    env = LIVE_ENV
     o.main(env)
     assert order.index(("gh", "POST")) < order.index(("model", "call"))
     assert order.count(("model", "call")) == 1        # failed Claude call = BLOCKER, OpenAI never called
@@ -252,7 +256,9 @@ def test_live_day_cap_hard_one_and_variable_only_lowers():
     assert o.MAX_LIVE_RUNS_PER_DAY == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
+    assert o.day_cap({}, "live") == 0
     assert o.day_cap({}, "mock") == o.MAX_MOCK_RUNS_PER_DAY
 
 
@@ -303,7 +309,7 @@ def test_token_bound_counts_every_actual_call_including_other_verdict():
         return fn
     o.review(ENV, "t", [URL], [], rec([long] * 3), rec([long] * 3))
     assert len(sizes) == 6 and sizes[1] > sizes[0] + 6000      # later calls carry the other verdict
-    assert o.estimate_tokens("x" * 1000) >= 400               # conservative: <= 2.5 chars per token
+    assert o.estimate_tokens("x" * 1000) >= 1000              # byte bound: never under the UTF-8 byte count
 
 
 def test_stop_on_first_reject_without_calling_second_provider():
@@ -328,6 +334,51 @@ def test_workflow_pins_runner_and_deps_and_uses_no_third_party_actions():
     assert "uses:" not in wf and "ubuntu-24.04" in wf and "--require-hashes" in wf
     req = (pathlib.Path(__file__).parent / "requirements-test.txt").read_text()
     assert "pytest==" in req and "--hash=sha256:" in req
+
+
+def live_guard_env(**over):
+    return {k: v for k, v in {**ENV, **LIVE_EXTRA, **over}.items() if v is not None}
+
+
+def test_live_only_from_main_ref():
+    o.guard(live_guard_env(), "live")
+    for ref in ("refs/heads/other", "", None):
+        with pytest.raises(o.Stop, match="main branch"):
+            o.guard(live_guard_env(GITHUB_REF=ref), "live")
+
+
+def test_live_needs_owner_budget():
+    for b in (None, "", "0", "-1", "abc"):
+        with pytest.raises(o.Stop, match="ZANS_ORCH_MAX_USD_PER_RUN"):
+            o.guard(live_guard_env(ZANS_ORCH_MAX_USD_PER_RUN=b), "live")
+
+
+def test_live_refuses_unchecked_models():
+    with pytest.raises(o.Stop, match="ANTHROPIC_MODEL"):
+        o.guard(live_guard_env(ANTHROPIC_MODEL="claude-x"), "live")
+    with pytest.raises(o.Stop, match="OPENAI_MODEL"):
+        o.guard(live_guard_env(OPENAI_MODEL="gpt-x"), "live")
+
+
+def test_worst_case_cost_over_owner_budget_refused_before_any_call():
+    called = []
+    fn = lambda env, text: called.append(1) or json.dumps(V("PASS"))
+    with pytest.raises(o.Stop, match="owner"):
+        o.review(ENV, "t", [URL], [], fn, fn, files="z" * 2000, budget_usd=0.01)
+    assert called == []
+    o.review(ENV, "t", [URL], [], fn, fn, files="z" * 2000, budget_usd=5)   # fits a sensible budget
+
+
+def test_utf8_byte_bound_is_at_least_bytes():
+    assert o.estimate_tokens("é" * 100) >= 200          # 2 bytes each
+    assert o.estimate_tokens("") == o.PER_CALL_OVERHEAD_TOKENS
+    assert o.WORST_USD_PER_M_IN >= 8 and o.WORST_USD_PER_M_OUT >= 40   # >= every allowed model's list price
+
+
+def test_workflow_main_ref_condition():
+    import pathlib
+    wf = (pathlib.Path(__file__).parent.parent / ".github/workflows/zans-orchestrator.yml").read_text()
+    assert "github.ref == 'refs/heads/main'" in wf and "ZANS_ORCH_MAX_USD_PER_RUN" in wf
 
 
 def test_shared_rules_file_loaded():
