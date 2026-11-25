@@ -1,0 +1,63 @@
+# ZANS Claude <-> OpenAI two-reviewer check. PILOT - DISABLED BY DEFAULT.
+# Runs only when a person starts it by hand (Actions > ZANS two-reviewer check > Run workflow),
+# AND repository variable ZANS_ORCH_ENABLED is 'true', AND the person is on ZANS_ORCH_ALLOWED_ACTORS.
+# Kill switch: set ZANS_ORCH_ENABLED to anything else (or disable this workflow in the Actions tab).
+# No issue_comment / push / schedule triggers, so it can never start itself or loop.
+name: ZANS two-reviewer check (pilot)
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: Issue number to read and post the summary on
+        required: true
+        default: "26"
+      task:
+        description: What to review (one or two sentences)
+        required: true
+      artifacts:
+        description: Space-separated links pinned to a 40-character commit SHA
+        required: true
+      mode:
+        description: mock = dry run, no API calls; live = calls Claude + OpenAI (capped)
+        required: true
+        default: mock
+        type: choice
+        options: [mock, live]
+
+concurrency:
+  group: zans-orchestrator
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review:
+    if: vars.ZANS_ORCH_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dry-run tests (must pass before any call)
+        run: pip install -q pytest && python -m pytest -q orchestrator
+      - name: Review
+        env:
+          ZANS_ORCH_ENABLED: ${{ vars.ZANS_ORCH_ENABLED }}
+          ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          ANTHROPIC_API_KEY: ${{ inputs.mode == 'live' && secrets.ANTHROPIC_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ inputs.mode == 'live' && secrets.OPENAI_API_KEY || '' }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ORCH_MODE: ${{ inputs.mode }}
+          ORCH_ISSUE: ${{ inputs.issue }}
+          ORCH_TASK: ${{ inputs.task }}
+          ORCH_ARTIFACTS: ${{ inputs.artifacts }}
+        run: python orchestrator/orchestrate.py
