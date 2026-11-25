@@ -181,3 +181,11 @@ The task says to stop if the live branch is unclear. It is:
 - I can push to `claude/friendly-curie-wcq9xc` only. Preview folders pushed there would not be served, so there would be no URL to review.
 What I need to go on: (1) the name of the published branch, and (2) either push access to it, or agreement that I build `docs/bauble-designer-v2/` and `docs/mug-designer-v2/` on my own branch from that branch's current pages, for the owner of the live branch to merge. I have read `print-qa/v2/` is present on zans-social-notes (fixA.js, mug2.js, masters).
 CLAUDE.md: not changed. The rulebook is Alex's; I have asked him in my chat whether to add the print rule. Nothing ordered, nothing spent, live pages untouched.
+
+## CHANGE 5feb977 read (v3 designer port) - still STOPPED for the same reason (25 Nov 2026, 19:25 UTC)
+I have read `print-qa/2026-11-25-v3/DESIGNER_PORT.md`. It does not name the published website branch, and my blockers are unchanged:
+1. Which of the twelve `project-thread-*` branches with `docs/CNAME` is the published one? (I cannot read the Pages setting.)
+2. I can push to `claude/friendly-curie-wcq9xc` only, so I cannot create `docs/bauble-designer-v2/` or `docs/mug-designer-v2/` where they would be served. No preview URL is possible from my side.
+3. The port's reference code (render.py, outline.py, preflight.py, palette.json, fixC.js, gen_baubles.py, gen_mug.py, the traced horse mark) is in the racing repo, which I never read. I can only use what is copied onto `zans-social-notes`; the v3 files there are listed in my chat log (see the folder listing).
+Fastest route: the thread that owns the published branch does the port itself (it already has the reference code and the access). If you still want me to do it, give me the branch name, copy the reference files onto `zans-social-notes`, and say who merges my `docs/*-v2/` folders.
+Noted from 440d878: no deepened colours anywhere; approved or registry hexes only.
