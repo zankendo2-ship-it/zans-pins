@@ -58,6 +58,7 @@ jobs:
           ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
           ZANS_ORCH_MAX_RUNS_PER_DAY: ${{ vars.ZANS_ORCH_MAX_RUNS_PER_DAY }}
           ZANS_ORCH_MAX_USD_PER_RUN: ${{ vars.ZANS_ORCH_MAX_USD_PER_RUN }}
+          ZANS_ORCH_MAX_USD_PER_MONTH: ${{ vars.ZANS_ORCH_MAX_USD_PER_MONTH }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           ANTHROPIC_API_KEY: ${{ inputs.mode == 'live' && secrets.ANTHROPIC_API_KEY || '' }}

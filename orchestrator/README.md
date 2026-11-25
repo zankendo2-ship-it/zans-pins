@@ -18,10 +18,14 @@
   - the first REJECT or BLOCKER stops the run at once, so the other reviewer is not called;
   - 1,500 output tokens per call, 120 s per call, 10 min per run;
   - **1 live (paid) run per UTC day** to start with. Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` = `1` set explicitly; empty or invalid means 0 live runs. Raising the ceiling needs a code change and a review;
-  - **owner budget:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (for example `3`). Before any call, the run works out its worst-case cost: every call priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price. If that is over the budget, the run is refused;
+  - **owner budgets:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (Alex approved `3`) and `ZANS_ORCH_MAX_USD_PER_MONTH` (Alex approved `10`). Missing, zero, negative or non-finite (`nan`, `inf`) values refuse live. Every call is priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price:
+    - **before the run**, the worst case is worked out. The run is refused if that is over the per-run budget, or if it plus this month's reservations is over the monthly budget;
+    - the worst case is **reserved in the slot comment** before any paid call, so failed runs count against the month;
+    - **before every call**, the actual input so far plus this call, with the output of all 6 calls reserved, must still fit the per-run budget;
+    - the hard caps put the largest possible run at **$2.45**;
   - **live only from `main`**, only with the checked models (`claude-sonnet-5-5`; `gpt-6.2-astra` or `gpt-6-luna`);
   - the **run slot is reserved** with a marker comment on #26 **before any paid call**. Failed or cancelled runs still use their slot;
-  - **input bound of 200k tokens per run**, counted as **UTF-8 bytes + 500 per call**. A token is at least one byte, so this cannot undercount, even for Unicode or code. It is counted on every actual call, including the other reviewer's verdict. The worst case is checked before the first call, and the run stops if the real total would go over;
+  - **input bound of 200k tokens per run**, counted as **the JSON-escaped bytes actually sent + 500 per call**. These are never fewer than the UTF-8 bytes, and a token is at least one byte, so this cannot undercount Unicode, control characters or code. Reviewer verdict text is cut down to plain printable ASCII, so its size is fixed. It is counted on every actual call, including the other reviewer's verdict. The worst case is checked before the first call, and the run stops if the real total would go over;
   - up to 6 files, 60 KB per file and 120 KB in total. In practice the bound limits files to a few KB: **the first live test uses a small synthetic text file**;
   - 6k characters of recent comments;
   - files only from `zankendo2-ship-it` repos;
@@ -44,11 +48,12 @@
    - `ZANS_ORCH_ALLOWED_ACTORS` = your GitHub username;
    - `ANTHROPIC_MODEL` and `OPENAI_MODEL` = the model names.
    - Do **not** set `ZANS_ORCH_ENABLED` yet.
-4. Set a monthly spending limit or alert in both API dashboards (Anthropic Console, OpenAI Platform). These can lag or only warn, so they are **alerts, not a guaranteed hard stop**. The per-run refusal is `ZANS_ORCH_MAX_USD_PER_RUN`.
+4. Set a monthly spending limit or alert in both API dashboards (Anthropic Console, OpenAI Platform). These can lag or only warn, so they are **alerts, not a guaranteed hard stop**. The code's own refusals are `ZANS_ORCH_MAX_USD_PER_RUN` and `ZANS_ORCH_MAX_USD_PER_MONTH`.
 5. **Actions > ZANS two-reviewer check > Run workflow** with mode `mock`. It runs while switched off and costs nothing.
 6. Only after ChatGPT and Claude both PASS the mock result, and Alex has approved a budget, set:
    - `ZANS_ORCH_MAX_RUNS_PER_DAY` = `1`;
-   - `ZANS_ORCH_MAX_USD_PER_RUN` = the budget Alex approved;
+   - `ZANS_ORCH_MAX_USD_PER_RUN` = `3` (the per-run budget Alex approved);
+   - `ZANS_ORCH_MAX_USD_PER_MONTH` = `10` (the monthly budget Alex approved; failed runs count);
    - `ZANS_ORCH_ENABLED` = `true`.
 
    Then run one `live` test on a small synthetic text file. If the first call rejects a model setting, the run stops as BLOCKER (never PASS). That first call is the model compatibility check.
@@ -56,9 +61,9 @@
 **Kill switch:** set `ZANS_ORCH_ENABLED` to `false`, or press Disable workflow in the Actions tab.
 
 ## Cost (an estimate, NOT a hard ceiling)
-The code bounds tokens and refuses any run whose worst case is over `ZANS_ORCH_MAX_USD_PER_RUN`. That worst case uses the cautious $10 / $50 price for every call.
+The code bounds tokens and refuses any run whose worst case is over `ZANS_ORCH_MAX_USD_PER_RUN`, or would take this month's reservations over `ZANS_ORCH_MAX_USD_PER_MONTH`, and re-checks the per-run budget before every call. That worst case uses the cautious $10 / $50 price for every call.
 
-With the #26 checklist and small files, the worst case is about $2.20 a run. A typical run costs far less: Claude Sonnet 5.5 is $2 / $10 per million tokens and gpt-6.2-astra is $8 / $40 (list prices, 25 Nov).
+The largest possible run at the hard caps is $2.45 at those cautious prices. With the #26 checklist and a small file it is lower (about $1.10). A typical run costs far less: Claude Sonnet 5.5 is $2 / $10 per million tokens and gpt-6.2-astra is $8 / $40 (list prices, 25 Nov).
 
 Real billing depends on each provider's own token count and current price. The dashboards are alerts, not guaranteed stops.
 
