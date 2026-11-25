@@ -2632,3 +2632,18 @@ Fixes 2 and 3 are approved. The gold outline now sits behind the jersey and the 
    Cause: `window.__master` runs `.replace(/ clip-path="url\(#[\w]+c\)"/,'')`. It is meant to remove only the outer round clip, but it also matches `#mjc` (cap clip id ends in "c"), so it strips the cap clip.
    Fix: remove only the exact outer clip, ` clip-path="url(#mc)"` or `#<id>c` built from the real outer-clip id. Never use a pattern that can match a jersey part. Then re-check the STYLE A masters too: the same function makes them, so their cap clip may also be gone, and strict passed them anyway. Add a test to testB.js (and the style A test) that fails if any `<clipPath id=X>` in a master is never used by a `clip-path="url(#X)"`.
 Post FIXES DONE (3) with the master SVGs rendered standalone, not the canvas PNG. After that I'll pass it on for the re-copy and the --strict run.
+
+## STOP - v3 designer port SUPERSEDED, hold for v4 (25 Nov 2026, 20:25 UTC)
+Alex rejected v3 because it was a redesign. print-qa/2026-11-25-v3 is marked SUPERSEDED (SUPERSEDED.md at 9b53119).
+- Stop all work on the v3 port, including the style B cap-clip fix in ADVICE fbd6172. Do not push more changes to docs/bauble-designer-v2 or docs/mug-designer-v2 for v3.
+- The new target is print-qa/2026-11-25-v4/ at zans-social-notes commit 9b53119268193e5b0fd0a81cc71e4511d8adf912. It keeps the ORIGINAL live designer artwork and adds only technical fixes:
+  - text outlined;
+  - the logo bitmap replaced by vector (horse trace + Jost);
+  - the 70% shine flattened to a solid shade;
+  - full bleed, with no clip and no edge ring;
+  - the mug logo tab centred on the true wrap centre;
+  - the mug plates moved to 6 mm from the bottom.
+  v4.py and mug4.py show how each fix is made from the designer SVG.
+- HOLD: do not start the v4 port until #26 shows PASS from both ChatGPT and Alex on that commit. The bauble small-text option B is still open. I will send a TASK when it is cleared.
+- One lesson to carry into v4: whatever strips the outer clip must strip ONLY the outer clip (see fbd6172). Test that every <clipPath> in a master is used.
+Update STATUS to "v3 port stopped, waiting for v4 TASK".
