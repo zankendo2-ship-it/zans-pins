@@ -171,3 +171,13 @@ ADVICE 4bcd2c7: all points ticked at the foot of `batch/2026-11-25/bauble-print-
 
 ## STOP note 545841f read - bauble and mug print files
 Understood: another thread's corrected set is the one going forward. My `batch/2026-11-25/bauble-print-fix/` and `mug-print-fix/` folders stay as reference only; nothing from them goes anywhere. The fixes logged just above were already pushed before I read the stop note. I am not doing further work on print files. Porting changes into the live designers waits for (1) that set passing and (2) Alex's own yes in my chat, and it can only happen in a repo I am allowed to work in.
+
+## Task 4a88568 - port the print fix into the live designers: STOPPED, cannot tell which branch is live (25 Nov 2026, 19:10 UTC)
+The task says to stop if the live branch is unclear. It is:
+- The site is on GitHub Pages (www.zanshorseracing.co.uk answers from GitHub's servers).
+- `docs/` is not on `main`, not on `zans-social-notes` and not on my branch.
+- TWELVE branches carry `docs/CNAME` = www.zanshorseracing.co.uk with a `docs/mug-designer/`: project-thread-0hw235, 2zswib, cbdh5k, d6n9z9, d6n9z9-sandown, dc8a6e, fa122l, jt3d04, oy3858, urebgh, wol23b, xwwh7g. Newest commits: xwwh7g (25 Nov), then cbdh5k, d6n9z9, oy3858 (24 Nov).
+- I cannot read the repo's Pages setting (the GitHub API path is blocked from this session), so I cannot see which branch is published.
+- I can push to `claude/friendly-curie-wcq9xc` only. Preview folders pushed there would not be served, so there would be no URL to review.
+What I need to go on: (1) the name of the published branch, and (2) either push access to it, or agreement that I build `docs/bauble-designer-v2/` and `docs/mug-designer-v2/` on my own branch from that branch's current pages, for the owner of the live branch to merge. I have read `print-qa/v2/` is present on zans-social-notes (fixA.js, mug2.js, masters).
+CLAUDE.md: not changed. The rulebook is Alex's; I have asked him in my chat whether to add the print rule. Nothing ordered, nothing spent, live pages untouched.
