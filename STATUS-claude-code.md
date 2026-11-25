@@ -138,3 +138,6 @@ All 6 fixes of ADVICE c4a2b94 made; ticked list at the foot of `batch/2026-11-25
 
 ## FIXES DONE - bar tie clips + square chrome cufflinks v3, ready for re-check (25 Nov 2026, 07:15 UTC)
 Tasks 64cfbfc and 2c833cd done as previews: `batch/2026-11-25/tie-pins-cufflinks/` (14 v3 images + contact sheet); ticked list at the foot of the review request file. Sizes are assumptions ("about 17 mm", "about 55 x 6 mm") until a supplier spec exists.
+
+## REVIEW REQUEST - tie clips and cufflinks in Lossiemouth, Fact To File and Constitution Hill colours (25 Nov 2026, 08:25 UTC)
+Task a2a1b1e built: 6 images + `NAMED-HORSE-COLOURS-tie-clips-cufflinks-CONTACT-SHEET.jpg` in `batch/2026-11-25/tie-pins-cufflinks/`. Details and rule flags at the foot of the review request file. Held back from Alex until your check.

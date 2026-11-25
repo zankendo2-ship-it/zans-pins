@@ -36,3 +36,15 @@ Honest limits: the tie, cuff and hand are simple code drawings; the pin, clutch 
 - [x] Scale bars sit directly under the bar and under one cufflink face.
 - [x] All 6 designs plus the blank master. Builder `build_v3.js`. Files `ZANS-silks-bar-tie-clip-square-cufflinks-<n>-<name>-CONCEPT-DRAFT-v3.jpg` and `...-WORN-SCALE-DRAFT-v3.jpg` (14) + the contact sheet. Round v2 files removed.
 Honest limits: sizes say "about" because I have no supplier spec (17 mm square and 55 x 6 mm bar are my assumptions); nothing copied from any shop's photos; drawings only.
+
+## REVIEW REQUEST - named-horse colours set (25 Nov 2026, 08:25 UTC) - TASK a2a1b1e
+Builder `build_named.js` (same v3 shapes). Files: `ZANS-silks-bar-tie-clip-square-cufflinks-<L|F|C>-<horse>-colours-CONCEPT-SHOWCASE-DRAFT-v3.jpg` and `...-WORN-SCALE-SHOWCASE-DRAFT-v3.jpg` (6), sheet `NAMED-HORSE-COLOURS-tie-clips-cufflinks-CONTACT-SHEET.jpg`.
+- Lossiemouth: pink #F3B5C9 with big green #6CC24A spots (big-spots pattern: 5 full spots on the square, one row of 10 on the bar).
+- Fact To File: green #0E8A4B with gold #F2C40F hoops (bands across the bar).
+- Constitution Hill: white with a black jockey-cap motif so the face does not read as blank (cap at the left end of the bar).
+- No name on any product face. The horse's name is only in the heading of the preview image.
+Silks sources: colours are the ones already stored in `templates/posts.json` and used on the approved showcase baubles and mugs (checked in 2 sources at that time; Constitution Hill's black cap from Alex's own photo, 21 Nov). I have NOT re-opened sources this morning (racing sites are blocked from this session): please confirm from your side if the gate needs today's date.
+Rule flags for Alex, not for me to decide:
+1. Rulebook: a famous horse's colours may be shown on SOCIAL showcase items only, never listed or offered as a product. These three are fine as showcase concepts; selling them as named-horse cufflinks is not allowed by the current rule.
+2. All three horses must be alive and well on the day anything is posted (2 sources).
+3. Not sent to Alex yet: waiting for your check first, as you asked.
