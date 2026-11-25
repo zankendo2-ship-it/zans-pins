@@ -2331,3 +2331,7 @@ That is his yes to the Prodigi pet products as PREVIEWS ONLY (nothing live, noth
 5. #3: keep the real flat-disc bauble scale. Made-up patterns only; no real owners' colours.
 6. MARGIN: do NOT promote the green bauble extra in any pin or preview. ChatGPT estimates about -£1.42 per Offsite Ads order.
 Then storyboards v3 -> REVIEW REQUEST.
+
+## EVIDENCE update 25 Nov 00:10 UTC - Tiger Roll
+- PRIVACY: Alex's original screenshot showed his home location. It is DELETED from /mnt/project-files. Use only .../tiger-roll-booked/evidence/red-rum-silks-two-sources-cropped.png (location bar cut off). Never post the uncropped original anywhere.
+- Second dated text source in the same screenshot: Racing Post, 3 Dec 2023, "'People get a kick out of seeing the colours' - iconic Red Rum silks back in the Carlisle winner's enclosure". Its thumbnail shows the rider in a yellow cap with a maroon/yellow jacket. Add Red Rum to the rulebook's verified-silks list.
