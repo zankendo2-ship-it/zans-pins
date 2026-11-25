@@ -1,0 +1,17 @@
+from PIL import Image, ImageDraw, ImageFont
+F = lambda n: ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', n)
+N = lambda n: ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', n)
+O = Image.open('ORIGINAL_MUG_PRINT_FILE.png').convert('RGB')
+A = Image.open('out/fact-to-file-mug-2475x1155-v4.png').convert('RGB')
+Wt = Image.open('out/fact-to-file-mug-2582x1120-v4.png').convert('RGB')
+k = 0.7; ow, oh = int(2475 * k), int(1155 * k)
+sh = Image.new('RGB', (int(2582 * k) + 60, 150 + 3 * (oh + 70)), 'white'); d = ImageDraw.Draw(sh)
+d.text((30, 20), 'FACT TO FILE mug v4 - original (as printed 2 Nov) v corrected, same scale', fill='black', font=F(28))
+d.text((30, 62), 'Corrected: same colours, layout and type. Logo strip now vector (same size) and centred on the wrap (it sat 9.5 mm right of centre);', fill='#333', font=N(19))
+d.text((30, 90), 'name plates 3% smaller (white mug 5%) so they end 6 mm inside the bottom edge (were 4.4 mm). Red top strip + green/gold hoops = the design code made on 2 Nov, unchanged.', fill='#333', font=N(19))
+for i, (lab, im) in enumerate((('ORIGINAL - the file Printify printed (Harrier 2475 x 1155)', O), ('CORRECTED v4 - Harrier 2475 x 1155', A), ('CORRECTED v4 - white mug, T Shirt and Sons 2582 x 1120 (same artwork on its template)', Wt))):
+    y = 150 + i * (oh + 70); r = im.resize((int(im.width * k), int(im.height * k)), Image.LANCZOS)
+    sh.paste(r, (30, y)); d.rectangle((30, y, 30 + r.width, y + r.height), outline='#999', width=2)
+    d.line((30 + r.width / 2, y - 8, 30 + r.width / 2, y + r.height + 8), fill='#E00000', width=2)
+    d.text((30, y + r.height + 10), lab + '   (red line = centre of the wrap)', fill='black', font=N(18))
+sh.save('pack/FACT TO FILE mug v4 original v corrected side by side.png'); print(sh.size)

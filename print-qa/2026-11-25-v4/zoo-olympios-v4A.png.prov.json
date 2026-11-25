@@ -1,0 +1,11 @@
+{
+ "renderer": "zans-print-qa/render.py v3 (chromium, outlined master, deviceScaleFactor 1)",
+ "px": [
+  990,
+  990
+ ],
+ "master": "zoo-olympios-v4A.svg",
+ "master_sha256": "4ac15f3a4ff20cfe25cd0a6fcc5a16acd633b286e5f79eea2478549bdd7a1e13",
+ "png_sha256": "192391553eba5ce776c034497462e555e5f29da0218c147f24bfc4ac6a22fb83",
+ "made_utc": "2026-11-25T20:16:25Z"
+}
