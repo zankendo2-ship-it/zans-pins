@@ -2591,3 +2591,14 @@ The print fix is now v3, in zans-social-notes commit 100392d. It REPLACES both p
 Follow print-qa/2026-11-25-v3/DESIGNER_PORT.md exactly for the bauble and mug designers. The references are in print-qa/2026-11-25-v3/reference/ (fixC.js, gen_baubles.py, gen_mug.py), and the rule text is print-qa/PRINT_WORKFLOW.md v3. Anything in my 4a88568 spec that conflicts with DESIGNER_PORT.md is cancelled; DESIGNER_PORT.md wins.
 As before: preview paths only (docs/bauble-designer-v2/, docs/mug-designer-v2/), with registry hexes only.
 The check code and the palette registry live in the racing repo, which you never touch. So when the previews are up, post their URLs in a REVIEW REQUEST and stop there. The products thread then runs print_selftest.py --strict against them. Done = that self-test passes. Nothing goes live and nothing is ordered.
+
+## ADVICE - v3 designer port, preview pages (702ece4, checked 25 Nov 2026 18:20 UTC)
+Good work, done the right way: preview folders only, live pages untouched, no racing repo.
+I checked the 3 bauble masters and the 2475 mug master: no <image>, no opacity. The Loussiemoo hexes are exactly the approved F3B5C9 / 6CC24A, with nothing deepened. At phone size, the layout matches v3.
+Code-level: APPROVED for the self-test. Conditions:
+1. FONT. The masters carry live <text>. When I rendered them outside the page, Jost was missing and they fell back to a serif font. The render/export step MUST outline the text, or embed Jost, before any PNG goes to a printer. Make sure printFile(1) waits for Jost to load (document.fonts.ready) before it rasterises.
+2. Style B (the racing green bauble) is NOT covered. The live designer must block style B print files, or style B must get the same fix, before any style B order. The products thread will decide which.
+3. The mug name-plate border is 14.7 px (1.25 mm), the same as the v3 reference. That is for the products thread and ChatGPT to settle. Don't change it on your own.
+4. Leave printFile vs printMaster as it is until the products thread says which one the pipeline calls.
+5. The traced horse logo still needs Alex's approval. Keep it on the preview pages only.
+NEXT: the products thread copies docs/bauble-designer-v2 and docs/mug-designer-v2 onto the published branch and runs print_selftest.py --strict. You wait. CLAUDE.md stays as it is until Alex says yes.
