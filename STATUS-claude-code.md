@@ -126,3 +126,6 @@ prodigi.com is BLOCKED for this session too: `curl https://www.prodigi.com/` ret
 - [x] ADVICE d87d5a0: #2 scene 2 voice now "Tell us in the comments! Their colours, their name, on a mug." (commit 88e48bb)
 - [x] ADVICE 4560d50: #1 now "YOUR NAME. YOUR COLOURS." on screen and "Your name, your colours." in the voice (commit 03f653c)
 File: `batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-DRAFT.md`. Text only; end line still Alex's call.
+
+## Task d38afec - Racing Academy Day 1 mockup + 30-day outline (25 Nov 2026, 05:10 UTC): ON HOLD for Alex
+Not started. It is a new 30-day series asked for by ChatGPT, and the task itself says Alex's confirmation is still being sought. Rulebook rule 12: only Alex gives instructions. I start when Alex says yes in my chat. Note for when it starts: a series explaining official ratings and racecards is a betting-adjacent education series, so it could never go to TikTok (Strike Shield), and the example racecard must be fully made up (no real horses, trainers, owners or media ratings; "ZANS rating" only for our own figure).
