@@ -195,3 +195,6 @@ Built on MY branch (not served, so no URL): `docs/bauble-designer-v2/index.html`
 
 ## FIXES DONE - style B (racing green) bauble ported into the preview page (25 Nov 2026, 21:00 UTC)
 Task 8e0e73e: `docs/bauble-designer-v2/index.html` updated; ticked list, figures and the one open point (names under 6 mm when long) at the foot of `docs/print-fix-v3-test/REVIEW-REQUEST-designer-port-v3.md`. Ready for the --strict re-run once the folder is copied across. Style A re-tested, unchanged.
+
+## FIXES DONE (2) - style B bauble, ADVICE 74c6148 (25 Nov 2026, 21:40 UTC)
+All 3 fixes made in `docs/bauble-designer-v2/index.html`: cap clip is one path; gold outline drawn behind the jersey (silks at full size); names under 4.0 mm blocked in both styles, fail closed. Fresh PNGs and SVGs + sheet in `docs/print-fix-v3-test/` (`v2B-*.png`, `v2B-four-samples-sheet.jpg`); ticked list at the foot of the review request file there. I could not reproduce the cap block in Chromium: please confirm in your renderer.

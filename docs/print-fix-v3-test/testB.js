@@ -4,11 +4,12 @@ const { chromium } = require('playwright'); const fs = require('fs');
   const out = []; const names = [['Starry Night', 'stars', '#1B2A5C', '#F5D130', '#F5D130'], ['Rex', 'hoops', '#0E6B3B', '#F5D130', '#FFFFFF'], ['Loussiemoo', 'disc', '#F3B5C9', '#6CC24A', '#F3B5C9'], ['Inothewayurthinkin', 'plain', '#1C1C1C', '#FFFFFF', '#1C1C1C'], ['No Drama This End', 'hoops', '#FFFFFF', '#1B2A5C', '#C8102E']];
   for (const [name, pat, c1, c2, cap] of names) {
     const r = await p.evaluate(async ([name, pat, c1, c2, cap]) => { Object.assign(S, { style: 'B', pat, body: pat, allover: pat, c1, c2, capCol: cap, name, sleeves: 'plain', capPat: 'plain' });
-      const m = ZANSBauble.printMaster(); const url = await ZANSBauble.printFile(1);
+      let m, url; try { m = ZANSBauble.printMaster(); url = await ZANSBauble.printFile(1); } catch (e) { return { blocked: String(e.message), shown: document.getElementById('nameTooLong').textContent, okA: (S.style = 'A', ZANSBauble.nameOK()) }; }
       const h = document.createElement('div'); h.style.cssText = 'position:absolute;left:0;top:0;width:990px;height:990px'; h.innerHTML = m; document.body.appendChild(h);
       let far = 0, top = 9999, capH = []; h.querySelectorAll('[data-safe]').forEach(e => { const q = e.getBoundingClientRect(), o = h.getBoundingClientRect(); for (const [x, y] of [[q.left, q.top], [q.right, q.top], [q.left, q.bottom], [q.right, q.bottom]]) far = Math.max(far, Math.hypot(x - o.left - 495, y - o.top - 495)); top = Math.min(top, q.top - o.top); });
       const fsz = [...h.querySelectorAll('text')].map(t => +t.getAttribute('font-size')); h.remove();
       return { m, url, far, top, fsz }; }, [name, pat, c1, c2, cap]);
+    if (r.blocked) { out.push({ name, BLOCKED: r.blocked, message_on_page_after_typing: 'checked separately', style_A_also_blocked: !r.okA }); continue; }
     const m = r.m, slug = name.toLowerCase().replace(/[^a-z]+/g, '-'); fs.writeFileSync(`${process.argv[2]}/v2B-${slug}.svg`, m); fs.writeFileSync(`${process.argv[2]}/v2B-${slug}.png`, Buffer.from(r.url.split(',')[1], 'base64'));
     const strokes = [...m.matchAll(/<g transform="translate\([^)]*\) scale\(([\d.]+)\)">|stroke-width="([\d.]+)"/g)];
     out.push({ name, far_px: +r.far.toFixed(0), far_mm_from_edge: +((495 - r.far) / 13.21).toFixed(1), top_px: +r.top.toFixed(0), font_px: r.fsz.map(v => +v.toFixed(0)), name_cap_mm: +(Math.min(...r.fsz.slice(0, -1)) * 0.7 / 13.21).toFixed(1), mc_cap_mm: +(66 * 0.7 / 13.21).toFixed(1), image: /<image/.test(m), filter: /<filter/.test(m), opacity: /opacity=/.test(m), style: /<style/.test(m), outer_clip: /<g clip-path="url\(#mc\)"/.test(m), colours: [...new Set([...m.matchAll(/(?:fill|stroke)="(#[0-9A-Fa-f]{6})"/g)].map(x => x[1].toUpperCase()))] }); }
