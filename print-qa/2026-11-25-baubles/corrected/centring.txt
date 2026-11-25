@@ -1,0 +1,6 @@
+loussiemoo-approved-colours: panel centre +0.0 mm across, +0.0 mm down; nearest panel/logo point 7.2 mm from the edge
+loussiemoo-deeper-colours: panel centre +0.0 mm across, +0.0 mm down; nearest panel/logo point 13.8 mm from the edge
+rexs-romance-approved-colours: panel centre +0.0 mm across, +0.0 mm down; nearest panel/logo point -6.8 mm from the edge
+rexs-romance-deeper-colours: panel centre +0.0 mm across, +0.0 mm down; nearest panel/logo point -6.8 mm from the edge
+zoo-olympios-approved-colours: panel centre +0.0 mm across, +0.0 mm down; nearest panel/logo point 12.5 mm from the edge
+zoo-olympios-deeper-colours: panel centre +0.0 mm across, +0.0 mm down; nearest panel/logo point 12.5 mm from the edge
