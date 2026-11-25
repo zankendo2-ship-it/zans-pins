@@ -1,7 +1,7 @@
 # ZANS Claude <-> OpenAI two-reviewer check. PILOT - DISABLED BY DEFAULT.
-# Runs only when a person starts it by hand (Actions > ZANS two-reviewer check > Run workflow),
-# AND repository variable ZANS_ORCH_ENABLED is 'true', AND the person is on ZANS_ORCH_ALLOWED_ACTORS.
-# Kill switch: set ZANS_ORCH_ENABLED to anything else (or disable this workflow in the Actions tab).
+# Runs only when a person on ZANS_ORCH_ALLOWED_ACTORS starts it by hand (Actions > Run workflow).
+# mode=mock is free (no keys, no API calls) and may run while switched off.
+# mode=live also needs repository variable ZANS_ORCH_ENABLED = 'true'. Kill switch: set it to anything else.
 # No issue_comment / push / schedule triggers, so it can never start itself or loop.
 name: ZANS two-reviewer check (pilot)
 
@@ -35,7 +35,7 @@ permissions:
 
 jobs:
   review:
-    if: vars.ZANS_ORCH_ENABLED == 'true'
+    if: inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

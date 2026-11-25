@@ -128,8 +128,10 @@ def estimate_tokens(*texts):
 
 
 def guard(env, mode):
-    if env.get("ZANS_ORCH_ENABLED", "").strip().lower() != "true":
-        raise Stop("DISABLED: repository variable ZANS_ORCH_ENABLED is not 'true' (kill switch).")
+    # The free mock (no API calls, no keys) may run while switched off, so it can be tested before activation.
+    # Live calls need the switch.
+    if mode == "live" and env.get("ZANS_ORCH_ENABLED", "").strip().lower() != "true":
+        raise Stop("DISABLED: repository variable ZANS_ORCH_ENABLED is not 'true' (kill switch for live calls).")
     allowed = {a.strip().lower() for a in env.get("ZANS_ORCH_ALLOWED_ACTORS", "").split(",") if a.strip()}
     actor = env.get("GITHUB_ACTOR", "").strip().lower()
     if not allowed or actor not in allowed:

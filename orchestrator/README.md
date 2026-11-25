@@ -6,7 +6,7 @@
 
 ## Safety built in
 - **Manual start only** (`workflow_dispatch`). There are no comment, push or schedule triggers, so it cannot start itself. Its summary comment is posted with `GITHUB_TOKEN`, which GitHub does not let start other workflows.
-- **Off by default.** It only runs when the repository variable `ZANS_ORCH_ENABLED` is `true`.
+- **Off by default.** Live (paid) runs only happen when the repository variable `ZANS_ORCH_ENABLED` is `true`. The free `mock` run works while it is off, so it can be tested first.
 - **Allowlist.** The person starting it must be listed in `ZANS_ORCH_ALLOWED_ACTORS`.
 - **Immutable inputs.** Artifact links must be pinned to a 40-character commit SHA.
 - **Hard caps in the code.** Provider budgets are alerts, not guaranteed stops, so these are enforced before any call:

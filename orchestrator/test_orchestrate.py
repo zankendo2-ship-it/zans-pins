@@ -13,8 +13,16 @@ def V(v, ack="ok"):
     return {"ack": ack, "verdict": v, "reasons": ["r"], "fixes": []}
 
 
-def test_kill_switch_off_by_default():
+def test_kill_switch_off_by_default_blocks_live():
+    env = {k: v for k, v in ENV.items() if k != "ZANS_ORCH_ENABLED"}
     with pytest.raises(o.Stop, match="DISABLED"):
+        o.guard({**env, "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k", "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}, "live")
+
+
+def test_mock_allowed_while_off_but_still_needs_allowlist():
+    env = {k: v for k, v in ENV.items() if k != "ZANS_ORCH_ENABLED"}
+    o.guard(env, "mock")
+    with pytest.raises(o.Stop, match="REFUSED"):
         o.guard({}, "mock")
 
 
@@ -124,8 +132,8 @@ def test_summary_has_marker_and_no_secrets():
     assert "<!-- zans-orch:h1 -->" in s and "API_KEY" not in s
 
 
-def test_main_disabled_exits_clean_without_network(capsys):
-    assert o.main({"ORCH_MODE": "mock"}) == 0
+def test_main_live_disabled_exits_clean_without_network(capsys):
+    assert o.main({"ORCH_MODE": "live"}) == 0
     assert "DISABLED" in capsys.readouterr().out
 
 
