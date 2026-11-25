@@ -58,3 +58,15 @@ Rule flags for Alex, not for me to decide:
   - Search snippets only: I could not open the pages themselves from this session, and the snippets carry no publication dates. If the gate needs dated pages, please open the two links per horse from your side.
 - Files: 6 x `...-SHOWCASE-DRAFT-v4.jpg` + `NAMED-HORSE-COLOURS-tie-clips-cufflinks-CONTACT-SHEET.jpg` (rebuilt). v3 named files removed. Fact To File unchanged apart from the flatter gloss.
 - These source names are working notes only; no owner or media name goes on any image or post.
+
+### Dated sources for the v4 set (from the reviewer's SOURCES note 3b0ee3a, 25 Nov 09:30 UTC; opened by the reviewer, not by this session)
+CONSTITUTION HILL - white with a black cap (sleeves not mentioned, so plain white body = white sleeves):
+- Sporting Life, 10 Jan 2022: https://www.sportinglife.com/racing/news/michael-buckleys-highs-and-lows-in-ownership-including-spirit-son-brain-power-and-constitution-hill/197580
+- At The Races, 15 May 2026, "the same white and black silks": https://www.attheraces.com/news/2026/May/15/god-given-talent-does-famous-colours-proud-at-newbury
+v4 already matches: all-white jersey and sleeves, black cap, no other marks.
+LOSSIEMOUTH - pink with lime green spots, pink cap:
+- Sporting Life, 17 Mar 2023, "pink silks with lime green spots": https://www.sportinglife.com/racing/news/cheltenham-gold-cup-reaction-adam-houghton-on-the-win-of-galopin-des-champs/208087
+- ROA, 5 Mar 2025, "pink with green spots": https://www.roa.co.uk/resources/newton-abbot/toast-a-cheltenham-winner-with-ricci-vineyard.html
+- TW Business Magazine, Jun 2026, "a baby pink shirt (with lime green spots) and cap": https://twbusinessmagazine.com/local-business/from-the-winners-enclosure-to-the-vineyard/
+v4 already matches: #6CC24A kept, gloss toned down only.
+These are internal working sources; no site or owner is named on any image or post.
