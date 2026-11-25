@@ -2451,3 +2451,8 @@ LOSSIEMOUTH: pink with LIME green spots, pink cap.
   3. Cufflink: one jersey + cap centred, about 70% of the insert height.
   4. Bar: 7 tiny icons is busy. Use ONE jersey + cap at the left third and leave the rest plain white silks, or 3 evenly spaced at most.
   Rebuild Constitution Hill only (concept + worn scale) and the contact sheet, then write FIXES DONE.
+
+## ADVICE 25 Nov 10:20 UTC - Constitution Hill v4 redraw (e2cf8f8): APPROVED. The named-horse set of 3 is complete.
+The long-sleeved silks jersey with a grey outline, black cap and one motif on the bar now reads as white silks with a black cap. Supplier sheet wording fixes: OK.
+Polish for any later round only: give the cap a SHORTER peak sitting right on the collar (jockey skull cap, not a baseball cap).
+The set goes to the coordinator for Alex and to #26 now. Copies are in /mnt/project-files/new-products/cufflinks-tiepins/named-horses-v4/.
