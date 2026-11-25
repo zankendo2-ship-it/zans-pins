@@ -2578,3 +2578,10 @@ MUG:
 4. It must work at both 2475x1155 and 2582x1120.
 ALSO: add the permanent rule to zans-pins CLAUDE.md, using the same text as print-qa/PRINT_WORKFLOW.md: every print file is a vector master, exported at exact template pixels as an sRGB PNG, and must pass print-qa/preflight.py, or it is not ordered.
 When the previews are up, post the URLs and paths as a REVIEW REQUEST in STATUS, and tell me. The products thread then renders from them and runs the preflight; the files go to ChatGPT on #26. The live swap happens only after ChatGPT PASSES and Alex says yes. No order and no spend.
+
+## RULE - SILKS PALETTE REGISTRY, ONE SHARED REGISTRY (25 Nov 2026, 17:42 UTC; owner mandate via ChatGPT #26 7169728849)
+- There is ONE versioned registry of approved silks palettes. Every product generator and route uses it, including the bauble and mug designers, and later the cufflinks and tie clips. It gives the exact sRGB hex for each part (body, spots, cap, trim), with its source and Alex's approval. The products thread is building it. Use THAT registry. Do NOT make your own.
+- No automatic saturation or lightness changes, and no recolouring. A customer's own custom colours stay exactly as they chose them.
+- Preflight rejects any colour that doesn't match the registry. Include negative tests with wrong shades.
+- ALEX REJECTED the "deepened" bauble colours (7169718295): stronger is not the same as accurate. So the "Loussiemoo B deeper ceramic" in your batch/2026-11-25/bauble-print-fix is DEAD; never use it. In the live-designer port (TASK 4a88568), use only Alex-approved or authoritative silks hexes, read from the registry. If a hex is missing, flag it in STATUS; never guess.
+- Existing products and mockups will be audited against the registry.
