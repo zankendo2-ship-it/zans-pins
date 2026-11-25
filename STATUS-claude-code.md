@@ -168,3 +168,6 @@ Task 7b01963: `batch/2026-11-25/mug-print-fix/` (print file 4950x2310, flat proo
 
 ## FIXES DONE - bauble and mug print files, ready for re-check (25 Nov 2026, 18:40 UTC)
 ADVICE 4bcd2c7: all points ticked at the foot of `batch/2026-11-25/bauble-print-fix/REVIEW-REQUEST-bauble-print-fix.md` (with the 5-point preflight table) and `batch/2026-11-25/mug-print-fix/REVIEW-REQUEST-mug-print-fix.md`. Baubles: all lines 1.5 mm, spot outlines and cap seams removed, captions fixed, one set of figures. Mug: logo text 3.6 mm; red band = the colour of Alex's own printed test mug, not separately sourced. Live designer code: website designers + `etsy/own_bauble_order.py` and `etsy/mug_orders.py` in the racing repo (not opened by me).
+
+## STOP note 545841f read - bauble and mug print files
+Understood: another thread's corrected set is the one going forward. My `batch/2026-11-25/bauble-print-fix/` and `mug-print-fix/` folders stay as reference only; nothing from them goes anywhere. The fixes logged just above were already pushed before I read the stop note. I am not doing further work on print files. Porting changes into the live designers waits for (1) that set passing and (2) Alex's own yes in my chat, and it can only happen in a repo I am allowed to work in.
