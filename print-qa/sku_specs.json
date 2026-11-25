@@ -1,0 +1,12 @@
+{
+ "_note": "Per-SKU print specs. Template px from the Printify catalog / our order scripts. Provider file limits from Alex's 25 Nov spec (Printify 100 MB raster, 20 MB SVG) - not yet re-verified against current Printify docs.",
+ "bauble_harrier": {"printify_blueprint": 1676, "provider": "Harrier (94, UK)", "variants": [115590], "px": [990, 990], "physical_mm": [74.9, 74.9],
+   "shape": "circle", "safe_mm": 6, "bleed": "full square", "transparency": false, "min_stroke_mm": 1.5, "min_text_mm": 3.5,
+   "placement": {"position": "front", "x": 0.5, "y": 0.5, "scale": 1, "angle": 0}, "max_bytes": 100000000},
+ "mug_harrier_11oz": {"printify_blueprint": 635, "provider": "Harrier (94, UK)", "variants": [72180, 72182, 72183, 72184, 105888, 108906, 108907, 108908, 113942],
+   "px": [2475, 1155], "physical_mm": [209.55, 97.79], "shape": "wrap", "safe_mm": 6, "bleed": "full wrap", "transparency": false,
+   "min_stroke_mm": 1.0, "min_text_mm": 3.5, "placement": {"position": "front", "x": 0.5, "y": 0.5, "scale": 1, "angle": 0}, "max_bytes": 100000000},
+ "mug_white_tss_11oz": {"printify_blueprint": 535, "provider": "T Shirt and Sons (6, UK)", "variants": [69010], "px": [2582, 1120], "physical_mm": [218.6, 94.8],
+   "shape": "wrap", "safe_mm": 6, "bleed": "full wrap", "transparency": false, "min_stroke_mm": 1.0, "min_text_mm": 3.5,
+   "placement": {"position": "front", "x": 0.5, "y": 0.5, "scale": 1, "angle": 0}, "max_bytes": 100000000}
+}
