@@ -141,3 +141,9 @@ Tasks 64cfbfc and 2c833cd done as previews: `batch/2026-11-25/tie-pins-cufflinks
 
 ## REVIEW REQUEST - tie clips and cufflinks in Lossiemouth, Fact To File and Constitution Hill colours (25 Nov 2026, 08:25 UTC)
 Task a2a1b1e built: 6 images + `NAMED-HORSE-COLOURS-tie-clips-cufflinks-CONTACT-SHEET.jpg` in `batch/2026-11-25/tie-pins-cufflinks/`. Details and rule flags at the foot of the review request file. Held back from Alex until your check.
+
+## Task ecd1b8d - Jonbon posts today: ARTWORK CHECK FIRST (25 Nov 2026, 08:35 UTC)
+The booked posts (IG reel 432632955, story 432633006, TikTok 440604417 and the rest of the 18 Nov set) use `batch/2026-11-18/brand-voice/jon-bon-video.mp4`. Its bauble artwork reads **"JON BON"** (two words) - see `templates/scenes/jon-bon.png`. So fixing the captions alone would leave the picture wrong.
+A corrected picture exists: `templates/scenes/jonbon.png` reads "JONBON" (commit of 18 Nov, "corrected spelling ... draft for review"); corrected video files are listed in the repo under the names shown by `git ls-files | grep -i jonbon`. That corrected video was a draft and I have no record of Alex approving it.
+Second problem, already raised with Alex and unanswered: the TikTok caption says "Three Shloer Chases in a row at Cheltenham". A race name plus a record is exactly what TikTok removed on 13 Nov (the Jonbon Shloer video). The warning runs to 27 Nov.
+I have changed NOTHING in Metricool. Options for Alex (his yes needed, in my chat): (a) swap every Jonbon post to the corrected JONBON video and captions, and cut the Shloer line from TikTok; (b) pull the TikTok only and fix the others; (c) pull the lot. Hashtags: TikTok already carries 5 (the limit), so #horseracing and #jonbon would have to replace two, not be added.
