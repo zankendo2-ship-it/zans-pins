@@ -2585,3 +2585,50 @@ When the previews are up, post the URLs and paths as a REVIEW REQUEST in STATUS,
 - Preflight rejects any colour that doesn't match the registry. Include negative tests with wrong shades.
 - ALEX REJECTED the "deepened" bauble colours (7169718295): stronger is not the same as accurate. So the "Loussiemoo B deeper ceramic" in your batch/2026-11-25/bauble-print-fix is DEAD; never use it. In the live-designer port (TASK 4a88568), use only Alex-approved or authoritative silks hexes, read from the registry. If a hex is missing, flag it in STATUS; never guess.
 - Existing products and mockups will be audited against the registry.
+
+## CHANGE to TASK 4a88568 - use v3, NOT v2 (25 Nov 2026, 18:09 UTC)
+The print fix is now v3, in zans-social-notes commit 100392d. It REPLACES both print-qa/v2 and corrected/. ChatGPT rejected the v2 colours (no deepening) and the wordmark swap.
+Follow print-qa/2026-11-25-v3/DESIGNER_PORT.md exactly for the bauble and mug designers. The references are in print-qa/2026-11-25-v3/reference/ (fixC.js, gen_baubles.py, gen_mug.py), and the rule text is print-qa/PRINT_WORKFLOW.md v3. Anything in my 4a88568 spec that conflicts with DESIGNER_PORT.md is cancelled; DESIGNER_PORT.md wins.
+As before: preview paths only (docs/bauble-designer-v2/, docs/mug-designer-v2/), with registry hexes only.
+The check code and the palette registry live in the racing repo, which you never touch. So when the previews are up, post their URLs in a REVIEW REQUEST and stop there. The products thread then runs print_selftest.py --strict against them. Done = that self-test passes. Nothing goes live and nothing is ordered.
+
+## ADVICE - v3 designer port, preview pages (702ece4, checked 25 Nov 2026 18:20 UTC)
+Good work, done the right way: preview folders only, live pages untouched, no racing repo.
+I checked the 3 bauble masters and the 2475 mug master: no <image>, no opacity. The Loussiemoo hexes are exactly the approved F3B5C9 / 6CC24A, with nothing deepened. At phone size, the layout matches v3.
+Code-level: APPROVED for the self-test. Conditions:
+1. FONT. The masters carry live <text>. When I rendered them outside the page, Jost was missing and they fell back to a serif font. The render/export step MUST outline the text, or embed Jost, before any PNG goes to a printer. Make sure printFile(1) waits for Jost to load (document.fonts.ready) before it rasterises.
+2. Style B (the racing green bauble) is NOT covered. The live designer must block style B print files, or style B must get the same fix, before any style B order. The products thread will decide which.
+3. The mug name-plate border is 14.7 px (1.25 mm), the same as the v3 reference. That is for the products thread and ChatGPT to settle. Don't change it on your own.
+4. Leave printFile vs printMaster as it is until the products thread says which one the pipeline calls.
+5. The traced horse logo still needs Alex's approval. Keep it on the preview pages only.
+NEXT: the products thread copies docs/bauble-designer-v2 and docs/mug-designer-v2 onto the published branch and runs print_selftest.py --strict. You wait. CLAUDE.md stays as it is until Alex says yes.
+
+## TASK - style B (racing green) bauble port + self-test result (25 Nov 2026, 18:25 UTC)
+The products thread served your 702ece4 -v2 folders locally and ran print_selftest.py --strict. Both mugs (2475 and 2582) PASS, and all 3 style A baubles PASS (6.1-9.1 mm inside the edge, centring 0.2 mm or better, every colour approved).
+Its answers to my conditions:
+- Live <text> is fine. render.py outlines the text with the self-hosted Jost before rendering, so keep font-family Jost and data-role/data-inside on the text.
+- The 1.25 mm mug border is fine, because the mug minimum stroke is 1.0 mm (the bauble minimum is 1.5 mm).
+- The mug route calls ZANS.printFile(design, spec, 'Jost', LOGO). Baubles use ZANSBauble.printMaster(), which must be FULL BLEED with NO clip.
+STILL BLOCKED: style B (racing green). Port it in docs/bauble-designer-v2/ the same way as style A:
+1. No SVG <filter>, no bitmap <image>, no opacity.
+2. Every stroke at least 20 px (1.5 mm on the 990 px face).
+3. MERRY CHRISTMAS at least 3.5 mm tall (it is 1.6 mm now), and the name at least 6 mm.
+4. Palette from the registry only: the brand racing green is #0F3B2C. Replace the off-palette #E4E2D8 with the registry cream used in style A. No other new colours.
+5. Use the same 6 mm safe zone, centring and vector ZANS mark as style A. printMaster() for style B must be full bleed with no clip.
+Then post FIXES DONE. The products thread re-runs --strict. Live pages untouched, no order.
+
+## ADVICE - style B FIXES DONE (c62c30b, task 8e0e73e) - 3 FIXES before the re-copy (25 Nov 2026, 19:25 UTC)
+Checked: the diff, testB.js, and all three v2B-*.svg rendered at phone size and at full 990 px.
+Passes: no filter, no image, no opacity. Jersey strokes 44.4/54.9 inside the 0.45/0.36 scale give 20 px. MERRY CHRISTMAS 66 px = 3.5 mm. Background #0F3B2C. #E4E2D8 is gone. The cap top is 164 px, clear of the hole zone. No outer clip.
+Fixes, in order:
+1. CAP IS BROKEN. The cap colour shows as a square block sticking out of the gold cap outline (top-left and right). The gold arc sits on top, so it reads as a padlock or handbag on all three samples. The cap fill must sit inside the cap shape, exactly like style A's cap.
+2. THE GOLD OUTLINE SWALLOWS THE SILKS. A 20 px stroke centred on the jersey edge eats into the colour. On Loussiemoo the sleeves are almost all gold, with only thin pink slivers. The silks colours must stay fully visible. Draw the gold outline BEHIND the jersey instead: a gold copy of each outline path, stroked 40 px (2 x 20) and placed underneath, with the coloured jersey (no stroke) on top. The 20 px of gold then falls outside the shape, and every silks area keeps its full size. Keep the existing ink inner lines if style A has them.
+3. NAME SIZE. Follow DESIGNER_PORT.md v3: the bauble name floor is 4.0 mm, the same as style A. Add one block for BOTH styles: if a name would print under 4.0 mm, the designer shows "Name too long - please shorten" and will not make a print file. Fail closed, so the 18-letter single word is refused. Put that in testB.js too.
+Then post FIXES DONE again with fresh v2B PNGs. I will check them, then ask the website thread to re-copy and the products thread to run --strict.
+
+## ADVICE - style B FIXES DONE (2) (4338ac9) - 1 FIX, the cap clip in the PRINT MASTER (25 Nov 2026, 20:20 UTC)
+Fixes 2 and 3 are approved. The gold outline now sits behind the jersey and the silks show at full size on all four. The 4.0 mm name block is in both styles. No filter, image or opacity. The colours are registry and design hexes only.
+1. THE CAP BLOCK IS REAL, BUT ONLY IN printMaster(), the file the printer gets. Your PNG comes from the canvas path, so it looks right there. That is why you could not reproduce it. In v2B-loussiemoo.svg, `<clipPath id="mjc">` is defined, but the cap `<rect x="-110" y="-410" width="280" height="160">` sits in a bare `<g>` with no clip-path. Rendered on its own at 990 px, it prints a pink rectangle over the cap shape. The other three SVGs are the same.
+   Cause: `window.__master` runs `.replace(/ clip-path="url\(#[\w]+c\)"/,'')`. It is meant to remove only the outer round clip, but it also matches `#mjc` (cap clip id ends in "c"), so it strips the cap clip.
+   Fix: remove only the exact outer clip, ` clip-path="url(#mc)"` or `#<id>c` built from the real outer-clip id. Never use a pattern that can match a jersey part. Then re-check the STYLE A masters too: the same function makes them, so their cap clip may also be gone, and strict passed them anyway. Add a test to testB.js (and the style A test) that fails if any `<clipPath id=X>` in a master is never used by a `clip-path="url(#X)"`.
+Post FIXES DONE (3) with the master SVGs rendered standalone, not the canvas PNG. After that I'll pass it on for the re-copy and the --strict run.
