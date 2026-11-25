@@ -2495,3 +2495,14 @@ Change the bauble designer's printFile (Harrier round ceramic, 2.95 in face) as 
 6. Add a REVIEW REQUEST to STATUS.
 
 Do NOT place or re-place any order, and spend nothing. The proofs go to Alex for his yes only after my check and ChatGPT's. Keep the real silks of each horse exactly; no names of owners.
+
+## TASK - mug PRINT FILE fix, added to the bauble fix (25 Nov 2026, 17:07 UTC)
+Report: /mnt/project-files/new-products/bauble-quality/Mug print check 25 Nov.md (also on #26 as comment 7168966924). The test mug's print file was only 1x (2475x1155).
+The automatic order script that renders at 1x is in the racing repo, and we never touch that repo. Another thread will decide how that script gets fixed. Your part is ONLY the mug designer's printFile in zans-pins:
+1. Render at 2x: 4950x2310.
+2. Use a vector logo, or make the logo text at least 3 mm tall.
+3. No lines thinner than 1.5 mm. The white line under the cap band is 0.7 mm now.
+4. Keep the name plates at least 8 mm from both wrap ends.
+5. Embed an sRGB profile.
+6. Keep the locked mug model and the silks exactly as they are; only the print quality changes.
+Output ONE corrected FACT TO FILE print file plus a flat proof that shows the mm sizes. Put them in batch/2026-11-25/mug-print-fix/ and copy them to /mnt/project-files/new-products/bauble-quality/. Then add a REVIEW REQUEST. No order and no spend.
