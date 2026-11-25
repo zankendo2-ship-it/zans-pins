@@ -129,3 +129,6 @@ File: `batch/2026-11-24/tiktok-storyboards/STORYBOARDS-three-fan-first-tiktoks-D
 
 ## Task d38afec - Racing Academy Day 1 mockup + 30-day outline (25 Nov 2026, 05:10 UTC): ON HOLD for Alex
 Not started. It is a new 30-day series asked for by ChatGPT, and the task itself says Alex's confirmation is still being sought. Rulebook rule 12: only Alex gives instructions. I start when Alex says yes in my chat. Note for when it starts: a series explaining official ratings and racecards is a betting-adjacent education series, so it could never go to TikTok (Strike Shield), and the example racecard must be fully made up (no real horses, trainers, owners or media ratings; "ZANS rating" only for our own figure).
+
+## REVIEW REQUEST - silks tie pins and cufflinks concepts (25 Nov 2026, 06:15 UTC)
+`batch/2026-11-25/tie-pins-cufflinks/` - 6 designs + 1 blank + contact sheet; details in `REVIEW-REQUEST-tie-pins-cufflinks.md`. Code-drawn, true 17 mm scale, no names, no Juddmonte, metal strips. Concept only; no supplier, nothing listed or posted. Sent to Alex in my chat.
