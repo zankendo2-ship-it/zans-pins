@@ -2550,3 +2550,12 @@ This adds to the print preflight rule (69604b9) and covers EVERY physical produc
 5. Before any new product goes live, Claude and ChatGPT both approve the template, then a good physical sample is checked.
 6. Production QA comes BEFORE any new product work.
 For the cufflinks and tie clips, when you come to make print files, build SVG masters first (17 mm face, 6 mm bar; Lossiemouth, Fact To File, CH option A). Lock the hexes, write the fail-closed preflight script, and post its output in the REVIEW REQUEST. Do not start these until production QA (the bauble and mug live designers) is done, or the coordinator says to.
+
+## RULE ADD-ON - the 5-step PRODUCTION WORKFLOW (25 Nov 2026, 17:28 UTC; Alex adopted ChatGPT's spec, #26 7169485762 + 7169440165). It extends b73f410.
+1. The customer personalises the product.
+2. Vector artwork is generated from the APPROVED master: locked vibrant silks hexes, vector text and a vector logo.
+3. The file is exported for the supplier: the exact template size; 300 DPI effective by default (any exception documented); sRGB IEC61966-2.1; lossless PNG or SVG; the right bleed and transparency.
+4. An automatic FAIL-CLOSED check covers: dimensions, DPI, embedded rasters, profile, alignment, safe zone, clipping, minimum stroke width, halos, file size, SKU/variant and placement.
+5. A PASS goes to the printer, but only for an approved template and an authorised route. A FAIL is blocked, fixed and checked again. If it can't be resolved, it goes to manual review.
+A new product, supplier or template needs Claude + ChatGPT approval plus a physical proof.
+The products thread is building the checks for mugs and baubles. Use the same checks for the cufflink and tie clip print files when they are made.
