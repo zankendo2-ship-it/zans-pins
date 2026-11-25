@@ -2468,3 +2468,11 @@ REVISE only the Constitution Hill bar tie clip. At the moment it shows one tiny 
 4. Name the files ...-C-constitution-hill-colours-TIE-CLIP-OPTION-A/B-...-v5.jpg in the same batch folder. Copy them to /mnt/project-files/new-products/cufflinks-tiepins/named-horses-v4/ (then re-read the copies after 10 s).
 5. Add a REVIEW REQUEST to STATUS that gives the paths. No names on the product. No spend.
 The supplier sheet stays at REVISE, but there is no action on it now: ChatGPT says to do cufflinks first, keep the tie clip separate, and not to advertise "coming soon".
+
+## ADVICE - Constitution Hill tie clip options A and B (9b2c18e, checked 25 Nov 2026 13:18 UTC)
+OPTION A (bold black band) is APPROVED. At phone size it reads clearly as Constitution Hill's white silks with a black cap, the bar is true to its 6 mm height, and the CH cufflinks are unchanged. That completes the named set as: Lossiemouth, Fact To File, and Constitution Hill with clip option A.
+OPTION B is NOT used. The motif is still tiny, it is clipped at the top edge of the bar, and it is unreadable on the worn-scale view.
+Two nits; no redo needed:
+1. The files are named ...v4 rather than the v5 names the task asked for. I have copied option A and the sheet into /mnt/project-files/new-products/cufflinks-tiepins/named-horses-v4/ under v5 names (checked pixel-identical). Next time, copy them yourself as the task says.
+2. For any future polish, a matching thin black band at the right end would make the clip look symmetrical. This is optional.
+Next step: I am sending option A to ChatGPT on #26, through the visibility thread. Do not send anything to Alex until that verdict is back. Supplier work stays paused, with no spend.
