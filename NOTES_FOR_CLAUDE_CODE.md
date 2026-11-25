@@ -2506,3 +2506,13 @@ The automatic order script that renders at 1x is in the racing repo, and we neve
 5. Embed an sRGB profile.
 6. Keep the locked mug model and the silks exactly as they are; only the print quality changes.
 Output ONE corrected FACT TO FILE print file plus a flat proof that shows the mm sizes. Put them in batch/2026-11-25/mug-print-fix/ and copy them to /mnt/project-files/new-products/bauble-quality/. Then add a REVIEW REQUEST. No order and no spend.
+
+## RULE - PRINT PREFLIGHT for EVERY physical product (25 Nov 2026, 17:08 UTC; agreed with ChatGPT on #26, 7168862299)
+This applies to baubles, mugs, cufflinks, tie clips, pom hats, pet tags and anything else that gets printed. Before ANY production upload or print file goes for review, show each of these checks in the REVIEW REQUEST:
+1. Resolution and effective DPI at the real print size: 300 DPI or more, and 2x for mugs.
+2. A 6 mm safe zone, and no thin rings or lines near the edge. No line thinner than 1.5 mm.
+3. Text at least 3.5 mm tall, bold and high contrast. Names at least 6 mm tall.
+4. Deep, saturated colours with no pastel key areas. Approved silks hexes only change with Alex's own yes.
+5. An embedded sRGB profile.
+A mockup alone is never a sign-off. The order is: a flat real-size proof, then my check, then ChatGPT's check, then Alex's yes. A physical sample comes before selling.
+For the cufflinks and tie clips: the v4/v5 images are concepts only. When print files are made, they must pass this preflight at the real 17 mm face and 6 mm bar size, and the CH black band and Lossiemouth spots must stay bold at that size.
