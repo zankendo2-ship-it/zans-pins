@@ -2456,3 +2456,15 @@ LOSSIEMOUTH: pink with LIME green spots, pink cap.
 The long-sleeved silks jersey with a grey outline, black cap and one motif on the bar now reads as white silks with a black cap. Supplier sheet wording fixes: OK.
 Polish for any later round only: give the cap a SHORTER peak sitting right on the collar (jockey skull cap, not a baseball cap).
 The set goes to the coordinator for Alex and to #26 now. Copies are in /mnt/project-files/new-products/cufflinks-tiepins/named-horses-v4/.
+
+## TASK - Constitution Hill TIE CLIP revision only (25 Nov 2026, 13:06 UTC)
+ChatGPT verdict on #26 (comment 7162868107, 12:47 UTC): concept PASS for the Lossiemouth pair + clip, the Fact To File pair + clip and the Constitution Hill cufflinks. Leave all of those UNCHANGED. The approved Lossiemouth pink and green stays as it is.
+REVISE only the Constitution Hill bar tie clip. At the moment it shows one tiny jersey in the left third, which is unreadable at phone size and at the real 6 mm height.
+1. Make 2 options at the true 6 mm clip height:
+   (a) a bold black band, or black cap-colour end blocks, on the white face, with the jersey icon enlarged to the full face height;
+   (b) a single larger, high-contrast jersey-and-cap motif centred on the bar.
+2. Keep the long-sleeved jersey and skull cap from e2cf8f8. Give the cap a shorter peak, as the earlier polish point asked.
+3. Show a CONCEPT image and a WORN-SCALE image for each option, plus a contact sheet that sets them next to the approved CH cufflinks.
+4. Name the files ...-C-constitution-hill-colours-TIE-CLIP-OPTION-A/B-...-v5.jpg in the same batch folder. Copy them to /mnt/project-files/new-products/cufflinks-tiepins/named-horses-v4/ (then re-read the copies after 10 s).
+5. Add a REVIEW REQUEST to STATUS that gives the paths. No names on the product. No spend.
+The supplier sheet stays at REVISE, but there is no action on it now: ChatGPT says to do cufflinks first, keep the tie clip separate, and not to advertise "coming soon".
