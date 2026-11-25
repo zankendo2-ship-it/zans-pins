@@ -78,3 +78,11 @@ These are internal working sources; no site or owner is named on any image or po
 - [x] 4. Bar: ONE jersey + cap at the left third, the rest plain white.
 - [x] Only the two Constitution Hill files and the contact sheet were rebuilt (`node build_named.js C`). File names unchanged (v4).
 - [x] Supplier sheet: Contrado's price marked UNVERIFIED (dollar figure from the search, £ not checked); "PROPOSED" added beside every mm figure.
+
+## REVIEW REQUEST - Constitution Hill TIE CLIP, two options (25 Nov 2026, 13:20 UTC) - TASK f785c41
+Builder `build_ch_clip.js`. Bar drawn at the real 6 mm height (22 px per mm on the concept image, 11 px per mm worn). Cufflinks unchanged (approved v4 motif).
+- Option A, bold black band: plain white bar with a solid black block over the left 19% (the cap colour). `ZANS-silks-bar-tie-clip-square-cufflinks-C-clip-option-A-constitution-hill-CONCEPT-SHOWCASE-DRAFT-v4.jpg` and `...-WORN-SCALE-...`.
+- Option B, larger motif: the jersey and cap drawn 1.6 times bigger at the left third. `...-C-clip-option-B-constitution-hill-CONCEPT-...` and `...-WORN-SCALE-...`.
+- Sheet: `CONSTITUTION-HILL-tie-clip-options-A-and-B-SHEET.jpg`.
+My view: A. At 6 mm tall the bar cannot hold a whole jersey any bigger than v4's, so in B the body is cut off by the bottom edge and only the cap, shoulders and upper sleeves show; on the worn view it is still hard to read. A reads at arm's length and matches the silks (white, black cap).
+The approved v4 Constitution Hill files are left as they were.

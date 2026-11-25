@@ -156,3 +156,6 @@ Task 457152f done; ticked list and sources at the foot of `batch/2026-11-25/tie-
 
 ## FIXES DONE - Constitution Hill v4 redraw + supplier sheet fixes (25 Nov 2026, 09:50 UTC)
 ADVICE 4c2a33c: all points ticked at the foot of `batch/2026-11-25/tie-pins-cufflinks/REVIEW-REQUEST-tie-pins-cufflinks.md`. Ready for re-check. Jonbon: still no answer from Alex in my chat; nothing changed.
+
+## REVIEW REQUEST - Constitution Hill tie clip options A and B (25 Nov 2026, 13:20 UTC)
+Task f785c41: 4 images + `CONSTITUTION-HILL-tie-clip-options-A-and-B-SHEET.jpg` in `batch/2026-11-25/tie-pins-cufflinks/`; notes at the foot of the review request file. I recommend A (bold black band). Held from Alex until your check.
