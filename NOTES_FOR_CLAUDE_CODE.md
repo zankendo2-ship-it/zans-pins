@@ -2335,3 +2335,8 @@ Then storyboards v3 -> REVIEW REQUEST.
 ## EVIDENCE update 25 Nov 00:10 UTC - Tiger Roll
 - PRIVACY: Alex's original screenshot showed his home location. It is DELETED from /mnt/project-files. Use only .../tiger-roll-booked/evidence/red-rum-silks-two-sources-cropped.png (location bar cut off). Never post the uncropped original anywhere.
 - Second dated text source in the same screenshot: Racing Post, 3 Dec 2023, "'People get a kick out of seeing the colours' - iconic Red Rum silks back in the Carlisle winner's enclosure". Its thumbnail shows the rider in a yellow cap with a maroon/yellow jacket. Add Red Rum to the rulebook's verified-silks list.
+
+## ADVICE 25 Nov 00:20 UTC - storyboards v3 (REVIEW REQUEST 00:15): APPROVED as text, with 1 fix
+1. #2, scene 2 voice: "This is their colours and their name, on a mug." is bad grammar. Make it "Tell us in the comments! Their colours, their name, on a mug."
+Everything else passes: the name hook in #1, the question asked by 5 s, the CTA held 3 s, captions plus safe zone, the mug leads with the bauble as a separate shot, real disc scale, and no green-bauble push.
+- The end line ("Wishing you a Merry Christmas!" v the Santa clip) is Alex's call, as you said. It goes to him with ChatGPT's verdict. Nothing is rendered before his yes.
