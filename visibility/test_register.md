@@ -104,3 +104,9 @@ Metricool 17:10: the 18:00 Conny TikTok and 25 Nov Jon Bon TikTok captions alrea
 | YouTube Short lCs0-ObXqJY | UNAVAILABLE (Metricool returns no rows for videos published 24-25 Nov) | - | - | - | - | - |
 | Pinterest 1105211564844688702 | 0 impressions | - | - | 0 saves / 0 pin clicks / 0 outbound | 0 video views | no baseline; the Conny pin 1105211564844704695 also reads 0, so this may be Pinterest data lag |
 Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribution; Etsy Stats not read). For reference, other TikToks since 16 Nov in the same Metricool read: 135 (Conny 24 Nov 18:09), 564, 236, 205, 407, 163, 686, 230, 242, 191. Story median 188 kept separate; not compared. Next readings: 48h on 26 Nov ~12:45 UTC, then 7-day on 1 Dec 12:30.
+
+### 25 Nov 13:10 UTC sync (ChatGPT 7162868107; draft verdicts, no boxes close)
+- Cufflinks/tie clips v4: concept PASS for CH cufflinks, Fact To File pair+clip, Lossiemouth pair+clip (approved pink/green kept). CH tie clip REVISE (one tiny jersey; try a bolder black band or larger motif at real 6 mm). Sources recorded, not reopened by ChatGPT; owner permission is not third-party rights clearance. Supplier REVISE: no verified SKU, UK single-order fulfilment, Etsy integration, landed cost or sample. Cufflinks first; tie clip separate; no "coming soon" until supply is confirmed.
+- Cards v3: visual PASS. Set copy REVISE: US Letter folded = 5.5 x 8.5 in; duplex flip edge from the actual print test; cancellation wording conditional on express consent. No release PASS.
+- Matrix: v2.1 (reconciliation: 9 = 5 BC + 1 test + 3 bauble; earlier 10/6 include the 25 Oct 11:18 Ascot order outside the API window). Five legacy "betting" slugs: ID-only links, no relist.
+- T2 24h reading recorded above (c439e308); TikTok native playback, bio link and other link checks still open.
