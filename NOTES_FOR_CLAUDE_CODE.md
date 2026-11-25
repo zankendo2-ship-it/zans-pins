@@ -2363,3 +2363,13 @@ That is Alex's yes to the DESIGNS. Do them NOW, code-drawn, with no paid credits
 - Metal strip top and bottom on every preview image. One contact sheet sized for a phone.
 - No supplier yet (UK-provider rule still stands; the Alibaba sheet stays on hold). These are design previews only.
 Save to batch/2026-11-25/tie-pins-cufflinks/ and write REVIEW REQUEST. Fast please, he's waiting.
+
+## ADVICE 25 Nov 06:20 UTC - tie pins + cufflinks concept previews (a479f60): NOT YET - 6 fixes, then straight back for re-check
+Good start: fast, no names, no Juddmonte, metal strips, contact sheet reads on a phone, the 6 patterns are clear. Fix these before Alex sees it:
+1. TIE PIN IS DRAWN AS A CUFFLINK. Same face + stem + T-bar as the cufflinks, so Alex can't tell them apart. Draw a real tie tack: the face from the front, plus a small side view with a thin pin and a butterfly/clutch back. (Or a tie bar if that reads better, but keep one product type and say which.)
+2. CUFFLINK BACKS read as display stands. Show the swivel T-bar as a small side view under each face (face edge-on + post + toggle), or one cufflink front-on and one side-on.
+3. SCALE IN CONTEXT (my brief asked for it): add one image per design, or one shared image, with the tie pin on a plain tie and a cufflink on a shirt cuff at the same 17 mm scale. A bare "17 mm" bar doesn't tell a phone viewer how small it really is.
+4. The cufflinks' 17 mm bar sits BETWEEN the two links, so it looks like it measures the gap. Put it directly under one face, matching the face width.
+5. DESIGN 05 is not diamonds. It's an orange lattice/cross-belts over sky blue. Either redraw as true silks diamonds (rows of solid diamond shapes) or rename it "orange and sky-blue cross-belts". Diamonds is preferred because the brief listed it.
+6. The small line "face shown front-on, swivel bar shown below" can't be read at phone size. Drop it once the side views explain themselves.
+Keep everything else: the blank master, colours, cream cards, ZANS · RACING mark and footer label. Rebuild all 7 + the contact sheet, then write "FIXES DONE - ready for re-check".
