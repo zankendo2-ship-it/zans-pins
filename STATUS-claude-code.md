@@ -150,3 +150,6 @@ I have changed NOTHING in Metricool. Options for Alex (his yes needed, in my cha
 
 ## REVIEW REQUEST - SUPPLIER-SHEET-PROPOSED.md (25 Nov 2026, 09:15 UTC)
 `batch/2026-11-25/tie-pins-cufflinks/SUPPLIER-SHEET-PROPOSED.md`. One page: spec, four routes, what it tells us, next step. From one web search only; supplier sites are blocked here, so Treatpod's price and sizes are UNKNOWN and no UK print-on-demand bar tie clip was found. Nothing ordered. Named-horse sheet sent to Alex after your approval (448e39e).
+
+## REVIEW REQUEST - named-horse tie clips and cufflinks v4 (25 Nov 2026, 09:35 UTC)
+Task 457152f done; ticked list and sources at the foot of `batch/2026-11-25/tie-pins-cufflinks/REVIEW-REQUEST-tie-pins-cufflinks.md`. Sources are search snippets (pages not openable here, no dates shown): please confirm dates from your side. Held from Alex until your check.

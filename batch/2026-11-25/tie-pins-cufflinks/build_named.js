@@ -12,7 +12,7 @@ const sq = { // square insert, 100 x 100
   diamonds: (a, b) => `<rect width="100" height="100" fill="${a}"/>` + [0, 1, 2, 3, 4].flatMap(r => [0, 1, 2, 3, 4].map(c => [c * 25 + (r % 2 ? 12.5 : 0), r * 25])).map(([x, y]) => `<path d="M${x} ${y - 11} L${x + 9} ${y} L${x} ${y + 11} L${x - 9} ${y} Z" fill="${b}"/>`).join(''),
   quartered: (a, b) => `<rect width="100" height="100" fill="${a}"/><rect width="50" height="50" fill="${b}"/><rect x="50" y="50" width="50" height="50" fill="${b}"/>`,
   bigspots: (a, b) => `<rect width="100" height="100" fill="${a}"/>` + [[25, 25], [75, 25], [50, 50], [25, 75], [75, 75], [0, 50], [100, 50], [50, 0], [50, 100]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="14" fill="${b}"/>`).join(''),
-  cap: (a, b) => `<rect width="100" height="100" fill="${a}"/><path d="M22 46 A28 28 0 0 1 78 46 Z" fill="${b}"/><path d="M74 40 L96 46 L74 46 Z" fill="${b}"/><rect x="22" y="44" width="56" height="5" fill="${b}"/>`,
+  cap: (a, b) => `<rect width="100" height="100" fill="${a}"/><g fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"><path d="M33 40 L10 62 L21 73 L36 58 Z"/><path d="M67 40 L90 62 L79 73 L64 58 Z"/><path d="M33 40 Q50 50 67 40 L70 94 L30 94 Z"/></g><path d="M36 30 A14 14 0 0 1 64 30 Z" fill="#111"/><path d="M62 25 L76 30 L62 30 Z" fill="#111"/>`,
   blank: () => `<rect width="100" height="100" fill="#f4f4f2"/>` };
 const bar = { // long bar face, 900 x 100: the same silks idea scaled to read on a slim bar
   stripes: (a, b) => `<rect width="900" height="100" fill="${a}"/><rect y="20" width="900" height="20" fill="${b}"/><rect y="60" width="900" height="20" fill="${b}"/>`,
@@ -22,12 +22,12 @@ const bar = { // long bar face, 900 x 100: the same silks idea scaled to read on
   diamonds: (a, b) => `<rect width="900" height="100" fill="${a}"/>` + [...Array(13)].map((_, i) => `<path d="M${i * 75} 12 L${i * 75 + 28} 50 L${i * 75} 88 L${i * 75 - 28} 50 Z" fill="${b}"/>`).join(''),
   quartered: (a, b) => `<rect width="900" height="100" fill="${a}"/><rect width="450" height="50" fill="${b}"/><rect x="450" y="50" width="450" height="50" fill="${b}"/>`,
   bigspots: (a, b) => `<rect width="900" height="100" fill="${a}"/>` + [...Array(10)].map((_, i) => `<circle cx="${45 + i * 90}" cy="50" r="27" fill="${b}"/>`).join(''),
-  cap: (a, b) => `<rect width="900" height="100" fill="${a}"/><path d="M40 68 A52 52 0 0 1 144 68 Z" fill="${b}"/><path d="M138 54 L186 68 L138 68 Z" fill="${b}"/><rect x="40" y="64" width="104" height="8" fill="${b}"/>`,
+  cap: (a, b) => `<rect width="900" height="100" fill="${a}"/>` + [...Array(7)].map((_, i) => `<g transform="translate(${25 + i * 125} 0)"><g fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round"><path d="M33 40 L10 62 L21 73 L36 58 Z"/><path d="M67 40 L90 62 L79 73 L64 58 Z"/><path d="M33 40 Q50 50 67 40 L70 94 L30 94 Z"/></g><path d="M36 30 A14 14 0 0 1 64 30 Z" fill="#111"/><path d="M62 25 L76 30 L62 30 Z" fill="#111"/></g>`).join(''),
   blank: () => `<rect width="900" height="100" fill="#f4f4f2"/>` };
-const D = [['L', 'bigspots', 'Lossiemouth colours: pink with green spots', '#F3B5C9', '#6CC24A'], ['F', 'hoops', 'Fact To File colours: green and gold hoops', '#0E8A4B', '#F2C40F'], ['C', 'cap', 'Constitution Hill colours: white with a black cap', '#FFFFFF', '#111111']];
+const D = [['L', 'bigspots', 'Lossiemouth colours: pink with green spots', '#F3B5C9', '#6CC24A'], ['F', 'hoops', 'Fact To File colours: green and gold hoops', '#0E8A4B', '#F2C40F'], ['C', 'cap', 'Constitution Hill colours: white silks, black cap', '#FFFFFF', '#111111']];
 let uid = 0; const defs = id => `<linearGradient id="${id}m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${CH[2]}"/><stop offset=".3" stop-color="${CH[1]}"/><stop offset=".62" stop-color="${CH[0]}"/><stop offset="1" stop-color="${CH[3]}"/></linearGradient>
 <linearGradient id="${id}v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${CH[0]}"/><stop offset=".35" stop-color="${CH[2]}"/><stop offset=".65" stop-color="${CH[1]}"/><stop offset="1" stop-color="${CH[0]}"/></linearGradient>
-<linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset=".4" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>
+<linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset=".4" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#000" stop-opacity=".06"/></linearGradient>
 <filter id="${id}s" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-opacity=".38"/></filter>`;
 // square cufflink, front-on. s = side in px
 function cuffFront(s, kind, a, b) { const id = 'q' + (uid++), r = s * .075;
@@ -47,7 +47,7 @@ function cuff34(s, kind, a, b) { const id = 'q' + (uid++), r = s * .075, kx = .8
 function clipFront(L, H, kind, a, b) { const id = 'b' + (uid++), r = H * .1;
   return `<svg width="${L + 40}" height="${H + 50}" viewBox="-20 -15 ${L + 40} ${H + 50}"><defs>${defs(id)}<clipPath id="${id}c"><rect x="${r}" y="${r}" width="${L - 2 * r}" height="${H - 2 * r}" rx="${H * .08}"/></clipPath></defs>
 <rect width="${L}" height="${H}" rx="${H * .16}" fill="url(#${id}v)" filter="url(#${id}s)"/><g clip-path="url(#${id}c)"><g transform="translate(${r} ${r}) scale(${(L - 2 * r) / 900} ${(H - 2 * r) / 100})">${bar[kind](a, b)}</g>
-<rect width="${L}" height="${H * .45}" fill="#fff" opacity=".2"/></g>
+<rect width="${L}" height="${H * .45}" fill="#fff" opacity=".06"/></g>
 <rect x="${r}" y="${r}" width="${L - 2 * r}" height="${H - 2 * r}" rx="${H * .08}" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="2"/></svg>`; }
 // bar tie clip at a 3/4 angle with the back arm and the spring hinge at the left end
 function clip34(L, H, kind, a, b) { const id = 'b' + (uid++), r = H * .1, kx = .86, sk = .16, w = L * kx, rise = w * sk, off = H * .55;
@@ -55,7 +55,7 @@ function clip34(L, H, kind, a, b) { const id = 'b' + (uid++), r = H * .1, kx = .
 <g filter="url(#${id}s)"><g transform="translate(${off} ${-off}) matrix(${kx} ${-kx * sk} 0 1 0 0)"><rect x="${L * .04}" y="${H * .2}" width="${L * .9}" height="${H * .6}" rx="${H * .2}" fill="url(#${id}v)" stroke="${CH[0]}" stroke-width="2"/></g>
 <path d="M0 0 L${off} ${-off} L${off} ${H - off} L0 ${H} Z" fill="url(#${id}m)" stroke="${CH[0]}" stroke-width="2"/><ellipse cx="${off * .5}" cy="${H * .5 - off * .5}" rx="${H * .2}" ry="${H * .26}" fill="${CH[0]}"/><ellipse cx="${off * .5}" cy="${H * .5 - off * .5}" rx="${H * .09}" ry="${H * .12}" fill="${CH[2]}"/>
 <path d="M0 0 L${w} ${-rise} L${w + off * .25} ${-rise - off * .25} L${off * .25} ${-off * .25} Z" fill="${CH[2]}"/>
-<g transform="matrix(${kx} ${-kx * sk} 0 1 0 0)"><rect width="${L}" height="${H}" rx="${H * .16}" fill="url(#${id}v)"/><g clip-path="url(#${id}c)"><g transform="translate(${r} ${r}) scale(${(L - 2 * r) / 900} ${(H - 2 * r) / 100})">${bar[kind](a, b)}</g><rect width="${L}" height="${H * .45}" fill="#fff" opacity=".2"/></g>
+<g transform="matrix(${kx} ${-kx * sk} 0 1 0 0)"><rect width="${L}" height="${H}" rx="${H * .16}" fill="url(#${id}v)"/><g clip-path="url(#${id}c)"><g transform="translate(${r} ${r}) scale(${(L - 2 * r) / 900} ${(H - 2 * r) / 100})">${bar[kind](a, b)}</g><rect width="${L}" height="${H * .45}" fill="#fff" opacity=".06"/></g>
 <rect x="${r}" y="${r}" width="${L - 2 * r}" height="${H - 2 * r}" rx="${H * .08}" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="2"/></g></g></svg>`; }
 const head = (t, sub) => `<html><head><style>${font('Jost', 600, 'jost-600.woff2')}${font('Jost', 700, 'jost-700.woff2')}*{box-sizing:border-box;margin:0}
 body{width:2000px;height:1500px;position:relative;overflow:hidden;font-family:Jost;background:radial-gradient(ellipse at 50% 40%,#24684a,#143524)}
@@ -90,4 +90,4 @@ function worn(d) { const [, kind, , a, b] = d, S = 11;
 <div style="position:absolute;left:${300 + 68 * S / 1.6 - 6}px;top:${14 * S}px;width:260px;height:${34 * S}px;background:linear-gradient(180deg,#e7c2a0,#cfa27c);border-radius:0 90px 90px 0"></div></div><div class="cap">17 mm cufflink on a shirt cuff</div></div>` + foot('CONCEPT PREVIEW · TIE AND CUFF DRAWN TO THE SAME SCALE · NOT A PRODUCT PHOTO'); }
 (async () => { const b = await chromium.launch(); for (const d of D) { const slug = d[2].toLowerCase().replace(/ colours:.*/, '-colours').replace(/[^a-z]+/g, '-').replace(/-$/, '');
   for (const [fn, tag] of [[page, 'CONCEPT'], [worn, 'WORN-SCALE']]) { const p = await b.newPage({ viewport: { width: 2000, height: 1500 } }); await p.setContent(fn(d)); await p.waitForTimeout(250);
-    const out = `ZANS-silks-bar-tie-clip-square-cufflinks-${d[0]}-${slug}-${tag}-SHOWCASE-DRAFT-v3.jpg`; await p.screenshot({ path: path.join(__dirname, out), type: 'jpeg', quality: 93 }); await p.close(); console.log(out); } } await b.close(); })();
+    const out = `ZANS-silks-bar-tie-clip-square-cufflinks-${d[0]}-${slug}-${tag}-SHOWCASE-DRAFT-v4.jpg`; await p.screenshot({ path: path.join(__dirname, out), type: 'jpeg', quality: 93 }); await p.close(); console.log(out); } } await b.close(); })();

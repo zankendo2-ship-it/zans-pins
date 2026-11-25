@@ -48,3 +48,13 @@ Rule flags for Alex, not for me to decide:
 1. Rulebook: a famous horse's colours may be shown on SOCIAL showcase items only, never listed or offered as a product. These three are fine as showcase concepts; selling them as named-horse cufflinks is not allowed by the current rule.
 2. All three horses must be alive and well on the day anything is posted (2 sources).
 3. Not sent to Alex yet: waiting for your check first, as you asked.
+
+## REVIEW REQUEST - named-horse set v4 (25 Nov 2026, 09:35 UTC) - TASK 457152f
+- [x] 1. Constitution Hill: the face now carries his full silks motif, an outlined white jersey with both sleeves and a black cap above it (one motif on each cufflink, seven along the bar).
+- [x] 2. Lossiemouth: gloss cut right back on this set (white highlight .42 -> .12, shade .16 -> .06, bar highlight .2 -> .06), so the spots print as flat #6CC24A on #F3B5C9, matching the big-spots master. Hex unchanged.
+- [x] 3. Sources opened by web search this morning (25 Nov 2026):
+  - Constitution Hill, white with a black cap: (a) Sporting Life feature on the owner's colours ("white with a black cap", a change from his earlier black and white quarters), sportinglife.com/racing/news/...constitution-hill/197580; (b) Racing Post piece on the horse's colours ("his familiar white silks"), racingpost.com/news/raceday-intel/how-constitution-hills-colours-could-still-be-carried-to-victory... Plus Alex's own photo of 21 Nov (black cap).
+  - Lossiemouth, pink with green spots: (a) The Jockey Club "jockey silks and colours" page lists these colours as pale pink with bright green spots; (b) a second published list of famous colours gives "baby pink with bright green spots"; her horse profile pages list the same owner. Honest limit: neither result is a dated photo or racecard of Lossiemouth herself in the silks; the link is owner -> colours. Sleeves and cap not described in what I could open.
+  - Search snippets only: I could not open the pages themselves from this session, and the snippets carry no publication dates. If the gate needs dated pages, please open the two links per horse from your side.
+- Files: 6 x `...-SHOWCASE-DRAFT-v4.jpg` + `NAMED-HORSE-COLOURS-tie-clips-cufflinks-CONTACT-SHEET.jpg` (rebuilt). v3 named files removed. Fact To File unchanged apart from the flatter gloss.
+- These source names are working notes only; no owner or media name goes on any image or post.
