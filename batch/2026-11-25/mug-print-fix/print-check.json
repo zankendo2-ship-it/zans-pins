@@ -1,0 +1,27 @@
+{
+ "file_px": [
+  4950,
+  2310
+ ],
+ "print_area_mm": [
+  209.5,
+  97.8
+ ],
+ "effective_dpi": 600,
+ "name_cap_mm": 7.5,
+ "logo_text_cap_mm": 3.3,
+ "white_line_mm": 2,
+ "plate_border_mm": 1.6,
+ "plate_from_wrap_end_mm": 8.3,
+ "thinnest_line_mm": 1.6,
+ "colours": {
+  "cap_band": "#C8102E",
+  "hoops": [
+   "#F5D130",
+   "#00843D"
+  ],
+  "plate": "#FBF7F0",
+  "name": "#00843D",
+  "logo_text": "#1C1C1C"
+ }
+}

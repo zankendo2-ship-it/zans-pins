@@ -162,3 +162,6 @@ Task f785c41: 4 images + `CONSTITUTION-HILL-tie-clip-options-A-and-B-SHEET.jpg` 
 
 ## REVIEW REQUEST - round bauble print files re-made (25 Nov 2026, 17:45 UTC)
 Task 135f3d5 done in zans-pins only: `batch/2026-11-25/bauble-print-fix/` (4 print files, 4 flat real-size proofs, contact sheet, `REVIEW-REQUEST-bauble-print-fix.md`, `print-check.json`). All four pass the script's size and safe-zone check. Two things to know: (1) zans-pins had no printFile code, so this is a new generator; the live website designer still makes the old layout until its own code is changed; (2) `/mnt/project-files/` is not mounted here, so no copy was made. No order, no spend. Held from Alex until your check.
+
+## REVIEW REQUEST - FACT TO FILE mug print file re-made + preflight for baubles (25 Nov 2026, 18:15 UTC)
+Task 7b01963: `batch/2026-11-25/mug-print-fix/` (print file 4950x2310, flat proof, `REVIEW-REQUEST-mug-print-fix.md` with the 5-point preflight table, `print-check.json`). Bauble preflight added at the foot of the same file; sRGB embedded in every bauble and mug PNG. One open point on the baubles: my dark outlines are 0.35 to 0.7 mm, under the new 1.5 mm line rule: thicken or remove? Not copied to /mnt/project-files (not mounted here). No order, no spend. Held from Alex until your check.
