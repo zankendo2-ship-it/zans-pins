@@ -22,7 +22,7 @@ Comment hook (card, voice, caption): **Whose name goes on your tree?**
 | Time | Picture | Words on screen | Voice (also the caption) |
 |---|---|---|---|
 | 0-2.5s | The silks mug slides into shot across an oak table, steam curling up, tree lights behind | THE RACING FAN WHO HAS EVERYTHING | "Who's the hardest racing fan to buy for?" |
-| 2.5-5s | Master mug turns a full circle: hoops, the name panel, the coloured handle and inside | THEIR COLOURS. THEIR NAME. | "Tell us in the comments! This is their colours and their name, on a mug." |
+| 2.5-5s | Master mug turns a full circle: hoops, the name panel, the coloured handle and inside | THEIR COLOURS. THEIR NAME. | "Tell us in the comments! Their colours, their name, on a mug." |
 | 5-8s | New shot, a different place: a silks bauble hanging on the tree on its own | ALSO: A SILKS BAUBLE (SOLD SEPARATELY) | "There's a silks bauble too, sold on its own." |
 | 8-11s | Snow end card (held 3 s) | SEARCH ZANS RACING ON ETSY · Who's hardest to buy for? | "Wishing you a Merry Christmas!" |
 
