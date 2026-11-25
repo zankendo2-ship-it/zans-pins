@@ -1,0 +1,7 @@
+loussiemoo-approved-colours: name panel centre +0.0 mm across / +0.0 mm down; panel corners 12.9 mm inside edge; ZANS mark corners 13.2 mm inside edge
+loussiemoo-deeper-colours: name panel centre +0.0 mm across / +0.0 mm down; panel corners 12.9 mm inside edge; ZANS mark corners 13.2 mm inside edge
+rexs-romance-approved-colours: name panel centre +0.0 mm across / +0.0 mm down; panel corners 10.9 mm inside edge; ZANS mark corners 13.2 mm inside edge
+rexs-romance-deeper-colours: name panel centre +0.0 mm across / +0.0 mm down; panel corners 10.9 mm inside edge; ZANS mark corners 13.2 mm inside edge
+zoo-olympios-approved-colours: name panel centre +0.0 mm across / +0.0 mm down; panel corners 10.9 mm inside edge; ZANS mark corners 13.2 mm inside edge
+zoo-olympios-deeper-colours: name panel centre +0.0 mm across / +0.0 mm down; panel corners 10.9 mm inside edge; ZANS mark corners 13.2 mm inside edge
+Lettering contrast on cream: Loussiemoo #315721 7.4:1, deeper #24570F 7.6:1, Rexs #1B4B98 7.4:1, Zoo #1C1C1C 15.1:1
