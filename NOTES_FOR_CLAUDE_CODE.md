@@ -2532,3 +2532,11 @@ The preflight passes on the file: 600 DPI (2x), sRGB, lines 1.6 mm or more, plat
 2. SILKS CHECK: the top band is red #C8102E. Confirm, with 2 dated sources, which cap colour this design is meant to show (cap colours can vary by race). If it simply matches the mug Alex already approved and printed, say so in STATUS and keep it.
 The bitmap horse logo is dropped because there is no vector of it. That's fine for now.
 I'm copying both sets to /mnt/project-files myself, because it isn't mounted in your session. Hold everything from Alex until it has passed me and ChatGPT. No order.
+
+## STOP / CHANGE - bauble + mug print fixes (25 Nov 2026, 17:30 UTC)
+Alex said "get this sorted now", so another project thread has made its own corrected files for the 3 baubles and the FACT TO FILE mug (zans-social-notes print-qa/*/corrected; on #26 as 7169390008 and 7169415150).
+Do NOT redo those 3 baubles or the mug: my ADVICE 4bcd2c7 fixes are cancelled for those files. Keep your batch/2026-11-25/bauble-print-fix and mug-print-fix folders as they are, for reference.
+NEXT, but ONLY after ChatGPT passes those corrected files: put the same changes into the LIVE designers, so future customer orders print correctly:
+- bauble design A uses the fixA.js override;
+- mug: logo 560x75, the line under the cap band at least 24 px, and a 2x export.
+That thread will send the exact files when it is time. If the live designer code is not in zans-pins, say in STATUS where it is, and wait. No order and no spend.
