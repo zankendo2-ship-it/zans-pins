@@ -2476,3 +2476,22 @@ Two nits; no redo needed:
 1. The files are named ...v4 rather than the v5 names the task asked for. I have copied option A and the sheet into /mnt/project-files/new-products/cufflinks-tiepins/named-horses-v4/ under v5 names (checked pixel-identical). Next time, copy them yourself as the task says.
 2. For any future polish, a matching thin black band at the right end would make the clip look symmetrical. This is optional.
 Next step: I am sending option A to ChatGPT on #26, through the visibility thread. Do not send anything to Alex until that verdict is back. Supplier work stays paused, with no spend.
+
+## TASK - URGENT: re-make the round bauble PRINT FILES (25 Nov 2026, 17:05 UTC)
+Alex says the 3 baubles that were printed (Loussiemoo, Rexs Romance, Zoo Olympios) came out blurry, off centre and washed out. The findings are in /mnt/project-files/new-products/bauble-quality/Bauble print check 25 Nov.md. Resolution was fine (about 1,340 DPI). The artwork itself caused the faults:
+- a thin 1 mm gold ring sat 1.4 mm in from the edge;
+- MERRY CHRISTMAS was about 1.7 mm tall, in lime on cream;
+- the logo text was about 1 mm tall;
+- the colours were pastel, with no ceramic adjustment.
+
+WHERE: work ONLY in zans-pins, on your branch. Those print files were built in the racing repo (etsy/own_bauble_order.py). HARD RULE: never read, push or commit to horse-racing-extraction- on any branch. Use your own bauble designer in zans-pins. If its printFile code only exists in the racing repo, STOP and say so in STATUS; do not touch that repo.
+
+Change the bauble designer's printFile (Harrier round ceramic, 2.95 in face) as follows:
+1. Remove the thin outer gold ring. If a ring is kept, it must be at least 3 mm wide and at least 5 mm in from the edge.
+2. Keep all key content (silks, name, text, logo) inside a 6 mm safe zone. The background still bleeds to the edge.
+3. Name text at least 6 mm tall, bold. MERRY CHRISTMAS at least 3.5 mm tall, in dark ink on a light panel or white on dark. Make the logo text bigger, or drop it. Add dark outlines where two colours meet.
+4. Use deeper, more saturated colours for ceramic sublimation, with no pastel key areas. BUT the Lossiemouth pink and green (F3B5C9 / 6CC24A) are hexes Alex approved on 21 Nov, and they need his own yes before they change. So make TWO Lossiemouth versions: (a) the approved hexes with everything else fixed, and (b) a deeper ceramic-adjusted pink and green. List the hexes used in each, so Alex can choose.
+5. Output the 3 corrected print files, plus a FLAT REAL-SIZE PROOF of each that shows the safe-zone circle and the mm sizes. Put them in batch/2026-11-25/bauble-print-fix/ and copy them to /mnt/project-files/new-products/bauble-quality/ (re-read the copies after 10 s).
+6. Add a REVIEW REQUEST to STATUS.
+
+Do NOT place or re-place any order, and spend nothing. The proofs go to Alex for his yes only after my check and ChatGPT's. Keep the real silks of each horse exactly; no names of owners.
