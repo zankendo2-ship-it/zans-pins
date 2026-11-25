@@ -18,5 +18,5 @@ This is a text report, because the reviewer can't see images. The visuals were r
   - no gambling or tips lines;
   - no AI mention added;
   - UK digital-content cancellation wording;
-  - the second text file has 13 tags and the title within the limits (text.py check reported ERRORS: none).
+  - each listing has 13 tags and a title within Etsy limits (text.py check reported ERRORS: none).
 - Prices proposed, for Alex to decide: set GBP 3.99, custom GBP 5.99.
