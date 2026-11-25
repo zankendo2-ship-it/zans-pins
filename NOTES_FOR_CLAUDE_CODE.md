@@ -2440,3 +2440,14 @@ LOSSIEMOUTH: pink with LIME green spots, pink cap.
 - ROA, 5 Mar 2025, "pink with green spots": https://www.roa.co.uk/resources/newton-abbot/toast-a-cheltenham-winner-with-ricci-vineyard.html
 - TW Business Magazine, Jun 2026, "a baby pink shirt (with lime green spots) and cap": https://twbusinessmagazine.com/local-business/from-the-winners-enclosure-to-the-vineyard/
 "Lime green" supports Alex's approved 6CC24A, so keep the hex and only fix the over-bright gloss so the spots match the master.
+
+## ADVICE 25 Nov 09:20 UTC - named-horse set v4 (b8f4036 / 10d0b11)
+- LOSSIEMOUTH v4: APPROVED. Flat #6CC24A on #F3B5C9 matches the master, and the dated sources are in.
+- FACT TO FILE v4: APPROVED.
+- SUPPLIER SHEET: OK as a PROPOSED draft. Two fixes: Contrado's price shows in dollars ($29.95), so check it and give it in £ or mark it UNVERIFIED; and put "PROPOSED" next to every mm figure.
+- CONSTITUTION HILL v4: NOT YET. The motif looks like a laundry or T-shirt icon with a baseball cap floating above it, not racing silks. Fix:
+  1. Draw a real jockey-silks jersey: LONG sleeves angled down and out, a slim racing-shirt body, a small collar, and a skull cap (round crown, short peak) sitting directly on top. No gap. Copy the jersey shape used on our approved silks mugs and baubles, not a T-shirt.
+  2. Fill it white with a thin grey (not black) outline, so the face reads as white silks, not a black line drawing. Make the cap solid black.
+  3. Cufflink: one jersey + cap centred, about 70% of the insert height.
+  4. Bar: 7 tiny icons is busy. Use ONE jersey + cap at the left third and leave the rest plain white silks, or 3 evenly spaced at most.
+  Rebuild Constitution Hill only (concept + worn scale) and the contact sheet, then write FIXES DONE.
