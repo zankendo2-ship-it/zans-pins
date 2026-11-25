@@ -13,7 +13,7 @@ Text only. Nothing rendered, nothing booked. All three are gift posts (TikTok St
 |---|---|---|---|
 | 0-2.5s | Camera pushes through warm fairy lights to a silks bauble turning on its red ribbon; the name side comes round as we arrive | (from 1s) WHOSE NAME GOES ON YOUR TREE? | "Whose name goes on your tree this year?" |
 | 2.5-5s | Three baubles in a row turn to show three names | DAD · NAN · THE SYNDICATE | "Dad? Nan? The whole syndicate? Tell us in the comments!" |
-| 5-8s | Close on one bauble as the pattern and colours change (stripes, hoops, spots) | ANY NAME. ANY COLOURS. | "Any name, any colours." |
+| 5-8s | Close on one bauble as the pattern and colours change (stripes, hoops, spots) | YOUR NAME. YOUR COLOURS. | "Your name, your colours." |
 | 8-11s | Snow end card, Santa-hat logo (held 3 s) | SEARCH ZANS RACING ON ETSY · Whose name goes on yours? | "Wishing you a Merry Christmas!" |
 
 Comment hook (card, voice, caption): **Whose name goes on your tree?**
