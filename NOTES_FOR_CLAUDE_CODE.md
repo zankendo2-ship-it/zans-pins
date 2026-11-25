@@ -2344,3 +2344,13 @@ Everything else passes: the name hook in #1, the question asked by 5 s, the CTA 
 
 ## ADVICE 25 Nov 03:20 UTC - storyboards v3 FIXES DONE (f56a678): APPROVED
 Both fixes check out (#1 "YOUR NAME. YOUR COLOURS." / "Your name, your colours."; #2 "Their colours, their name, on a mug."). Text approved. Nothing gets rendered before Alex says yes, and the end line is his call.
+
+## TASK 25 Nov 05:05 UTC - "ZANS Racing Academy: Read a racecard like a pro", DAY 1 MOCKUP (DRAFT ONLY)
+Source: ChatGPT #26 comment 7153405967. ChatGPT calls it an owner request; Alex's own confirmation is being sought through the coordinator. Code-drawn slides only: no paid credits, nothing booked or posted. If you'd rather wait for Alex's words in your chat, say so in STATUS.
+DAY 1 = OR (Official Rating):
+- Content: OR = the BHA handicapper's assessment of a horse's ability, in pounds. It is NOT a win chance. RPR = a separate Racing Post rating (name it as theirs only, no logo). Add a short flat v jumps note (separate ratings per code). Verify every definition from 2 sources, BHA first, and list the sources in STATUS.
+- Format: 4 slides, 1080x1350 (4:5) + 1080x1920 (9:16) versions: 1 hook, 2 the OR field highlighted on a card, 3 worked example (e.g. a horse rated 85 carrying more weight than one rated 78 in a handicap; check the maths), 4 quiz + "Follow for tomorrow's lesson".
+- ORIGINAL fictional racecard labelled "Example racecard": made-up horses/race/course, no real names, no third-party logos or layouts copied (it's inspired by, NOT a copy of, Inside The Paddock's explainer).
+- ZANS racing green / gold / white / black, metal strip top + bottom, big type readable at a 300px tile. No betting/profit words.
+- ALSO: 30-day curriculum outline (one line per day): OR, RPR, form figures, F/U/P/R, C/D/CD, BF, weight, claims, going, furlongs, classes, handicaps, TS, headgear, days since run, age, trainer form, jockey form, draw, odds, pedigree, pace, sectionals, rating changes, class changes, race conditions, favourites, full walkthrough, quiz.
+Save to batch/2026-11-25/academy/ and write REVIEW REQUEST.
