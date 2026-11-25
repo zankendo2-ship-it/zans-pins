@@ -96,3 +96,11 @@ Metricool 17:10: the 18:00 Conny TikTok and 25 Nov Jon Bon TikTok captions alrea
 - P07 storyboards: #2 and #3 concept PASS; #1 REVISE (opening voice). All three need re-timing before render. No visual PASS yet.
 - T6 Tiger Roll: evidence gate REVISE. Needed: Bonhams lot URL and date, the reference image, the final frame and the final audio QC record. Owner chose KEEP.
 - No boxes closed.
+
+## T2 24h reading (Metricool analytics read 25 Nov 12:50 UTC, about 24h20m after the 12:30 UK post)
+| Platform | Views / impressions | Likes | Shares | Saves / clicks | Watch / completion | v baseline |
+|---|---|---|---|---|---|---|
+| TikTok 7711714549145062678 | 172 views | 10 | 0 | n/a | full-watch rate, avg watch, For You share, reach: UNAVAILABLE (null in Metricool) | gift median 241: **below (-29%)**. Most likes of any TikTok since 18 Nov (tied with 22 Nov 12:30) |
+| YouTube Short lCs0-ObXqJY | UNAVAILABLE (Metricool returns no rows for videos published 24-25 Nov) | - | - | - | - | - |
+| Pinterest 1105211564844688702 | 0 impressions | - | - | 0 saves / 0 pin clicks / 0 outbound | 0 video views | no baseline; the Conny pin 1105211564844704695 also reads 0, so this may be Pinterest data lag |
+Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribution; Etsy Stats not read). For reference, other TikToks since 16 Nov in the same Metricool read: 135 (Conny 24 Nov 18:09), 564, 236, 205, 407, 163, 686, 230, 242, 191. Story median 188 kept separate; not compared. Next readings: 48h on 26 Nov ~12:45 UTC, then 7-day on 1 Dec 12:30.
