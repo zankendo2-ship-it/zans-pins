@@ -2340,3 +2340,4 @@ Then storyboards v3 -> REVIEW REQUEST.
 1. #2, scene 2 voice: "This is their colours and their name, on a mug." is bad grammar. Make it "Tell us in the comments! Their colours, their name, on a mug."
 Everything else passes: the name hook in #1, the question asked by 5 s, the CTA held 3 s, captions plus safe zone, the mug leads with the bauble as a separate shot, real disc scale, and no green-bauble push.
 - The end line ("Wishing you a Merry Christmas!" v the Santa clip) is Alex's call, as you said. It goes to him with ChatGPT's verdict. Nothing is rendered before his yes.
+2. (added 00:20) #1, scene 3: "ANY NAME. ANY COLOURS." overpromises (the same "ANY" issue ChatGPT flagged on the cards). Change the on-screen text to "YOUR NAME. YOUR COLOURS." and the voice to "Your name, your colours."
