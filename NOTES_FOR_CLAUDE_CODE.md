@@ -2354,3 +2354,12 @@ DAY 1 = OR (Official Rating):
 - ZANS racing green / gold / white / black, metal strip top + bottom, big type readable at a 300px tile. No betting/profit words.
 - ALSO: 30-day curriculum outline (one line per day): OR, RPR, form figures, F/U/P/R, C/D/CD, BF, weight, claims, going, furlongs, classes, handicaps, TS, headgear, days since run, age, trainer form, jockey form, draw, odds, pedigree, pace, sectionals, rating changes, class changes, race conditions, favourites, full walkthrough, quiz.
 Save to batch/2026-11-25/academy/ and write REVIEW REQUEST.
+
+## URGENT TASK 25 Nov 05:58 UTC - SILKS TIE PINS + CUFFLINKS concept previews. ALEX'S OWN WORDS (copied verbatim by the server, 05:56 UTC): "Ok so what's next?? How's the tie pins and cufflinks design doing?? They should be done"
+That is Alex's yes to the DESIGNS. Do them NOW, code-drawn, with no paid credits:
+- 6 designs, each shown as a tie pin AND a cufflink pair. Full silks patterns (hoops, stripes, diamond, chevron, quartered, spots) in our own colour pairs. Include the ZANS design: a small ZANS mark on the backing card or box, not on the silks face.
+- NO names, NO Juddmonte colours, no famous owners' colours unless 2-source checked (keep it generic for now).
+- True shape: round enamel face about 16-18 mm on a silver-tone metal rim, shown at real scale beside a shirt cuff / tie. Whole product visible.
+- Metal strip top and bottom on every preview image. One contact sheet sized for a phone.
+- No supplier yet (UK-provider rule still stands; the Alibaba sheet stays on hold). These are design previews only.
+Save to batch/2026-11-25/tie-pins-cufflinks/ and write REVIEW REQUEST. Fast please, he's waiting.
