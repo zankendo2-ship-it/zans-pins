@@ -1,5 +1,6 @@
 """Dry-run tests: no network, no API keys. Run: python -m pytest -q orchestrator"""
 import json
+import urllib.error
 import pytest
 
 import orchestrator.orchestrate as o
@@ -525,3 +526,35 @@ def test_request_body_is_exactly_extras_plus_model_and_prompt(monkeypatch, capsy
     assert body["thinking"] == {"type": "between_tools"} and body["max_tokens"] == o.MAX_OUTPUT_TOKENS
     assert set(body) == {"model", "max_tokens", "thinking", "output_config", "messages"}
     assert "\x1b" not in capsys.readouterr().out          # stop metadata sanitized before logging
+
+
+def _http_error(code, body):
+    import io
+    return urllib.error.HTTPError("https://api.openai.com/v1/chat/completions", code, "Bad Request", {}, io.BytesIO(body))
+
+
+def test_http_error_reports_status_and_error_fields_only(monkeypatch, capsys):
+    body = json.dumps({"error": {"message": "SECRET-ish long text sk-abc", "type": "invalid_request_error",
+                                 "code": "unsupported_parameter", "param": "response_format"}}).encode()
+
+    def boom(u, h, b):
+        raise _http_error(400, body)
+    monkeypatch.setattr(o, "_post", boom)
+    good = lambda e, t: '{"ack":"a","verdict":"PASS","reasons":["ok"],"fixes":[]}'
+    outcome, rounds, req = o.review({"OPENAI_API_KEY": "k", "OPENAI_MODEL": "m"}, "t", [URL], [], good, o.call_openai)
+    r = rounds[0]["OpenAI"]["reasons"][0]
+    assert "HTTPError 400" in r and "code=unsupported_parameter" in r and "param=response_format" in r
+    assert "SECRET" not in r and "sk-abc" not in capsys.readouterr().out
+    assert o.http_detail(_http_error(500, b"not json")) == "HTTPError 500"
+
+
+def test_missing_stop_or_openai_refusal_fails_closed(monkeypatch):
+    good = '{"ack":"a","verdict":"PASS","reasons":["ok"],"fixes":[]}'
+    monkeypatch.setattr(o, "_post", lambda u, h, b: {"content": [{"type": "text", "text": good}]})   # no stop_reason
+    _, rounds, req = o.review({"ANTHROPIC_API_KEY": "k", "ANTHROPIC_MODEL": "m"}, "t", [URL], [], o.call_claude,
+                              lambda e, t: pytest.fail("must stop"))
+    assert rounds[0]["Claude"]["verdict"] == "BLOCKER" and "missing" in rounds[0]["Claude"]["reasons"][0]
+    monkeypatch.setattr(o, "_post", lambda u, h, b: {"choices": [{"finish_reason": "stop",
+                                                                   "message": {"content": good, "refusal": "no"}}]})
+    o.call_openai({"OPENAI_API_KEY": "k", "OPENAI_MODEL": "m"}, "x")
+    assert o.LAST_STOP["OpenAI"] == "refusal"

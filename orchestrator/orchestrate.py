@@ -374,7 +374,7 @@ def call_claude(env, text):
               {**CLAUDE_EXTRA, "model": env["ANTHROPIC_MODEL"], "messages": [{"role": "user", "content": text}]})
     out = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
     log_reply("Claude", d.get("stop_reason"), out)
-    LAST_STOP["Claude"] = d.get("stop_reason")
+    LAST_STOP["Claude"] = d.get("stop_reason") or "missing"   # missing metadata fails closed
     return out
 
 
@@ -385,8 +385,25 @@ def call_openai(env, text):
     c = d["choices"][0]
     out = c["message"].get("content") or ""
     log_reply("OpenAI", c.get("finish_reason"), out)
-    LAST_STOP["OpenAI"] = c.get("finish_reason")
+    LAST_STOP["OpenAI"] = "refusal" if c["message"].get("refusal") else (c.get("finish_reason") or "missing")
     return out
+
+
+def http_detail(e):
+    """Safe diagnostics for a failed call: exception name, HTTP status and the provider's error type/code/param
+    fields only (never the message text, headers or request), ASCII-cleaned and cut."""
+    out = type(e).__name__
+    if isinstance(e, urllib.error.HTTPError):
+        out += f" {e.code}"
+        try:
+            err = json.loads(e.read(4096) or b"{}").get("error") or {}
+        except (ValueError, OSError, AttributeError):
+            err = {}
+        if isinstance(err, dict):
+            parts = [f"{k}={err[k]}" for k in ("type", "code", "param") if isinstance(err.get(k), str) and err.get(k)]
+            if parts:
+                out += " " + " ".join(parts)
+    return clean(out, 120)
 
 
 def mock_caller(script):
@@ -440,7 +457,9 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
                 elif v == BAD and stop:
                     v = {**v, "reasons": [f"reply was not valid verdict JSON (stop reason: {clean(str(stop), 40)})"]}
             except (urllib.error.URLError, KeyError, IndexError, TypeError, ValueError, TimeoutError) as e:
-                v = {"ack": "", "verdict": "BLOCKER", "reasons": [f"{who} call failed: {type(e).__name__}"], "fixes": []}
+                detail = http_detail(e)
+                print(f"{who} call failed: {detail}")
+                v = {"ack": "", "verdict": "BLOCKER", "reasons": [f"{who} call failed: {detail}"], "fixes": []}
             row[who] = v
             if who == "Claude":
                 last_claude = v
