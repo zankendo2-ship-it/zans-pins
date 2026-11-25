@@ -445,3 +445,19 @@ def test_slot_records_reserved_amount_and_unknown_counts_as_worst():
 
 def test_shared_rules_file_loaded():
     assert "ZANS" in o.RULES and "Alex" in o.RULES
+
+
+def test_live_slot_reserves_hard_worst_and_calls_capped_by_it(monkeypatch):
+    calls, seen = [], {}
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "preflight", lambda *a, **k: 0)   # even a too-small estimate cannot shrink the reserve
+
+    def fake_review(*a, budget_usd=None, **k):
+        seen["budget"] = budget_usd
+        return "AGREED", [], 2
+    monkeypatch.setattr(o, "review", fake_review)
+    o.main(LIVE_ENV)
+    slot = [c for c in calls if c[0] == "POST"][0][2]["body"]
+    assert "usd=2.4500" in slot
+    assert seen["budget"] == o.WORST_RUN_USD == 2.45

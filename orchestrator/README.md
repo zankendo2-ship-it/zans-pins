@@ -20,7 +20,8 @@
   - **1 live (paid) run per UTC day** to start with. Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` = `1` set explicitly; empty or invalid means 0 live runs. Raising the ceiling needs a code change and a review;
   - **owner budgets:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (Alex approved `3`) and `ZANS_ORCH_MAX_USD_PER_MONTH` (Alex approved `10`). Missing, zero, negative or non-finite (`nan`, `inf`) values refuse live. Every call is priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price:
     - **before the run**, the worst case is worked out. The run is refused if that is over the per-run budget, or if it plus this month's reservations is over the monthly budget;
-    - the worst case is **reserved in the slot comment** before any paid call, so failed runs count against the month;
+    - the full hard-cap worst run (**$2.45**) is **reserved in the slot comment** before any paid call, whatever the estimate, so failed runs count against the month (at most 4 live runs fit in $10);
+    - each call is also held to that reserve (the smaller of $2.45 and the per-run budget);
     - **before every call**, the actual input so far plus this call, with the output of all 6 calls reserved, must still fit the per-run budget;
     - the hard caps put the largest possible run at **$2.45**;
   - **live only from `main`**, only with the checked models (`claude-sonnet-5-5`; `gpt-6.2-astra` or `gpt-6-luna`);
