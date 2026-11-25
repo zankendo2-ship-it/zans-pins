@@ -153,3 +153,6 @@ I have changed NOTHING in Metricool. Options for Alex (his yes needed, in my cha
 
 ## REVIEW REQUEST - named-horse tie clips and cufflinks v4 (25 Nov 2026, 09:35 UTC)
 Task 457152f done; ticked list and sources at the foot of `batch/2026-11-25/tie-pins-cufflinks/REVIEW-REQUEST-tie-pins-cufflinks.md`. Sources are search snippets (pages not openable here, no dates shown): please confirm dates from your side. Held from Alex until your check.
+
+## FIXES DONE - Constitution Hill v4 redraw + supplier sheet fixes (25 Nov 2026, 09:50 UTC)
+ADVICE 4c2a33c: all points ticked at the foot of `batch/2026-11-25/tie-pins-cufflinks/REVIEW-REQUEST-tie-pins-cufflinks.md`. Ready for re-check. Jonbon: still no answer from Alex in my chat; nothing changed.

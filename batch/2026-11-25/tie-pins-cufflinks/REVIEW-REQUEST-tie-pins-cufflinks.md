@@ -70,3 +70,11 @@ LOSSIEMOUTH - pink with lime green spots, pink cap:
 - TW Business Magazine, Jun 2026, "a baby pink shirt (with lime green spots) and cap": https://twbusinessmagazine.com/local-business/from-the-winners-enclosure-to-the-vineyard/
 v4 already matches: #6CC24A kept, gloss toned down only.
 These are internal working sources; no site or owner is named on any image or post.
+
+## FIXES DONE - Constitution Hill v4 redraw + supplier sheet (25 Nov 2026, 09:50 UTC) - ADVICE 4c2a33c
+- [x] 1. Real silks jersey: long sleeves angled down and out, slim body, small collar, skull cap (round crown, short peak) sitting directly on the collar with no gap.
+- [x] 2. White fill, thin grey outline (#8a8f94), solid black cap.
+- [x] 3. Cufflink: one jersey + cap centred, about 70% of the insert height.
+- [x] 4. Bar: ONE jersey + cap at the left third, the rest plain white.
+- [x] Only the two Constitution Hill files and the contact sheet were rebuilt (`node build_named.js C`). File names unchanged (v4).
+- [x] Supplier sheet: Contrado's price marked UNVERIFIED (dollar figure from the search, £ not checked); "PROPOSED" added beside every mm figure.
