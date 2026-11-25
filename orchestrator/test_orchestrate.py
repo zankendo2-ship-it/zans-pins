@@ -51,7 +51,12 @@ def test_mutable_or_foreign_links_refused(u):
 
 
 def test_pinned_links_accepted():
-    assert o.check_artifacts([URL, f"https://raw.githubusercontent.com/a/b/{SHA}/p/q.md"])
+    assert o.check_artifacts([URL, f"https://raw.githubusercontent.com/zankendo2-ship-it/b/{SHA}/p/q.md"])
+
+
+def test_other_owner_refused():
+    with pytest.raises(o.Stop, match="owner"):
+        o.check_artifacts([f"https://github.com/someone/b/blob/{SHA}/x.md"])
 
 
 def test_no_links_refused():
@@ -129,19 +134,22 @@ def test_main_mock_end_to_end(monkeypatch, capsys):
 
     def fake_gh(env, method, path, body=None):
         calls.append((method, path, body))
-        return [] if method == "GET" else {"id": 1}
+        if method == "GET":
+            return {"comments": 0, "body": "issue body"} if path.endswith("/26") else []
+        return {"id": 1}
     monkeypatch.setattr(o, "gh", fake_gh)
     env = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
            "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_TOKEN": "t"}
     assert o.main(env) == 0
-    assert [c[0] for c in calls] == ["GET", "POST"] and "AGREED" in calls[1][2]["body"]
+    assert [c[0] for c in calls] == ["GET", "GET", "POST"] and "AGREED" in calls[-1][2]["body"]
     out = capsys.readouterr().out
     assert "review x" not in out  # task/comment text never logged
 
 
 def test_main_skips_duplicate(monkeypatch, capsys):
     h = o.run_hash("review x", [URL])
-    monkeypatch.setattr(o, "gh", lambda *a, **k: [{"body": f"<!-- zans-orch:{h} -->"}])
+    monkeypatch.setattr(o, "gh", lambda env, m, path, b=None: {"comments": 1} if path.endswith("/26")
+                        else [{"body": f"<!-- zans-orch:{h} -->"}])
     env = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
            "GITHUB_REPOSITORY": "r/r", "GITHUB_TOKEN": "t"}
     assert o.main(env) == 0 and "SKIPPED" in capsys.readouterr().out
@@ -156,3 +164,47 @@ def test_demo_revise_then_pass_then_stop():
 
 def test_request_cap_is_six():
     assert o.MAX_REQUESTS == 6
+
+
+def test_daily_run_cap(monkeypatch, capsys):
+    today = __import__("time").strftime("%Y-%m-%d", __import__("time").gmtime())
+    old = [{"body": f"<!-- zans-orch:x{i} -->", "created_at": today + "T01:00:00Z"} for i in range(5)]
+    monkeypatch.setattr(o, "gh", lambda env, m, path, b=None: {"comments": 5} if path.endswith("/26") else old)
+    env = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "new task", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
+           "GITHUB_REPOSITORY": "r/r", "GITHUB_TOKEN": "t"}
+    assert o.main(env) == 1 and "daily run cap" in capsys.readouterr().out
+
+
+def test_day_cap_variable_can_only_lower():
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}) == o.MAX_RUNS_PER_DAY
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "2"}) == 2
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}) == o.MAX_RUNS_PER_DAY
+
+
+def test_file_size_caps():
+    big = lambda url, limit: b"x" * limit
+    with pytest.raises(o.Stop, match="per-file"):
+        o.fetch_artifacts([f"https://github.com/zankendo2-ship-it/r/blob/{SHA}/a.md"], getter=big)
+    ok = lambda url, limit: b"y" * 50_000
+    with pytest.raises(o.Stop, match="total"):
+        o.fetch_artifacts([f"https://github.com/zankendo2-ship-it/r/blob/{SHA}/{i}.md" for i in range(3)], getter=ok)
+    with pytest.raises(o.Stop, match="more than"):
+        o.fetch_artifacts([URL] * 7, getter=ok)
+
+
+def test_binary_files_not_sent_and_text_fetched_from_pinned_raw():
+    seen = []
+    out = o.fetch_artifacts([URL, f"https://github.com/zankendo2-ship-it/r/blob/{SHA}/a.md"],
+                            getter=lambda url, limit: seen.append(url) or b"hello")
+    assert "binary file" in out and "hello" in out
+    assert seen == [f"https://raw.githubusercontent.com/zankendo2-ship-it/r/{SHA}/a.md"]
+
+
+def test_token_estimate_cap():
+    with pytest.raises(o.Stop, match="input tokens"):
+        o.review(ENV, "t", [URL], [], o.mock_caller([V("PASS")]), o.mock_caller([V("PASS")]),
+                 files="z" * (o.MAX_INPUT_TOKENS_PER_RUN * 4))
+
+
+def test_shared_rules_file_loaded():
+    assert "ZANS" in o.RULES and "Alex" in o.RULES

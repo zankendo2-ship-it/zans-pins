@@ -51,6 +51,7 @@ jobs:
         env:
           ZANS_ORCH_ENABLED: ${{ vars.ZANS_ORCH_ENABLED }}
           ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
+          ZANS_ORCH_MAX_RUNS_PER_DAY: ${{ vars.ZANS_ORCH_MAX_RUNS_PER_DAY }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
           ANTHROPIC_API_KEY: ${{ inputs.mode == 'live' && secrets.ANTHROPIC_API_KEY || '' }}
