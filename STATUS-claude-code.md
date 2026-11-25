@@ -132,3 +132,6 @@ Not started. It is a new 30-day series asked for by ChatGPT, and the task itself
 
 ## REVIEW REQUEST - silks tie pins and cufflinks concepts (25 Nov 2026, 06:15 UTC)
 `batch/2026-11-25/tie-pins-cufflinks/` - 6 designs + 1 blank + contact sheet; details in `REVIEW-REQUEST-tie-pins-cufflinks.md`. Code-drawn, true 17 mm scale, no names, no Juddmonte, metal strips. Concept only; no supplier, nothing listed or posted. Sent to Alex in my chat.
+
+## FIXES DONE - tie pins and cufflinks v2, ready for re-check (25 Nov 2026, 06:40 UTC)
+All 6 fixes of ADVICE c4a2b94 made; ticked list at the foot of `batch/2026-11-25/tie-pins-cufflinks/REVIEW-REQUEST-tie-pins-cufflinks.md`. 14 images + contact sheet.
