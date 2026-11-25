@@ -35,3 +35,15 @@ Mug: the steps of `reference/gen_mug.py` re-written in the page as a wrapper rou
 5. Mug text width is measured with the browser's own Jost; it matched the reference tab width (874.2 px) in my test once Jost had loaded.
 6. CLAUDE.md is unchanged; the print rule waits for Alex's own yes.
 No order, no spend, live pages untouched, racing repo not opened.
+
+## FIXES DONE - style B (racing green bauble) ported (25 Nov 2026, 21:00 UTC) - TASK 8e0e73e
+In `docs/bauble-designer-v2/index.html` only; a new `designB` sits beside the style A fix. Test script `testB.js` and three sample masters (`v2B-*.svg`) are in this folder.
+- [x] 1. No `<filter>`, no `<image>`, no opacity (checked on 5 names). The old gold halo filter is replaced by the jersey's own outline, thickened and drawn in gold #C9A646.
+- [x] 2. Every stroke at least 20 px on the 990 px face (jersey outlines are scaled up so they land at 20 px after the jersey's own scale).
+- [x] 3. MERRY CHRISTMAS 66 px Jost 700 = 3.5 mm letters. Name fitted to 720 px wide, up to 150 px font: Rex 7.9 mm, Loussiemoo 6.0 mm, Starry Night 5.6 mm, No Drama This End (two lines) 5.3 mm, Inothewayurthinkin 3.4 mm.
+- [x] 4. Colours: background registry racing green #0F3B2C; gold #C9A646, cream #F6F1E7 and ink #1C1C1C from style A; plus the design-code silks hexes. #E4E2D8 is gone (it came from the 92% see-through logo tab over green).
+- [x] 5. Same vector horse mark in a cream tab; key content 6.1 to 7.2 mm inside the edge on all five; top of the jersey cap at 164 px, clear of the 12 mm (158 px) hanging-hole zone; both thin gold rings near the edge removed; `printMaster()` is full bleed with no outer clip.
+- [x] Style A re-tested after the change: unchanged, 0 page errors.
+NOT met, flagged: the name is under 6 mm for anything longer than about 10 letters on one line (Starry Night 5.6, two-line names about 5.3, an 18-letter single word 3.4). DESIGNER_PORT.md's own floor for bauble names is 4.0 mm, which all but the 18-letter word meet. Style A has the same limit for very long single words. Someone needs to decide: cap the name length for baubles, or accept the 4.0 mm floor and block shorter.
+The jersey still uses inner clip-paths to hold each pattern inside its shape (as on the mug); only the outer round clip is removed.
+Not served: same as before, the two `-v2` folders need copying onto the published branch for the --strict run.

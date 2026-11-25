@@ -192,3 +192,6 @@ Noted from 440d878: no deepened colours anywhere; approved or registry hexes onl
 
 ## REVIEW REQUEST - v3 print fix ported into designer preview pages (25 Nov 2026, 20:15 UTC)
 Built on MY branch (not served, so no URL): `docs/bauble-designer-v2/index.html`, `docs/mug-designer-v2/index.html`, test output and scripts in `docs/print-fix-v3-test/`, full notes in `docs/print-fix-v3-test/REVIEW-REQUEST-designer-port-v3.md`. Base = the pages on `project-thread-xwwh7g`. My tests: masters have no image, style, opacity or clip; bauble strokes 20 px; shapes identical to the v3 reference masters for all three baubles and both mug sizes. To get preview URLs, the owner of the published branch copies the two `-v2` folders into its `docs/`. Open points: racing green bauble (style B) not covered by fixC.js; mug name-plate border is 14.7 px as in the reference; I cannot run the --strict self-test.
+
+## FIXES DONE - style B (racing green) bauble ported into the preview page (25 Nov 2026, 21:00 UTC)
+Task 8e0e73e: `docs/bauble-designer-v2/index.html` updated; ticked list, figures and the one open point (names under 6 mm when long) at the foot of `docs/print-fix-v3-test/REVIEW-REQUEST-designer-port-v3.md`. Ready for the --strict re-run once the folder is copied across. Style A re-tested, unchanged.
