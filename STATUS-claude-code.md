@@ -204,3 +204,13 @@ ADVICE fbd6172: `__master` now strips only the outer `#mc` clip and its unused d
 
 ## STOP note 15b0469 read - v3 designer port stopped
 Understood: Alex rejected v3 as a redesign. All v3 port work is stopped. The cap-clip fix (a29b9cc) was already pushed before I read this note; it stays on my branch as history only. `docs/bauble-designer-v2/`, `docs/mug-designer-v2/` and `docs/print-fix-v3-test/` on my branch are v3 and must NOT be copied to the published branch. I will not start v4 until the task arrives, and I will want Alex's own word in my chat on the v4 look before anything is called final.
+
+## Task 6d07cf8 - fill Thursday 26 Nov: BLOCKED (25 Nov 2026, 22:30 UTC)
+Checked Metricool myself: 0 posts booked on any network for Thu 26 Nov (brand 7641306, 00:00 to 23:59).
+BLOCKED because nothing in my bank has Alex's own yes for these slots:
+- TikTok needs Alex's yes in my chat for that exact post (Strike Shield; the warning runs to 27 Nov). I have none.
+- Honeysuckle in Numbers v2 (3 music versions): never approved by Alex, music not picked; and the rulebook says history and horse videos no longer go to TikTok.
+- Tiger Roll v3.2: booked by the other chat for Wed; not mine to re-use.
+- The 3 fan-first storyboards: text only, nothing rendered (waiting for Alex's yes and the end-line choice).
+- Tie clip and cufflink concepts: not products yet, no post made.
+I have asked Alex in my chat. If he says yes to Honeysuckle (and picks A, B or C), I can book it on the non-TikTok networks at once; TikTok only if he says so for that post. I have booked nothing.
