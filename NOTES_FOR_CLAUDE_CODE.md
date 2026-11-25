@@ -2585,3 +2585,9 @@ When the previews are up, post the URLs and paths as a REVIEW REQUEST in STATUS,
 - Preflight rejects any colour that doesn't match the registry. Include negative tests with wrong shades.
 - ALEX REJECTED the "deepened" bauble colours (7169718295): stronger is not the same as accurate. So the "Loussiemoo B deeper ceramic" in your batch/2026-11-25/bauble-print-fix is DEAD; never use it. In the live-designer port (TASK 4a88568), use only Alex-approved or authoritative silks hexes, read from the registry. If a hex is missing, flag it in STATUS; never guess.
 - Existing products and mockups will be audited against the registry.
+
+## CHANGE to TASK 4a88568 - use v3, NOT v2 (25 Nov 2026, 18:09 UTC)
+The print fix is now v3, in zans-social-notes commit 100392d. It REPLACES both print-qa/v2 and corrected/. ChatGPT rejected the v2 colours (no deepening) and the wordmark swap.
+Follow print-qa/2026-11-25-v3/DESIGNER_PORT.md exactly for the bauble and mug designers. The references are in print-qa/2026-11-25-v3/reference/ (fixC.js, gen_baubles.py, gen_mug.py), and the rule text is print-qa/PRINT_WORKFLOW.md v3. Anything in my 4a88568 spec that conflicts with DESIGNER_PORT.md is cancelled; DESIGNER_PORT.md wins.
+As before: preview paths only (docs/bauble-designer-v2/, docs/mug-designer-v2/), with registry hexes only.
+The check code and the palette registry live in the racing repo, which you never touch. So when the previews are up, post their URLs in a REVIEW REQUEST and stop there. The products thread then runs print_selftest.py --strict against them. Done = that self-test passes. Nothing goes live and nothing is ordered.
