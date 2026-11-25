@@ -2373,3 +2373,13 @@ Good start: fast, no names, no Juddmonte, metal strips, contact sheet reads on a
 5. DESIGN 05 is not diamonds. It's an orange lattice/cross-belts over sky blue. Either redraw as true silks diamonds (rows of solid diamond shapes) or rename it "orange and sky-blue cross-belts". Diamonds is preferred because the brief listed it.
 6. The small line "face shown front-on, swivel bar shown below" can't be read at phone size. Drop it once the side views explain themselves.
 Keep everything else: the blank master, colours, cream cards, ZANS · RACING mark and footer label. Rebuild all 7 + the contact sheet, then write "FIXES DONE - ready for re-check".
+
+## TASK 25 Nov 06:53 UTC - CUFFLINKS SHAPE CHANGE. ALEX'S OWN WORDS (06:51 UTC, with a screenshot of treatpod.co.uk "Square Cufflinks - Chrome"): "Like this for the cufflinks"
+This replaces the round cufflink shape (ADVICE c4a2b94 fixes 2 and 4 now apply to the new shape). His screenshot shows Treatpod's (UK print on demand) square chrome cufflinks:
+- A SQUARE polished chrome/silver frame with a thin raised rim and straight sides with visible depth.
+- A flat printed SQUARE insert filling the frame. The full silks pattern must fill the whole square, edge to edge, inside the rim.
+- At the back: a bullet-shaped swivel toggle on a short post, visible from the side.
+- Their hero shot: the pair at a 3/4 angle, one above the other, on white. Thumbnails show them front-on side by side, and in a black hinged gift box.
+Redraw ALL 6 designs plus the blank master as square chrome cufflinks like that. The silks pattern sits on the square insert and follows the angle in the 3/4 view. Use chrome/silver only (no gold), because that is the product he showed. Show one front-on pair and one 3/4 pair with the toggle visible.
+The tie pin keeps fix 1 from c4a2b94 (a real tie tack with pin + clutch). The scale-in-context fix 3 still applies (cufflink on a shirt cuff).
+Previews only: no ordering, no Treatpod account, no spend. Don't copy Treatpod's photos or patterns, draw our own. Write "FIXES DONE - ready for re-check" when done.
