@@ -253,9 +253,9 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
     assert order.count(("model", "call")) == 1        # failed Claude call = BLOCKER, OpenAI never called
 
 
-def test_live_day_cap_hard_one_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 1
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
+def test_live_day_cap_hard_three_and_variable_only_lowers():
+    assert o.MAX_LIVE_RUNS_PER_DAY == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -480,3 +480,25 @@ def test_both_calls_ask_for_schema_json_and_log_metadata_only(monkeypatch, capsy
     assert sent[1]["response_format"]["json_schema"]["strict"] is True
     log = capsys.readouterr().out
     assert "stop=end_turn" in log and "stop=stop" in log and "reply text" not in log
+
+
+ANTHROPIC_STRUCTURED_REPLY = {   # shape of a Messages API reply with output_config json_schema
+    "stop_reason": "end_turn",
+    "content": [{"type": "text", "text": '{"ack":"read rules","verdict":"PASS","reasons":["clear and consistent"],"fixes":[]}'}]}
+
+
+def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypatch):
+    env = {"ANTHROPIC_API_KEY": "k", "ANTHROPIC_MODEL": "m"}
+    monkeypatch.setattr(o, "_post", lambda u, h, b: ANTHROPIC_STRUCTURED_REPLY)
+    assert o.parse_verdict(o.call_claude(env, "x"))["verdict"] == "PASS"
+    cut = {"stop_reason": "max_tokens", "content": [{"type": "text", "text": '{"ack":"a","verdict":"PASS","reasons":["lo'}]}
+    monkeypatch.setattr(o, "call_claude", lambda e, t: (o.LAST_STOP.update(Claude="max_tokens"), cut["content"][0]["text"])[1])
+    monkeypatch.setattr(o, "call_openai", lambda e, t: pytest.fail("must stop at Claude's blocker"))
+    outcome, rounds, req = o.review(env, "t", [URL], [], o.call_claude, o.call_openai)
+    assert req == 1 and "stop reason: max_tokens" in rounds[0]["Claude"]["reasons"][0]
+
+
+def test_daily_live_ceiling_is_3_and_variable_can_only_lower_it():
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1

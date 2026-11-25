@@ -42,7 +42,7 @@ MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = ref
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_LIVE_RUNS_PER_DAY = 1              # hard ceiling (pilot): paid runs per UTC day; repo variable may only lower it
+MAX_LIVE_RUNS_PER_DAY = 3              # hard ceiling: paid runs per UTC day; repo variable may only lower it
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
 MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
 PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
@@ -289,7 +289,8 @@ def prompt(who, task, urls, context, other, files="", checklist=""):
             "\n\nISSUE CONTEXT:\n" + untrusted(context) +
             ("\n\nOTHER REVIEWER'S LATEST VERDICT:\n" + untrusted(json.dumps(other)) if other else "") +
             '\n\nReply with JSON only: {"ack": "one line", "verdict": "PASS|REVISE|REJECT|BLOCKER", '
-            '"reasons": ["..."], "fixes": ["..."]}')
+            '"reasons": ["..."], "fixes": ["..."]}. No other text, no code fences. At most 6 reasons and 6 fixes, '
+            'each one sentence under 250 characters, so the whole reply stays well under the output limit.')
 
 
 BAD = {"ack": "", "verdict": "BLOCKER", "reasons": ["reply was not valid verdict JSON"], "fixes": []}
@@ -344,6 +345,9 @@ VERDICT_SCHEMA = {
 }
 
 
+LAST_STOP = {}   # provider stop reason of each reviewer's latest reply (metadata only)
+
+
 def log_reply(who, stop, text):
     """Metadata only in the public Actions log (never the reply text): why the call ended and how long it was."""
     print(f"{who} reply: stop={stop} chars={len(text or '')} json_object={bool(re.search(r'[{].*[}]', text or '', re.S))}")
@@ -358,6 +362,7 @@ def call_claude(env, text):
                "messages": [{"role": "user", "content": text}]})
     out = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
     log_reply("Claude", d.get("stop_reason"), out)
+    LAST_STOP["Claude"] = d.get("stop_reason")
     return out
 
 
@@ -371,6 +376,7 @@ def call_openai(env, text):
     c = d["choices"][0]
     out = c["message"].get("content") or ""
     log_reply("OpenAI", c.get("finish_reason"), out)
+    LAST_STOP["OpenAI"] = c.get("finish_reason")
     return out
 
 
@@ -416,7 +422,10 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
             used += cost
             requests += 1
             try:
+                LAST_STOP.clear()
                 v = parse_verdict(fn(env, text))
+                if v == BAD and LAST_STOP.get(who):
+                    v = {**v, "reasons": [f"reply was not valid verdict JSON (stop reason: {clean(str(LAST_STOP[who]), 40)})"]}
             except (urllib.error.URLError, KeyError, IndexError, TypeError, ValueError, TimeoutError) as e:
                 v = {"ack": "", "verdict": "BLOCKER", "reasons": [f"{who} call failed: {type(e).__name__}"], "fixes": []}
             row[who] = v
