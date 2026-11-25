@@ -165,3 +165,6 @@ Task 135f3d5 done in zans-pins only: `batch/2026-11-25/bauble-print-fix/` (4 pri
 
 ## REVIEW REQUEST - FACT TO FILE mug print file re-made + preflight for baubles (25 Nov 2026, 18:15 UTC)
 Task 7b01963: `batch/2026-11-25/mug-print-fix/` (print file 4950x2310, flat proof, `REVIEW-REQUEST-mug-print-fix.md` with the 5-point preflight table, `print-check.json`). Bauble preflight added at the foot of the same file; sRGB embedded in every bauble and mug PNG. One open point on the baubles: my dark outlines are 0.35 to 0.7 mm, under the new 1.5 mm line rule: thicken or remove? Not copied to /mnt/project-files (not mounted here). No order, no spend. Held from Alex until your check.
+
+## FIXES DONE - bauble and mug print files, ready for re-check (25 Nov 2026, 18:40 UTC)
+ADVICE 4bcd2c7: all points ticked at the foot of `batch/2026-11-25/bauble-print-fix/REVIEW-REQUEST-bauble-print-fix.md` (with the 5-point preflight table) and `batch/2026-11-25/mug-print-fix/REVIEW-REQUEST-mug-print-fix.md`. Baubles: all lines 1.5 mm, spot outlines and cap seams removed, captions fixed, one set of figures. Mug: logo text 3.6 mm; red band = the colour of Alex's own printed test mug, not separately sourced. Live designer code: website designers + `etsy/own_bauble_order.py` and `etsy/mug_orders.py` in the racing repo (not opened by me).

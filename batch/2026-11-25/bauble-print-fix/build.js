@@ -16,17 +16,16 @@ const JOBS = [
   { file: 'rexs-romance', name: ['REXS', 'ROMANCE'], body: deep('#1C4FA0', 1.15, .8), second: null, cap: '#FFFFFF', pattern: 'plain', note: 'Deeper blue for ceramic; white cap' },
   { file: 'zoo-olympios', name: ['ZOO', 'OLYMPIOS'], body: deep('#F5D130', 1.2, .9), second: '#111111', cap: '#111111', pattern: 'diag', note: 'Deeper yellow for ceramic; black spots and cap' } ];
 function pattern(j) { let o = `<rect width="${F}" height="${F}" fill="${j.body}"/>`;
-  if (j.pattern === 'spots') for (let r = -1; r < 8; r++) for (let c = -1; c < 8; c++) o += `<circle cx="${c * 12.5 + (r % 2 ? 6.25 : 0)}" cy="${6.3 + r * 10.85}" r="3.95" fill="${j.second}" stroke="${shade(j.second, .62)}" stroke-width=".35"/>`;
+  if (j.pattern === 'spots') for (let r = -1; r < 8; r++) for (let c = -1; c < 8; c++) o += `<circle cx="${c * 12.5 + (r % 2 ? 6.25 : 0)}" cy="${6.3 + r * 10.85}" r="3.95" fill="${j.second}" />`;
   if (j.pattern === 'diag') for (let r = -1; r < 5; r++) for (let c = -1; c < 6; c++) o += `<circle cx="${1.8 + r * 3.5 + c * 19.5}" cy="${15 + r * 22.5}" r="3.2" fill="${j.second}"/>`;
   return o; }
-function art(j, m) { const capLine = lum(j.cap) > .5 ? shade(j.cap === '#FFFFFF' ? '#B9BDC2' : j.cap, .62) : '#6E7378', visor = lum(j.cap) > .5 ? shade(j.cap === '#FFFFFF' ? '#D5D8DB' : j.cap, .8) : '#3A3D41';
+function art(j, m) { const capLine = lum(j.cap) > .5 ? shade(j.cap === '#FFFFFF' ? '#8E9399' : j.cap, .55) : '#7C8187', visor = lum(j.cap) > .5 ? shade(j.cap === '#FFFFFF' ? '#D5D8DB' : j.cap, .8) : '#3A3D41';
   const nameCol = [j.body, j.second].filter(Boolean).find(c => lum(c) < .16) || INK;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${F}mm" height="${F}mm" viewBox="0 0 ${F} ${F}" style="display:block">
 ${pattern(j)}
-<path d="M0 0 H${F} V12 Q${C} 16.5 0 12 Z" fill="${j.cap}"/><path d="M0 12 Q${C} 16.5 ${F} 12" fill="none" stroke="${INK}" stroke-width=".55"/>
-${[[13, 13.3], [27.5, 14], [47.4, 14], [62, 13.3]].map(([x, y]) => `<line x1="${C}" y1="7.8" x2="${x}" y2="${y}" stroke="${capLine}" stroke-width=".7" stroke-linecap="round"/>`).join('')}<circle cx="${C}" cy="7.8" r="1.4" fill="${capLine}"/>
-<path d="M17.5 15.2 Q${C} 17.1 ${F - 17.5} 15.2 Q${C} 26 17.5 15.2 Z" fill="${visor}" stroke="${INK}" stroke-width=".55" stroke-linejoin="round"/>
-<rect x="${C - m.pw / 2}" y="${m.py}" width="${m.pw}" height="${m.ph}" rx="5" fill="#FFFDF7" stroke="${INK}" stroke-width=".7"/>
+<path d="M0 0 H${F} V12 Q${C} 16.5 0 12 Z" fill="${j.cap}"/><path d="M0 12 Q${C} 16.5 ${F} 12" fill="none" stroke="${INK}" stroke-width="1.5"/>
+<path d="M17.5 15.2 Q${C} 17.1 ${F - 17.5} 15.2 Q${C} 26 17.5 15.2 Z" fill="${visor}" stroke="${INK}" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="${C - m.pw / 2}" y="${m.py}" width="${m.pw}" height="${m.ph}" rx="5" fill="#FFFDF7" stroke="${INK}" stroke-width="1.5"/>
 ${j.name.map((t, i) => `<text x="${C}" y="${m.py + m.pad + m.capN + i * m.lineN}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${m.fsN}" fill="${nameCol}">${t}</text>`).join('')}
 <text x="${C}" y="${m.py + m.ph - m.pad}" text-anchor="middle" font-family="Jost" font-weight="700" font-size="${m.fsM}" letter-spacing="${m.lsM}" fill="${INK}">MERRY CHRISTMAS</text></svg>`; }
 (async () => { const b = await chromium.launch(); const css = `${font('Jost', 600, 'jost-600.woff2')}${font('Jost', 700, 'jost-700.woff2')}*{margin:0;box-sizing:border-box}`; const report = [];
@@ -55,10 +54,11 @@ ${j.name.map((t, i) => `<text x="${C}" y="${m.py + m.pad + m.capN + i * m.lineN}
 .t{position:absolute;left:0;right:0;text-align:center}</style></head><body>
 <div class="t" style="top:26px;font:700 44px Jost">FLAT REAL-SIZE PROOF · ${j.name.join(' ')}</div><div class="t" style="top:84px;font:600 26px Jost">${j.note}. Print at 100% (300 dpi): the disc is 74.9 mm across.</div>
 <div class="d">${svg}</div><div class="sz"></div>
-<div class="t" style="top:${oy + d + 26}px;font:600 30px Jost"><span style="color:#E0115F;font-weight:700">- - -</span> 6 mm safe zone: cap button, peak, name panel and all text sit inside it. Colour bleeds to the edge. No ring.</div>
-<div class="t" style="top:${oy + d + 78}px;font:700 32px Jost">Name ${mN.cap.toFixed(1)} mm tall · MERRY CHRISTMAS ${mM.cap.toFixed(1)} mm tall, dark ink · panel ${pw.toFixed(0)} x ${ph.toFixed(0)} mm</div>
-<div class="t" style="top:${oy + d + 132}px;font:600 28px Jost">Colours: body ${j.body}${j.second ? ' · spots ' + j.second : ''} · cap ${j.cap} · text ${INK}</div>
-<div class="t" style="top:${oy + d + 180}px;font:700 30px Jost;color:${ok ? '#1F5A3D' : '#C8102E'}">${ok ? 'FILE CHECK: PASS' : 'FILE CHECK: FAIL'} (furthest key content ${corner.toFixed(1)} mm from centre; safe radius ${SAFE.toFixed(1)} mm)</div>
-<div style="position:absolute;left:${ox}px;top:${oy + d + 240}px;width:${50 * k}px;border-top:4px solid #1C1C1C"></div><div style="position:absolute;left:${ox}px;top:${oy + d + 248}px;font:600 26px Jost">50 mm check line: measure it after printing</div>
+<div class="t" style="top:${oy + d + 22}px;font:600 28px Jost"><span style="color:#E0115F;font-weight:700">- - -</span> 6 mm safe zone: cap peak, name panel and all text are inside it.</div>
+<div class="t" style="top:${oy + d + 62}px;font:600 28px Jost">Colour bleeds to the edge. No ring. No line thinner than 1.5 mm.</div>
+<div class="t" style="top:${oy + d + 108}px;font:700 30px Jost">Name ${mN.cap.toFixed(1)} mm tall · MERRY CHRISTMAS ${mM.cap.toFixed(1)} mm tall · dark ink</div>
+<div class="t" style="top:${oy + d + 152}px;font:600 26px Jost">Panel ${pw.toFixed(0)} x ${ph.toFixed(0)} mm · body ${j.body}${j.second ? ' · spots ' + j.second : ''} · cap ${j.cap} · text ${INK}</div>
+<div class="t" style="top:${oy + d + 194}px;font:700 28px Jost;color:${ok ? '#1F5A3D' : '#C8102E'}">${ok ? 'FILE CHECK: PASS' : 'FILE CHECK: FAIL'} (key content within ${corner.toFixed(1)} mm of centre; safe radius ${SAFE.toFixed(1)} mm)</div>
+<div style="position:absolute;left:${ox}px;top:${oy + d + 250}px;width:${50 * k}px;border-top:4px solid #1C1C1C"></div><div style="position:absolute;left:${ox}px;top:${oy + d + 258}px;font:600 26px Jost">50 mm check line: measure it after printing</div>
 </body></html>`); await q.waitForTimeout(300); await q.screenshot({ path: path.join(__dirname, `ZANS-bauble-FLAT-PROOF-${j.file}-300dpi-DRAFT.png`) }); await q.close(); }
   fs.writeFileSync(path.join(__dirname, 'print-check.json'), JSON.stringify(report, null, 1)); console.log(JSON.stringify(report)); await b.close(); })();

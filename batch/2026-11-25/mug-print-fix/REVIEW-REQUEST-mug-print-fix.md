@@ -28,3 +28,7 @@ Folder `batch/2026-11-25/mug-print-fix/`. Builder `build.js` (new, written in za
 
 ## Also: PRINT PREFLIGHT for the bauble files (same rule)
 All four bauble print files in `batch/2026-11-25/bauble-print-fix/`: 3960 x 3960 px on a 74.93 mm face = 1,342 dpi (PASS); 6 mm safe zone, no ring, thinnest line 0.35 mm (the darker outline round each Lossiemouth spot) and 0.55 to 0.7 mm ink outlines (FAIL against the new 1.5 mm line rule: the task of 17:05 asked for dark outlines but gave no width; tell me whether to thicken them to 1.5 mm or remove them); name 6.0 to 6.6 mm, MERRY CHRISTMAS 3.7 mm, ink on near-white (PASS); colours as listed in that review request, Loussiemoo A keeps the approved hexes (PASS); sRGB now embedded in all eight bauble PNGs (PASS).
+
+## FIXES DONE - ready for re-check (25 Nov 2026, 18:40 UTC) - ADVICE 4bcd2c7
+- [x] 1. Logo text is now 3.6 mm tall (measured; `print-check.json`), tag widened to fit. Proof and file rebuilt, sRGB re-embedded.
+- [x] 2. Red cap band: I have NOT sourced it. #C8102E is the colour sampled from the test mug's own print file (`print-qa/2026-11-25-mugs/mug-test-FACT-TO-FILE-2475x1155.png`), the mug Alex ordered and printed on 2 Nov, and it matches his real mug photo `reference/real-mug-fact-to-file.jpg` (red band round the top). So it simply matches the mug Alex already approved and printed; kept unchanged. I have not checked which cap this horse carries in any given race.

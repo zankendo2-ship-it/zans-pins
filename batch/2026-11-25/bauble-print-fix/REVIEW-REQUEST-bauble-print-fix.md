@@ -33,3 +33,19 @@ Sheet: `ALL-bauble-flat-proofs-CONTACT-SHEET.jpg`. Measured figures: `print-chec
 - This generator is NOT the website designer. The live designer still makes the old layout (thin ring, small text) for every customer order until its print file code is changed the same way. That code is not in this repo.
 - `/mnt/project-files/` does not exist in this session, so I could not copy the files there. They are on the branch only.
 - Printed-bauble faults I have NOT seen myself: I worked from the print check file, not from photos of the three printed baubles.
+
+## FIXES DONE - ready for re-check (25 Nov 2026, 18:40 UTC) - ADVICE 4bcd2c7
+- [x] 1. Lines: name-panel outline, cap edge and peak outline are now 1.5 mm. The 0.35 mm outlines round the Lossiemouth spots are REMOVED. The grey cap seams and button are REMOVED (at 1.5 mm they crowded the cap). Rexs Romance: the white cap now has the 1.5 mm ink edge along its lower line and peak. No line in any file is under 1.5 mm.
+- [x] 2. Proof captions: each note is on its own line; "No ring" no longer overlaps anything.
+- [x] 3. One figure everywhere, from `print-check.json`: MERRY CHRISTMAS 3.7 mm tall (3.66 measured); name 6.0 mm (Loussiemoo) and 6.6 mm (Rexs Romance, Zoo Olympios).
+- [x] 4. Unchanged: ink-black names, the two Loussiemoo versions, colours, safe zone, sRGB (re-embedded and re-checked after the rebuild), 3960 px.
+### PRINT PREFLIGHT (rule of 25 Nov)
+| Check | Result |
+|---|---|
+| 1. Resolution | 3960 x 3960 px on a 74.93 mm face = 1,342 dpi. PASS |
+| 2. Safe zone and lines | Cap peak, name panel and all text inside the 6 mm safe zone (key content within 31.1 mm / 30.4 mm of centre; safe radius 31.5 mm). No ring. Thinnest line 1.5 mm. PASS |
+| 3. Text | Names 6.0 / 6.6 mm, MERRY CHRISTMAS 3.7 mm, bold, ink #1C1C1C on #FFFDF7. PASS |
+| 4. Colours | Loussiemoo A approved hexes #F3B5C9 / #6CC24A (pastel pink by Alex's approval); B #EC89A9 / #53AD2F; Rexs #0E3D88; Zoo #FFD209 / #111111. PASS, with A flagged as pastel for Alex's choice |
+| 5. Profile | sRGB embedded in all eight PNGs. PASS |
+### Where the live designer code lives (for the coordinator)
+Not in zans-pins. The bauble and mug designers run on the website (www.zanshorseracing.co.uk/bauble-designer/ and /mug-designer/); the files uploaded to the printer are built by `etsy/own_bauble_order.py` and `etsy/mug_orders.py` in the racing repo (named in the reviewer's own print checks). I have not opened either.
