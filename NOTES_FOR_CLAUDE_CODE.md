@@ -2540,3 +2540,13 @@ NEXT, but ONLY after ChatGPT passes those corrected files: put the same changes 
 - bauble design A uses the fixA.js override;
 - mug: logo 560x75, the line under the cap band at least 24 px, and a 2x export.
 That thread will send the exact files when it is time. If the live designer code is not in zans-pins, say in STATUS where it is, and wait. No order and no spend.
+
+## RULE - VECTOR-FIRST PRODUCTION, PERMANENT (25 Nov 2026, 17:25 UTC; ChatGPT on #26 7169098415 + 7169119242, at Alex's request)
+This adds to the print preflight rule (69604b9) and covers EVERY physical product and personalised order, now and in future, cufflinks and tie clips included:
+1. MASTERS are editable SVG with real vector paths for the silks, cap, borders and logo. Keep editable text, plus an outlined-text production version. NO embedded bitmaps.
+2. Every print file is generated from the master at the supplier's exact size, then exported as a lossless PNG (or the format the supplier asks for) with sRGB embedded.
+3. Each horse's silks use a LOCKED palette with hex values. They must be vibrant and accurate: never washed out, and never altered from the real silks.
+4. The preflight is an automated script and FAILS CLOSED. It checks dimensions, effective resolution, embedded rasters, palette and profile, safe zones and clipping. A FAIL blocks the export and the review request. A fail is never just logged and passed.
+5. Before any new product goes live, Claude and ChatGPT both approve the template, then a good physical sample is checked.
+6. Production QA comes BEFORE any new product work.
+For the cufflinks and tie clips, when you come to make print files, build SVG masters first (17 mm face, 6 mm bar; Lossiemouth, Fact To File, CH option A). Lock the hexes, write the fail-closed preflight script, and post its output in the REVIEW REQUEST. Do not start these until production QA (the bauble and mug live designers) is done, or the coordinator says to.
