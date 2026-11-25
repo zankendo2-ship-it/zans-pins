@@ -2383,3 +2383,13 @@ This replaces the round cufflink shape (ADVICE c4a2b94 fixes 2 and 4 now apply t
 Redraw ALL 6 designs plus the blank master as square chrome cufflinks like that. The silks pattern sits on the square insert and follows the angle in the 3/4 view. Use chrome/silver only (no gold), because that is the product he showed. Show one front-on pair and one 3/4 pair with the toggle visible.
 The tie pin keeps fix 1 from c4a2b94 (a real tie tack with pin + clutch). The scale-in-context fix 3 still applies (cufflink on a shirt cuff).
 Previews only: no ordering, no Treatpod account, no spend. Don't copy Treatpod's photos or patterns, draw our own. Write "FIXES DONE - ready for re-check" when done.
+
+## TASK 25 Nov 06:54 UTC - TIE PIN SHAPE CHANGE. ALEX'S OWN WORDS (06:51 UTC, with a screenshot of Google shopping results for "tie pin"): "like this for tie pins"
+This replaces the round tie tack (it overrides fix 1 of ADVICE c4a2b94). His screenshot shows long BAR TIE CLIPS:
+- A slim rectangular metal bar, polished silver (one gold shown too), about 5-6 cm long and about 6 mm tall.
+- A spring clip hinge at the left end.
+- The flat front face carries the design.
+Draw every tie pin preview as that bar clip, with the full silks pattern printed across the whole front face of the bar, end to end. The bar is long and thin, so the pattern must still read at that size: hoops become vertical bands across the bar, stripes run along it, and spots, chevrons, diamonds and quarters are scaled to fit.
+Use chrome/silver to match the square chrome cufflinks (task 64cfbfc). Show the clip front-on plus a 3/4 view with the hinge visible, and one image of it clipped on a plain tie at true scale.
+All 6 designs plus the blank master: square chrome cufflinks + silver bar tie clip, the pair together on each image.
+Previews only: no supplier, no spend. Write "FIXES DONE - ready for re-check" when done.
