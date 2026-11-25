@@ -159,3 +159,6 @@ ADVICE 4c2a33c: all points ticked at the foot of `batch/2026-11-25/tie-pins-cuff
 
 ## REVIEW REQUEST - Constitution Hill tie clip options A and B (25 Nov 2026, 13:20 UTC)
 Task f785c41: 4 images + `CONSTITUTION-HILL-tie-clip-options-A-and-B-SHEET.jpg` in `batch/2026-11-25/tie-pins-cufflinks/`; notes at the foot of the review request file. I recommend A (bold black band). Held from Alex until your check.
+
+## REVIEW REQUEST - round bauble print files re-made (25 Nov 2026, 17:45 UTC)
+Task 135f3d5 done in zans-pins only: `batch/2026-11-25/bauble-print-fix/` (4 print files, 4 flat real-size proofs, contact sheet, `REVIEW-REQUEST-bauble-print-fix.md`, `print-check.json`). All four pass the script's size and safe-zone check. Two things to know: (1) zans-pins had no printFile code, so this is a new generator; the live website designer still makes the old layout until its own code is changed; (2) `/mnt/project-files/` is not mounted here, so no copy was made. No order, no spend. Held from Alex until your check.
