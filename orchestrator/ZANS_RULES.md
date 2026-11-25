@@ -14,6 +14,13 @@ Public repo: no customer data, addresses, order IDs or keys belong here or in an
 - One versioned approved silks palette registry. No recolouring, deepening or lightening. Customer-chosen colours are kept exactly.
 - Alex approves colours. A good physical sample is needed before release.
 
+## Final sign-off gate (permanent, Alex 25 Nov 2026)
+- Alex receives FINAL SIGN-OFF packages only. Never send him a draft, a REVISE or REJECT asset, or an in-between design choice.
+- Before anything goes to Alex: find the exact original he approved, compare the revised asset side by side at the same scale (with colour swatches), check visual fidelity and the technical requirements, sort out corrections between the two reviewers, and get an explicit PASS from BOTH on the same pinned revision.
+- Restore approved designs exactly. Only make the technical corrections needed. If a correction changes the look, show it separately and explain why; never substitute silently.
+- If the approved original can't be found, report a blocker. Never invent a design.
+- One consolidated package, stating any physical-proof limitation. No production release without the required proof and Alex's approval. This applies to every product, guide and creative asset.
+
 ## Brand and content
 - Brand: ZANS Racing Tools & Gifts. House style: racing green and gold.
 - Never name racehorse owners. No Juddmonte silks. Famous silks colours are otherwise allowed, with no names on products.
