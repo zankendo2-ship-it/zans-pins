@@ -145,3 +145,14 @@ def test_main_skips_duplicate(monkeypatch, capsys):
     env = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
            "GITHUB_REPOSITORY": "r/r", "GITHUB_TOKEN": "t"}
     assert o.main(env) == 0 and "SKIPPED" in capsys.readouterr().out
+
+
+def test_demo_revise_then_pass_then_stop():
+    from orchestrator import demo
+    out, rounds, req = demo.main()
+    assert [r["OpenAI"]["verdict"] for r in rounds] == ["REVISE", "PASS"]
+    assert out.startswith("AGREED") and req == 4 and len(rounds) == 2
+
+
+def test_request_cap_is_six():
+    assert o.MAX_REQUESTS == 6
