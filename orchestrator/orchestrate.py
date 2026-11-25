@@ -16,12 +16,14 @@ A person starts one review by hand (workflow_dispatch). This script:
 
 It never deploys, publishes, orders, spends (beyond the capped API calls) or edits files. Issue comments and
 artifact text are passed to the models as UNTRUSTED DATA inside delimiters and are never printed to logs.
-Mock mode (default) makes no network calls to either model; its summary says it is SYNTHETIC with zero paid calls.
+This is a manual, text-only verdict exchange: it never edits files, never reviews artwork or images, and never
+applies corrections automatically. Mock mode (default) makes no network calls to either model; its summary says it is SYNTHETIC with zero paid calls.
 Only text artifacts are accepted: these API calls cannot see images or video, so a visual PASS is impossible and
 binary links are refused (fail closed).
 """
 import hashlib
 import json
+import math
 import os
 import re
 import sys
@@ -34,7 +36,7 @@ MAX_REQUESTS = 2 * MAX_ROUNDS          # one Claude + one OpenAI call per round
 MAX_OUTPUT_TOKENS = 1500
 REQUEST_TIMEOUT_S = 120
 MAX_WALL_S = 600
-MAX_CONTEXT_CHARS = 12000              # issue comments sent to each model (newest comments kept)
+MAX_CONTEXT_CHARS = 6000               # issue comments sent to each model (newest comments kept)
 MAX_CHECKLIST_CHARS = 14000            # issue #26 body = canonical checklist, loaded separately, never dropped
 MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = refused, not truncated)
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
@@ -42,8 +44,15 @@ MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
 MAX_LIVE_RUNS_PER_DAY = 1              # hard ceiling (pilot): paid runs per UTC day; repo variable may only lower it
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
-MAX_INPUT_TOKENS_PER_RUN = 120_000     # conservative bound (chars / CHARS_PER_TOKEN) over every actual call
-CHARS_PER_TOKEN = 2.5                  # deliberately low (English ~4, code/JSON ~3) so the bound over-counts
+MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
+PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
+# Worst-case list price used for the owner budget check, applied to EVERY call (both providers).
+# Must be >= the list price of every model in ALLOWED_MODELS (checked 25 Nov 2026:
+# claude-sonnet-5-5 $2/$10, gpt-6.2-astra $8/$40, gpt-6-luna $0.10/$0.50 per million tokens).
+WORST_USD_PER_M_IN = 10.0
+WORST_USD_PER_M_OUT = 50.0
+ALLOWED_MODELS = {"ANTHROPIC_MODEL": ("claude-sonnet-5-5",), "OPENAI_MODEL": ("gpt-6.2-astra", "gpt-6-luna")}
+MAIN_REF = "refs/heads/main"
 ALLOWED_ISSUE = "26"                   # the only issue the orchestrator reads and posts on
 SLOT = "zans-orch-slot"
 ALLOWED_OWNERS = ("zankendo2-ship-it",)
@@ -82,14 +91,37 @@ def load_rules(path=RULES_FILE):
 RULES = load_rules()
 
 
-def slot_tag(mode, today, h):
-    return f"<!-- {SLOT}:{mode}:{today}:{h} -->"
+def slot_tag(mode, today, h, usd=0.0):
+    return f"<!-- {SLOT}:{mode}:{today}:{h}:usd={usd:.4f} -->"
+
+
+SLOT_RE = re.compile(r"<!-- " + SLOT + r":(mock|live):(\d{4}-\d{2}-\d{2}):([0-9a-f]+)(?::usd=([0-9.]+))? -->")
+
+
+def _slots(comments, mode):
+    for c in comments:
+        for m in SLOT_RE.finditer(c.get("body") or ""):
+            if m.group(1) == mode:
+                yield m
 
 
 def runs_today(comments, today, mode):
     """Counts reserved slots (posted before any paid call), not summaries, so failed runs count too."""
-    pre = f"<!-- {SLOT}:{mode}:{today}:"
-    return sum(1 for c in comments if pre in (c.get("body") or ""))
+    return sum(1 for m in _slots(comments, mode) if m.group(2) == today)
+
+
+def reserved_this_month(comments, month):
+    """USD reserved by live slots this UTC month (failed runs included). A slot without an amount counts as the
+    largest possible run."""
+    total = 0.0
+    for m in _slots(comments, "live"):
+        if m.group(2).startswith(month):
+            try:
+                usd = float(m.group(4)) if m.group(4) else WORST_RUN_USD
+            except ValueError:
+                usd = WORST_RUN_USD
+            total += usd if math.isfinite(usd) and usd >= 0 else WORST_RUN_USD
+    return total
 
 
 def day_cap(env, mode):
@@ -97,9 +129,9 @@ def day_cap(env, mode):
     if mode != "live":
         return hard
     try:
-        n = int(env.get("ZANS_ORCH_MAX_RUNS_PER_DAY", hard))
+        n = int(env.get("ZANS_ORCH_MAX_RUNS_PER_DAY", ""))   # live must be set explicitly
     except ValueError:
-        n = hard
+        n = 0
     return max(0, min(n, hard))
 
 
@@ -147,8 +179,39 @@ def _get_bytes(url, limit):
 
 
 def estimate_tokens(*texts):
-    """Conservative upper bound: over-counts on purpose."""
-    return -(-sum(len(t) for t in texts) * 10 // int(CHARS_PER_TOKEN * 10))
+    """Upper bound on input tokens for one call. Counts the bytes of the JSON-escaped text as sent
+    (json.dumps with ASCII escaping: non-ASCII and control characters become 6-byte \\uXXXX escapes), which is
+    never less than its UTF-8 bytes; a byte-level BPE token is at least one byte. Plus fixed per-call overhead."""
+    return sum(len(json.dumps(t)) for t in texts) + PER_CALL_OVERHEAD_TOKENS
+
+
+def worst_case_usd(input_tokens, requests=None):
+    requests = MAX_REQUESTS if requests is None else requests
+    return (input_tokens * WORST_USD_PER_M_IN + requests * MAX_OUTPUT_TOKENS * WORST_USD_PER_M_OUT) / 1e6
+
+
+WORST_RUN_USD = None  # set below once worst_case_usd exists
+
+
+def _usd(env, key):
+    """Owner-approved USD limit. Missing, invalid, non-finite (nan/inf) or <= 0 = 0 = live refused."""
+    try:
+        b = float(env.get(key, ""))
+    except ValueError:
+        return 0.0
+    return b if math.isfinite(b) and b > 0 else 0.0
+
+
+WORST_RUN_USD = (MAX_INPUT_TOKENS_PER_RUN * WORST_USD_PER_M_IN
+                 + 2 * 3 * 1500 * WORST_USD_PER_M_OUT) / 1e6   # hard caps -> $2.45
+
+
+def owner_budget(env):
+    return _usd(env, "ZANS_ORCH_MAX_USD_PER_RUN")
+
+
+def month_budget(env):
+    return _usd(env, "ZANS_ORCH_MAX_USD_PER_MONTH")
 
 
 def guard(env, mode):
@@ -165,6 +228,15 @@ def guard(env, mode):
                    if not env.get(k, "").strip()]
         if missing:
             raise Stop("BLOCKED: live mode needs " + ", ".join(missing) + " (names only; values never shown).")
+        if env.get("GITHUB_REF", "") != MAIN_REF:
+            raise Stop("REFUSED: live runs only from the main branch.")
+        for k, ok in ALLOWED_MODELS.items():
+            if env[k].strip() not in ok:
+                raise Stop(f"REFUSED: {k} is not a model this pilot has been checked against ({', '.join(ok)}).")
+        if owner_budget(env) <= 0:
+            raise Stop("BLOCKED: live mode needs ZANS_ORCH_MAX_USD_PER_RUN (the owner-approved worst-case $ per run).")
+        if month_budget(env) <= 0:
+            raise Stop("BLOCKED: live mode needs ZANS_ORCH_MAX_USD_PER_MONTH (the owner-approved $ per month).")
     elif mode != "mock":
         raise Stop("REFUSED: mode must be 'mock' or 'live'.")
 
@@ -236,13 +308,21 @@ def parse_verdict(text):
             or not isinstance(reasons, list) or not isinstance(fixes, list)
             or not all(isinstance(x, str) for x in reasons + fixes)):
         return dict(BAD)
-    return {"ack": ack[:300], "verdict": v.upper(),
-            "reasons": [x[:400] for x in reasons][:8], "fixes": [x[:400] for x in fixes][:8]}
+    return {"ack": clean(ack, 300), "verdict": v.upper(),
+            "reasons": [clean(x, 400) for x in reasons][:8], "fixes": [clean(x, 400) for x in fixes][:8]}
 
 
-# Largest verdict a reviewer can pass on (used for the up-front token bound).
-MAX_VERDICT_CHARS = len(json.dumps({"ack": "x" * 300, "verdict": "BLOCKER",
-                                    "reasons": ["x" * 400] * 8, "fixes": ["x" * 400] * 8}))
+def clean(text, n):
+    """Printable ASCII only, quotes/backslashes swapped, then cut: keeps the escaped size of a verdict bounded."""
+    out = "".join(c if " " <= c <= "~" else " " for c in text).replace('"', "'").replace("\\", "/")
+    return out[:n]
+
+
+# Largest verdict a reviewer can pass on, exactly as it appears in the request body: verdict text is reduced to
+# plain printable ASCII without quotes or backslashes (see clean), so only the JSON structure itself is escaped,
+# once inside the prompt and once more when the prompt is sent.
+MAX_VERDICT_CHARS = len(json.dumps(json.dumps({"ack": "x" * 300, "verdict": "BLOCKER",
+                                               "reasons": ["x" * 400] * 8, "fixes": ["x" * 400] * 8})))
 
 
 def _post(url, headers, body):
@@ -255,6 +335,7 @@ def call_claude(env, text):
     d = _post("https://api.anthropic.com/v1/messages",
               {"x-api-key": env["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01", "content-type": "application/json"},
               {"model": env["ANTHROPIC_MODEL"], "max_tokens": MAX_OUTPUT_TOKENS,
+               "thinking": {"type": "between_tools"},   # Sonnet 5.5: thinking off, so the cap goes to the verdict
                "messages": [{"role": "user", "content": text}]})
     return "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
 
@@ -273,11 +354,20 @@ def mock_caller(script):
     return lambda env, text: json.dumps(next(it))
 
 
-def review(env, task, urls, comments, claude, openai, clock=time.monotonic, files="", checklist=""):
-    context = build_context(comments)
-    worst = prompt("Claude", task, urls, context, None, files, checklist) + "x" * (MAX_VERDICT_CHARS + 200)
-    if estimate_tokens(worst) * MAX_REQUESTS > MAX_INPUT_TOKENS_PER_RUN:
+def preflight(task, urls, comments, files="", checklist=""):
+    """Worst-case input tokens for the whole run (every call carrying the largest possible other verdict)."""
+    base = prompt("Claude", task, urls, build_context(comments), None, files, checklist)
+    worst_in = (estimate_tokens(base) + MAX_VERDICT_CHARS + 400) * MAX_REQUESTS
+    if worst_in > MAX_INPUT_TOKENS_PER_RUN:
         raise Stop("REFUSED: worst-case input tokens for this run are over the cap. Send fewer or smaller files.")
+    return worst_in
+
+
+def review(env, task, urls, comments, claude, openai, clock=time.monotonic, files="", checklist="", budget_usd=None):
+    context = build_context(comments)
+    worst_in = preflight(task, urls, comments, files, checklist)
+    if budget_usd is not None and worst_case_usd(worst_in) > budget_usd:
+        raise Stop("REFUSED: worst-case cost of this run is over the owner's ZANS_ORCH_MAX_USD_PER_RUN.")
     start, requests, used, rounds = clock(), 0, 0, []
     last_claude = last_openai = None
     outcome = "NO AGREEMENT after the round cap - needs a person"
@@ -294,6 +384,9 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
             cost = estimate_tokens(text)          # actual prompt, including the other reviewer's verdict
             if used + cost > MAX_INPUT_TOKENS_PER_RUN:
                 raise Stop("STOPPED: input token cap reached.")
+            # Before EVERY call: actual input so far + this call, plus the output of ALL calls reserved.
+            if budget_usd is not None and worst_case_usd(used + cost) > budget_usd:
+                raise Stop("STOPPED: the next call could take this run over the owner's per-run budget.")
             used += cost
             requests += 1
             try:
@@ -348,12 +441,12 @@ def gh(env, method, path, body=None):
 def comments_since(env, repo, issue, since):
     """Every comment created or updated since `since` (UTC ISO), all pages up to a hard limit."""
     out = []
-    for page in range(1, 11):
+    for page in range(1, 31):
         batch = gh(env, "GET", f"repos/{repo}/issues/{issue}/comments?since={since}&per_page=100&page={page}")
         out += batch
         if len(batch) < 100:
             return out
-    raise Stop("STOPPED: too many comments today to count run slots safely.")
+    raise Stop("STOPPED: too many comments to count run slots and spend safely.")
 
 
 def main(env=None):
@@ -382,9 +475,22 @@ def main(env=None):
         if already_done(comments, h):
             raise Stop(f"SKIPPED: this task + artifact set was already reviewed in {mode} mode ({h}).")
         today = time.strftime("%Y-%m-%d", time.gmtime())
-        if runs_today(comments_since(env, repo, issue, today + "T00:00:00Z"), today, mode) >= day_cap(env, mode):
+        month = today[:7]
+        recent = comments_since(env, repo, issue, month + "-01T00:00:00Z")   # whole UTC month
+        if runs_today(recent, today, mode) >= day_cap(env, mode):
             raise Stop(f"STOPPED: daily {mode} run cap reached.")
         files = fetch_artifacts(urls) if mode == "live" else ""
+        reserve = 0.0
+        if mode == "live":
+            if worst_case_usd(preflight(task, urls, comments, files, checklist)) > owner_budget(env):
+                raise Stop("REFUSED: worst-case cost of this run is over the owner's ZANS_ORCH_MAX_USD_PER_RUN.")
+            # Always reserve the hard-cap worst run ($2.45), never a smaller preflight estimate, so an
+            # underestimate can never let the month go over budget.
+            reserve = WORST_RUN_USD
+            if reserve > owner_budget(env):
+                raise Stop("REFUSED: the hard-cap worst run is over the owner's ZANS_ORCH_MAX_USD_PER_RUN.")
+            if reserved_this_month(recent, month) + reserve > month_budget(env):
+                raise Stop("STOPPED: this run could take the month over ZANS_ORCH_MAX_USD_PER_MONTH.")
         if mode == "live":
             claude, openai = call_claude, call_openai
         else:
@@ -392,10 +498,12 @@ def main(env=None):
             openai = mock_caller([{"ack": "synthetic", "verdict": "PASS", "reasons": ["scripted mock"], "fixes": []}] * MAX_ROUNDS)
         # Reserve the slot BEFORE any paid call: if the run fails or is cancelled later, it still counts.
         gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
-           {"body": f"{slot_tag(mode, today, h)}\nZANS two-reviewer check: {mode} run slot reserved ({h}). "
+           {"body": f"{slot_tag(mode, today, h, reserve)}\nZANS two-reviewer check: {mode} run slot reserved ({h}, "
+                    f"worst case ${reserve:.2f} reserved against the monthly budget). "
                     "The summary follows; if none appears, the run failed and the slot is still used.\n\n---\n"
                     "_Generated by [Claude Code](https://claude.ai/code)_"})
-        outcome, rounds, requests = review(env, task, urls, comments, claude, openai, files=files, checklist=checklist)
+        outcome, rounds, requests = review(env, task, urls, comments, claude, openai, files=files, checklist=checklist,
+                                           budget_usd=min(reserve, owner_budget(env)) if mode == "live" else None)
         if mode != "live" and outcome.startswith("AGREED"):
             outcome = "MOCK COMPLETE: scripted PASS/PASS, pipeline works (no real verdict)"
         gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",

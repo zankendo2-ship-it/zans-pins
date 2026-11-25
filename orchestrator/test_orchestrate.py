@@ -149,8 +149,15 @@ def fake_github(calls, comments=(), since=()):
     return fake_gh
 
 
+LIVE_EXTRA = {"ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
+              "ANTHROPIC_MODEL": "claude-sonnet-5-5", "OPENAI_MODEL": "gpt-6.2-astra", "GITHUB_REF": "refs/heads/main",
+              "ZANS_ORCH_MAX_RUNS_PER_DAY": "1", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
+              "ZANS_ORCH_MAX_USD_PER_MONTH": "10"}
 MOCK_ENV = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
             "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_TOKEN": "t"}
+
+
+LIVE_ENV = {**MOCK_ENV, **LIVE_EXTRA}
 
 
 def test_main_mock_end_to_end(monkeypatch, capsys):
@@ -218,8 +225,7 @@ def test_daily_cap_counts_reserved_slots_not_summaries(monkeypatch, capsys):
     slots = [{"body": o.slot_tag("live", today, "dead")}]
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
-    env = {**MOCK_ENV, "ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
-           "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}
+    env = LIVE_ENV
     assert o.main(env) == 1 and "daily live run cap" in capsys.readouterr().out
     assert not [c for c in calls if c[0] == "POST"]
 
@@ -241,8 +247,7 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
         raise TimeoutError()
     monkeypatch.setattr(o, "call_claude", boom)
     monkeypatch.setattr(o, "call_openai", boom)
-    env = {**MOCK_ENV, "ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
-           "ANTHROPIC_MODEL": "m", "OPENAI_MODEL": "m"}
+    env = LIVE_ENV
     o.main(env)
     assert order.index(("gh", "POST")) < order.index(("model", "call"))
     assert order.count(("model", "call")) == 1        # failed Claude call = BLOCKER, OpenAI never called
@@ -252,7 +257,9 @@ def test_live_day_cap_hard_one_and_variable_only_lowers():
     assert o.MAX_LIVE_RUNS_PER_DAY == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
+    assert o.day_cap({}, "live") == 0
     assert o.day_cap({}, "mock") == o.MAX_MOCK_RUNS_PER_DAY
 
 
@@ -303,7 +310,7 @@ def test_token_bound_counts_every_actual_call_including_other_verdict():
         return fn
     o.review(ENV, "t", [URL], [], rec([long] * 3), rec([long] * 3))
     assert len(sizes) == 6 and sizes[1] > sizes[0] + 6000      # later calls carry the other verdict
-    assert o.estimate_tokens("x" * 1000) >= 400               # conservative: <= 2.5 chars per token
+    assert o.estimate_tokens("x" * 1000) >= 1000              # byte bound: never under the UTF-8 byte count
 
 
 def test_stop_on_first_reject_without_calling_second_provider():
@@ -330,5 +337,127 @@ def test_workflow_pins_runner_and_deps_and_uses_no_third_party_actions():
     assert "pytest==" in req and "--hash=sha256:" in req
 
 
+def live_guard_env(**over):
+    return {k: v for k, v in {**ENV, **LIVE_EXTRA, **over}.items() if v is not None}
+
+
+def test_live_only_from_main_ref():
+    o.guard(live_guard_env(), "live")
+    for ref in ("refs/heads/other", "", None):
+        with pytest.raises(o.Stop, match="main branch"):
+            o.guard(live_guard_env(GITHUB_REF=ref), "live")
+
+
+def test_live_needs_owner_budget():
+    for b in (None, "", "0", "-1", "abc"):
+        with pytest.raises(o.Stop, match="ZANS_ORCH_MAX_USD_PER_RUN"):
+            o.guard(live_guard_env(ZANS_ORCH_MAX_USD_PER_RUN=b), "live")
+
+
+def test_live_refuses_unchecked_models():
+    with pytest.raises(o.Stop, match="ANTHROPIC_MODEL"):
+        o.guard(live_guard_env(ANTHROPIC_MODEL="claude-x"), "live")
+    with pytest.raises(o.Stop, match="OPENAI_MODEL"):
+        o.guard(live_guard_env(OPENAI_MODEL="gpt-x"), "live")
+
+
+def test_worst_case_cost_over_owner_budget_refused_before_any_call():
+    called = []
+    fn = lambda env, text: called.append(1) or json.dumps(V("PASS"))
+    with pytest.raises(o.Stop, match="owner"):
+        o.review(ENV, "t", [URL], [], fn, fn, files="z" * 2000, budget_usd=0.01)
+    assert called == []
+    o.review(ENV, "t", [URL], [], fn, fn, files="z" * 2000, budget_usd=5)   # fits a sensible budget
+
+
+def test_utf8_byte_bound_is_at_least_bytes():
+    assert o.estimate_tokens("é" * 100) >= 200          # 2 bytes each
+    assert o.estimate_tokens("") == o.PER_CALL_OVERHEAD_TOKENS + 2          # '""'
+    assert o.estimate_tokens("\x00" * 100) >= 600                       # control chars escape to 6 bytes
+    assert o.estimate_tokens("\U0001F40E" * 10) >= 120                   # emoji -> surrogate pair escapes
+    assert o.WORST_USD_PER_M_IN >= 8 and o.WORST_USD_PER_M_OUT >= 40   # >= every allowed model's list price
+
+
+def test_workflow_main_ref_condition():
+    import pathlib
+    wf = (pathlib.Path(__file__).parent.parent / ".github/workflows/zans-orchestrator.yml").read_text()
+    assert "github.ref == 'refs/heads/main'" in wf and "ZANS_ORCH_MAX_USD_PER_RUN" in wf
+
+
+def test_live_needs_month_budget_and_rejects_nonfinite():
+    for b in (None, "", "0", "nan", "inf", "-inf", "NaN"):
+        with pytest.raises(o.Stop, match="ZANS_ORCH_MAX_USD_PER_MONTH"):
+            o.guard(live_guard_env(ZANS_ORCH_MAX_USD_PER_MONTH=b), "live")
+    for b in ("nan", "inf", "Infinity"):
+        with pytest.raises(o.Stop, match="ZANS_ORCH_MAX_USD_PER_RUN"):
+            o.guard(live_guard_env(ZANS_ORCH_MAX_USD_PER_RUN=b), "live")
+
+
+def test_worst_run_is_2_45():
+    assert round(o.WORST_RUN_USD, 2) == 2.45 == round(o.worst_case_usd(o.MAX_INPUT_TOKENS_PER_RUN), 2)
+
+
+def test_budget_checked_before_every_call_with_output_reserved(monkeypatch):
+    """Defence in depth: even if the up-front bound were wrong, each call is checked on the cumulative
+    actual input plus ALL output reserved, and the run stops before the call that could pass the budget."""
+    calls = []
+
+    def fn(env, text):
+        calls.append(len(text))
+        return json.dumps(V("REVISE"))
+    monkeypatch.setattr(o, "preflight", lambda *a, **k: 0)          # pretend the up-front bound said "tiny"
+    first = o.estimate_tokens(o.prompt("Claude", "t", [URL], "", None, "z" * 3000))
+    budget = o.worst_case_usd(first * 2.5)                          # room for two calls' input + all output
+    with pytest.raises(o.Stop, match="per-run budget"):
+        o.review(ENV, "t", [URL], [], fn, fn, files="z" * 3000, budget_usd=budget)
+    assert len(calls) == 2
+
+
+def test_verdict_text_cleaned_so_escaped_size_is_bounded():
+    nasty = json.dumps({"ack": "\x00\u00e9\"\\" * 200, "verdict": "PASS",
+                        "reasons": ["\U0001F40E\"" * 300] * 9, "fixes": ["\\" * 900] * 9})
+    v = o.parse_verdict(nasty)
+    assert len(json.dumps(json.dumps(v))) <= o.MAX_VERDICT_CHARS
+    assert all(" " <= c <= "~" and c not in '"\\' for c in v["ack"] + "".join(v["reasons"] + v["fixes"]))
+
+
+def test_monthly_reservation_counts_failed_runs_and_blocks(monkeypatch, capsys):
+    today = __import__("time").strftime("%Y-%m-%d", __import__("time").gmtime())
+    # earlier live runs this month (one failed, no summary) already reserved $9.50
+    slots = [{"body": o.slot_tag("live", today[:8] + "01", "a", 4.75)}, {"body": o.slot_tag("live", today[:8] + "01", "b", 4.75)}]
+    assert o.reserved_this_month(slots, today[:7]) == 9.5
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "call_claude", lambda e, t: pytest.fail("no paid call allowed"))
+    monkeypatch.setattr(o, "call_openai", lambda e, t: pytest.fail("no paid call allowed"))
+    assert o.main(LIVE_ENV) == 1 and "ZANS_ORCH_MAX_USD_PER_MONTH" in capsys.readouterr().out
+    assert not [c for c in calls if c[0] == "POST"]
+
+
+def test_slot_records_reserved_amount_and_unknown_counts_as_worst():
+    assert o.reserved_this_month([{"body": o.slot_tag("live", "2026-11-03", "a", 1.5)}], "2026-11") == 1.5
+    legacy = [{"body": "<!-- zans-orch-slot:live:2026-11-03:abc -->"}]
+    assert o.reserved_this_month(legacy, "2026-11") == o.WORST_RUN_USD
+    assert o.reserved_this_month([{"body": o.slot_tag("live", "2026-10-30", "a", 2)}], "2026-11") == 0
+    assert o.reserved_this_month([{"body": o.slot_tag("mock", "2026-11-03", "a", 2)}], "2026-11") == 0
+
+
 def test_shared_rules_file_loaded():
     assert "ZANS" in o.RULES and "Alex" in o.RULES
+
+
+def test_live_slot_reserves_hard_worst_and_calls_capped_by_it(monkeypatch):
+    calls, seen = [], {}
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "preflight", lambda *a, **k: 0)   # even a too-small estimate cannot shrink the reserve
+
+    def fake_review(*a, budget_usd=None, **k):
+        seen["budget"] = budget_usd
+        return "AGREED", [], 2
+    monkeypatch.setattr(o, "review", fake_review)
+    o.main(LIVE_ENV)
+    slot = [c for c in calls if c[0] == "POST"][0][2]["body"]
+    assert "usd=2.4500" in slot
+    assert seen["budget"] == o.WORST_RUN_USD == 2.45
