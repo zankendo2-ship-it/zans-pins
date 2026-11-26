@@ -14,8 +14,8 @@ What I would make (hidden drafts only):
 What a yes does:
 - Makes 5 hidden draft products in Printify. They are NOT published to Etsy, and nothing is charged or ordered.
 - Asks Printify's shipping calculator for the exact UK postage. That places no order.
-- Keeps the drafts until both reviewers have checked the mock-ups. They're deleted only after that.
+- Keeps the drafts until both reviewers have checked the mock-ups. Deleting them needs a separate yes from you, and never happens automatically.
 
-What a yes does NOT do: order samples, publish anything, or change any live listing.
+What a yes does NOT do: order samples, publish anything, delete anything, or change any live listing.
 
 If the mock-ups pass, I'll come back separately with one costed question about ordering samples. The white mug sample will be optional. Nothing is ordered unless you say yes to that too.
