@@ -65,25 +65,33 @@ def validate(data, today):
         raise Refuse("file looks like it contains a key or secret; not sent")
     if not isinstance(d, dict) or d.get("date") != today:
         raise Refuse(f"file date must be today's UTC date ({today})")
-    for k in ("made_utc", "pack"):
+    for k in ("frozen_at_utc", "pack"):
         if not isinstance(d.get(k), str) or not d[k].strip():
             raise Refuse(f"file is missing the sealed field {k!r}")
-    if not isinstance(d.get("picks"), list) or not isinstance(d.get("table"), list):
-        raise Refuse("file needs picks and table lists")
-    if not d["picks"]:
-        raise Skip("no picks in the sealed file: nothing to review, no call")
-    if not d["table"]:
-        raise Refuse("the race table is empty")
+    if not d["frozen_at_utc"].startswith(today):
+        raise Refuse("frozen_at_utc is not from today (UTC); not a fresh sealed file")
+    if not re.fullmatch(r"[0-9a-f]{64}", str(d.get("pack_manifest_combined_sha256") or "")):
+        raise Refuse("pack_manifest_combined_sha256 is missing or not a sha256")
+    if not re.fullmatch(r"[0-9a-f]{40}", str(d.get("racing_branch_commit") or "")):
+        raise Refuse("racing_branch_commit is missing or not a 40-char commit")
+    races = d.get("races")
+    if not isinstance(races, list) or not races:
+        raise Refuse("file needs a non-empty races list")
     ids = []
-    for row in d["table"]:
+    for row in races:
         if not isinstance(row, dict) or not all(isinstance(row.get(k), str) and row[k].strip() for k in ("course", "time")):
-            raise Refuse("a table row is malformed (needs course and time)")
+            raise Refuse("a race row is malformed (needs course and time)")
+        if "win_pick" not in row or "status" not in row:
+            raise Refuse("a race row is missing win_pick or status (explicit null is allowed, absence is not)")
         ids.append((row["course"].strip().lower(), row["time"].strip()))
     if len(set(ids)) != len(ids):
-        raise Refuse("the race table has duplicate race ids")
-    for pk in d["picks"]:
-        if not isinstance(pk, dict) or (str(pk.get("course", "")).strip().lower(), str(pk.get("time", "")).strip()) not in set(ids):
-            raise Refuse("a pick does not match a race in the table")
+        raise Refuse("the race list has duplicate race ids (course + time)")
+    picked = [r for r in races if r.get("win_pick")]
+    if not picked:
+        raise Skip("no picks in the sealed file: nothing to review, no call")
+    for r in picked:
+        if "confidence" not in r or "sky_bet_price" not in r or "no_sky_price" not in r:
+            raise Refuse("a picked race is missing confidence or the Sky price fields (explicit null is allowed)")
     return text
 
 

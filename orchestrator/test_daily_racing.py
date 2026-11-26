@@ -13,9 +13,14 @@ ENV = {"ZANS_ORCH_ENABLED": "true", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-
 BOT = {"login": "github-actions[bot]"}
 
 
+RACE = {"time": "13:00", "course": "Ascot", "win_pick": "A", "confidence": "8", "status": "RUNNER", "sky_bet_price": 2.5,
+        "best_price": 2.5, "no_sky_price": False, "data_pick": "A", "agent_b": None, "gemini_api": None}
+
+
 def file_bytes(**kw):
-    d = {"date": TODAY, "made_utc": "2026-11-27T08:45:00Z", "pack": "sha256:abc",
-         "picks": [{"course": "Ascot", "time": "13:00", "horse": "A"}], "table": [{"course": "Ascot", "time": "13:00", "ZANS": "A"}]}
+    d = {"date": TODAY, "frozen_at_utc": TODAY + "T08:45:00Z", "built_utc": TODAY + "T08:50:00Z", "pack": "3_d0_morning_0845",
+         "pack_manifest_combined_sha256": "a" * 64, "racing_branch_commit": "b" * 40,
+         "races": [RACE]}
     d.update(kw)
     return json.dumps(d).encode()
 
@@ -43,11 +48,13 @@ def test_cap_is_under_80_cents_and_small_file_costs_cents():
 
 
 @pytest.mark.parametrize("data", [b"x" * 70_000, b"\xff\xfe", b"[]", file_bytes(date="2026-11-26"),
-                                  file_bytes(table=[]), file_bytes(notes="sk-" + "a" * 30),
-                                  file_bytes(pack=""), file_bytes(made_utc=5),
-                                  file_bytes(table=[{"course": "Ascot", "time": "13:00"}, {"course": "ascot", "time": "13:00"}]),
-                                  file_bytes(table=[{"course": "Ascot"}]),
-                                  file_bytes(picks=[{"course": "York", "time": "14:00"}])])
+                                  file_bytes(races=[]), file_bytes(notes="sk-" + "a" * 30),
+                                  file_bytes(pack=""), file_bytes(frozen_at_utc=5), file_bytes(frozen_at_utc="2026-11-25T08:45:00Z"),
+                                  file_bytes(pack_manifest_combined_sha256="xyz"), file_bytes(racing_branch_commit=""),
+                                  file_bytes(races=[RACE, {**RACE, "course": "ascot"}]),
+                                  file_bytes(races=[{"course": "Ascot"}]),
+                                  file_bytes(races=[{k: v for k, v in RACE.items() if k != "win_pick"}]),
+                                  file_bytes(races=[{k: v for k, v in RACE.items() if k != "sky_bet_price"}])])
 def test_bad_file_refused(data):
     with pytest.raises(r.Refuse):
         r.plan(data, [], ENV, TODAY)
@@ -55,7 +62,7 @@ def test_bad_file_refused(data):
 
 def test_empty_picks_make_no_call():
     with pytest.raises(r.Skip):
-        r.plan(file_bytes(picks=[]), [], ENV, TODAY)
+        r.plan(file_bytes(races=[{**RACE, "win_pick": None, "status": "no pick"}]), [], ENV, TODAY)
 
 
 def test_ledger_shared_daily_slot_shared_month_and_dedup():
@@ -68,7 +75,7 @@ def test_ledger_shared_daily_slot_shared_month_and_dedup():
         r.plan(data, [{"body": o.slot_tag("racing", TODAY, h, 0.7)}], ENV, TODAY)
     other = {"body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}
     with pytest.raises(o.Stop, match="already used"):
-        r.plan(file_bytes(made_utc="y"), [other], ENV, TODAY)
+        r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [other], ENV, TODAY)
     import orchestrator.daily_batch as b                  # and a racing run does NOT block the products batch
     b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [other], ENV, TODAY)
     two = [other, {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}]   # but each route is still capped at 1 a day
@@ -192,3 +199,15 @@ def test_mock_ignores_paid_ledger_caps_and_slots(monkeypatch):
     b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, full + big, env, TODAY)
     with pytest.raises(o.Stop):                                   # live is still blocked by the same ledger
         r.plan(file_bytes(), full + big, {**env, "ORCH_MODE": "live"}, TODAY)
+
+
+def test_real_racing_exporter_fixture_passes_consumer_offline_zero_provider_calls():
+    import pathlib
+    raw = pathlib.Path(__file__).with_name("fixtures").joinpath("racing_2026-11-26.json").read_bytes()
+    boom = lambda *a, **k: pytest.fail("provider call in an offline mock")   # noqa: E731
+    posted = []
+    env = {**ENV, "ORCH_MODE": "mock"}
+    v, h, reserve, bad = r.run(env, raw, [], "2026-11-26", boom, boom, posted.append)
+    assert v == {} and len(posted) == 1 and "SYNTHETIC MOCK" in posted[0]
+    p = r.plan(raw, [], env, "2026-11-26")
+    assert len(json.loads(raw)["races"]) == 35 and p["prompt"]
