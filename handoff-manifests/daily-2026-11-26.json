@@ -1,0 +1,35 @@
+{
+ "date": "2026-11-26",
+ "batch": "daily",
+ "items": [
+  {
+   "item": "print-qa/2026-11-26-mugB/mugB.py",
+   "ref": "f316759230a2c79b60a6842639a892d2e2ae81be",
+   "sha256": "3b850aaed0816f4206d566742199f4927aab3c10d3fd6858b42f6a36ab72fa96",
+   "self_check": true,
+   "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/f316759230a2c79b60a6842639a892d2e2ae81be/print-qa/2026-11-26-mugB/mugB.py"
+  },
+  {
+   "item": "print-qa/2026-11-26-mugB/test_mugB.py",
+   "ref": "f316759230a2c79b60a6842639a892d2e2ae81be",
+   "sha256": "234b6343439cf74645c76d84b90b341b596d2a0ee5aaae6d2ba9f22938103fb1",
+   "self_check": true,
+   "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/f316759230a2c79b60a6842639a892d2e2ae81be/print-qa/2026-11-26-mugB/test_mugB.py"
+  },
+  {
+   "item": "print-qa/registry/ceramic-ornament-harrier-bp1676.md",
+   "ref": "f316759230a2c79b60a6842639a892d2e2ae81be",
+   "sha256": "46895e4bf6a5cd907a4252d4daa35e6fcb1cee73895e84e1fee2a05999c5efab",
+   "self_check": true,
+   "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/f316759230a2c79b60a6842639a892d2e2ae81be/print-qa/registry/ceramic-ornament-harrier-bp1676.md"
+  },
+  {
+   "item": "tools/print_drafts/print_qa/tests/test_preflight.py",
+   "ref": "f316759230a2c79b60a6842639a892d2e2ae81be",
+   "sha256": "4359bd60da56156a7237b8b0d4620bbc898afe6073b30849f02dbca5cf475691",
+   "self_check": true,
+   "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/f316759230a2c79b60a6842639a892d2e2ae81be/tools/print_drafts/print_qa/tests/test_preflight.py"
+  }
+ ],
+ "note": "Text artifacts only. Images (mug B v3 PNGs, 8a879b4) need ChatGPT visual QA on #26, not this route."
+}
