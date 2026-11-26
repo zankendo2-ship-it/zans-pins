@@ -1,0 +1,11 @@
+{
+ "renderer": "zans-print-qa/render.py v3 (chromium, outlined master, deviceScaleFactor 1)",
+ "px": [
+  2475,
+  1155
+ ],
+ "master": "loussiemoo-bauble-style-mug-2475x1155.svg",
+ "master_sha256": "21c9bd2ce57700cb8037afc077efad1ee3826669f27461d79f0e2e2eca80e4eb",
+ "png_sha256": "9a7a40f65a4457f425e57157ced395d5969223f7d736e7fea12be09baa285792",
+ "made_utc": "2026-11-26T16:58:40Z"
+}

@@ -227,3 +227,16 @@ def test_raster_ring_eccentric_and_broken():
     b = base(); dr = ImageDraw.Draw(b)
     for i in range(0, 360, 30): dr.arc((20, 20, 970, 970), i, i + 20, fill='#C9A646', width=14)
     assert preflight.raster_ring(b)
+
+
+def test_centre_at_target_x():
+    """'x@<px>' centres an item on that x (each face of a mug wrap) instead of the file centre."""
+    import preflight as pf
+    sp = {'physical_mm': (209.55, 97.8), 'min_stroke_mm': 0.5, 'safe_mm': 6, 'shape': 'rect', 'min_name_mm': 6, 'min_text_mm': 1.5}
+    def run(x):
+        svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2475 1155"><rect x="0" y="0" width="2475" height="1155" fill="#F5D130"/>'
+               f'<rect data-safe="1" data-centre="x@618.75" data-label="p" x="{x}" y="400" width="400" height="200" fill="#F6F1E7"/></svg>').encode()
+        f, n, _ = pf.check_master(sp, svg, 2475, 1155, {'code': 'F5D130'})
+        return [m for m in f if 'off centre' in m]
+    assert run(418.75) == []
+    assert run(500)

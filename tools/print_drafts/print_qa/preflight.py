@@ -154,6 +154,7 @@ def check_master(sp, raw, W, H, design):
     pxmm = vb[2] / sp['physical_mm'][0]; minstroke = sp['min_stroke_mm'] * pxmm
     ok_cols, f2 = allowed_colours(design); fails += f2
     used, key_pts, centre, n_text = set(), [], {}, [0]
+    centre_at = {}
     boxes, inside = {}, {}  # data-label boxes (inner edge of their border) and contents that must sit inside them
     def walk(e, tf, key, lab, ins=None):
         ns, tag = (e.tag[1:].split('}') if e.tag.startswith('{') else ('', e.tag))
@@ -183,6 +184,8 @@ def check_master(sp, raw, W, H, design):
         key = key or 'data-safe' in e.attrib or 'data-text' in e.attrib
         if e.get('data-centre') or e.get('data-role') == 'name':
             lab = e.get('data-label') or e.get('data-text') or e.get('id') or tag
+            mc = re.fullmatch(r'x@([\d.]+)', e.get('data-centre') or '')   # 'x@<px>': centred on that x (e.g. each face of a mug wrap)
+            if mc: centre_at[lab] = float(mc.group(1))
         ins = e.get('data-inside') or ins
         if tag == 'rect' and e.get('data-label'):
             x, y = apply_tf([(float(e.get('x', 0)), float(e.get('y', 0)))], t2)[0]; sc = tscale(t2)
@@ -221,7 +224,7 @@ def check_master(sp, raw, W, H, design):
         if any(math.hypot(x - kx, y - ky) < kr for x, y in key_pts): fails.append(f'key content inside the {ko["r_mm"]} mm keep-out ({ko["why"]})')
     worst = 0.0
     for lab, pts in centre.items():
-        xs = [p[0] for p in pts]; off = ((min(xs) + max(xs)) / 2 - cx0) / pxmm; worst = max(worst, abs(off))
+        xs = [p[0] for p in pts]; off = ((min(xs) + max(xs)) / 2 - centre_at.get(lab, cx0)) / pxmm; worst = max(worst, abs(off))
         if abs(off) > 0.5: fails.append(f'"{lab}" {off:+.1f} mm off centre')
     notes.append(f'{len(used)} colours, all approved' if not bad else f'{len(used)} colours')
     notes.append(f'{len(centre)} centred items, worst {worst:.1f} mm; {n_text[0]} outlined texts')
