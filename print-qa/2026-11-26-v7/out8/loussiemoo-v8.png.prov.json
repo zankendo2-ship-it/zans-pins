@@ -1,0 +1,11 @@
+{
+ "renderer": "zans-print-qa/render.py v3 (chromium, outlined master, deviceScaleFactor 1)",
+ "px": [
+  990,
+  990
+ ],
+ "master": "own-v8-loussiemoo.svg",
+ "master_sha256": "043b8e518dc3b7ed0a6afdc457b03a5b440b2933ac5025ef9f480d3a664d4dc9",
+ "png_sha256": "1ad6f2e1d9dbb8e84ffc69f3cd2907aa590411eb404070aa12efc716a4670094",
+ "made_utc": "2026-11-26T12:03:23Z"
+}

@@ -174,3 +174,19 @@ def test_waiver_floor_and_scope():
     assert preflight.owner_waiver(_w(value=0.3), 'logo_text_mm') is None      # never below 0.6 mm
     assert preflight.owner_waiver({'owner_waivers': {'min_name_mm': _w()['owner_waivers']['logo_text_mm']}}, 'min_name_mm') is None   # only the logo can be waived
     assert preflight.owner_waiver({}, 'logo_text_mm') is None
+
+
+# --- cap seam regression (26 Nov: shine drawn over the seam cut it on Rexs Romance / Zoo Olympios) ---
+V = '/tmp/claude-0/zp/print-qa/2026-11-26-v{0}/out{0}/{1}-v{0}.svg'
+def test_cap_shine_over_seam_fails():
+    import preflight, os, pytest
+    p = V.format(7, 'rexs-romance')
+    if not os.path.exists(p): pytest.skip('v7 master not here')
+    assert preflight.cap_seam_check(open(p, 'rb').read())
+
+def test_cap_shine_under_seams_passes():
+    import preflight
+    raw = b'<path d="M195,155 Q265,70 455,48" stroke="#fff"/><path d="M495,28 Q346.5,78.8 165,187.2" fill="none" stroke="#B3B3B3" stroke-width="7" stroke-linecap="round"/>'
+    assert preflight.cap_seam_check(raw) == []
+    bad = raw.split(b'/>', 1)[1] + raw.split(b'/>', 1)[0] + b'/>'
+    assert preflight.cap_seam_check(bad)

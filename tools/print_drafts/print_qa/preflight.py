@@ -105,6 +105,15 @@ def owner_waiver(design, key):
     except (KeyError, TypeError, ValueError): return None
     return dict(w, value=v) if v >= WAIVABLE[key] else None
 
+SEAM = re.compile(rb'<path d="M495,28 Q[^"]+"[^>]*stroke-linecap="round"')
+SHINE = re.compile(rb'<path d="M195,155 Q265,70 455,48"')
+def cap_seam_check(raw):
+    """Bauble cap: the shine highlight must be drawn BEFORE the seams, never over them (26 Nov: a solid shine on top cut the
+    outer-left seam into a broken line with a stray grey fragment on Rexs Romance / Zoo Olympios)."""
+    seams = [m.start() for m in SEAM.finditer(raw)]; sh = SHINE.search(raw)
+    if seams and sh and sh.start() > seams[0]: return ['cap shine is drawn on top of the cap seams (cuts a seam line) - draw it before the seams']
+    return []
+
 def check_master(sp, raw, W, H, design):
     fails, notes = [], []
     if re.search(rb'<!DOCTYPE|<!ENTITY|<\?xml-stylesheet', raw): return ['master has DOCTYPE/ENTITY/stylesheet (not allowed)'], notes, set()
@@ -186,6 +195,7 @@ def check_master(sp, raw, W, H, design):
         if abs(off) > 0.5: fails.append(f'"{lab}" {off:+.1f} mm off centre')
     notes.append(f'{len(used)} colours, all approved' if not bad else f'{len(used)} colours')
     notes.append(f'{len(centre)} centred items, worst {worst:.1f} mm; {n_text[0]} outlined texts')
+    fails += cap_seam_check(raw)
     return fails, notes, ok_cols
 
 def png_colours(im, ok_cols, tol=6, share=0.003):
