@@ -5,13 +5,15 @@ Every bauble element is scaled by S (same proportions as the bauble, 17% bigger 
 Two faces (left-hand and right-hand drinker) at 1/4 and 3/4 of the wrap; wrap seam at the handle (both ends), logo at the back
 centre exactly where the approved FACT TO FILE mug has it."""
 import json, re, sys, os
-sys.path.insert(0, '/tmp/claude-0/zp/tools/print_drafts/print_qa')
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, '..', '..', 'tools', 'print_drafts', 'print_qa'))
 import render, preflight
-B = '/tmp/claude-0/zp/print-qa/2026-11-26-v7/out9/{}-v9.svg'
-MUG = '/tmp/claude-0/zp/print-qa/2026-11-25-v4/fact-to-file-mug-2475x1155-v4.svg'
+B = os.path.join(HERE, 'inputs', '{}-v9.svg')
+MUG = os.path.join(HERE, 'inputs', 'fact-to-file-mug-2475x1155-v4.svg')
 W, H, MM = 2475, 1155, 209.55
 S = (W / MM) / (990 / 74.9) * 6.2 / 5.3   # 1.045: bauble design scaled up 17% so the name letters are 6.2 mm (mug minimum 6 mm; bauble 5.3 mm)
 FACES = (W / 4, 3 * W / 4)
+APEX_MM = 6.2 + 24 * S / (W / MM) - 2 * S / (W / MM)   # centre of the button so its top edge is 6.2 mm from the top
 PANEL_CY = 600                          # name panel centre on the mug (bauble: 545 of 990)
 ITEMS = [('loussiemoo', 'ZBA-disc-F3B5C9-6CC24A-plain-F3B5C9', '#F3B5C9', 'lossiemouth'),
          ('zoo-olympios', 'ZBA-spot_diag-F5D130-1C1C1C-plain-1C1C1C', '#1C1C1C', None),
@@ -58,11 +60,15 @@ def cap(svg):
     line = ' '.join(f'L{x:.1f},{brim_y(x, y0, depth):.2f}' for x in xs)
     out = [f'<path d="M0,0 H{W} V{y0:.1f} ' + ' '.join(f'L{x:.1f},{brim_y(x, y0, depth):.2f}' for x in reversed(xs)) + ' Z" fill="{}"/>'.format(band)]
     for cx in FACES:   # seams + button copied from the bauble cap, same order (no shine anywhere)
-        g = f'<g transform="translate({cx - 495 * S:.2f},0) scale({S:.5f})">'
+        # supplier trim: top button must sit >= 6.2 mm inside the top edge. Seams are squeezed vertically about the brim
+        # (y -> y0 + k (y - y0)), the button stays a true circle at the new apex. Shapes and colours unchanged.
+        k = (y0 / S - APEX_MM * (W / MM) / S) / (y0 / S - 28)
+        g = f'<g transform="translate({cx - 495 * S:.2f},{y0 * (1 - k):.2f}) scale({S:.5f},{S * k:.5f})">'
         for m in re.finditer(r'<path d="(M495,28 Q[^"]+)" fill="none" stroke="#\w{6}" stroke-width="7" stroke-linecap="round"/>', svg):
-            g += f'<path d="{m.group(1)}" fill="none" stroke="{sc}" stroke-width="7.2" stroke-linecap="round"/>'
-        g += f'<circle cx="495" cy="30" r="24" fill="{sc}"/></g>'
+            g += f'<path d="{m.group(1)}" fill="none" stroke="{sc}" stroke-width="8.2" stroke-linecap="round"/>'
+        g += '</g>'
         out.append(g)
+        out.append(f'<circle cx="{cx:.2f}" cy="{APEX_MM * (W / MM) + 2 * S:.2f}" r="{24 * S:.2f}" fill="{sc}"/>')
     pk = re.search(r'<path d="M225,219 [^"]+" fill="(#\w{6})" stroke="#C9A646" stroke-width="7"/>', svg).group(1)
     for cx in FACES:
         # peak: its top edge IS the brim (no body-colour gap); corners and underside = the bauble peak (M225,219 ... Q745,295
@@ -94,7 +100,7 @@ def build(ref, code, capcol, horse):
     pat, bg = pattern(svg)
     parts = pat + cap(svg) + [face(svg, cx, s) for cx, s in zip(FACES, ('L', 'R'))] + [logo()]
     out = f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">' + ''.join(parts) + '</svg>'
-    os.makedirs('out', exist_ok=True); base = f'out/{ref}-bauble-style-mug-{W}x{H}'
+    os.makedirs(os.path.join(HERE, 'out'), exist_ok=True); base = os.path.join(HERE, 'out', f'{ref}-bauble-style-mug-{W}x{H}')
     render.make(out, base + '.png', W, H)
     pay = dict(position='front', x=.5, y=.5, scale=1, angle=0, blueprint_id=635, print_provider_id=94, variant_id=72180)
     des = dict(code=code, cap=capcol, **({'horse': horse} if horse else {}))
