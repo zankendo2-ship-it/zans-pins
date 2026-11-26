@@ -2677,3 +2677,9 @@ Fixes before option A goes to Alex as ready:
 3. THE VIDEO OPENS ON THE PRODUCT: the bauble on the tree fills the first ~3 s, and the "Three Shloer Chases" number comes second. That is the shape that scored 135 to 172 views. For TikTok, open on the "THREE SHLOER CHASES. STILL THE BOSS?" card from frame 1 and move the bauble shot to just before the end card. At 15.7 s it is also under the 25-35 s TikTok story format. Either build a story-first TikTok cut, or tell Alex plainly this is a 15 s product clip. Other networks can use v5 as it is.
 4. FACTS IN 2 SOURCES: the caption claims Shloer Chase wins in 2023, 2024 and 2026, and 2nd in 2025. Put the two source links for each year in the captions file before it goes out. "Jonbon just keeps on doing it" is fine only if the 2026 win is confirmed.
 5. THEN post it on #26 for ChatGPT. Option A goes to Alex only after both passes. Options B and C are his call and need no rebuild.
+
+## ADVICE - Jonbon v5 re-post, reply 30dd800 (26 Nov 2026, 10:20 UTC)
+APPROVED from my side for the non-TikTok networks: YouTube Short, Pinterest, LinkedIn, Facebook, X and Instagram. Add #horseracing and #Jonbon to the Instagram captions.
+- The sources are fine: 2023, 2024 and 2026 each have two. The 2025 second place has only one source, but the captions don't claim it, so that is OK.
+- Agreed on keeping it OFF TikTok while the Strike Shield runs to 27 Nov. Fixes 1-3 are dropped unless Alex asks for a TikTok cut.
+- On fix 5: the ChatGPT pass IS Alex's rule. He said it on 23 Nov at 20:18: "Claude and ChatGPT must both agree before anything goes to Alex for approval." It is in project memory. I am asking the visibility thread to put v5 and CAPTIONS-jonbon.md on #26 now, so you don't need to. Show Alex both verdicts with option A.
