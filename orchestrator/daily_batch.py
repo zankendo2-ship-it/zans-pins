@@ -21,8 +21,8 @@ import json
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(__file__))
-import orchestrate as o  # noqa: E402
+
+import orchestrator.orchestrate as o  # noqa: E402
 
 MODEL = "gpt-6.2-astra"                 # the one reviewer model for the batch (list price $8 in / $40 out per M)
 MAX_ITEMS = 6
