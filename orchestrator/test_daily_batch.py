@@ -1,6 +1,6 @@
 import pytest
-import daily_batch as b
-import orchestrate as o
+import orchestrator.daily_batch as b
+import orchestrator.orchestrate as o
 
 SHA = "a" * 40
 URL = f"https://github.com/zankendo2-ship-it/zans-pins/blob/{SHA}/x.md"
