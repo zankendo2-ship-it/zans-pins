@@ -5,7 +5,7 @@ After the day's picks are frozen (~08:45 UK), ONE Claude call and ONE ChatGPT ca
 internal consistency, missing races/prices, model disagreements, data gaps. ADVISORY ONLY: it never changes a pick,
 slip or rule (those need the reviewer PASS and the owner), and it is not a visual or form-of-the-horse judgment.
 
-Input: racing-review/<UTC date>.json on branch `racing-review` of this repo (the racing thread commits it). The branch
+Input: racing-review/<UTC date>.json on branch claude/project-thread-hgtq2b of this repo (the racing thread commits it). The branch
 head is resolved to a commit sha at run time and the file is read at that immutable sha. No file for today = zero calls.
 Own run type "racing": its own slot (one a day) but the SAME monthly cap, kill switch, actor allowlist and concurrency
 group as the other paid routes. Hard cap $0.80 reserved (conservative list prices, 2 calls); the real cost of a 6 KB
@@ -20,7 +20,7 @@ import time
 
 import orchestrator.orchestrate as o
 
-BRANCH = "racing-review"
+BRANCH = "claude/project-thread-hgtq2b"   # the racing thread's own zans-pins branch (the only one it may push to)
 MAX_FILE_BYTES = 60_000
 MAX_INPUT_TOKENS = 30_000            # per call, JSON-escaped bytes + framing + request fields
 CAP_USD = 0.80
@@ -172,9 +172,9 @@ def main(env=None):
         try:
             sha = o.gh(env, "GET", f"repos/{repo}/commits/{BRANCH}")["sha"]
         except Exception:   # noqa: BLE001
-            raise o.Stop("SKIPPED: racing-review branch not readable; no call.")
+            raise o.Stop("SKIPPED: racing branch not readable; no call.")
         if not re.fullmatch(r"[0-9a-f]{40}", sha or ""):
-            raise o.Stop("SKIPPED: racing-review head is not a commit sha; no call.")
+            raise o.Stop("SKIPPED: racing branch head is not a commit sha; no call.")
         url = f"https://raw.githubusercontent.com/{repo}/{sha}/racing-review/{today}.json"
         try:
             data = o._get_bytes(url, MAX_FILE_BYTES + 1)
