@@ -1,6 +1,5 @@
-# ZANS Etsy SEO v2 - review packet rules
-This is v2 after your REVISE (issue #26 comment 7204216509). Applied: Ascot Flat Beginner title 12 words; Pro/Advanced back in the 14 guide titles; 18+ line removed from 19 guide descriptions; owner names removed from Ascot Flat Advanced; stocking filler removed; green bauble ring wording fixed; neutral disclaimer line; true controls (green bauble 4611213915, Premium Silks Mug 4608193933) untouched; Beginner second tag now course/event specific; 'gift for racing fan' tested on Aintree, Sandown, Cheltenham Beginner. Waves: 0 compliance, 1 SEO on low-view listings, 2 silks bauble later.
-Review each listing: PASS or REVISE with exact fix. Check 13 unique tags <=20 chars; title <=140 chars, <15 words, no repeats; no winners/profit/tips promises, betting-site or owner names, 'Royal Ascot', 18+ wording; cannibalisation between editions; controls untouched. No volume data exists; tags are hypotheses. Nothing is live.
+# ZANS Etsy SEO v3 - review packet rules
+v3 after your reviews 7204216509 and 7205130348. Applied: Pro/Advanced in titles; no 18+ wording; no tips/betting-instruction wording (4601073843 fixed); Advanced titles lead with 'Form and Going Analysis' and betting tags replaced (Cheltenham Advanced control keeps its live tags); controls untouched. Review each listing: PASS or REVISE with exact fix. Nothing is live; no search-volume data exists.
 
 ## 4622635374 Beginner guide £7.49 views 0
 OLD TITLE: Kempton All-Weather Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Track DNA 2027
@@ -24,13 +23,13 @@ NEW OPENING PARAGRAPH: Kempton all-weather horse racing statistics book and data
 
 ## 4622626437 Advanced guide £12.49 views 0
 OLD TITLE: Kempton Jumps Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Track DNA
-NEW TITLE: Kempton Jumps Racecourse Guide PDF Advanced - Horse Racing Form and Betting, Download
+NEW TITLE: Kempton Jumps Racecourse Guide PDF Advanced - Horse Racing Form and Going Analysis, Download
 OLD TAGS: kempton betting | kempton form guide | king george chase | boxing day betting | jumps betting guide | chase form guide | hurdles form guide | each way guide pdf | national hunt form | christmas hurdle | racecourse guide pdf | horse racing gift | gift for racing fan
-NEW TAGS: kempton form | kempton betting | king george form | christmas hurdle | horse racing form | racing form guide | betting guide pdf | each way betting pdf | going and distance | racing value guide | form analysis pdf | racecourse form pdf | horse racing guide
-PRIMARY: kempton jumps form guide pdf ; SECONDARY: kempton jumps betting guide, horse racing form guide, each way guide pdf, racing going guide
+NEW TAGS: kempton form | kempton going guide | king george form | christmas hurdle | horse racing form | racing form guide | price and form pdf | each way form pdf | going and distance | racing value guide | form analysis pdf | racecourse form pdf | horse racing guide
+PRIMARY: kempton jumps form guide pdf ; SECONDARY: form analysis guide, horse racing form guide, each way guide pdf, racing going guide
 AUDIENCE: The racing follower who already goes to Kempton Jumps or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
 NOTE: 
-NEW OPENING PARAGRAPH: Kempton Park jumps form guide and horse racing betting PDF for the Christmas meeting with the King George VI Chase: value and over-bet points for each of the 7 main hurdle, chase and bumper distances, split by going (ground conditions) where there are enough races. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+NEW OPENING PARAGRAPH: Kempton Park jumps form guide and horse racing form analysis PDF for the Christmas meeting with the King George VI Chase: value and over-bet points for each of the 7 main hurdle, chase and bumper distances, split by going (ground conditions) where there are enough races. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622634750 Beginner guide £7.49 views 0
 OLD TITLE: Kempton Jumps Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Track DNA 2027
@@ -54,13 +53,13 @@ NEW OPENING PARAGRAPH: Kempton Park jumps horse racing statistics book and data 
 
 ## 4622672428 Advanced guide £12.49 views 0
 OLD TITLE: Sandown Park Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Jumps Track DNA
-NEW TITLE: Sandown Park Racecourse Guide PDF Advanced - Horse Racing Form and Betting, Download
+NEW TITLE: Sandown Park Racecourse Guide PDF Advanced - Horse Racing Form and Going Analysis, Download
 OLD TAGS: sandown betting | sandown form guide | tingle creek chase | celebration chase | imperial cup | chase betting pdf | hurdle betting guide | each way racing | jumps placepot pdf | jumps form pdf | racecourse guide pdf | horse racing gift | gift for racing fan
-NEW TAGS: sandown form | sandown betting | tingle creek form | sandown chase form | horse racing form | racing going guide | form study pdf | trainer form guide | racing form guide | betting guide pdf | each way betting pdf | going and distance | racing value guide
-PRIMARY: sandown park form guide pdf ; SECONDARY: sandown park betting guide, horse racing form guide, each way guide pdf, racing going guide
+NEW TAGS: sandown form | sandown going guide | tingle creek form | sandown chase form | horse racing form | racing going guide | form study pdf | trainer form guide | racing form guide | form analysis pdf | each way form pdf | going and distance | racing value guide
+PRIMARY: sandown park form guide pdf ; SECONDARY: form analysis guide, horse racing form guide, each way guide pdf, racing going guide
 AUDIENCE: The racing follower who already goes to Sandown Park or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
 NOTE: 
-NEW OPENING PARAGRAPH: Sandown Park form guide and horse racing betting PDF for the Tingle Creek meeting and the rest of the jumps season: value and over-bet points for each of the 5 main hurdle and chase distances, split by going (ground conditions) where there are enough races. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+NEW OPENING PARAGRAPH: Sandown Park form guide and horse racing form analysis PDF for the Tingle Creek meeting and the rest of the jumps season: value and over-bet points for each of the 5 main hurdle and chase distances, split by going (ground conditions) where there are enough races. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622672152 Beginner guide £7.49 views 0
 OLD TITLE: Sandown Park Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Jumps Track DNA 2027
