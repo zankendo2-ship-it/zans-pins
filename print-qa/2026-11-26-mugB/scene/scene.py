@@ -13,7 +13,7 @@ C, FILE_MM = math.pi * 82.0, 209.55
 PHI = math.radians(-82.0)
 SS = 3
 def wrap(art_png, out):
-    photo = np.asarray(Image.open(SRC).convert('RGB')).astype(float)[OY:OY + 1518, OX:OX + 1215]
+    full = np.asarray(Image.open(SRC).convert('RGB')).astype(float); photo = full[OY:OY + 1518, OX:OX + 1215]
     art = np.asarray(Image.open(art_png).convert('RGB')).astype(float); AH, AW, _ = art.shape
     x0, x1, y0, y1 = 220, 815, 430, 1300
     gx = (np.arange((x1 - x0) * SS) + 0.5) / SS + x0; gy = (np.arange((y1 - y0) * SS) + 0.5) / SS + y0
@@ -39,6 +39,9 @@ def wrap(art_png, out):
     reg = photo[y0:y1, x0:x1]
     photo[y0:y1, x0:x1] = reg * (1 - covd) + litd * covd
     Image.fromarray(np.clip(photo, 0, 255).astype(np.uint8)).save(out, quality=95)
+    Image.fromarray(np.clip(full, 0, 255).astype(np.uint8)).save(out.replace('.png', ' - full 2700x2025.png'))
 if __name__ == '__main__':
+    Image.new('RGB', (2475, 1155), (255, 255, 255)).save('/tmp/claude-0/blank-art.png')
+    o = os.path.join(OUT, 'BLANK master - scene.png'); wrap('/tmp/claude-0/blank-art.png', o); print(o)
     for ref, n in (('loussiemoo', 'Loussiemoo'), ('zoo-olympios', 'Zoo Olympios'), ('rexs-romance', 'Rexs Romance')):
         o = os.path.join(OUT, f'{n} bauble-style mug - scene.png'); wrap(os.path.join(ART, f'{ref}-bauble-style-mug-2475x1155.png'), o); print(o)
