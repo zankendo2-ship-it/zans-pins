@@ -111,21 +111,11 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 - Matrix: v2.1 (reconciliation: 9 = 5 BC + 1 test + 3 bauble; earlier 10/6 include the 25 Oct 11:18 Ascot order outside the API window). Five legacy "betting" slugs: ID-only links, no relist.
 - T2 24h reading recorded above (c439e308); TikTok native playback, bio link and other link checks still open.
 
-Pilot blocker (separate line, P/W numbering unchanged), 25 Nov 23:40 UTC: the two-reviewer orchestrator pilot (zans-pins Actions "ZANS two-reviewer check (pilot)") is BLOCKED. Run 45700091328 (20:59 UTC): Claude replied (REVISE). OpenAI returned HTTP 429 insufficient_quota / credit_balance_exhausted, meaning Alex's OpenAI API account has no credit. ChatGPT PASS on the diagnosis (#26 7176301531). No retries until Alex adds API credit. The 25 Nov daily cap of 3 is used. Ledger: 3 live slots reserved at $2.45 = $7.35 of the $10 monthly cap. Actual spend is estimated at about $0.06 (not a billed figure). No live change.
+## T2 48h reading (Metricool analytics read 26 Nov 12:48 UTC, about 48h18m after the 12:30 UK post)
 
-### 26 Nov 07:40 UTC sync (ChatGPT 7185568999; no boxes close, order preserved)
-- W3 Christmas cards f230046e: DIGITAL PASS. Set listing copy PASS. Custom listing copy PASS, conditional on the actual made-to-order form and a rights check. How-to-print layout and instructions PASS. Rendered cards (all 36 panels) visual PASS, frozen. Preflight digital evidence PASS (13 PDFs, 16,737,510 bytes; the ZIP hash was reported, not independently recomputed). PHYSICAL RELEASE HOLD (REVISE): needs a folded plain-paper A4 AND Letter proof with trim marks, inside upright, and border/edge clearance. No listing until that proof and owner consent. The custom 18/20 Dec deadline is conditional on weekend staffing.
-- Print-QA Q1 owner request ed1d0de2: PASS in principle after one wording change ("visual/paper proofs passed; supplier placement and physical print remain unverified"). Nothing runs until the owner says yes AND the revised script PASSes.
-- Printify draft script 46a539481: REVISE (HOLD). Needs: variant assertions before any API mutation, not assert-only; owner approval bound to the 5 file hashes, the shop and the run; allowlisted endpoints and concurrency; atomic ID persistence after each mutation; stop-and-reconcile on failure (no duplicates, no auto-cleanup); 2xx schema validation and unpublished readback; incomplete = nonzero exit; sanitised logs; mocked partial-failure/timeout/rerun tests.
-- T2: no closure; 48h reading due 26 Nov 12:30. No performance claim.
-
-### 26 Nov 08:00 UTC sync (ChatGPT 7185972203; no boxes close)
-- Print-QA Q1 owner request 27ba1978: wording PASS. Clarify that deletion needs separate explicit permission and is never automatic. It may be prepared but is NOT sent to the owner until the script execution gate passes.
-- Printify drafts script f0ce115c: REVISE (HOLD), not execution-ready. These parts PASS: preflight before mutations, exact payload checks, atomic local state, endpoint list, basic reconciliation. Blockers:
-  1. stale workflow_dispatch / one-shot run identity; masked exit codes and state-push failure;
-  2. ambiguous POST and runner death (pending intent saved before the POST, manual reconcile, durable checkpoint);
-  3. adoption image/hash and blueprint/provider checks; fail closed on pagination;
-  4. approval bound to the fixed shop and the exact owner message/run;
-  5. redirects; whitelist the quote/error fields; validate the image bytes;
-  6. missing tests.
-- W3 cards: digital PASS / physical hold, unchanged. T2 48h reading due later today.
+- TikTok 7711714549145062678: 177 views (24h: 172), 13 likes (24h: 10), 0 shares. That is -27% against the gift median of 241. It has the most likes of any TikTok since 18 Nov. Reach, full-watch rate, average watch time and traffic source: UNAVAILABLE (not returned).
+- YouTube Short lCs0-ObXqJY: 34 views, the other returned fields 0. For comparison, the 24 Nov 16:03 YT video DUsgLzDe61o has 123 views.
+- Pinterest 1105211564844688702: 0 across all fields. Every pin since 24 Nov reads 0, so the feed probably isn't reporting. UNAVAILABLE, not a true zero.
+- Product clicks, orders and revenue attributable to T2: UNAVAILABLE (no attribution path; TikTok bio has no link).
+- Other TikToks since 18 Nov in the same read: 686, 569, 560, 497, 407, 242, 238, 232, 229, 191, 164, and 139 (Conny story). The story median of 188 is kept separate.
+- Growth 24h->48h: +5 views. The post has essentially stopped being distributed. Next: 7-day reading on 1 Dec 12:30.
