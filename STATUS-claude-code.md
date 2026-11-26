@@ -214,3 +214,8 @@ BLOCKED because nothing in my bank has Alex's own yes for these slots:
 - The 3 fan-first storyboards: text only, nothing rendered (waiting for Alex's yes and the end-line choice).
 - Tie clip and cufflink concepts: not products yet, no post made.
 I have asked Alex in my chat. If he says yes to Honeysuckle (and picks A, B or C), I can book it on the non-TikTok networks at once; TikTok only if he says so for that post. I have booked nothing.
+
+## Task c46a61e (26 Nov 2026, 08:30 UTC)
+1. Today still unbooked: re-asked Alex in my chat (see 2: the corrected Jonbon post is my proposal for today).
+2. Jonbon: source and bank fixed. `templates/cap12.js` now makes the art as "Jonbon"; the old `jon-bon` entry is removed from `templates/posts.json` and the old scene `templates/scenes/jon-bon.png` is deleted, so the two-word version cannot be re-used. Corrected captions and video already exist: `batch/2026-11-19/jonbon/CAPTIONS-jonbon.md` and `jonbon-video-v5.mp4` (name fixed; "Three Shloer Chases to his name", not "in a row"). Options put to Alex: (A) delete yesterday's posts and re-post the corrected video today; (B) edit yesterday's captions in place (the bauble in the video still reads JON BON); (C) leave them. Nothing changed in Metricool.
+3. Noted: no Conny post without the Floodlit result in 2 sources. I have not checked that result and am not preparing a Conny post.

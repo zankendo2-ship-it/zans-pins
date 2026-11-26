@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 const jobs=[ // file, style(green?), pattern button, c1, c2, cap, name, expected code
  ['art-nodrama.png',0,'Hoops','#FFFFFF','#1B2A5C','#C8102E','No Drama This End','ZBA-hoops-FFFFFF-1B2A5C-plain-C8102E'],
- ['art-jonbon.png',0,'Hoops','#0E6B3B','#F5D130','#FFFFFF','Jon Bon','ZBA-hoops-0E6B3B-F5D130-plain-FFFFFF'],
+ ['art-jonbon.png',0,'Hoops','#0E6B3B','#F5D130','#FFFFFF','Jonbon','ZBA-hoops-0E6B3B-F5D130-plain-FFFFFF'],
  ['art-billy.png',0,'Three big spots','#F5D130','#1C1C1C','#1C1C1C','Billy','ZBA-spot_diag-F5D130-1C1C1C-plain-1C1C1C'],
  ['art-conny-green.png',1,'Plain','#FFFFFF','#1C1C1C','#000000','Constitution Hill','ZBB-plain-FFFFFF-1C1C1C-plain-000000'],
  ['art-conny-white.png',0,'Plain','#FFFFFF','#1C1C1C','#000000','Constitution Hill','ZBA-plain-FFFFFF-1C1C1C-plain-000000'],
