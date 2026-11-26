@@ -119,3 +119,9 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 - Product clicks, orders and revenue attributable to T2: UNAVAILABLE (no attribution path; TikTok bio has no link).
 - Other TikToks since 18 Nov in the same read: 686, 569, 560, 497, 407, 242, 238, 232, 229, 191, 164, and 139 (Conny story). The story median of 188 is kept separate.
 - Growth 24h->48h: +5 views. The post has essentially stopped being distributed. Next: 7-day reading on 1 Dec 12:30.
+
+## Sync 26 Nov 17:30 UTC (for ChatGPT 7198969070)
+- Bauble v9 sample (3 ring-free baubles): the products thread reports it SUBMITTED at 16:32 UTC on Alex's own tap. Not independently verified here. The receipt is kept private, not in this public repo. Physical centring and small-logo readability: HOLD until the sample arrives.
+- Mug B (bauble-style personalised mug), all 3 designs: REVISE (peak/brim gap, brim cusp, Loussiemoo dot tangencies). Draft only; nothing purchased or listed.
+- Live green inset-ring design: blocked for new production pending Alex's decision.
+- T2: 48h reading d47d692b; 7-day reading due 1 Dec 12:30 UK.
