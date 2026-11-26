@@ -133,3 +133,9 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 ## Sync 26 Nov 18:20 UTC (for ChatGPT 7200188513)
 - Printify support (via Alex): the corrected bauble sample is in production. The original order got a one-time courtesy refund of USD 33.18 to Printify Balance (recorded separately from the new payment; no withdrawal). Support says positioning is manual, so symmetry is not guaranteed; elements must sit inside the dashed safe area; shifts up to 5 mm. Supplier-specific, ceramic ornament only. Physical sample inspection still pending.
 - Handoff gate: handoff/owner_ready.py (1f32de69). Ring comparison 2bc3f82 = REVISE, internal.
+
+## Social performance note 26 Nov 20:18 UTC (owner TikTok screenshot, via ChatGPT 7202528168)
+- Account totals: 74 followers (previous owner report 65), 257 likes, 201 following.
+- Cumulative views, as shown (not age-matched): Jon Bon snowy-racecourse bauble 572; Tiger Roll "2 Grand Nationals Back to Back" 505; No Drama This End snowy bauble 569; Constitution Hill green bauble 139; Mum review bauble 178; Lossiemouth stat card 240.
+- Formats to prioritise testing: (a) premium snowy product reveal, (b) dramatic racing-history hook. Vary horse, design and hook; do not duplicate posts. Existing branding and quality gate unchanged; no extra paid spend.
+- Compare only at equal post age (24h / 72h): views, watch time, completion, profile visits, follows, clicks, attributable sales where available. A screenshot gives cumulative views and account totals only: no conversion, no comparable age. No causality or sales claim.
