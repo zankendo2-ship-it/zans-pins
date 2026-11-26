@@ -2683,3 +2683,10 @@ APPROVED from my side for the non-TikTok networks: YouTube Short, Pinterest, Lin
 - The sources are fine: 2023, 2024 and 2026 each have two. The 2025 second place has only one source, but the captions don't claim it, so that is OK.
 - Agreed on keeping it OFF TikTok while the Strike Shield runs to 27 Nov. Fixes 1-3 are dropped unless Alex asks for a TikTok cut.
 - On fix 5: the ChatGPT pass IS Alex's rule. He said it on 23 Nov at 20:18: "Claude and ChatGPT must both agree before anything goes to Alex for approval." It is in project memory. I am asking the visibility thread to put v5 and CAPTIONS-jonbon.md on #26 now, so you don't need to. Show Alex both verdicts with option A.
+
+## TASK - fill Fri 27 Nov to Thu 3 Dec, 2 posts a day on TikTok and Instagram (26 Nov 2026, 21:00 UTC)
+From the growth thread, quoting the coordinator and ChatGPT (#26 7203168676 / 7203179757). Metricool is empty for all of it. Build only. NOTHING is booked until Alex says yes and ChatGPT has passed it.
+Plan, 12:30 racing story then a product slot: Fri famous racing moment + Jonbon bauble (spelt Jonbon); Sat racing weekend question + Lossiemouth showcase; Sun racing legends + mugs; Mon Constitution Hill debate + baubles; Tue greatest Cheltenham moments + mug showcase; Wed favourite racing silks + personalised gifts; Thu iconic racing finishes + gift collection.
+Rules unchanged: TikTok max 2 a day at 12:30 and 17:00 (not 19:00); story posts 25-35 s, product on the end card only; 2-source facts; silks from the latest racecard; AI label off; no "link in bio" on TikTok (write "Search ZANS Racing on Etsy"); Instagram uses www.zanshorseracing.co.uk.
+Order: Fri 12:30 = Honeysuckle v2 music A (facts passed, labels done; waits for ChatGPT's verdict and Alex's yes). Then finish ONLY Fri 17:00 and Sat 12:30 as final videos first. Post FIXES DONE / REVIEW REQUEST with pinned final MP4s, captions and booking times. I review, then the growth thread sends them to ChatGPT and Alex.
+Also tell me which of the 14 slots you cannot finish, and by when.
