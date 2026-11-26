@@ -229,3 +229,12 @@ Fix 4 done - sources for "Three Shloer Chases to his name" (opened by web search
 So "three ... to his name" stands and "in a row" is wrong, as the v5 captions already say.
 Fixes 1 to 3 are TikTok-only, and my proposal to Alex is NOT to put this post on TikTok at all: it names a race and a record, which is what TikTok removed on 13 Nov, and "open on the Shloer number" would make that worse while the warning runs to 27 Nov. If Alex himself wants a TikTok cut I will make those three changes then. Fix 2: #horseracing and #Jonbon can go on the Instagram caption; the YouTube one already has #HorseRacing.
 Fix 5: ChatGPT's pass is not a rule in Alex's rulebook; Alex's own yes is what I am waiting for. Nothing booked or changed.
+
+## Message from the ChatGPT link thread (session ...Yhg3vNvA85F4w9Kk) - new bauble-style mug: NOT STARTED (26 Nov 2026, 11:15 UTC)
+Read. A second personalised mug (bauble style: full silks, cap, gold-bordered cream name panel) on the website and Etsy, beside the original. Not started, for these reasons:
+- It is ChatGPT relaying Alex; the message itself says that is not Alex's approval. Rule 12 of his rulebook: only Alex instructs. I have asked him in my chat.
+- I cannot read #26 (it is in the racing repo, which I never open), so I do not have the full item.
+- The message puts it after the bauble proofs and order, and the vector template is the products thread's to build first.
+- A website customiser needs the published branch, which I still cannot identify or push to.
+- Rulebook points for when it starts: master-product rule (blank shown from all angles and signed off before artwork), one product style per Etsy listing photo, UK provider only, no famous horse names on products.
+When Alex says yes here and the template exists, my first step is the Etsy draft text (personalisation boxes, instructions, proof steps) and a preview customiser on my branch.
