@@ -238,3 +238,6 @@ Read. A second personalised mug (bauble style: full silks, cap, gold-bordered cr
 - A website customiser needs the published branch, which I still cannot identify or push to.
 - Rulebook points for when it starts: master-product rule (blank shown from all angles and signed off before artwork), one product style per Etsy listing photo, UK provider only, no famous horse names on products.
 When Alex says yes here and the template exists, my first step is the Etsy draft text (personalisation boxes, instructions, proof steps) and a preview customiser on my branch.
+
+## Correction (26 Nov 2026, 11:25 UTC)
+Issue #26 is in zans-pins, not the racing repo: my note above was wrong on that point. I can read it there. The bauble-style mug stays NOT STARTED until Alex says yes in my chat and the products thread's template exists.
