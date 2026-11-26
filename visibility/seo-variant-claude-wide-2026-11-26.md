@@ -10,8 +10,8 @@ Prepared 26 Nov 2026 night. Nothing edited on Etsy. Companion to the growth thre
 - Facts used only from the live copy (page counts, race meetings, 7.5 cm, 11oz). No volume or competition numbers exist to us; every tag is a hypothesis.
 
 ## Gaps found in the growth proposal (for ChatGPT + Alex)
-1. Nearly every guide title keeps 'Instant Download, Track DNA' and similar; the word 'Pro'/'Advanced' leads over what a buyer types (statistics, form guide). Fixed in this variant.
-2. Titles over 14 words and with repeated words (Racecourse x2, Horse Racing Gift for Racegoers) break the shop rule (under 15 words, no repeats).
+1. Growth titles mostly keep 'Pro'/'Advanced' and 'Track DNA' ahead of what a buyer types (statistics book, form guide). Fixed in this variant.
+2. Growth titles are mostly 15-20 words; the shop rule is under 15 words. This variant keeps every title to 14 words or fewer.
 3. Ascot Flat Pro/Advanced left untouched although they are the two guides with the least search coverage (8 and 5 views) - this variant refreshes them. Pro 71 pages and Advanced 37 pages come from the live descriptions; check the files before adding Number of pages.
 4. The 1 Dec hold: it comes from the Etsy Ads 30-day rule on the campaign. 17 of 21 guides have 0 views, so editing them cannot lose rank - recommend editing the zero-view listings now.
 
