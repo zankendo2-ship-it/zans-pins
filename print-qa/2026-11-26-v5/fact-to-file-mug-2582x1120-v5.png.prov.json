@@ -1,0 +1,11 @@
+{
+ "renderer": "zans-print-qa/render.py v3 (chromium, outlined master, deviceScaleFactor 1)",
+ "px": [
+  2582,
+  1120
+ ],
+ "master": "fact-to-file-mug-2582x1120-v5.svg",
+ "master_sha256": "ed268329820fea31212baed3fa41428c56ea7a3318ac54962b17f21bf4074c53",
+ "png_sha256": "155c8d77544d57ca3456321c173fe0d74788139bb220432ce5a5dd26298ad3bf",
+ "made_utc": "2026-11-26T01:22:36Z"
+}

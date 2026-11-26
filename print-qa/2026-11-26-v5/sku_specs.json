@@ -1,0 +1,116 @@
+{
+ "_note": "Per-SKU print specs. Template px from the Printify catalog / our order scripts. Provider file limits from Alex's 25 Nov spec (Printify 100 MB raster, 20 MB SVG) - not yet re-verified against current Printify docs. v3 25 Nov: printify_provider checked; min_text_mm = CAP HEIGHT of the smallest text; min_name_mm = cap height of the name; keepout = no key content (text, panel, logo) in that circle (bauble hanging hole - Harrier hole size/position NOT published by Printify (help article 4483628673681 checked 25 Nov), so a 12 mm keep-out under the top edge is used until a physical sample is measured); Printify states placement may deviate up to 5 mm, which is why safe_mm is 6. Bauble names: 4.0 mm letters minimum (a 10-letter name cannot reach 6 mm inside a 57 mm panel on a 75 mm face; mugs keep 6 mm). v4 25 Nov (Alex rejected the v3 redesign - keep the approved design): min_stroke_mm 0.4 for every SKU = fine decorative lines (Alex's approved cap seams/brim/panel lines are 0.45-1.06 mm); the earlier 1.5 mm/1.0 mm forced a heavier redesign and had no supplier source. min_logo_text_mm 1.5 = lettering inside the ZANS brand-mark strip (data-role=logo); the approved strip letters are ~0.7 mm, which will not print legibly - change shown separately for approval.",
+ "bauble_harrier": {
+  "printify_blueprint": 1676,
+  "provider": "Harrier (94, UK)",
+  "variants": [
+   115590
+  ],
+  "px": [
+   990,
+   990
+  ],
+  "physical_mm": [
+   74.9,
+   74.9
+  ],
+  "shape": "circle",
+  "safe_mm": 6,
+  "bleed": "full square",
+  "transparency": false,
+  "min_stroke_mm": 0.5,
+  "min_text_mm": 2.5,
+  "placement": {
+   "position": "front",
+   "x": 0.5,
+   "y": 0.5,
+   "scale": 1,
+   "angle": 0
+  },
+  "max_bytes": 100000000,
+  "printify_provider": 94,
+  "min_name_mm": 4.0,
+  "keepout": {
+   "cx_mm": 37.45,
+   "cy_mm": 0,
+   "r_mm": 12,
+   "why": "hanging hole + cap button area (missing reference: Harrier hole spec)"
+  },
+  "min_logo_text_mm": 1.5,
+  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release."
+ },
+ "mug_harrier_11oz": {
+  "printify_blueprint": 635,
+  "provider": "Harrier (94, UK)",
+  "variants": [
+   72180,
+   72182,
+   72183,
+   72184,
+   105888,
+   108906,
+   108907,
+   108908,
+   113942
+  ],
+  "px": [
+   2475,
+   1155
+  ],
+  "physical_mm": [
+   209.55,
+   97.79
+  ],
+  "shape": "wrap",
+  "safe_mm": 6,
+  "bleed": "full wrap",
+  "transparency": false,
+  "min_stroke_mm": 0.5,
+  "min_text_mm": 2.5,
+  "placement": {
+   "position": "front",
+   "x": 0.5,
+   "y": 0.5,
+   "scale": 1,
+   "angle": 0
+  },
+  "max_bytes": 100000000,
+  "printify_provider": 94,
+  "min_name_mm": 6,
+  "min_logo_text_mm": 1.5,
+  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release."
+ },
+ "mug_white_tss_11oz": {
+  "printify_blueprint": 535,
+  "provider": "T Shirt and Sons (6, UK)",
+  "variants": [
+   69010
+  ],
+  "px": [
+   2582,
+   1120
+  ],
+  "physical_mm": [
+   218.6,
+   94.8
+  ],
+  "shape": "wrap",
+  "safe_mm": 6,
+  "bleed": "full wrap",
+  "transparency": false,
+  "min_stroke_mm": 0.5,
+  "min_text_mm": 2.5,
+  "placement": {
+   "position": "front",
+   "x": 0.5,
+   "y": 0.5,
+   "scale": 1,
+   "angle": 0
+  },
+  "max_bytes": 100000000,
+  "printify_provider": 6,
+  "min_name_mm": 6,
+  "min_logo_text_mm": 1.5,
+  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release."
+ }
+}
