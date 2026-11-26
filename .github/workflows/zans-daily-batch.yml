@@ -6,8 +6,8 @@ name: ZANS daily batch review (pilot)
 
 on:
   schedule:
-    - cron: "40 7 * * *"   # 08:40 UK in summer (BST); opt-in: LIVE only if vars.ZANS_BATCH_SCHEDULE == 'true'
-    - cron: "40 8 * * *"   # 08:40 UK in winter (GMT); a UK-time gate (UK_WINDOW in daily_batch.py) lets only the right one run
+    - cron: "10 8 * * *"   # 09:10 UK in summer (BST), after the racing review so racing takes the day's one paid run first; opt-in: LIVE only if vars.ZANS_BATCH_SCHEDULE == 'true'
+    - cron: "10 9 * * *"   # 09:10 UK in winter (GMT); a UK-time gate (UK_WINDOW in daily_batch.py) lets only the right one run
   workflow_dispatch:
     inputs:
       issue:

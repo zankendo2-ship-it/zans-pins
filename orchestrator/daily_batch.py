@@ -20,7 +20,7 @@ import time
 import orchestrator.orchestrate as o
 
 PROVIDERS = ("gpt-6.2-astra",)          # allowlist; list price $8 in / $40 out per M
-UK_WINDOW = ("08:30", "09:20")      # Europe/London local time; two cron lines (winter/summer UTC) + this gate
+UK_WINDOW = ("09:05", "09:25")      # Europe/London local time; two cron lines (winter/summer UTC) + this gate
 MAX_ITEMS = 6
 MAX_MANIFEST_BYTES = 20_000
 MAX_INPUT_TOKENS = 22_500               # conservative bound incl. framing and request fields
@@ -165,8 +165,8 @@ def plan(items, date, texts, comments, env, today):
         raise Skip("duplicate: this exact artifact set was already reviewed (no paid re-review)")
     if env.get("ORCH_MODE") == "live" and any(m.group(3) == h for m in o._slots(comments, "live")):
         raise Skip("this exact set was already attempted (slot used); no automatic paid retry")
-    if o.runs_today(comments, today, "live") >= o.day_cap(env, "live"):
-        raise o.Stop("STOPPED: today's one paid run is already used (shared ledger).")
+    if o.runs_today(comments, today, "live") + o.runs_today(comments, today, "racing") >= o.day_cap(env, "live"):
+        raise o.Stop("STOPPED: today's one paid run is already used (shared ledger; racing goes first).")
     month = today[:7]
     if o.overruns(comments, month):
         raise o.Stop("STOPPED: an earlier run this month cost more than its reservation.")
