@@ -156,7 +156,7 @@ def test_failed_push_mid_run_stops_before_next_post(tmp_path):
 
 
 def test_marker_already_exists_stops(tmp_path):
-    ex = {'b' * 24: {'title': f'old {D.marker(RUN, "qa-v5-loussiemoo")}'}}
+    ex = {'b' * 24: {'title': f'old {D.marker(RUN, "qa-v6-loussiemoo")}'}}
     f = Fake(existing=ex); assert go(tmp_path, f) == 2 and 'upload' not in f.n
 
 
@@ -168,7 +168,7 @@ def test_pagination_missing_or_huge_fails_closed(tmp_path, body):
 @pytest.mark.parametrize('fail', ['timeout', 500, 'junk'])
 def test_ambiguous_upload_stops_no_retry(tmp_path, fail):
     f = Fake(fail={('upload', 1): fail}); assert go(tmp_path, f) == 2
-    s = state(tmp_path); it = s['items']['qa-v5-loussiemoo']
+    s = state(tmp_path); it = s['items']['qa-v6-loussiemoo']
     assert f.n['upload'] == 1 and it['pending'] == 'upload' and it['ambiguous'] and s['status'] == 'STOPPED'
 
 
@@ -178,7 +178,7 @@ def test_upload_record_mismatch_is_ambiguous(tmp_path):
 
 def test_crash_after_upload_product_timeout_keeps_intent(tmp_path):
     f = Fake(fail={('product', 2): 'timeout'}); assert go(tmp_path, f) == 2
-    it = state(tmp_path)['items']['qa-v5-zoo-olympios']
+    it = state(tmp_path)['items']['qa-v6-zoo-olympios']
     assert it['upload'] and it['pending'] == 'product' and f.n['product'] == 2 and f.n['upload'] == 2
 
 

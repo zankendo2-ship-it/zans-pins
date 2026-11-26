@@ -37,7 +37,9 @@
    "why": "hanging hole + cap button area (missing reference: Harrier hole spec)"
   },
   "min_logo_text_mm": 1.5,
-  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release."
+  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release.",
+  "min_small_text_mm": 1.5,
+  "small_text_evidence": "26 Nov 2026 (Alex: 'identical to the original'): data-role=small = an original approved secondary line kept at its size. Hard floor = Sticker Mule '6 pt font is the minimum size we recommend' (~1.5 mm Jost capitals). min_text_mm 2.5 (Printful 'generally 10-12 pt') stays the default for new text."
  },
  "mug_harrier_11oz": {
   "printify_blueprint": 635,
@@ -78,7 +80,9 @@
   "printify_provider": 94,
   "min_name_mm": 6,
   "min_logo_text_mm": 1.5,
-  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release."
+  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release.",
+  "min_small_text_mm": 1.5,
+  "small_text_evidence": "26 Nov 2026 (Alex: 'identical to the original'): data-role=small = an original approved secondary line kept at its size. Hard floor = Sticker Mule '6 pt font is the minimum size we recommend' (~1.5 mm Jost capitals). min_text_mm 2.5 (Printful 'generally 10-12 pt') stays the default for new text."
  },
  "mug_white_tss_11oz": {
   "printify_blueprint": 535,
@@ -111,6 +115,8 @@
   "printify_provider": 6,
   "min_name_mm": 6,
   "min_logo_text_mm": 1.5,
-  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release."
+  "size_evidence": "26 Nov 2026: text/stroke minima from published print guidance (no Harrier/T Shirt and Sons figure exists): Printify 'keep every stroke at or above 1.5pt (0.5mm)' (printify.com/knowledge-hub/common-print-file-mistakes); Sticker Mule '6 pt font is the minimum' (= ~1.5 mm capitals, used for min_logo_text_mm); Printful 'font sizes ... generally between 10 and 12 pts' (min_text_mm 2.5 mm capitals = ~10 pt Jost). Previous 3.5 mm text / 0.4 mm stroke were our own unsourced choices. Physical sample still required before release.",
+  "min_small_text_mm": 1.5,
+  "small_text_evidence": "26 Nov 2026 (Alex: 'identical to the original'): data-role=small = an original approved secondary line kept at its size. Hard floor = Sticker Mule '6 pt font is the minimum size we recommend' (~1.5 mm Jost capitals). min_text_mm 2.5 (Printful 'generally 10-12 pt') stays the default for new text."
  }
 }

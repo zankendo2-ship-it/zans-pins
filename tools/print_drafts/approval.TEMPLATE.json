@@ -5,9 +5,9 @@
  "approved_at": "YYYY-MM-DDTHH:MMZ",
  "source": "cmsg_<id of Alex own yes message>",
  "files": {
-  "qa-v5-loussiemoo": "7061f099b2930921e0bc40645405bdb4832cab820d368e0dca7beb2271cd0a63",
-  "qa-v5-zoo-olympios": "902237bd29334fbb2b10af68f7534654927de0b3a47c3ca57152515d8cd94bc5",
-  "qa-v5-rexs-romance": "38845d160866187a4248a30ce40e0cb3f418cc308aed56825d3f54603e875949",
+  "qa-v6-loussiemoo": "2ed9fbef95cdb6e54de0f798b24b5c168ce95b25bad6945c90bcccb37386e153",
+  "qa-v6-zoo-olympios": "83e3c1ff8a262b328e4ab9f669a16b4126b52a53880ec09d8340a0c7d9409bed",
+  "qa-v6-rexs-romance": "3528c66d6fdcfe3f8ad50bf355db84ff9ac5a7a0c678d8af11e9ff272c6c58dc",
   "qa-v5-fact-to-file-mug-2475x1155": "f132f0f3c33685dba3660e8a630771b37c1e2e3dc3dc53dd253f2ba0debcd538",
   "qa-v5-fact-to-file-mug-2582x1120": "155c8d77544d57ca3456321c173fe0d74788139bb220432ce5a5dd26298ad3bf"
  }

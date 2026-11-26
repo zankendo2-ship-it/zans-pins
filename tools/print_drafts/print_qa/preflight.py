@@ -125,8 +125,8 @@ def check_master(sp, raw, W, H, design):
             fails.append(f'stroke {float(sw) * tscale(t2) / pxmm:.2f} mm < {sp["min_stroke_mm"]} mm')
         if 'data-text' in e.attrib:
             n_text[0] += 1; cap = float(e.get('data-font-size', 0)) * tscale(t2) * CAP / pxmm
-            role = e.get('data-role')   # 'logo' = lettering inside the ZANS brand mark (min_logo_text_mm, spec note says why)
-            need = sp['min_name_mm'] if role == 'name' else sp.get('min_logo_text_mm', sp['min_text_mm']) if role == 'logo' else sp['min_text_mm']
+            role = e.get('data-role')   # 'small' = Alex's original secondary line kept at its approved size (min_small_text_mm = hard 6 pt minimum); 'logo' = lettering inside the ZANS brand mark (min_logo_text_mm, spec note says why)
+            need = sp['min_name_mm'] if role == 'name' else sp.get('min_logo_text_mm', sp['min_text_mm']) if role == 'logo' else sp.get('min_small_text_mm', sp['min_text_mm']) if role == 'small' else sp['min_text_mm']
             if cap < need - 0.01: fails.append(f'text "{e.get("data-text")}" letters {cap:.1f} mm tall < {need} mm')
         key = key or 'data-safe' in e.attrib or 'data-text' in e.attrib
         if e.get('data-centre') or e.get('data-role') == 'name':

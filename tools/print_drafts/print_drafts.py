@@ -31,9 +31,9 @@ OUT_ROOT = os.path.join(TOOL, 'reports')
 SHOP = '7066921'                                   # the ZANS Printify shop; fixed, the approval must name the same
 BRANCH = 'refs/heads/zans-social-notes'
 ITEMS = [  # (label, file stem, sku, blueprint, provider, variant)
-    ('Loussiemoo bauble', 'qa-v5-loussiemoo', 'bauble_harrier', 1676, 94, 115590),
-    ('Zoo Olympios bauble', 'qa-v5-zoo-olympios', 'bauble_harrier', 1676, 94, 115590),
-    ('Rexs Romance bauble', 'qa-v5-rexs-romance', 'bauble_harrier', 1676, 94, 115590),
+    ('Loussiemoo bauble', 'qa-v6-loussiemoo', 'bauble_harrier', 1676, 94, 115590),
+    ('Zoo Olympios bauble', 'qa-v6-zoo-olympios', 'bauble_harrier', 1676, 94, 115590),
+    ('Rexs Romance bauble', 'qa-v6-rexs-romance', 'bauble_harrier', 1676, 94, 115590),
     ('FACT TO FILE mug black (Harrier)', 'qa-v5-fact-to-file-mug-2475x1155', 'mug_harrier_11oz', 635, 94, 72180),
     ('FACT TO FILE mug white (T Shirt and Sons)', 'qa-v5-fact-to-file-mug-2582x1120', 'mug_white_tss_11oz', 535, 6, 69010)]
 API = 'https://api.printify.com/v1/'
