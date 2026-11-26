@@ -1,0 +1,8 @@
+{
+  "item": "Ring v no-ring comparison (Starry Night designer export)",
+  "state": "REVISE",
+  "artifact": {"path": "print-qa/2026-11-26-ring/comparison.png", "ref": "2bc3f82", "sha256": ""},
+  "self_check": {"tests_passed": false, "placeholder": false},
+  "reviews": [{"reviewer": "chatgpt", "verdict": "REVISE", "comment_id": 7200006045, "sha256": ""}],
+  "note": "Not owner-ready: square exports, no circular trim/hole, red annotation is not production art, ring-to-edge distances not measured. Stays internal."
+}
