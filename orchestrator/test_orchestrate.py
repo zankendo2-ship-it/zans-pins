@@ -563,11 +563,11 @@ def _usage_post(with_usage=True):
 
     def fake_post(url, headers, body):
         if "anthropic" in url:
-            d = {"stop_reason": "end_turn", "content": [{"type": "text", "text": good}]}
+            d = {"model": "claude-sonnet-5-5", "stop_reason": "end_turn", "content": [{"type": "text", "text": good}]}
             if with_usage:
                 d["usage"] = {"input_tokens": 20_000, "output_tokens": 500}
             return d
-        d = {"choices": [{"finish_reason": "stop", "message": {"content": good}}]}
+        d = {"model": "gpt-6.2-astra", "choices": [{"finish_reason": "stop", "message": {"content": good}}]}
         if with_usage:
             d["usage"] = {"prompt_tokens": 20_000, "completion_tokens": 500}
         return d
@@ -675,7 +675,10 @@ def test_claude_cache_tokens_counted_and_served_model_checked():
     assert o._claude_tokens({"input_tokens": 100, "output_tokens": 10, "cache_creation_input_tokens": 80,
                              "cache_read_input_tokens": 50}) == (250, 10)   # 100 + 80*1.25 + 50
     assert o._claude_tokens({"input_tokens": 100, "output_tokens": 10, "cache_read_input_tokens": "x"}) == (None, None)
-    assert o.served_model("gpt-6.2-astra", None) == "gpt-6.2-astra"
+    assert o.served_model("gpt-6.2-astra", None).startswith("unverified")   # no evidence: fail closed
+    assert o._claude_tokens({"input_tokens": 1, "output_tokens": 1, "cache_read_input_tokens": -5}) == (None, None)
+    assert o._claude_tokens({"input_tokens": 1, "output_tokens": 1, "cache_creation_input_tokens": True}) == (None, None)
+    assert o._claude_tokens({"input_tokens": None, "output_tokens": 1}) == (None, None)
     assert o.served_model("gpt-6.2-astra", "gpt-6.2-astra-2026-11-01") == "gpt-6.2-astra"
     assert o.usage_cost(o.served_model("gpt-6.2-astra", "gpt-6-luna"), 10, 10) is None   # a different model served: unknown
 

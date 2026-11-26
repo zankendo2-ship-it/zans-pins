@@ -406,7 +406,7 @@ def served_model(requested, served):
     """The model name to price. If the provider reports a served model, it must be the requested one (or a dated
     variant of it); anything else is priced as unknown, so the run is not settled and keeps its full reservation."""
     if not served:
-        return requested   # the request pins the model; a reply without the field is priced as requested
+        return "unverified:missing"   # no evidence of which model answered: price unknown, reservation stays
     return requested if served == requested or str(served).startswith(requested + "-") else "unverified:" + str(served)[:40]
 
 
@@ -414,10 +414,8 @@ def _claude_tokens(u):
     """Anthropic bills cache writes (x1.25) and cache reads separately from input_tokens; count all three, at the
     full input price (cache reads are cheaper, so this over-counts safely) so no billed category is missed."""
     tin, tout = u.get("input_tokens"), u.get("output_tokens")
-    if not (isinstance(tin, int) and isinstance(tout, int)):
-        return tin, tout
-    w, r = u.get("cache_creation_input_tokens") or 0, u.get("cache_read_input_tokens") or 0
-    if not (isinstance(w, int) and isinstance(r, int)):
+    w, r = u.get("cache_creation_input_tokens", 0), u.get("cache_read_input_tokens", 0)
+    if not all(isinstance(x, int) and not isinstance(x, bool) and x >= 0 for x in (tin, tout, w, r)):
         return None, None
     return tin + -(-w * 5 // 4) + r, tout
 
@@ -626,7 +624,8 @@ def comments_since(env, repo, issue, since):
 def settle(env, repo, issue, today, h, reserve):
     """After a live run (finished or stopped by a cap), post its measured cost so the month counts real spend.
     Only when EVERY paid call reported usage at a known price; otherwise nothing is posted and the full
-    reservation stays. Never more than the reservation. A failure here keeps the full reservation (safe)."""
+    reservation stays. The conservative measured amount is recorded even when it is ABOVE the reservation
+    (flagged as an overrun). A failure here keeps the full reservation (safe)."""
     if not RUN_COST["complete"]:
         print("not settled: a paid call did not report usage; the full reservation stays")
         return
