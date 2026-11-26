@@ -190,3 +190,14 @@ def test_cap_shine_under_seams_passes():
     assert preflight.cap_seam_check(raw) == []
     bad = raw.split(b'/>', 1)[1] + raw.split(b'/>', 1)[0] + b'/>'
     assert preflight.cap_seam_check(bad)
+
+
+# --- no outer ring on any bauble (Alex, non-negotiable, 26 Nov) ---
+def test_edge_ring_fails_and_ring_free_passes():
+    import preflight
+    bad = b'<circle cx="495" cy="495" r="469" fill="none" stroke="#C9A646" stroke-width="14"/>'
+    assert preflight.edge_ring_check(bad, 990, 990)
+    assert preflight.edge_ring_check(b'<circle cx="495" cy="30" r="24" fill="#aa7f8d"/>', 990, 990) == []
+    import glob
+    for f in glob.glob('/tmp/claude-0/zp/print-qa/2026-11-26-v7/out9/*-v9.svg'):
+        assert preflight.edge_ring_check(open(f, 'rb').read(), 990, 990) == [], f

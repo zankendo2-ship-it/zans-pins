@@ -107,6 +107,17 @@ def owner_waiver(design, key):
 
 SEAM = re.compile(rb'<path d="M495,28 Q[^"]+"[^>]*stroke-linecap="round"')
 SHINE = re.compile(rb'<path d="M195,155 Q265,70 455,48"')
+RING = re.compile(rb'<circle [^>]*cx="([\d.]+)" cy="([\d.]+)" r="([\d.]+)"[^>]*stroke="(#\w+)"[^>]*>')
+def edge_ring_check(raw, W, H):
+    """Alex (non-negotiable, 26 Nov): no outer ring/border round a bauble. Any stroked circle centred on the face with a radius over
+    85% of the face is an edge ring and fails (it prints lopsided inside the printer's 5 mm placement shift)."""
+    out = []
+    for m in RING.finditer(raw):
+        cx, cy, r, col = float(m.group(1)), float(m.group(2)), float(m.group(3)), m.group(4).decode()
+        if col.lower() != 'none' and abs(cx - W / 2) < 2 and abs(cy - H / 2) < 2 and r > 0.85 * min(W, H) / 2:
+            out.append(f'outer edge ring (circle r={r:g}, {col}) - no outer ring on any bauble')
+    return out
+
 def cap_seam_check(raw):
     """Bauble cap: the shine highlight must be drawn BEFORE the seams, never over them (26 Nov: a solid shine on top cut the
     outer-left seam into a broken line with a stray grey fragment on Rexs Romance / Zoo Olympios)."""
@@ -195,7 +206,7 @@ def check_master(sp, raw, W, H, design):
         if abs(off) > 0.5: fails.append(f'"{lab}" {off:+.1f} mm off centre')
     notes.append(f'{len(used)} colours, all approved' if not bad else f'{len(used)} colours')
     notes.append(f'{len(centre)} centred items, worst {worst:.1f} mm; {n_text[0]} outlined texts')
-    fails += cap_seam_check(raw)
+    fails += cap_seam_check(raw) + edge_ring_check(raw, W, H)
     return fails, notes, ok_cols
 
 def png_colours(im, ok_cols, tol=6, share=0.003):
