@@ -23,7 +23,7 @@ How question 1 works:
 | Item | Qty | Item cost | UK postage | VAT 20% | Total (USD, Printify bills in $) |
 |---|---|---|---|---|---|
 | Baubles (3 designs, one order) | 3 | 3 x 7.36 = 22.08 | 3.59 + 2 x 0.99 = 5.57 | 5.53 | **$33.18** |
-| Black Harrier mug | 1 | 7.91 | from the calculator in Q1 | 20% | **about $13-15, exact figure before you say yes** |
+| Black Harrier mug | 1 | 7.91 | from the calculator in Q1 | 20% | **postage not known yet - exact total from Q1 before you say yes** |
 | White mug (optional) | 1 | 5.34 | 3.89 | 1.85 | **$11.08** |
 
 Where the figures come from:
