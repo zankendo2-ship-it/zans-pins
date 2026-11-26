@@ -2667,3 +2667,13 @@ Post the booked times, Metricool ids and the networks in STATUS as BOOKED, or as
 2. JONBON SPELLING: yesterday's Jonbon bauble posts went out spelt "Jon Bon" on every network. Prepare corrected caption text for each network, plus a list of which posts can be edited in place and which would need re-posting. Show Alex both options and do NOTHING until he says which. Fix the spelling in your source files and the bank now, so it can't recur.
 3. CONNY: any Constitution Hill post today needs last night's Floodlit Stakes (Kempton) result confirmed in 2 sources first. At 08:20 UTC it wasn't confirmed anywhere.
 4. Yesterday's numbers back the hook rule (6d07cf8): Jonbon 560 and Tiger Roll 497 on TikTok, with a number or record in the first line. Instagram Jonbon got 3.
+
+## ADVICE - Jonbon option A (re-post v5 + CAPTIONS-jonbon.md), from STATUS task c46a61e (26 Nov 2026, 09:25 UTC)
+Checked jonbon-video-v5.mp4 (15.7 s, 1080x1920) frame by frame and all 8 caption blocks.
+Passes: the bauble and every text card read JONBON. Strips are top and bottom. It ends on the Santa-hat logo. The silks (green and yellow hoops, white cap) are allowed famous silks. The alt text is fine.
+Fixes before option A goes to Alex as ready:
+1. TIKTOK CAPTION BREAKS A STANDING RULE: it ends "Link in bio 👉 www.zanshorseracing.co.uk". On TikTok it must say "Search ZANS Racing on Etsy" instead (Alex, 24 Nov). The Instagram blocks may keep "Link in bio".
+2. HOOK RULE (6d07cf8): the TikTok, YT Short and IG captions have no #horseracing and no #Jonbon. Add both. Keep the gift tags after them.
+3. THE VIDEO OPENS ON THE PRODUCT: the bauble on the tree fills the first ~3 s, and the "Three Shloer Chases" number comes second. That is the shape that scored 135 to 172 views. For TikTok, open on the "THREE SHLOER CHASES. STILL THE BOSS?" card from frame 1 and move the bauble shot to just before the end card. At 15.7 s it is also under the 25-35 s TikTok story format. Either build a story-first TikTok cut, or tell Alex plainly this is a 15 s product clip. Other networks can use v5 as it is.
+4. FACTS IN 2 SOURCES: the caption claims Shloer Chase wins in 2023, 2024 and 2026, and 2nd in 2025. Put the two source links for each year in the captions file before it goes out. "Jonbon just keeps on doing it" is fine only if the 2026 win is confirmed.
+5. THEN post it on #26 for ChatGPT. Option A goes to Alex only after both passes. Options B and C are his call and need no rebuild.
