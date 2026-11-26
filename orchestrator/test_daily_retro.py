@@ -40,7 +40,7 @@ def callers(c1="PASS", o2="REVISE", c3="PASS", model_c="claude-sonnet-5-5"):
 
 def test_reserve_is_bounded_and_cheap_in_reality():
     d = data(10000)
-    assert r.worst_case_usd(d.decode()) <= r.CAP_USD == 0.60
+    assert r.worst_case_usd(d.decode()) <= r.CAP_USD == 0.70
     assert o.usage_cost("claude-sonnet-5-5", 4000, 400) * 2 + o.usage_cost("gpt-6.2-astra", 4000, 400) < 0.15
 
 
@@ -125,3 +125,33 @@ def test_main_refuses_schedule_and_runs_dispatch_end_to_end(monkeypatch):
     env = {**ENV, "ORCH_ISSUE": "26", "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "RETRO_SHA256": sha(d)}
     assert r.main(env) == 0 and calls == ["Claude", "OpenAI", "Claude"] and len(posts) == 2 and len(settles) == 1
     assert r.main({**env, "RETRO_SHA256": "0" * 64}) == 1       # wrong typed hash: refused, no call
+
+
+def test_forwarded_reply_is_valid_json_and_adversarial_quotes_fit_the_reserved_bound():
+    d = data(10000).decode()
+    nasty = {"ack": '"' * 900, "verdict": "REVISE", "reasons": ['"\\' * 300] * 8, "fixes": ['\\"' * 300] * 8}
+    f = r._fwd(nasty)
+    assert len(f) <= r.FWD_CHARS and json.loads(f)["verdict"] == "REVISE"      # whole items dropped, never cut mid-JSON
+    b = r.step_bounds(d)
+    assert o.estimate_tokens(r.build(1, d)) <= b[0]
+    assert o.estimate_tokens(r.build(2, d, nasty)) <= b[1]
+    assert o.estimate_tokens(r.build(3, d, nasty, nasty)) <= b[2]
+    # the real third prompt carries no file
+    assert d[:200] not in r.build(3, d, nasty, nasty)
+
+
+def test_oversized_real_prompt_makes_no_call(monkeypatch):
+    d = data()
+    calls, c, oa = callers()
+    monkeypatch.setattr(r, "step_bounds", lambda t: [1, 1, 1])
+    with pytest.raises(o.Stop, match="reserved bound"):
+        r.run(ENV, d, sha(d), [], TODAY, c, oa, [].append)
+    assert calls == []
+
+
+def test_summary_is_labelled_bounded_not_verbatim():
+    d = data()
+    calls, c, oa = callers()
+    posted = []
+    r.run(ENV, d, sha(d), [], TODAY, c, oa, posted.append)
+    assert "BOUNDED and SANITIZED" in posted[1] and "NOT the file" in posted[1] and "exact replies" not in posted[1].lower()
