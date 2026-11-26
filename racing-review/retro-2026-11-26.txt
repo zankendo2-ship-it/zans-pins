@@ -1,0 +1,49 @@
+ZANS 26 Nov 2026 retrospective (2026-11-26). TEST data only, not bets, not advice.
+Racing branch head 3673bdd1f. Pack 3_d0_morning_0932, manifest combined_sha256 7c61de7dc976... (full hash in pack manifest).
+Results: Sporting Life results.csv for 2026-11-26 (330 rows), Racing Post store cross-check. Prices: ORIGINAL d0_morning file (fetched 08:21Z), Sky Bet decimal; * = best price, no Sky quote; none = no price.
+Key: model cell shows the horse only where it DIFFERS from ZANS, = means same as ZANS, NR = non-runner (void).
+time course | ZANS pick (conf) | Data | AgentB | GemAPI | price | winner, ZANS finish
+11:54 Market Rasen | Cooltobecareless (10) | = | = | = | 1.57 | Cooltobecareless, ZANS 1
+12:11 Thurles | Chanceitlucky (3) | = | Ceroc | = | 5.00 | Giant Haystacks, ZANS 7
+12:20 Taunton | Fortis Et Liber (8) | = | Theybouncewell | Theybouncewell | 2.10 | Theybouncewell, ZANS 2
+12:29 Market Rasen | Midnight Bella (6) | = | Grand Scheme | = | 3.25 | Grand Scheme, ZANS 3
+12:37 Lingfield | Cooler Than Me (6) | = | = | Teorie | 2.88 | Cooler Than Me, ZANS 1
+12:46 Thurles | Champ Kiely (5) | = | = | = | 3.25 | Champ Kiely, ZANS 1
+12:55 Taunton | Poets Muse (5) | CEst Pour Moi | CEst Pour Moi | = | 3.75 | Dublinofficecallin, ZANS 5
+13:04 Market Rasen | Kala Conti (8) | Ruby Island | Bluey | Bluey | 1.80 | Bluey, ZANS F
+13:12 Lingfield | Honey Jack (5) | = | = | Poncho | 3.50 | Pop's Folly, ZANS 3
+13:21 Thurles | Dieux Diligence (5) | Dunleer Crystal | = | = | 3.00 | Getaway Harry, ZANS 4
+13:30 Taunton | Courageous Strike (5) | Venetian Beauty | Lunar Orbit | Taritino | 3.25 | Cornish Storm, ZANS 3
+13:39 Market Rasen | Natus Vincere (4) | = | Ahanaglogh | = | 4.00 | Natus Vincere, ZANS 1
+13:47 Lingfield | True To My Word (6) | Rainbow Tara | Rainbow Tara | = | 2.75 | Rainbow Tara, ZANS 2
+13:56 Thurles | Neria (9) | = | Kenough | = | 2.20 | Neria, ZANS 1
+14:05 Taunton | Savanna Storm (4) | NR Savanna Storm | Electric Eddy | NR Savanna Storm | 3.50 | Gone Country, ZANS NR
+14:14 Market Rasen | Jurys In (5) | Billy Boi Blue | Billy Boi Blue | = | 3.25 | Jury's In, ZANS 1
+14:22 Lingfield | Laughing John (7) | Blue Carpet | Blue Carpet | Blue Carpet | 2.63 | Fortune Timmy, ZANS 2
+14:31 Thurles | Mahollia (9) | Divaboriva | = | = | 1.73 | Mahollia, ZANS 1
+14:40 Taunton | Calvino (7) | = | = | Lord Cauvelliere | 2.38 | Tashan, ZANS 2
+14:49 Market Rasen | Jukebox dEddy (4) | Brother Boris | Glengolly | Jimmyjeroo | 3.50 | Subtle Fortune, ZANS 4
+14:57 Lingfield | Forthfactor (10) | NR Forthfactor | NR Forthfactor | NR Forthfactor | 1.44 | Milou Du Chenet, ZANS NR
+15:06 Thurles | Moment Of Grace (5) | = | Werner | = | 3.25 | Moment Of Grace, ZANS 1
+15:15 Taunton | Handsome Stan (4) | French Fancy | = | French Fancy | 3.25 | French Fancy, ZANS 2
+15:24 Market Rasen | Monjeu De Chaillac (6) | Nevada Samba | = | = | 2.75 | Monjeu de Chaillac, ZANS 1
+15:32 Lingfield | Marhaba Prince (6) | = | NR Sheezer Diva | Rip Wheeler | 2.75 | Longmoor, ZANS 2
+15:39 Thurles | Cosmic Front (5) | = | = | = | 3.25 | Arctic Piper, ZANS 12
+16:30 Chelmsford | Masego (5) | = | = | = | 3.00 | Sea Of Charm, ZANS 5
+17:00 Chelmsford | Mehmar (8) | Dashing Donkey | Dashing Donkey | = | 1.80 | Dashing Donkey, ZANS 3
+17:30 Chelmsford | Sprinting Speed (3) | NR Sprinting Speed | Love Alive | Henry Tudor | 4.50 | Starsong, ZANS NR
+18:00 Chelmsford | Dowman (8) | = | Roosike | = | 2.50 | Dowman, ZANS 1
+18:30 Chelmsford | Coxys Star (4) | Overbudget | Forbidden Colours | = | 4.50 | Bella Bisbee, ZANS 6
+19:00 Chelmsford | Force Of Light (8) | = | = | = | 2.00 | Force Of Light, ZANS 1
+19:30 Chelmsford | Honey Dale (7) | = | = | = | 2.63 | Bad Habits, ZANS 5
+20:00 Chelmsford | Freddies Star (6) | = | = | = | 3.25 | Flash Rascal, ZANS 5
+20:30 Chelmsford | Caledonian (3) | Colonnade | Colonnade | = | 4.00 | Colonnade, ZANS 6
+
+COUNTS (picks that ran / won, NR void): ZANS 32/11 (3 NR), Data 32/12 (3 NR), Agent B 33/12 (2 NR), Gemini API 33/13 (2 NR).
+ALL AGREE: 8 races, 7 ran, 3 won (Cooltobecareless 1.53, Champ Kiely 3.25, Force Of Light 1.91); Forthfactor NR void. At 10 pounds a race at the morning Sky price: -3.10 pounds (-0.31 pts). 3 of 7 = 43%.
+ZANS confidence v result (ran only): 1-6: 6/21; 7: 0/3; 8-10: 5/8
+Races where no model had the winner (6): 13:30 Taunton Cornish Storm, 14:05 Taunton Gone Country, 14:22 Lingfield Fortune Timmy, 14:49 Market Rasen Subtle Fortune, 14:57 Lingfield Milou Du Chenet, 17:30 Chelmsford Starsong
+
+CAVEATS: one day, 35 races, differences of 1-2 winners are noise. Scorecard verdict needs 300+ picks. NRs voided. Prices are the 08:21Z morning quotes, not SP. No rule or slip change follows from this.
+Disagreements (ZANS differs from 2+ other models): 14 races. ZANS won 1; an other model had the winner in 6; nobody in 7. Pre-race judgement per race not made: this is a results check, not a forecast.
+Races where another model beat ZANS: 12:20 Taunton, 13:04 Market Rasen, 13:47 Lingfield, 15:15 Taunton, 17:00 Chelmsford City, 20:30 Chelmsford City
