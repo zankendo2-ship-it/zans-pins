@@ -248,3 +248,19 @@ Folder `batch/2026-11-26/live-green-bauble-master/` on branch `claude/friendly-c
 - `LIVE-racing-green-bauble-DAD-print-file-3960.png` = `ZANSBauble.printFile(4)` from the LIVE page (3960 x 3960, full square).
 - `capture-info.json` (time, design code `ZBB-stars-1B2A5C-F5D130-plain-F5D130`, designer state) and `capture.js` (how it was taken).
 Design: the site's own racing green starting design (navy with gold stars, gold cap) with the name changed to "Dad". I do not have the colours of Alex's real Dad bauble; give me the design code or colours and I will capture that exact one the same way.
+
+## Task 933851c - Fri 27 Nov to Thu 3 Dec, 14 slots: what I can and cannot finish (26 Nov 2026, 21:15 UTC)
+Nothing booked, nothing built yet. Slot by slot, and what each is waiting on:
+| Slot | Item | Status | Blocked by |
+|---|---|---|---|
+| Fri 12:30 | Honeysuckle v2 music A | built (3 music versions) | ChatGPT verdict + Alex's yes + his music pick. Not mine to book. |
+| Fri 17:00 | Jonbon bauble | non-TikTok v5 corrected and approved by the reviewer; a 25-35 s story-first TikTok cut NOT built | The reviewer's own ADVICE (10:20 UTC) dropped the TikTok cut ("off TikTok while the Strike Shield runs"); this task now implies one. Needs Alex: TikTok cut yes or no, and his answer to option A (still unanswered). Build time if yes: one session (new voice lines, same scenes). |
+| Sat 12:30 | racing weekend question + Lossiemouth showcase | not started | The weekend's runners in 2 sources (racing sites are blocked here, web search only); on TikTok no race times, odds or "can X win" (Strike Shield) |
+| Sun | racing legends + mugs | not started | Needs a NEW legend: Honeysuckle and Tiger Roll are used. Mug slot needs a mug end card (master mug exists). |
+| Mon | Conny debate + baubles | not started | Floodlit Stakes result still unconfirmed in 2 sources; no Conny post until it is |
+| Tue | Cheltenham moments + mug showcase | not started | 2-source facts per moment |
+| Wed | favourite racing silks + personalised gifts | not started | silks from the latest racecard in 2 sources |
+| Thu | iconic finishes + gift collection | not started | 2-source facts |
+Every slot also needs Alex's own yes and ChatGPT's pass before booking.
+Honest capacity: I can finish Fri 17:00 and Sat 12:30 as final videos within about a day of getting the answers above; the other 12 follow at roughly one or two a day, gated by the fact checks. I do not expect all 14 by Friday.
+Shared limits: Gemini voice credit (stop if it runs out), copyright-free music only, no fetched footage, silks from 2 sources, TikTok max 2 a day, AI label off.
