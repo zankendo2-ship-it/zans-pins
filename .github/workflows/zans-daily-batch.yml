@@ -1,0 +1,63 @@
+# ZANS compact DAILY BATCH review (DRAFT, inactive). ONE OpenAI call, <= $0.30, no retries.
+# Same kill switch, actor allowlist, caps, ledger (issue #26 slot/settle comments) and concurrency group as the
+# two-reviewer pilot: both routes together can make at most ONE paid run a day.
+# mode=mock is free (no keys). mode=live also needs vars.ZANS_ORCH_ENABLED == 'true' and a run from main.
+name: ZANS daily batch review (pilot)
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: Issue number (only 26 is accepted)
+        required: true
+        default: "26"
+        type: choice
+        options: ["26"]
+      manifest:
+        description: Link to today's manifest .json, pinned to a 40-character commit SHA
+        required: true
+      mode:
+        description: mock = dry run, no API calls; live = ONE OpenAI call (capped)
+        required: true
+        default: mock
+        type: choice
+        options: [mock, live]
+
+concurrency:
+  group: zans-orchestrator          # SAME group as the pilot: the two routes can never run at once
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  batch:
+    if: github.ref == 'refs/heads/main' && (inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout this commit (read-only, no token)
+        run: |
+          git init -q .
+          git fetch -q --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" "${GITHUB_SHA}"
+          git checkout -q FETCH_HEAD
+      - name: Tests (must pass before any call; deps pinned by hash)
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install -q --require-hashes --no-deps -r orchestrator/requirements-test.txt
+          /tmp/venv/bin/python -m pytest -q orchestrator
+      - name: Batch
+        env:
+          ZANS_ORCH_ENABLED: ${{ vars.ZANS_ORCH_ENABLED }}
+          ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
+          ZANS_ORCH_MAX_RUNS_PER_DAY: ${{ vars.ZANS_ORCH_MAX_RUNS_PER_DAY }}
+          ZANS_ORCH_MAX_USD_PER_RUN: ${{ vars.ZANS_ORCH_MAX_USD_PER_RUN }}
+          ZANS_ORCH_MAX_USD_PER_MONTH: ${{ vars.ZANS_ORCH_MAX_USD_PER_MONTH }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          OPENAI_API_KEY: ${{ inputs.mode == 'live' && secrets.OPENAI_API_KEY || '' }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ORCH_MODE: ${{ inputs.mode }}
+          ORCH_ISSUE: ${{ inputs.issue }}
+          ORCH_MANIFEST: ${{ inputs.manifest }}
+        run: /tmp/venv/bin/python -m orchestrator.daily_batch
