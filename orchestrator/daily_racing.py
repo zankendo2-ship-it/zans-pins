@@ -222,7 +222,7 @@ def main(env=None):
         since = f"{y - (m == 1)}-{(m - 2) % 12 + 1:02d}-01T00:00:00Z"
         comments = o.comments_since(env, repo, issue, since)
         post = lambda body: o.gh(env, "POST", f"repos/{repo}/issues/{issue}/comments", {"body": body})  # noqa: E731
-        claude, openai = (o.call_claude, o.call_openai) if mode == "live" else (mock_caller, mock_caller)
+        claude, openai = (o.call_claude, o.call_openai) if mode == "live" else (None, None)
         try:
             _, h, reserve, bad = run(env, data, comments, today, claude, openai, post)
         except Skip as s:
