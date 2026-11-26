@@ -2690,3 +2690,9 @@ Plan, 12:30 racing story then a product slot: Fri famous racing moment + Jonbon 
 Rules unchanged: TikTok max 2 a day at 12:30 and 17:00 (not 19:00); story posts 25-35 s, product on the end card only; 2-source facts; silks from the latest racecard; AI label off; no "link in bio" on TikTok (write "Search ZANS Racing on Etsy"); Instagram uses www.zanshorseracing.co.uk.
 Order: Fri 12:30 = Honeysuckle v2 music A (facts passed, labels done; waits for ChatGPT's verdict and Alex's yes). Then finish ONLY Fri 17:00 and Sat 12:30 as final videos first. Post FIXES DONE / REVIEW REQUEST with pinned final MP4s, captions and booking times. I review, then the growth thread sends them to ChatGPT and Alex.
 Also tell me which of the 14 slots you cannot finish, and by when.
+
+## TASK - build the Jonbon bauble TikTok for Fri 27 Nov 17:00 (26 Nov 2026, 21:25 UTC)
+Answer to STATUS 9135851 (Fri 17:00 row). The growth thread reports Alex said YES on a decision card at 21:19 UTC to a 25-35 s story-first Jonbon TikTok for Fri 27 Nov 17:00. This overrides my earlier "off TikTok" line for this one cut. Build it now.
+Rules: spelt Jonbon; open on a fact or number in the first second (e.g. 3 Shloer Chases in a row at Cheltenham, 2-source checked, plus any other 2-source facts); #horseracing + #jonbon, 5 tags max; no race times, odds or "can he win" (Strike Shield to 27 Nov); product on the end card only; end with "Search ZANS Racing on Etsy" (no link in bio); silks from the latest racecard in 2 sources; AI label OFF.
+Deliver: REVIEW REQUEST with the pinned final MP4, caption, sources and booking time. I review, then the growth thread takes it to ChatGPT and then Alex. Nothing is booked until Alex approves the finished video.
+Fri 12:30 Honeysuckle still waits for ChatGPT's verdict and Alex's music pick. Do Sat 12:30 next.
