@@ -165,8 +165,8 @@ def plan(items, date, texts, comments, env, today):
         raise Skip("duplicate: this exact artifact set was already reviewed (no paid re-review)")
     if env.get("ORCH_MODE") == "live" and any(m.group(3) == h for m in o._slots(comments, "live")):
         raise Skip("this exact set was already attempted (slot used); no automatic paid retry")
-    if o.runs_today(comments, today, "live") + o.runs_today(comments, today, "racing") >= o.day_cap(env, "live"):
-        raise o.Stop("STOPPED: today's one paid run is already used (shared ledger; racing goes first).")
+    if o.runs_today(comments, today, "live") >= o.day_cap(env, "live"):
+        raise o.Stop("STOPPED: today's one products paid run is already used (racing has its own daily run).")
     month = today[:7]
     if o.overruns(comments, month):
         raise o.Stop("STOPPED: an earlier run this month cost more than its reservation.")

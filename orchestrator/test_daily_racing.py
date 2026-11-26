@@ -62,17 +62,18 @@ def test_ledger_shared_daily_slot_shared_month_and_dedup():
     data = file_bytes()
     r.plan(data, [], ENV, TODAY)
     batch_slot = {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}
-    with pytest.raises(o.Stop, match="shared across every paid route"):   # one paid run a day across ALL routes
-        r.plan(data, [batch_slot], ENV, TODAY)
+    r.plan(data, [batch_slot], ENV, TODAY)                # a products run does NOT block racing (own daily run)
     h = r.fingerprint(data)[:16]
     with pytest.raises(r.Skip):                           # same file, attempted: no auto retry
         r.plan(data, [{"body": o.slot_tag("racing", TODAY, h, 0.7)}], ENV, TODAY)
     other = {"body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}
     with pytest.raises(o.Stop, match="already used"):
         r.plan(file_bytes(made_utc="y"), [other], ENV, TODAY)
-    import orchestrator.daily_batch as b                  # and a racing run blocks the batch (racing goes first)
+    import orchestrator.daily_batch as b                  # and a racing run does NOT block the products batch
+    b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [other], ENV, TODAY)
+    two = [other, {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}]   # but each route is still capped at 1 a day
     with pytest.raises(o.Stop, match="already used"):
-        b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [other], ENV, TODAY)
+        b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, two, ENV, TODAY)
     with pytest.raises(o.Stop, match="MONTH"):
         r.plan(data, [], {**ENV, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)
     # racing slots count against the shared month

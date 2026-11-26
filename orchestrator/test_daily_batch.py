@@ -85,7 +85,7 @@ def test_plan_shared_ledger_caps_duplicate_and_overrun():
     items, texts = [i], {"a": "hello"}
     assert b.plan(items, TODAY, texts, [], ENV, TODAY)["reserve"] <= 0.30
     slot = {"body": o.slot_tag("live", TODAY, "abc123", 2.45)}          # an ORCHESTRATOR run today, other route
-    with pytest.raises(o.Stop, match="one paid run"):
+    with pytest.raises(o.Stop, match="already used"):
         b.plan(items, TODAY, texts, [slot], ENV, TODAY)
     with pytest.raises(b.Skip):
         b.plan(items, TODAY, texts, [{"body": f"<!-- {o.MARKER}:{b.batch_hash(TODAY, items)} -->"}], ENV, TODAY)
@@ -169,7 +169,7 @@ def test_second_batch_same_day_makes_zero_calls():
     _, posted, _ = e2e(ENV, [], lambda e, p: (good([i]), "stop"), [i], data)
     comments = [{"body": posted[0]}, {"body": posted[1]}]
     j, data2 = art("b")
-    with pytest.raises(o.Stop, match="one paid run"):
+    with pytest.raises(o.Stop, match="already used"):
         e2e(ENV, comments, lambda e, p: pytest.fail("called"), [j], data2)
     with pytest.raises(b.Skip):                 # the same set again is a duplicate: no paid re-review
         e2e(ENV, comments, lambda e, p: pytest.fail("called"), [i], data)
