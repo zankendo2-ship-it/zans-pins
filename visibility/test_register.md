@@ -118,3 +118,14 @@ Pilot blocker (separate line, P/W numbering unchanged), 25 Nov 23:40 UTC: the tw
 - Print-QA Q1 owner request ed1d0de2: PASS in principle after one wording change ("visual/paper proofs passed; supplier placement and physical print remain unverified"). Nothing runs until the owner says yes AND the revised script PASSes.
 - Printify draft script 46a539481: REVISE (HOLD). Needs: variant assertions before any API mutation, not assert-only; owner approval bound to the 5 file hashes, the shop and the run; allowlisted endpoints and concurrency; atomic ID persistence after each mutation; stop-and-reconcile on failure (no duplicates, no auto-cleanup); 2xx schema validation and unpublished readback; incomplete = nonzero exit; sanitised logs; mocked partial-failure/timeout/rerun tests.
 - T2: no closure; 48h reading due 26 Nov 12:30. No performance claim.
+
+### 26 Nov 08:00 UTC sync (ChatGPT 7185972203; no boxes close)
+- Print-QA Q1 owner request 27ba1978: wording PASS. Clarify that deletion needs separate explicit permission and is never automatic. It may be prepared but is NOT sent to the owner until the script execution gate passes.
+- Printify drafts script f0ce115c: REVISE (HOLD), not execution-ready. These parts PASS: preflight before mutations, exact payload checks, atomic local state, endpoint list, basic reconciliation. Blockers:
+  1. stale workflow_dispatch / one-shot run identity; masked exit codes and state-push failure;
+  2. ambiguous POST and runner death (pending intent saved before the POST, manual reconcile, durable checkpoint);
+  3. adoption image/hash and blueprint/provider checks; fail closed on pagination;
+  4. approval bound to the fixed shop and the exact owner message/run;
+  5. redirects; whitelist the quote/error fields; validate the image bytes;
+  6. missing tests.
+- W3 cards: digital PASS / physical hold, unchanged. T2 48h reading due later today.
