@@ -1,0 +1,119 @@
+# ZANS Etsy SEO - review packet rules
+Review as an independent Etsy SEO checker. For every listing give PASS or REVISE and the exact fix. Check: (1) 13 tags, each <=20 chars, no duplicates; (2) title <=140 chars, <15 words, no repeated words; (3) no claims beyond the product (no winners/profit/tips promises, no betting-site or racehorse-owner names, no 'Royal Ascot', no AI mention in titles/tags); (4) keyword relevance and honesty; (5) cannibalisation: Beginner = gift/first-timer, Advanced = form/betting, Pro = statistics/data should not overlap; (6) controls (Ascot Flat Beginner 4601073843, green bauble 4611213915, Premium Silks Mug 4608193933) get tag swaps only. No search-volume data exists; tags are hypotheses. Nothing is live.
+
+## 4623060095 Advanced guide £12.49 views 0
+OLD TITLE: Aintree Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Jumps Track DNA
+NEW TITLE: Aintree Form Guide PDF, Horse Racing Betting by Going and Distance, Grand National Download
+OLD TAGS: aintree betting | aintree form guide | grand national form | grand national pdf | topham chase | becher chase form | aintree festival | jumps each way pdf | placepot form pdf | national hunt value | racecourse guide pdf | horse racing gift | gift for racing fan
+NEW TAGS: aintree form | aintree betting | grand national form | becher chase form | horse racing form | racing betting pdf | each way guide pdf | horse racing value | racing going guide | form study pdf | trainer form guide | racing form guide | betting guide pdf
+PRIMARY: aintree form guide pdf ; SECONDARY: aintree betting guide, horse racing form guide, each way guide pdf, racing going guide
+AUDIENCE: The racing follower who already goes to Aintree or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
+NEW OPENING PARAGRAPH: Aintree form guide and horse racing betting PDF for the Grand National and Becher Chase meetings: value and over-bet points for each of the 9 main hurdle, chase and bumper distances, split by going (ground conditions), measured against the starting prices. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4623059959 Beginner guide £7.49 views 0
+OLD TITLE: Aintree Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Jumps Track DNA 2027
+NEW TITLE: Aintree Racecourse Guide PDF for Beginners, Horse Racing Gift, Grand National, Instant Download
+OLD TAGS: aintree racecourse | aintree races | aintree guide pdf | becher chase | liverpool racing | new racegoer gift | beginner jumps pdf | racing first timer | jumps day out | bechers brook | racecourse guide pdf | horse racing gift | gift for racing fan
+NEW TAGS: aintree races | aintree guide pdf | grand national guide | becher chase guide | racing for beginners | first time racegoer | horse racing gift | racegoer gift | horse racing present | racecourse day out | racing day out gift | new racegoer gift | racing starter guide
+PRIMARY: aintree racecourse guide for beginners ; SECONDARY: aintree races, aintree guide pdf, horse racing gift for beginners, first time racegoer gift
+AUDIENCE: The gift buyer or new racegoer heading to Aintree who searches by course name or for a racing present and wants something instant and easy. Different from the Advanced and Pro editions, which target form students; this one carries the gift, first-timer and day-out vocabulary.
+NEW OPENING PARAGRAPH: Aintree racecourse guide for beginners to horse racing over jumps: a simple instant-download PDF and horse racing gift for a day at Aintree, home of the Grand National, with the Becher Chase meeting in December and the Grand National meeting in April. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4623069940 Pro guide £20.82 views 0
+OLD TITLE: Aintree Racecourse Guide PDF Pro - 135-Page Horse Racing Statistics Book, Instant Download, Jumps Track DNA Gift
+NEW TITLE: Aintree Statistics Book PDF, 135-Page Horse Racing Data and Ratings, Grand National, Instant Download
+OLD TAGS: national hunt stats | jumps research pdf | racing data analysis | handicap mark stats | racing ratings book | jumps form manual | chase data analysis | hurdle data pdf | trainer jockey odds | racing stats book | racecourse guide pdf | horse racing gift | gift for racing fan
+NEW TAGS: aintree stats | grand national data | national hunt data | racing ratings pdf | horse racing ebook | racing data book | racing analysis pdf | trainer jockey stats | handicap data pdf | racing research pdf | form student gift | racing handbook pdf | racing stats book
+PRIMARY: aintree horse racing statistics ; SECONDARY: horse racing data book, racing ratings pdf, horse racing ebook, racing research pdf
+AUDIENCE: The data-minded form student who searches for statistics, ratings and research for Aintree. Own vocabulary (statistics, data, ratings, ebook, research) separate from the Beginner gift and Advanced form listings.
+NEW OPENING PARAGRAPH: Aintree horse racing statistics book and data PDF (Pro edition): a 135-page National Hunt research manual for the home of the Grand National, with course evidence by distance and going for hurdles, chases and bumpers, every finding checked in two periods and its limits stated. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4604440668 Advanced guide £12.49 views 5
+OLD TITLE: Ascot Flat Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Track DNA
+NEW TITLE: Ascot Flat Form Guide PDF, Horse Racing Betting by Draw, Going, Field Size, Download
+OLD TAGS: ascot racecourse | ascot form guide | racecourse guide | racing form guide | flat racing guide | racecourse draw bias | horse racing data | racing silks guide | horse racing ratings | horse racing stats | horse racing gift | racecourse guide pdf | gift for racing fan
+NEW TAGS: ascot form guide | draw bias guide | flat racing form | uk racecourse guide | handicap guide pdf | price and form pdf | horse racing form | racing betting pdf | each way guide pdf | horse racing value | racing going guide | form study pdf | trainer form guide
+PRIMARY: ascot flat form guide pdf ; SECONDARY: ascot flat betting guide, horse racing form guide, each way guide pdf, racing going guide
+AUDIENCE: The racing follower who already goes to Ascot Flat or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
+NEW OPENING PARAGRAPH: Ascot Flat form guide and horse racing betting PDF: a 37-page, course-specific data and form-analysis guide that teaches you to assess draw, going, field size, race conditions, ZANS ratings, handicaps and connections through historical results and worked examples. Instant PDF download, with a full colour version AND a printable version in black, white and grey. Digital file only, nothing is posted.
+
+## 4601073843 Beginner guide £7.49 views 38
+OLD TITLE: Ascot Flat Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Track DNA 2027
+NEW TITLE: Ascot Flat Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Track DNA 2027
+OLD TAGS: ascot racecourse | racecourse guide | horse racing guide | horse racing pdf | racing form guide | horse racing form | uk racecourse guide | flat racing guide | horse racing gift | horse racing data | racecourse guide pdf | ascot horse racing | gift for racing fan
+NEW TAGS: ascot racecourse | racecourse guide | horse racing guide | horse racing pdf | racing form guide | horse racing form | first time racegoer | flat racing guide | horse racing gift | racing for beginners | racecourse guide pdf | ascot horse racing | racegoer gift
+PRIMARY: ascot flat racecourse guide for beginners ; SECONDARY: ascot flat races, ascot flat guide pdf, horse racing gift for beginners, first time racegoer gift
+AUDIENCE: The gift buyer or new racegoer heading to Ascot Flat who searches by course name or for a racing present and wants something instant and easy. Different from the Advanced and Pro editions, which target form students; this one carries the gift, first-timer and day-out vocabulary.
+NEW OPENING PARAGRAPH: Ascot racecourse guide for beginners to horse racing: a simple instant-download Flat racing PDF with Ascot course data, including the draw (starting stalls), the going (ground conditions), top trainers and jockeys, and a clear course map. A gift idea for a new racegoer. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4604430033 Pro guide £20.82 views 8
+OLD TITLE: Ascot Flat Racecourse Guide PDF Pro - Horse Racing Statistics Book, Instant Download, Track DNA Gift
+NEW TITLE: Ascot Flat Statistics Book PDF, Horse Racing Data, Ratings and Draw Analysis, Instant Download
+OLD TAGS: ascot racecourse | racecourse guide | racing form guide | flat racing guide | racecourse draw bias | horse racing data | racing silks guide | horse racing stats | horse racing gift | horse racing ebook | uk racecourse guide | racecourse guide pdf | gift for racing fan
+NEW TAGS: ascot statistics | draw statistics | racing silks guide | racing method pdf | official ratings pdf | racing form data | horse racing data | racing statistics | racing ratings pdf | horse racing ebook | racing data book | racing analysis pdf | trainer jockey stats
+PRIMARY: ascot flat horse racing statistics ; SECONDARY: horse racing data book, racing ratings pdf, horse racing ebook, racing research pdf
+AUDIENCE: The data-minded form student who searches for statistics, ratings and research for Ascot Flat. Own vocabulary (statistics, data, ratings, ebook, research) separate from the Beginner gift and Advanced form listings.
+NEW OPENING PARAGRAPH: Ascot Flat horse racing statistics book and research manual, Pro edition: an instant 71-page PDF download for experienced racing followers, with course-specific evidence, form and ZANS rating interpretation, draw analysis, and the silks of the leading jockeys, trainers and owners. Includes a full colour version AND a printer-friendly version (mostly black and white, with the silks kept in colour). Digital file only, nothing is posted. This is a downloadable research and analysis guide, not a live data subscription or a prediction service.
+
+## 4622450389 Advanced guide £12.49 views 0
+OLD TITLE: Ascot Jumps Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Track DNA
+NEW TITLE: Ascot Jumps Form Guide PDF, Horse Racing Betting by Going and Distance, Instant Download
+OLD TAGS: ascot racecourse | racecourse guide pdf | uk racecourse guide | national hunt racing | racing form guide | form guide pdf | betting guide pdf | each way guide | horse racing going | jockey trainer stats | horse racing gift | gift for racing fan | racegoer gift
+NEW TAGS: ascot form | ascot betting | ascot jumps form | ascot betting guide | horse racing form | over bet guide | placepot guide pdf | racing odds guide | price and form pdf | racing betting pdf | each way guide pdf | horse racing value | racing going guide
+PRIMARY: ascot jumps form guide pdf ; SECONDARY: ascot jumps betting guide, horse racing form guide, each way guide pdf, racing going guide
+AUDIENCE: The racing follower who already goes to Ascot Jumps or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
+NEW OPENING PARAGRAPH: Ascot jumps form guide and horse racing betting PDF: value and over-bet points for each of the 9 main hurdle, chase and bumper distances, split by going (ground conditions) where there are enough races, measured against the starting prices. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4622457762 Beginner guide £7.49 views 0
+OLD TITLE: Ascot Jumps Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Track DNA 2027
+NEW TITLE: Ascot Jumps Racecourse Guide PDF for Beginners, Horse Racing Gift, Racegoer Basics, Download
+OLD TAGS: ascot racecourse | ascot guide pdf | racecourse guide | racing for beginners | horse racing basics | horse racing guide | race day guide | hurdle racing | horse racing gifts | racegoer gift | horse racing pdf | racecourse guide pdf | horse racing gift
+NEW TAGS: ascot races | ascot guide pdf | ascot jumps guide | hurdles and chases | racing for beginners | first time racegoer | horse racing gift | racing checklist pdf | racecourse guide pdf | racegoer gift | horse racing present | racecourse day out | racing day out gift
+PRIMARY: ascot jumps racecourse guide for beginners ; SECONDARY: ascot jumps races, ascot jumps guide pdf, horse racing gift for beginners, first time racegoer gift
+AUDIENCE: The gift buyer or new racegoer heading to Ascot Jumps who searches by course name or for a racing present and wants something instant and easy. Different from the Advanced and Pro editions, which target form students; this one carries the gift, first-timer and day-out vocabulary.
+NEW OPENING PARAGRAPH: Ascot jumps racecourse guide for beginners to horse racing: a simple instant-download National Hunt PDF and racegoer gift for a race day at Ascot, distance by distance, covering hurdles, steeplechases, bumpers, the going and the jockey colours. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4622458108 Pro guide £20.82 views 0
+OLD TITLE: Ascot Jumps Racecourse Guide PDF Pro - 134-Page Horse Racing Statistics Book, Instant Download, Track DNA Gift
+NEW TITLE: Ascot Jumps Statistics Book PDF, 134-Page Horse Racing Data and Ratings, Instant Download
+OLD TAGS: horse racing data | horse racing stats | horse racing ratings | racing statistics | official ratings | handicap ratings | racing research | hurdle racing stats | horse racing ebook | steeplechase racing | racecourse guide pdf | horse racing gift | gift for racing fan
+NEW TAGS: ascot stats | ascot jumps data | national hunt data | jockey stats pdf | trainer stats pdf | handicap analysis | racing method pdf | official ratings pdf | racing form data | horse racing data | racing statistics | racing ratings pdf | horse racing ebook
+PRIMARY: ascot jumps horse racing statistics ; SECONDARY: horse racing data book, racing ratings pdf, horse racing ebook, racing research pdf
+AUDIENCE: The data-minded form student who searches for statistics, ratings and research for Ascot Jumps. Own vocabulary (statistics, data, ratings, ebook, research) separate from the Beginner gift and Advanced form listings.
+NEW OPENING PARAGRAPH: Ascot jumps horse racing statistics and ratings ebook: a 134-page National Hunt research manual and analysis PDF (Pro edition), with course evidence by distance and going for hurdles, chases and bumpers, every finding checked in two periods and its limits stated. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4622511552 Advanced guide £12.49 views 0
+OLD TITLE: Cheltenham Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Jumps Track DNA
+NEW TITLE: Cheltenham Form Guide PDF, Horse Racing Betting by Going and Distance, Festival Download
+OLD TAGS: cheltenham betting | cheltenham form | cheltenham racing | festival form guide | jumps form guide | steeplechase betting | hurdle betting | festival betting pdf | trainer form guide | chase betting guide | racecourse guide pdf | horse racing gift | gift for racing fan
+NEW TAGS: cheltenham form | cheltenham betting | festival form guide | festival betting pdf | horse racing form | racecourse form pdf | horse racing guide | handicap form guide | over bet guide | placepot guide pdf | racing odds guide | price and form pdf | racing betting pdf
+PRIMARY: cheltenham form guide pdf ; SECONDARY: cheltenham betting guide, horse racing form guide, each way guide pdf, racing going guide
+AUDIENCE: The racing follower who already goes to Cheltenham or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
+NEW OPENING PARAGRAPH: Cheltenham form guide and horse racing betting PDF, from the winter meetings to the Festival in March: value and over-bet points for each of the 14 main hurdle, chase and bumper distances, split by going (ground conditions) where there are enough races. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4622511316 Beginner guide £7.49 views 1
+OLD TITLE: Cheltenham Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Jumps Track DNA 2027
+NEW TITLE: Cheltenham Racecourse Guide PDF for Beginners, Horse Racing Gift, Festival Racegoers, Download
+OLD TAGS: cheltenham races | cheltenham guide pdf | cheltenham gift | racecourse guide | jockey colours guide | racecourse day out | beginners racing | festival racing gift | hurdles and chases | horse racing present | racecourse guide pdf | horse racing gift | gift for racing fan
+NEW TAGS: cheltenham races | cheltenham guide pdf | cheltenham gift | festival racing gift | racing for beginners | first time racegoer | horse racing gift | jockey colours guide | beginners racing pdf | racing glossary pdf | racing checklist pdf | racecourse guide pdf | racegoer gift
+PRIMARY: cheltenham racecourse guide for beginners ; SECONDARY: cheltenham races, cheltenham guide pdf, horse racing gift for beginners, first time racegoer gift
+AUDIENCE: The gift buyer or new racegoer heading to Cheltenham who searches by course name or for a racing present and wants something instant and easy. Different from the Advanced and Pro editions, which target form students; this one carries the gift, first-timer and day-out vocabulary.
+NEW OPENING PARAGRAPH: Cheltenham racecourse guide for beginners to horse racing over jumps: a simple instant-download PDF and horse racing gift for a race day at Cheltenham, from a winter Saturday to the Festival in March, covering hurdles, chases, bumpers, the going and the jockey colours. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4622511788 Pro guide £20.82 views 0
+OLD TITLE: Cheltenham Racecourse Guide PDF Pro - 198-Page Horse Racing Statistics Book, Instant Download, Jumps Track DNA Gift
+NEW TITLE: Cheltenham Statistics Book PDF, 198-Page Horse Racing Data and Ratings, Festival, Instant Download
+OLD TAGS: jumps statistics | national hunt data | steeplechase stats | hurdle statistics | racing handbook pdf | trainer statistics | jockey statistics | festival statistics | form study pdf | racing data pdf | racecourse guide pdf | horse racing gift | gift for racing fan
+NEW TAGS: cheltenham stats | festival statistics | national hunt data | racing numbers pdf | racing evidence pdf | racing study guide | jockey stats pdf | trainer stats pdf | handicap analysis | racing method pdf | official ratings pdf | racing form data | horse racing data
+PRIMARY: cheltenham horse racing statistics ; SECONDARY: horse racing data book, racing ratings pdf, horse racing ebook, racing research pdf
+AUDIENCE: The data-minded form student who searches for statistics, ratings and research for Cheltenham. Own vocabulary (statistics, data, ratings, ebook, research) separate from the Beginner gift and Advanced form listings.
+NEW OPENING PARAGRAPH: Cheltenham horse racing statistics book and data PDF (Pro edition): a 198-page National Hunt research manual, Festival races included, with course evidence by distance and going for hurdles, chases and bumpers, every finding checked in two periods and its limits stated. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+
+## 4622635592 Advanced guide £12.49 views 0
+OLD TITLE: Kempton All-Weather Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Track DNA
+NEW TITLE: Kempton All-Weather Form Guide PDF, Horse Racing Betting by Distance, Draw and Pace, Download
+OLD TAGS: kempton betting | kempton form | kempton racing | all weather form | flat form guide | polytrack racing | draw bias guide | trainer form guide | horse racing value | placepot guide pdf | racecourse guide pdf | horse racing gift | gift for racing fan
+NEW TAGS: kempton form | kempton betting | polytrack form guide | draw bias guide | horse racing form | going and distance | racing value guide | form analysis pdf | racecourse form pdf | horse racing guide | handicap form guide | over bet guide | placepot guide pdf
+PRIMARY: kempton all-weather form guide pdf ; SECONDARY: kempton all-weather betting guide, horse racing form guide, each way guide pdf, racing going guide
+AUDIENCE: The racing follower who already goes to Kempton All-Weather or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
+NEW OPENING PARAGRAPH: Kempton all-weather form guide and horse racing betting PDF (Advanced edition) for Polytrack Flat racing: value and over-bet points for each of the six main distances, with the draw and the pace measured against the starting prices. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
