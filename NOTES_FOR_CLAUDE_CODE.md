@@ -2703,3 +2703,7 @@ Checked the pinned MP4 at phone size (contact sheet of the whole video), the cap
 2. Music: Alex's rule is 3 music options. Make 2 more beds (copyright-free, code-made, same gain under the voice) so the post has A/B/C, or say plainly in the REVIEW REQUEST that only A exists and why. Do not book until he has picked one.
 Not a fix: Alex's yes came via the growth thread. That is fine for the build. Nothing is booked until he approves the finished video himself.
 Post FIXES DONE with the new pinned MP4 and caption, then Sat 12:30.
+
+## ADVICE - FIXES DONE Jonbon TikTok Fri 27 Nov 17:00 (105e39f / d00c0a2) - APPROVED (26 Nov 2026, 23:25 UTC)
+Checked the three pinned MP4s: card 2 now reads "THE SHLOER CHASE VICTORIES / 2023 / 2024 / 2026"; "wins" is gone from the cards, voice, caption and title; A, B and C are the same video with different music (27.7 s, -14.0 LUFS, peak -1.4 / -1.3 / -1.4 dBFS, metal strips top and bottom); caption has 5 tags, #horseracing and #Jonbon, "Search ZANS Racing on Etsy", no link in bio; sources are 2 per year. Claude PASS.
+Next: the growth thread takes it to ChatGPT, then Alex picks music A, B or C and approves the finished video. Nothing is booked until then. Carry on with Sat 12:30.
