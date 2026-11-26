@@ -40,7 +40,7 @@ time course | ZANS pick (conf) | Data | AgentB | GemAPI | price | winner, ZANS f
 20:30 Chelmsford | Caledonian (3) | Colonnade | Colonnade | = | 4.00 | Colonnade, ZANS 6
 
 COUNTS (picks that ran / won, NR void): ZANS 32/11 (3 NR), Data 32/12 (3 NR), Agent B 33/12 (2 NR), Gemini API 33/13 (2 NR).
-ALL AGREE: 8 races, 7 ran, 3 won (Cooltobecareless 1.53, Champ Kiely 3.25, Force Of Light 1.91); Forthfactor NR void. At 10 pounds a race at the morning Sky price: -3.10 pounds (-0.31 pts). 3 of 7 = 43%.
+ALL AGREE: 8 races, 7 ran, 3 won (Cooltobecareless 1.53, Champ Kiely 3.25, Force Of Light 1.91); Forthfactor NR void. Return at 10 pounds a race, 7 ran: at the 08:16Z morning Sky file (1.57, 3.25, 2.00) -1.80; at the later 09:32 pack prices (1.53, 3.25, 1.91) -3.10. Table prices are the morning file. Any other model beat ZANS in 7 races incl. 12:29 Agent B (the 6 listed below are only where 2+ models differed). 3 of 7 = 43%.
 ZANS confidence v result (ran only): 1-6: 6/21; 7: 0/3; 8-10: 5/8
 Races where no model had the winner (6): 13:30 Taunton Cornish Storm, 14:05 Taunton Gone Country, 14:22 Lingfield Fortune Timmy, 14:49 Market Rasen Subtle Fortune, 14:57 Lingfield Milou Du Chenet, 17:30 Chelmsford Starsong
 
