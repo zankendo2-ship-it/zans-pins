@@ -1,6 +1,6 @@
 # ZANS two-reviewer check (Claude + OpenAI): PILOT, OFF BY DEFAULT
 
-**What it does:** you start it by hand. It works on issue #26 only. It reads the #26 checklist, the newest #26 comments and the TEXT files you link. Claude reviews first, then OpenAI, then up to 3 rounds where each sees the other's verdict. It posts **one** summary comment: AGREED, REJECTED, BLOCKER or NO AGREEMENT.
+**What it does:** you start it by hand. It works on issue #26 only. It reads the #26 checklist, the newest #26 comments and the TEXT files you link. Claude reviews first, then OpenAI, then up to 3 rounds where each sees the other's verdict. It posts **one** summary comment: AGREED (both PASS), AGREED REVISE (both want changes: it stops at once and lists the combined fixes, no paid re-review until a new revision is pinned), REJECTED, BLOCKER or NO AGREEMENT (the stricter verdict, REVISE, stands).
 
 **What it is:** a manual, text-only exchange of verdicts. It never edits files, never reviews artwork, images or video, and never applies corrections by itself.
 

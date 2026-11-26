@@ -95,8 +95,33 @@ def test_reject_and_blocker_stop_immediately():
 
 
 def test_round_cap_three():
-    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REVISE")] * 9), o.mock_caller([V("REVISE")] * 9))
+    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REVISE")] * 9), o.mock_caller([V("PASS")] * 9))
     assert len(rounds) == o.MAX_ROUNDS == 3 and req == 6 and out.startswith("NO AGREEMENT")
+    assert "stricter verdict REVISE stands" in out
+
+
+def test_matching_revise_stops_after_one_round():
+    # Pilot test 4 (run 45792555624) spent 4 extra paid calls repeating an agreed REVISE.
+    c = o.mock_caller([{**V("REVISE"), "fixes": ["Define product type", "fix A"]}] * 3)
+    a = o.mock_caller([{**V("REVISE"), "fixes": ["define  PRODUCT type", "fix B"]}] * 3)
+    out, rounds, req = o.review(ENV, "t", [URL], [], c, a)
+    assert out.startswith("AGREED REVISE") and len(rounds) == 1 and req == 2
+    assert not out.startswith("AGREED:")          # never reads as a PASS agreement
+    assert o.combined_fixes(rounds) == ["Define product type", "fix A", "fix B"]
+    s = o.summary("h1", "t", [URL], out, rounds, req, "live")
+    assert "Combined fix list" in s and "Paid API requests: 2 of 6" in s
+
+
+def test_revise_then_matching_revise_stops_in_round_two():
+    c = o.mock_caller([V("PASS"), V("REVISE"), V("REVISE")])
+    a = o.mock_caller([V("REVISE"), V("REVISE"), V("REVISE")])
+    out, rounds, req = o.review(ENV, "t", [URL], [], c, a)
+    assert out.startswith("AGREED REVISE") and len(rounds) == 2 and req == 4
+
+
+def test_pass_summary_has_no_fix_list():
+    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("PASS")]), o.mock_caller([V("PASS")]))
+    assert "Combined fix list" not in o.summary("h1", "t", [URL], out, rounds, req, "live")
 
 
 def test_time_cap():
@@ -309,7 +334,8 @@ def test_token_bound_counts_every_actual_call_including_other_verdict():
             sizes.append(len(text))
             return json.dumps(next(it))
         return fn
-    o.review(ENV, "t", [URL], [], rec([long] * 3), rec([long] * 3))
+    # REVISE v PASS never agrees, so all 6 calls run (matching REVISE would stop after round 1)
+    o.review(ENV, "t", [URL], [], rec([long] * 3), rec([{**long, "verdict": "PASS"}] * 3))
     assert len(sizes) == 6 and sizes[1] > sizes[0] + 6000      # later calls carry the other verdict
     assert o.estimate_tokens("x" * 1000) >= 1000              # byte bound: never under the UTF-8 byte count
 
@@ -405,7 +431,7 @@ def test_budget_checked_before_every_call_with_output_reserved(monkeypatch):
 
     def fn(env, text):
         calls.append(len(text))
-        return json.dumps(V("REVISE"))
+        return json.dumps(V("REVISE" if len(calls) % 2 else "PASS"))   # never agrees: the budget is what stops it
     monkeypatch.setattr(o, "preflight", lambda *a, **k: 0)          # pretend the up-front bound said "tiny"
     first = o.estimate_tokens(o.prompt("Claude", "t", [URL], "", None, "z" * 3000))
     budget = o.worst_case_usd(first * 2.5)                          # room for two calls' input + all output
