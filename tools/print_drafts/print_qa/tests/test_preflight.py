@@ -176,21 +176,6 @@ def test_waiver_floor_and_scope():
     assert preflight.owner_waiver({}, 'logo_text_mm') is None
 
 
-# --- cap seam regression (26 Nov: shine drawn over the seam cut it on Rexs Romance / Zoo Olympios) ---
-V = '/tmp/claude-0/zp/print-qa/2026-11-26-v{0}/out{0}/{1}-v{0}.svg'
-def test_cap_shine_over_seam_fails():
-    import preflight, os, pytest
-    p = V.format(7, 'rexs-romance')
-    if not os.path.exists(p): pytest.skip('v7 master not here')
-    assert preflight.cap_seam_check(open(p, 'rb').read())
-
-def test_cap_shine_under_seams_passes():
-    import preflight
-    raw = b'<path d="M195,155 Q265,70 455,48" stroke="#fff"/><path d="M495,28 Q346.5,78.8 165,187.2" fill="none" stroke="#B3B3B3" stroke-width="7" stroke-linecap="round"/>'
-    assert preflight.cap_seam_check(raw) == []
-    bad = raw.split(b'/>', 1)[1] + raw.split(b'/>', 1)[0] + b'/>'
-    assert preflight.cap_seam_check(bad)
-
 
 # --- no outer ring on any bauble (Alex, non-negotiable, 26 Nov) ---
 def test_edge_ring_fails_and_ring_free_passes():
@@ -198,9 +183,6 @@ def test_edge_ring_fails_and_ring_free_passes():
     bad = b'<circle cx="495" cy="495" r="469" fill="none" stroke="#C9A646" stroke-width="14"/>'
     assert preflight.edge_ring_check(bad, 990, 990)
     assert preflight.edge_ring_check(b'<circle cx="495" cy="30" r="24" fill="#aa7f8d"/>', 990, 990) == []
-    import glob
-    for f in glob.glob('/tmp/claude-0/zp/print-qa/2026-11-26-v7/out9/*-v9.svg'):
-        assert preflight.edge_ring_check(open(f, 'rb').read(), 990, 990) == [], f
 
 def test_raster_ring_catches_any_shape():
     import preflight
@@ -212,3 +194,36 @@ def test_raster_ring_catches_any_shape():
     b = base(); dr = ImageDraw.Draw(b); dr.ellipse((15, 15, 975, 975), fill='#C9A646'); dr.ellipse((35, 35, 955, 955), fill='#1C4FA0'); assert preflight.raster_ring(b)   # filled annulus
     c = base(); ImageDraw.Draw(c).ellipse((25, 30, 965, 960), outline='#C9A646', width=14); assert preflight.raster_ring(c)          # slightly squashed / shifted ellipse
     d = base(); ImageDraw.Draw(d).regular_polygon((495, 495, 470), 64, outline='#C9A646', width=14); assert preflight.raster_ring(d)   # path / polygon ring
+
+# --- pinned v9 + original fixtures (Alex's own baubles, no customer data) ---
+import glob as _g, os as _o
+FX = _o.path.join(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))), 'fixtures')
+def test_v9_production_files_pass_full_check():
+    import preflight
+    kits = sorted(_g.glob(_o.path.join(FX, 'v9', '*-v9.png')))
+    assert len(kits) == 3, kits
+    for png in kits:
+        b = png[:-4]; f, n = preflight.check('bauble_harrier', png, b + '.svg', b + '.payload.json', b + '.design.json')
+        assert f == [], (png, f)
+def test_original_files_fail_on_the_outer_ring():
+    import preflight
+    from PIL import Image
+    pngs = sorted(_g.glob(_o.path.join(FX, 'orig', '*.png')))
+    assert len(pngs) == 3, pngs
+    for p in pngs: assert preflight.raster_ring(Image.open(p)), p
+def test_cap_shine_over_seam_fails_on_v8_style_master():
+    import preflight
+    raw = open(_o.path.join(FX, 'v9', 'rexs-romance-v9.svg'), 'rb').read()
+    first = raw.index(b'<path d="M495,28 Q')
+    bad = raw[:first] + raw[first:].replace(b'stroke-linecap="round"/>', b'stroke-linecap="round"/><path d="M195,155 Q265,70 455,48" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round"/>', 4)
+    assert preflight.cap_seam_check(raw) == [] and preflight.cap_seam_check(bad)
+def test_raster_ring_eccentric_and_broken():
+    import preflight
+    from PIL import Image, ImageDraw
+    def base():
+        im = Image.new('RGB', (990, 990), '#1C4FA0'); ImageDraw.Draw(im).rectangle((0, 0, 990, 200), fill='#FFFFFF'); return im
+    for off in (10, 20, 30):
+        a = base(); ImageDraw.Draw(a).ellipse((20 + off, 20, 970 + off, 970), outline='#C9A646', width=14); assert preflight.raster_ring(a), off
+    b = base(); dr = ImageDraw.Draw(b)
+    for i in range(0, 360, 30): dr.arc((20, 20, 970, 970), i, i + 20, fill='#C9A646', width=14)
+    assert preflight.raster_ring(b)
