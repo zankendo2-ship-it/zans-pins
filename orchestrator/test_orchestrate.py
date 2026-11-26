@@ -279,9 +279,9 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
     assert order.count(("model", "call")) == 1        # failed Claude call = BLOCKER, OpenAI never called
 
 
-def test_live_day_cap_hard_three_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 3
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
+def test_live_day_cap_hard_one_and_variable_only_lowers():
+    assert o.MAX_LIVE_RUNS_PER_DAY == 1          # Alex 26 Nov: one batched paid run a day
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -525,10 +525,86 @@ def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypat
     assert req == 1 and "stop reason: max_tokens" in rounds[0]["Claude"]["reasons"][0]
 
 
-def test_daily_live_ceiling_is_3_and_variable_can_only_lower_it():
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
+def test_daily_live_ceiling_is_1_and_variable_can_only_lower_it():
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
+
+
+BOT = {"login": "github-actions[bot]"}
+
+
+def test_settled_run_counts_measured_cost_not_reservation():
+    slot = {"body": o.slot_tag("live", "2026-11-26", "abc", 2.45), "user": BOT}
+    st = {"body": o.settle_tag("2026-11-26", "abc", 0.31), "user": BOT}
+    assert abs(o.reserved_this_month([slot, st], "2026-11") - 0.31) < 1e-9
+    assert o.reserved_this_month([slot], "2026-11") == 2.45                       # unsettled: full reservation
+    fake = {**st, "user": {"login": "someone"}}                                    # only the workflow may settle
+    assert o.reserved_this_month([slot, fake], "2026-11") == 2.45
+    big = {"body": o.settle_tag("2026-11-26", "abc", 9.0), "user": BOT}            # never more than reserved
+    assert o.reserved_this_month([slot, big], "2026-11") == 2.45
+    other = {"body": o.settle_tag("2026-11-26", "zzz", 0.0), "user": BOT}          # must match date + hash
+    assert o.reserved_this_month([slot, other], "2026-11") == 2.45
+
+
+def test_usage_cost_known_models_only():
+    assert abs(o.usage_cost("claude-sonnet-5-5", 1_000_000, 100_000) - 3.0) < 1e-9
+    assert abs(o.usage_cost("gpt-6.2-astra", 20_000, 500) - 0.18) < 1e-9
+    assert o.usage_cost("unknown-model", 10, 10) is None
+    assert o.usage_cost("gpt-6.2-astra", None, 10) is None
+    assert o.usage_cost("gpt-6.2-astra", True, 10) is None
+    assert all(m in o.ACTUAL_USD_PER_M for ms in o.ALLOWED_MODELS.values() for m in ms)
+    for i, o_ in o.ACTUAL_USD_PER_M.values():    # actual price never above the worst-case bound
+        assert i <= o.WORST_USD_PER_M_IN and o_ <= o.WORST_USD_PER_M_OUT
+
+
+def _usage_post(with_usage=True):
+    good = '{"ack":"a","verdict":"REVISE","reasons":["r"],"fixes":["f"]}'
+
+    def fake_post(url, headers, body):
+        if "anthropic" in url:
+            d = {"stop_reason": "end_turn", "content": [{"type": "text", "text": good}]}
+            if with_usage:
+                d["usage"] = {"input_tokens": 20_000, "output_tokens": 500}
+            return d
+        d = {"choices": [{"finish_reason": "stop", "message": {"content": good}}]}
+        if with_usage:
+            d["usage"] = {"prompt_tokens": 20_000, "completion_tokens": 500}
+        return d
+    return fake_post
+
+
+def test_live_run_posts_settle_with_measured_cost(monkeypatch):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "_post", _usage_post(True))
+    assert o.main(LIVE_ENV) == 0
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert "zans-orch-slot:live:" in posts[0] and "AGREED REVISE" in posts[1]
+    m = o.SETTLE_RE.search(posts[2])
+    # 2 calls (matching REVISE stops): Claude 0.045 + OpenAI 0.18 = 0.225, x1.25 safety
+    assert m and abs(float(m.group(3)) - 0.2813) < 1e-3
+
+
+def test_missing_usage_never_settles(monkeypatch, capsys):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "_post", _usage_post(False))
+    o.main(LIVE_ENV)
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert len(posts) == 2 and not any(o.SETTLE in p for p in posts)
+    assert "full reservation stays" in capsys.readouterr().out
+
+
+def test_replaced_review_never_settles(monkeypatch):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "review", lambda *a, **k: ("AGREED", [], 2))
+    o.main(LIVE_ENV)
+    assert not any(o.SETTLE in (c[2] or {}).get("body", "") for c in calls if c[0] == "POST")
 
 
 def test_incomplete_or_refused_reply_is_blocker_even_if_parseable(monkeypatch):
