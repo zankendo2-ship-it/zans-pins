@@ -7,7 +7,7 @@ for nm,ref in items:
     cells+=f'''<div class=row><div class=c><img src="{b64(f'/tmp/claude-0/r1h/etsy/orders/own-{ref}.png')}"><p>{nm} - ORIGINAL</p></div>
 <div class=c><img src="{b64(f'out5/{ref}-v5C.png')}"><p>{nm} - CORRECTED v5</p></div></div>'''
 html=f'''<html><head><style>@page{{size:A4;margin:10mm}} body{{font-family:sans-serif;font-size:9pt;margin:0}}
-.row{{display:flex;gap:12mm;margin-bottom:4mm}} .c img{{width:74.9mm;height:74.9mm;clip-path:circle(50%)}} .c p{{margin:1mm 0}}
+.row{{display:flex;gap:12mm;margin-bottom:1mm;break-inside:avoid}} .c{{flex:none;width:74.9mm}} .c img{{display:block;width:74.9mm;height:74.9mm;clip-path:circle(50%)}} .c p{{margin:1mm 0}}
 .bar{{width:50mm;height:3mm;background:#000;margin:1mm 0}}</style></head><body>
 <b>ACTUAL-SIZE PROOF - print at 100% / "Actual size" (no fit-to-page). Each bauble face = 74.9 mm across (Harrier 990 px template).</b>
 <div class=bar></div><div>&uarr; this bar must measure exactly 50 mm on paper; if not, the printer scaled the page.</div>

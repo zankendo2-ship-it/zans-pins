@@ -1,0 +1,6 @@
+loussiemoo PASS [] ['336 x 336 DPI', 'key content 6.4 mm inside the edge (safe zone 6 mm)', '7 colours, all approved', '4 centred items, worst 0.2 mm; 3 outlined texts']
+zoo-olympios PASS [] ['336 x 336 DPI', 'key content 6.4 mm inside the edge (safe zone 6 mm)', '6 colours, all approved', '5 centred items, worst 0.2 mm; 4 outlined texts']
+rexs-romance PASS [] ['336 x 336 DPI', 'key content 6.4 mm inside the edge (safe zone 6 mm)', '6 colours, all approved', '5 centred items, worst 0.2 mm; 4 outlined texts']
+2475x1155 PASS [] ['300 x 300 DPI', 'key content 6.2 mm inside the edge (safe zone 6 mm)', '6 colours, all approved', '4 centred items, worst 0.2 mm; 5 outlined texts']
+2582x1120 PASS [] ['300 x 300 DPI', 'key content 6.4 mm inside the edge (safe zone 6 mm)', '6 colours, all approved', '4 centred items, worst 0.2 mm; 5 outlined texts']
+NEGATIVE TEST (FACT shrunk to 30 px): BLOCKED ['text "FACT" letters 1.9 mm tall < 6 mm', 'text "FACT" letters 1.9 mm tall < 6 mm', 'PNG was not rendered from this master (hash mismatch)']
