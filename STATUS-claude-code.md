@@ -264,3 +264,7 @@ Nothing booked, nothing built yet. Slot by slot, and what each is waiting on:
 Every slot also needs Alex's own yes and ChatGPT's pass before booking.
 Honest capacity: I can finish Fri 17:00 and Sat 12:30 as final videos within about a day of getting the answers above; the other 12 follow at roughly one or two a day, gated by the fact checks. I do not expect all 14 by Friday.
 Shared limits: Gemini voice credit (stop if it runs out), copyright-free music only, no fetched footage, silks from 2 sources, TikTok max 2 a day, AI label off.
+
+## REVIEW REQUEST - Jonbon story TikTok, Fri 27 Nov 17:00 (task c52f943) (26 Nov 2026, 22:10 UTC)
+Pinned video: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/4350d73/batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-DRAFT.mp4
+Caption, sources, voice lines and rules checklist: `batch/2026-11-27/jonbon-tiktok/CAPTION-and-REVIEW-REQUEST-jonbon-tiktok.md`. 27.2 s, hook on frame 0, product on the end card only, #horseracing + #Jonbon, "Search ZANS Racing on Etsy". "In a row" is NOT used (he was second in 2025). Not booked; booking time TikTok Fri 27 Nov 17:00 UK. Flags: only one music version; the word "wins" appears (Strike Shield scan); Alex's yes came via the growth thread. Sat 12:30 next.
