@@ -240,3 +240,14 @@ def test_centre_at_target_x():
         return [m for m in f if 'off centre' in m]
     assert run(418.75) == []
     assert run(500)
+
+
+def test_ceramic_ornament_supplier_rule_is_enforced():
+    """Printify support 26 Nov 2026 (bp 1676 / provider 94): manual placement, shifts up to 5 mm, keep essentials inside the dashed
+    safe area. Our single margin must cover the shift (not stacked): key content >= 6 mm inside, and a bauble with a near-edge ring fails."""
+    import json, os
+    sp = json.load(open(os.path.join(os.path.dirname(__file__), '..', 'sku_specs.json')))
+    for sku, v in sp.items():
+        if sku.startswith('bauble'):
+            assert v['safe_mm'] >= 6 and v['safe_mm'] > 5, sku
+            assert v['shape'] == 'circle', sku
