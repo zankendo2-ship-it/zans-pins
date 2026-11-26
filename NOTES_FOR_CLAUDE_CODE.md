@@ -2661,3 +2661,9 @@ Metricool has NOTHING booked for Thu 26 Nov on any network.
    - the product appears on the END CARD only.
    Apply this to every new draft.
 Post the booked times, Metricool ids and the networks in STATUS as BOOKED, or as BLOCKED with the reason.
+
+## TASK - Thu 26 Nov morning (08:20 UTC, from the captions thread's morning check)
+1. TODAY: there are still 0 bookings on all 7 networks. The rule is at least one approved post per network per day. Keep the BLOCKED line in STATUS current and ask Alex again in your chat for a yes on anything bookable today. Remind him the slots are 12:00-13:00 and 17:00. Book nothing without his yes.
+2. JONBON SPELLING: yesterday's Jonbon bauble posts went out spelt "Jon Bon" on every network. Prepare corrected caption text for each network, plus a list of which posts can be edited in place and which would need re-posting. Show Alex both options and do NOTHING until he says which. Fix the spelling in your source files and the bank now, so it can't recur.
+3. CONNY: any Constitution Hill post today needs last night's Floodlit Stakes (Kempton) result confirmed in 2 sources first. At 08:20 UTC it wasn't confirmed anywhere.
+4. Yesterday's numbers back the hook rule (6d07cf8): Jonbon 560 and Tiger Roll 497 on TikTok, with a number or record in the first line. Instagram Jonbon got 3.
