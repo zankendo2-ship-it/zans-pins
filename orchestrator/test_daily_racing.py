@@ -211,3 +211,19 @@ def test_real_racing_exporter_fixture_passes_consumer_offline_zero_provider_call
     assert v == {} and len(posted) == 1 and "SYNTHETIC MOCK" in posted[0]
     p = r.plan(raw, [], env, "2026-11-26")
     assert len(json.loads(raw)["races"]) == 35 and p["prompt"]
+
+
+def test_mock_main_real_fixture_no_provider_calls(monkeypatch):
+    import pathlib
+    raw = pathlib.Path(__file__).with_name("fixtures").joinpath("racing_2026-11-26.json").read_bytes()
+    posts = []
+    monkeypatch.setattr(r.time, "strftime", lambda *a: "2026-11-26")
+    monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": "c" * 40} if m == "GET" else (posts.append(body["body"]) or {}))
+    monkeypatch.setattr(o, "_get_bytes", lambda url, n: raw)
+    monkeypatch.setattr(o, "comments_since", lambda *a: [])
+    monkeypatch.setattr(o, "call_claude", lambda *a: pytest.fail("paid provider called in mock"))
+    monkeypatch.setattr(o, "call_openai", lambda *a: pytest.fail("paid provider called in mock"))
+    env = {**ENV, "ORCH_MODE": "mock", "ZANS_ORCH_ENABLED": "false", "ORCH_ISSUE": "26",
+           "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_EVENT_NAME": "workflow_dispatch"}
+    assert r.main(env) == 0
+    assert len(posts) == 1 and "SYNTHETIC MOCK" in posts[0] and o.SLOT not in posts[0]
