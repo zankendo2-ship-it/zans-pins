@@ -201,3 +201,14 @@ def test_edge_ring_fails_and_ring_free_passes():
     import glob
     for f in glob.glob('/tmp/claude-0/zp/print-qa/2026-11-26-v7/out9/*-v9.svg'):
         assert preflight.edge_ring_check(open(f, 'rb').read(), 990, 990) == [], f
+
+def test_raster_ring_catches_any_shape():
+    import preflight
+    from PIL import Image, ImageDraw
+    def base():
+        im = Image.new('RGB', (990, 990), '#1C4FA0'); ImageDraw.Draw(im).rectangle((0, 0, 990, 200), fill='#FFFFFF'); return im
+    assert preflight.raster_ring(base()) is None
+    a = base(); ImageDraw.Draw(a).ellipse((20, 20, 970, 970), outline='#C9A646', width=14); assert preflight.raster_ring(a)          # stroked ring
+    b = base(); dr = ImageDraw.Draw(b); dr.ellipse((15, 15, 975, 975), fill='#C9A646'); dr.ellipse((35, 35, 955, 955), fill='#1C4FA0'); assert preflight.raster_ring(b)   # filled annulus
+    c = base(); ImageDraw.Draw(c).ellipse((25, 30, 965, 960), outline='#C9A646', width=14); assert preflight.raster_ring(c)          # slightly squashed / shifted ellipse
+    d = base(); ImageDraw.Draw(d).regular_polygon((495, 495, 470), 64, outline='#C9A646', width=14); assert preflight.raster_ring(d)   # path / polygon ring

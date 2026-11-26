@@ -108,6 +108,24 @@ def owner_waiver(design, key):
 SEAM = re.compile(rb'<path d="M495,28 Q[^"]+"[^>]*stroke-linecap="round"')
 SHINE = re.compile(rb'<path d="M195,155 Q265,70 455,48"')
 RING = re.compile(rb'<circle [^>]*cx="([\d.]+)" cy="([\d.]+)" r="([\d.]+)"[^>]*stroke="(#\w+)"[^>]*>')
+def raster_ring(im, frac=0.8):
+    """Any concentric ring near the edge, whatever made it (stroke, filled annulus, path, transform): at some radius in the
+    outer 14% one colour covers >= frac of all angles AND, at those angles, a different colour lies within ~5% of the radius both inside and outside it."""
+    im = im.convert('RGB'); W, H = im.size; px = im.load(); cx, cy, R = W / 2, H / 2, min(W, H) / 2
+    q = lambda c: tuple(v // 24 for v in c)
+    def at(r, a): x, y = int(cx + r * math.cos(a)), int(cy + r * math.sin(a)); return q(px[min(W - 1, max(0, x)), min(H - 1, max(0, y))])
+    angs = [2 * math.pi * i / 360 for i in range(360)]; d = max(3, round(0.016 * R))
+    r = 0.86 * R
+    while r < R - d - 1:
+        cols = [at(r, a) for a in angs]; top = max(set(cols), key=cols.count)
+        hit = [a for a, c in zip(angs, cols) if c == top]
+        if len(hit) >= frac * 360:
+            ks = (d, 2 * d, 3 * d)   # band up to ~10% of the radius wide
+            diff = sum(1 for a in hit if any(at(r - k, a) != top for k in ks) and any(at(r + k, a) != top for k in ks))
+            if diff >= frac * 360: return round(r / R, 3)
+        r += 1
+    return None
+
 def edge_ring_check(raw, W, H):
     """Alex (non-negotiable, 26 Nov): no outer ring/border round a bauble. Any stroked circle centred on the face with a radius over
     85% of the face is an edge ring and fails (it prints lopsided inside the printer's 5 mm placement shift)."""
@@ -247,6 +265,9 @@ def check(sku, png, master=None, payload=None, design=None):
     mraw = open(master, 'rb').read()
     try:
         mf, mn, ok_cols = check_master(sp, mraw, W, H, design); fails += mf; notes += mn
+        if sku.startswith('bauble'):   # raster check too: catches a ring however it was drawn (stroke, filled annulus, path, transform)
+            rr = raster_ring(im)
+            if rr: fails.append(f'outer ring in the print file at {rr:.0%} of the radius - no outer ring on any bauble')
         if ok_cols:
             bad = png_colours(im, ok_cols)
             if bad: fails.append(f'print file colours not in the approved set: {bad[:5]}')
