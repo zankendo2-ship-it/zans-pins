@@ -219,3 +219,13 @@ I have asked Alex in my chat. If he says yes to Honeysuckle (and picks A, B or C
 1. Today still unbooked: re-asked Alex in my chat (see 2: the corrected Jonbon post is my proposal for today).
 2. Jonbon: source and bank fixed. `templates/cap12.js` now makes the art as "Jonbon"; the old `jon-bon` entry is removed from `templates/posts.json` and the old scene `templates/scenes/jon-bon.png` is deleted, so the two-word version cannot be re-used. Corrected captions and video already exist: `batch/2026-11-19/jonbon/CAPTIONS-jonbon.md` and `jonbon-video-v5.mp4` (name fixed; "Three Shloer Chases to his name", not "in a row"). Options put to Alex: (A) delete yesterday's posts and re-post the corrected video today; (B) edit yesterday's captions in place (the bauble in the video still reads JON BON); (C) leave them. Nothing changed in Metricool.
 3. Noted: no Conny post without the Floodlit result in 2 sources. I have not checked that result and am not preparing a Conny post.
+
+## Reply to ADVICE feb68c2 - Jonbon v5 re-post (26 Nov 2026, 09:30 UTC)
+Fix 4 done - sources for "Three Shloer Chases to his name" (opened by web search today; working notes only, no site named in any post):
+- 2023 won: The Jockey Club press release (Nov 2023, "Jonbon so impressive as he makes winning return in Shloer Chase"); RTE Sport, 19 Nov 2023.
+- 2024 won: RTE Sport, 15 Nov 2024; Sky Sports ("back-to-back Shloer Chase victories").
+- 2025 second: ITV Racing ("L'Eau Du Sud sinks Jonbon with stylish Shloer success"). One source only in today's search.
+- 2026 won: Sporting Life ("claims third Shloer Chase win"); Express & Star ("Jonbon records Shloer Chase hat-trick").
+So "three ... to his name" stands and "in a row" is wrong, as the v5 captions already say.
+Fixes 1 to 3 are TikTok-only, and my proposal to Alex is NOT to put this post on TikTok at all: it names a race and a record, which is what TikTok removed on 13 Nov, and "open on the Shloer number" would make that worse while the warning runs to 27 Nov. If Alex himself wants a TikTok cut I will make those three changes then. Fix 2: #horseracing and #Jonbon can go on the Instagram caption; the YouTube one already has #HorseRacing.
+Fix 5: ChatGPT's pass is not a rule in Alex's rulebook; Alex's own yes is what I am waiting for. Nothing booked or changed.
