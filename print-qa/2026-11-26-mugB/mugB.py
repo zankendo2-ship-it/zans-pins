@@ -17,52 +17,62 @@ ITEMS = [('loussiemoo', 'ZBA-disc-F3B5C9-6CC24A-plain-F3B5C9', '#F3B5C9', 'lossi
          ('zoo-olympios', 'ZBA-spot_diag-F5D130-1C1C1C-plain-1C1C1C', '#1C1C1C', None),
          ('rexs-romance', 'ZBA-plain-1C4FA0-FFFFFF-plain-FFFFFF', '#FFFFFF', None)]
 
+import math
+D_BRIM = None
+def brim_y(x, y0, depth):
+    """Brim: one scallop per face, y = y0 + depth*sin^2 - zero slope where faces meet (handle + back), so no cusp."""
+    u = (x % (W / 2)) / (W / 2)
+    return y0 + depth * math.sin(math.pi * u) ** 2
+
 def pattern(svg):
-    """Re-tile the bauble's body pattern across the wrap at the same physical size; the x step is nudged (<3%) so the
-    pattern meets itself at the wrap seam."""
+    """The bauble body pattern laid round the wrap in the SAME phase around each face as around the bauble's centre
+    (x 495, panel centre 545); x step nudged to an EVEN number of repeats so it meets itself at the seam and both faces match."""
     bg = re.search(r'<rect x="0" y="0" width="990" height="990" fill="(#\w{6})"/>', svg).group(1)
     cs = [(float(a), float(b), float(r), f) for a, b, r, f in re.findall(r'<circle cx="([-\d.]+)" cy="([-\d.]+)" r="([\d.]+)" fill="(#\w{6})"/>', svg)]
     cs = [c for c in cs if not (c[0] == 495 and c[1] == 30)]          # the cap button is not pattern
     out = [f'<rect x="0" y="0" width="{W}" height="{H}" fill="{bg}"/>']
     if not cs: return out, bg
-    ys = sorted({c[1] for c in cs}); xs0 = {y: sorted(c[0] for c in cs if c[1] == y) for y in ys}
-    step = xs0[ys[0]][1] - xs0[ys[0]][0]; dy = ys[1] - ys[0]; r = cs[0][2]; f = cs[0][3]
-    n = round(W / (step * S)); sx = W / n                              # exact tiling round the mug
-    k = sx / (step * S)                                                  # same nudge applied to the row offsets
-    offs = [((xs0[y][0] - xs0[ys[0]][0]) % step) * S * k for y in ys]   # per-row offset (stagger / diagonal)
-    per = len(ys) if len(set(round(o, 1) for o in offs)) == len(ys) else 2
-    i = 0; y = ys[0] * S
-    while y - r * S < H:
-        o = offs[i % len(offs)] if per == len(ys) else offs[i % 2]
-        if per == len(ys) and i >= len(ys): o = (offs[-1] + (i - len(ys) + 1) * (offs[1] - offs[0])) % sx
-        x = o - sx
-        while x - r * S < W:
-            out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r * S:.1f}" fill="{f}"/>'); x += sx
-        i += 1; y += dy * S
+    ys = sorted({c[1] for c in cs}); row = {y: sorted(c[0] for c in cs if c[1] == y) for y in ys}
+    step = row[ys[0]][1] - row[ys[0]][0]; dy = ys[1] - ys[0]; r = cs[0][2]; f = cs[0][3]
+    delta = (row[ys[1]][0] - row[ys[0]][0]) % step
+    n = 2 * round(W / (step * S) / 2); sx = W / n; k = sx / (step * S)
+    cx1 = FACES[0]
+    for j in range(-6, 12):
+        yb = ys[0] + j * dy; y = PANEL_CY + (yb - 545) * S
+        if y + r * S < 0 or y - r * S > H: continue
+        ob = (row[ys[0]][0] + j * delta) % step
+        mlo = math.floor(((-r * S - cx1) / (S * k) + 495 - ob) / step) - 1
+        m = mlo
+        while True:
+            x = cx1 + (ob + m * step - 495) * S * k
+            if x - r * S > W: break
+            if x + r * S >= 0: out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r * S:.1f}" fill="{f}"/>')
+            m += 1
     return out, bg
 
 def cap(svg):
     band = re.search(r'<path d="M0,0 H990 V185 Q495,250 0,185 Z" fill="(#\w{6})"/>', svg).group(1)
-    seams = re.findall(r'<path d="M495,28 Q[^"]+" fill="none" stroke="(#\w{6})" stroke-width="7" stroke-linecap="round"/>', svg)
-    sc = seams[0]
-    y0, yc, hw = 185 * S, 250 * S, W / 4   # one smooth brim curve per face, meeting at the handle and at the back
-    d = f'M0,0 H{W} V{y0:.1f}'
-    for cx in reversed(FACES): d += f' L{cx + hw:.1f},{y0:.1f} Q{cx:.1f},{yc:.1f} {cx - hw:.1f},{y0:.1f}'
-    d += ' L0,{:.1f} Z'.format(y0)
-    out = [f'<path d="{d}" fill="{band}"/>']
-    gold = 'M0,{:.1f}'.format(y0)
-    for cx in FACES: gold += f' L{cx - hw:.1f},{y0:.1f} Q{cx:.1f},{yc:.1f} {cx + hw:.1f},{y0:.1f}'
-    gold += f' L{W},{y0:.1f}'
-    for cx in FACES:   # seams + button + peak copied from the bauble cap, same order (no shine anywhere)
+    sc = re.findall(r'<path d="M495,28 Q[^"]+" fill="none" stroke="(#\w{6})" stroke-width="7" stroke-linecap="round"/>', svg)[0]
+    y0, depth = 185 * S, 32.5 * S                       # same brim depth as the bauble's curve (185 -> 217.5 at the centre)
+    xs = [i * W / 400 for i in range(401)]
+    line = ' '.join(f'L{x:.1f},{brim_y(x, y0, depth):.2f}' for x in xs)
+    out = [f'<path d="M0,0 H{W} V{y0:.1f} ' + ' '.join(f'L{x:.1f},{brim_y(x, y0, depth):.2f}' for x in reversed(xs)) + ' Z" fill="{}"/>'.format(band)]
+    for cx in FACES:   # seams + button copied from the bauble cap, same order (no shine anywhere)
         g = f'<g transform="translate({cx - 495 * S:.2f},0) scale({S:.5f})">'
         for m in re.finditer(r'<path d="(M495,28 Q[^"]+)" fill="none" stroke="#\w{6}" stroke-width="7" stroke-linecap="round"/>', svg):
             g += f'<path d="{m.group(1)}" fill="none" stroke="{sc}" stroke-width="7.2" stroke-linecap="round"/>'
         g += f'<circle cx="495" cy="30" r="24" fill="{sc}"/></g>'
         out.append(g)
-    out.append(f'<path d="{gold}" fill="none" stroke="#C9A646" stroke-width="{8 * S:.2f}"/>')
-    pk = re.search(r'<path d="(M225,219 [^"]+)" fill="(#\w{6})" stroke="#C9A646" stroke-width="7"/>', svg)
-    for cx in FACES:   # peak gold edge kept >= 0.53 mm (7.2 x S = 6.43 px = 0.54 mm)
-        out.append(f'<g transform="translate({cx - 495 * S:.2f},0) scale({S:.5f})"><path d="{pk.group(1)}" fill="{pk.group(2)}" stroke="#C9A646" stroke-width="7.2"/></g>')
+    pk = re.search(r'<path d="M225,219 [^"]+" fill="(#\w{6})" stroke="#C9A646" stroke-width="7"/>', svg).group(1)
+    for cx in FACES:
+        # peak: its top edge IS the brim (no body-colour gap); corners and underside = the bauble peak (M225,219 ... Q745,295
+        # 495,303 Q245,295 225,219), dropped so its corners sit on the brim
+        xl, xr = cx - 270 * S, cx + 270 * S; yl = brim_y(xl, y0, depth); dd = yl - 219 * S
+        top = ' '.join(f'L{x:.1f},{brim_y(x, y0, depth):.2f}' for x in [xl + i * (xr - xl) / 60 for i in range(61)])
+        P = lambda a, b: f'{cx + (a - 495) * S:.2f},{b * S + dd:.2f}'
+        d = f'M{xl:.2f},{yl:.2f} {top} Q{P(745, 295)} {P(495, 303)} Q{P(245, 295)} {xl:.2f},{yl:.2f} Z'
+        out.append(f'<path d="{d}" fill="{pk}" stroke="#C9A646" stroke-width="{7.2 * S:.2f}"/>')
+    out.append(f'<path d="M0,{y0:.1f} {line}" fill="none" stroke="#C9A646" stroke-width="{8 * S:.2f}"/>')
     return out
 
 def face(svg, cx, side):
