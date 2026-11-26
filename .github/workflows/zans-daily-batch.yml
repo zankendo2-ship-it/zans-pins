@@ -5,6 +5,8 @@
 name: ZANS daily batch review (pilot)
 
 on:
+  schedule:
+    - cron: "40 8 * * *"   # opt-in: runs a LIVE batch only if vars.ZANS_BATCH_SCHEDULE == 'true' (default off)
   workflow_dispatch:
     inputs:
       issue:
@@ -33,7 +35,7 @@ permissions:
 
 jobs:
   batch:
-    if: github.ref == 'refs/heads/main' && (inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true')
+    if: github.ref == 'refs/heads/main' && ((github.event_name == 'schedule' && vars.ZANS_BATCH_SCHEDULE == 'true' && vars.ZANS_ORCH_ENABLED == 'true') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true')))
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -55,9 +57,11 @@ jobs:
           ZANS_ORCH_MAX_USD_PER_RUN: ${{ vars.ZANS_ORCH_MAX_USD_PER_RUN }}
           ZANS_ORCH_MAX_USD_PER_MONTH: ${{ vars.ZANS_ORCH_MAX_USD_PER_MONTH }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
-          OPENAI_API_KEY: ${{ inputs.mode == 'live' && secrets.OPENAI_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ (github.event_name == 'schedule' || inputs.mode == 'live') && secrets.OPENAI_API_KEY || '' }}
           GITHUB_TOKEN: ${{ github.token }}
-          ORCH_MODE: ${{ inputs.mode }}
-          ORCH_ISSUE: ${{ inputs.issue }}
+          ORCH_MODE: ${{ github.event_name == 'schedule' && 'live' || inputs.mode }}
+          ORCH_ISSUE: ${{ github.event_name == 'schedule' && '26' || inputs.issue }}
           ORCH_MANIFEST: ${{ inputs.manifest }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: /tmp/venv/bin/python -m orchestrator.daily_batch

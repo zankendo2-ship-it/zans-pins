@@ -180,3 +180,35 @@ def test_mock_mode_reserves_nothing_and_never_calls_provider(monkeypatch):
     monkeypatch.setattr(o, "_post", lambda *a, **k: pytest.fail("network used in mock"))
     (outcome, h, reserve), posted, _ = e2e({**ENV, "ORCH_MODE": "mock"}, [], b.mock_caller([i]), [i], data)
     assert reserve == 0.0 and "a=PASS" in outcome
+
+
+def test_fingerprint_ignores_date_and_commit_so_unchanged_bytes_are_not_charged_twice():
+    i, _ = art("a")
+    j = {**i, "url": i["url"].replace(SHA, "b" * 40)}
+    assert b.batch_hash("2026-11-27", [i]) == b.batch_hash("2026-12-01", [j])
+    assert b.batch_hash("2026-11-27", [i], "mock") != b.batch_hash("2026-11-27", [i], "live")
+
+
+def test_mock_summary_is_synthetic_and_unknown_usage_holds():
+    i, data = art("a")
+    _, posted, _ = e2e({**ENV, "ORCH_MODE": "mock"}, [], b.mock_caller([i]), [i], data)
+    assert "SYNTHETIC MOCK" in posted[1] and "never owner-ready" in posted[1].lower().replace("never a pass and ", "")
+    _, posted, _ = e2e(ENV, [], lambda e, p: pytest.fail("x") if False else (_ for _ in ()).throw(OSError("n")), [i], data)
+    assert "HOLD" in posted[1] and i["sha256"] in posted[1] or "HOLD" in posted[1]
+
+
+def test_scheduled_run_reads_manifest_from_the_triggering_commit_and_failures_exit_nonzero(monkeypatch):
+    i, data = art("a")
+    seen, posts = [], []
+    man = json.dumps(manifest(i)).encode()
+    monkeypatch.setattr(b.time, "strftime", lambda *a: TODAY)
+    monkeypatch.setattr(o, "_get_bytes", lambda url, n: (seen.append(url), man if url.endswith(".json") else data)[1])
+    monkeypatch.setattr(o, "comments_since", lambda *a: [])
+    monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: posts.append(body["body"]) or {})
+    monkeypatch.setattr(b, "call_openai_batch", lambda env, p: ("not json", "stop"))
+    env = {**ENV, "ORCH_MODE": "", "GITHUB_EVENT_NAME": "schedule", "GITHUB_SHA": SHA, "ORCH_ISSUE": "26",
+           "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins"}
+    env.pop("ORCH_MODE")
+    env["ORCH_MODE"] = "live"
+    assert b.main(env) == 1                                   # invalid output: posted + settled, nonzero, no retry
+    assert any(f"{SHA}/handoff/daily_manifest.json" in u for u in seen) and len(posts) >= 2
