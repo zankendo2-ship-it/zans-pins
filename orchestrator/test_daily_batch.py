@@ -204,11 +204,31 @@ def test_scheduled_run_reads_manifest_from_the_triggering_commit_and_failures_ex
     monkeypatch.setattr(b.time, "strftime", lambda *a: TODAY)
     monkeypatch.setattr(o, "_get_bytes", lambda url, n: (seen.append(url), man if url.endswith(".json") else data)[1])
     monkeypatch.setattr(o, "comments_since", lambda *a: [])
-    monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: posts.append(body["body"]) or {})
+    monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": SHA} if m == "GET" else (posts.append(body["body"]) or {}))
     monkeypatch.setattr(b, "call_openai_batch", lambda env, p: ("not json", "stop"))
     env = {**ENV, "ORCH_MODE": "", "GITHUB_EVENT_NAME": "schedule", "GITHUB_SHA": SHA, "ORCH_ISSUE": "26",
            "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins"}
     env.pop("ORCH_MODE")
     env["ORCH_MODE"] = "live"
     assert b.main(env) == 1                                   # invalid output: posted + settled, nonzero, no retry
-    assert any(f"{SHA}/handoff/daily_manifest.json" in u for u in seen) and len(posts) >= 2
+    assert any(f"{SHA}/handoff-manifests/daily-{TODAY}.json" in u for u in seen) and len(posts) >= 2
+
+
+def test_per_artifact_dedup_and_failed_slot_is_not_retried():
+    a, _ = art("a")
+    c, _ = art("c")
+    done = {"user": BOT, "body": b.item_marker(a)}
+    assert b.unreviewed([a, c], [done]) == [c]
+    assert b.unreviewed([a, c], [{"user": {"login": "someone"}, "body": b.item_marker(a)}]) == [a, c]   # untrusted ignored
+    slot = {"body": o.slot_tag("live", "2026-11-26", b.batch_hash(TODAY, [a]), 0.3)}   # earlier failed attempt, no summary
+    with pytest.raises(b.Skip, match="attempted"):
+        b.plan([a], TODAY, {"a": "x"}, [slot], ENV, TODAY)
+
+
+def test_no_owner_ready_marker_on_unknown_usage_or_mock():
+    a, _ = art("a")
+    o.RUN_COST.update(usd=0.0, complete=False)
+    assert "zans-orch-item" not in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "live")
+    o.RUN_COST.update(usd=0.0, complete=True)
+    assert "zans-orch-item" in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "live")
+    assert "zans-orch-item" not in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "mock")
