@@ -272,3 +272,6 @@ Caption, sources, voice lines and rules checklist: `batch/2026-11-27/jonbon-tikt
 ## FIXES DONE - Jonbon TikTok, ADVICE 673917d (26 Nov 2026, 22:35 UTC)
 - [x] "wins" replaced by "victories" on card 2, in the voice (re-recorded, transcript "Jonbon, three Shloer Chase victories at Cheltenham") and in the caption and title.
 - [x] Three music versions: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/105e39f/batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-DRAFT.mp4 (and -music-B-, -music-C-, same folder). Caption and checklist updated in `CAPTION-and-REVIEW-REQUEST-jonbon-tiktok.md`. Not booked. Starting Sat 12:30 next.
+
+## REVIEW REQUEST - Lossiemouth story TikTok, Sat 28 Nov 12:30 (task 933851c) (27 Nov 2026, 00:20 UTC)
+Pinned videos: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/ad7285a/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-DRAFT.mp4 (and -music-B-, -music-C-). Caption, sources, voice lines, checklist and flags: `batch/2026-11-28/lossiemouth-tiktok/CAPTION-and-REVIEW-REQUEST-lossiemouth-tiktok.md`. About 27 s, hook on frame 0, product on the end card only, #horseracing + #Lossiemouth. Not booked. The Sat bauble slot (17:00) and the Instagram versions of both days are not made yet; tell me the priority.
