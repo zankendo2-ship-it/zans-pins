@@ -2,7 +2,7 @@
 
 **Alex, one yes/no please: can I make 5 hidden Printify drafts of the fixed print files, so we can see Printify's own mock-ups? It's free and nothing is ordered.**
 
-The corrected files for your 3 baubles and the FACT TO FILE mug are finished. Both reviewers (Claude and ChatGPT) have passed them on screen and on a paper proof. What paper can't show is where the mug handle sits next to the names and how Printify places the bauble artwork. Printify's own mock-ups show both.
+The corrected files for your 3 baubles and the FACT TO FILE mug have passed the on-screen and paper proofs with both reviewers (Claude and ChatGPT). How Printify places them, and how they actually print, are not checked yet. What paper can't show is where the mug handle sits next to the names and how Printify places the bauble artwork. Printify's own mock-ups show both.
 
 What I would make (hidden drafts only):
 1. Loussiemoo bauble
