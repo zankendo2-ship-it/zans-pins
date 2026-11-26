@@ -172,3 +172,23 @@ def test_scheduled_run_outside_window_makes_no_call(monkeypatch):
     monkeypatch.setattr(o, "call_claude", lambda *a: pytest.fail("called"))
     env = {**ENV, "GITHUB_EVENT_NAME": "schedule", "ZANS_RACING_SCHEDULE": "true", "ORCH_ISSUE": "26", "GITHUB_REPOSITORY": "a/b"}
     assert r.main(env) == 0
+
+
+def test_claude_reject_makes_no_second_call():
+    calls, posted = [], []
+    claude, openai = setup()
+    rej = lambda e, t: (claude(e, t), json.dumps({"ack": "ok", "verdict": "REJECT", "reasons": ["bad"], "fixes": []}))[1]  # noqa: E731
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, rej, lambda e, t: calls.append("openai") or openai(e, t), posted.append)
+    assert calls == [] and set(v) == {"Claude"} and bad
+
+
+def test_mock_ignores_paid_ledger_caps_and_slots(monkeypatch):
+    import orchestrator.daily_batch as b
+    full = [{"body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}, {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}]
+    big = [{"body": o.slot_tag("racing", "2026-11-%02d" % d, "%x" % (d + 100), 1.0)} for d in range(1, 27)]
+    env = {**ENV, "ORCH_MODE": "mock", "ZANS_ORCH_MAX_USD_PER_MONTH": "0.1"}
+    p = r.plan(file_bytes(), full + big, env, TODAY)
+    assert p["hash"] and p["prompt"]
+    b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, full + big, env, TODAY)
+    with pytest.raises(o.Stop):                                   # live is still blocked by the same ledger
+        r.plan(file_bytes(), full + big, {**env, "ORCH_MODE": "live"}, TODAY)

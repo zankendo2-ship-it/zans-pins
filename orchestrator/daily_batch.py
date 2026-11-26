@@ -161,6 +161,9 @@ def guard(env, mode):
 def plan(items, date, texts, comments, env, today):
     """No network. Decides whether the one paid call may be made; returns what to send."""
     h = batch_hash(date, items, env.get("ORCH_MODE", "mock"))
+    if env.get("ORCH_MODE", "mock") != "live":
+        # Free mock: plumbing only. No slot, no budget, so no paid-ledger check.
+        return {"hash": h, "reserve": worst_case_usd(), "prompt": build_prompt(items, texts)}
     if o.already_done(comments, h):
         raise Skip("duplicate: this exact artifact set was already reviewed (no paid re-review)")
     if env.get("ORCH_MODE") == "live" and any(m.group(3) == h for m in o._slots(comments, "live")):
