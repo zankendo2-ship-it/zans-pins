@@ -1,95 +1,106 @@
-# ZANS Etsy SEO - review packet rules
-Review as an independent Etsy SEO checker. For every listing give PASS or REVISE and the exact fix. Check: (1) 13 tags, each <=20 chars, no duplicates; (2) title <=140 chars, <15 words, no repeated words; (3) no claims beyond the product (no winners/profit/tips promises, no betting-site or racehorse-owner names, no 'Royal Ascot', no AI mention in titles/tags); (4) keyword relevance and honesty; (5) cannibalisation: Beginner = gift/first-timer, Advanced = form/betting, Pro = statistics/data should not overlap; (6) controls (Ascot Flat Beginner 4601073843, green bauble 4611213915, Premium Silks Mug 4608193933) get tag swaps only. No search-volume data exists; tags are hypotheses. Nothing is live.
+# ZANS Etsy SEO v2 - review packet rules
+This is v2 after your REVISE (issue #26 comment 7204216509). Applied: Ascot Flat Beginner title 12 words; Pro/Advanced back in the 14 guide titles; 18+ line removed from 19 guide descriptions; owner names removed from Ascot Flat Advanced; stocking filler removed; green bauble ring wording fixed; neutral disclaimer line; true controls (green bauble 4611213915, Premium Silks Mug 4608193933) untouched; Beginner second tag now course/event specific; 'gift for racing fan' tested on Aintree, Sandown, Cheltenham Beginner. Waves: 0 compliance, 1 SEO on low-view listings, 2 silks bauble later.
+Review each listing: PASS or REVISE with exact fix. Check 13 unique tags <=20 chars; title <=140 chars, <15 words, no repeats; no winners/profit/tips promises, betting-site or owner names, 'Royal Ascot', 18+ wording; cannibalisation between editions; controls untouched. No volume data exists; tags are hypotheses. Nothing is live.
 
 ## 4622635374 Beginner guide £7.49 views 0
 OLD TITLE: Kempton All-Weather Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Track DNA 2027
 NEW TITLE: Kempton All-Weather Racecourse Guide PDF for Beginners, Horse Racing Gift, Floodlit Evenings, Download
 OLD TAGS: kempton races | kempton guide pdf | kempton park gift | racecourse guide | all weather racing | jockey colours guide | racecourse day out | beginners racing | flat racing guide | horse racing present | racecourse guide pdf | horse racing gift | gift for racing fan
-NEW TAGS: kempton races | kempton guide pdf | polytrack racing | racing under lights | racing for beginners | first time racegoer | horse racing gift | learn horse racing | racing words guide | race meeting guide | jockey colours guide | beginners racing pdf | racing glossary pdf
+NEW TAGS: kempton races | kempton guide pdf | polytrack racing | racing under lights | racing for beginners | first night racing | horse racing gift | learn horse racing | racing words guide | race meeting guide | jockey colours guide | beginners racing pdf | racing glossary pdf
 PRIMARY: kempton all-weather racecourse guide for beginners ; SECONDARY: kempton all-weather races, kempton all-weather guide pdf, horse racing gift for beginners, first time racegoer gift
 AUDIENCE: The gift buyer or new racegoer heading to Kempton All-Weather who searches by course name or for a racing present and wants something instant and easy. Different from the Advanced and Pro editions, which target form students; this one carries the gift, first-timer and day-out vocabulary.
+NOTE: 
 NEW OPENING PARAGRAPH: Kempton all-weather racecourse guide for beginners to Flat racing: a simple instant-download PDF and horse racing gift for a race day or an evening under the floodlights at Kempton, covering the starting stalls, the draw, the pace, the Polytrack surface and the jockey colours. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622627387 Pro guide £20.82 views 0
 OLD TITLE: Kempton All-Weather Racecourse Guide PDF Pro - 119-Page Horse Racing Statistics Book, Instant Download, Track DNA Gift
-NEW TITLE: Kempton All-Weather Statistics Book PDF, 119-Page Horse Racing Data and Ratings, Download
+NEW TITLE: Kempton All-Weather Racecourse Guide PDF Pro - 119-Page Horse Racing Statistics Book, Polytrack, Download
 OLD TAGS: all weather stats | flat racing data | polytrack statistics | draw statistics | racing handbook pdf | trainer statistics | jockey statistics | racing data pdf | racing research pdf | form study pdf | racecourse guide pdf | horse racing gift | gift for racing fan
 NEW TAGS: kempton stats | draw statistics | polytrack statistics | racing stats book | racing data guide | horse racing manual | racing numbers pdf | racing evidence pdf | racing study guide | jockey stats pdf | trainer stats pdf | handicap analysis | racing method pdf
 PRIMARY: kempton all-weather horse racing statistics ; SECONDARY: horse racing data book, racing ratings pdf, horse racing ebook, racing research pdf
 AUDIENCE: The data-minded form student who searches for statistics, ratings and research for Kempton All-Weather. Own vocabulary (statistics, data, ratings, ebook, research) separate from the Beginner gift and Advanced form listings.
+NOTE: 
 NEW OPENING PARAGRAPH: Kempton all-weather horse racing statistics book and data PDF (Pro edition): a 119-page Flat racing research manual for Kempton's Polytrack, with course evidence by distance, draw, pace and price, every finding checked in two periods and its limits stated. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622626437 Advanced guide £12.49 views 0
 OLD TITLE: Kempton Jumps Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Track DNA
-NEW TITLE: Kempton Park Jumps Form Guide PDF, Horse Racing Betting by Going, King George Download
+NEW TITLE: Kempton Jumps Racecourse Guide PDF Advanced - Horse Racing Form and Betting, Download
 OLD TAGS: kempton betting | kempton form guide | king george chase | boxing day betting | jumps betting guide | chase form guide | hurdles form guide | each way guide pdf | national hunt form | christmas hurdle | racecourse guide pdf | horse racing gift | gift for racing fan
 NEW TAGS: kempton form | kempton betting | king george form | christmas hurdle | horse racing form | racing form guide | betting guide pdf | each way betting pdf | going and distance | racing value guide | form analysis pdf | racecourse form pdf | horse racing guide
 PRIMARY: kempton jumps form guide pdf ; SECONDARY: kempton jumps betting guide, horse racing form guide, each way guide pdf, racing going guide
 AUDIENCE: The racing follower who already goes to Kempton Jumps or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
+NOTE: 
 NEW OPENING PARAGRAPH: Kempton Park jumps form guide and horse racing betting PDF for the Christmas meeting with the King George VI Chase: value and over-bet points for each of the 7 main hurdle, chase and bumper distances, split by going (ground conditions) where there are enough races. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622634750 Beginner guide £7.49 views 0
 OLD TITLE: Kempton Jumps Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Track DNA 2027
 NEW TITLE: Kempton Park Racecourse Guide PDF for Beginners, Horse Racing Gift, King George, Instant Download
 OLD TAGS: kempton park | kempton races | kempton guide pdf | boxing day gift | racing gift for dad | jumps racing guide | national hunt guide | christmas racing | racing stocking gift | jump racing basics | racecourse guide pdf | horse racing gift | gift for racing fan
-NEW TAGS: kempton races | kempton guide pdf | king george chase | boxing day racing | racing for beginners | first time racegoer | horse racing gift | new racegoer gift | racing starter guide | horse racing basics | learn horse racing | racing words guide | race meeting guide
+NEW TAGS: kempton races | kempton guide pdf | king george chase | boxing day racing | racing for beginners | first kempton visit | horse racing gift | new racegoer gift | racing starter guide | horse racing basics | learn horse racing | racing words guide | race meeting guide
 PRIMARY: kempton jumps racecourse guide for beginners ; SECONDARY: kempton jumps races, kempton jumps guide pdf, horse racing gift for beginners, first time racegoer gift
 AUDIENCE: The gift buyer or new racegoer heading to Kempton Jumps who searches by course name or for a racing present and wants something instant and easy. Different from the Advanced and Pro editions, which target form students; this one carries the gift, first-timer and day-out vocabulary.
+NOTE: 
 NEW OPENING PARAGRAPH: Kempton Park racecourse guide for beginners to horse racing over jumps: a simple instant-download PDF and Christmas horse racing gift for the Christmas meeting with the King George VI Chase on Boxing Day, covering hurdles, chases, bumpers, the going and the jockey colours. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622635120 Pro guide £20.82 views 0
 OLD TITLE: Kempton Jumps Racecourse Guide PDF Pro - 132-Page Horse Racing Statistics Book, Instant Download, Track DNA Gift
-NEW TITLE: Kempton Jumps Statistics Book PDF, 132-Page Horse Racing Data and Ratings, Instant Download
+NEW TITLE: Kempton Jumps Racecourse Guide PDF Pro - 132-Page Horse Racing Statistics Book, Instant Download
 OLD TAGS: racing stats pdf | jumps racing data | race form analysis | racing ratings pdf | handicap analysis | trainer jockey data | racing data book | form student gift | chase statistics | hurdle race data | racecourse guide pdf | horse racing gift | gift for racing fan
 NEW TAGS: kempton stats | kempton jumps data | national hunt data | racing research pdf | form student gift | racing handbook pdf | racing stats book | racing data guide | horse racing manual | racing numbers pdf | racing evidence pdf | racing study guide | jockey stats pdf
 PRIMARY: kempton jumps horse racing statistics ; SECONDARY: horse racing data book, racing ratings pdf, horse racing ebook, racing research pdf
 AUDIENCE: The data-minded form student who searches for statistics, ratings and research for Kempton Jumps. Own vocabulary (statistics, data, ratings, ebook, research) separate from the Beginner gift and Advanced form listings.
+NOTE: 
 NEW OPENING PARAGRAPH: Kempton Park jumps horse racing statistics book and data PDF (Pro edition): a 132-page National Hunt research manual, Christmas meeting included, with course evidence by distance and going for hurdles, chases and bumpers, every finding checked in two periods and its limits stated. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622672428 Advanced guide £12.49 views 0
 OLD TITLE: Sandown Park Racecourse Guide PDF Advanced - Horse Racing Betting Form by Distance and Going, Instant Download, Jumps Track DNA
-NEW TITLE: Sandown Park Form Guide PDF, Horse Racing Betting by Going, Tingle Creek Download
+NEW TITLE: Sandown Park Racecourse Guide PDF Advanced - Horse Racing Form and Betting, Download
 OLD TAGS: sandown betting | sandown form guide | tingle creek chase | celebration chase | imperial cup | chase betting pdf | hurdle betting guide | each way racing | jumps placepot pdf | jumps form pdf | racecourse guide pdf | horse racing gift | gift for racing fan
 NEW TAGS: sandown form | sandown betting | tingle creek form | sandown chase form | horse racing form | racing going guide | form study pdf | trainer form guide | racing form guide | betting guide pdf | each way betting pdf | going and distance | racing value guide
 PRIMARY: sandown park form guide pdf ; SECONDARY: sandown park betting guide, horse racing form guide, each way guide pdf, racing going guide
 AUDIENCE: The racing follower who already goes to Sandown Park or backs horses there and searches for form, going and each-way study material. Own vocabulary (form, betting, going, each-way) so it does not compete with the Beginner gift listing or the Pro statistics listing.
+NOTE: 
 NEW OPENING PARAGRAPH: Sandown Park form guide and horse racing betting PDF for the Tingle Creek meeting and the rest of the jumps season: value and over-bet points for each of the 5 main hurdle and chase distances, split by going (ground conditions) where there are enough races. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622672152 Beginner guide £7.49 views 0
 OLD TITLE: Sandown Park Racecourse Guide PDF Beginner - Horse Racing Gift for Racegoers, Instant Download, Jumps Track DNA 2027
 NEW TITLE: Sandown Park Racecourse Guide PDF for Beginners, Horse Racing Gift, Tingle Creek, Instant Download
 OLD TAGS: sandown park | sandown races | sandown guide pdf | tingle creek | gift for racing fan | jump racing gift | beginner racing pdf | racing day out | racegoer gift idea | hurdles and chases | racecourse guide pdf | horse racing gift | sandown racecourse
-NEW TAGS: sandown races | sandown guide pdf | sandown park guide | tingle creek day | racing for beginners | first time racegoer | horse racing gift | horse racing present | racecourse day out | racing day out gift | new racegoer gift | racing starter guide | horse racing basics
+NEW TAGS: sandown races | sandown guide pdf | sandown park guide | tingle creek day | racing for beginners | first jumps meeting | horse racing gift | gift for racing fan | racecourse day out | racing day out gift | new racegoer gift | racing starter guide | horse racing basics
 PRIMARY: sandown park racecourse guide for beginners ; SECONDARY: sandown park races, sandown park guide pdf, horse racing gift for beginners, first time racegoer gift
 AUDIENCE: The gift buyer or new racegoer heading to Sandown Park who searches by course name or for a racing present and wants something instant and easy. Different from the Advanced and Pro editions, which target form students; this one carries the gift, first-timer and day-out vocabulary.
+NOTE: 
 NEW OPENING PARAGRAPH: Sandown Park racecourse guide for beginners to horse racing over jumps: a simple instant-download PDF and horse racing gift for a race day at Sandown, with the Tingle Creek meeting in December, covering hurdles, chases, bumpers, the going and the jockey colours. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4622672622 Pro guide £20.82 views 0
 OLD TITLE: Sandown Park Racecourse Guide PDF Pro - 115-Page Horse Racing Statistics Book, Instant Download, Jumps Track DNA Gift
-NEW TITLE: Sandown Park Statistics Book PDF, 115-Page Horse Racing Data and Ratings, Tingle Creek, Download
+NEW TITLE: Sandown Park Racecourse Guide PDF Pro - 115-Page Horse Racing Statistics Book, Instant Download
 OLD TAGS: racing statistics | jumps data pdf | form analysis pdf | racing ratings pdf | handicap marks | trainer stats pdf | racing research | betting data pdf | steeplechase stats | hurdling statistics | racecourse guide pdf | horse racing gift | gift for racing fan
 NEW TAGS: sandown stats | tingle creek data | national hunt data | racing analysis pdf | trainer jockey stats | handicap data pdf | racing research pdf | form student gift | racing handbook pdf | racing stats book | racing data guide | horse racing manual | racing numbers pdf
 PRIMARY: sandown park horse racing statistics ; SECONDARY: horse racing data book, racing ratings pdf, horse racing ebook, racing research pdf
 AUDIENCE: The data-minded form student who searches for statistics, ratings and research for Sandown Park. Own vocabulary (statistics, data, ratings, ebook, research) separate from the Beginner gift and Advanced form listings.
+NOTE: 
 NEW OPENING PARAGRAPH: Sandown Park horse racing statistics book and data PDF (Pro edition): a 115-page National Hunt research manual, Tingle Creek meeting included, with course evidence by distance and going for hurdles and chases, every finding checked in two periods and its limits stated. Course data to help you know the track before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 ## 4608193933 Mug £14.99 views 64
 OLD TITLE: Horse Racing Christmas Gift Mug, Premium Jockey Silks with Name, Racehorse Owner Syndicate Cup
 NEW TITLE: Horse Racing Christmas Gift Mug, Premium Jockey Silks with Name, Racehorse Owner Syndicate Cup
 OLD TAGS: jockey silks mug | horse racing mug | racing silks mug | racehorse xmas gift | racehorse mug | racehorse owner mug | racehorse owner gift | jockey silks gift | jockey colours mug | horse racing xmas | horse racing lover | horse racing gift | racing coffee mug
-NEW TAGS: jockey silks mug | horse racing mug | racing silks mug | racehorse xmas gift | racehorse mug | racehorse owner mug | racehorse owner gift | jockey silks gift | jockey colours mug | horse racing xmas | personalised mug | horse racing gift | syndicate gift mug
+NEW TAGS: jockey silks mug | horse racing mug | racing silks mug | racehorse xmas gift | racehorse mug | racehorse owner mug | racehorse owner gift | jockey silks gift | jockey colours mug | horse racing xmas | horse racing lover | horse racing gift | racing coffee mug
 PRIMARY: jockey silks mug ; SECONDARY: horse racing mug, racing silks mug, racehorse owner mug, personalised mug
 AUDIENCE: Racehorse owners and syndicates wanting their own silks on an 11oz mug. Best-viewed listing (64 views); kept stable.
+NOTE: TRUE CONTROL (64 views): title, tags and description unchanged.
 NEW OPENING PARAGRAPH: (description unchanged)
 
 ## 4611213915 Bauble £12.99 views 76
 OLD TITLE: Horse Racing Christmas Gift, Green & Gold Ornament with Name, Personalised Racehorse Tree Decoration
 NEW TITLE: Horse Racing Christmas Gift, Green & Gold Ornament with Name, Personalised Racehorse Tree Decoration
 OLD TAGS: horse racing xmas | horse racing gift | racehorse ornament | horse racing bauble | horse racing tree | racehorse decoration | christmas racehorse | jockey jersey bauble | jockey cap bauble | racing keepsake | racehorse xmas gift | racing tree bauble | horse racing decor
-NEW TAGS: horse racing xmas | horse racing gift | racehorse ornament | horse racing bauble | horse racing tree | racehorse decoration | christmas racehorse | jockey jersey bauble | jockey cap bauble | racehorse owner gift | racehorse xmas gift | green gold bauble | horse racing decor
+NEW TAGS: horse racing xmas | horse racing gift | racehorse ornament | horse racing bauble | horse racing tree | racehorse decoration | christmas racehorse | jockey jersey bauble | jockey cap bauble | racing keepsake | racehorse xmas gift | racing tree bauble | horse racing decor
 PRIMARY: racehorse ornament ; SECONDARY: horse racing bauble, racehorse decoration, horse racing xmas, racehorse owner gift
 AUDIENCE: Racehorse owners, syndicate members and racing families wanting a traditional green and gold horse racing Christmas ornament with the horse's name. Best seller: change kept minimal.
-NEW OPENING PARAGRAPH: (description unchanged)
+NOTE: TRUE CONTROL (best seller, 4 sold): title and tags unchanged. Only change: description no longer mentions the double gold ring (final art has no rings).
+NEW OPENING PARAGRAPH: RACING GREEN BAUBLE: YOUR JOCKEY SILKS IN THE MIDDLE. For silks all over, see our Premium Silks Bauble.
 
 ## 4612435420 Mug £11.99 views 7
 OLD TITLE: Horse Racing Christmas Gift, Personalised White Silks Mug 11oz with Racehorse Name, Jockey Colours
@@ -98,6 +109,7 @@ OLD TAGS: white silks mug | personalised mug | horse name mug | horse racing mug
 NEW TAGS: white silks mug | personalised mug | horse name mug | horse racing mug | racehorse name mug | racing colours mug | owner silks mug | racehorse xmas gift | horse racing gift | silks coffee mug | racing gift for dad | racing club gift | trainer gift mug
 PRIMARY: white silks mug ; SECONDARY: personalised horse racing mug, horse name mug, racing colours mug, owner silks mug
 AUDIENCE: Buyers who want the simpler all-white mug and the lower price; also owners, syndicates, racing clubs and trainers' yards as gift givers.
+NOTE: Title and description unchanged. 2 tag swaps: cup/colour phrases had no search evidence.
 NEW OPENING PARAGRAPH: WHITE MUG: WHITE HANDLE AND WHITE INSIDE
 This is our standard silks mug: a white glossy 11oz ceramic mug with a white handle and white inside, with your own silks printed all the way round. Want a coloured handle and inside? Look for our Premium Silks Mug in the shop.
 
@@ -108,6 +120,7 @@ OLD TAGS: jockey silks bauble | racing silks bauble | jockey bauble | silks orna
 NEW TAGS: jockey silks bauble | racing silks bauble | syndicate gift | silks ornament | jockey ornament | horse racing bauble | racehorse bauble | jockey silks xmas | horse racing xmas | racehorse xmas gift | personalised bauble | horse racing gift | racing club gift
 PRIMARY: jockey silks bauble ; SECONDARY: racing silks bauble, silks ornament, personalised bauble, racehorse bauble
 AUDIENCE: Owners and syndicates who want their own colours printed all over a Christmas bauble. Own search vocabulary (silks, syndicate, racing club) kept apart from the green bauble.
+NOTE: Title and description unchanged. 2 tags swapped: jockey bauble pulled the wrong products on Etsy page 1 (earlier check), replaced with owner and syndicate gift searches.
 NEW OPENING PARAGRAPH: PREMIUM SILKS BAUBLE: YOUR SILKS PRINTED ALL OVER.
 
 ## 4609859882 Mug £14.99 views 3
@@ -117,4 +130,5 @@ OLD TAGS: horse racing gift | racing secret santa | horse racing present | horse
 NEW TAGS: horse racing gift | racing secret santa | horse racing present | horse racing xmas | christmas jockey mug | racing christmas mug | racing xmas gift | racehorse owner xmas | racehorse owner gift | secret santa mug | racing silks mug | christmas gift mug | jockey silks mug
 PRIMARY: horse racing secret santa gift ; SECONDARY: racing christmas mug, christmas jockey mug, horse racing xmas, secret santa mug
 AUDIENCE: Christmas buyers for a horse racing Secret Santa or Christmas present (yard, syndicate, office). Christmas vocabulary kept here so it does not compete with the general silks mug.
+NOTE: Title and description unchanged. 2 tags swapped for the personalised mug search and a plain racing mug gift phrase.
 NEW OPENING PARAGRAPH: PREMIUM SILKS MUG: COLOURED HANDLE AND COLOURED INSIDE - pick from 9 colours.
