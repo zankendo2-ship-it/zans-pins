@@ -1,0 +1,21 @@
+{
+  "_note": "Supplier-specific print QA facts. A fact applies ONLY to its own supplier + product. Never apply one supplier's tolerance to another, and never add tolerances together without evidence.",
+  "entries": [
+    {
+      "supplier": "Printify",
+      "product": "ceramic ornament (round bauble)",
+      "source": "Printify support reply supplied by the owner, 26 Nov 2026 (#26 7200188513, confirmed to be permanent in 7200224165)",
+      "positioning": "manual",
+      "max_shift_mm": 5,
+      "symmetry_guaranteed": false,
+      "safe_area": "essential elements inside the template's dashed line; outside is background/bleed only",
+      "best_for": "all-over patterns",
+      "rules": [
+        "Simulate +/-5 mm from the template's dashed safe area for this product only.",
+        "Do not state exact centring or symmetry as guaranteed.",
+        "Preserve approved existing designs; flag a specific SKU only when measured risk needs a decision.",
+        "Physical sample inspection still required: sharpness, colour, centring, logo."
+      ]
+    }
+  ]
+}
