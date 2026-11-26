@@ -541,8 +541,8 @@ def test_settled_run_counts_measured_cost_not_reservation():
     assert o.reserved_this_month([slot], "2026-11") == 2.45                       # unsettled: full reservation
     fake = {**st, "user": {"login": "someone"}}                                    # only the workflow may settle
     assert o.reserved_this_month([slot, fake], "2026-11") == 2.45
-    big = {"body": o.settle_tag("2026-11-26", "abc", 9.0), "user": BOT}            # never more than reserved
-    assert o.reserved_this_month([slot, big], "2026-11") == 2.45
+    big = {"body": o.settle_tag("2026-11-26", "abc", 9.0, over=True), "user": BOT}  # an overrun is recorded, not hidden
+    assert o.reserved_this_month([slot, big], "2026-11") == 9.0
     other = {"body": o.settle_tag("2026-11-26", "zzz", 0.0), "user": BOT}          # must match date + hash
     assert o.reserved_this_month([slot, other], "2026-11") == 2.45
 
@@ -660,3 +660,35 @@ def test_missing_stop_or_openai_refusal_fails_closed(monkeypatch):
                                                                    "message": {"content": good, "refusal": "no"}}]})
     o.call_openai({"OPENAI_API_KEY": "k", "OPENAI_MODEL": "m"}, "x")
     assert o.LAST_STOP["OpenAI"] == "refusal"
+
+
+def test_overrun_is_recorded_flagged_and_blocks_further_runs():
+    slot = {"body": o.slot_tag("live", "2026-11-20", "abc", 2.45), "user": BOT}
+    st = {"body": o.settle_tag("2026-11-20", "abc", 3.1, over=True), "user": BOT}
+    assert len(o.overruns([slot, st], "2026-11")) == 1
+    assert o.overruns([slot, {**st, "user": {"login": "someone"}}], "2026-11") == []   # only the workflow's word counts
+    assert o.overruns([slot, st], "2026-12") == []
+    assert o.settle_tag("2026-11-20", "abc", 3.1, over=True).endswith(":over=1 -->")
+
+
+def test_claude_cache_tokens_counted_and_served_model_checked():
+    assert o._claude_tokens({"input_tokens": 100, "output_tokens": 10, "cache_creation_input_tokens": 80,
+                             "cache_read_input_tokens": 50}) == (250, 10)   # 100 + 80*1.25 + 50
+    assert o._claude_tokens({"input_tokens": 100, "output_tokens": 10, "cache_read_input_tokens": "x"}) == (None, None)
+    assert o.served_model("gpt-6.2-astra", None) == "gpt-6.2-astra"
+    assert o.served_model("gpt-6.2-astra", "gpt-6.2-astra-2026-11-01") == "gpt-6.2-astra"
+    assert o.usage_cost(o.served_model("gpt-6.2-astra", "gpt-6-luna"), 10, 10) is None   # a different model served: unknown
+
+
+def test_settle_flags_overrun_when_cost_exceeds_reserve():
+    calls = []
+    o.RUN_COST.update(usd=4.0, complete=True)
+    posted = []
+    orig = o.gh
+    try:
+        o.gh = lambda env, method, path, body=None: posted.append(body)
+        o.settle({}, "r/x", "26", "2026-11-26", "abc", 2.45)
+    finally:
+        o.gh = orig
+    m = o.SETTLE_RE.search(posted[0]["body"])
+    assert m and m.group(4) and float(m.group(3)) == 5.0 and "OVERRUN" in posted[0]["body"]

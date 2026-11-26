@@ -116,11 +116,17 @@ def runs_today(comments, today, mode):
 
 
 SETTLE = "zans-orch-settle"
-SETTLE_RE = re.compile(r"<!-- " + SETTLE + r":live:(\d{4}-\d{2}-\d{2}):([0-9a-f]+):usd=([0-9.]+) -->")
+SETTLE_RE = re.compile(r"<!-- " + SETTLE + r":live:(\d{4}-\d{2}-\d{2}):([0-9a-f]+):usd=([0-9.]+)(:over=1)? -->")
 
 
-def settle_tag(today, h, usd):
-    return f"<!-- {SETTLE}:live:{today}:{h}:usd={usd:.4f} -->"
+def settle_tag(today, h, usd, over=False):
+    return f"<!-- {SETTLE}:live:{today}:{h}:usd={usd:.4f}{':over=1' if over else ''} -->"
+
+
+def overruns(comments, month):
+    """Settle comments (from the workflow only) of this month that recorded a cost ABOVE the reservation."""
+    return [m for c in comments if (c.get("user") or {}).get("login") == TRUSTED_SETTLER
+            for m in SETTLE_RE.finditer(c.get("body") or "") if m.group(4) and m.group(1).startswith(month)]
 
 
 def settled(comments):
@@ -141,7 +147,7 @@ def settled(comments):
 
 def reserved_this_month(comments, month):
     """USD counted against the month by live slots (failed runs included). A slot whose run finished and was
-    settled by the workflow counts its measured cost (never more than its reservation); an unsettled slot, or one
+    settled by the workflow counts its measured cost (even if above its reservation: an overrun is recorded, not hidden); an unsettled slot, or one
     without an amount, counts its full reservation / the largest possible run."""
     total = 0.0
     done = settled(comments)
@@ -153,7 +159,7 @@ def reserved_this_month(comments, month):
                 usd = WORST_RUN_USD
             usd = usd if math.isfinite(usd) and usd >= 0 else WORST_RUN_USD
             actual = done.get((m.group(2), m.group(3)))
-            total += min(usd, actual) if actual is not None else usd
+            total += actual if actual is not None else usd   # a measured overrun is counted, never hidden
     return total
 
 
@@ -396,6 +402,26 @@ def usage_cost(model, tin, tout):
     return (tin * price[0] + tout * price[1]) / 1e6
 
 
+def served_model(requested, served):
+    """The model name to price. If the provider reports a served model, it must be the requested one (or a dated
+    variant of it); anything else is priced as unknown, so the run is not settled and keeps its full reservation."""
+    if not served:
+        return requested   # the request pins the model; a reply without the field is priced as requested
+    return requested if served == requested or str(served).startswith(requested + "-") else "unverified:" + str(served)[:40]
+
+
+def _claude_tokens(u):
+    """Anthropic bills cache writes (x1.25) and cache reads separately from input_tokens; count all three, at the
+    full input price (cache reads are cheaper, so this over-counts safely) so no billed category is missed."""
+    tin, tout = u.get("input_tokens"), u.get("output_tokens")
+    if not (isinstance(tin, int) and isinstance(tout, int)):
+        return tin, tout
+    w, r = u.get("cache_creation_input_tokens") or 0, u.get("cache_read_input_tokens") or 0
+    if not (isinstance(w, int) and isinstance(r, int)):
+        return None, None
+    return tin + -(-w * 5 // 4) + r, tout
+
+
 def log_reply(who, stop, text):
     """Metadata only in the public Actions log (never the reply text): why the call ended and how long it was."""
     print(f"{who} reply: stop={clean(str(stop), 40)} chars={len(text or '')} json_object={bool(re.search(r'[{].*[}]', text or '', re.S))}")
@@ -418,7 +444,7 @@ def call_claude(env, text):
     out = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
     log_reply("Claude", d.get("stop_reason"), out)
     u = d.get("usage") or {}
-    LAST_USAGE["Claude"] = (env["ANTHROPIC_MODEL"], u.get("input_tokens"), u.get("output_tokens"))
+    LAST_USAGE["Claude"] = (served_model(env["ANTHROPIC_MODEL"], d.get("model")), *_claude_tokens(u))
     LAST_STOP["Claude"] = d.get("stop_reason") or "missing"   # missing metadata fails closed
     return out
 
@@ -431,7 +457,9 @@ def call_openai(env, text):
     out = c["message"].get("content") or ""
     log_reply("OpenAI", c.get("finish_reason"), out)
     u = d.get("usage") or {}
-    LAST_USAGE["OpenAI"] = (env["OPENAI_MODEL"], u.get("prompt_tokens"), u.get("completion_tokens"))
+    # OpenAI: prompt_tokens already includes cached tokens and completion_tokens already includes reasoning tokens,
+    # so counting both at the full price is the conservative, complete figure.
+    LAST_USAGE["OpenAI"] = (served_model(env["OPENAI_MODEL"], d.get("model")), u.get("prompt_tokens"), u.get("completion_tokens"))
     LAST_STOP["OpenAI"] = "refusal" if c["message"].get("refusal") else (c.get("finish_reason") or "missing")
     return out
 
@@ -602,12 +630,14 @@ def settle(env, repo, issue, today, h, reserve):
     if not RUN_COST["complete"]:
         print("not settled: a paid call did not report usage; the full reservation stays")
         return
-    usd = min(reserve, round(RUN_COST["usd"] * SETTLE_SAFETY, 4))
+    usd = round(RUN_COST["usd"] * SETTLE_SAFETY, 4)   # the conservative measured amount, NOT clamped to the reserve
+    over = usd > reserve
     try:
         gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
-           {"body": f"{settle_tag(today, h, usd)}\nZANS two-reviewer check: run {h} settled at ${usd:.2f} (measured "
-                    f"tokens x list price x {SETTLE_SAFETY}, an estimate, not the provider bill). The rest of the "
-                    f"${reserve:.2f} reservation is released.\n\n---\n_Generated by [Claude Code](https://claude.ai/code)_"})
+           {"body": f"{settle_tag(today, h, usd, over)}\nZANS two-reviewer check: run {h} settled at ${usd:.2f} (measured "
+                    f"tokens x list price x {SETTLE_SAFETY}, an estimate, not the provider bill). "
+                    + (f"**OVERRUN: above the ${reserve:.2f} reservation. Further live runs are blocked this month.**"
+                       if over else f"The rest of the ${reserve:.2f} reservation is released.") + f"\n\n---\n_Generated by [Claude Code](https://claude.ai/code)_"})
         print(f"settled: ${usd:.4f}")
     except Exception as e:   # noqa: BLE001 - settle is optional; the reservation already covers the run
         print(f"not settled ({type(e).__name__}); the full reservation stays")
@@ -643,6 +673,9 @@ def main(env=None):
         recent = comments_since(env, repo, issue, month + "-01T00:00:00Z")   # whole UTC month
         if runs_today(recent, today, mode) >= day_cap(env, mode):
             raise Stop(f"STOPPED: daily {mode} run cap reached.")
+        if mode == "live" and overruns(recent, month):
+            raise Stop("STOPPED: an earlier live run this month cost MORE than its reservation. No further live runs "
+                       "until the owner reviews the cap and the pricing table.")
         files = fetch_artifacts(urls) if mode == "live" else ""
         reserve = 0.0
         if mode == "live":
