@@ -28,8 +28,11 @@ def wrap(art_png, out):
     fxc = np.clip(fx, 0, AW - 2); x0i = fxc.astype(int); wx = (fxc - x0i)[..., None]
     y0i = np.clip(fy, 0, AH - 2).astype(int); wy = (np.clip(fy, 0, AH - 2) - y0i)[..., None]
     smp = art[y0i, x0i] * (1 - wx) * (1 - wy) + art[y0i, x0i + 1] * wx * (1 - wy) + art[y0i + 1, x0i] * (1 - wx) * wy + art[y0i + 1, x0i + 1] * wx * wy
-    shade = (0.915 + 0.085 * cz ** 0.6)[..., None]
-    lit = np.clip(smp * shade, 0, 255)
+    side = np.where(u < 0, 0.74 + 0.26 * cz ** 0.7, 0.88 + 0.12 * cz ** 0.7)       # darker to both edges (more on the shadow side)
+    shade = (side * (1 - 0.10 * v ** 3))[..., None]
+    streak = (0.13 * np.exp(-((u - 0.20) / 0.07) ** 2) + 0.05 * np.exp(-((u - 0.20) / 0.22) ** 2) + 0.06 * np.exp(-((u + 0.62) / 0.05) ** 2))
+    streak = (streak * (1 - 0.6 * v ** 2))[..., None]
+    lit = np.clip(smp * shade + 255 * streak * (0.45 + 0.55 * smp.mean(-1, keepdims=True) / 255), 0, 255)
     cov = ok.astype(float)[..., None]
     def down(a): h, w = a.shape[:2]; return a.reshape(h // SS, SS, w // SS, SS, -1).mean((1, 3))
     covd = down(cov); litd = down(lit * cov) / np.maximum(covd, 1e-6)
