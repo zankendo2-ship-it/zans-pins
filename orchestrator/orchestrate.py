@@ -10,7 +10,7 @@ A person starts one review by hand (workflow_dispatch). This script:
   4. runs up to MAX_ROUNDS rounds. In each round Claude reviews first, then OpenAI, and each sees the
      other's latest verdict. The first REJECT or BLOCKER stops the run at once (no further paid call). Each must return JSON {"ack": "...", "verdict": "PASS|REVISE|REJECT|BLOCKER",
      "reasons": [...], "fixes": [...]};
-  5. stops on: both PASS (AGREED), the first REJECT/BLOCKER, the round cap, the request cap or the time cap;
+  5. stops on: both PASS (AGREED), both REVISE (AGREED REVISE, combined fix list), the first REJECT/BLOCKER, the round cap, the request cap or the time cap;
   6. posts ONE summary comment on the issue with GITHUB_TOKEN. Comments made with GITHUB_TOKEN do not
      trigger other workflows, so the orchestrator cannot loop itself.
 
@@ -42,7 +42,7 @@ MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = ref
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_LIVE_RUNS_PER_DAY = 3              # hard ceiling: paid runs per UTC day; repo variable may only lower it
+MAX_LIVE_RUNS_PER_DAY = 1              # hard ceiling (Alex 26 Nov: ONE batched paid run a day); variable may only lower it
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
 MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
 PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
@@ -51,6 +51,11 @@ PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added 
 # claude-sonnet-5-5 $2/$10, gpt-6.2-astra $8/$40, gpt-6-luna $0.10/$0.50 per million tokens).
 WORST_USD_PER_M_IN = 10.0
 WORST_USD_PER_M_OUT = 50.0
+# Actual list prices per million tokens (in, out), used ONLY to settle a finished run's real cost.
+# Checked 25 Nov 2026. A model missing here means the run is never settled (full reservation kept).
+ACTUAL_USD_PER_M = {"claude-sonnet-5-5": (2.0, 10.0), "gpt-6.2-astra": (8.0, 40.0), "gpt-6-luna": (0.10, 0.50)}
+SETTLE_SAFETY = 1.25                   # settled cost = measured tokens x list price x 1.25 (rounding, price drift)
+TRUSTED_SETTLER = "github-actions[bot]"   # only the workflow's own settle comments may lower a reservation
 ALLOWED_MODELS = {"ANTHROPIC_MODEL": ("claude-sonnet-5-5",), "OPENAI_MODEL": ("gpt-6.2-astra", "gpt-6-luna")}
 MAIN_REF = "refs/heads/main"
 ALLOWED_ISSUE = "26"                   # the only issue the orchestrator reads and posts on
@@ -110,17 +115,51 @@ def runs_today(comments, today, mode):
     return sum(1 for m in _slots(comments, mode) if m.group(2) == today)
 
 
+SETTLE = "zans-orch-settle"
+SETTLE_RE = re.compile(r"<!-- " + SETTLE + r":live:(\d{4}-\d{2}-\d{2}):([0-9a-f]+):usd=([0-9.]+)(:over=1)? -->")
+
+
+def settle_tag(today, h, usd, over=False):
+    return f"<!-- {SETTLE}:live:{today}:{h}:usd={usd:.4f}{':over=1' if over else ''} -->"
+
+
+def overruns(comments, month):
+    """Settle comments (from the workflow only) of this month that recorded a cost ABOVE the reservation."""
+    return [m for c in comments if (c.get("user") or {}).get("login") == TRUSTED_SETTLER
+            for m in SETTLE_RE.finditer(c.get("body") or "") if m.group(4) and m.group(1).startswith(month)]
+
+
+def settled(comments):
+    """{(date, hash): usd} from settle comments posted by the workflow itself (never by a person or other bot)."""
+    out = {}
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        for m in SETTLE_RE.finditer(c.get("body") or ""):
+            try:
+                usd = float(m.group(3))
+            except ValueError:
+                continue
+            if math.isfinite(usd) and usd >= 0:
+                out[(m.group(1), m.group(2))] = usd
+    return out
+
+
 def reserved_this_month(comments, month):
-    """USD reserved by live slots this UTC month (failed runs included). A slot without an amount counts as the
-    largest possible run."""
+    """USD counted against the month by live slots (failed runs included). A slot whose run finished and was
+    settled by the workflow counts its measured cost (even if above its reservation: an overrun is recorded, not hidden); an unsettled slot, or one
+    without an amount, counts its full reservation / the largest possible run."""
     total = 0.0
+    done = settled(comments)
     for m in _slots(comments, "live"):
         if m.group(2).startswith(month):
             try:
                 usd = float(m.group(4)) if m.group(4) else WORST_RUN_USD
             except ValueError:
                 usd = WORST_RUN_USD
-            total += usd if math.isfinite(usd) and usd >= 0 else WORST_RUN_USD
+            usd = usd if math.isfinite(usd) and usd >= 0 else WORST_RUN_USD
+            actual = done.get((m.group(2), m.group(3)))
+            total += actual if actual is not None else usd   # a measured overrun is counted, never hidden
     return total
 
 
@@ -351,6 +390,34 @@ VERDICT_SCHEMA = {
 
 
 LAST_STOP = {}   # provider stop reason of each reviewer's latest reply (metadata only)
+LAST_USAGE = {}  # (model, input tokens, output tokens) of each reviewer's latest reply, or absent if not reported
+RUN_COST = {"usd": 0.0, "complete": True}   # measured cost of the current run; incomplete = never settled
+
+
+def usage_cost(model, tin, tout):
+    """Measured cost of one reply, or None if the model price or usage is unknown (then the run is not settled)."""
+    price = ACTUAL_USD_PER_M.get(model)
+    if price is None or not all(isinstance(x, int) and not isinstance(x, bool) and x >= 0 for x in (tin, tout)):
+        return None
+    return (tin * price[0] + tout * price[1]) / 1e6
+
+
+def served_model(requested, served):
+    """The model name to price. If the provider reports a served model, it must be the requested one (or a dated
+    variant of it); anything else is priced as unknown, so the run is not settled and keeps its full reservation."""
+    if not served:
+        return "unverified:missing"   # no evidence of which model answered: price unknown, reservation stays
+    return requested if served == requested or str(served).startswith(requested + "-") else "unverified:" + str(served)[:40]
+
+
+def _claude_tokens(u):
+    """Anthropic bills cache writes (x1.25) and cache reads separately from input_tokens; count all three, at the
+    full input price (cache reads are cheaper, so this over-counts safely) so no billed category is missed."""
+    tin, tout = u.get("input_tokens"), u.get("output_tokens")
+    w, r = u.get("cache_creation_input_tokens", 0), u.get("cache_read_input_tokens", 0)
+    if not all(isinstance(x, int) and not isinstance(x, bool) and x >= 0 for x in (tin, tout, w, r)):
+        return None, None
+    return tin + -(-w * 5 // 4) + r, tout
 
 
 def log_reply(who, stop, text):
@@ -374,6 +441,8 @@ def call_claude(env, text):
               {**CLAUDE_EXTRA, "model": env["ANTHROPIC_MODEL"], "messages": [{"role": "user", "content": text}]})
     out = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
     log_reply("Claude", d.get("stop_reason"), out)
+    u = d.get("usage") or {}
+    LAST_USAGE["Claude"] = (served_model(env["ANTHROPIC_MODEL"], d.get("model")), *_claude_tokens(u))
     LAST_STOP["Claude"] = d.get("stop_reason") or "missing"   # missing metadata fails closed
     return out
 
@@ -385,6 +454,10 @@ def call_openai(env, text):
     c = d["choices"][0]
     out = c["message"].get("content") or ""
     log_reply("OpenAI", c.get("finish_reason"), out)
+    u = d.get("usage") or {}
+    # OpenAI: prompt_tokens already includes cached tokens and completion_tokens already includes reasoning tokens,
+    # so counting both at the full price is the conservative, complete figure.
+    LAST_USAGE["OpenAI"] = (served_model(env["OPENAI_MODEL"], d.get("model")), u.get("prompt_tokens"), u.get("completion_tokens"))
     LAST_STOP["OpenAI"] = "refusal" if c["message"].get("refusal") else (c.get("finish_reason") or "missing")
     return out
 
@@ -427,8 +500,9 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
     if budget_usd is not None and worst_case_usd(worst_in) > budget_usd:
         raise Stop("REFUSED: worst-case cost of this run is over the owner's ZANS_ORCH_MAX_USD_PER_RUN.")
     start, requests, used, rounds = clock(), 0, 0, []
+    RUN_COST.update(usd=0.0, complete=True)
     last_claude = last_openai = None
-    outcome = "NO AGREEMENT after the round cap - needs a person"
+    outcome = "NO AGREEMENT after the round cap - the stricter verdict REVISE stands - needs a person"
     for n in range(1, MAX_ROUNDS + 1):
         row = {"round": n}
         rounds.append(row)
@@ -449,6 +523,7 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
             requests += 1
             try:
                 LAST_STOP.clear()
+                LAST_USAGE.clear()
                 v = parse_verdict(fn(env, text))
                 stop = LAST_STOP.get(who)
                 if stop is not None and stop != COMPLETE[who]:
@@ -460,6 +535,12 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
                 detail = http_detail(e)
                 print(f"{who} call failed: {detail}")
                 v = {"ack": "", "verdict": "BLOCKER", "reasons": [f"{who} call failed: {detail}"], "fixes": []}
+            got = LAST_USAGE.get(who)
+            c = usage_cost(*got) if got else None
+            if c is None:
+                RUN_COST["complete"] = False   # a paid call without usage: keep the full reservation
+            else:
+                RUN_COST["usd"] += c
             row[who] = v
             if who == "Claude":
                 last_claude = v
@@ -467,10 +548,31 @@ def review(env, task, urls, comments, claude, openai, clock=time.monotonic, file
                 last_openai = v
             if v["verdict"] in ("REJECT", "BLOCKER"):   # stop at once: no further paid call
                 return ("STOPPED: rejected" if v["verdict"] == "REJECT" else "STOPPED: blocker raised"), rounds, requests
-        if {row["Claude"]["verdict"], row["OpenAI"]["verdict"]} == {"PASS"}:
+        both = {row["Claude"]["verdict"], row["OpenAI"]["verdict"]}
+        if both == {"PASS"}:
             outcome = "AGREED: both PASS (still needs Alex's own yes before anything goes live)"
             break
+        if both == {"REVISE"}:   # matching REVISE: stop now, no paid re-review of an unchanged artifact
+            outcome = ("AGREED REVISE: both reviewers want changes - fix and pin a new revision "
+                       "before any re-review (combined fix list below)")
+            break
+    else:
+        # Only PASS v REVISE can reach the cap (REJECT/BLOCKER stop at once): the stricter verdict stands.
+        outcome = "NO AGREEMENT after the round cap - the stricter verdict REVISE stands - needs a person"
     return outcome, rounds, requests
+
+
+def combined_fixes(rounds, limit=20):
+    """De-duplicated fixes from the final round, Claude first, for one actionable list."""
+    seen, out = set(), []
+    last = rounds[-1] if rounds else {}
+    for who in ("Claude", "OpenAI"):
+        for f in (last.get(who) or {}).get("fixes", []):
+            k = " ".join(str(f).lower().split())
+            if k and k not in seen:
+                seen.add(k)
+                out.append(f)
+    return out[:limit]
 
 
 def summary(h, task, urls, outcome, rounds, requests, mode):
@@ -490,6 +592,9 @@ def summary(h, task, urls, outcome, rounds, requests, mode):
             v = r[who]
             lines.append(f"- Round {r['round']} {who}: **{v['verdict']}**. {v['ack']}")
             lines += [f"  - reason: {x}" for x in v["reasons"]] + [f"  - fix: {x}" for x in v["fixes"]]
+    if outcome.startswith("AGREED REVISE"):
+        fixes = combined_fixes(rounds)
+        lines += ["", "**Combined fix list (both reviewers, final round):**"] + [f"{i}. {x}" for i, x in enumerate(fixes, 1)]
     paid = 0 if mock else requests
     lines += ["", f"Paid API requests: {paid} of {MAX_REQUESTS}. Nothing was deployed, published, ordered or spent "
               "beyond these capped calls.", "", "---", "_Generated by [Claude Code](https://claude.ai/code)_"]
@@ -514,6 +619,27 @@ def comments_since(env, repo, issue, since):
         if len(batch) < 100:
             return out
     raise Stop("STOPPED: too many comments to count run slots and spend safely.")
+
+
+def settle(env, repo, issue, today, h, reserve):
+    """After a live run (finished or stopped by a cap), post its measured cost so the month counts real spend.
+    Only when EVERY paid call reported usage at a known price; otherwise nothing is posted and the full
+    reservation stays. The conservative measured amount is recorded even when it is ABOVE the reservation
+    (flagged as an overrun). A failure here keeps the full reservation (safe)."""
+    if not RUN_COST["complete"]:
+        print("not settled: a paid call did not report usage; the full reservation stays")
+        return
+    usd = round(RUN_COST["usd"] * SETTLE_SAFETY, 4)   # the conservative measured amount, NOT clamped to the reserve
+    over = usd > reserve
+    try:
+        gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
+           {"body": f"{settle_tag(today, h, usd, over)}\nZANS two-reviewer check: run {h} settled at ${usd:.2f} (measured "
+                    f"tokens x list price x {SETTLE_SAFETY}, an estimate, not the provider bill). "
+                    + (f"**OVERRUN: above the ${reserve:.2f} reservation. Further live runs are blocked this month.**"
+                       if over else f"The rest of the ${reserve:.2f} reservation is released.") + f"\n\n---\n_Generated by [Claude Code](https://claude.ai/code)_"})
+        print(f"settled: ${usd:.4f}")
+    except Exception as e:   # noqa: BLE001 - settle is optional; the reservation already covers the run
+        print(f"not settled ({type(e).__name__}); the full reservation stays")
 
 
 def main(env=None):
@@ -546,6 +672,9 @@ def main(env=None):
         recent = comments_since(env, repo, issue, month + "-01T00:00:00Z")   # whole UTC month
         if runs_today(recent, today, mode) >= day_cap(env, mode):
             raise Stop(f"STOPPED: daily {mode} run cap reached.")
+        if mode == "live" and overruns(recent, month):
+            raise Stop("STOPPED: an earlier live run this month cost MORE than its reservation. No further live runs "
+                       "until the owner reviews the cap and the pricing table.")
         files = fetch_artifacts(urls) if mode == "live" else ""
         reserve = 0.0
         if mode == "live":
@@ -564,17 +693,24 @@ def main(env=None):
             claude = mock_caller([{"ack": "synthetic", "verdict": "PASS", "reasons": ["scripted mock"], "fixes": []}] * MAX_ROUNDS)
             openai = mock_caller([{"ack": "synthetic", "verdict": "PASS", "reasons": ["scripted mock"], "fixes": []}] * MAX_ROUNDS)
         # Reserve the slot BEFORE any paid call: if the run fails or is cancelled later, it still counts.
+        slot_posted = mode == "live"
+        RUN_COST.update(usd=0.0, complete=False)   # review() marks it complete once it starts counting
         gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
            {"body": f"{slot_tag(mode, today, h, reserve)}\nZANS two-reviewer check: {mode} run slot reserved ({h}, "
                     f"worst case ${reserve:.2f} reserved against the monthly budget). "
                     "The summary follows; if none appears, the run failed and the slot is still used.\n\n---\n"
                     "_Generated by [Claude Code](https://claude.ai/code)_"})
-        outcome, rounds, requests = review(env, task, urls, comments, claude, openai, files=files, checklist=checklist,
-                                           budget_usd=min(reserve, owner_budget(env)) if mode == "live" else None)
-        if mode != "live" and outcome.startswith("AGREED"):
-            outcome = "MOCK COMPLETE: scripted PASS/PASS, pipeline works (no real verdict)"
-        gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
-           {"body": summary(h, task, urls, outcome, rounds, requests, mode)})
+        try:
+            outcome, rounds, requests = review(env, task, urls, comments, claude, openai, files=files,
+                                               checklist=checklist,
+                                               budget_usd=min(reserve, owner_budget(env)) if mode == "live" else None)
+            if mode != "live" and outcome.startswith("AGREED"):
+                outcome = "MOCK COMPLETE: scripted PASS/PASS, pipeline works (no real verdict)"
+            gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
+               {"body": summary(h, task, urls, outcome, rounds, requests, mode)})
+        finally:   # also after a cap stop: settle the calls actually made (or keep the full reservation)
+            if slot_posted:
+                settle(env, repo, issue, today, h, reserve)
         print(f"done: {outcome} ({requests} requests)")  # outcome only - no prompt or comment text in logs
         return 0
     except Stop as s:

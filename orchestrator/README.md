@@ -1,6 +1,6 @@
 # ZANS two-reviewer check (Claude + OpenAI): PILOT, OFF BY DEFAULT
 
-**What it does:** you start it by hand. It works on issue #26 only. It reads the #26 checklist, the newest #26 comments and the TEXT files you link. Claude reviews first, then OpenAI, then up to 3 rounds where each sees the other's verdict. It posts **one** summary comment: AGREED, REJECTED, BLOCKER or NO AGREEMENT.
+**What it does:** you start it by hand. It works on issue #26 only. It reads the #26 checklist, the newest #26 comments and the TEXT files you link. Claude reviews first, then OpenAI, then up to 3 rounds where each sees the other's verdict. It posts **one** summary comment: AGREED (both PASS), AGREED REVISE (both want changes: it stops at once and lists the combined fixes, no paid re-review until a new revision is pinned), REJECTED, BLOCKER or NO AGREEMENT (the stricter verdict, REVISE, stands).
 
 **What it is:** a manual, text-only exchange of verdicts. It never edits files, never reviews artwork, images or video, and never applies corrections by itself.
 
@@ -17,10 +17,11 @@
   - 3 rounds, and 6 API requests per run;
   - the first REJECT or BLOCKER stops the run at once, so the other reviewer is not called;
   - 1,500 output tokens per call, 120 s per call, 10 min per run;
-  - **at most 3 live (paid) runs per UTC day** (hard ceiling; the $10 monthly budget binds first: $2.45 is reserved per run). Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` (1-3) set explicitly; empty or invalid means 0 live runs. Raising the ceiling needs a code change and a review;
+  - **at most 1 live (paid) run per UTC day** (hard ceiling, Alex 26 Nov: gather the day's items and send them in ONE batched run; $2.45 is reserved up front, then the run is settled at its measured cost). Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` = 1 set explicitly; empty or invalid means 0 live runs. Raising the ceiling needs a code change and a review;
   - **owner budgets:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (Alex approved `3`) and `ZANS_ORCH_MAX_USD_PER_MONTH` (Alex approved `10`). Missing, zero, negative or non-finite (`nan`, `inf`) values refuse live. Every call is priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price:
     - **before the run**, the worst case is worked out. The run is refused if that is over the per-run budget, or if it plus this month's reservations is over the monthly budget;
-    - the full hard-cap worst run (**$2.45**) is **reserved in the slot comment** before any paid call, whatever the estimate, so failed runs count against the month (at most 4 live runs fit in $10);
+    - the full hard-cap worst run (**$2.45**) is **reserved in the slot comment** before any paid call, whatever the estimate, so failed runs count against the month;
+    - **after the run** (finished or stopped by a cap), the workflow posts a settle comment with the measured cost: provider-reported tokens x list price x 1.25. The month then counts that measured amount even if it is above the reservation (flagged as an overrun that blocks further live runs). A run with any call missing usage data, an unknown model price, or a crash is never settled and keeps the full $2.45. Only settle comments by `github-actions[bot]` count;
     - each call is also held to that reserve (the smaller of $2.45 and the per-run budget);
     - **before every call**, the actual input so far plus this call, with the output of all 6 calls reserved, must still fit the per-run budget;
     - the hard caps put the largest possible run at **$2.45**;

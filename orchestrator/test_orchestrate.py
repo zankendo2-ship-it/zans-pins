@@ -95,8 +95,33 @@ def test_reject_and_blocker_stop_immediately():
 
 
 def test_round_cap_three():
-    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REVISE")] * 9), o.mock_caller([V("REVISE")] * 9))
+    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REVISE")] * 9), o.mock_caller([V("PASS")] * 9))
     assert len(rounds) == o.MAX_ROUNDS == 3 and req == 6 and out.startswith("NO AGREEMENT")
+    assert "stricter verdict REVISE stands" in out
+
+
+def test_matching_revise_stops_after_one_round():
+    # Pilot test 4 (run 45792555624) spent 4 extra paid calls repeating an agreed REVISE.
+    c = o.mock_caller([{**V("REVISE"), "fixes": ["Define product type", "fix A"]}] * 3)
+    a = o.mock_caller([{**V("REVISE"), "fixes": ["define  PRODUCT type", "fix B"]}] * 3)
+    out, rounds, req = o.review(ENV, "t", [URL], [], c, a)
+    assert out.startswith("AGREED REVISE") and len(rounds) == 1 and req == 2
+    assert not out.startswith("AGREED:")          # never reads as a PASS agreement
+    assert o.combined_fixes(rounds) == ["Define product type", "fix A", "fix B"]
+    s = o.summary("h1", "t", [URL], out, rounds, req, "live")
+    assert "Combined fix list" in s and "Paid API requests: 2 of 6" in s
+
+
+def test_revise_then_matching_revise_stops_in_round_two():
+    c = o.mock_caller([V("PASS"), V("REVISE"), V("REVISE")])
+    a = o.mock_caller([V("REVISE"), V("REVISE"), V("REVISE")])
+    out, rounds, req = o.review(ENV, "t", [URL], [], c, a)
+    assert out.startswith("AGREED REVISE") and len(rounds) == 2 and req == 4
+
+
+def test_pass_summary_has_no_fix_list():
+    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("PASS")]), o.mock_caller([V("PASS")]))
+    assert "Combined fix list" not in o.summary("h1", "t", [URL], out, rounds, req, "live")
 
 
 def test_time_cap():
@@ -254,9 +279,9 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
     assert order.count(("model", "call")) == 1        # failed Claude call = BLOCKER, OpenAI never called
 
 
-def test_live_day_cap_hard_three_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 3
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
+def test_live_day_cap_hard_one_and_variable_only_lowers():
+    assert o.MAX_LIVE_RUNS_PER_DAY == 1          # Alex 26 Nov: one batched paid run a day
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -309,7 +334,8 @@ def test_token_bound_counts_every_actual_call_including_other_verdict():
             sizes.append(len(text))
             return json.dumps(next(it))
         return fn
-    o.review(ENV, "t", [URL], [], rec([long] * 3), rec([long] * 3))
+    # REVISE v PASS never agrees, so all 6 calls run (matching REVISE would stop after round 1)
+    o.review(ENV, "t", [URL], [], rec([long] * 3), rec([{**long, "verdict": "PASS"}] * 3))
     assert len(sizes) == 6 and sizes[1] > sizes[0] + 6000      # later calls carry the other verdict
     assert o.estimate_tokens("x" * 1000) >= 1000              # byte bound: never under the UTF-8 byte count
 
@@ -405,7 +431,7 @@ def test_budget_checked_before_every_call_with_output_reserved(monkeypatch):
 
     def fn(env, text):
         calls.append(len(text))
-        return json.dumps(V("REVISE"))
+        return json.dumps(V("REVISE" if len(calls) % 2 else "PASS"))   # never agrees: the budget is what stops it
     monkeypatch.setattr(o, "preflight", lambda *a, **k: 0)          # pretend the up-front bound said "tiny"
     first = o.estimate_tokens(o.prompt("Claude", "t", [URL], "", None, "z" * 3000))
     budget = o.worst_case_usd(first * 2.5)                          # room for two calls' input + all output
@@ -499,10 +525,86 @@ def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypat
     assert req == 1 and "stop reason: max_tokens" in rounds[0]["Claude"]["reasons"][0]
 
 
-def test_daily_live_ceiling_is_3_and_variable_can_only_lower_it():
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
+def test_daily_live_ceiling_is_1_and_variable_can_only_lower_it():
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
+
+
+BOT = {"login": "github-actions[bot]"}
+
+
+def test_settled_run_counts_measured_cost_not_reservation():
+    slot = {"body": o.slot_tag("live", "2026-11-26", "abc", 2.45), "user": BOT}
+    st = {"body": o.settle_tag("2026-11-26", "abc", 0.31), "user": BOT}
+    assert abs(o.reserved_this_month([slot, st], "2026-11") - 0.31) < 1e-9
+    assert o.reserved_this_month([slot], "2026-11") == 2.45                       # unsettled: full reservation
+    fake = {**st, "user": {"login": "someone"}}                                    # only the workflow may settle
+    assert o.reserved_this_month([slot, fake], "2026-11") == 2.45
+    big = {"body": o.settle_tag("2026-11-26", "abc", 9.0, over=True), "user": BOT}  # an overrun is recorded, not hidden
+    assert o.reserved_this_month([slot, big], "2026-11") == 9.0
+    other = {"body": o.settle_tag("2026-11-26", "zzz", 0.0), "user": BOT}          # must match date + hash
+    assert o.reserved_this_month([slot, other], "2026-11") == 2.45
+
+
+def test_usage_cost_known_models_only():
+    assert abs(o.usage_cost("claude-sonnet-5-5", 1_000_000, 100_000) - 3.0) < 1e-9
+    assert abs(o.usage_cost("gpt-6.2-astra", 20_000, 500) - 0.18) < 1e-9
+    assert o.usage_cost("unknown-model", 10, 10) is None
+    assert o.usage_cost("gpt-6.2-astra", None, 10) is None
+    assert o.usage_cost("gpt-6.2-astra", True, 10) is None
+    assert all(m in o.ACTUAL_USD_PER_M for ms in o.ALLOWED_MODELS.values() for m in ms)
+    for i, o_ in o.ACTUAL_USD_PER_M.values():    # actual price never above the worst-case bound
+        assert i <= o.WORST_USD_PER_M_IN and o_ <= o.WORST_USD_PER_M_OUT
+
+
+def _usage_post(with_usage=True):
+    good = '{"ack":"a","verdict":"REVISE","reasons":["r"],"fixes":["f"]}'
+
+    def fake_post(url, headers, body):
+        if "anthropic" in url:
+            d = {"model": "claude-sonnet-5-5", "stop_reason": "end_turn", "content": [{"type": "text", "text": good}]}
+            if with_usage:
+                d["usage"] = {"input_tokens": 20_000, "output_tokens": 500}
+            return d
+        d = {"model": "gpt-6.2-astra", "choices": [{"finish_reason": "stop", "message": {"content": good}}]}
+        if with_usage:
+            d["usage"] = {"prompt_tokens": 20_000, "completion_tokens": 500}
+        return d
+    return fake_post
+
+
+def test_live_run_posts_settle_with_measured_cost(monkeypatch):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "_post", _usage_post(True))
+    assert o.main(LIVE_ENV) == 0
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert "zans-orch-slot:live:" in posts[0] and "AGREED REVISE" in posts[1]
+    m = o.SETTLE_RE.search(posts[2])
+    # 2 calls (matching REVISE stops): Claude 0.045 + OpenAI 0.18 = 0.225, x1.25 safety
+    assert m and abs(float(m.group(3)) - 0.2813) < 1e-3
+
+
+def test_missing_usage_never_settles(monkeypatch, capsys):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "_post", _usage_post(False))
+    o.main(LIVE_ENV)
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert len(posts) == 2 and not any(o.SETTLE in p for p in posts)
+    assert "full reservation stays" in capsys.readouterr().out
+
+
+def test_replaced_review_never_settles(monkeypatch):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "review", lambda *a, **k: ("AGREED", [], 2))
+    o.main(LIVE_ENV)
+    assert not any(o.SETTLE in (c[2] or {}).get("body", "") for c in calls if c[0] == "POST")
 
 
 def test_incomplete_or_refused_reply_is_blocker_even_if_parseable(monkeypatch):
@@ -558,3 +660,38 @@ def test_missing_stop_or_openai_refusal_fails_closed(monkeypatch):
                                                                    "message": {"content": good, "refusal": "no"}}]})
     o.call_openai({"OPENAI_API_KEY": "k", "OPENAI_MODEL": "m"}, "x")
     assert o.LAST_STOP["OpenAI"] == "refusal"
+
+
+def test_overrun_is_recorded_flagged_and_blocks_further_runs():
+    slot = {"body": o.slot_tag("live", "2026-11-20", "abc", 2.45), "user": BOT}
+    st = {"body": o.settle_tag("2026-11-20", "abc", 3.1, over=True), "user": BOT}
+    assert len(o.overruns([slot, st], "2026-11")) == 1
+    assert o.overruns([slot, {**st, "user": {"login": "someone"}}], "2026-11") == []   # only the workflow's word counts
+    assert o.overruns([slot, st], "2026-12") == []
+    assert o.settle_tag("2026-11-20", "abc", 3.1, over=True).endswith(":over=1 -->")
+
+
+def test_claude_cache_tokens_counted_and_served_model_checked():
+    assert o._claude_tokens({"input_tokens": 100, "output_tokens": 10, "cache_creation_input_tokens": 80,
+                             "cache_read_input_tokens": 50}) == (250, 10)   # 100 + 80*1.25 + 50
+    assert o._claude_tokens({"input_tokens": 100, "output_tokens": 10, "cache_read_input_tokens": "x"}) == (None, None)
+    assert o.served_model("gpt-6.2-astra", None).startswith("unverified")   # no evidence: fail closed
+    assert o._claude_tokens({"input_tokens": 1, "output_tokens": 1, "cache_read_input_tokens": -5}) == (None, None)
+    assert o._claude_tokens({"input_tokens": 1, "output_tokens": 1, "cache_creation_input_tokens": True}) == (None, None)
+    assert o._claude_tokens({"input_tokens": None, "output_tokens": 1}) == (None, None)
+    assert o.served_model("gpt-6.2-astra", "gpt-6.2-astra-2026-11-01") == "gpt-6.2-astra"
+    assert o.usage_cost(o.served_model("gpt-6.2-astra", "gpt-6-luna"), 10, 10) is None   # a different model served: unknown
+
+
+def test_settle_flags_overrun_when_cost_exceeds_reserve():
+    calls = []
+    o.RUN_COST.update(usd=4.0, complete=True)
+    posted = []
+    orig = o.gh
+    try:
+        o.gh = lambda env, method, path, body=None: posted.append(body)
+        o.settle({}, "r/x", "26", "2026-11-26", "abc", 2.45)
+    finally:
+        o.gh = orig
+    m = o.SETTLE_RE.search(posted[0]["body"])
+    assert m and m.group(4) and float(m.group(3)) == 5.0 and "OVERRUN" in posted[0]["body"]
