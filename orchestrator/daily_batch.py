@@ -20,6 +20,7 @@ import time
 import orchestrator.orchestrate as o
 
 PROVIDERS = ("gpt-6.2-astra",)          # allowlist; list price $8 in / $40 out per M
+UK_WINDOW = ("09:05", "09:25")      # Europe/London local time; two cron lines (winter/summer UTC) + this gate
 MAX_ITEMS = 6
 MAX_MANIFEST_BYTES = 20_000
 MAX_INPUT_TOKENS = 22_500               # conservative bound incl. framing and request fields
@@ -160,12 +161,15 @@ def guard(env, mode):
 def plan(items, date, texts, comments, env, today):
     """No network. Decides whether the one paid call may be made; returns what to send."""
     h = batch_hash(date, items, env.get("ORCH_MODE", "mock"))
+    if env.get("ORCH_MODE", "mock") != "live":
+        # Free mock: plumbing only. No slot, no budget, so no paid-ledger check.
+        return {"hash": h, "reserve": worst_case_usd(), "prompt": build_prompt(items, texts)}
     if o.already_done(comments, h):
         raise Skip("duplicate: this exact artifact set was already reviewed (no paid re-review)")
     if env.get("ORCH_MODE") == "live" and any(m.group(3) == h for m in o._slots(comments, "live")):
         raise Skip("this exact set was already attempted (slot used); no automatic paid retry")
     if o.runs_today(comments, today, "live") >= o.day_cap(env, "live"):
-        raise o.Stop("STOPPED: today's one paid run is already used (shared ledger).")
+        raise o.Stop("STOPPED: today's one products paid run is already used (racing has its own daily run).")
     month = today[:7]
     if o.overruns(comments, month):
         raise o.Stop("STOPPED: an earlier run this month cost more than its reservation.")
@@ -299,6 +303,8 @@ def main(env=None):
         guard(env, mode)
         if issue != o.ALLOWED_ISSUE:
             raise o.Stop(f"REFUSED: only issue #{o.ALLOWED_ISSUE}.")
+        if env.get("GITHUB_EVENT_NAME") == "schedule" and not o.uk_window_ok(*UK_WINDOW):
+            raise o.Stop("SKIPPED: outside the UK-time window (the other DST cron entry runs instead); no call.")
         murl = env.get("ORCH_MANIFEST", "").strip()
         today = time.strftime("%Y-%m-%d", time.gmtime())
         if not murl and env.get("GITHUB_EVENT_NAME") == "schedule":

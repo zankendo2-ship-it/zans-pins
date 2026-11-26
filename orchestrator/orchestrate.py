@@ -100,7 +100,7 @@ def slot_tag(mode, today, h, usd=0.0):
     return f"<!-- {SLOT}:{mode}:{today}:{h}:usd={usd:.4f} -->"
 
 
-SLOT_RE = re.compile(r"<!-- " + SLOT + r":(mock|live):(\d{4}-\d{2}-\d{2}):([0-9a-f]+)(?::usd=([0-9.]+))? -->")
+SLOT_RE = re.compile(r"<!-- " + SLOT + r":(mock|live|racing):(\d{4}-\d{2}-\d{2}):([0-9a-f]+)(?::usd=([0-9.]+))? -->")
 
 
 def _slots(comments, mode):
@@ -151,7 +151,7 @@ def reserved_this_month(comments, month):
     without an amount, counts its full reservation / the largest possible run."""
     total = 0.0
     done = settled(comments)
-    for m in _slots(comments, "live"):
+    for m in [*_slots(comments, "live"), *_slots(comments, "racing")]:   # every paid route counts
         if m.group(2).startswith(month):
             try:
                 usd = float(m.group(4)) if m.group(4) else WORST_RUN_USD
@@ -164,8 +164,8 @@ def reserved_this_month(comments, month):
 
 
 def day_cap(env, mode):
-    hard = MAX_LIVE_RUNS_PER_DAY if mode == "live" else MAX_MOCK_RUNS_PER_DAY
-    if mode != "live":
+    hard = MAX_LIVE_RUNS_PER_DAY if mode in ("live", "racing") else MAX_MOCK_RUNS_PER_DAY
+    if mode not in ("live", "racing"):
         return hard
     try:
         n = int(env.get("ZANS_ORCH_MAX_RUNS_PER_DAY", ""))   # live must be set explicitly
@@ -256,6 +256,15 @@ def owner_budget(env):
 
 def month_budget(env):
     return _usd(env, "ZANS_ORCH_MAX_USD_PER_MONTH")
+
+
+def uk_window_ok(start, end, now_utc=None):
+    """DST gate for scheduled runs. GitHub cron is UTC, so each job has two cron lines (winter and summer UTC time) and
+    only the one whose UK local time falls in [start, end] ('HH:MM', Europe/London) is allowed to run."""
+    from datetime import datetime, timezone
+    from zoneinfo import ZoneInfo
+    now = (now_utc or datetime.now(timezone.utc)).astimezone(ZoneInfo("Europe/London"))
+    return start <= now.strftime("%H:%M") <= end
 
 
 def guard(env, mode):

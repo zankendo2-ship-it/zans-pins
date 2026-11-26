@@ -1,0 +1,62 @@
+# ZANS daily RACING review (DRAFT, inactive). ONE Claude call + ONE ChatGPT call on the sealed picks file.
+# Advisory only: never changes a pick, slip or rule. Same kill switch, actor allowlist, monthly cap, ledger (issue #26)
+# and concurrency group as the other paid routes; its own slot (one racing run a day).
+# TIME: cron is UTC, so there are two lines (summer/winter); the code only runs the one inside the UK-time window
+# UK_WINDOW in orchestrator/daily_racing.py (08:45-09:25 Europe/London). To change the time, edit the two cron lines and that window.
+# Live scheduled runs also need repository variables ZANS_ORCH_ENABLED=true and ZANS_RACING_SCHEDULE=true.
+name: ZANS racing review (pilot)
+
+on:
+  schedule:
+    - cron: "55 7 * * *"   # 08:55 UK in summer (BST)
+    - cron: "55 8 * * *"   # 08:55 UK in winter (GMT); a UK-time gate in the code lets only the right one run
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: mock = dry run, no API calls; live = ONE Claude + ONE ChatGPT call (capped)
+        required: true
+        default: mock
+        type: choice
+        options: [mock, live]
+
+concurrency:
+  group: zans-orchestrator          # SAME group as the other paid routes: they can never run at once
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  racing:
+    if: github.ref == 'refs/heads/main' && ((github.event_name == 'schedule' && vars.ZANS_RACING_SCHEDULE == 'true' && vars.ZANS_ORCH_ENABLED == 'true') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true')))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout this commit (read-only, no token)
+        run: |
+          git init -q .
+          git fetch -q --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" "${GITHUB_SHA}"
+          git checkout -q FETCH_HEAD
+      - name: Tests (must pass before any call; deps pinned by hash)
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install -q --require-hashes --no-deps -r orchestrator/requirements-test.txt
+          /tmp/venv/bin/python -m pytest -q orchestrator
+      - name: Racing review
+        env:
+          ZANS_ORCH_ENABLED: ${{ vars.ZANS_ORCH_ENABLED }}
+          ZANS_RACING_SCHEDULE: ${{ vars.ZANS_RACING_SCHEDULE }}
+          ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
+          ZANS_ORCH_MAX_RUNS_PER_DAY: ${{ vars.ZANS_ORCH_MAX_RUNS_PER_DAY }}
+          ZANS_ORCH_MAX_USD_PER_RUN: ${{ vars.ZANS_ORCH_MAX_USD_PER_RUN }}
+          ZANS_ORCH_MAX_USD_PER_MONTH: ${{ vars.ZANS_ORCH_MAX_USD_PER_MONTH }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          ANTHROPIC_API_KEY: ${{ (github.event_name == 'schedule' || inputs.mode == 'live') && secrets.ANTHROPIC_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ (github.event_name == 'schedule' || inputs.mode == 'live') && secrets.OPENAI_API_KEY || '' }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          ORCH_MODE: ${{ github.event_name == 'schedule' && 'live' || inputs.mode }}
+          ORCH_ISSUE: "26"
+        run: /tmp/venv/bin/python -m orchestrator.daily_racing
