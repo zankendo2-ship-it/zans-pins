@@ -1,0 +1,51 @@
+{
+ "batch": "products-design-qa-2026-11-26",
+ "items": [
+  {
+   "item": "Bauble-style personalised mug v3 (Loussiemoo, Zoo Olympios, Rexs Romance), Harrier 11oz bp 635 / pp 94 / var 72180",
+   "state": "INDEPENDENT_REVIEW",
+   "artifacts": [
+    {
+     "path": "print-qa/2026-11-26-mugB/out/loussiemoo-bauble-style-mug-2475x1155.png",
+     "ref": "8a879b4",
+     "sha256": "3f159692913d60ba69ef20b28528bd6ec6b76de03e6f01a3292025215b56df84",
+     "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/8a879b4/print-qa/2026-11-26-mugB/out/loussiemoo-bauble-style-mug-2475x1155.png"
+    },
+    {
+     "path": "print-qa/2026-11-26-mugB/out/zoo-olympios-bauble-style-mug-2475x1155.png",
+     "ref": "8a879b4",
+     "sha256": "10f40d80a4d46b122329fcc12248546f49e72fa72c51c1df12d092e4ce90619e",
+     "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/8a879b4/print-qa/2026-11-26-mugB/out/zoo-olympios-bauble-style-mug-2475x1155.png"
+    },
+    {
+     "path": "print-qa/2026-11-26-mugB/out/rexs-romance-bauble-style-mug-2475x1155.png",
+     "ref": "8a879b4",
+     "sha256": "971351fb01888fd9d536bdd815d13529d3c12249fd1f1fb5825186a8674298b7",
+     "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/8a879b4/print-qa/2026-11-26-mugB/out/rexs-romance-bauble-style-mug-2475x1155.png"
+    }
+   ],
+   "self_check": {
+    "tests_passed": true,
+    "placeholder": false,
+    "preflight": "3/3 PASS",
+    "pytest": "test_mugB 6 passed; gate 115 passed",
+    "clean_checkout_run": true
+   },
+   "reviews": [
+    {
+     "reviewer": "chatgpt",
+     "verdict": "REVISE (v2 c28b700, production readiness) -> v3 8a879b4 awaiting re-review",
+     "comment_id": 7199760997
+    }
+   ],
+   "open": [
+    "supplier trim boundary + tolerance for the cap button (6.2 mm own margin)",
+    "handle orientation",
+    "owner reference concept",
+    "logo readability / DPI on provider proof",
+    "physical sample"
+   ],
+   "note": "Digital draft only. Not owner-ready. Alex has not seen it."
+  }
+ ]
+}
