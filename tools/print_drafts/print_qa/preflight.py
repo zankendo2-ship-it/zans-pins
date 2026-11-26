@@ -95,6 +95,16 @@ def elem_pts(e):
         return list(zip(n[0::2], n[1::2]))
     return []
 
+WAIVABLE = {'logo_text_mm': 0.6}   # only the logo lettering can be waived, and never below 0.6 mm
+def owner_waiver(design, key):
+    """A waiver counts only if it is Alex's own message: by == 'Alex', a cmsg_ source id, a UTC time, a value not below the floor."""
+    w = ((design or {}).get('owner_waivers') or {}).get(key)
+    if key not in WAIVABLE or not isinstance(w, dict): return None
+    if w.get('by') != 'Alex' or not str(w.get('source', '')).startswith('cmsg_') or not re.fullmatch(r'\d{4}-\d\d-\d\dT\d\d:\d\dZ', str(w.get('at', ''))): return None
+    try: v = float(w['value'])
+    except (KeyError, TypeError, ValueError): return None
+    return dict(w, value=v) if v >= WAIVABLE[key] else None
+
 def check_master(sp, raw, W, H, design):
     fails, notes = [], []
     if re.search(rb'<!DOCTYPE|<!ENTITY|<\?xml-stylesheet', raw): return ['master has DOCTYPE/ENTITY/stylesheet (not allowed)'], notes, set()
@@ -127,6 +137,9 @@ def check_master(sp, raw, W, H, design):
             n_text[0] += 1; cap = float(e.get('data-font-size', 0)) * tscale(t2) * CAP / pxmm
             role = e.get('data-role')   # 'small' = Alex's original secondary line kept at its approved size (min_small_text_mm = hard 6 pt minimum); 'logo' = lettering inside the ZANS brand mark (min_logo_text_mm, spec note says why)
             need = sp['min_name_mm'] if role == 'name' else sp.get('min_logo_text_mm', sp['min_text_mm']) if role == 'logo' else sp.get('min_small_text_mm', sp['min_text_mm']) if role == 'small' else sp['min_text_mm']
+            wv = owner_waiver(design, 'logo_text_mm') if role == 'logo' else None   # Alex's own written instruction, recorded in the design file
+            if wv and cap >= wv['value'] - 0.01 and cap < need - 0.01:
+                notes.append(f'OWNER WAIVER: logo letters {cap:.1f} mm (minimum {need} mm) kept at the original size on Alex\'s instruction {wv["source"]} {wv["at"]}'); need = wv['value']
             if cap < need - 0.01: fails.append(f'text "{e.get("data-text")}" letters {cap:.1f} mm tall < {need} mm')
         key = key or 'data-safe' in e.attrib or 'data-text' in e.attrib
         if e.get('data-centre') or e.get('data-role') == 'name':

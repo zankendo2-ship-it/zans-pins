@@ -152,3 +152,25 @@ def test_orphaned_clip_blocked(tmp_path):  # code chat 25 Nov: master regex stri
 def test_dangling_clip_ref_blocked(tmp_path):
     k = kit(tmp_path); edit_master(k, lambda s: s.replace('<rect ', '<rect clip-path="url(#gone)" ', 1))
     assert has(run(k), 'points at no clipPath')
+
+
+# --- owner waiver (Alex 26 Nov 11:02: "keep the logo the original size please") ---
+def _w(**k):
+    w = dict(value=0.68, by='Alex', source='cmsg_017LpptpymmcJZuGHLNRtGrsWh1B1WDPh3cT1yyLN6NSHm', at='2026-11-26T11:02Z'); w.update(k)
+    return {'owner_waivers': {'logo_text_mm': w}}
+
+def test_waiver_valid():
+    import preflight
+    assert preflight.owner_waiver(_w(), 'logo_text_mm')['value'] == 0.68
+
+def test_waiver_rejects_non_alex_or_bad_source():
+    import preflight
+    assert preflight.owner_waiver(_w(by='ChatGPT'), 'logo_text_mm') is None
+    assert preflight.owner_waiver(_w(source='issue-26'), 'logo_text_mm') is None
+    assert preflight.owner_waiver(_w(at='today'), 'logo_text_mm') is None
+
+def test_waiver_floor_and_scope():
+    import preflight
+    assert preflight.owner_waiver(_w(value=0.3), 'logo_text_mm') is None      # never below 0.6 mm
+    assert preflight.owner_waiver({'owner_waivers': {'min_name_mm': _w()['owner_waivers']['logo_text_mm']}}, 'min_name_mm') is None   # only the logo can be waived
+    assert preflight.owner_waiver({}, 'logo_text_mm') is None

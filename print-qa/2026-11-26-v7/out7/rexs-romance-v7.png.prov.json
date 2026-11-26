@@ -1,0 +1,11 @@
+{
+ "renderer": "zans-print-qa/render.py v3 (chromium, outlined master, deviceScaleFactor 1)",
+ "px": [
+  990,
+  990
+ ],
+ "master": "rexs-romance-v7.svg",
+ "master_sha256": "7581c6bff94959366ac9f729ea5421b445a14cfbbba1b6e866fbea26052e921b",
+ "png_sha256": "af1598ff643256ecea951a9670f72b117ca015b074a9e8e5b864d9a844fca79c",
+ "made_utc": "2026-11-26T11:07:06Z"
+}
