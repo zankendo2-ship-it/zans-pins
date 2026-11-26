@@ -258,6 +258,15 @@ def month_budget(env):
     return _usd(env, "ZANS_ORCH_MAX_USD_PER_MONTH")
 
 
+def uk_window_ok(start, end, now_utc=None):
+    """DST gate for scheduled runs. GitHub cron is UTC, so each job has two cron lines (winter and summer UTC time) and
+    only the one whose UK local time falls in [start, end] ('HH:MM', Europe/London) is allowed to run."""
+    from datetime import datetime, timezone
+    from zoneinfo import ZoneInfo
+    now = (now_utc or datetime.now(timezone.utc)).astimezone(ZoneInfo("Europe/London"))
+    return start <= now.strftime("%H:%M") <= end
+
+
 def guard(env, mode):
     # The free mock (no API calls, no keys) may run while switched off, so it can be tested before activation.
     # Live calls need the switch.

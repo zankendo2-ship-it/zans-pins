@@ -202,6 +202,7 @@ def test_scheduled_run_reads_manifest_from_the_triggering_commit_and_failures_ex
     seen, posts = [], []
     man = json.dumps(manifest(i)).encode()
     monkeypatch.setattr(b.time, "strftime", lambda *a: TODAY)
+    monkeypatch.setattr(o, "uk_window_ok", lambda *a, **k: True)
     monkeypatch.setattr(o, "_get_bytes", lambda url, n: (seen.append(url), man if url.endswith(".json") else data)[1])
     monkeypatch.setattr(o, "comments_since", lambda *a: [])
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": SHA} if m == "GET" else (posts.append(body["body"]) or {}))

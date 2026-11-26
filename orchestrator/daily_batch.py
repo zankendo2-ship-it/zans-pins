@@ -20,6 +20,7 @@ import time
 import orchestrator.orchestrate as o
 
 PROVIDERS = ("gpt-6.2-astra",)          # allowlist; list price $8 in / $40 out per M
+UK_WINDOW = ("08:30", "09:20")      # Europe/London local time; two cron lines (winter/summer UTC) + this gate
 MAX_ITEMS = 6
 MAX_MANIFEST_BYTES = 20_000
 MAX_INPUT_TOKENS = 22_500               # conservative bound incl. framing and request fields
@@ -299,6 +300,8 @@ def main(env=None):
         guard(env, mode)
         if issue != o.ALLOWED_ISSUE:
             raise o.Stop(f"REFUSED: only issue #{o.ALLOWED_ISSUE}.")
+        if env.get("GITHUB_EVENT_NAME") == "schedule" and not o.uk_window_ok(*UK_WINDOW):
+            raise o.Stop("SKIPPED: outside the UK-time window (the other DST cron entry runs instead); no call.")
         murl = env.get("ORCH_MANIFEST", "").strip()
         today = time.strftime("%Y-%m-%d", time.gmtime())
         if not murl and env.get("GITHUB_EVENT_NAME") == "schedule":

@@ -21,6 +21,7 @@ import time
 import orchestrator.orchestrate as o
 
 BRANCH = "claude/project-thread-hgtq2b"   # the racing thread's own zans-pins branch (the only one it may push to)
+UK_WINDOW = ("08:45", "09:25")      # Europe/London local time; two cron lines (winter/summer UTC) + this gate
 MAX_FILE_BYTES = 60_000
 MAX_INPUT_TOKENS = 30_000            # per call, JSON-escaped bytes + framing + request fields
 CAP_USD = 0.80
@@ -168,6 +169,8 @@ def main(env=None):
             raise o.Stop("DISABLED: ZANS_RACING_SCHEDULE is not 'true'.")
         if issue != o.ALLOWED_ISSUE:
             raise o.Stop(f"REFUSED: only issue #{o.ALLOWED_ISSUE}.")
+        if env.get("GITHUB_EVENT_NAME") == "schedule" and not o.uk_window_ok(*UK_WINDOW):
+            raise o.Stop("SKIPPED: outside the UK-time window (the other DST cron entry runs instead); no call.")
         today = time.strftime("%Y-%m-%d", time.gmtime())
         try:
             sha = o.gh(env, "GET", f"repos/{repo}/commits/{BRANCH}")["sha"]

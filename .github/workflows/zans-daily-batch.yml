@@ -6,7 +6,8 @@ name: ZANS daily batch review (pilot)
 
 on:
   schedule:
-    - cron: "40 8 * * *"   # opt-in: runs a LIVE batch only if vars.ZANS_BATCH_SCHEDULE == 'true' (default off)
+    - cron: "40 7 * * *"   # 08:40 UK in summer (BST); opt-in: LIVE only if vars.ZANS_BATCH_SCHEDULE == 'true'
+    - cron: "40 8 * * *"   # 08:40 UK in winter (GMT); a UK-time gate (UK_WINDOW in daily_batch.py) lets only the right one run
   workflow_dispatch:
     inputs:
       issue:

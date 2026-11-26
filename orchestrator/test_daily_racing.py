@@ -109,6 +109,7 @@ def test_scheduled_main_reads_file_at_resolved_sha_and_exits_nonzero_on_failure(
     seen, posts = [], []
     sha = "c" * 40
     monkeypatch.setattr(r.time, "strftime", lambda *a: TODAY)
+    monkeypatch.setattr(o, "uk_window_ok", lambda *a, **k: True)
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": sha} if m == "GET" else (posts.append(body["body"]) or {}))
     monkeypatch.setattr(o, "_get_bytes", lambda url, n: (seen.append(url), file_bytes())[1])
     monkeypatch.setattr(o, "comments_since", lambda *a: [])
@@ -128,6 +129,24 @@ def test_scheduled_main_reads_file_at_resolved_sha_and_exits_nonzero_on_failure(
 def test_no_file_today_makes_zero_calls(monkeypatch):
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": "c" * 40})
     monkeypatch.setattr(o, "_get_bytes", lambda url, n: (_ for _ in ()).throw(OSError("404")))
+    monkeypatch.setattr(o, "call_claude", lambda *a: pytest.fail("called"))
+    env = {**ENV, "GITHUB_EVENT_NAME": "schedule", "ZANS_RACING_SCHEDULE": "true", "ORCH_ISSUE": "26", "GITHUB_REPOSITORY": "a/b"}
+    assert r.main(env) == 0
+
+
+def test_dst_gate_runs_only_the_cron_entry_inside_the_uk_window():
+    from datetime import datetime, timezone
+    u = lambda *a: datetime(*a, tzinfo=timezone.utc)   # noqa: E731
+    assert o.uk_window_ok(*r.UK_WINDOW, now_utc=u(2026, 11, 27, 8, 55))        # winter: 08:55 UTC = 08:55 UK
+    assert not o.uk_window_ok(*r.UK_WINDOW, now_utc=u(2026, 11, 27, 7, 55))    # winter: the summer line is skipped
+    assert o.uk_window_ok(*r.UK_WINDOW, now_utc=u(2027, 6, 15, 7, 55))         # summer: 07:55 UTC = 08:55 BST
+    assert not o.uk_window_ok(*r.UK_WINDOW, now_utc=u(2027, 6, 15, 8, 55))     # summer: the winter line is skipped
+    import orchestrator.daily_batch as b
+    assert o.uk_window_ok(*b.UK_WINDOW, now_utc=u(2026, 11, 27, 8, 40)) and not o.uk_window_ok(*b.UK_WINDOW, now_utc=u(2027, 6, 15, 8, 40))
+
+
+def test_scheduled_run_outside_window_makes_no_call(monkeypatch):
+    monkeypatch.setattr(o, "uk_window_ok", lambda *a, **k: False)
     monkeypatch.setattr(o, "call_claude", lambda *a: pytest.fail("called"))
     env = {**ENV, "GITHUB_EVENT_NAME": "schedule", "ZANS_RACING_SCHEDULE": "true", "ORCH_ISSUE": "26", "GITHUB_REPOSITORY": "a/b"}
     assert r.main(env) == 0
