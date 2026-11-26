@@ -1,0 +1,19 @@
+{
+ "captured_utc": "2026-11-26T18:02:52.454Z",
+ "url": "https://www.zanshorseracing.co.uk/bauble-designer/",
+ "code": "ZBB-stars-1B2A5C-F5D130-plain-F5D130",
+ "state": {
+  "style": "B",
+  "view": "flat",
+  "scene": "soft",
+  "capPat": "plain",
+  "pat": "stars",
+  "body": "stars",
+  "c1": "#1B2A5C",
+  "c2": "#F5D130",
+  "sleeves": "plain",
+  "capCol": "#F5D130",
+  "name": "Dad"
+ },
+ "print_fix_marker": null
+}

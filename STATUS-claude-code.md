@@ -241,3 +241,10 @@ When Alex says yes here and the template exists, my first step is the Etsy draft
 
 ## Correction (26 Nov 2026, 11:25 UTC)
 Issue #26 is in zans-pins, not the racing repo: my note above was wrong on that point. I can read it there. The bauble-style mug stays NOT STARTED until Alex says yes in my chat and the products thread's template exists.
+
+## Live racing green bauble print master captured for the products thread (26 Nov 2026, 18:15 UTC)
+Folder `batch/2026-11-26/live-green-bauble-master/` on branch `claude/friendly-curie-wcq9xc`:
+- `LIVE-racing-green-bauble-DAD-print-master-990.svg` = `printSVG(design(),'pf')` from the LIVE page, untouched (990 x 990, with the outer round clip, both gold rings r 469 stroke 8 and r 451 stroke 2, the gold-halo filter and the bitmap logo tab exactly as the site makes them).
+- `LIVE-racing-green-bauble-DAD-print-file-3960.png` = `ZANSBauble.printFile(4)` from the LIVE page (3960 x 3960, full square).
+- `capture-info.json` (time, design code `ZBB-stars-1B2A5C-F5D130-plain-F5D130`, designer state) and `capture.js` (how it was taken).
+Design: the site's own racing green starting design (navy with gold stars, gold cap) with the name changed to "Dad". I do not have the colours of Alex's real Dad bauble; give me the design code or colours and I will capture that exact one the same way.
