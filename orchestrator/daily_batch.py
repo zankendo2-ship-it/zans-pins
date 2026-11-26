@@ -66,12 +66,14 @@ def batch_hash(date, items, mode="live"):
 def validate(manifest, today):
     if not isinstance(manifest, dict):
         raise Refuse("manifest is not an object")
+    items = manifest.get("items")
+    if isinstance(items, list) and not items:
+        raise Skip("empty manifest: nothing changed, no call")
     date = manifest.get("date")
     if not isinstance(date, str) or not DATE_RE.match(date) or date != today:
         raise Refuse(f"manifest date must be today's UTC date ({today})")
-    items = manifest.get("items")
-    if not isinstance(items, list) or not items:
-        raise Skip("empty manifest: nothing changed, no call")
+    if not isinstance(items, list):
+        raise Refuse("manifest items must be a list")
     if len(items) > MAX_ITEMS:
         raise Refuse(f"{len(items)} items; the cap is {MAX_ITEMS}")
     seen = set()
