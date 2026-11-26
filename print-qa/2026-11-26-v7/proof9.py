@@ -36,7 +36,7 @@ def card(ref):
     W, H = 1800, 5200; c = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(c)
     d.rectangle((0, 0, W, 130), fill=(20, 60, 40))
     d.text((40, 30), f'{NAMES[ref].upper()} BAUBLE - FINAL PRINT PROOF', font=F(54, True), fill='white')
-    d.text((40, 145), 'Made from the exact print file. Printify check of this version follows.', font=F(28), fill=RED)
+    d.text((40, 145), 'Made from the exact print file. CHECKED IN PRINTIFY 26 Nov 12:21: template 990 x 990, file pixel-identical, centred, scale 1.', font=F(28), fill=GREEN)
     y = 210
     for i, (lab, img) in enumerate((('YOUR ORIGINAL (19 Nov order)', orig), ('FINAL - what will print', im))):
         x = 60 + i * 870; d.text((x, y), lab, font=F(34, True), fill=INK); c.paste(disc(img, 800), (x, y + 50))
