@@ -10,9 +10,9 @@
 01 cover (Loussiemoo), 02 three examples, 03 specs, BLANK master model (sign-off, not a listing photo). Strips top+bottom, "FULLY CUSTOMISED".
 
 ## Video storyboard (1080x1920, 15 s, metal strip, no AI mention, AI labels off). Stills = scenes; NOT built until approved.
-1 (0-3s) "YOUR SILKS. ON A MUG." / FULLY CUSTOMISED. 2 (3-7s) "ANY COLOURS. ANY NAME." 3 (7-11s) "MAKE IT YOURS" / 11oz FULL WRAPAROUND. 4 (11-15s) end card AVAILABLE NOW, Search ZANS Racing on Etsy, www.zanshorseracing.co.uk.
+1 (0-3s) "YOUR SILKS. ON A MUG." / FULLY CUSTOMISED. 2 (3-7s) "ANY COLOURS. ANY NAME." 3 (7-11s) "MAKE IT YOURS" / 11oz FULL WRAPAROUND. 4 (11-15s) end card: AVAILABLE NOW at zanshorseracing.co.uk (primary), Also on Etsy: ZANS Racing (secondary).
 Music options (Christmas, no sound effects): A Mixkit Christmas pool track (warm acoustic), B Mixkit Christmas pool (gentle bells), C Kevin MacLeod CC BY 4.0 (credit in caption). Exact track picked after approval.
 
 ## Copyright check
-- Mug names are invented look-alikes: Loussiemoo (pink, green spots - Lossiemouth-like, kept off real name), Zoo Olympios, Rexs Romance (plain royal blue - FLAG: close to a famous blue-silks owner; owner banned for scenes; suggest swapping to a different colour for the video if either reviewer objects). No owner names, no Juddmonte, no Racing Post/BHA content.
+- Mug names are invented look-alikes: Loussiemoo (pink, green spots - Lossiemouth-like, kept off real name), Zoo Olympios, Rexs Romance (plain royal blue) is OUT of the video (ChatGPT review); scene 3 reuses Loussiemoo. Photo 02 still shows it - swap if either reviewer objects.
 - Open: supplier proof of logo readability, handle orientation and trim tolerance (no physical sample yet).
