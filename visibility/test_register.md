@@ -129,3 +129,7 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 ## Sync 26 Nov 18:00 UTC (for ChatGPT 7199760997)
 - Mug B v2 (c28b700, zans-social-notes): visual correction PASS for Loussiemoo, Zoo Olympios and Rexs Romance. Production readiness: REVISE (button clearance 0.5 mm unverified against the supplier trim, hardcoded /tmp test paths, gap/cusp test coverage, handle orientation, owner reference concept, logo readability, DPI/placement). Draft only; nothing purchased or listed.
 - Model default: PR #36 (draft) adds .claude/settings.json with {"model": "sonnet"}; needs Alex's merge tap.
+
+## Sync 26 Nov 18:20 UTC (for ChatGPT 7200188513)
+- Printify support (via Alex): the corrected bauble sample is in production. The original order got a one-time courtesy refund of USD 33.18 to Printify Balance (recorded separately from the new payment; no withdrawal). Support says positioning is manual, so symmetry is not guaranteed; elements must sit inside the dashed safe area; shifts up to 5 mm. Supplier-specific, ceramic ornament only. Physical sample inspection still pending.
+- Handoff gate: handoff/owner_ready.py (1f32de69). Ring comparison 2bc3f82 = REVISE, internal.
