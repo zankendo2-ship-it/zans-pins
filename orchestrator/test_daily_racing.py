@@ -403,7 +403,7 @@ def test_schema_v3_values_are_checked_not_just_present():
     d = json.loads(file_bytes(date="2026-11-29", frozen_at_utc="2026-11-29T08:45:00Z"))
     ok = {**RACE, "second": "Blue Sky", "data_pick": "A", "agent_b": None, "gemini_api": None, "data_gap": False, "price_move": None,
           "rpr_pick": "Alpha Star", "rpr_reason": None, "longshot": "Long Shot at 21.0", "zans_reasons": "top rated on course form",
-          "cautions": "none", "data_chance": 0.31, "best_price": 2.5}
+          "cautions": "none", "data_chance": 0.31, "best_price": 2.5, "confidence": 8, "second_reason": None, "longshot_reason": None}
 
     def check(**chg):
         d["races"] = [{**ok, **chg}]
@@ -428,12 +428,15 @@ def test_schema_v3_values_are_checked_not_just_present():
         with pytest.raises(r.Refuse, match=why):
             check(**chg)
     check(sky_bet_price=None, best_price=None)             # no Sky price, nothing to compare
+    for bad in ("8.5", True, float("nan"), float("inf"), -1, 11):
+        with pytest.raises(r.Refuse, match="confidence"):
+            check(confidence=bad)
 
 
 PRICES = (b"course,time,horse,price,best_dec,status\nAscot,13:00,Alpha Star,2.5,2.5,RUNNER\nAscot,13:00,Blue Sky (IRE),4.0,4.0,RUNNER\nAscot,13:00,Long Shot,21.0,21.0,RUNNER\n"
           b"Ascot,13:00,Cee Dee,6.0,6.0,RUNNER\nAscot,13:00,Dee Ess,8.0,8.0,RUNNER\nAscot,13:00,Eff Gee,9.0,9.0,RUNNER\n")
 V3RACE = {**RACE, "win_pick": "Alpha Star", "second": "Blue Sky 4.00 (23%)", "rpr_pick": "Alpha Star", "longshot": "Long Shot at 21.0",
-          "sky_bet_price": 2.5, "best_price": 2.5}
+          "sky_bet_price": 2.5, "best_price": 2.5, "second_reason": None, "longshot_reason": None}
 
 
 def _v3(**chg):
@@ -554,6 +557,12 @@ def test_longshot_price_source_label_binds_to_its_own_column():
         r.check_declared_runners(_v3s(longshot=_ls(17.0, f"Betfred in {n}", "bookmaker")), SRC, n)
 
 
+def test_longshot_price_source_requires_explicit_kind():
+    n = "d0_0959.csv"
+    with pytest.raises(r.Refuse, match="requires an explicit price_kind"):
+        r.check_declared_runners(_v3s(longshot={"name": "Long Shot", "price": 17.0, "price_source": f"Sky Bet in {n}"}), SRC, n)
+
+
 def test_compact_longshot_kind_cannot_pass_a_quote_as_a_bookmaker_price():
     c = {"name": "Long Shot", "price": 21.0, "price_kind": "bookmaker"}      # compact file: no price_source
     with pytest.raises(r.Refuse, match="quote-only price cannot stand in"):
@@ -591,7 +600,7 @@ import hashlib as _hl
 _REC = {"time": "13:00", "course": "Ascot", "horse": "Alpha Star", "win_angles": ["Won last time at this trip", "Trainer in form 4 from 9"],
         "win_caution": ["Up 5lb in the handicap"], "data_angles": ["Top speed figure"], "second": "Blue Sky 4.00 (23%)", "chance": 0.303,
         "data_chance": 0.31, "data_conf": 4, "rpr_pick": "Alpha Star", "rpr_reason": "Best RPR at trip", "price": 2.5, "going": "Good to Soft",
-        "longshot": "Long Shot at 21.0", "data_gap": False, "drift_warning": False}
+        "longshot": "Long Shot at 21.0", "data_gap": False, "drift_warning": False, "second_reason": None, "longshot_reason": None}
 _COURSE = json.dumps({"picks": [_REC, {**_REC, "time": "14:00", "horse": "Other"}]}).encode()
 _PR = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\n"
        b"Ascot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5|Paddy Power;2.7;3;1/5,RUNNER\n"
@@ -613,7 +622,7 @@ def _evd(**race):
          "races": [{"time": "13:00", "course": "Ascot", "win_pick": "Alpha Star", "confidence": 8, "zans_reasons": ["Won last time at this trip"],
                     "cautions": ["Up 5lb in the handicap"], "sky_bet_price": 2.6, "best_price": 2.6, "second": "Blue Sky 4.00 (23%)",
                     "rpr_pick": "Alpha Star", "zans_chance": 0.303, "data_chance": 0.31, "data_conf": 4, "price_at_pick": "2.50", "going": "Good to Soft",
-                    "longshot": "Long Shot at 21.0",
+                    "longshot": "Long Shot at 21.0", "second_reason": None, "longshot_reason": None, "data_gap": False, "drift_warning": False,
                     "evidence": {"id": "E1", "src": "S1", "pick_sha256": r._h(_REC), "price_src": "S2", "price_row_sha256": r._h(_ROW),
                                  "longshot_row_sha256": r._h(_LROW)}, **race}]}
     return d
@@ -723,6 +732,34 @@ def test_evidence_wrong_runner_course_row_or_field_refused():
         _ev(_evd(sky_bet_price=2.7))
 
 
+def test_evidence_names_must_match_their_mapped_record_field_not_any_text():
+    d, f = _with_rec(second="Dee Ess 8.00 (5%)", win_angles=["Won last time at this trip", "Blue Sky mentioned in a narrative"])
+    with pytest.raises(r.Refuse, match="mapped hashed pick-record field 'second'"):
+        _ev(d, f)
+    d, f = _with_rec(rpr_pick="Dee Ess", win_angles=["Won last time at this trip", "Alpha Star mentioned in a narrative"])
+    with pytest.raises(r.Refuse, match="mapped hashed pick-record field 'rpr_pick'"):
+        _ev(d, f)
+
+
+def test_evidence_boolean_fields_must_be_real_booleans():
+    d, f = _with_rec(data_gap=True)
+    d["races"][0]["data_gap"] = "false"
+    with pytest.raises(r.Refuse, match="must be a boolean"):
+        _ev(d, f)
+
+
+def test_evidence_second_and_longshot_reasons_are_source_bound():
+    sr = "Blue Sky has the stronger place profile on the supplied figures"
+    lr = "Long Shot has the strongest recent speed figure in this field"
+    d, f = _with_rec(second_reason=sr, longshot_reason=lr)
+    d["races"][0]["second_reason"] = sr
+    d["races"][0]["longshot_reason"] = lr
+    _ev(d, f)
+    d["races"][0]["second_reason"] = "the jockey is in great form this season"
+    with pytest.raises(r.Refuse, match="second_reason text is not found"):
+        _ev(d, f)
+
+
 def test_evidence_typed_fields_must_match_the_hashed_record():
     for chg, why in (({"second": "Dee Ess 8.00 (5%)"}, "second"), ({"rpr_pick": "Cee Dee"}, "rpr_pick"), ({"zans_chance": 0.40}, "zans_chance"),
                      ({"data_chance": 0.5}, "data_chance"), ({"data_conf": 9}, "data_conf"), ({"price_at_pick": "3.10"}, "price_at_pick"),
@@ -734,6 +771,8 @@ def test_evidence_typed_fields_must_match_the_hashed_record():
 
 
 def test_evidence_pick_source_and_price_source_captured_strictly_before_off():
+    with pytest.raises(r.Refuse, match="strictly before the off"):
+        _ev(_chg(["sources", 0, "captured_utc"], "2026-11-29T08:45:00"))  # naive timestamps are not assumed to be UTC
     for si in (0, 1):
         for ts in ("2026-11-29T13:00:00Z", "2026-11-29T15:00:00Z", "nonsense", None):
             with pytest.raises(r.Refuse, match="strictly before the off"):
@@ -777,6 +816,9 @@ def test_evidence_unverified_reason_must_cap_confidence_at_six():
         _ev(_evd(not_verified=["second"], confidence_capped=7))
     _ev(_evd(not_verified=["zans_reasons"], confidence_capped=6))
     _ev(_evd(not_verified=["zans_reasons"], confidence=5))      # already at or under the cap
+    with pytest.raises(r.Refuse, match="confidence_capped"):
+        _ev(_evd(not_verified=["zans_reasons"], confidence="8.5"))  # decimal confidence cannot bypass int() parsing
+    _ev(_evd(not_verified=["zans_reasons"], confidence="8.5", confidence_capped=6))
 
 
 def test_evidence_none_listed_is_verified_empty_only_when_the_record_key_is_empty():
