@@ -1,7 +1,5 @@
 {
  "date": "2026-11-27",
- "source_repo": "zankendo2-ship-it/horse-racing-extraction- (private)",
- "source_branch": "claude/horse-racing-prediction-setup-a02c7r",
  "files": [
   {
    "path": "racing-review/bundles/2026-11-27/data/config/course_profiles/doncaster.json",
@@ -1744,34 +1742,214 @@
    "sha256": "1981283fc60b1ea7769881b49bf83e82f8f6856f9058259d1555cdcc947fbceb"
   },
   {
-   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_results_2019_2026.csv.gz",
-   "source": "data-extract results_full_2019-2026 + data-results 2026-06..11, filtered to the course",
-   "bytes": 674344,
-   "sha256": "6ed471d558a44cad67a6dd5eaf0e7b835400aa8675d9696fc20c214cac69ba98"
+   "path": "racing-review/bundles/2026-11-27/data/results/ROW_COUNTS.md",
+   "source": "row counts",
+   "bytes": 1224,
+   "sha256": "bf45b1a3419a9a755db46a3abf283c12281dfaf2fc01e04cc74ee53ebe0c185a"
   },
   {
-   "path": "racing-review/bundles/2026-11-27/data/results/dundalk_results_2019_2026.csv.gz",
-   "source": "data-extract results_full_2019-2026 + data-results 2026-06..11, filtered to the course",
-   "bytes": 109342,
-   "sha256": "f79250b2764e1bff7e759c3da794e78b211a81e9c78e960e93dd5122ce6746d9"
+   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2019.csv",
+   "source": "doncaster results 2019, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 378411,
+   "sha256": "72432f3b6295216a75bb998187ca878d1b84960c8bbcc88f2fdebb4a5042f838"
   },
   {
-   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_results_2019_2026.csv.gz",
-   "source": "data-extract results_full_2019-2026 + data-results 2026-06..11, filtered to the course",
-   "bytes": 390540,
-   "sha256": "f34184c1e8c0a91548c97f0223069f6d7db78f40631076bdd3132b8c16d907ac"
+   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2020.csv",
+   "source": "doncaster results 2020, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 428484,
+   "sha256": "c4a2125bff0197f87267b5ca050746b09a63f7954cf2dad02a8c563150ad5293"
   },
   {
-   "path": "racing-review/bundles/2026-11-27/data/results/newbury_results_2019_2026.csv.gz",
-   "source": "data-extract results_full_2019-2026 + data-results 2026-06..11, filtered to the course",
-   "bytes": 534255,
-   "sha256": "b5042fcb20e0897cf25384ace3221f5126ecd218173a8a7f570cbc1cb032fad1"
+   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2021.csv",
+   "source": "doncaster results 2021, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 479706,
+   "sha256": "4542619cfb8e866a145e78a6d1047ac8f561205ed6206bb329d141428e75f4e1"
   },
   {
-   "path": "racing-review/bundles/2026-11-27/data/results/southwell_results_2019_2026.csv.gz",
-   "source": "data-extract results_full_2019-2026 + data-results 2026-06..11, filtered to the course",
-   "bytes": 1368695,
-   "sha256": "bc97ce9fc482905886ea2a565513b28083a35d3d0e2b79cd35ff36e52493ee5b"
+   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2022.csv",
+   "source": "doncaster results 2022, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 476987,
+   "sha256": "7608b17d3bca101402c2334ef592b3726c8054e33229a1e95306e8d1dcf0987e"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2023.csv",
+   "source": "doncaster results 2023, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 488715,
+   "sha256": "669d6807601bb8abd57987c619db9f07907d46bc9d990cf3b89191f86bd73439"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2024.csv",
+   "source": "doncaster results 2024, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 509106,
+   "sha256": "ecbc43b3cba147a83ad7a65f18da3a609f87e9d5859414e2e0637113f4ba5fb3"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2025.csv",
+   "source": "doncaster results 2025, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 529704,
+   "sha256": "6122aec536c1d43024be3069e8b30b5d0e2153a51c79805a866c7d4cdb5d27b6"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2026.csv",
+   "source": "doncaster results 2026, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 461839,
+   "sha256": "3c8624c23ea8511815753e5ebff1615624e611745c3f620a1a338432f1167ab1"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/dundalk_2025.csv",
+   "source": "dundalk results 2025, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 331843,
+   "sha256": "d47d71afb9d91260662d5db44b5ffdb501c9c3ebc8500de99ca73d887b312d42"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/dundalk_2026.csv",
+   "source": "dundalk results 2026, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 311447,
+   "sha256": "80cd7e41a787f321db467398d8243422988632dca8405b8274edf90bb97605e8"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_2019.csv",
+   "source": "musselburgh results 2019, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 321368,
+   "sha256": "ed610b342ac81c2ace5ebba59bc498c1c9088a7881e809b6cc5088f00c2014e8"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_2020.csv",
+   "source": "musselburgh results 2020, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 290335,
+   "sha256": "bb51bdf57291b03f3f7e4ab779a449914628428af3261b402be43999742353c4"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_2021.csv",
+   "source": "musselburgh results 2021, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 320028,
+   "sha256": "501593fcdf19472d9305b06707f381a6f600a193f6a0f022e255702d4a30ee53"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_2022.csv",
+   "source": "musselburgh results 2022, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 264437,
+   "sha256": "1a18ecb2b021a0ff969f994329c4dcd8b35627c1a51e716aae244bdc71eb80ec"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_2023.csv",
+   "source": "musselburgh results 2023, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 308889,
+   "sha256": "bfaf67046ef300e47b564b1d9390f13aae810d76c33d3d6960c823562fbc6c90"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_2024.csv",
+   "source": "musselburgh results 2024, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 271581,
+   "sha256": "6f241af4c469d3f3cbde49a39b43c978410ce0291b44a03f8511e6bcef0db80f"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_2025.csv",
+   "source": "musselburgh results 2025, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 282706,
+   "sha256": "2051e9dc1932a32e70ea3dbfbf65510ad36c8149de5e087a2cc56e5cab5ec0e5"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/musselburgh_2026.csv",
+   "source": "musselburgh results 2026, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 270378,
+   "sha256": "4df2d0afffe65b0852ac95df358ac578e291851d657ea75e9b3e5a4f83a86063"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/newbury_2019.csv",
+   "source": "newbury results 2019, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 420398,
+   "sha256": "8cf00a79e307ec1335416436f5ed696f885601a10df5abb47ef110dd664cb805"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/newbury_2020.csv",
+   "source": "newbury results 2020, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 214706,
+   "sha256": "e7d7b8b525b893ba165acd9f37af166688d143e8f130103c5040506ffb4cc472"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/newbury_2021.csv",
+   "source": "newbury results 2021, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 427793,
+   "sha256": "1e1bf31fe8615806eac5dac7091cf4bb1f2ac64b92fcf36f69a3efd65e43ff02"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/newbury_2022.csv",
+   "source": "newbury results 2022, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 415665,
+   "sha256": "1fd9e5aba9204e69e6402e63b56a24435bf6e84b99862018452199112f85dd0a"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/newbury_2023.csv",
+   "source": "newbury results 2023, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 380987,
+   "sha256": "b27de0a45f3bb90625e177e1e4591996b6ab1fe3bb76f2df83354de7bd1001a4"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/newbury_2024.csv",
+   "source": "newbury results 2024, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 426345,
+   "sha256": "a1cddfe63ee01cf42c5d2b2f8e6efbef341c5308a756573d027f4120f2c58147"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/newbury_2025.csv",
+   "source": "newbury results 2025, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 417628,
+   "sha256": "71b187d75e0885071da5fc00b5940fd55c8a5ad454ba9e1321c4ce09d65b4f45"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/newbury_2026.csv",
+   "source": "newbury results 2026, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 362613,
+   "sha256": "2700d8c693a0d2d236a46fd14287020e12acc60788d98cffb74174e99676a3d5"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2019.csv",
+   "source": "southwell results 2019, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 735541,
+   "sha256": "9e8b28db4bd8ed164ab026a63210f5977b2a906fbbe7cccd795778e1eec7bb7e"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2020.csv",
+   "source": "southwell results 2020, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 624847,
+   "sha256": "1519b74bebcbc2e6572ac4c1ed167dc10d6e2ebafbf47ebc90352dd33e1c3374"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2021.csv",
+   "source": "southwell results 2021, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 663866,
+   "sha256": "7fbddfed5a3a51e03ac758c7889ae297642958b6937e4a9f9b5a9980eaeb55d1"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2022.csv",
+   "source": "southwell results 2022, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 971039,
+   "sha256": "6cbdfd7a40ef88506bfd7931db3600fefeffb5e26fda8bddf7ce2f870aa09997"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2023.csv",
+   "source": "southwell results 2023, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 946152,
+   "sha256": "804b8e2a157c6205dde9b3ff90e02aa38167f501a0d45e046fa0550b078a1fcd"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2024.csv",
+   "source": "southwell results 2024, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 1227574,
+   "sha256": "c75b6dab1d467b64e75d1796cdf0d19797f44615e373ea9fd3392675ea4c9386"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2025.csv",
+   "source": "southwell results 2025, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 1206441,
+   "sha256": "123380a6e74903e46e44c6a197e5452c888db20caf4b48c764e99e30ba341151"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2026.csv",
+   "source": "southwell results 2026, plain CSV (from results_full + data-results, licensed columns removed)",
+   "bytes": 1253274,
+   "sha256": "bbe4ed30161311025583f4823c23bb63b0b6452275205347db9160b05d52a54c"
   },
   {
    "path": "racing-review/bundles/2026-11-27/data/rules/RULES.md",
@@ -1840,6 +2018,6 @@
    "sha256": "e932aaf24980179c18b5b966accf676d69f551b32b995fc1a38af302ae39516e"
   }
  ],
- "combined_sha256": "a66af84021e781e031a1b862e7a566c25641de3272e3a348708cf548b67ae722",
+ "combined_sha256": "6795b89e12efd327de3d8dd609dd8e991d9cf7bdab88c2f67d4545e65ac962e5",
  "rule": "sha256 of lines '<sha256>  <path>' sorted by path"
 }

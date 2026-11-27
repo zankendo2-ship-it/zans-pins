@@ -1,9 +1,9 @@
-# Full evidence bundle for 2026-11-27: Newbury, Doncaster, Musselburgh, Southwell, Dundalk (v2, with results extracts)
+# Full evidence bundle for 2026-11-27: Newbury, Doncaster, Musselburgh, Southwell, Dundalk (v3, plain-CSV results)
 
-306 files, 9.8 MB, copied byte for byte from the private racing repo except the results extracts, which are filtered by course. Every file is in MANIFEST.json with its sha256. Combined sha256 `a66af84021e781e031a1b862e7a566c25641de3272e3a348708cf548b67ae722`.
+336 files, 24.1 MB, copied byte for byte from the private racing repo except the results extracts, which are filtered by course. Every file is in MANIFEST.json with its sha256. Combined sha256 `6795b89e12efd327de3d8dd609dd8e991d9cf7bdab88c2f67d4545e65ac962e5` (also in COMBINED_SHA256.txt; SHA256SUMS.txt lists every file; `python racing-review/bundles/2026-11-27/verify_bundle.py` recomputes everything).
 
 Under `data/` (same paths as the private repo):
-- `results/<course>_results_2019_2026.csv.gz`: every run at the five courses, 2019 to 26 Nov 2026 (race, off time, type, class, distance, going, field size, position, draw, beaten lengths, horse, age, weight, headgear, time, SP, jockey, trainer, prize). Dundalk has only Oct 2025 to May 2026 because our history source lacks earlier Dundalk. Use these to check the course tables below.
+- `results/<course>_<year>.csv` (plain CSV, one file per course and year, row counts in `results/ROW_COUNTS.md`): every run at the five courses, 2019 to 26 Nov 2026 (race, off time, type, class, distance, going, field size, position, draw, beaten lengths, horse, age, weight, headgear, time, SP, jockey, trainer, prize). Dundalk has only Oct 2025 to May 2026 because our history source lacks earlier Dundalk. Use these to check the course tables below.
 - `reports/course_kb/courses/`: per course and code draw, pace, weight, going, trip, favourite, trainer/jockey tables, 2019-21 and 2022-26 A/E with sample sizes.
 - `reports/track_stats/*.csv`: national and course draw, pace and weight bias tables (all courses). `reports/speed/standards.csv`: ZANS standard times.
 - `reports/track_dna/2026-11-27/`: the whole Track DNA run. `methods/`, `reports/methods/`, `config/course_profiles/`: course methods and every rule's tested A/E.
