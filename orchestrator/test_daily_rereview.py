@@ -82,7 +82,7 @@ def test_pass_pass_with_every_item_resolved_closes_whole_chain_only():
     sent_prompt = []
     rr.rereview(LIVE, comments, H1, cid, fetch(), GETTER, lambda e, t: sent_prompt.append(t) or models(verdict("PASS"), verdict("PASS"))[0](e, t),
                 g, lambda b: None)
-    assert "ITEM 1: original fix = fix 1" in sent_prompt[0] and "disposition = applied" in sent_prompt[0]
+    assert "ITEM 1: fix 1 | applied" in sent_prompt[0]
     assert rr.closing_markers(H1, cid, comments) == [f"<!-- {o.RECEIPT}:{H1}:{cid} -->"]
 
 

@@ -63,11 +63,13 @@ def item_extra(comments, run, cid):
         disp = {int(m.group(1)): (m.group(2).lower(), m.group(3).strip()) for m in DISP_RE.finditer(c["body"])}
     if not texts or set(texts) != set(disp) or len(texts) > MAX_ITEMS:
         raise Refuse(f"the gate must list 1 to {MAX_ITEMS} fixes, each with a recorded disposition")
-    lines = [f"ITEM {i}: original fix = {texts[i]} | disposition = {disp[i][0]} {disp[i][1][:200]}" for i in sorted(texts)]
-    return ("RE-REVIEW OF A CORRECTED FILE. These items were asked for in the earlier review; the file below is the corrected "
-            "version. Also reply with one reason line per item, exactly 'ITEM N: RESOLVED' or 'ITEM N: NOT RESOLVED' followed by why. "
-            "Verdict PASS only if every item is RESOLVED and the file is otherwise complete. A 'rejected' item is a decision "
-            "NOT to change the file: judge whether the stated reason is sound.\n" + "\n".join(lines) + "\n\n"), sorted(texts)
+    def short(i):
+        kind, rest = disp[i]
+        return "applied (see corrected file)" if kind == "applied" else "rejected: " + rest[:120]
+    lines = [f"ITEM {i}: {texts[i]} | {short(i)}" for i in sorted(texts)]
+    return ("RE-REVIEW of a corrected file. Per item below (original fix | disposition) reply one reason line 'ITEM N: RESOLVED' "
+            "or 'ITEM N: NOT RESOLVED' plus why. PASS only if every item is RESOLVED and the file is otherwise complete. "
+            "A rejected item is a decision not to change the file: judge its reason.\n" + "\n".join(lines) + "\n\n"), sorted(texts)
 
 
 def items_resolved(verdicts, items):
