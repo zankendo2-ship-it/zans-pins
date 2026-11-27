@@ -411,6 +411,7 @@ def check_declared_runners(d, prices_bytes, prices_name=None):
 
 EVIDENCE_TEXT_FIELDS = ("zans_reasons", "zans_cautions", "data_reasons", "rpr_reason")   # reason text that must be traceable to the hashed pick record
 EVIDENCE_RACE_KEY = {"zans_cautions": "cautions"}                                      # race-row name when it differs from the evidence name
+NONE_LISTED = "none listed"
 PICK_NAME_KEYS = ("horse", "pick", "win_pick", "selection", "name")
 
 
@@ -512,6 +513,12 @@ def check_evidence(d, getter):
             if rv in (None, "", [], {}) or f in nv or f not in fields:
                 continue
             rec = _norm_text(" ".join(_strings(q.get(emap.get(f)))))
+            shown = [_norm_text(t) for t in _strings(rv)]
+            if shown == [NONE_LISTED]:   # "none listed" = verified empty: only when the record key exists and is empty
+                if emap.get(f) not in q or q[emap.get(f)] not in (None, "", [], {}):
+                    raise Refuse(f"{where}: {f} says 'none listed' but the hashed pick record "
+                                 + ("has no such key" if emap.get(f) not in q else "holds content under it"))
+                continue
             if not rec:
                 raise Refuse(f"{where}: {f} is shown as verified but the hashed pick record holds nothing under {emap.get(f)!r}")
             for t in _strings(rv):

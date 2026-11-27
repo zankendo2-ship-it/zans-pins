@@ -704,3 +704,25 @@ def test_evidence_unverified_reason_must_cap_confidence_at_six():
     _ev(_evd(not_verified=["zans_reasons"], confidence_capped=6))
     _ev(_evd(not_verified=["zans_reasons"], confidence=5))      # already at or under the cap
 
+
+
+def test_evidence_none_listed_is_verified_empty_only_when_the_record_key_is_empty():
+    def with_rec(**kw):
+        rec = {**_REC, **kw}
+        files = {**_FILES, "c/ascot.json": json.dumps({"picks": [rec]}).encode()}
+        return files, {"id": "E1", "src": "S1", "pick_sha12": r._h12(rec), "price_src": "S2", "price_row_sha12": r._h12(_PRICE_ROW)}
+    for empty in (None, "", []):
+        f, e = with_rec(win_angles=empty)
+        _ev(_evd(zans_reasons="none listed", evidence=e), f)
+        _ev(_evd(zans_reasons=["none listed"], evidence=e), f)
+    f, e = with_rec(win_angles=[])
+    with pytest.raises(r.Refuse, match="holds nothing"):
+        _ev(_evd(zans_reasons=["Won last time"], evidence=e), f)           # invented reason on an empty record
+    f, e = with_rec()
+    with pytest.raises(r.Refuse, match="holds content"):
+        _ev(_evd(zans_reasons="none listed", evidence=e), f)               # hides real angles
+    rec = {k: v for k, v in _REC.items() if k != "win_angles"}
+    files = {**_FILES, "c/ascot.json": json.dumps({"picks": [rec]}).encode()}
+    e = {"id": "E1", "src": "S1", "pick_sha12": r._h12(rec), "price_src": "S2", "price_row_sha12": r._h12(_PRICE_ROW)}
+    with pytest.raises(r.Refuse, match="no such key"):
+        _ev(_evd(zans_reasons="none listed", evidence=e), files)           # key absent is not verified-empty
