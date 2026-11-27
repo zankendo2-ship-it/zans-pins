@@ -141,7 +141,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Aintree Jumps Beginner and Pro editions as separate listings, plus the Sandown, Kempton, Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -201,7 +201,7 @@ GOOD TO KNOW
 • The photos and explainer pictures were made with AI image tools. Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Aintree Jumps Advanced and Pro editions as separate listings, plus the Sandown, Kempton, Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -258,7 +258,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Aintree Jumps Beginner and Advanced editions as separate listings, plus the Sandown, Kempton, Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -331,7 +331,7 @@ GOOD TO KNOW
 - Maps, silks and charts were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 The Ascot Racecourse Guide is also in the shop as a Beginner Edition and a Pro Edition. Jumps guides and more racecourses are on the way.
@@ -393,7 +393,7 @@ GOOD TO KNOW
 - Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 Step
 MORE FROM ZANS
 Advanced and Pro editions, Jumps guides, more racecourses and festival packs are on the way. Follow the shop so you don't miss them.
@@ -463,7 +463,7 @@ GOOD TO KNOW
 - Maps, silks and charts were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 The Ascot Racecourse Guide is also in the shop as a Beginner Edition and an Advanced Edition. Jumps guides and more racecourses are on the way.
@@ -520,7 +520,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Ascot Jumps Beginner and Pro editions as separate listings, and the Ascot Flat guides (Beginner, Advanced and Pro). More racecourses are on the way.
@@ -581,7 +581,7 @@ GOOD TO KNOW
 • The photos and explainer pictures were made with AI image tools. Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Ascot Jumps Advanced and Pro editions as separate listings, and the Ascot Flat guides (Beginner, Advanced and Pro). More racecourses are on the way.
@@ -638,7 +638,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Ascot Jumps Beginner and Advanced editions as separate listings, and the Ascot Flat guides (Beginner, Advanced and Pro). More racecourses are on the way.
@@ -696,7 +696,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Cheltenham Jumps Beginner and Pro editions as separate listings, plus the Ascot Jumps and Ascot Flat guides. More racecourses are on the way.
@@ -756,7 +756,7 @@ GOOD TO KNOW
 • The photos and explainer pictures were made with AI image tools. Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Cheltenham Jumps Advanced and Pro editions as separate listings, plus the Ascot Jumps and Ascot Flat guides. More racecourses are on the way.
@@ -813,7 +813,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Cheltenham Jumps Beginner and Advanced editions as separate listings, plus the Ascot Jumps and Ascot Flat guides. More racecourses are on the way.
@@ -871,7 +871,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Kempton All-Weather Beginner and Pro editions as separate listings, plus the Cheltenham Jumps, Ascot Jumps and Ascot Flat guides. More racecourses are on the way.
@@ -930,7 +930,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Kempton All-Weather Advanced and Pro editions as separate listings, plus the Cheltenham Jumps, Ascot Jumps and Ascot Flat guides. More racecourses are on the way.
@@ -987,7 +987,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Kempton All-Weather Beginner and Advanced editions as separate listings, plus the Cheltenham Jumps, Ascot Jumps and Ascot Flat guides. More racecourses are on the way.
@@ -1046,7 +1046,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Kempton Jumps Beginner and Pro editions as separate listings, plus the Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -1108,7 +1108,7 @@ GOOD TO KNOW
 • The photos and explainer pictures were made with AI image tools. Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Kempton Jumps Advanced and Pro editions as separate listings, plus the Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -1167,7 +1167,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Kempton Jumps Beginner and Advanced editions as separate listings, plus the Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -1224,7 +1224,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Sandown Jumps Beginner and Pro editions as separate listings, plus the Kempton, Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -1284,7 +1284,7 @@ GOOD TO KNOW
 • The photos and explainer pictures were made with AI image tools. Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Sandown Jumps Advanced and Pro editions as separate listings, plus the Kempton, Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -1341,7 +1341,7 @@ GOOD TO KNOW
 • Maps, charts and jockey colours were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
 
 RETURNS
-Digital download: if you expressly consented at checkout to immediate download and acknowledged that you lose your 14-day right to cancel once the file is available, the right to cancel no longer applies. If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
+Digital download: If a file won't open or isn't as described, message us and we'll fix it or refund you. This doesn't affect your statutory rights.
 
 MORE FROM ZANS
 Also available: the Sandown Jumps Beginner and Advanced editions as separate listings, plus the Kempton, Cheltenham Jumps and Ascot guides. More racecourses are on the way.
@@ -1731,3 +1731,7 @@ Personalised items are made just for you, so we can't accept change-of-mind retu
 
 Wishing you a Merry Christmas
 ````
+
+
+## v8 note (27 Nov)
+Alex checked the Etsy order email: it only says "download here", so neither express consent nor acknowledgement of losing the 14-day right is captured. The cancellation sentence was removed from all 21 guides (the "Digital download:" paragraph now starts with the file/refund promise). Status: PREPARED, NOT APPLIED, v8 not re-reviewed.
