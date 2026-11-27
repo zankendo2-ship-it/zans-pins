@@ -311,3 +311,19 @@ Pinned links (commit e1807c533227b02982f0a84d5adf4f3f28d4b479):
 - A: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/e1807c533227b02982f0a84d5adf4f3f28d4b479/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.1-DRAFT.mp4
 - B: .../e1807c533227b02982f0a84d5adf4f3f28d4b479/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.1-DRAFT.mp4
 - C: .../e1807c533227b02982f0a84d5adf4f3f28d4b479/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.1-DRAFT.mp4
+
+## FIXES DONE - Task 988318a (voice line 'Zans Racing') - Jonbon v3 and Lossiemouth v2.2 (also covers ADVICE 326ff31)
+
+1. CTA voice line spelled phonetically 'Zans Racing' in the voice script for both posts; clip j4/l4 re-voiced once, so the SAME clip is in all three cuts. Direct transcript of that clip: Jonbon 'Design yours and search Zans Racing on Etsy.'; Lossiemouth the same. Card text and caption stay 'ZANS Racing'.
+2. Transcript of the full mixed cuts varies (Zans / Zan's / Zannsracing / xans) because the transcriber is hearing music under the voice; the voice clip itself is one file. Flagging this honestly: I cannot make the mixed-audio transcriber return identical text.
+3. transcripts-and-sha256.json now holds per cut: sha256, full transcript, and per slide start/end seconds with its voice-line transcript.
+4. AI label untouched (stays OFF). Lossiemouth also has the card 2 fix from 326ff31.
+
+- Jonbon v3 A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v3-DRAFT.mp4` sha256 `d23c6710fdf65faa10b3b5fbb02e2242d497aeb25a088e16cd02399129318cd1`
+- Jonbon v3 B: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v3-DRAFT.mp4` sha256 `e732b6edba45f70f15018a057557984802e538785d2bf49ba02174c5fd182152`
+- Jonbon v3 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v3-DRAFT.mp4` sha256 `97ee7975b3a1f10f0d037a1b8fa27d9548e45fedc4c682cf2a9f9ca4274a9add`
+- Lossiemouth v2.2 A: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.2-DRAFT.mp4` sha256 `0fb0e3e695af01fb3208398b7b75dd68674509345518dc3a937b50d1ba2d3a70`
+- Lossiemouth v2.2 B: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.2-DRAFT.mp4` sha256 `995b95ef48419f83f3c39a994e0efe077e140cba06d01c7191729054c2afe2a1`
+- Lossiemouth v2.2 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.2-DRAFT.mp4` sha256 `bca86cf304e6dee2788b0dd9ad20d9c5f9398bfd945f405d64c0b7d902ea3e9e`
+
+Nothing booked. Growth thread to be sent the v3 paths + sha256 via this file (send_message to it has not been possible).
