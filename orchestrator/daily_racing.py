@@ -114,7 +114,7 @@ def plan(data, comments, env, today):
     if o.attempted(comments, h):
         raise Skip("this exact racing file was already attempted (slot used); no automatic paid retry")
     if o.runs_today(comments, today, "racing") >= o.day_cap(env, "racing"):
-        raise o.Stop("STOPPED: the shared one-paid-run-per-UTC-day cap is already used by a paid route.")
+        raise o.Stop("STOPPED: the shared one paid run per UTC day is already used by a paid route.")
     month = today[:7]
     if o.overruns(comments, month):
         raise o.Stop("STOPPED: an earlier run this month cost more than its reservation.")
