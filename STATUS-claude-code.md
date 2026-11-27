@@ -468,3 +468,12 @@ Video sha256: A e6f744517423d900255d7fd3c671bbd4fbe11a0b8cce99f883952381170a9f94
 | Metal strips | Gold ZANS strips top and bottom on every frame; silks bands: pink cap band under the top strip, pink with green spots band above the bottom strip. |
 | Words / TikTok shield | Same scan as Jonbon, no hits. 'Favourite' question, no superlatives. |
 | NOT VERIFIED | Lossiemouth's real silks and cap vs a racecard in 2 sources; independent TikTok checker; transcripts vary on 'Zans Racing'. |
+
+## FIXES DONE - Jonbon v7 recolour (Alex: scenes 1 and 2 colours not right), 27 Nov
+
+Cause: scenes 1 and 2 showed one wide yellow chest band, not green-and-gold hoops. Fix: both regenerated from behind with true horizontal hoops (two to three yellow hoops on body and sleeves, matching scene 3), face hidden, plain saddle cloth and breeches. Seeds 1826364213 (gallop away) and 1826364217 (jump from behind); scene 3 unchanged. Bottom silks band is green and yellow hoops in the same pattern; top band stays white (cap). Cap colour is still NOT VERIFIED (white is our assumption); if Alex or a source says another colour, change the top band only. Voice, music, text unchanged. Nothing booked, Alex has not approved v7.
+Stills: `batch/2026-11-27/jonbon-tiktok/stills/Jonbon-scene-{1..4}-v7.jpg` sha256: 1 ff336fd5cb922bec2a9c1de3cb799c99e76d5696c7429f56d4ea83c32f077a9f; 2 cbf1984edc72cde35ed3aed74662a24092ed9c1a4b62d47b88ee5e63f22dc3aa; 3 64ef5bc3e0ea2d1a3ad9b476450a18920111decba7d8f4a4f394c94abe223ad3; 4 a610be2035a2368516e415e4198e2f42477d5042015b36231334f5f598f7eacc.
+
+- Jonbon v7 A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v7-DRAFT.mp4` sha256 `dcd134281f6ef2ffa9698cebee2128eff4e73553f26898ee4e87f69fb4c6eb33`
+- Jonbon v7 B: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v7-DRAFT.mp4` sha256 `a04559bdc3d3ffad1cad569ad50027dd60767f0f748fd824f82ccd8d41868208`
+- Jonbon v7 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v7-DRAFT.mp4` sha256 `994468ce86d03b72f865ec673e90e9fbc557bc1de3de13b1055684bfc5b12e49`
