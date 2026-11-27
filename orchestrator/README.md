@@ -77,3 +77,9 @@ This pilot is started by a button press. The goal is fully automatic Claude <-> 
 - This repo is **public**: anything the reviewers write in the summary comment is public too.
 - Workflow runs count toward the repo's GitHub Actions minutes. Each run is about 1-2 minutes.
 - The existing hourly ChatGPT review stays as the fallback.
+
+
+## Correction handling (all paid routes)
+- Any REVISE or REJECT (manual run: AGREED REVISE, NO AGREEMENT, STOPPED: rejected; daily batch, racing, retro: any reviewer verdict) opens a **correction gate** in the bot-posted summary, lists every fix (or the reasons, or a placeholder if none were given), and posts NO completion marker for that run. In the daily batch only PASSing items are marked complete.
+- The gate blocks every paid route (manual, batch, racing, retro) until the 'ZANS correction receipt' workflow posts a bot-authored receipt with exactly one decision per fix, numbered 1 to N: `N=applied <40-hex commit that exists in this repo>` or `N=rejected <reason of 10+ characters>`.
+- **Automatic routing of fixes to a Claude thread and automatic re-review are NOT built: BLOCKED.** The gate is the enforced stop: paid runs stay stopped after a REVISE until a person closes it with evidence. Alex's decision 27 Nov: the route need not be private.

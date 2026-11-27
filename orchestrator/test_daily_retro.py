@@ -26,7 +26,7 @@ def verdict(v="PASS"):
     return json.dumps({"ack": "ok", "verdict": v, "reasons": ["r"], "fixes": []})
 
 
-def callers(c1="PASS", o2="REVISE", c3="PASS", model_c="claude-sonnet-5-5"):
+def callers(c1="PASS", o2="PASS", c3="PASS", model_c="claude-sonnet-5-5"):
     calls, seq = [], {"Claude": [c1, c3], "OpenAI": [o2]}
 
     def make(who, stopv, model):
@@ -91,8 +91,8 @@ def test_live_three_calls_in_order_slot_first_exact_replies_and_marker():
     posted = []
     steps, h, reserve, bad = r.run(ENV, d, sha(d), [], TODAY, c, oa, posted.append)
     assert calls == ["Claude", "OpenAI", "Claude"] and not bad and set(steps) == {1, 2, 3}
-    assert o.SLOT in posted[0] and o.MARKER not in posted[1]
-    assert "1. Claude" in posted[1] and "2. ChatGPT: challenge: REVISE" in posted[1] and "3. Claude" in posted[1]
+    assert o.SLOT in posted[0] and o.MARKER not in posted[1] and o.CORRECTION not in posted[1]
+    assert "1. Claude" in posted[1] and "2. ChatGPT: challenge: PASS" in posted[1] and "3. Claude" in posted[1]
     settled_comments = []
     monkeypatch = pytest.MonkeyPatch()
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: settled_comments.append(body["body"]) or {})
@@ -168,3 +168,11 @@ def test_summary_is_labelled_bounded_not_verbatim():
     posted = []
     r.run(ENV, d, sha(d), [], TODAY, c, oa, posted.append)
     assert "BOUNDED and SANITIZED" in posted[1] and "NOT the file" in posted[1] and "exact replies" not in posted[1].lower()
+
+
+def test_revise_opens_a_gate_and_is_not_complete():
+    d = data()
+    calls, c, oa = callers(o2="REVISE")
+    posted = []
+    steps, h, reserve, bad = r.run(ENV, d, sha(d), [], TODAY, c, oa, posted.append)
+    assert bad and o.CORRECTION in posted[1] and f"{o.CORRECTION}:{h}:" in posted[1]

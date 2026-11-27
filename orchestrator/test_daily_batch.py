@@ -241,3 +241,23 @@ def test_summary_never_emits_completion_markers_before_settlement():
         assert o.MARKER not in summary and b.item_marker(a) not in summary
     mock = b.summary("h", TODAY, [a], "mock", results, "mock")
     assert "SYNTHETIC MOCK" in mock and o.MARKER not in mock and b.item_marker(a) not in mock
+
+
+def test_revise_item_opens_gate_gets_no_completion_marker_and_blocks_later_routes():
+    a, data = art("a")
+    c, _ = art("c")
+    items = [a, c]
+    def reply(e, p):
+        return json.dumps({"results": [{"id": "a", "verdict": "PASS", "reasons": ["r"], "fixes": []},
+                                       {"id": "c", "verdict": "REVISE", "reasons": ["r"], "fixes": ["do X"]}]}), "stop"
+    (outcome, h, reserve), posted, calls = e2e({**ENV, "ORCH_MODE": "live"}, [], reply, items, data)
+    summ = posted[-1]
+    assert f"{o.CORRECTION}:{h}:" in summ and "1 fixes" in summ
+    markers = b.completion_markers(h, items, outcome)
+    assert f"<!-- {o.MARKER}:{h} -->" not in markers                 # run is NOT complete
+    assert b.item_marker(a) in markers and b.item_marker(c) not in markers   # only the PASS item is marked
+    gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": summ, "created_at": "2026-11-27T05:00:00Z"}
+    with pytest.raises(o.Stop, match="correction gate"):
+        o.require_no_pending_corrections([gate])
+    all_pass = "reviewed a=PASS, c=PASS"
+    assert f"<!-- {o.MARKER}:{h} -->" in b.completion_markers(h, items, all_pass)

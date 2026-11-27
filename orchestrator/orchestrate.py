@@ -638,20 +638,63 @@ def redact(text):
     return SENSITIVE_RE.sub("[redacted]", str(text))
 
 
-def correction_block(h, rounds):
+GATE_VERDICTS = ("REVISE", "REJECT")
+NO_FIX_ITEM = "No fix list was given by the reviewers: a person must resolve the reasons listed above."
+
+
+def gate_items(verdicts, limit=20):
+    """The items a correction receipt must answer: every fix (Claude first), else every reason, else one placeholder, so a
+    REVISE/REJECT can never open a gate with nothing to close."""
+    seen, out = set(), []
+    for key in ("fixes", "reasons"):
+        for v in verdicts:
+            if key == "reasons" and (v or {}).get("verdict") not in GATE_VERDICTS:
+                continue   # a PASSing reviewer's reasons are not things to fix
+            for f in (v or {}).get(key, []):
+                k = " ".join(str(f).lower().split())
+                if k and k not in seen:
+                    seen.add(k)
+                    out.append(f)
+        if out:
+            break
+    return (out or [NO_FIX_ITEM])[:limit]
+
+
+def opens_gate(verdicts):
+    """True when any reviewer asked for changes or rejected: the artifact is not complete and needs a closed gate."""
+    return any((v or {}).get("verdict") in GATE_VERDICTS for v in verdicts)
+
+
+def gate_lines(h, items):
     """Correction gate marker. Owner decision (Alex, 27 Nov 05:37): the route does NOT have to be private, so it stays in
     this public repo. The fix text is the review output already shown above; keys, tokens and emails are redacted. The
     block opens a gate that only the receipt workflow (allowlisted actor, bot-posted) closes."""
-    fixes = combined_fixes(rounds)
-    if not fixes:
-        return []
-    cid = correction_id(fixes)
+    cid = correction_id(items)
     return ["", "**Correction gate (open until a bot-posted receipt closes it; private routing not required, owner decision 27 Nov; this repo is public):**",
-            f"- Correction id: `{cid}` ({len(fixes)} fixes, listed above).",
+            f"- Correction id: `{cid}` ({len(items)} fixes, listed above).",
             "- Close it only with the 'ZANS correction receipt' workflow (allowlisted actor, main branch) giving run "
-            f"`{h}`, this correction id and one applied/rejected decision per fix. Only that bot-posted receipt counts. "
+            f"`{h}`, this correction id and exactly one decision per fix, numbered 1 to {len(items)}: "
+            "'N=applied <commit sha of the change>' or 'N=rejected <reason>'. Only that bot-posted receipt counts. "
             "No further paid run on any route until then.",
             f"<!-- {CORRECTION}:{h}:{cid} -->"]
+
+
+def correction_block(h, rounds):
+    last = rounds[-1] if rounds else {}
+    return gate_lines(h, gate_items([last.get("Claude"), last.get("OpenAI")]))
+
+
+def gate_count(comments, run, cid):
+    """How many fixes the gate with this exact run + correction id listed (read from its own bot-posted comment)."""
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        b = c.get("body") or ""
+        if f"<!-- {CORRECTION}:{run}:{cid} -->" in b:
+            m = re.search(r"Correction id: `" + cid + r"` \((\d+) fixes", b)
+            if m:
+                return int(m.group(1))
+    return None
 
 
 def pending_corrections(comments):
@@ -700,9 +743,10 @@ def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQ
             v = r[who]
             lines.append(f"- Round {r['round']} {who}: **{v['verdict']}**. {v['ack']}")
             lines += [f"  - reason: {redact(x)}" for x in v["reasons"]] + [f"  - fix: {redact(x)}" for x in v["fixes"]]
-    if outcome.startswith("AGREED REVISE"):
-        fixes = combined_fixes(rounds)
-        lines += ["", "**Combined fix list (both reviewers, final round):**"] + [f"{i}. {redact(x)}" for i, x in enumerate(fixes, 1)]
+    if outcome.startswith(("AGREED REVISE", "NO AGREEMENT", "STOPPED: rejected")):
+        last = rounds[-1] if rounds else {}
+        items = gate_items([last.get("Claude"), last.get("OpenAI")])
+        lines += ["", "**Combined fix list (both reviewers, final round):**"] + [f"{i}. {redact(x)}" for i, x in enumerate(items, 1)]
         if not mock:
             lines += correction_block(h, rounds)
     paid = 0 if mock else requests

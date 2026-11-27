@@ -259,3 +259,17 @@ def test_source_bytes_and_combined_hash_are_verified_before_any_slot():
     with pytest.raises(r.Refuse):   # live run with tampered bytes: refused before the slot comment, zero calls
         r.run(ENV, file_bytes(), [], TODAY, None, None, posted.append, lambda c, p: b"tampered")
     assert posted == []
+
+
+def test_revise_opens_a_gate_and_is_not_complete():
+    claude, openai = setup()
+    def revise(e, t):
+        o.LAST_STOP["OpenAI"] = "stop"
+        o.LAST_USAGE["OpenAI"] = ("gpt-6.2-astra", 3000, 300)
+        return json.dumps({"ack": "x", "verdict": "REVISE", "reasons": ["bad"], "fixes": ["fix the pick"]})
+    posted = []
+    verdicts, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, revise, posted.append, GETTER)
+    assert bad and f"{o.CORRECTION}:{h}:" in posted[-1] and "1 fixes" in posted[-1]
+    gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": posted[-1], "created_at": "2026-11-27T05:00:00Z"}
+    with pytest.raises(o.Stop, match="correction gate"):
+        o.require_no_pending_corrections([gate])

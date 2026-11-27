@@ -794,19 +794,35 @@ def test_correction_gate_needs_a_bot_posted_newer_receipt():
     assert o.pending_corrections([{**gate, "user": {"login": "someone"}}]) == []                                         # forged gate
 
 
-def test_receipt_workflow_refuses_bad_or_duplicate_requests():
+SHA40 = "a" * 40
+
+
+def _gate(h, n):
+    items = [f"fix {i}" for i in range(1, n + 1)]
+    body = "\n".join(o.gate_lines(h, items))
+    return {"user": {"login": o.TRUSTED_SETTLER}, "body": body, "created_at": "2026-11-27T05:00:00Z"}, o.correction_id(items)
+
+
+def test_receipt_needs_exactly_one_decision_per_fix_with_evidence():
     import orchestrator.receipt as rc
-    h, cid = "c" * 64, "f" * 64
-    gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": f"<!-- {o.CORRECTION}:{h}:{cid} -->", "created_at": "2026-11-27T05:00:00Z"}
-    body = rc.build({}, [gate], h, cid, "1=applied;2=rejected")
+    h = "c" * 64
+    gate, cid = _gate(h, 2)
+    ok = lambda sha: sha == SHA40          # noqa: E731 - stands in for "commit exists in this repo"
+    good = f"1=applied {SHA40}; 2=rejected not needed because already covered"
+    body = rc.build({}, [gate], h, cid, good, verify=ok)
     assert f"<!-- {o.RECEIPT}:{h}:{cid} -->" in body and "2 decisions" in body
     closed = {"user": {"login": o.TRUSTED_SETTLER}, "body": body, "created_at": "2026-11-27T05:10:00Z"}
-    for args in (([gate, closed], h, cid, "1=applied"),          # duplicate / already closed
-                 ([gate], "d" * 64, cid, "1=applied"),           # wrong run
-                 ([gate], h, "e" * 64, "1=applied"),             # wrong correction
-                 ([gate], h, cid, ""), ([gate], h, cid, "1=maybe"), ([gate], "abc", cid, "1=applied")):
+    for args in (([gate, closed], h, cid, good),                       # already closed
+                 ([gate], "d" * 64, cid, good), ([gate], h, "e" * 64, good),
+                 ([gate], h, cid, ""), ([gate], h, cid, "1=maybe x"), ([gate], "abc", cid, good),
+                 ([gate], h, cid, f"1=applied {SHA40}"),               # missing decision 2
+                 ([gate], h, cid, f"1=applied {SHA40}; 1=rejected twice over x"),   # duplicate index, missing 2
+                 ([gate], h, cid, f"1=applied {SHA40}; 2=rejected not needed because; 3=rejected out of range x"),
+                 ([gate], h, cid, f"1=applied {SHA40}; 2=applied"),    # applied with no evidence
+                 ([gate], h, cid, "1=applied " + "b" * 40 + "; 2=rejected not needed because"),   # commit not found
+                 ([gate], h, cid, f"1=applied {SHA40}; 2=rejected no")):                 # reason too short
         with pytest.raises(o.Stop):
-            rc.build({}, *args)
+            rc.build({}, *args, verify=ok)
     assert rc.main({"GITHUB_ACTOR": "stranger", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_REF": o.MAIN_REF,
                     "ORCH_ISSUE": "26"}) == 1
     assert rc.main({"GITHUB_ACTOR": "zankendo2-ship-it", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it",
@@ -821,6 +837,20 @@ def test_live_blocked_while_correction_has_no_receipt(monkeypatch, capsys):
     monkeypatch.setattr(o, "comments_since", lambda *a, **k: posted)
     monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "x")
     assert o.main(LIVE_ENV) == 1 and "receipt" in capsys.readouterr().out
+
+
+def test_manual_no_agreement_and_empty_fixes_also_open_a_gate():
+    h = "c" * 64
+    pv = {**V("PASS"), "fixes": []}
+    rv = {**V("REVISE"), "fixes": [], "reasons": ["thin evidence"]}
+    for outcome, rounds in (("NO AGREEMENT after the round cap - the stricter verdict REVISE stands - needs a person",
+                             [{"round": 1, "Claude": pv, "OpenAI": rv}]),
+                            ("AGREED REVISE: both reviewers want changes", [{"round": 1, "Claude": rv, "OpenAI": rv}]),
+                            ("STOPPED: rejected", [{"round": 1, "Claude": {**V("REJECT"), "fixes": []}}])):
+        live = o.summary(h, "t", [URL], outcome, rounds, 2, "live", 2, [GOOD_SHA])
+        assert f"{o.CORRECTION}:{h}:" in live and "1 fixes" in live
+    ok = o.summary(h, "t", [URL], "AGREED: both PASS (x)", [{"round": 1, "Claude": pv, "OpenAI": pv}], 2, "live", 2, [GOOD_SHA])
+    assert o.CORRECTION not in ok
 
 
 def test_every_paid_route_shares_the_correction_gate():
