@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""ZANS compact DAILY BATCH review. DRAFT: inactive until the owner merges it and sets ZANS_ORCH_ENABLED=true.
+"""ZANS compact DAILY BATCH review. ACTIVE on main when ZANS_ORCH_ENABLED=true and the schedule gate is true; otherwise it makes no call.
 
-ONE OpenAI call per UTC day, hard cap <= $0.30 (worst case derived from the caps), no retries, no Claude paid call
+ONE OpenAI call per batch invocation, hard cap <= $0.30 (worst case derived from the caps), no retries, no Claude paid call
 (Claude's check is the free local self-check recorded in the manifest). Shares the orchestrator's ledger and
-concurrency group: the one-paid-run-a-day cap counts ALL paid routes.
+concurrency group: the shared daily count across ALL paid routes currently has a temporary code ceiling of 6/day,
+further lowered by ZANS_ORCH_MAX_RUNS_PER_DAY.
 
 Manifest (a text JSON file pinned to a 40-char commit, owner allowlisted):
   {"date": "YYYY-MM-DD", "items": [{"id": "mugb-v3", "title": "...", "url": "<pinned text artifact>",
@@ -170,7 +171,7 @@ def plan(items, date, texts, comments, env, today):
     if o.attempted(comments, h):
         raise Skip("this exact batch was already attempted (slot used); no automatic paid retry")
     if o.runs_today(comments, today, "live") >= o.day_cap(env, "live"):
-        raise o.Stop("STOPPED: the shared one paid run per UTC day is already used by a paid route.")
+        raise o.Stop("STOPPED: the shared daily paid-run ceiling has been reached across paid routes.")
     month = today[:7]
     if o.overruns(comments, month):
         raise o.Stop("STOPPED: an earlier run this month cost more than its reservation.")

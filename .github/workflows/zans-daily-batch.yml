@@ -1,12 +1,12 @@
-# ZANS compact DAILY BATCH review (DRAFT, inactive). ONE OpenAI call, <= $0.30, no retries.
-# Same kill switch, actor allowlist, caps, ledger (issue #26 slot/settle comments) and concurrency group as the
-# every paid route (manual, products, racing and retro) shares at most ONE paid run a day.
+# ZANS compact DAILY BATCH review (active when the schedule gates are true; skips safely outside its window). ONE OpenAI call, <= $0.30, no retries.
+# Same kill switch, actor allowlist, caps, ledger (issue #26 slot/settle comments) and concurrency group as every paid route.
+# The shared daily count across ALL paid routes has a temporary code ceiling of 6/day, further lowered by ZANS_ORCH_MAX_RUNS_PER_DAY.
 # mode=mock is free (no keys). mode=live also needs vars.ZANS_ORCH_ENABLED == 'true' and a run from main.
 name: ZANS daily batch review (pilot)
 
 on:
   schedule:
-    - cron: "10 8 * * *"   # 09:10 UK in summer (BST), after the racing review so racing takes the day's one paid run first; opt-in: LIVE only if vars.ZANS_BATCH_SCHEDULE == 'true'
+    - cron: "10 8 * * *"   # 09:10 UK in summer (BST), after the racing review; both routes consume the same shared daily count; opt-in: LIVE only if vars.ZANS_BATCH_SCHEDULE == 'true'
     - cron: "10 9 * * *"   # 09:10 UK in winter (GMT); a UK-time gate (UK_WINDOW in daily_batch.py) lets only the right one run
   workflow_dispatch:
     inputs:
