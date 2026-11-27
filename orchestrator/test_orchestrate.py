@@ -76,6 +76,7 @@ def test_no_links_refused():
 
 def test_dedup_by_task_and_artifact_hash():
     h = o.run_hash("task", [URL])
+    assert len(h) == 64
     assert h == o.run_hash(" task ", [URL])
     assert h != o.run_hash("task", [URL.replace("a" * 40, "b" * 40)])
     assert o.already_done([{"body": f"x <!-- zans-orch:{h} -->"}], h)
@@ -256,10 +257,24 @@ def test_daily_cap_counts_reserved_slots_not_summaries(monkeypatch, capsys):
     assert not [c for c in calls if c[0] == "POST"]
 
 
-def test_mock_slots_do_not_use_live_slot():
+def test_global_paid_slot_counts_live_racing_and_retro_but_not_mock():
     today = "2026-11-25"
-    assert o.runs_today([{"body": o.slot_tag("mock", today, "a")}], today, "live") == 0
-    assert o.runs_today([{"body": o.slot_tag("live", today, "a")}], today, "live") == 1
+    mock = {"body": o.slot_tag("mock", today, "a")}
+    live = {"body": o.slot_tag("live", today, "b")}
+    racing = {"body": o.slot_tag("racing", today, "c")}
+    retro = {"body": o.slot_tag("retro", today, "d")}
+    assert o.runs_today([mock], today, "live") == 0
+    assert o.runs_today([live], today, "racing") == 1
+    assert o.runs_today([racing], today, "live") == 1
+    assert o.runs_today([retro], today, "live") == 1
+    assert o.runs_today([live, racing], today, "retro") == 2
+
+
+def test_any_paid_slot_blocks_exact_fingerprint_retry_across_days():
+    h = "a" * 64
+    old = {"body": o.slot_tag("racing", "2026-11-25", h)}
+    assert o.attempted([old], h)
+    assert not o.attempted([old], "b" * 64)
 
 
 def test_slot_reserved_before_any_paid_call(monkeypatch):
@@ -582,7 +597,9 @@ def test_live_run_posts_settle_with_measured_cost(monkeypatch):
     assert o.main(LIVE_ENV) == 0
     posts = [c[2]["body"] for c in calls if c[0] == "POST"]
     assert "zans-orch-slot:live:" in posts[0] and "AGREED REVISE" in posts[1]
+    assert f"<!-- {o.MARKER}:" not in posts[1]
     m = o.SETTLE_RE.search(posts[2])
+    assert f"<!-- {o.MARKER}:" in posts[2]
     # 2 calls (matching REVISE stops): Claude 0.045 + OpenAI 0.18 = 0.225, x1.25 safety
     assert m and abs(float(m.group(3)) - 0.2813) < 1e-3
 
@@ -690,8 +707,10 @@ def test_settle_flags_overrun_when_cost_exceeds_reserve():
     orig = o.gh
     try:
         o.gh = lambda env, method, path, body=None: posted.append(body)
-        o.settle({}, "r/x", "26", "2026-11-26", "abc", 2.45)
+        settled = o.settle({}, "r/x", "26", "2026-11-26", "abc", 2.45,
+                           completion_markers=["<!-- zans-orch:abc -->"])
     finally:
         o.gh = orig
     m = o.SETTLE_RE.search(posted[0]["body"])
     assert m and m.group(4) and float(m.group(3)) == 5.0 and "OVERRUN" in posted[0]["body"]
+    assert settled is False and "<!-- zans-orch:abc -->" not in posted[0]["body"]
