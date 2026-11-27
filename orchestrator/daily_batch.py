@@ -3,7 +3,7 @@
 
 ONE OpenAI call per UTC day, hard cap <= $0.30 (worst case derived from the caps), no retries, no Claude paid call
 (Claude's check is the free local self-check recorded in the manifest). Shares the orchestrator's ledger and
-concurrency group: the one-paid-run-a-day cap counts BOTH routes.
+concurrency group: the one-paid-run-a-day cap counts ALL paid routes.
 
 Manifest (a text JSON file pinned to a 40-char commit, owner allowlisted):
   {"date": "YYYY-MM-DD", "items": [{"id": "mugb-v3", "title": "...", "url": "<pinned text artifact>",
