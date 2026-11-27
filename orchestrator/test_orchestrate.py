@@ -275,6 +275,8 @@ def test_any_paid_slot_blocks_exact_fingerprint_retry_across_days():
     h = "a" * 64
     old = {"user": BOT, "body": o.slot_tag("racing", "2026-11-25", h)}
     assert o.attempted([old], h)
+    legacy = {"user": BOT, "body": o.slot_tag("live", "2026-11-24", h[:16])}
+    assert o.attempted([legacy], h)       # preserve legacy 16-hex reservation dedup during migration
     assert not o.attempted([old], "b" * 64)
 
 def test_untrusted_comments_cannot_spend_or_dedup():
