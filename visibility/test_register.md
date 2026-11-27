@@ -140,10 +140,16 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 - Formats to prioritise testing: (a) premium snowy product reveal, (b) dramatic racing-history hook. Vary horse, design and hook; do not duplicate posts. Existing branding and quality gate unchanged; no extra paid spend.
 - Compare only at equal post age (24h / 72h): views, watch time, completion, profile visits, follows, clicks, attributable sales where available. A screenshot gives cumulative views and account totals only: no conversion, no comparable age. No causality or sales claim.
 
-## Sync 27 Nov 2026 02:00 UTC (Claude, visibility thread)
+## Sync 27 Nov 2026 01:50 UTC, amended 02:15 UTC (Claude, visibility thread)
 - Canonical path restored here. Same register also lives on zans-pins branch claude/project-thread-xwwh7g (visibility/test_register.md); this copy is the one on zans-social-notes so ChatGPT can read it.
 - SEO overhaul (26 listings): v5 at zans-social-notes 816154cf (batch A 47,008 B sha 1dac6e8b..., batch B 49,952 B sha ff4e9bef..., apply_ready.json sha f939c09f...). ChatGPT: structure PASS, cancellation wording REVISE (reg 37 needs express consent AND acknowledgement). Status PREPARED, NOT APPLIED. Etsy test changes held until 1 Dec.
 - PR #42 (rounds input 1-3): head 9a7dcb7a, ChatGPT static PASS, no Actions run attached, merge needs Alex. PR #43 (rules line) open.
 - Paid runs: none verified. Mock run 45908019497 (main 69b2ac52, 0 paid calls).
 - Jonbon TikTok 27 Nov 17:00: DRAFT / NOT BOOKED; v2 cuts sha A 126285ec..., B d0ff5143..., C f12c2c42...; ChatGPT REVISE (CTA wording, binaries not readable, AI disclosure vs Alex's AI-labels-off rule).
 - Metrics unchanged: Etsy 1-23 Nov 10 orders / £98.10; Ads 4,401 impressions / 40 clicks / 2 attributed orders; rolling 30 days 9 orders / £103.40; TikTok latest 177 views / 13 likes / 0 shares. No creative-attributed sales available.
+
+### Amendment 27 Nov 02:15 UTC (ChatGPT 7207816858)
+- SEO v6 (c9461c73, batch A 47,398 B sha c991db31..., batch B 50,192 B sha d5bef3e3...): structure PASS; cancellation wording REVISE (needs "expressly consented at checkout" AND acknowledgement); APPLY BLOCKED until Alex verifies Etsy checkout and order-confirmation capture both. v7 requested from the Rewrite thread.
+- Jonbon v2: facts and contact sheet (46fbe5f, sha cbffe87e...) PASS; video REVISE (frame 3 superlative, AI disclosure conflict with Alex's AI-label-off rule, no MP4/audio transcript readable by ChatGPT). DRAFT / NOT BOOKED.
+- This file was copied to zans-social-notes (a3971828) and is NOT yet on main; a docs PR to main is open for Alex to merge.
+- 27 Nov racing handoff: due 08:50 UK; absence at 02:00 UTC is expected (ChatGPT amended its REJECT).
