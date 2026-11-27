@@ -7,8 +7,8 @@ slip or rule (those need the reviewer PASS and the owner), and it is not a visua
 
 Input: racing-review/<UTC date>.json on branch claude/project-thread-hgtq2b of this repo (the racing thread commits it). The branch
 head is resolved to a commit sha at run time and the file is read at that immutable sha. No file for today = zero calls.
-Own run type "racing": its own slot (one a day) but the SAME monthly cap, kill switch, actor allowlist and concurrency
-group as the other paid routes. Hard cap $0.80 reserved (conservative list prices, 2 calls); the real cost of a 6 KB
+Shares the ONE daily paid slot with products, manual and retro routes, plus the same monthly cap, kill switch,
+actor allowlist and concurrency group. Any paid route's reservation blocks all others that UTC day. Hard cap $0.80 reserved (conservative list prices, 2 calls); the real cost of a 6 KB
 file is a few cents. No retries: a failed or invalid call is recorded and not run again.
 """
 import hashlib
