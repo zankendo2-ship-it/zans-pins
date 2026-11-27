@@ -1,6 +1,6 @@
 # 
 # Advisory only: never changes a pick, slip or rule. Same kill switch, actor allowlist, monthly cap, ledger (issue #26)
-# and concurrency group as the other paid routes; one shared daily slot blocks all paid routes.
+# and concurrency group as the other paid routes; one shared daily count (code ceiling MAX_LIVE_RUNS_PER_DAY, currently TEMPORARILY 6, further lowered by ZANS_ORCH_MAX_RUNS_PER_DAY) blocks all paid routes.
 # TIME: cron is UTC, so there are two lines (summer/winter); the code only runs the one inside the UK-time window
 # UK_WINDOW in orchestrator/daily_racing.py (08:45-09:25 Europe/London). To change the time, edit the two cron lines and that window.
 # Live scheduled runs also need repository variables ZANS_ORCH_ENABLED=true and ZANS_RACING_SCHEDULE=true.

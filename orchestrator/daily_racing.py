@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ZANS daily RACING review (DRAFT, inactive until the owner sets ZANS_RACING_SCHEDULE=true).
+"""ZANS daily RACING review (ACTIVE on main: the schedule gate ZANS_RACING_SCHEDULE is true and ZANS_ORCH_ENABLED is true; live only inside the UK-time window).
 
 After the day's picks are frozen (~08:45 UK), ONE Claude call and ONE ChatGPT call review the sealed picks file as TEXT:
 internal consistency, missing races/prices, model disagreements, data gaps. ADVISORY ONLY: it never changes a pick,
@@ -696,7 +696,7 @@ def plan(data, comments, env, today, allow_gate=None, file_date=None, extra=""):
     if o.attempted(comments, h):
         raise Skip("this exact racing file was already attempted (slot used); no automatic paid retry")
     if o.runs_today(comments, today, "racing") >= o.day_cap(env, "racing"):
-        raise o.Stop("STOPPED: the shared one paid run per UTC day is already used by a paid route.")
+        raise o.Stop("STOPPED: the shared daily count of paid runs is already used up by the paid routes.")
     month = today[:7]
     if o.overruns(comments, month):
         raise o.Stop("STOPPED: an earlier run this month cost more than its reservation.")

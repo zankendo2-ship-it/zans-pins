@@ -1,4 +1,4 @@
-# ZANS compact DAILY BATCH review (DRAFT, inactive). ONE OpenAI call, <= $0.30, no retries.
+# ZANS compact DAILY BATCH review (active when the schedule gates are true; skips safely outside its window). ONE OpenAI call, <= $0.30, no retries.
 # Same kill switch, actor allowlist, caps, ledger (issue #26 slot/settle comments) and concurrency group as the
 # every paid route (manual, products, racing and retro) shares at most ONE paid run a day.
 # mode=mock is free (no keys). mode=live also needs vars.ZANS_ORCH_ENABLED == 'true' and a run from main.

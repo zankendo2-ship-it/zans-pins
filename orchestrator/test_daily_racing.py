@@ -79,17 +79,17 @@ ONE = {**ENV, "ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}   # owner hard cap: one shared 
 def test_global_paid_slot_blocks_products_and_racing_cross_route():
     data = file_bytes()
     batch_slot = {"user": BOT, "body": o.slot_tag("live", TODAY, "b" * 64, 0.3)}
-    with pytest.raises(o.Stop, match="shared one paid run"):
+    with pytest.raises(o.Stop, match="shared daily count of paid runs"):
         r.plan(data, [batch_slot], ONE, TODAY)
     h = r.fingerprint(data)
     assert len(h) == 64
     with pytest.raises(r.Skip):
         r.plan(data, [{"user": BOT, "body": o.slot_tag("racing", TODAY, h, 0.7)}], ONE, TODAY)
     racing_slot = {"user": BOT, "body": o.slot_tag("racing", TODAY, "c" * 64, 0.7)}
-    with pytest.raises(o.Stop, match="shared one paid run"):
+    with pytest.raises(o.Stop, match="shared daily count of paid runs"):
         r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [racing_slot], ONE, TODAY)
     import orchestrator.daily_batch as b
-    with pytest.raises(o.Stop, match="shared one paid run"):
+    with pytest.raises(o.Stop, match="shared daily count of paid runs"):
         b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [racing_slot], ONE, TODAY)
     with pytest.raises(o.Stop, match="MONTH"):
         r.plan(data, [], {**ONE, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)
@@ -814,3 +814,23 @@ def test_evidence_course_may_be_file_level_and_win_key_names_the_horse():
     d = _evd(); d["sources"][0]["blob_sha1"] = _blob(files["c/ascot.json"]); d["races"][0]["evidence"]["pick_sha256"] = r._h(doc["picks"][0])
     with pytest.raises(r.Refuse, match="not the horse"):
         _ev(d, files)
+
+
+def test_racing_reserve_fits_cap_and_settlement_overrun_blocks_next_run(monkeypatch):
+    """Boundary proof (caps unchanged): reserve $0.75 <= $0.80 cap; the 1.25 factor applies only at settlement,
+    so a theoretical run at the hard token caps settles at $0.9375, above its reservation = OVERRUN that blocks the next live run."""
+    reserve = r.worst_case_usd()
+    assert reserve == 0.75 and reserve <= r.CAP_USD == 0.80
+    assert r.plan(file_bytes(), [], ENV, TODAY)["reserve"] == 0.75          # live plan does not refuse on the cap
+    # measured usage at the hard caps: 60,000 in x $10/M + 2 x 1,500 out x $50/M = $0.75, settled x 1.25
+    o.RUN_COST.update(usd=0.75, complete=True)
+    posted = []
+    monkeypatch.setattr(o, "gh", lambda env, method, path, body=None: posted.append(body))
+    ok = o.settle({}, "r/x", "26", TODAY, "a" * 64, reserve)
+    body = posted[0]["body"]
+    m = o.SETTLE_RE.search(body)
+    assert ok is False and m and float(m.group(3)) == 0.9375 and m.group(4) and "OVERRUN" in body
+    comments = [{"user": {"login": o.TRUSTED_SETTLER}, "body": o.settle_tag(TODAY, "a" * 64, 0.9375, over=True)}]
+    assert o.overruns(comments, TODAY[:7])
+    with pytest.raises(o.Stop):                                           # next paid run this month is refused
+        r.plan(file_bytes(), comments, ENV, TODAY)

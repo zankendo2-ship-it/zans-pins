@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ZANS compact DAILY BATCH review. DRAFT: inactive until the owner merges it and sets ZANS_ORCH_ENABLED=true.
+"""ZANS compact DAILY BATCH review. ACTIVE on main when ZANS_ORCH_ENABLED=true and the schedule gate is true; otherwise it makes no call.
 
 ONE OpenAI call per UTC day, hard cap <= $0.30 (worst case derived from the caps), no retries, no Claude paid call
 (Claude's check is the free local self-check recorded in the manifest). Shares the orchestrator's ledger and
@@ -170,7 +170,7 @@ def plan(items, date, texts, comments, env, today):
     if o.attempted(comments, h):
         raise Skip("this exact batch was already attempted (slot used); no automatic paid retry")
     if o.runs_today(comments, today, "live") >= o.day_cap(env, "live"):
-        raise o.Stop("STOPPED: the shared one paid run per UTC day is already used by a paid route.")
+        raise o.Stop("STOPPED: the shared daily count of paid runs is already used up by the paid routes.")
     month = today[:7]
     if o.overruns(comments, month):
         raise o.Stop("STOPPED: an earlier run this month cost more than its reservation.")
