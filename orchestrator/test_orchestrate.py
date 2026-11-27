@@ -583,10 +583,12 @@ def test_usage_cost_known_models_only():
         assert i <= o.WORST_USD_PER_M_IN and o_ <= o.WORST_USD_PER_M_OUT
 
 
-def _usage_post(with_usage=True):
-    good = '{"ack":"a","verdict":"REVISE","reasons":["r"],"fixes":["f"]}'
+def _usage_post(with_usage=True, claude_v="REVISE", openai_v="REVISE"):
+    def mk(v):
+        return '{"ack":"a","verdict":"%s","reasons":["r"],"fixes":%s}' % (v, '["f"]' if v != "PASS" else "[]")
 
     def fake_post(url, headers, body):
+        good = mk(claude_v if "anthropic" in url else openai_v)
         if "anthropic" in url:
             d = {"model": "claude-sonnet-5-5", "stop_reason": "end_turn", "content": [{"type": "text", "text": good}]}
             if with_usage:
@@ -609,7 +611,8 @@ def test_live_run_posts_settle_with_measured_cost(monkeypatch):
     assert "zans-orch-slot:live:" in posts[0] and "AGREED REVISE" in posts[1]
     assert f"<!-- {o.MARKER}:" not in posts[1]
     m = o.SETTLE_RE.search(posts[2])
-    assert f"<!-- {o.MARKER}:" in posts[2]
+    assert f"<!-- {o.MARKER}:" not in posts[2]       # AGREED REVISE opens a gate: never a completion marker
+    assert "zans-orch-correction:" in posts[1]
     # 2 calls (matching REVISE stops): Claude 0.045 + OpenAI 0.18 = 0.225, x1.25 safety
     assert m and abs(float(m.group(3)) - 0.2813) < 1e-3
 
@@ -928,3 +931,26 @@ def test_public_summary_redacts_keys_tokens_and_emails():
     for leak in ("a.b@example.com", "sk-abcdefghijklmnopqrstuv", "ghp_abcdefghijklmnopqrstuv"):
         assert leak not in s
     assert "[redacted]" in s
+
+
+@pytest.mark.parametrize("cv,ov", [("REVISE", "REVISE"), ("PASS", "REVISE"), ("REVISE", "PASS"), ("PASS", "REJECT"), ("REJECT", "PASS")])
+def test_manual_route_gate_outcomes_never_emit_run_marker(monkeypatch, cv, ov):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
+    monkeypatch.setattr(o, "_post", _usage_post(True, cv, ov))
+    o.main(LIVE_ENV)
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert any("zans-orch-correction:" in p for p in posts), (cv, ov)      # gate exists
+    assert not any(f"<!-- {o.MARKER}:" in p for p in posts), (cv, ov)      # no completion marker anywhere
+
+
+def test_manual_route_pass_pass_marker_only_in_settlement(monkeypatch):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
+    monkeypatch.setattr(o, "_post", _usage_post(True, "PASS", "PASS"))
+    assert o.main(LIVE_ENV) == 0
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert not any("zans-orch-correction:" in p for p in posts)
+    assert f"<!-- {o.MARKER}:" not in posts[1] and f"<!-- {o.MARKER}:" in posts[2]

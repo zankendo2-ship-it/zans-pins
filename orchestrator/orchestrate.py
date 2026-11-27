@@ -881,6 +881,10 @@ def main(env=None):
                 "Claude" in r and "OpenAI" in r
                 and r["Claude"]["verdict"] != "BLOCKER" and r["OpenAI"]["verdict"] != "BLOCKER"
                 for r in rounds)
+            # Complete means the FINAL round is PASS + PASS and no correction gate opened (REVISE/REJECT never completes).
+            last = rounds[-1] if rounds else {}
+            review_complete = review_complete and not opens_gate([last.get("Claude"), last.get("OpenAI")]) \
+                and all(last.get(w, {}).get("verdict") == "PASS" for w in ("Claude", "OpenAI"))
             if mode != "live" and outcome.startswith("AGREED"):
                 outcome = "MOCK COMPLETE: scripted PASS/PASS, pipeline works (no real verdict)"
             gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
