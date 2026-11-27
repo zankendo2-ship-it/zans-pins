@@ -630,31 +630,44 @@ def correction_id(fixes):
 
 
 def correction_block(h, rounds):
-    """Handoff to the Claude correction thread, with the receipt the next paid run waits for."""
+    """Correction handoff marker. The fix text is the review output already shown above (public, as the repo is public);
+    NO private payload is sent anywhere, because no authenticated private Claude destination is configured. The block
+    only opens a correction gate that the receipt workflow (allowlisted actor, bot-posted) closes."""
     fixes = combined_fixes(rounds)
     if not fixes:
         return []
     cid = correction_id(fixes)
-    return ["", "**Correction handoff (to the Claude correction thread, not to ChatGPT):**",
-            f"- Correction id: `{cid}`",
-            f"- To close: the Claude correction thread posts a comment holding an HTML comment of the form {RECEIPT}:RUN:CORRECTION "
-            f"(run `{h}`, correction `{cid}`, joined by colons) after it has applied or rejected every fix. "
-            "No further paid run is allowed until that receipt exists.",
+    return ["", "**Correction gate (BLOCKED until closed; private routing NOT configured, this repo is public):**",
+            f"- Correction id: `{cid}` ({len(fixes)} fixes, listed above).",
+            "- Close it only with the 'ZANS correction receipt' workflow (allowlisted actor, main branch) giving run "
+            f"`{h}`, this correction id and one applied/rejected decision per fix. Only that bot-posted receipt counts. "
+            "No further paid run on any route until then.",
             f"<!-- {CORRECTION}:{h}:{cid} -->"]
 
 
 def pending_corrections(comments):
-    """(run hash, correction id) pairs posted by the workflow with no matching receipt yet."""
-    done = {m.groups() for c in comments if (c.get("user") or {}).get("login") != TRUSTED_SETTLER
-            for m in RECEIPT_RE.finditer(c.get("body") or "")}   # a receipt must come from a person/thread, never the bot
-    out = []
+    """(run, correction) pairs with no valid receipt. Both the correction and its receipt must be posted by the workflow
+    bot, and the receipt must be newer than the correction; a person's or stranger's comment never closes a gate."""
+    opened = {}
     for c in comments:
         if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
             continue
         for m in CORRECTION_RE.finditer(c.get("body") or ""):
-            if m.groups() not in done:
-                out.append(m.groups())
-    return out
+            opened.setdefault(m.groups(), c.get("created_at") or "")
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        for m in RECEIPT_RE.finditer(c.get("body") or ""):
+            k = m.groups()
+            if k in opened and (c.get("created_at") or "") >= opened[k]:
+                opened.pop(k)
+    return list(opened)
+
+
+def require_no_pending_corrections(comments):
+    if pending_corrections(comments):
+        raise Stop("STOPPED: an earlier run has a correction gate with no bot-posted receipt. Close it with the "
+                   "correction receipt workflow first; no paid run on any route until then.")
 
 
 def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQUESTS, shas=None):
@@ -778,9 +791,8 @@ def main(env=None):
         if mode == "live" and overruns(recent, month):
             raise Stop("STOPPED: an earlier live run this month cost MORE than its reservation. No further live runs "
                        "until the owner reviews the cap and the pricing table.")
-        if mode == "live" and pending_corrections(recent):
-            raise Stop("STOPPED: an earlier run has a correction handoff with no receipt from the Claude correction thread. "
-                       "Post the receipt first; no further paid run until then.")
+        if mode == "live":
+            require_no_pending_corrections(recent)
         files = fetch_artifacts(urls, shas=shas) if mode == "live" else ""
         reserve = 0.0
         if mode == "live":

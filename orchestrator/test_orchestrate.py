@@ -773,30 +773,62 @@ def test_artifact_ids_and_summary_show_sha_and_id():
     assert ids[0] in s and GOOD_SHA in s
 
 
-def test_correction_handoff_only_on_live_revise_and_needs_receipt():
+def test_correction_gate_needs_a_bot_posted_newer_receipt():
     h = "c" * 64
     rounds = [{"round": 1, "Claude": {**V("REVISE"), "fixes": ["fix A"]}, "OpenAI": {**V("REVISE"), "fixes": ["fix B"]}}]
     live = o.summary(h, "t", [URL], "AGREED REVISE: both reviewers want changes", rounds, 2, "live", 2, [GOOD_SHA])
     mock = o.summary(h, "t", [URL], "AGREED REVISE: both reviewers want changes", rounds, 0, "mock", 2, [GOOD_SHA])
-    assert o.CORRECTION in live and o.CORRECTION not in mock
+    assert o.CORRECTION in live and o.CORRECTION not in mock and "NOT configured" in live
     cid = o.correction_id(o.combined_fixes(rounds))
-    bot = {"user": {"login": o.TRUSTED_SETTLER}, "body": live}
-    assert o.pending_corrections([bot]) == [(h, cid)]
-    receipt = {"user": {"login": "zankendo2-ship-it"}, "body": f"<!-- {o.RECEIPT}:{h}:{cid} -->"}
-    assert o.pending_corrections([bot, receipt]) == []
-    forged = {"user": {"login": "someone"}, "body": live}
-    assert o.pending_corrections([forged]) == []
+    BOT = {"login": o.TRUSTED_SETTLER}
+    gate = {"user": BOT, "body": live, "created_at": "2026-11-27T05:00:00Z"}
+    rec = lambda login, run, c, at: {"user": {"login": login}, "created_at": at,   # noqa: E731
+                                     "body": f"<!-- {o.RECEIPT}:{run}:{c} -->"}
+    assert o.pending_corrections([gate]) == [(h, cid)]
+    assert o.pending_corrections([gate, rec(o.TRUSTED_SETTLER, h, cid, "2026-11-27T05:05:00Z")]) == []        # valid
+    assert o.pending_corrections([gate, rec("zankendo2-ship-it", h, cid, "2026-11-27T05:05:00Z")]) == [(h, cid)]  # owner/stranger/any non-bot
+    assert o.pending_corrections([gate, rec("stranger", h, cid, "2026-11-27T05:05:00Z")]) == [(h, cid)]
+    assert o.pending_corrections([gate, rec(o.TRUSTED_SETTLER, "d" * 64, cid, "2026-11-27T05:05:00Z")]) == [(h, cid)]   # wrong run
+    assert o.pending_corrections([gate, rec(o.TRUSTED_SETTLER, h, "e" * 64, "2026-11-27T05:05:00Z")]) == [(h, cid)]    # wrong hash
+    assert o.pending_corrections([gate, rec(o.TRUSTED_SETTLER, h, cid, "2026-11-27T04:00:00Z")]) == [(h, cid)]          # older than gate
+    assert o.pending_corrections([{**gate, "user": {"login": "someone"}}]) == []                                         # forged gate
+
+
+def test_receipt_workflow_refuses_bad_or_duplicate_requests():
+    import orchestrator.receipt as rc
+    h, cid = "c" * 64, "f" * 64
+    gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": f"<!-- {o.CORRECTION}:{h}:{cid} -->", "created_at": "2026-11-27T05:00:00Z"}
+    body = rc.build({}, [gate], h, cid, "1=applied;2=rejected")
+    assert f"<!-- {o.RECEIPT}:{h}:{cid} -->" in body and "2 decisions" in body
+    closed = {"user": {"login": o.TRUSTED_SETTLER}, "body": body, "created_at": "2026-11-27T05:10:00Z"}
+    for args in (([gate, closed], h, cid, "1=applied"),          # duplicate / already closed
+                 ([gate], "d" * 64, cid, "1=applied"),           # wrong run
+                 ([gate], h, "e" * 64, "1=applied"),             # wrong correction
+                 ([gate], h, cid, ""), ([gate], h, cid, "1=maybe"), ([gate], "abc", cid, "1=applied")):
+        with pytest.raises(o.Stop):
+            rc.build({}, *args)
+    assert rc.main({"GITHUB_ACTOR": "stranger", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_REF": o.MAIN_REF,
+                    "ORCH_ISSUE": "26"}) == 1
+    assert rc.main({"GITHUB_ACTOR": "zankendo2-ship-it", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it",
+                    "GITHUB_REF": "refs/heads/x", "ORCH_ISSUE": "26"}) == 1
 
 
 def test_live_blocked_while_correction_has_no_receipt(monkeypatch, capsys):
-    h = "d" * 64
-    cid = "e" * 64
+    h, cid = "d" * 64, "e" * 64
     posted = [{"user": {"login": o.TRUSTED_SETTLER}, "body": f"<!-- {o.CORRECTION}:{h}:{cid} -->",
                "created_at": "2026-11-27T01:00:00Z"}]
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"body": "", "comments": 0} if m == "GET" and "comments" not in path else [])
     monkeypatch.setattr(o, "comments_since", lambda *a, **k: posted)
     monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "x")
     assert o.main(LIVE_ENV) == 1 and "receipt" in capsys.readouterr().out
+
+
+def test_every_paid_route_shares_the_correction_gate():
+    import orchestrator.daily_racing as r2
+    import orchestrator.daily_batch as b2
+    import orchestrator.daily_retro as t2
+    for mod in (r2, b2, t2):
+        assert "require_no_pending_corrections" in open(mod.__file__).read()
 
 
 def test_temporary_setup_ceiling_allows_three_paid_runs_not_four():

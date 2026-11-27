@@ -104,6 +104,7 @@ def plan(data, expected_sha, comments, env, today):
         return {"hash": h, "reserve": worst_case_usd(text), "text": text, "sha256": expected_sha}
     if today != ALLOWED_DATE:
         raise o.Stop(f"REFUSED: this one-off review is only for {ALLOWED_DATE} (UTC).")
+    o.require_no_pending_corrections(comments)
     if o.already_done(comments, h) or o.attempted(comments, h):
         raise o.Stop("STOPPED: this exact file was already attempted (slot used); no automatic paid retry.")
     if o.runs_today(comments, today, "retro") >= o.day_cap(env, "retro"):

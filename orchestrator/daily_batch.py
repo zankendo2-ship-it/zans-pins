@@ -164,6 +164,7 @@ def plan(items, date, texts, comments, env, today):
     if env.get("ORCH_MODE", "mock") != "live":
         # Free mock: plumbing only. No slot, no budget, so no paid-ledger check.
         return {"hash": h, "reserve": worst_case_usd(), "prompt": build_prompt(items, texts)}
+    o.require_no_pending_corrections(comments)
     if o.already_done(comments, h):
         raise Skip("duplicate: this exact artifact set was already reviewed (no paid re-review)")
     if o.attempted(comments, h):
