@@ -381,7 +381,7 @@ def test_schema_v3_needs_review_detail_or_explicit_null_from_29_nov():
     with pytest.raises(r.Refuse, match="no usable"):                       # a picked race with null reasons is a gap, not an answer
         r.validate(json.dumps(d).encode(), "2026-11-29")
     ok = {**full, "zans_reasons": "top rated on course form", "cautions": "none", "data_chance": 0.31, "best_price": 2.5,
-          "second": "Blue Sky", "rpr_pick": "Alpha Star", "longshot": None, "longshot_reason": "no runner is priced at 15.00 or more"}
+          "second": "Blue Sky", "second_reason": None, "rpr_pick": "Alpha Star", "longshot": None, "longshot_reason": "no runner is priced at 15.00 or more"}
     d["races"] = [ok]
     r.validate(json.dumps(d).encode(), "2026-11-29")
     d["races"] = [{**ok, "cautions": ""}]
