@@ -476,8 +476,9 @@ def check_evidence(d, getter):
     record's horse must be the win pick; the pick source and the price source must each be captured strictly before the off; every populated
     field is compared with its mapped record value (text traceable, names present, numbers equal, booleans equal) or listed NOT VERIFIED;
     price_row_sha256 / longshot_row_sha256 = the runner's row in the prices file; best_price = best_dec, sky_bet_price = the Sky Bet term;
-    an unverified reason field caps confidence at 6. Evidence ids are unique. Public copies are authoritative; each source's blob_sha1 must be the
-    git blob hash of those same bytes (binds the public copy to the original blob without the private repo)."""
+    an unverified reason field caps confidence at 6. Evidence ids are unique. Public copies are the trust root: blob_sha1 verifies the pinned
+    public-copy bytes. origin_path and racing_commit_original are claimed origin metadata only; this validator cannot independently cross-check
+    them against the private source repository, so they must not be described as verified original-source provenance."""
     import csv
     import io
     commit = d["racing_branch_commit"]
@@ -507,9 +508,10 @@ def check_evidence(d, getter):
         if x["path"] not in cache:
             b = getter(commit, x["path"])
             if hashlib.sha1(b"blob %d\0" % len(b) + b).hexdigest() != str(x.get("blob_sha1") or ""):
-                raise Refuse(f"source {x['path']}: blob_sha1 is not the git blob hash of the verified bytes (original-source binding)")
+                raise Refuse(f"source {x['path']}: blob_sha1 is not the git blob hash of the pinned public-copy bytes")
+            # This is a claimed origin reference, not an independently verified link to the private source repository.
             if not str(x.get("origin_path") or "").strip():
-                raise Refuse(f"source {x['path']}: origin_path is missing")
+                raise Refuse(f"source {x['path']}: claimed origin_path is missing")
             cache[x["path"]] = b
         return x, cache[x["path"]]
 
@@ -582,8 +584,9 @@ def check_evidence(d, getter):
                 if rv in (None, ""):
                     continue
                 nm = _horse_name(rv)
-                if nm is None or _norm_text(nm) not in rec_all:
-                    raise Refuse(f"{where}: {f} {rv!r} does not name a runner found in the hashed pick record")
+                mapped_nm = _horse_name(rrec)
+                if nm is None or mapped_nm is None or _key(nm) != _key(mapped_nm):
+                    raise Refuse(f"{where}: {f} {rv!r} does not match the mapped pick-record field {EVIDENCE_RECORD_KEYS[f]!r}")
             elif f in EVIDENCE_NUM_FIELDS:
                 if rv is None:
                     continue
