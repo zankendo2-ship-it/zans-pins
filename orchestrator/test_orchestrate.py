@@ -478,9 +478,9 @@ def test_verdict_text_cleaned_so_escaped_size_is_bounded():
 
 def test_monthly_reservation_counts_failed_runs_and_blocks(monkeypatch, capsys):
     today = __import__("time").strftime("%Y-%m-%d", __import__("time").gmtime())
-    # earlier live runs this month (one failed, no summary) already reserved $9.50
-    slots = [{"user": BOT, "body": o.slot_tag("live", today[:8] + "01", "a", 4.75)}, {"user": BOT, "body": o.slot_tag("live", today[:8] + "01", "b", 4.75)}]
-    assert o.reserved_this_month(slots, today[:7]) == 9.5
+    # earlier live runs this month (one failed, no summary) already reserved the full $25.00 monthly cap
+    slots = [{"user": BOT, "body": o.slot_tag("live", today[:8] + "01", "a", 12.50)}, {"user": BOT, "body": o.slot_tag("live", today[:8] + "01", "b", 12.50)}]
+    assert o.reserved_this_month(slots, today[:7]) == 25.0
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
     monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
