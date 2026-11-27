@@ -1,33 +1,24 @@
 {
  "key": "jonbon",
- "colour": "#0E6B3B",
+ "colour": "linear-gradient(#1F5A3D,#143F2B)",
  "accent": "#F5D130",
  "frames": {
   "1": {
-   "bg": "jonbon-ai3-gallop-away.webp",
-   "pos": "top",
-   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:44px;letter-spacing:7px;color:ACC'>JONBON</div><div class='t' style='top:508px;font-size:84px;white-space:nowrap'>THREE SHLOER<br>CHASE VICTORIES</div><div class='t' style='top:694px;font-size:64px;white-space:nowrap;color:ACC'>AT CHELTENHAM</div>",
-   "scale": 0.8,
-   "top": 395
+   "html": "<div style='position:absolute;left:150px;right:150px;top:470px;height:4px;background:ACC'></div><div class='k' style='top:510px;font-size:56px;letter-spacing:14px;color:ACC'>JONBON</div><div class='t' style='top:610px;font-size:104px;white-space:nowrap'>THREE SHLOER<br>CHASE<br>VICTORIES</div><div class='t' style='top:960px;font-size:78px;white-space:nowrap;color:ACC'>AT CHELTENHAM</div><div style='position:absolute;left:150px;right:150px;top:1090px;height:4px;background:ACC'></div>",
+   "pos": "top"
   },
   "2": {
-   "bg": "jonbon-ai3-fence-behind.webp",
-   "pos": "top",
-   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:36px;letter-spacing:7px;color:ACC'>THE SHLOER CHASE VICTORIES</div><div class='t' style='top:500px;font-size:76px;white-space:nowrap'>2023 \u00b7 2024 \u00b7 2026</div>",
-   "scale": 0.77,
-   "top": 434
+   "html": "<div style='position:absolute;left:150px;right:150px;top:470px;height:4px;background:ACC'></div><div class='k' style='top:510px;font-size:38px;letter-spacing:8px;color:ACC'>THE SHLOER CHASE VICTORIES</div><div class='t' style='top:590px;font-size:190px;white-space:nowrap'>2023<br>2024<br>2026</div><div style='position:absolute;left:150px;right:150px;top:1260px;height:4px;background:ACC'></div>",
+   "pos": "top"
   },
   "3": {
-   "bg": "jonbon-ai2-walk-away.webp",
-   "pos": "top",
-   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:38px;letter-spacing:7px;color:ACC'>THE HOME OF JUMP RACING</div><div class='t' style='top:502px;font-size:78px;white-space:nowrap'>YOUR FAVOURITE<br>JONBON MOMENT?</div><div class='t' style='top:676px;font-size:50px;white-space:nowrap;color:ACC'>TELL US IN THE COMMENTS</div>",
-   "scale": 0.78,
-   "top": 410
+   "html": "<div style='position:absolute;left:150px;right:150px;top:470px;height:4px;background:ACC'></div><div class='k' style='top:510px;font-size:40px;letter-spacing:8px;color:ACC'>THE HOME OF JUMP RACING</div><div class='t' style='top:610px;font-size:92px;white-space:nowrap'>YOUR FAVOURITE<br>JONBON MOMENT?</div><div class='t' style='top:900px;font-size:54px;white-space:nowrap;color:ACC'>TELL US IN THE COMMENTS</div><div style='position:absolute;left:150px;right:150px;top:1030px;height:4px;background:ACC'></div>",
+   "pos": "top"
   },
   "4": {
    "bg": "jonbon-bauble.png",
    "pos": "bot",
-   "html": "<div class='k' style='top:1290px;color:ACC;font-size:38px'>DESIGN YOURS WITH ANY NAME</div><div class='t' style='top:1360px;font-size:76px;white-space:nowrap'>SEARCH ZANS RACING<br>ON ETSY</div><div class='k' style='top:1540px;font-size:32px;letter-spacing:5px'>WISHING YOU A MERRY CHRISTMAS</div>"
+   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:1290px;color:ACC;font-size:38px'>DESIGN YOURS WITH ANY NAME</div><div class='t' style='top:1360px;font-size:76px;white-space:nowrap'>SEARCH ZANS RACING<br>ON ETSY</div><div class='k' style='top:1540px;font-size:32px;letter-spacing:5px'>WISHING YOU A MERRY CHRISTMAS</div>"
   }
  }
 }
