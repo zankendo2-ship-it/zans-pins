@@ -1,0 +1,2 @@
+# Read-only check (no writes)
+For each of the 26 listing ids in UNDO_current_copy_all_26_listings_2026-11-26.json: GET /application/listings/<id> only. Compare live title, tags, description, state with the undo copy (sha256 edca6fd8fb3510828123773d0a4994d577d7aa878a924f6cf4c360fc5e05e576). Report: token valid, listings_w scope present (api.SCOPES), per-listing "unchanged" or the difference, and any listing that is not active. No PATCH/POST/PUT/DELETE.
