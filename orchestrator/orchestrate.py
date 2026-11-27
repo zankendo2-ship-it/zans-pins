@@ -42,7 +42,7 @@ MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = ref
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_LIVE_RUNS_PER_DAY = 3              # TEMPORARY set-up ceiling (Alex 27 Nov 05:30 and 05:30:27: "More than one a day. Get everything resolved"), shared by every paid route. RESTORE TO 1 after set-up (Alex 26 Nov rule). The variable may only lower it.
+MAX_LIVE_RUNS_PER_DAY = 1              # Owner directive 26 Nov: one consolidated paid batch per UTC day across all paid routes. The variable may only lower it.
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
 MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
 PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
