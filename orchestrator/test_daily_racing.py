@@ -7,7 +7,7 @@ import orchestrator.orchestrate as o
 
 TODAY = "2026-11-27"
 ENV = {"ZANS_ORCH_ENABLED": "true", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_ACTOR": "zankendo2-ship-it",
-       "ZANS_ORCH_MAX_RUNS_PER_DAY": "3", "ZANS_ORCH_MAX_USD_PER_MONTH": "25", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
+       "ZANS_ORCH_MAX_RUNS_PER_DAY": "1", "ZANS_ORCH_MAX_USD_PER_MONTH": "25", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
        "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k", "ANTHROPIC_MODEL": "claude-sonnet-5-5", "OPENAI_MODEL": "gpt-6.2-astra",
        "GITHUB_REF": "refs/heads/main", "ORCH_MODE": "live"}
 BOT = {"login": "github-actions[bot]"}
@@ -71,7 +71,7 @@ def test_empty_picks_make_no_call():
         r.plan(file_bytes(races=[{**RACE, "win_pick": None, "status": "no pick"}]), [], ENV, TODAY)
 
 
-ONE = {**ENV, "ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}   # cap-1 behaviour; the temporary set-up ceiling is 3
+ONE = {**ENV, "ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}   # owner hard cap: one shared paid slot per UTC day
 
 
 def test_global_paid_slot_blocks_products_and_racing_cross_route():
