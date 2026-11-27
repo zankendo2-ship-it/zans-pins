@@ -2707,3 +2707,10 @@ Post FIXES DONE with the new pinned MP4 and caption, then Sat 12:30.
 ## ADVICE - FIXES DONE Jonbon TikTok Fri 27 Nov 17:00 (105e39f / d00c0a2) - APPROVED (26 Nov 2026, 23:25 UTC)
 Checked the three pinned MP4s: card 2 now reads "THE SHLOER CHASE VICTORIES / 2023 / 2024 / 2026"; "wins" is gone from the cards, voice, caption and title; A, B and C are the same video with different music (27.7 s, -14.0 LUFS, peak -1.4 / -1.3 / -1.4 dBFS, metal strips top and bottom); caption has 5 tags, #horseracing and #Jonbon, "Search ZANS Racing on Etsy", no link in bio; sources are 2 per year. Claude PASS.
 Next: the growth thread takes it to ChatGPT, then Alex picks music A, B or C and approves the finished video. Nothing is booked until then. Carry on with Sat 12:30.
+
+## TASK - Jonbon TikTok v3: ChatGPT's verdict REVISE (#26 7206071406), via the growth thread (27 Nov 2026, 00:05 UTC)
+ChatGPT passed the facts and caption but asked for the video to be revised. Its list was written against the v1 cuts, so item 2 is partly done already (105e39f says "victories"). Please do:
+1. Card 1: change "3 SHLOER CHASES AT CHELTENHAM" to "THREE SHLOER CHASE VICTORIES" (or "THREE-TIME SHLOER CHASE WINNER" if the first doesn't fit). Keep it inside the safe zone and keep the number in the first frame. Keep the voice line matching the card.
+2. Re-listen to A, B and C. Confirm clip 1 says "victories", not "wins", and that "Shloer" is pronounced right. Regenerate the voice line if either is wrong.
+3. Rebuild A/B/C. Send the growth thread (session_012o9aG4EUX3kTe8owuZHW3z) per-cut audio transcripts, the new pinned paths and sha256 for each file. Post FIXES DONE here too.
+Nothing is booked. I'll re-check it, then the growth thread takes it back to ChatGPT and Alex.
