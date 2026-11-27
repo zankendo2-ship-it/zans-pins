@@ -104,7 +104,10 @@ SLOT_RE = re.compile(r"<!-- " + SLOT + r":(mock|live|racing|retro):(\d{4}-\d{2}-
 
 
 def _slots(comments, mode):
+    """Only workflow-authored reservation markers count; public comments cannot spoof the spend ledger."""
     for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
         for m in SLOT_RE.finditer(c.get("body") or ""):
             if m.group(1) == mode:
                 yield m
@@ -116,14 +119,13 @@ PAID_MODES = ("live", "racing", "retro")
 def runs_today(comments, today, mode):
     """One shared paid slot across every paid route; free mock slots are separate."""
     if mode in PAID_MODES:
-        return sum(1 for c in comments for m in SLOT_RE.finditer(c.get("body") or "")
-                   if m.group(1) in PAID_MODES and m.group(2) == today)
+        return sum(1 for mode_ in PAID_MODES for m in _slots(comments, mode_) if m.group(2) == today)
     return sum(1 for m in _slots(comments, mode) if m.group(2) == today)
 
 
 def attempted(comments, h):
     """Any reserved slot for this exact fingerprint blocks a retry, even on a later UTC day."""
-    return any(m.group(3) == h for c in comments for m in SLOT_RE.finditer(c.get("body") or ""))
+    return any(m.group(3) == h for mode_ in PAID_MODES for m in _slots(comments, mode_))
 
 
 SETTLE = "zans-orch-settle"
@@ -325,7 +327,8 @@ def run_hash(task, urls, mode="live"):
 
 def already_done(comments, h):
     tag = f"<!-- {MARKER}:{h} -->"
-    return any(tag in (c.get("body") or "") for c in comments)
+    return any((c.get("user") or {}).get("login") == TRUSTED_SETTLER and tag in (c.get("body") or "")
+               for c in comments)
 
 
 def untrusted(text):
