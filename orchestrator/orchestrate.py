@@ -42,7 +42,7 @@ MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = ref
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_LIVE_RUNS_PER_DAY = 6              # TEMPORARY set-up ceiling (Alex 27 Nov 11:28 "keep using paid runs until everything is done"; earlier 3). RESTORE TO 1 after set-up (Alex 26 Nov rule). The variable may only lower it.
+MAX_LIVE_RUNS_PER_DAY = 3              # TEMPORARY set-up ceiling: preserve the previously documented 3/day maximum; restore to 1 after set-up. The variable may only lower it; do not raise without a new owner instruction.
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
 MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
 PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
