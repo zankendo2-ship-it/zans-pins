@@ -3,7 +3,7 @@
 Prepared 26 Nov 2026 (overnight) by the Etsy thread (Claude). **NOTHING HAS BEEN PUBLISHED TO ETSY.** Every change needs Alex's approval. Backup of the live copy: `UNDO_current_copy_all_26_listings_2026-11-26.json` (26 listings: title, tags, attributes, category, shipping, full description; read via Etsy API 26 Nov 21:15 UTC, zans-pins branch claude/project-thread-xwwh7g commit a44e81b2).
 
 ## 0. Honest status and limits
-- **ChatGPT review: NOT YET DONE.** Nothing in this file has been reviewed by ChatGPT. Tonight's free review is on issue #26; the paid run is dispatched by the growth thread after 00:00 UTC. This section is updated only after a review actually succeeds.
+- **ChatGPT review (v4):** v1 REVISE (#26 7204216509); v2 structure PASS plus 4 fixes (7205130348); v3 structure PASS, copy REVISE (7206071406). v4 applies the two copy fixes (Cheltenham Advanced opening now "form and going analysis guide"; legacy "doesn't guarantee winners" bullet removed from Ascot Flat Advanced). v4 has not been re-reviewed. Status: PREPARED, NOT APPLIED. Full-description paid review: batch A (listings 1-13) on 27 Nov, batch B (14-26) on 28 Nov.
 - **Keyword research limits:** Etsy search terms, volumes and competition data are not available to us (seller-only, not in the API; Etsy pages are blocked from this sandbox). Tags are built from (a) what each product genuinely is, (b) the live copy and the 23 Nov logged-out UK search baseline (ZANS ranks for silks/bauble/ornament and course-specific guide terms, not generic gift terms), (c) public UK gift-guide and racing-gift pages seen in web searches tonight (e.g. racing fan Christmas gift guides, racing club share gifts, 'gift for dad who likes horse racing', Father's Day racing gifts, personalised racing silks gifts). Every tag is a HYPOTHESIS, not a measured volume. Alex's Etsy Stats / Search Terms screenshots would let us prune.
 - **Products that do not exist yet:** pom pom hats, hats, accessories, trainer-specific and Cheltenham Festival gifts other than the Cheltenham guides are not in the shop, so no listing copy was invented for them. 'Royal Ascot' is NOT used (shop rule: never as a tag; also a protected event name). Cheltenham Festival / Grand National appear only as race-meeting references already in the live copy.
 - **Descriptions:** the live descriptions already hold the verified facts (page counts, race counts, sizes, delivery, returns). To avoid invented features, each new description = a rewritten keyword-led opening + the live body unchanged, plus a gift-ideas paragraph on Beginner guides and refreshed lead paragraphs on the 3 Christmas/owner gifts. The full text of every new description is below.
@@ -326,7 +326,6 @@ WHO IT'S FOR
 GOOD TO KNOW
 - Instant download: available as soon as your payment is confirmed
 - Open the zip on a computer or phone (most phones open zips in the Files app)
-- ZANS doesn't guarantee winners. We use data and stats to help you weigh the evidence.
 - This is an information and entertainment guide. It shows how Ascot has raced in the past; this guide is informational and does not make selections or guarantee future outcomes.
 - ZANS is not connected with or approved by Ascot Racecourse or any jockey, trainer or owner named in the guide. Owners' colours are shown only to help you recognise them.
 - Maps, silks and charts were drawn by ZANS with the help of AI design tools. All figures are ZANS's own analysis.
@@ -668,7 +667,7 @@ Tags kept 13, new 0.
 **FULL NEW DESCRIPTION (2891 characters):**
 
 ````text
-Cheltenham betting guide and National Hunt horse racing form guide, Advanced edition: a jumps PDF for Cheltenham, from the winter meetings to the Festival in March, with value and over-bet points for each of the 14 main hurdle, chase and bumper distances, split by going (ground conditions) where there are enough races, measured against the starting prices. Course data to help you know Cheltenham over jumps before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
+Cheltenham form and going analysis guide and National Hunt horse racing form guide, Advanced edition: a jumps PDF for Cheltenham, from the winter meetings to the Festival in March, with value and over-bet points for each of the 14 main hurdle, chase and bumper distances, split by going (ground conditions) where there are enough races, measured against the starting prices. Course data to help you know Cheltenham over jumps before the off. Includes a full colour version AND a black-and-white printable version. Digital file only, nothing is posted.
 
 Each point shows how often that kind of horse won and whether it won more or less often than its odds said, tagged VALUE, AS PRICED, OVER-BET or LONGSHOT. It is different research from the Beginner edition, not a copy with extra pages. Figures are ZANS's own analysis of 784 Cheltenham jumps races, January 2019 to October 2026.
 
