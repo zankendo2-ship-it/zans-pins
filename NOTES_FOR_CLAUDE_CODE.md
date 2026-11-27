@@ -14,6 +14,9 @@ HOME OF THIS FILE (from 19 Nov 2026, Alex's order): repo **zankendo2-ship-it/zan
 Mug, bauble, Etsy and social notes, review requests, advice and reference images live HERE and nowhere else.
 New tasks from Alex arrive in section 0. Check this file every 30 minutes and do any new task there.
 
+## RULE (Alex, 27 Nov 2026): SPELL-CHECK EVERY NAME ON EVERY PRODUCT
+Every name on any product (bauble, mug, card, listing, image) is spell-checked letter by letter against TWO sources (Alex's own words + a second source, e.g. racecard/Sporting Life) BEFORE a proof goes to Alex. If Alex's spelling differs from the real name, flag it to him and use HIS spelling unless he says otherwise. A fresh independent checker reads the print file text letter by letter. Cause: 26 Nov bauble order went to print as "Loussiemoo"; Alex wanted "Lossiemoo" (real horse: Lossiemouth).
+
 ## !!! FIRM RULE - RACING REPO IS OFF LIMITS (Alex, 19 Nov 2026) !!!
 
 At 12:38 UTC on 19 Nov a mug-notes commit (f95fec1f) replaced the whole racing branch
