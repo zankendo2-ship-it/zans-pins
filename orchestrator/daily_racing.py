@@ -46,7 +46,7 @@ SCHEMA_V2_FROM = "2026-11-28"      # files dated on/after this need the full rev
 V2_RACE_FIELDS = ("second", "data_pick", "agent_b", "gemini_api", "data_gap", "price_move", "rpr_pick", "rpr_reason", "longshot")
 GAP_CONFIDENCE_CAP = 6
 SCHEMA_V3_FROM = "2026-11-29"      # files dated on/after this also carry the full per-race review detail (explicit null allowed, absence is not)
-V3_DETAIL_FIELDS = ("zans_reasons", "cautions", "best_price", "data_chance")
+V3_DETAIL_FIELDS = ("zans_reasons", "cautions", "best_price", "data_chance", "second_reason", "longshot_reason")
 V3_PICK_REQUIRED = ("zans_reasons", "cautions", "data_chance")
 VERDICT_ORDER = ("PASS", "REVISE", "REJECT", "BLOCKER")
 CHUNK_RULE = ("CHUNKED REVIEW: this prompt holds chunk {i} of {n} of ONE sealed file. The header (notes, sources, hashes) is repeated in "
@@ -184,10 +184,8 @@ def validate(data, today):
             if missing:
                 raise Refuse(f"race {r['course']} {r['time']} is missing required fields {missing} (explicit null is allowed, silent omission is not)")
             if r.get("data_gap"):
-                try:
-                    capped = float(r.get("confidence_capped", r.get("confidence")))
-                except (TypeError, ValueError):
-                    capped = None
+                raw_capped = r.get("confidence_capped", r.get("confidence"))
+                capped = None if isinstance(raw_capped, bool) else _num(raw_capped)
                 if capped is None or capped > GAP_CONFIDENCE_CAP:
                     raise Refuse(f"race {r['course']} {r['time']} has a data gap but its confidence is not capped at {GAP_CONFIDENCE_CAP}")
     if today >= SCHEMA_V3_FROM:
@@ -195,6 +193,12 @@ def validate(data, today):
             missing = [k for k in V3_DETAIL_FIELDS if k not in r]
             if missing:
                 raise Refuse(f"race {r['course']} {r['time']} is missing review detail {missing} (explicit null is allowed, silent omission is not)")
+            confidence = r.get("confidence")
+            if not _is_num(confidence) or not 0 <= confidence <= 10:
+                raise Refuse(f"race {r['course']} {r['time']} confidence must be a finite numeric value from 0 to 10")
+            capped = r.get("confidence_capped")
+            if capped is not None and (not _is_num(capped) or not 0 <= capped <= GAP_CONFIDENCE_CAP):
+                raise Refuse(f"race {r['course']} {r['time']} confidence_capped must be a finite number from 0 to {GAP_CONFIDENCE_CAP}")
             if r.get("win_pick"):   # a pick must carry its own reviewable reasons: a null here is a gap, not an answer
                 for k in V3_PICK_REQUIRED:
                     v = r.get(k)
@@ -324,7 +328,9 @@ def _longshot_source_check(ls, rp, prices_name, where):
         if prices_name and fname.strip() != prices_name:
             raise Refuse(f"{where}: longshot price_source names {fname.strip()!r}, not the verified prices file {prices_name!r}")
         col, expect_kind = spec
-        if kind is not None and kind != expect_kind:
+        if kind is None:
+            raise Refuse(f"{where}: longshot price_source requires an explicit price_kind matching {expect_kind}")
+        if kind != expect_kind:
             raise Refuse(f"{where}: longshot price_source {label!r} is {expect_kind}, but price_kind says {kind!r}")
         pool = rp.get(col, set())
     elif kind == "bookmaker":
@@ -410,13 +416,14 @@ def check_declared_runners(d, prices_bytes, prices_name=None):
 
 
 EVIDENCE_RECORD_KEYS = {"zans_reasons": "win_angles", "zans_cautions": "win_caution", "data_reasons": "data_angles", "second": "second",
+                        "second_reason": "second_reason", "longshot_reason": "longshot_reason",
                         "zans_chance": "chance", "data_chance": "data_chance", "data_conf": "data_conf", "rpr_pick": "rpr_pick",
                         "rpr_reason": "rpr_reason", "price_at_pick": "price", "going": "going", "longshot_zans_label": "longshot",
                         "data_gap": "data_gap", "drift_warning": "drift_warning"}
 EVIDENCE_PRICE_FIELDS = ("sky_bet_price", "best_price")
 EVIDENCE_FIELDS_REQUIRED = frozenset(EVIDENCE_RECORD_KEYS) | frozenset(EVIDENCE_PRICE_FIELDS)    # fixed schema: a builder cannot shrink it
-REASON_FIELDS_REQUIRED = ("zans_reasons", "zans_cautions", "data_reasons", "second", "rpr_reason")
-EVIDENCE_TEXT_FIELDS = ("zans_reasons", "zans_cautions", "data_reasons", "rpr_reason")   # reason text that must be traceable to the hashed pick record
+REASON_FIELDS_REQUIRED = ("zans_reasons", "zans_cautions", "data_reasons", "second", "second_reason", "rpr_reason", "longshot_reason")
+EVIDENCE_TEXT_FIELDS = ("zans_reasons", "zans_cautions", "data_reasons", "second_reason", "rpr_reason", "longshot_reason")   # reason text that must be traceable to the hashed pick record
 EVIDENCE_NAME_FIELDS = ("second", "rpr_pick")                                           # a runner named here must appear in the hashed pick record
 EVIDENCE_NUM_FIELDS = ("zans_chance", "data_chance", "data_conf", "price_at_pick")
 EVIDENCE_BOOL_FIELDS = ("data_gap", "drift_warning")                                    # absent in the file = false
@@ -458,7 +465,7 @@ def _captured(ts):
         t = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
     except (TypeError, ValueError):
         return None
-    return t if t.tzinfo else t.replace(tzinfo=timezone.utc)
+    return t if t.tzinfo is not None else None
 
 
 def _num(x):
@@ -470,14 +477,13 @@ def _num(x):
 
 
 def check_evidence(d, getter):
-    """V3 files: every picked race needs immutable evidence ids that are re-computed from the hash-verified source bytes.
-    FIXED schema: evidence_fields / reason_fields / evidence_map must be exactly the required sets (a builder cannot omit a field to skip its check).
-    Per picked race: the pick record is matched on its own course AND time (both mandatory) and its full sha256 must equal pick_sha256; the
-    record's horse must be the win pick; the pick source and the price source must each be captured strictly before the off; every populated
-    field is compared with its mapped record value (text traceable, names present, numbers equal, booleans equal) or listed NOT VERIFIED;
-    price_row_sha256 / longshot_row_sha256 = the runner's row in the prices file; best_price = best_dec, sky_bet_price = the Sky Bet term;
-    an unverified reason field caps confidence at 6. Evidence ids are unique. Public copies are authoritative; each source's blob_sha1 must be the
-    git blob hash of those same bytes (binds the public copy to the original blob without the private repo)."""
+    """V3 files: every picked race needs immutable evidence ids re-computed from hash-verified public source bytes.
+    FIXED schema: evidence_fields / reason_fields / evidence_map are exact; every populated reason, runner name, number and boolean is checked
+    against its mapped pick-record field or explicitly marked NOT VERIFIED. second_reason and longshot_reason are included in the fixed schema.
+    Pick and price source capture timestamps must be timezone-aware and strictly pre-off. Price and longshot row hashes bind to exact active rows.
+    An unverified reason needs a finite confidence and a numeric confidence_capped of 6 when the underlying confidence exceeds 6.
+    The public copy path, full SHA256 and Git blob SHA1 are verified. The original private source path/commit is NOT independently verified by
+    this function and must not be described as proven source lineage until that link is checked separately."""
     import csv
     import io
     commit = d["racing_branch_commit"]
@@ -497,7 +503,7 @@ def check_evidence(d, getter):
     if emap != EVIDENCE_RECORD_KEYS:
         raise Refuse("V3 evidence_map.pick_record_keys must be exactly the required field-to-record-key map")
     if not re.fullmatch(r"[0-9a-f]{40}", str(d.get("racing_commit_original") or "")):
-        raise Refuse("V3 file needs racing_commit_original (40-hex original racing commit)")
+        raise Refuse("V3 file needs a 40-hex racing_commit_original reference (metadata only; original-source lineage is not verified here)")
     cache, seen_ids = {}, set()
 
     def blob(src, where):
@@ -507,9 +513,10 @@ def check_evidence(d, getter):
         if x["path"] not in cache:
             b = getter(commit, x["path"])
             if hashlib.sha1(b"blob %d\0" % len(b) + b).hexdigest() != str(x.get("blob_sha1") or ""):
-                raise Refuse(f"source {x['path']}: blob_sha1 is not the git blob hash of the verified bytes (original-source binding)")
-            if not str(x.get("origin_path") or "").strip():
-                raise Refuse(f"source {x['path']}: origin_path is missing")
+                raise Refuse(f"source {x['path']}: blob_sha1 is not the git blob hash of the verified public-copy bytes")
+            origin = x.get("origin_path")
+            if not isinstance(origin, str) or not origin.strip() or origin.startswith("/") or ".." in origin.split("/"):
+                raise Refuse(f"source {x['path']}: origin_path must be a safe, non-empty relative path")
             cache[x["path"]] = b
         return x, cache[x["path"]]
 
@@ -556,7 +563,6 @@ def check_evidence(d, getter):
         named = [q[k] for k in PICK_NAME_KEYS if isinstance(q.get(k), str) and q.get(k).strip()]
         if not named or _key(r["win_pick"]) not in {_key(n) for n in named}:
             raise Refuse(f"{where}: win_pick {r['win_pick']!r} is not the horse named in the hashed pick record (a runner key is mandatory)")
-        rec_all = _norm_text(" ".join(_strings(q)))
         for f in sorted(EVIDENCE_FIELDS_REQUIRED - set(EVIDENCE_PRICE_FIELDS)):
             rk = EVIDENCE_RACE_KEY.get(f, f)
             rv, rrec = r.get(rk), q.get(EVIDENCE_RECORD_KEYS[f])
@@ -581,9 +587,9 @@ def check_evidence(d, getter):
             elif f in EVIDENCE_NAME_FIELDS:
                 if rv in (None, ""):
                     continue
-                nm = _horse_name(rv)
-                if nm is None or _norm_text(nm) not in rec_all:
-                    raise Refuse(f"{where}: {f} {rv!r} does not name a runner found in the hashed pick record")
+                nm, mapped = _horse_name(rv), _horse_name(rrec)
+                if nm is None or mapped is None or _key(nm) != _key(mapped):
+                    raise Refuse(f"{where}: {f} {rv!r} does not equal the runner in its mapped hashed pick-record field {EVIDENCE_RECORD_KEYS[f]!r}")
             elif f in EVIDENCE_NUM_FIELDS:
                 if rv is None:
                     continue
@@ -591,18 +597,28 @@ def check_evidence(d, getter):
                 if a_ is None or b_ is None or abs(a_ - b_) > 0.0051:
                     raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
             elif f in EVIDENCE_BOOL_FIELDS:
-                if bool(rv) != bool(rrec):
-                    raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
+                if not isinstance(rv, bool):
+                    raise Refuse(f"{where}: {f} must be a boolean, not {type(rv).__name__}")
+                key = EVIDENCE_RECORD_KEYS[f]
+                if key not in q or q.get(key) is None:
+                    source_bool = False
+                elif isinstance(q.get(key), bool):
+                    source_bool = q[key]
+                else:
+                    raise Refuse(f"{where}: mapped source field {key!r} must be a boolean or absent")
+                if rv != source_bool:
+                    raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {source_bool!r}")
             elif rv not in (None, "", [], {}):    # going, longshot_zans_label: normalised text must match the record
                 if _norm_text(rv if isinstance(rv, str) else " ".join(_strings(rv))) != _norm_text(rrec if isinstance(rrec, str) else " ".join(_strings(rrec))):
                     raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
         if any(f in nv for f in REASON_FIELDS_REQUIRED):
-            try:
-                big = int(r.get("confidence")) > GAP_CONFIDENCE_CAP
-            except (TypeError, ValueError):
-                big = False
-            if big and r.get("confidence_capped") != GAP_CONFIDENCE_CAP:
-                raise Refuse(f"{where}: a reason field is NOT VERIFIED, so confidence_capped must be {GAP_CONFIDENCE_CAP}")
+            confidence = None if isinstance(r.get("confidence"), bool) else _num(r.get("confidence"))
+            if confidence is None:
+                raise Refuse(f"{where}: confidence must be a finite number when a reason field is NOT VERIFIED")
+            if confidence > GAP_CONFIDENCE_CAP:
+                capped = r.get("confidence_capped")
+                if not _is_num(capped) or capped != GAP_CONFIDENCE_CAP:
+                    raise Refuse(f"{where}: a reason field is NOT VERIFIED, so confidence_capped must be {GAP_CONFIDENCE_CAP}")
         ls = r.get("longshot")
         lname = _horse_name(ls.get("name") if isinstance(ls, dict) else ls) if ls else None
         priced = [f for f in EVIDENCE_PRICE_FIELDS if r.get(f) is not None and f not in nv]
