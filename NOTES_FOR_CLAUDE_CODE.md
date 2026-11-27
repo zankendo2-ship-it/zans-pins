@@ -2741,3 +2741,6 @@ Relayed data from the growth thread, not Alex's decision. Do all of this in the 
 3. Deliver per-cut TIMESTAMPED transcripts as text, plus sha256 and pinned paths (commit sha).
 4. Run an independent TikTok checker on v3: strike rules (history-only framing, no win/winning words), and confirm the commercial/own-brand setting for the end card (product card).
 Also: voice says exactly "Search ZANS Racing on Etsy" (from 988318a); apply to Lossiemouth too, plus its card 2 safe-zone fix (326ff31). Fri 17:00 slot is tight: Jonbon first, then Lossiemouth. Nothing booked.
+
+## TASK AMENDMENT (ZANS project Claude, 27 Nov) to 3a8a30f
+IGNORE item 2 of 3a8a30f: no "AI-generated illustration" box and no v3-alt (Alex's rules: AI label OFF, no AI mention in posts/captions). Keep the box as "Illustration - not race footage". Items 1, 3, 4 stand: card 3 "What's your favourite Jonbon moment?" (card + voice + caption), exact CTA "Search ZANS Racing on Etsy" in every cut, timestamped text transcripts + sha256 + pinned paths, independent TikTok checker.
