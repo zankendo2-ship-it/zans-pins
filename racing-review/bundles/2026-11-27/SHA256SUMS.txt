@@ -288,7 +288,7 @@ b8fbffd064df47b55d4e94861cd14eb7fbf2e75bed4bc4756b732bf68eddb693  racing-review/
 4ed84cb39f8a478d787e2696b43f119df93101e0d7fa81ec9fccc99b6c51b216  racing-review/bundles/2026-11-27/data/reports/track_stats/draw_field_bias.csv
 1f591f7001f98229225aaabf5e084fd49ecc6bd9d930a72bbd22f401b602c4b4  racing-review/bundles/2026-11-27/data/reports/track_stats/pace_bias.csv
 1981283fc60b1ea7769881b49bf83e82f8f6856f9058259d1555cdcc947fbceb  racing-review/bundles/2026-11-27/data/reports/track_stats/weight_bias.csv
-bf45b1a3419a9a755db46a3abf283c12281dfaf2fc01e04cc74ee53ebe0c185a  racing-review/bundles/2026-11-27/data/results/ROW_COUNTS.md
+12189cada3dac653f932614a1abe044fd075b0061cc119982dfae64c9872720e  racing-review/bundles/2026-11-27/data/results/ROW_COUNTS.md
 72432f3b6295216a75bb998187ca878d1b84960c8bbcc88f2fdebb4a5042f838  racing-review/bundles/2026-11-27/data/results/doncaster_2019.csv
 c4a2125bff0197f87267b5ca050746b09a63f7954cf2dad02a8c563150ad5293  racing-review/bundles/2026-11-27/data/results/doncaster_2020.csv
 4542619cfb8e866a145e78a6d1047ac8f561205ed6206bb329d141428e75f4e1  racing-review/bundles/2026-11-27/data/results/doncaster_2021.csv
@@ -320,9 +320,12 @@ a1cddfe63ee01cf42c5d2b2f8e6efbef341c5308a756573d027f4120f2c58147  racing-review/
 7fbddfed5a3a51e03ac758c7889ae297642958b6937e4a9f9b5a9980eaeb55d1  racing-review/bundles/2026-11-27/data/results/southwell_2021.csv
 6cbdfd7a40ef88506bfd7931db3600fefeffb5e26fda8bddf7ce2f870aa09997  racing-review/bundles/2026-11-27/data/results/southwell_2022.csv
 804b8e2a157c6205dde9b3ff90e02aa38167f501a0d45e046fa0550b078a1fcd  racing-review/bundles/2026-11-27/data/results/southwell_2023.csv
-c75b6dab1d467b64e75d1796cdf0d19797f44615e373ea9fd3392675ea4c9386  racing-review/bundles/2026-11-27/data/results/southwell_2024.csv
-123380a6e74903e46e44c6a197e5452c888db20caf4b48c764e99e30ba341151  racing-review/bundles/2026-11-27/data/results/southwell_2025.csv
-bbe4ed30161311025583f4823c23bb63b0b6452275205347db9160b05d52a54c  racing-review/bundles/2026-11-27/data/results/southwell_2026.csv
+eafab274ad1bc25f932e3c5cbdb79b2a370c02f5f80003b4821d8c8e6d86ef87  racing-review/bundles/2026-11-27/data/results/southwell_2024_H1.csv
+e5693a98375ba55a6c6c4a87e489ac0225d56da93057d87ee3f781423e7cce6e  racing-review/bundles/2026-11-27/data/results/southwell_2024_H2.csv
+d3ff0763fdfacf4b9629b974cdd81e17e6aaa9669c70f1a59276fcc165b05db5  racing-review/bundles/2026-11-27/data/results/southwell_2025_H1.csv
+902c5460ec37b56094980d5ef17047f5798164ee96c80b18faff2edcaa3d5e1f  racing-review/bundles/2026-11-27/data/results/southwell_2025_H2.csv
+e1426102cf44d18fa0ea5fbe5d8fbccb3568611bf329ab8d5e9810e326ef339a  racing-review/bundles/2026-11-27/data/results/southwell_2026_H1.csv
+7e4c4ce9e059798a60a3f9b291b3a7dfb313666f6f03d41f2931e870d7fc5347  racing-review/bundles/2026-11-27/data/results/southwell_2026_H2.csv
 d055760828f419458407d84a40e81609e74ef991df75da7ae47080b32baa5f19  racing-review/bundles/2026-11-27/data/rules/RULES.md
 9c9367e80cbbadec8091c84b11524d2b069f7e759d924668a4ec3060e8232301  racing-review/bundles/2026-11-27/data/speed/__init__.py
 47476d82aa0b0962aa3485d9da22f5bac93a876494142bcdd468221369bcf97e  racing-review/bundles/2026-11-27/data/speed/card.py

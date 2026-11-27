@@ -107,7 +107,7 @@ Open each file in order and mark it opened or not opened in your reply. Counts a
 26. [ ] `data/results/musselburgh_2025.csv`
 27. [ ] `data/results/musselburgh_2026.csv`
 
-## Southwell (26 files)
+## Southwell (29 files)
 1. [ ] `data/config/course_profiles/southwell_aw_flat.json`
 2. [ ] `data/methods/southwell/AW_FLAT.md`
 3. [ ] `data/methods/southwell/JUMPS.md`
@@ -131,9 +131,12 @@ Open each file in order and mark it opened or not opened in your reply. Counts a
 21. [ ] `data/results/southwell_2021.csv`
 22. [ ] `data/results/southwell_2022.csv`
 23. [ ] `data/results/southwell_2023.csv`
-24. [ ] `data/results/southwell_2024.csv`
-25. [ ] `data/results/southwell_2025.csv`
-26. [ ] `data/results/southwell_2026.csv`
+24. [ ] `data/results/southwell_2024_H1.csv`
+25. [ ] `data/results/southwell_2024_H2.csv`
+26. [ ] `data/results/southwell_2025_H1.csv`
+27. [ ] `data/results/southwell_2025_H2.csv`
+28. [ ] `data/results/southwell_2026_H1.csv`
+29. [ ] `data/results/southwell_2026_H2.csv`
 
 ## Dundalk (17 files)
 1. [ ] `data/config/course_profiles/dundalk.json`
@@ -154,9 +157,9 @@ Open each file in order and mark it opened or not opened in your reply. Counts a
 16. [ ] `data/results/dundalk_2025.csv`
 17. [ ] `data/results/dundalk_2026.csv`
 
-## Everything else in the manifest (195 files): model code, national tables, knowledge pack, research, stewards, other odds
+## Everything else in the manifest (0 files): model code, national tables, knowledge pack, research, stewards, other odds
 Not needed for today's course picks; open them for a full audit. Listed in `SHA256SUMS.txt`.
 
 ## Running count
-Manifest files: 336. In the course reading lists above: 141. Everything else: 195.
-Last ChatGPT audit (comment 7220998918): 19 opened and used, 3 fetched but not used, 5 results files could not be read, 309 not opened. Update this line after each reply.
+Manifest files: 339. In the course reading lists above: 144. Everything else: 339-144=195.
+Last ChatGPT audit (comment 7221426245): 51 of 141 reading-list files opened, 90 not opened; Southwell 2024-26 results unreadable (now split to under 1 MB). Update this line after each reply.

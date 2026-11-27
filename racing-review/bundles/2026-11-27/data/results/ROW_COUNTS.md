@@ -1,4 +1,4 @@
-| course | year | runs | races |
+| course | period | runs | races |
 |---|---|---:|---:|
 | doncaster | 2019 | 1863 | 216 |
 | doncaster | 2020 | 2075 | 207 |
@@ -31,8 +31,11 @@
 | southwell | 2021 | 3200 | 386 |
 | southwell | 2022 | 4531 | 484 |
 | southwell | 2023 | 4415 | 471 |
-| southwell | 2024 | 5687 | 616 |
-| southwell | 2025 | 5594 | 624 |
-| southwell | 2026 | 5567 | 608 |
+| southwell | 2024_H1 | 2697 | 304 |
+| southwell | 2024_H2 | 2990 | 312 |
+| southwell | 2025_H1 | 3030 | 354 |
+| southwell | 2025_H2 | 2564 | 270 |
+| southwell | 2026_H1 | 3020 | 349 |
+| southwell | 2026_H2 | 2547 | 259 |
 
-Total runs: 82228
+Total runs: 82228. Each file is under 1 MB so file readers can open it; Southwell 2024-26 are split in half-years.

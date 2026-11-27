@@ -1744,8 +1744,8 @@
   {
    "path": "racing-review/bundles/2026-11-27/data/results/ROW_COUNTS.md",
    "source": "row counts",
-   "bytes": 1224,
-   "sha256": "bf45b1a3419a9a755db46a3abf283c12281dfaf2fc01e04cc74ee53ebe0c185a"
+   "bytes": 1443,
+   "sha256": "12189cada3dac653f932614a1abe044fd075b0061cc119982dfae64c9872720e"
   },
   {
    "path": "racing-review/bundles/2026-11-27/data/results/doncaster_2019.csv",
@@ -1934,22 +1934,40 @@
    "sha256": "804b8e2a157c6205dde9b3ff90e02aa38167f501a0d45e046fa0550b078a1fcd"
   },
   {
-   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2024.csv",
-   "source": "southwell results 2024, plain CSV (from results_full + data-results, licensed columns removed)",
-   "bytes": 1227574,
-   "sha256": "c75b6dab1d467b64e75d1796cdf0d19797f44615e373ea9fd3392675ea4c9386"
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2024_H1.csv",
+   "source": "southwell results 2024 H1, plain CSV",
+   "bytes": 583517,
+   "sha256": "eafab274ad1bc25f932e3c5cbdb79b2a370c02f5f80003b4821d8c8e6d86ef87"
   },
   {
-   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2025.csv",
-   "source": "southwell results 2025, plain CSV (from results_full + data-results, licensed columns removed)",
-   "bytes": 1206441,
-   "sha256": "123380a6e74903e46e44c6a197e5452c888db20caf4b48c764e99e30ba341151"
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2024_H2.csv",
+   "source": "southwell results 2024 H2, plain CSV",
+   "bytes": 644238,
+   "sha256": "e5693a98375ba55a6c6c4a87e489ac0225d56da93057d87ee3f781423e7cce6e"
   },
   {
-   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2026.csv",
-   "source": "southwell results 2026, plain CSV (from results_full + data-results, licensed columns removed)",
-   "bytes": 1253274,
-   "sha256": "bbe4ed30161311025583f4823c23bb63b0b6452275205347db9160b05d52a54c"
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2025_H1.csv",
+   "source": "southwell results 2025 H1, plain CSV",
+   "bytes": 649175,
+   "sha256": "d3ff0763fdfacf4b9629b974cdd81e17e6aaa9669c70f1a59276fcc165b05db5"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2025_H2.csv",
+   "source": "southwell results 2025 H2, plain CSV",
+   "bytes": 557447,
+   "sha256": "902c5460ec37b56094980d5ef17047f5798164ee96c80b18faff2edcaa3d5e1f"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2026_H1.csv",
+   "source": "southwell results 2026 H1, plain CSV",
+   "bytes": 663464,
+   "sha256": "e1426102cf44d18fa0ea5fbe5d8fbccb3568611bf329ab8d5e9810e326ef339a"
+  },
+  {
+   "path": "racing-review/bundles/2026-11-27/data/results/southwell_2026_H2.csv",
+   "source": "southwell results 2026 H2, plain CSV",
+   "bytes": 589991,
+   "sha256": "7e4c4ce9e059798a60a3f9b291b3a7dfb313666f6f03d41f2931e870d7fc5347"
   },
   {
    "path": "racing-review/bundles/2026-11-27/data/rules/RULES.md",
@@ -2018,6 +2036,6 @@
    "sha256": "e932aaf24980179c18b5b966accf676d69f551b32b995fc1a38af302ae39516e"
   }
  ],
- "combined_sha256": "6795b89e12efd327de3d8dd609dd8e991d9cf7bdab88c2f67d4545e65ac962e5",
+ "combined_sha256": "9e64f97ddc0bf9f24d0632de88d09d035f305c8643ac11e9c011c171572b06cb",
  "rule": "sha256 of lines '<sha256>  <path>' sorted by path"
 }
