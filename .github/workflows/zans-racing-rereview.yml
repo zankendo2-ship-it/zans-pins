@@ -1,0 +1,58 @@
+# Independent re-review of a corrected racing file. Manual, main only, allowlisted actor. Needs an open gate AND a bot-posted
+# fix receipt with bound proof. Same kill switch, caps, slot ledger and concurrency group as every other paid route.
+# mock = zero calls; live = ONE Claude + ONE OpenAI call on the corrected bytes (an owner decision, not automatic).
+name: ZANS racing re-review (pilot)
+on:
+  workflow_dispatch:
+    inputs:
+      run:
+        description: Full 64-character run id of the open correction gate
+        required: true
+      correction:
+        description: Full 64-character correction id of that gate
+        required: true
+      mode:
+        description: mock = no API calls; live = capped paid re-review
+        required: true
+        default: mock
+        type: choice
+        options: [mock, live]
+concurrency:
+  group: zans-orchestrator
+  cancel-in-progress: false
+permissions:
+  contents: read
+  issues: write
+jobs:
+  rereview:
+    if: github.ref == 'refs/heads/main' && (inputs.mode == 'mock' || vars.ZANS_ORCH_ENABLED == 'true')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout this commit (read-only, no token)
+        run: |
+          git init -q .
+          git fetch -q --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" "${GITHUB_SHA}"
+          git checkout -q FETCH_HEAD
+      - name: Tests (must pass before any call; deps pinned by hash)
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install -q --require-hashes --no-deps -r orchestrator/requirements-test.txt
+          /tmp/venv/bin/python -m pytest -q orchestrator
+      - name: Re-review
+        env:
+          ZANS_ORCH_ENABLED: ${{ vars.ZANS_ORCH_ENABLED }}
+          ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
+          ZANS_ORCH_MAX_RUNS_PER_DAY: ${{ vars.ZANS_ORCH_MAX_RUNS_PER_DAY }}
+          ZANS_ORCH_MAX_USD_PER_RUN: ${{ vars.ZANS_ORCH_MAX_USD_PER_RUN }}
+          ZANS_ORCH_MAX_USD_PER_MONTH: ${{ vars.ZANS_ORCH_MAX_USD_PER_MONTH }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          ANTHROPIC_API_KEY: ${{ inputs.mode == 'live' && secrets.ANTHROPIC_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ inputs.mode == 'live' && secrets.OPENAI_API_KEY || '' }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ORCH_MODE: ${{ inputs.mode }}
+          ORCH_ISSUE: "26"
+          ORCH_RUN: ${{ inputs.run }}
+          ORCH_CORRECTION: ${{ inputs.correction }}
+        run: /tmp/venv/bin/python -m orchestrator.daily_rereview
