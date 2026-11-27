@@ -4,22 +4,25 @@
  "accent": "#F5D130",
  "frames": {
   "1": {
-   "bg": "jonbon-ai-gallop.webp",
+   "bg": "jonbon-ai2-gallop-away.webp",
    "pos": "top",
    "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:44px;letter-spacing:7px;color:ACC'>JONBON</div><div class='t' style='top:508px;font-size:84px;white-space:nowrap'>THREE SHLOER<br>CHASE VICTORIES</div><div class='t' style='top:694px;font-size:64px;white-space:nowrap;color:ACC'>AT CHELTENHAM</div>",
-   "dy": 400
+   "scale": 0.75,
+   "top": 416
   },
   "2": {
-   "bg": "jonbon-ai-fence.webp",
+   "bg": "jonbon-ai2-fence-behind.webp",
    "pos": "top",
    "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:36px;letter-spacing:7px;color:ACC'>THE SHLOER CHASE VICTORIES</div><div class='t' style='top:500px;font-size:76px;white-space:nowrap'>2023 \u00b7 2024 \u00b7 2026</div>",
-   "dy": 450
+   "scale": 0.72,
+   "top": 444
   },
   "3": {
-   "bg": "jonbon-ai-hurdle.webp",
+   "bg": "jonbon-ai2-walk-away.webp",
    "pos": "top",
    "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:38px;letter-spacing:7px;color:ACC'>THE HOME OF JUMP RACING</div><div class='t' style='top:502px;font-size:78px;white-space:nowrap'>YOUR FAVOURITE<br>JONBON MOMENT?</div><div class='t' style='top:676px;font-size:50px;white-space:nowrap;color:ACC'>TELL US IN THE COMMENTS</div>",
-   "dy": 450
+   "scale": 0.78,
+   "top": 410
   },
   "4": {
    "bg": "jonbon-bauble.png",

@@ -418,3 +418,11 @@ Alex has NOT approved these. Nothing is booked.
 
 ## OWNER DECISION (Alex, typed in this chat, 27 Nov): Etsy changes keep the TWO-REVIEWER rule
 Asked 'keep the two-reviewer rule for the Etsy changes, or bypass ChatGPT's check?' Alex answered: "Yes 2 reviewer". So the Etsy SEO pack (v8 -> v9) and any Etsy update still need Claude AND ChatGPT to pass before it goes to Alex, no bypass. For the Etsy SEO thread (session_012o9aG5BnKQgLZxaZytttmB) and the project chat. Nothing applied to Etsy.
+
+## FIXES DONE - Jonbon v6 (ADVICE b6f288a fixes 1-4), 27 Nov
+
+1. Faces: all three Jonbon scenes regenerated from behind (no face visible). 2. Hoops: clean yellow hoops on all three (rings image binned). 3. Hooves: pictures scaled down so every hoof sits above the bottom silks band; blurred sides fill the gap. 4. Saddle cloths: plain (only a tiny race number visible); no garbled lettering. Seeds: 666364229 (gallop away), 1826364212 (fence from behind), 1826364213 (walk away). Scenes in `batch/2026-11-27/jonbon-tiktok/scenes/jonbon-ai2-*.webp`. Jonbon is a bay (Sky Sports profile, one named source). Voice, music, facts, bands unchanged. Lossiemouth v2.5 fixes next. Nothing booked; Alex has not approved.
+
+- Jonbon v6 A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v6-DRAFT.mp4` sha256 `e6f744517423d900255d7fd3c671bbd4fbe11a0b8cce99f883952381170a9f94`
+- Jonbon v6 B: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v6-DRAFT.mp4` sha256 `10ef3675c0655e019c3cc40b0e40fbf816c661963e17af37e9b926aa0e81ea3f`
+- Jonbon v6 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v6-DRAFT.mp4` sha256 `22ff293e0609c8b64bb151ccb9fe8e96d1277719c7ee11f8d80ffa3a59e9e336`
