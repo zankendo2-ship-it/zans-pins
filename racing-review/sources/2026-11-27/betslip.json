@@ -1,0 +1,100 @@
+[
+ {
+  "section": "Singles",
+  "name": "Win single",
+  "legs": [
+   {
+    "course": "Musselburgh",
+    "time": "13:25",
+    "horse": "Iamyouare",
+    "price": 2.2,
+    "chance": 0.3790464979399647,
+    "why": "7/10 confidence",
+    "backed": false,
+    "heavy": ""
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "7/10 confidence - 09:30 price, claim Best Odds Guaranteed",
+  "odds": null
+ },
+ {
+  "section": "Multiples",
+  "name": "Double",
+  "legs": [
+   {
+    "course": "Doncaster",
+    "time": "15:20",
+    "horse": "Sledgehammer",
+    "price": 1.44,
+    "chance": 0.7414624734709628,
+    "why": "10/10 confidence - PRICE MIX short leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "SHORT"
+   },
+   {
+    "course": "Musselburgh",
+    "time": "14:00",
+    "horse": "Laristote",
+    "price": 3.0,
+    "chance": 0.31930189895384004,
+    "why": "5/10 confidence - PRICE MIX middle leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "MIDDLE"
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "PRICE MIX double - the short + middle legs (best value in each price band, TRIAL) - 09:30 price, claim Best Odds Guaranteed",
+  "odds": 4.32
+ },
+ {
+  "section": "Multiples",
+  "name": "Treble",
+  "legs": [
+   {
+    "course": "Doncaster",
+    "time": "15:20",
+    "horse": "Sledgehammer",
+    "price": 1.44,
+    "chance": 0.7414624734709628,
+    "why": "10/10 confidence - PRICE MIX short leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "SHORT"
+   },
+   {
+    "course": "Musselburgh",
+    "time": "14:00",
+    "horse": "Laristote",
+    "price": 3.0,
+    "chance": 0.31930189895384004,
+    "why": "5/10 confidence - PRICE MIX middle leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "MIDDLE"
+   },
+   {
+    "course": "Dundalk",
+    "time": "18:30",
+    "horse": "Invincible Irish",
+    "price": 1.67,
+    "chance": 0.5440848214285715,
+    "why": "9/10 confidence - PRICE MIX fill (empty band) leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "FILL (empty band)"
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "PRICE MIX treble - short, middle and bigger price (best value in each band, TRIAL) - 09:30 price, claim Best Odds Guaranteed",
+  "odds": 7.2144
+ }
+]
