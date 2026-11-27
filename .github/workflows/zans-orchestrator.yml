@@ -20,6 +20,12 @@ on:
       artifacts:
         description: Space-separated TEXT file links pinned to a 40-character commit SHA (no images/video)
         required: true
+      rounds:
+        description: Review rounds, 1 to 3 (1 round = one Claude call + one OpenAI call). Use 1 for large file sets.
+        required: false
+        default: "3"
+        type: choice
+        options: ["1", "2", "3"]
       mode:
         description: mock = dry run, no API calls; live = calls Claude + OpenAI (capped)
         required: true
@@ -65,6 +71,7 @@ jobs:
           OPENAI_API_KEY: ${{ inputs.mode == 'live' && secrets.OPENAI_API_KEY || '' }}
           GITHUB_TOKEN: ${{ github.token }}
           ORCH_MODE: ${{ inputs.mode }}
+          ORCH_ROUNDS: ${{ inputs.rounds }}
           ORCH_ISSUE: ${{ inputs.issue }}
           ORCH_TASK: ${{ inputs.task }}
           ORCH_ARTIFACTS: ${{ inputs.artifacts }}
