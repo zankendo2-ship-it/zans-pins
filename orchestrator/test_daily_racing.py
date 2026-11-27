@@ -79,17 +79,17 @@ ONE = {**ENV, "ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}   # owner hard cap: one shared 
 def test_global_paid_slot_blocks_products_and_racing_cross_route():
     data = file_bytes()
     batch_slot = {"user": BOT, "body": o.slot_tag("live", TODAY, "b" * 64, 0.3)}
-    with pytest.raises(o.Stop, match="shared daily count of paid runs"):
+    with pytest.raises(o.Stop, match="shared one paid run"):
         r.plan(data, [batch_slot], ONE, TODAY)
     h = r.fingerprint(data)
     assert len(h) == 64
     with pytest.raises(r.Skip):
         r.plan(data, [{"user": BOT, "body": o.slot_tag("racing", TODAY, h, 0.7)}], ONE, TODAY)
     racing_slot = {"user": BOT, "body": o.slot_tag("racing", TODAY, "c" * 64, 0.7)}
-    with pytest.raises(o.Stop, match="shared daily count of paid runs"):
+    with pytest.raises(o.Stop, match="shared one paid run"):
         r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [racing_slot], ONE, TODAY)
     import orchestrator.daily_batch as b
-    with pytest.raises(o.Stop, match="shared daily count of paid runs"):
+    with pytest.raises(o.Stop, match="shared one paid run"):
         b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [racing_slot], ONE, TODAY)
     with pytest.raises(o.Stop, match="MONTH"):
         r.plan(data, [], {**ONE, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)

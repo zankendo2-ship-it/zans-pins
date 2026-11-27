@@ -64,11 +64,11 @@ def test_plan_rules_one_slot_date_lock_and_month():
     with pytest.raises(o.Stop, match="already attempted"):
         r.plan(d, sha(d), [{"user": BOT, "body": o.slot_tag("retro", TODAY, h, 0.5)}], ONE, TODAY)
     d2 = data(7000)
-    with pytest.raises(o.Stop, match="shared daily count of paid runs"):
+    with pytest.raises(o.Stop, match="shared one paid run"):
         r.plan(d2, sha(d2), [{"user": BOT, "body": o.slot_tag("retro", TODAY, "deadbeef", 0.5)}], ONE, TODAY)
     # Every paid route consumes the same daily slot.
     for mode in ("live", "racing"):
-        with pytest.raises(o.Stop, match="shared daily count of paid runs"):
+        with pytest.raises(o.Stop, match="shared one paid run"):
             r.plan(d, sha(d), [{"user": BOT, "body": o.slot_tag(mode, TODAY, "abc123", 2.45)}], ONE, TODAY)
     big = [{"user": BOT, "body": o.slot_tag("live", "2026-11-%02d" % n, "%064x" % (n + 100), 1.0)} for n in range(1, 26)]
     with pytest.raises(o.Stop, match="MONTH"):
