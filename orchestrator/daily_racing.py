@@ -274,7 +274,6 @@ def main(env=None):
         post = lambda body: o.gh(env, "POST", f"repos/{repo}/issues/{issue}/comments", {"body": body})  # noqa: E731
         claude, openai = (o.call_claude, o.call_openai) if mode == "live" else (None, None)
         try:
-            getter = lambda commit, path: o._get_bytes(  # noqa: E731
             getter = lambda commit, path: o._get_bytes(source_url(commit, path), MAX_FILE_BYTES * 20)  # noqa: E731
             verdicts, h, reserve, bad = run(env, data, comments, today, claude, openai, post, getter)
         except Skip as s:

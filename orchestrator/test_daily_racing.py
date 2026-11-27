@@ -153,7 +153,7 @@ def test_scheduled_main_reads_file_at_resolved_sha_and_exits_nonzero_on_failure(
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": sha} if m == "GET" else (posts.append(body["body"]) or {}))
     def fetch(url, n):
         for path, body in SRCS.items():     # pack source files, fetched at the commit named in the sealed file
-            if url == f"https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/{'b' * 40}/{path}":
+            if url == f"https://raw.githubusercontent.com/zankendo2-ship-it/HORSE-RACING-EXTRACTION-/{'b' * 40}/{path}":
                 return body
         seen.append(url)
         return file_bytes()
