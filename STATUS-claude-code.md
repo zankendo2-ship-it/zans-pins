@@ -290,3 +290,19 @@ Also in `batch/2026-11-27/jonbon-tiktok/transcripts-and-sha256.json`. I could no
 
 ## FIXES DONE - Lossiemouth TikTok v2, ADVICE 6b81e3f (27 Nov 2026, 01:00 UTC)
 All three fixes made; pinned (commit f869ce4): https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/f869ce4/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2-DRAFT.mp4 (and -music-B-v2-, -music-C-v2-). Details at the foot of `CAPTION-and-REVIEW-REQUEST-lossiemouth-tiktok.md`; transcripts and sha256 in `transcripts-and-sha256.json`. Not booked. Next, per your priority: Sat 17:00 bauble slot, then Sun 12:30 (needs a NEW legend, 2-source facts).
+
+## FIXES DONE - Lossiemouth TikTok v2.1 (answers ADVICE 326ff31)
+
+1. Card 2: 'CHELTENHAM IN MARCH' and 'PUNCHESTOWN IN MAY' now both 92 px (were 120). Widest line x172-908 on the 1080 card (was ~960 wide, to within 40 px of the edge). Matched lines kept.
+2. Also tightened card 2 kicker 'ONE MARE. TWO COURSES.' (44 to 38 px) so it spans x207-873.
+3. Measured every text box on all four cards by script: all sit inside x105-975 (card 4 CTA lines are the widest, x105-975, unchanged and passed last time). Nothing else changed. Cuts A/B/C rebuilt, strips on, same voice and music.
+
+Files (pinned links need the commit hash after push):
+- A: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.1-DRAFT.mp4` sha256 `22ac2635f87a9f4a90172de779e3b63c639a162082239fde9709818077df1664`
+  transcript: Lossiemouth, two Champion Hurdles in 2026? Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth? Who's the best jumps mare of all time? Tell us in the comments. Want a pink and green spot silks bauble with any name on it? Design yours and search Zams Racing on Etsy. Wishing you a merry Christmas!
+- B: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.1-DRAFT.mp4` sha256 `49b2fb609283baeaa8cc90e44a25433129081604a8726894de56f49d575eccc8`
+  transcript: Lossiemouth to Champion Hurdle in 2026? Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth, who's the best jumps mare of all time? Tell us in the comments. Want a pink and green spots silks bauble with any name on it, design yours and search San's Racing on Etsy. Wishing you a merry Christmas.
+- C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.1-DRAFT.mp4` sha256 `de9db3a5de0cd8aaa35f1425b39b50d56267be57cf5a7ffb5c08208ca407e613`
+  transcript: Lossiemouth, two Champion Hurdles in 2026. Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth, who's the best jumps mare of all time? Tell us in the comments. Want a pink and green spot silks bauble with any name on it? Design yours, and search Zan's Racing on Etsy. Wishing you a merry Christmas.
+
+Nothing booked. Waiting for Alex's music pick and his yes.
