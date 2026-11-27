@@ -4,9 +4,9 @@
  "accent": "#F5D130",
  "frames": {
   "1": {
-   "bg": "big-field-rear.webp",
+   "bg": "dawn-course.webp",
    "pos": "top",
-   "html": "<div class='k' style='top:470px;color:ACC'>LOSSIEMOUTH</div><div class='t' style='top:550px;font-size:150px;white-space:nowrap'>2 CHAMPION<br>HURDLES</div><div class='t' style='top:880px;font-size:110px;color:ACC'>IN 2026</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+   "html": "<div class='k' style='top:470px;color:ACC'>LOSSIEMOUTH</div><div class='t' style='top:550px;font-size:112px;white-space:nowrap'>2 CHAMPION<br>HURDLES</div><div class='t' style='top:800px;font-size:96px;color:ACC'>IN 2026</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
   },
   "2": {
    "bg": "festival-valley.webp",
@@ -16,7 +16,7 @@
   "3": {
    "bg": "crowd-roar.webp",
    "pos": "top",
-   "html": "<div class='k' style='top:470px;color:ACC'>BEST JUMPS MARE EVER?</div><div class='t' style='top:560px;font-size:118px'>HONEYSUCKLE<br>or<br>LOSSIEMOUTH?</div><div class='t' style='top:1010px;font-size:64px;font-weight:600;color:ACC'>TELL US IN THE COMMENTS</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+   "html": "<div class='k' style='top:470px;color:ACC'>BEST JUMPS MARE EVER?</div><div class='t' style='top:560px;font-size:92px'>HONEYSUCKLE<br>or<br>LOSSIEMOUTH?</div><div class='t' style='top:900px;font-size:50px;font-weight:600;color:ACC'>TELL US IN THE COMMENTS</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
   },
   "4": {
    "bg": "lossiemouth-bauble.png",
