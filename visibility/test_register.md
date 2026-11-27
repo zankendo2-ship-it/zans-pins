@@ -15,7 +15,7 @@ Status: PREPARED / APPROVED (Alex) / LIVE / DONE. Nothing here is live unless it
 | T3 | Bauble transformation, different opening from T1 | TBC | bio link -> bauble designer | code chat | REQUESTED | 241 | same |
 | W1 | Website: homepage Breeders' Cup SECTION + top-NAV links removed (11 pages). Footer link /breeders-cup-guide/ deliberately KEPT (guide still sold); /horse-racing-gifts/ links listings 4608193933 (x2), 4611213915, 4611232428, 4612435420 + shop | PR #27 into `claude/project-thread-cbdh5k` /docs | www.zanshorseracing.co.uk | visibility thread | LIVE 23 Nov 21:26 UTC per PR merge; source verified by Claude + ChatGPT 24 Nov; live page + click-throughs NOT verified (proxy blocks both of us) - needs a native phone check. Delivery-copy fix = separate pending REVISE, needs Alex yes | Website sessions 24 Oct-23 Nov - NOT YET RECORDED | 30 Nov, 7 Dec |
 
-TikTok rules in force (2 strikes): no race-today posts, no race times, no win/strike-rate claims near a race, no predictions or "who will win/ride" questions, commercial disclosure only on gift posts, all visuals ZANS-made or AI (no fetched or licensed race footage).
+TikTok rules in force (2 strikes): no race-today posts, no race times, no win/strike-rate claims near a race, no predictions or "who will win/ride" questions, commercial disclosure only on gift posts, all visuals ZANS-made/non-AI; no AI-generated images, video or audio in social posts (Alex's standing rule); no fetched or licensed race footage. If an AI-generated asset appears, REJECT and replace; keep AIGC label OFF only when no AI content remains.
 
 
 Pending copy change (joint REVISE, needs Alex yes): gifts page delivery text - remove 'order by Mon 7 Dec'; replace '£14.99 plus postage' with 'Made to order - see Etsy checkout for the current delivery estimate'; free UK/IE delivery only once checkout confirms.
@@ -145,22 +145,26 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 - SEO overhaul (26 listings): v5 at zans-social-notes 816154cf (batch A 47,008 B sha 1dac6e8b..., batch B 49,952 B sha ff4e9bef..., apply_ready.json sha f939c09f...). ChatGPT: structure PASS, cancellation wording REVISE (reg 37 needs express consent AND acknowledgement). Status PREPARED, NOT APPLIED. Etsy test changes held until 1 Dec.
 - PR #42 (rounds input 1-3): head 9a7dcb7a, ChatGPT static PASS, no Actions run attached, merge needs Alex. PR #43 (rules line) open.
 - Paid runs: none verified. Mock run 45908019497 (main 69b2ac52, 0 paid calls).
-- Jonbon TikTok 27 Nov 17:00: DRAFT / NOT BOOKED; v2 cuts sha A 126285ec..., B d0ff5143..., C f12c2c42...; ChatGPT REVISE (CTA wording, binaries not readable, AI disclosure vs Alex's AI-labels-off rule).
+- Jonbon TikTok 27 Nov 17:00: DRAFT / NOT BOOKED; v2 cuts sha A 126285ec..., B d0ff5143..., C f12c2c42...; ChatGPT REVISE (CTA consistency/MP4 not accessible); AI-generated frames 1-3 REJECT under Alex's no-AI-content rule; replace with ZANS-made non-AI visuals.
 - Metrics unchanged: Etsy 1-23 Nov 10 orders / £98.10; Ads 4,401 impressions / 40 clicks / 2 attributed orders; rolling 30 days 9 orders / £103.40; TikTok latest 177 views / 13 likes / 0 shares. No creative-attributed sales available.
 
 ### Amendment 27 Nov 02:15 UTC (ChatGPT 7207816858)
 - SEO v6 (c9461c73, batch A 47,398 B sha c991db31..., batch B 50,192 B sha d5bef3e3...): structure PASS; cancellation wording REVISE (needs "expressly consented at checkout" AND acknowledgement); APPLY BLOCKED until Alex verifies Etsy checkout and order-confirmation capture both. v7 requested from the Rewrite thread.
-- Jonbon v2: facts and contact sheet (46fbe5f, sha cbffe87e...) PASS; video REVISE (frame 3 superlative, AI disclosure conflict with Alex's AI-label-off rule, no MP4/audio transcript readable by ChatGPT). DRAFT / NOT BOOKED.
+- Jonbon v2: facts/contact-sheet sequence and end-card CTA PASS; frame 3 superlative REVISE; frames 1-3 AI backgrounds REJECT under Alex's no-AI-content rule. Replace with ZANS-made non-AI visuals; keep AIGC label OFF only after AI content is removed. No MP4/audio; DRAFT / NOT BOOKED.
 - This file was copied to zans-social-notes (a3971828) and is NOT yet on main; a docs PR to main is open for Alex to merge.
 - 27 Nov racing handoff: due 08:50 UK; absence at 02:00 UTC is expected (ChatGPT amended its REJECT).
 
 ### Amendment 27 Nov 02:25 UTC (ChatGPT 7207886394 on PR #44)
 - SEO v7 (commit 6eab092c, batch A 47,723 B sha ab870f90..., batch B 50,392 B sha 5db9cb8f..., apply_ready.json sha 51749651...): 26-listing structure valid; all 21 guide cancellation clauses say "expressly consented at checkout" plus acknowledgement. PASS for wording pending ChatGPT re-review. APPLY BLOCKED: Etsy checkout and order-confirmation email capturing both consent and acknowledgement is UNVERIFIED. Nothing applied to Etsy.
 - Jonbon v2 contact sheet (46fbe5f): sequence and end-card CTA PASS; frame 3 "BRITAIN'S BEST CHASER?" REVISE (unsupported superlative); realistic AI backgrounds need TikTok AIGC label or explicit disclosure, which conflicts with Alex's 25 Nov AI-label-off rule (his decision). DRAFT / NOT BOOKED; no MP4/audio delivered yet.
-- PR #43 rules edit (head 50510b12) NOT merged; awaiting Alex's decision on the "AI labels off" conflict.
+- PR #43 rules edit (head 50510b12) NOT merged; superseded by draft head cbe78a36, which now records the owner no-AI social-content rule; not merged.
 - Paid-workflow blockers: daily-slot conflict (separate live/racing/retro slots), completion markers posted before settlement, no internal correction handoff, racing uses a 16-character hash. Run 45908019497 is mock, zero paid calls, not operational. PR #42 (rounds input) open, needs Alex's merge.
 - 27 Nov racing handoff due 08:50 UK; absence at 02:15 is expected.
 
-### Amendment 27 Nov 03:30 UTC (ChatGPT 7208814891)
-- Draft PR #45 (head 9c90a196, ChatGPT): shared paid slot across 4 routes, workflow-only ledger markers, 64-hex fingerprints, settlement-gated completion markers. Local run by Claude: 168 passed, 2 failed (test_daily_retro plan_rules, test_orchestrate summary marker). Draft, NOT merged, not independently PASS. Conflicts expected with PR #42 (rounds input). Shared slot needs Alex's decision (it would let the 08:55 racing review take the 27 Nov slot ahead of SEO batch A).
+
+### Owner social-AI rule clarification (Claude comment #7207897503)
+- Alex's standing direction is no AI-generated content on any social posts and no AI labels on any network. Apply it by rejecting/removing AI-generated assets from social drafts, not by posting realistic AI content without a label. Jonbon frames 1-3 therefore need ZANS-made non-AI replacements; no AI label is needed only after all AI-generated content is removed. Do not ask Alex to repeat this decision.
+
+### Amendment 27 Nov 03:30 UTC (ChatGPT 7208814891, Claude local test)
+- Draft PR #45 (head 9c90a196, ChatGPT): shared paid slot across 4 routes, workflow-only ledger markers, 64-hex fingerprints, settlement-gated completion markers. Claude ran its tests locally: 168 passed, 2 failed (test_daily_retro plan_rules, test_orchestrate summary marker). Draft, NOT merged, not independently PASS. Expected conflict with PR #42 (rounds input). The shared slot needs Alex's decision (it would let the 08:55 UK racing review take the 27 Nov slot ahead of SEO batch A).
 - 27 Nov racing file and products manifest absent at 02:50 UTC: windows (08:55 / 09:10 UK) not yet reached; not a miss.
