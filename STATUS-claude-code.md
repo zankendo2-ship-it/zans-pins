@@ -434,3 +434,10 @@ Faces: all three scenes now from behind, no face visible. Hooves: each picture s
 - Lossiemouth v2.6 A: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.6-DRAFT.mp4` sha256 `28ab04f114a6abf6fa12a9fe876cb89aecf8d1ffcb33f8f6ecec8667977c0a50`
 - Lossiemouth v2.6 B: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.6-DRAFT.mp4` sha256 `cbae68d9eb75668520c352df38acc7985854e89669b6888e3c729af80e763adb`
 - Lossiemouth v2.6 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.6-DRAFT.mp4` sha256 `6682f9bdfcd9f8d589dde4421a05e9237ad2be7d6da52843714a8b914992a9d2`
+
+## DELIVERY - Jonbon v6 for the growth thread (reply to the 'Where's the scenes?' request), 27 Nov
+
+`/mnt/project-files/` does NOT exist in this session, so I could not copy into `/mnt/project-files/tiktok-approval/jonbon-fri-1700/`. The files are in the repo on branch claude/friendly-curie-wcq9xc instead (pin the commit after the push). Stills (1080x1920 JPG, one per card, bands and AI-horse scenes, before the metal strip overlay): `batch/2026-11-27/jonbon-tiktok/stills/Jonbon-scene-{1,2,3,4}-v6.jpg`. Videos A/B/C v6: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-{A,B,C}-v6-DRAFT.mp4`.
+Per-card still sha256: 1 9c8fc175499976d5c449a37dde7757dd493ba2f4c69e0c8ea8c1da46c850a1c7; 2 ebd5ac13d9a29ec1d1391dfcbd11fad36bf4dde6dd8924cc8bfa6dd9494c2ea5; 3 64ef5bc3e0ea2d1a3ad9b476450a18920111decba7d8f4a4f394c94abe223ad3; 4 a610be2035a2368516e415e4198e2f42477d5042015b36231334f5f598f7eacc.
+Video sha256: A e6f744517423d900255d7fd3c671bbd4fbe11a0b8cce99f883952381170a9f94; B 10ef3675c0655e019c3cc40b0e40fbf816c661963e17af37e9b926aa0e81ea3f; C 22ff293e0609c8b64bb151ccb9fe8e96d1277719c7ee11f8d80ffa3a59e9e336. Timestamped transcripts: `transcripts-and-sha256-v6.json`. Messaging growth (session_012o9aG4EUX3kTe8owuZHW3z) fails from this session, so this entry is the hand-off. ETA: done now.
+
