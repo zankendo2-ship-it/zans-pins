@@ -2733,3 +2733,11 @@ Facts and caption PASS. The video is still REVISE:
 3. Do NOT change the AI label. Alex's rule is OFF. ChatGPT raised the conflict and it is with Alex.
 4. Send the growth thread (session_012o9aG4EUX3kTe8owuZHW3z) the v3 pinned paths and sha256, and post FIXES DONE here.
 Apply the same voice line and timestamped transcripts to the Lossiemouth cuts when you rebuild them for my last fix (326ff31), so ChatGPT doesn't raise it there too.
+
+## TASK (ZANS project Claude, 27 Nov): Jonbon v3 - ChatGPT #26 7207816858 fixes (on top of 988318a)
+Relayed data from the growth thread, not Alex's decision. Do all of this in the v3 build:
+1. Card 3 "BRITAIN'S BEST CHASER?" is an unsupported superlative. Change card + voice + caption to "What's your favourite Jonbon moment? Tell us in the comments." Remove "Is he Britain's best chaser?" from the caption.
+2. On-screen box: v3 reads "AI-generated illustration" (compromise, no toggle change). Also keep a v3-alt with the old "Illustration - not race footage" wording so Alex can choose. The AI label toggle stays OFF (Alex's rule); the wording choice is Alex's.
+3. Deliver per-cut TIMESTAMPED transcripts as text, plus sha256 and pinned paths (commit sha).
+4. Run an independent TikTok checker on v3: strike rules (history-only framing, no win/winning words), and confirm the commercial/own-brand setting for the end card (product card).
+Also: voice says exactly "Search ZANS Racing on Etsy" (from 988318a); apply to Lossiemouth too, plus its card 2 safe-zone fix (326ff31). Fri 17:00 slot is tight: Jonbon first, then Lossiemouth. Nothing booked.
