@@ -181,7 +181,7 @@ def fake_github(calls, comments=(), since=()):
 LIVE_EXTRA = {"ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
               "ANTHROPIC_MODEL": "claude-sonnet-5-5", "OPENAI_MODEL": "gpt-6.2-astra", "GITHUB_REF": "refs/heads/main",
               "ZANS_ORCH_MAX_RUNS_PER_DAY": "1", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
-              "ZANS_ORCH_MAX_USD_PER_MONTH": "10", "ORCH_SHA256": "a" * 64}
+              "ZANS_ORCH_MAX_USD_PER_MONTH": "25", "ORCH_SHA256": "a" * 64}
 MOCK_ENV = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
             "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_TOKEN": "t"}
 
@@ -308,8 +308,8 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
 
 
 def test_live_day_cap_hard_one_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 3          # TEMPORARY set-up ceiling (Alex 27 Nov); restore to 1 after set-up
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
+    assert o.MAX_LIVE_RUNS_PER_DAY == 1          # Owner directive 26 Nov: one consolidated paid batch per UTC day
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -554,8 +554,8 @@ def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypat
 
 
 def test_daily_live_ceiling_is_1_and_variable_can_only_lower_it():
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
 
 
@@ -831,14 +831,16 @@ def test_every_paid_route_shares_the_correction_gate():
         assert "require_no_pending_corrections" in open(mod.__file__).read()
 
 
-def test_temporary_setup_ceiling_allows_three_paid_runs_not_four():
+def test_one_global_paid_slot_blocks_every_other_route():
+    # Even if a variable is set to 3, the owner's hard cap remains one paid batch per UTC day.
     env = {"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}
     today = "2026-11-27"
-    slots = [{"user": {"login": o.TRUSTED_SETTLER}, "body": o.slot_tag(m, today, f"{i:064x}", 0.5)}
-             for i, m in enumerate(("live", "racing"))]
-    assert o.runs_today(slots, today, "live") == 2 < o.day_cap(env, "live")       # a third is allowed
-    slots.append({"user": {"login": o.TRUSTED_SETTLER}, "body": o.slot_tag("retro", today, "f" * 64, 0.5)})
-    assert o.runs_today(slots, today, "live") >= o.day_cap(env, "live")           # a fourth is refused
+    for first, second in (("live", "racing"), ("racing", "retro"), ("retro", "live")):
+        slots = [{"user": {"login": o.TRUSTED_SETTLER},
+                  "body": o.slot_tag(first, today, "a" * 64, 0.5)}]
+        assert o.runs_today(slots, today, second) == 1
+        assert o.day_cap(env, second) == 1
+        assert o.runs_today(slots, today, second) >= o.day_cap(env, second)
 
 
 def test_failed_settle_post_keeps_reservation_and_emits_no_marker(capsys):
