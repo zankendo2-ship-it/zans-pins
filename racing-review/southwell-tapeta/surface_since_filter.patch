@@ -1,0 +1,46 @@
+diff --git a/scripts/course_kb_data.py b/scripts/course_kb_data.py
+index 441f97459..824ebe18f 100644
+--- a/scripts/course_kb_data.py
++++ b/scripts/course_kb_data.py
+@@ -93,6 +93,13 @@ def build():
+     d["disc"] = t.map({"flat": "FLAT", "hurdle": "HURDLE", "chase": "CHASE", "nh flat": "NHF"})
+     d.loc[(d["disc"] == "FLAT") & d["aw"], "disc"] = "AW_FLAT"
+     d = d[d["disc"].notna()].copy()
++    # 27 Nov: AW rows before a course's surface switch (Southwell Fibresand -> Tapeta 7 Dec 2021 ...) are a different surface
++    import json as _j
++    _cs = _j.load(open("config/courses.json")); _cs = _cs.get("courses", _cs)
++    for _cid, _c in _cs.items():
++        _since = (_c.get("surface_since") or {}).get("AW_FLAT")
++        if _since:
++            d = d[~((d["cid"] == _cid) & (d["disc"] == "AW_FLAT") & (d["date"] < _since))]
+     d["code"] = d["disc"].map({"FLAT": "FLAT", "AW_FLAT": "AW_FLAT", "HURDLE": "JUMPS", "CHASE": "JUMPS", "NHF": "JUMPS"})
+     d["going"] = d["going"].map(norm_going)
+     d["fur"] = d["dist"].map(dist_to_furlongs)
+diff --git a/scripts/course_kb_rules.py b/scripts/course_kb_rules.py
+index 9d8bea15b..6c218eded 100644
+--- a/scripts/course_kb_rules.py
++++ b/scripts/course_kb_rules.py
+@@ -25,6 +25,11 @@ def period(day):
+     return "2019-21" if day < "2022-01-01" else "2022-26"
+ 
+ 
++import json as _j
++_c = _j.load(open(str(REPO / 'config' / 'courses.json'))); _c = _c.get('courses', _c)
++SURF = {k: (v.get('surface_since') or {}).get('AW_FLAT') for k, v in _c.items() if (v.get('surface_since') or {}).get('AW_FLAT')}
++
++
+ def main():
+     ap = argparse.ArgumentParser()
+     ap.add_argument("--out", required=True)
+@@ -39,7 +44,10 @@ def main():
+         day = Date.fromisoformat(race["date"]).toordinal()
+         sps = [r["sp"] for r in race["runners"]]
+         winners = [r for r in race["runners"] if r["pos"] == 1]
+-        if race["date"] >= args.since and all(sps) and len(race["runners"]) >= 4 and len(winners) == 1:
++        _ss = SURF.get(race["course_id"]) if race["disc"] == "AW_FLAT" else None
++        if _ss and race["date"] < _ss:
++            pass   # 27 Nov: before this course's AW surface switch = different surface, not tested
++        elif race["date"] >= args.since and all(sps) and len(race["runners"]) >= 4 and len(winners) == 1:
+             book = sum(1 / s for s in sps)
+             flags = flags_for_race(race, hist, jockey_rides, jockey_runs)
+             key0 = (race["course_id"], CODE[race["disc"]], race["going"].title(), period(race["date"]))

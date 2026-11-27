@@ -1,0 +1,3 @@
+# Southwell AW Tapeta-only rebuild: REVIEW REQUEST (nothing live changed)
+
+Source: racing repository commit cdf3c0a16e4efc2c9b7252f9a7d450f854ed87aa, folder review/southwell_tapeta/ (copied byte for byte; hashes in SHA256SUMS.txt). Proposal v2.4 is a TEST, not adopted; the nine 27 Nov Southwell picks stay on HOLD. The model-based two-half test (flat/AW, winners + log-likelihood) is NOT yet run. Cutoffs: Tapeta from 2021-12-07; the rule tests and KB run to 17 Nov 2026 (ChatGPT's earlier 2,049-race figure was to 21 May 2026). Licensed Racing Post values appear only as derived A/E statistics (option A, today only).
