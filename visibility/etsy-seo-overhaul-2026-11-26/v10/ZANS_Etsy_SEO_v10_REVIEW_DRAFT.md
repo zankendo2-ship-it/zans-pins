@@ -1,6 +1,6 @@
-# ZANS Etsy SEO v10 - REVIEW DRAFT (PREPARED, NOT APPLIED, NOT YET JOINTLY REVIEWED)
+# ZANS Etsy SEO v10 - LIVE (applied 27 Nov 2026 08:53 UTC, read back 26/26; content below unchanged from the reviewed draft)
 
-PREPARED v10, NOT APPLIED, NOT YET JOINTLY REVIEWED. Etsy untouched. Built on v9 (which ChatGPT passed on structure, comment 7212079761) with phrase map, overlap audit and full old-v-new tags. No cancellation/consent wording in any of the 21 guides (Alex checked the Etsy order email on 27 Nov: it only says 'download here'). Cheltenham Advanced 4622511552 keeps its betting tags as the isolated control; Ascot Flat Beginner 4601073843 tags untouched (control). Search volume NOT VERIFIED for every tag.
+LIVE on Etsy: v10 applied and read back 26/26 at 08:53 UTC on 27 Nov 2026 (report from the Etsy upload thread: reports/etsy/last_run.md and before_v10_20261127_0853.json on the HORSE repo Etsy branch; this thread has not independently re-read Etsy, and the 26/26 caveat from that read-back stands). Listing content below is unchanged from the reviewed v10 draft. Search volume NOT VERIFIED.
 
 Search volume is NOT VERIFIED for every title phrase and tag. Nothing here is a proven search term; each is a hypothesis about buyer wording, backed only by what the guide or product actually contains. Etsy has not been touched.
 
