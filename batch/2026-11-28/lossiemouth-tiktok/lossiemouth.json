@@ -1,33 +1,24 @@
 {
  "key": "lossiemouth",
- "colour": "#C2477E",
+ "colour": "linear-gradient(#1F5A3D,#143F2B)",
  "accent": "#F5D130",
  "frames": {
   "1": {
-   "bg": "lossiemouth-grey2-hurdle-behind.webp",
-   "pos": "top",
-   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:44px;letter-spacing:7px;color:ACC'>LOSSIEMOUTH</div><div class='t' style='top:508px;font-size:66px;white-space:nowrap'>2 CHAMPION HURDLES</div><div class='t' style='top:594px;font-size:84px;white-space:nowrap;color:ACC'>IN 2026</div>",
-   "scale": 0.85,
-   "top": 349
+   "html": "<div style='position:absolute;left:150px;right:150px;top:470px;height:4px;background:ACC'></div><div class='k' style='top:510px;font-size:56px;letter-spacing:14px;color:ACC'>LOSSIEMOUTH</div><div class='t' style='top:610px;font-size:118px;white-space:nowrap'>2 CHAMPION<br>HURDLES</div><div class='t' style='top:860px;font-size:104px;white-space:nowrap;color:ACC'>IN 2026</div><div style='position:absolute;left:150px;right:150px;top:1050px;height:4px;background:ACC'></div>",
+   "pos": "top"
   },
   "2": {
-   "bg": "lossiemouth-grey2-canter.webp",
-   "pos": "top",
-   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:36px;letter-spacing:7px;color:ACC'>ONE MARE. TWO COURSES.</div><div class='t' style='top:500px;font-size:62px;white-space:nowrap'>CHELTENHAM IN MARCH</div><div class='t' style='top:582px;font-size:62px;white-space:nowrap;color:ACC'>PUNCHESTOWN IN MAY</div>",
-   "scale": 0.71,
-   "top": 512
+   "html": "<div style='position:absolute;left:150px;right:150px;top:470px;height:4px;background:ACC'></div><div class='k' style='top:510px;font-size:38px;letter-spacing:8px;color:ACC'>ONE MARE. TWO COURSES.</div><div class='t' style='top:590px;font-size:100px;white-space:nowrap'>CHELTENHAM<br>IN MARCH</div><div class='t' style='top:810px;font-size:100px;white-space:nowrap;color:ACC'>PUNCHESTOWN<br>IN MAY</div><div style='position:absolute;left:150px;right:150px;top:1050px;height:4px;background:ACC'></div>",
+   "pos": "top"
   },
   "3": {
-   "bg": "lossiemouth-grey2-walk-away.webp",
-   "pos": "top",
-   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:36px;letter-spacing:7px;color:ACC'>YOUR FAVOURITE JUMPS MARE?</div><div class='t' style='top:500px;font-size:76px;white-space:nowrap'>HONEYSUCKLE<br>or LOSSIEMOUTH?</div><div class='t' style='top:670px;font-size:50px;white-space:nowrap;color:ACC'>TELL US IN THE COMMENTS</div>",
-   "scale": 0.71,
-   "top": 467
+   "html": "<div style='position:absolute;left:150px;right:150px;top:470px;height:4px;background:ACC'></div><div class='k' style='top:510px;font-size:38px;letter-spacing:7px;color:ACC'>YOUR FAVOURITE JUMPS MARE?</div><div class='t' style='top:610px;font-size:84px;white-space:nowrap'>HONEYSUCKLE<br>or LOSSIEMOUTH?</div><div class='t' style='top:850px;font-size:54px;white-space:nowrap;color:ACC'>TELL US IN THE COMMENTS</div><div style='position:absolute;left:150px;right:150px;top:980px;height:4px;background:ACC'></div>",
+   "pos": "top"
   },
   "4": {
-   "bg": "lossiemouth-bauble.png",
    "pos": "bot",
-   "html": "<div class='k' style='top:1290px;color:ACC;font-size:38px'>DESIGN YOURS WITH ANY NAME</div><div class='t' style='top:1360px;font-size:76px;white-space:nowrap'>SEARCH ZANS RACING<br>ON ETSY</div><div class='k' style='top:1540px;font-size:32px;letter-spacing:5px'>WISHING YOU A MERRY CHRISTMAS</div>"
+   "html": "<div class='k' style='top:1290px;color:ACC;font-size:38px'>DESIGN YOURS WITH ANY NAME</div><div class='t' style='top:1360px;font-size:76px;white-space:nowrap'>SEARCH ZANS RACING<br>ON ETSY</div><div class='k' style='top:1540px;font-size:32px;letter-spacing:5px'>WISHING YOU A MERRY CHRISTMAS</div>",
+   "disc": "art-lossiemouth-own.png"
   }
  }
 }
