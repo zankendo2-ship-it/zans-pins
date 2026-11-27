@@ -7,9 +7,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import silks_bands as sb
 NOCAP = '--no-cap' in sys.argv; sys.argv = [a for a in sys.argv if a != '--no-cap']
 key = sys.argv[1]; P = sb.POSTS[key]; s = P['silks']; edge = sb.EDGE[P.get('metal', 'gold')]
-STRIP, BH = 28, 90
+STRIP, BH, CAPBH = 28, 90, 126   # cap band is the thick one (>=120 px of 1920)
 for f in sys.argv[2:]:
     im = Image.open(f).convert('RGB'); W, H = im.size; d = ImageDraw.Draw(im)
-    if not NOCAP: d.rectangle([0, STRIP, W, STRIP + BH], fill=s['cap']); d.rectangle([0, STRIP + BH, W, STRIP + BH + 5], fill=edge)
+    if not NOCAP: d.rectangle([0, STRIP, W, STRIP + CAPBH], fill=s['cap']); d.rectangle([0, STRIP + CAPBH, W, STRIP + CAPBH + 5], fill=edge)
     im.paste(sb.silks_band(W, BH, s), (0, H - STRIP - BH)); d.rectangle([0, H - STRIP - BH - 6, W, H - STRIP - BH - 1], fill=edge)
     im.save(f)

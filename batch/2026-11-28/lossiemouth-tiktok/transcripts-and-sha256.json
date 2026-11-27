@@ -1,14 +1,14 @@
 {
  "A": {
-  "file": "batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.8-DRAFT.mp4",
-  "sha256": "264d1bf8594caf09c482e7f7315ec9afb60524727d7f5ca417ae5324482d56bd",
-  "full_transcript": "Lossiemouth, two Champion Hurdles in 2026? Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth? Who's your favourite? Tell us in the comments. Want a pink and green spots silks bauble with any name on it? Design yours and search Zhans Racing on Etsy. Wishing you a Merry Christmas.",
+  "file": "batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.8b-DRAFT.mp4",
+  "sha256": "a86cda2e7be56bf0a13f686eebab3e491181c47061b93567ffc5d41a74065e58",
+  "full_transcript": "Lossiemouth two Champion Hurdles in 2026. Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth, who's your favorite? Tell us in the comments. Want a pink and green spot silks bauble with any name on it? Design yours and search Zan's racing on Etsy. Wishing you a Merry Christmas.",
   "segments": [
    {
     "slide": "lossiemouth-1.png",
     "start_s": 0.0,
     "end_s": 4.47,
-    "voice_line_transcript": "Lossiemouth to Champion Hurdles in 2026"
+    "voice_line_transcript": "Lossiemouth to Champion Hurdle in 2026"
    },
    {
     "slide": "lossiemouth-2.png",
@@ -26,20 +26,20 @@
     "slide": "lossiemouth-4.png",
     "start_s": 13.73,
     "end_s": 23.74,
-    "voice_line_transcript": "Want a pink and green spots silks bauble with any name on it, design yours and search Zans Racing on Etsy."
+    "voice_line_transcript": "Want a pink and green spots silks bauble with any name on it? Design yours and search Zans Racing on Etsy."
    }
   ]
  },
  "B": {
-  "file": "batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.8-DRAFT.mp4",
-  "sha256": "ae7d46f8d75d66b270488580e75d7110d20396c396e1ba301ab495ea35be7727",
-  "full_transcript": "Lossiemouth, two Champion Hurdles in 2026. Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth, who's your favourite? Tell us in the comments. Want a pink and green spots silks bauble with any name on it? Design yours and search Zans Racing on Etsy. Wishing you a Merry Christmas.",
+  "file": "batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.8b-DRAFT.mp4",
+  "sha256": "309d97e5ee6afbafd8e524fbd72bb5f2ad5ab7e5225291adff2875567b5aabf0",
+  "full_transcript": "Lossiemouth to Champion Hurdle in 2026. Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth, who's your favorite? Tell us in the comments. Want a pink and green spot silks bauble with any name on it? Design yours and search Zan's Racing on Etsy. Wishing you a Merry Christmas.",
   "segments": [
    {
     "slide": "lossiemouth-1.png",
     "start_s": 0.0,
     "end_s": 4.47,
-    "voice_line_transcript": "Lossiemouth to Champion Hurdles in 2026"
+    "voice_line_transcript": "Lossiemouth to Champion Hurdle in 2026"
    },
    {
     "slide": "lossiemouth-2.png",
@@ -57,20 +57,20 @@
     "slide": "lossiemouth-4.png",
     "start_s": 13.73,
     "end_s": 23.74,
-    "voice_line_transcript": "Want a pink and green spots silks bauble with any name on it, design yours and search Zans Racing on Etsy."
+    "voice_line_transcript": "Want a pink and green spots silks bauble with any name on it? Design yours and search Zans Racing on Etsy."
    }
   ]
  },
  "C": {
-  "file": "batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.8-DRAFT.mp4",
-  "sha256": "44ef78d2307a45901e263221e51be35418a2f9efdc68996aad69c36a33d51587",
-  "full_transcript": "Lossiemouth to Champion Hurdles in 2026. Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth, who's your favorite? Tell us in the comments. Want a pink and green spot silks bauble with any name on it? Design yours and search Zan's Racing on Etsy. Wishing you a merry Christmas.",
+  "file": "batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.8b-DRAFT.mp4",
+  "sha256": "ddf837322b0d974af362f618fdf6d8e219ac3161e14db7d4ffca8a65716def21",
+  "full_transcript": "Lossiemouth, two Champion Hurdles in 2026? Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth? Who's your favorite? Tell us in the comments. Want a pink and green spot silks bauble with any name on it? Design yours and search Zan's Racing on Etsy. Wishing you a Merry Christmas.",
   "segments": [
    {
     "slide": "lossiemouth-1.png",
     "start_s": 0.0,
     "end_s": 4.47,
-    "voice_line_transcript": "Lossiemouth to Champion Hurdles in 2026"
+    "voice_line_transcript": "Lossiemouth to Champion Hurdle in 2026"
    },
    {
     "slide": "lossiemouth-2.png",
@@ -88,7 +88,7 @@
     "slide": "lossiemouth-4.png",
     "start_s": 13.73,
     "end_s": 23.74,
-    "voice_line_transcript": "Want a pink and green spots silks bauble with any name on it, design yours and search Zans Racing on Etsy."
+    "voice_line_transcript": "Want a pink and green spots silks bauble with any name on it? Design yours and search Zans Racing on Etsy."
    }
   ]
  }
