@@ -1,4 +1,7 @@
-# Closes a correction gate. Manual, main only, allowlisted actor only. No provider keys, no paid call.
+# Records a correction receipt. Manual, main only, allowlisted actor only. The receipt step has no provider keys and no paid call.
+# OPTIONAL automatic re-review (OFF unless the repository variable ZANS_ORCH_AUTO_REREVIEW is 'mock' or 'live', set by the owner):
+# after a receipt with at least one applied fix, the independent re-review of the corrected file runs in this same job, with the same
+# actor allowlist, kill switch, daily ceiling, monthly cap, no-retry guard and closure rules as the manual re-review workflow.
 name: ZANS correction receipt
 on:
   workflow_dispatch:
@@ -22,7 +25,7 @@ jobs:
   receipt:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - name: Checkout this commit (plain git, no token)
         run: |
@@ -38,3 +41,28 @@ jobs:
           ORCH_CORRECTION: ${{ inputs.correction }}
           ORCH_DECISIONS: ${{ inputs.decisions }}
         run: python3 -m orchestrator.receipt
+      - name: Tests (only when an automatic re-review will run; deps pinned by hash)
+        if: ${{ (vars.ZANS_ORCH_AUTO_REREVIEW == 'mock' || vars.ZANS_ORCH_AUTO_REREVIEW == 'live') && contains(inputs.decisions, '=applied') }}
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install -q --require-hashes --no-deps -r orchestrator/requirements-test.txt
+          /tmp/venv/bin/python -m pytest -q orchestrator
+      - name: Automatic independent re-review (off unless ZANS_ORCH_AUTO_REREVIEW is set)
+        if: ${{ (vars.ZANS_ORCH_AUTO_REREVIEW == 'mock' || vars.ZANS_ORCH_AUTO_REREVIEW == 'live') && contains(inputs.decisions, '=applied') }}
+        continue-on-error: true   # the receipt is already posted; the result is the settlement comment on #26
+        env:
+          ZANS_ORCH_ENABLED: ${{ vars.ZANS_ORCH_ENABLED }}
+          ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
+          ZANS_ORCH_MAX_RUNS_PER_DAY: ${{ vars.ZANS_ORCH_MAX_RUNS_PER_DAY }}
+          ZANS_ORCH_MAX_USD_PER_RUN: ${{ vars.ZANS_ORCH_MAX_USD_PER_RUN }}
+          ZANS_ORCH_MAX_USD_PER_MONTH: ${{ vars.ZANS_ORCH_MAX_USD_PER_MONTH }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          ANTHROPIC_API_KEY: ${{ vars.ZANS_ORCH_AUTO_REREVIEW == 'live' && secrets.ANTHROPIC_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ vars.ZANS_ORCH_AUTO_REREVIEW == 'live' && secrets.OPENAI_API_KEY || '' }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ORCH_MODE: ${{ vars.ZANS_ORCH_AUTO_REREVIEW }}
+          ORCH_ISSUE: "26"
+          ORCH_RUN: ${{ inputs.run }}
+          ORCH_CORRECTION: ${{ inputs.correction }}
+        run: /tmp/venv/bin/python -m orchestrator.daily_rereview

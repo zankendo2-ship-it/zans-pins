@@ -307,3 +307,85 @@ def test_schema_v2_files_need_every_reviewable_field_or_explicit_null():
     assert r.validate(file_bytes(date=day, frozen_at_utc=day + "T08:45:00Z", races=[{**gap, "confidence_capped": 6}]), day)
     # earlier-dated files (27 Nov) keep the old schema
     assert r.validate(file_bytes(), TODAY)
+
+
+def big_file(n=40, reason=900, **kw):
+    rows = [{**RACE, "course": f"C{i}", "time": f"13:{i:02d}", "zans_reasons": f"r{i} " + "x" * reason, "cautions": f"c{i}"} for i in range(n)]
+    return file_bytes(races=rows, **kw)
+
+
+def test_big_file_is_split_by_race_nothing_dropped_each_prompt_under_the_cap():
+    data = big_file()
+    text = r.validate(data, TODAY)
+    ps = r.build_prompts(text)
+    n = len(ps)
+    assert 2 <= n <= r.MAX_CHUNKS
+    seen = []
+    for i, p in enumerate(ps, 1):
+        assert r._bound(p) <= r.MAX_INPUT_TOKENS and f"chunk {i} of {n}" in p and "CHUNKED REVIEW" in p
+        seen += [x for x in range(40) if f'"course": "C{x}"' in p]
+    assert sorted(seen) == list(range(40))                       # every race exactly once
+    assert all(f"r{x} " + "x" * 900 in "".join(ps) for x in range(40))   # full per-race detail kept, no truncation
+    one = r.build_prompts(r.validate(file_bytes(), TODAY))
+    assert len(one) == 1 and "CHUNKED" not in one[0]            # small file: identical single prompt as before
+
+
+def test_chunk_cap_and_oversize_row_refused():
+    with pytest.raises(r.Refuse):
+        r.build_prompts(r.validate(big_file(n=60, reason=1400), TODAY))   # needs more than 3 chunks
+    row = {**RACE, "zans_reasons": "y" * 40_000}
+    with pytest.raises((r.Refuse, o.Stop)):
+        r.build_prompts(json.dumps({**json.loads(file_bytes()), "races": [row]}))
+
+
+def test_chunked_run_reserves_per_chunk_calls_each_chunk_both_providers_and_merges_worst():
+    data = big_file()
+    n = len(r.build_prompts(r.validate(data, TODAY)))
+    posted, calls = [], []
+    claude, openai = setup()
+    c2 = lambda e, t: calls.append("c") or claude(e, t)    # noqa: E731
+    o2 = lambda e, t: calls.append("o") or openai(e, t)    # noqa: E731
+    v, h, reserve, bad = r.run(ENV, data, [], TODAY, c2, o2, posted.append, GETTER)
+    assert not bad and calls == ["c", "o"] * n and reserve == r.worst_case_usd(n) <= r.CAP_USD * n
+    assert set(v) == {"Claude", "ChatGPT"} and f"worst case ${reserve:.2f}" in posted[0]
+    # worst verdict wins; a reviewer that skipped a chunk can never PASS
+    a = {"ack": "a", "verdict": "PASS", "reasons": ["ok"], "fixes": []}
+    b = {"ack": "b", "verdict": "REVISE", "reasons": ["bad"], "fixes": ["f1", "f1", "f2", "f3", "f4"]}
+    m = r.merge([a, b], 2)
+    assert m["verdict"] == "REVISE" and m["fixes"] == ["f1", "f2", "f3"] and m["reasons"] == ["[1/2] ok", "[2/2] bad"]
+    assert r.merge([a], 2)["verdict"] == "BLOCKER"
+
+
+def test_chunked_failure_in_a_later_chunk_stops_and_holds():
+    data = big_file()
+    claude, openai = setup()
+    seen = []
+
+    def flaky(e, t):
+        seen.append(1)
+        if len(seen) == 2:
+            raise OSError("net")
+        return claude(e, t)
+    v, h, reserve, bad = r.run(ENV, data, [], TODAY, flaky, openai, [].append, GETTER)
+    assert bad and v["Claude"]["verdict"] == "BLOCKER"
+
+
+def test_schema_v3_needs_review_detail_or_explicit_null_from_29_nov():
+    d = json.loads(file_bytes(date="2026-11-29", frozen_at_utc="2026-11-29T08:45:00Z"))
+    full = {**RACE, "second": None, "data_pick": "A", "agent_b": None, "gemini_api": None, "data_gap": False, "price_move": None,
+            "rpr_pick": None, "rpr_reason": "none", "longshot": None}
+    d["races"] = [dict(full)]
+    with pytest.raises(r.Refuse, match="review detail"):
+        r.validate(json.dumps(d).encode(), "2026-11-29")
+    d["races"] = [{**full, **{k: None for k in r.V3_DETAIL_FIELDS}}]
+    with pytest.raises(r.Refuse, match="no usable"):                       # a picked race with null reasons is a gap, not an answer
+        r.validate(json.dumps(d).encode(), "2026-11-29")
+    ok = {**full, "zans_reasons": "top rated on course form", "cautions": "none", "data_chance": 0.31, "best_price": None}
+    d["races"] = [ok]
+    r.validate(json.dumps(d).encode(), "2026-11-29")
+    d["races"] = [{**ok, "cautions": ""}]
+    with pytest.raises(r.Refuse, match="cautions"):
+        r.validate(json.dumps(d).encode(), "2026-11-29")
+    d["races"] = [{**full, **{k: None for k in r.V3_DETAIL_FIELDS}, "win_pick": None, "status": "no pick"}, ok | {"course": "B"}]
+    r.validate(json.dumps(d).encode(), "2026-11-29")                      # an unpicked race may carry nulls
+    r.validate(json.dumps({**d, "date": "2026-11-28", "frozen_at_utc": "2026-11-28T08:45:00Z", "races": [full]}).encode(), "2026-11-28")

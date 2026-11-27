@@ -622,6 +622,7 @@ def combined_fixes(rounds, limit=20):
 CORRECTION = "zans-orch-correction"
 RECEIPT = "zans-orch-receipt"
 CORRECTION_RE = re.compile(r"<!-- " + CORRECTION + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
+REJECTED = "zans-orch-rejected"  # receipt with NO applied fix: records the decisions only, never closes a gate
 FIXED = "zans-orch-fixed"        # receipt with applied fixes: does NOT close the gate; only a PASS/PASS re-review does
 PARENT = "zans-orch-parent"      # a re-review that failed opened a new gate whose parent is the older gate
 FIXED_RE = re.compile(r"<!-- " + FIXED + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
