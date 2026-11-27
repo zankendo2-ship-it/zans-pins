@@ -695,3 +695,17 @@ def test_settle_flags_overrun_when_cost_exceeds_reserve():
         o.gh = orig
     m = o.SETTLE_RE.search(posted[0]["body"])
     assert m and m.group(4) and float(m.group(3)) == 5.0 and "OVERRUN" in posted[0]["body"]
+
+
+def test_rounds_cap_one_round_fits_big_files_and_limits_calls():
+    big = "z" * 60000
+    with pytest.raises(o.Stop):
+        o.preflight("t", [URL], [], big, "")           # 3 rounds: refused
+    o.preflight("t", [URL], [], big, "", 1)            # 1 round: fits
+    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REVISE")] * 3), o.mock_caller([V("PASS")] * 3), rounds_cap=1)
+    assert req == 2 and len(rounds) == 1
+
+
+def test_rounds_cap_clamped():
+    out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REVISE")] * 9), o.mock_caller([V("PASS")] * 9), rounds_cap=99)
+    assert req == 2 * o.MAX_ROUNDS
