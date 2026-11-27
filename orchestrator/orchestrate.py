@@ -699,7 +699,7 @@ def main(env=None):
         if mode in PAID_MODES and attempted(recent, h):
             raise Stop("SKIPPED: this exact artifact set was already attempted; no automatic paid retry.")
         if runs_today(recent, today, mode) >= day_cap(env, mode):
-            raise Stop("STOPPED: the shared one-paid-run-per-UTC-day cap is already used by a paid route.")
+            raise Stop("STOPPED: the shared one paid run per UTC day is already used by a paid route.")
         if mode == "live" and overruns(recent, month):
             raise Stop("STOPPED: an earlier live run this month cost MORE than its reservation. No further live runs "
                        "until the owner reviews the cap and the pricing table.")
