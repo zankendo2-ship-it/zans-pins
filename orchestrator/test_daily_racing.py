@@ -430,8 +430,8 @@ def test_schema_v3_values_are_checked_not_just_present():
     check(sky_bet_price=None, best_price=None)             # no Sky price, nothing to compare
 
 
-PRICES = (b"course,time,horse,price\nAscot,13:00,Alpha Star,2.5\nAscot,13:00,Blue Sky (IRE),4.0\nAscot,13:00,Long Shot,21.0\n"
-          b"Ascot,13:00,Cee Dee,6.0\nAscot,13:00,Dee Ess,8.0\nAscot,13:00,Eff Gee,9.0\n")
+PRICES = (b"course,time,horse,price,best_dec,status\nAscot,13:00,Alpha Star,2.5,2.5,RUNNER\nAscot,13:00,Blue Sky (IRE),4.0,4.0,RUNNER\nAscot,13:00,Long Shot,21.0,21.0,RUNNER\n"
+          b"Ascot,13:00,Cee Dee,6.0,6.0,RUNNER\nAscot,13:00,Dee Ess,8.0,8.0,RUNNER\nAscot,13:00,Eff Gee,9.0,9.0,RUNNER\n")
 V3RACE = {**RACE, "win_pick": "Alpha Star", "second": "Blue Sky 4.00 (23%)", "rpr_pick": "Alpha Star", "longshot": "Long Shot at 21.0",
           "sky_bet_price": 2.5, "best_price": 2.5}
 
@@ -450,8 +450,8 @@ def test_v3_named_runners_must_be_declared_in_the_verified_prices_file():
 
 
 def test_declared_runner_check_reads_the_real_prices_columns():
-    real = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms\nAscot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5\n"
-            b"Ascot,13:00,Blue Sky,4.0,4.5,Sky Bet v2;4.5;3;1/5\n")
+    real = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\nAscot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5,RUNNER\n"
+            b"Ascot,13:00,Blue Sky,4.0,4.5,Sky Bet v2;4.5;3;1/5,RUNNER\n")
     d = _v3(longshot=None, longshot_reason="no runner priced at 15.00 or more", best_price=2.6)
     r.check_declared_runners(d, real)
     with pytest.raises(r.Refuse, match="not a declared runner"):
@@ -461,13 +461,13 @@ def test_declared_runner_check_reads_the_real_prices_columns():
 def test_longshot_price_must_match_a_price_in_the_verified_file():
     with pytest.raises(r.Refuse, match="longshot price 31.0 is not a price"):
         r.check_declared_runners(_v3(longshot="Long Shot at 31.0"), PRICES)
-    lowfile = PRICES.replace(b"Long Shot,21.0", b"Long Shot,3.0")   # source row 3.00 must not accept a claimed 21.00
+    lowfile = PRICES.replace(b"Long Shot,21.0,21.0,", b"Long Shot,3.0,3.0,")   # source row 3.00 must not accept a claimed 21.00
     with pytest.raises(r.Refuse):
         r.check_declared_runners(_v3(), lowfile)
 
 
 def test_best_price_must_match_a_price_in_the_verified_file():
-    with pytest.raises(r.Refuse, match="best_price 9.0 is not a price"):
+    with pytest.raises(r.Refuse, match="best_price 9.0 is not the best_dec price"):
         r.check_declared_runners(_v3(best_price=9.0), PRICES)
 
 
@@ -488,5 +488,329 @@ def test_placeholder_win_pick_is_refused():
 def test_longshot_reason_cannot_bypass_a_qualifying_runner_in_the_file():
     with pytest.raises(r.Refuse, match="named qualifying longshot is required"):
         r.check_declared_runners(_v3(longshot=None, longshot_reason="no value in the outsiders today"), PRICES)
-    small = b"course,time,horse,price\nAscot,13:00,Alpha Star,2.5\nAscot,13:00,Blue Sky,4.0\nAscot,13:00,Long Shot,21.0\n"
+    small = b"course,time,horse,price,best_dec,status\nAscot,13:00,Alpha Star,2.5,2.5,RUNNER\nAscot,13:00,Blue Sky,4.0,4.0,RUNNER\nAscot,13:00,Long Shot,21.0,21.0,RUNNER\n"
     r.check_declared_runners(_v3(longshot=None, longshot_reason="field of three, longshot rule needs six"), small)
+
+
+def test_non_runner_row_is_not_a_declared_runner_or_eligible_longshot():
+    five = b"course,time,horse,price,best_dec,status\n" + b"".join(b"Ascot,13:00,Horse %s,%d.0,%d.0,RUNNER\n" % (n, 3 + i, 3 + i) for i, n in enumerate([b"Aa", b"Bb", b"Cc", b"Dd", b"Ee"]))
+    withdrawn = five + b"Ascot,13:00,Long Shot,21.0,21.0,NONRUNNER\n"
+    base = {"win_pick": "Horse Aa", "second": "Horse Bb 4.0", "rpr_pick": "Horse Aa", "sky_bet_price": 3.0, "best_price": 3.0}
+    r.check_declared_runners(_v3(**{**base, "longshot": None, "longshot_reason": "no active runner priced at 15.00 or more"}), withdrawn)
+    with pytest.raises(r.Refuse, match="non-runner"):
+        r.check_declared_runners(_v3(**{**base, "longshot": "Long Shot at 21.0"}), withdrawn)
+    with pytest.raises(r.Refuse, match="non-runner"):
+        r.check_declared_runners(_v3(**{**base, "second": "Long Shot 21.0"}), withdrawn)
+
+
+def test_no_pick_race_must_carry_no_selections():
+    with pytest.raises(r.Refuse, match="no win_pick but names"):
+        r.check_declared_runners(_v3(win_pick=None, second="Blue Sky 4.0"), PRICES)
+    r.check_declared_runners(_v3(win_pick=None, second=None, rpr_pick=None, longshot=None), PRICES)
+
+
+def test_prices_file_status_fails_closed():
+    nocol = b"course,time,horse,price\nAscot,13:00,Alpha Star,2.5\n"
+    with pytest.raises(r.Refuse, match="no 'status' column"):
+        r.check_declared_runners(_v3(), nocol)
+    for bad in (b"", b"MAYBE", b"runner-ish"):
+        f = b"course,time,horse,price,status\nAscot,13:00,Alpha Star,2.5," + bad + b"\n"
+        with pytest.raises(r.Refuse, match="blank or unknown status"):
+            r.check_declared_runners(_v3(), f)
+    ok = b"course,time,horse,price,status\nAscot,13:00,Alpha Star,2.5,RUNNER\nAscot,13:00,Blue Sky,4.0,NONRUNNER\n"
+    with pytest.raises(r.Refuse, match="non-runner"):
+        r.check_declared_runners(_v3(longshot=None, longshot_reason="field is two runners, no longshot"), ok)   # second = Blue Sky is the withdrawn one
+
+
+SRC = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\n"
+       b"Ascot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5|Paddy Power;2.7;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Blue Sky,4.0,4.5,Sky Bet v2;4.5;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Cee Dee,6.0,6.0,Sky Bet v2;6.0;3;1/5,RUNNER\nAscot,13:00,Dee Ess,8.0,8.0,Sky Bet v2;8.0;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Eff Gee,9.0,9.0,Sky Bet v2;9.0;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Long Shot,21.0,19.0,Sky Bet v2;17.0;3;1/5|Paddy Power;19.0;3;1/5,RUNNER\n")
+
+
+def _v3s(**chg):
+    return _v3(**{"best_price": 2.6, **chg})
+
+
+def _ls(price, source, kind):
+    return {"name": "Long Shot", "price": price, "price_source": source, "price_kind": kind}
+
+
+def test_longshot_price_source_label_binds_to_its_own_column():
+    n = "d0_0959.csv"
+    r.check_declared_runners(_v3s(longshot=_ls(17.0, f"Sky Bet in {n}", "bookmaker")), SRC, n)
+    r.check_declared_runners(_v3s(longshot=_ls(19.0, f"best bookmaker in {n}", "bookmaker")), SRC, n)
+    with pytest.raises(r.Refuse, match="not held in the source column"):
+        r.check_declared_runners(_v3s(longshot=_ls(19.0, f"Sky Bet in {n}", "bookmaker")), SRC, n)   # 19.00 is Paddy Power / best, not Sky
+    with pytest.raises(r.Refuse, match="not held in the source column"):
+        r.check_declared_runners(_v3s(longshot=_ls(21.0, f"best bookmaker in {n}", "bookmaker")), SRC, n)   # 21.00 is the SL quote
+    with pytest.raises(r.Refuse, match="is quote_only"):
+        r.check_declared_runners(_v3s(longshot=_ls(21.0, f"Sporting Life quote in {n}", "bookmaker")), SRC, n)
+    with pytest.raises(r.Refuse, match="not the verified prices file"):
+        r.check_declared_runners(_v3s(longshot=_ls(17.0, "Sky Bet in other.csv", "bookmaker")), SRC, n)
+    with pytest.raises(r.Refuse, match="known label"):
+        r.check_declared_runners(_v3s(longshot=_ls(17.0, f"Betfred in {n}", "bookmaker")), SRC, n)
+
+
+def test_compact_longshot_kind_cannot_pass_a_quote_as_a_bookmaker_price():
+    c = {"name": "Long Shot", "price": 21.0, "price_kind": "bookmaker"}      # compact file: no price_source
+    with pytest.raises(r.Refuse, match="quote-only price cannot stand in"):
+        r.check_declared_runners(_v3s(longshot=c), SRC)
+    r.check_declared_runners(_v3s(longshot={**c, "price_kind": "quote_only"}), SRC)
+    r.check_declared_runners(_v3s(longshot={**c, "price": 17.0}), SRC)
+
+
+def test_best_price_is_bound_to_best_dec():
+    r.check_declared_runners(_v3s(best_price=2.6, longshot=_ls(17.0, "Sky Bet in x.csv", "bookmaker")), SRC)
+    with pytest.raises(r.Refuse, match="best_dec"):
+        r.check_declared_runners(_v3s(best_price=2.5, longshot=_ls(17.0, "Sky Bet in x.csv", "bookmaker")), SRC)   # 2.5 is only the SL quote
+
+
+def test_longshot_with_no_source_identity_is_refused():
+    with pytest.raises(r.Refuse, match="neither price_source nor price_kind"):
+        r.check_declared_runners(_v3s(longshot={"name": "Long Shot", "price": 17.0}), SRC)
+
+
+def test_best_price_never_falls_back_to_another_column():
+    noBest = b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\nAscot,13:00,Alpha Star,2.5,,,RUNNER\nAscot,13:00,Blue Sky,4.0,,,RUNNER\n"
+    with pytest.raises(r.Refuse, match="no best_dec"):
+        r.check_declared_runners(_v3(longshot=None, longshot_reason="single runner, no longshot", best_price=2.5), noBest)
+
+
+def test_malformed_bookie_terms_are_refused():
+    bad = b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\nAscot,13:00,Alpha Star,2.5,2.6,Sky Bet v2|Paddy Power;2.7,RUNNER\n"
+    with pytest.raises(r.Refuse, match="malformed bookie_terms"):
+        r.check_declared_runners(_v3(), bad)
+
+
+# ---- immutable evidence ids (V3) ----
+import hashlib as _hl
+
+_REC = {"time": "13:00", "course": "Ascot", "horse": "Alpha Star", "win_angles": ["Won last time at this trip", "Trainer in form 4 from 9"],
+        "win_caution": ["Up 5lb in the handicap"], "data_angles": ["Top speed figure"], "second": "Blue Sky 4.00 (23%)", "chance": 0.303,
+        "data_chance": 0.31, "data_conf": 4, "rpr_pick": "Alpha Star", "rpr_reason": "Best RPR at trip", "price": 2.5, "going": "Good to Soft",
+        "longshot": "Long Shot at 21.0", "data_gap": False, "drift_warning": False}
+_COURSE = json.dumps({"picks": [_REC, {**_REC, "time": "14:00", "horse": "Other"}]}).encode()
+_PR = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\n"
+       b"Ascot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5|Paddy Power;2.7;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Long Shot,21.0,19.0,Sky Bet v2;17.0;3;1/5,RUNNER\n")
+_ROW = {"course": "Ascot", "off_time": "13:00", "horse": "Alpha Star", "sl_dec": "2.5", "best_dec": "2.6",
+        "bookie_terms": "Sky Bet v2;2.6;3;1/5|Paddy Power;2.7;3;1/5", "status": "RUNNER"}
+_LROW = {"course": "Ascot", "off_time": "13:00", "horse": "Long Shot", "sl_dec": "21.0", "best_dec": "19.0",
+         "bookie_terms": "Sky Bet v2;17.0;3;1/5", "status": "RUNNER"}
+_FILES = {"c/ascot.json": _COURSE, "c/d0.csv": _PR}
+_blob = lambda b: _hl.sha1(b"blob %d\0" % len(b) + b).hexdigest()
+
+
+def _evd(**race):
+    d = {"date": "2026-11-29", "racing_branch_commit": "abc", "racing_commit_original": "a" * 40, "prices_file": "c/d0.csv",
+         "evidence_fields": sorted(r.EVIDENCE_FIELDS_REQUIRED), "reason_fields": list(r.REASON_FIELDS_REQUIRED),
+         "evidence_map": {"pick_record_keys": dict(r.EVIDENCE_RECORD_KEYS)},
+         "sources": [{"id": "S1", "path": "c/ascot.json", "origin_path": "o/ascot.json", "blob_sha1": _blob(_COURSE), "captured_utc": "2026-11-29T08:45:00Z"},
+                     {"id": "S2", "path": "c/d0.csv", "origin_path": "o/d0.csv", "blob_sha1": _blob(_PR), "captured_utc": "2026-11-29T07:24:00Z"}],
+         "races": [{"time": "13:00", "course": "Ascot", "win_pick": "Alpha Star", "confidence": 8, "zans_reasons": ["Won last time at this trip"],
+                    "cautions": ["Up 5lb in the handicap"], "sky_bet_price": 2.6, "best_price": 2.6, "second": "Blue Sky 4.00 (23%)",
+                    "rpr_pick": "Alpha Star", "zans_chance": 0.303, "data_chance": 0.31, "data_conf": 4, "price_at_pick": "2.50", "going": "Good to Soft",
+                    "longshot": "Long Shot at 21.0",
+                    "evidence": {"id": "E1", "src": "S1", "pick_sha256": r._h(_REC), "price_src": "S2", "price_row_sha256": r._h(_ROW),
+                                 "longshot_row_sha256": r._h(_LROW)}, **race}]}
+    return d
+
+
+def _ev(d=None, files=None):
+    f = files or _FILES
+    r.check_evidence(d or _evd(), lambda c, p: f[p])
+
+
+def _chg(path, val):
+    d = _evd()
+    t = d
+    for k in path[:-1]:
+        t = t[k]
+    t[path[-1]] = val
+    return d
+
+
+def _with_rec(**kw):
+    rec = {**_REC, **{k: v for k, v in kw.items()}}
+    rec = {k: v for k, v in rec.items() if v is not r}
+    files = {**_FILES, "c/ascot.json": json.dumps({"picks": [rec]}).encode()}
+    d = _evd()
+    d["sources"][0]["blob_sha1"] = _blob(files["c/ascot.json"])
+    d["races"][0]["evidence"]["pick_sha256"] = r._h(rec)
+    return d, files
+
+
+def test_evidence_ok_and_reasons_may_be_cut():
+    _ev()
+    _ev(_evd(zans_reasons=["Won last time at this trip\u2026"]))
+    _ev(_evd(sky_bet_price=None, best_price=None, longshot=None, not_verified=["sky_bet_price", "best_price"],
+             evidence={"id": "E1", "src": "S1", "pick_sha256": r._h(_REC)}))
+
+
+def test_evidence_wrong_path_or_hash_or_missing_id_refused():
+    for d, why in ((_chg(["races", 0, "evidence", "src"], "S9"), "not in sources"),
+                   (_chg(["races", 0, "evidence", "pick_sha256"], "0" * 64), "pick_sha256 does not match"),
+                   (_chg(["races", 0, "evidence", "pick_sha256"], r._h(_REC)[:12]), "full 64-hex"),
+                   (_chg(["races", 0, "evidence"], None), "needs evidence"),
+                   (_chg(["races", 0, "evidence", "price_row_sha256"], "0" * 64), "price_row_sha256 does not match"),
+                   (_chg(["races", 0, "evidence", "price_row_sha256"], r._h(_ROW)[:12]), "full 64-hex"),
+                   (_chg(["races", 0, "evidence", "longshot_row_sha256"], r._h(_ROW)), "longshot_row_sha256 does not match"),
+                   (_chg(["races", 0, "evidence", "price_src"], "S1"), "price_src"),
+                   (_chg(["races", 0, "evidence", "id"], ""), "needs evidence"),
+                   (_chg(["races", 0, "evidence", "id"], "free text"), "needs evidence"),
+                   (_chg(["sources", 0, "blob_sha1"], "0" * 40), "blob_sha1"),
+                   (_chg(["racing_commit_original"], "short"), "racing_commit_original")):
+        with pytest.raises(r.Refuse, match=why):
+            _ev(d)
+    with pytest.raises(r.Refuse, match="subset"):
+        _ev(_evd(not_verified=["price_move"]))
+
+
+def test_evidence_ids_must_be_unique_across_races():
+    d = _evd()
+    d["races"].append({**_copy_deep(d["races"][0]), "time": "14:00", "evidence": {**d["races"][0]["evidence"]}})
+    with pytest.raises(r.Refuse, match="duplicate evidence id"):
+        _ev(d)
+
+
+def _copy_deep(x):
+    return json.loads(json.dumps(x))
+
+
+def test_evidence_schema_cannot_be_shrunk_to_skip_checks():
+    for key in ("evidence_fields", "reason_fields"):
+        d = _evd(zans_reasons=["Invented unsupported claim"])
+        d[key] = d[key][1:]
+        with pytest.raises(r.Refuse, match=key):
+            _ev(d)
+        d = _evd(); d.pop(key)
+        with pytest.raises(r.Refuse, match=key):
+            _ev(d)
+    d = _evd(); d["evidence_map"]["pick_record_keys"]["zans_reasons"] = "other"
+    with pytest.raises(r.Refuse, match="evidence_map"):
+        _ev(d)
+    d = _evd(); d["evidence_fields"] = d["evidence_fields"] + ["extra"]
+    with pytest.raises(r.Refuse, match="evidence_fields"):
+        _ev(d)
+
+
+def test_evidence_wrong_runner_course_row_or_field_refused():
+    with pytest.raises(r.Refuse, match="not the horse"):
+        _ev(_evd(win_pick="Blue Sky"))
+    with pytest.raises(r.Refuse, match="exact course and time"):
+        _ev(_evd(course="Newbury"))                    # same time at another course: no record, no borrowed hash
+    with pytest.raises(r.Refuse, match="exact course and time"):
+        _ev(_evd(time="14:30"))
+    d, f = _with_rec(course=r)                          # record without a course key: time alone is never enough
+    with pytest.raises(r.Refuse, match="exact course and time"):
+        _ev(d, f)
+    d, f = _with_rec(horse=r)                           # record without any runner key
+    with pytest.raises(r.Refuse, match="runner key is mandatory"):
+        _ev(d, f)
+    dup = json.dumps({"picks": [_REC, _REC]}).encode()
+    with pytest.raises(r.Refuse, match="exact course and time"):
+        d = _evd(); d["sources"][0]["blob_sha1"] = _blob(dup)
+        _ev(d, {**_FILES, "c/ascot.json": dup})
+    with pytest.raises(r.Refuse, match="row"):
+        d = _evd(); bad = _PR.replace(b"Alpha Star", b"Blue Sky"); d["sources"][1]["blob_sha1"] = _blob(bad)
+        _ev(d, {**_FILES, "c/d0.csv": bad})
+    with pytest.raises(r.Refuse, match="best"):
+        _ev(_evd(best_price=2.7))                      # 2.70 is Paddy Power, not best_dec
+    with pytest.raises(r.Refuse, match="sky"):
+        _ev(_evd(sky_bet_price=2.7))
+
+
+def test_evidence_typed_fields_must_match_the_hashed_record():
+    for chg, why in (({"second": "Dee Ess 8.00 (5%)"}, "second"), ({"rpr_pick": "Cee Dee"}, "rpr_pick"), ({"zans_chance": 0.40}, "zans_chance"),
+                     ({"data_chance": 0.5}, "data_chance"), ({"data_conf": 9}, "data_conf"), ({"price_at_pick": "3.10"}, "price_at_pick"),
+                     ({"going": "Heavy"}, "going"), ({"data_gap": True}, "data_gap"), ({"drift_warning": True}, "drift_warning")):
+        with pytest.raises(r.Refuse, match=why):
+            _ev(_evd(**chg))
+    _ev(_evd(zans_chance=0.3031, rpr_pick=None))        # tiny rounding / a withdrawn RPR pick (null) is fine
+    _ev(_evd(zans_chance=0.40, not_verified=["zans_chance"]))   # flagged NOT VERIFIED = not claimed as verified
+
+
+def test_evidence_pick_source_and_price_source_captured_strictly_before_off():
+    for si in (0, 1):
+        for ts in ("2026-11-29T13:00:00Z", "2026-11-29T15:00:00Z", "nonsense", None):
+            with pytest.raises(r.Refuse, match="strictly before the off"):
+                _ev(_chg(["sources", si, "captured_utc"], ts))
+    _ev(_chg(["sources", 0, "captured_utc"], "2026-11-29T12:59:00Z"))
+    with pytest.raises(r.Refuse, match="after the off"):
+        d = _evd(); d["races"][0]["evidence"]["price_captured_after_off"] = True
+        _ev(d)
+
+
+def test_evidence_summer_time_off_is_london_local():
+    d = _chg(["date"], "2026-07-15")        # 13:00 BST = 12:00Z; 12:30Z capture is after the off
+    d["sources"][1]["captured_utc"] = "2026-07-15T12:30:00Z"
+    d["sources"][0]["captured_utc"] = "2026-07-15T08:00:00Z"
+    with pytest.raises(r.Refuse, match="strictly before"):
+        _ev(d)
+    d["sources"][1]["captured_utc"] = "2026-07-15T11:30:00Z"
+    _ev(d)
+
+
+def test_evidence_plausible_but_unsupported_reason_refused():
+    with pytest.raises(r.Refuse, match="unsupported reason"):
+        _ev(_evd(zans_reasons=["Won last time at this trip", "Jockey has won 3 of 4 here"]))
+    with pytest.raises(r.Refuse, match="unsupported reason"):
+        _ev(_evd(cautions=["Never raced on soft"]))
+    d, f = _with_rec(win_angles=None)
+    with pytest.raises(r.Refuse, match="holds nothing"):
+        _ev(_evd_with(d, zans_reasons=["Won last time"]), f)
+    _ev(_evd(zans_reasons=["Won last time at this trip"], not_verified=["zans_reasons"], confidence_capped=6))   # flagged NOT VERIFIED = allowed
+
+
+def _evd_with(d, **race):
+    d["races"][0].update(race)
+    return d
+
+
+def test_evidence_unverified_reason_must_cap_confidence_at_six():
+    with pytest.raises(r.Refuse, match="confidence_capped"):
+        _ev(_evd(not_verified=["zans_reasons"]))
+    with pytest.raises(r.Refuse, match="confidence_capped"):
+        _ev(_evd(not_verified=["second"], confidence_capped=7))
+    _ev(_evd(not_verified=["zans_reasons"], confidence_capped=6))
+    _ev(_evd(not_verified=["zans_reasons"], confidence=5))      # already at or under the cap
+
+
+def test_evidence_none_listed_is_verified_empty_only_when_the_record_key_is_empty():
+    for empty in (None, "", []):
+        d, f = _with_rec(win_angles=empty)
+        _ev(_evd_with(d, zans_reasons="none listed"), f)
+        d, f = _with_rec(win_angles=empty)
+        _ev(_evd_with(d, zans_reasons=["none listed"]), f)
+    d, f = _with_rec(win_angles=[])
+    with pytest.raises(r.Refuse, match="holds nothing"):
+        _ev(_evd_with(d, zans_reasons=["Won last time"]), f)               # invented reason on an empty record
+    with pytest.raises(r.Refuse, match="holds content"):
+        _ev(_evd(zans_reasons="none listed"))                                # hides real angles
+    d, f = _with_rec(win_angles=r)
+    with pytest.raises(r.Refuse, match="no such key"):
+        _ev(_evd_with(d, zans_reasons="none listed"), f)                     # key absent is not verified-empty
+
+
+def test_evidence_course_may_be_file_level_and_win_key_names_the_horse():
+    rec = {k: v for k, v in _REC.items() if k not in ("course", "horse")}
+    rec["win"] = "Alpha Star"
+    for fc, ok in (("ascot", True), ("Ascot", True), ("newbury", False), (None, False)):
+        doc = {"published_utc": "x", "picks": [rec]}
+        if fc:
+            doc["course"] = fc
+        files = {**_FILES, "c/ascot.json": json.dumps(doc).encode()}
+        d = _evd(); d["sources"][0]["blob_sha1"] = _blob(files["c/ascot.json"]); d["races"][0]["evidence"]["pick_sha256"] = r._h(rec)
+        if ok:
+            _ev(d, files)
+        else:
+            with pytest.raises(r.Refuse, match="exact course and time"):
+                _ev(d, files)
+    doc = {"course": "ascot", "picks": [{**rec, "win": "Blue Sky"}]}
+    files = {**_FILES, "c/ascot.json": json.dumps(doc).encode()}
+    d = _evd(); d["sources"][0]["blob_sha1"] = _blob(files["c/ascot.json"]); d["races"][0]["evidence"]["pick_sha256"] = r._h(doc["picks"][0])
+    with pytest.raises(r.Refuse, match="not the horse"):
+        _ev(d, files)

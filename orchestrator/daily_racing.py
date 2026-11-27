@@ -261,33 +261,83 @@ def verify_sources(data, getter):
     if combined_sha256(src) != d["pack_manifest_combined_sha256"]:
         raise Refuse("pack_manifest_combined_sha256 does not match the per-source hashes")
     if d["date"] >= SCHEMA_V3_FROM:
-        check_declared_runners(d, getter(commit, prices_file))
+        check_declared_runners(d, getter(commit, prices_file), prices_name=prices_file.rsplit('/', 1)[-1])
+        check_evidence(d, getter)
     return len(src)
 
 
+def _dec(x):
+    try:
+        x = float(x)
+    except (TypeError, ValueError):
+        return None
+    return x if x > 1 else None
+
+
 def _source_prices(row):
-    """Every decimal price the verified prices row carries for a runner (test 'price', Sporting Life, best, each bookmaker)."""
-    out = set()
-    for k in ("price", "sl_dec", "best_dec"):
-        try:
-            x = float(row.get(k))
-            if x > 1:
-                out.add(x)
-        except (TypeError, ValueError):
-            pass
-    for part in str(row.get("bookie_terms") or "").split("|"):
+    """Decimal prices a verified prices row carries for a runner, kept by source column/term:
+    sky = the 'Sky Bet v2' term of bookie_terms; best = best_dec; sl = sl_dec (a quote only); price = generic 'price' (quote only);
+    bookmaker = every bookmaker term plus best_dec; any = all of them."""
+    out = {"sky": set(), "best": set(), "sl": set(), "price": set(), "bookmaker": set()}
+    for col, key in (("price", "price"), ("sl_dec", "sl"), ("best_dec", "best")):
+        x = _dec(row.get(col))
+        if x is not None:
+            out[key].add(x)
+    out["bookmaker"] |= out["best"]
+    for part in [q for q in str(row.get("bookie_terms") or "").split("|") if q.strip()]:
         bits = part.split(";")
-        if len(bits) > 1:
-            try:
-                x = float(bits[1])
-                if x > 1:
-                    out.add(x)
-            except ValueError:
-                pass
+        x = _dec(bits[1]) if len(bits) > 1 else None
+        if len(bits) < 2 or not bits[0].strip() or x is None:
+            raise Refuse(f"the verified prices file has a malformed bookie_terms entry {part!r} for {row.get('horse')!r}; refused (fail closed)")
+        if x is not None:
+            out["bookmaker"].add(x)
+            if bits[0].strip().lower().startswith("sky bet"):
+                out["sky"].add(x)
+    out["any"] = set().union(*out.values())
     return out
 
 
-def check_declared_runners(d, prices_bytes):
+ACTIVE_STATUS = {"RUNNER"}
+INACTIVE_STATUS = {"NONRUNNER", "NON_RUNNER", "NON-RUNNER", "WITHDRAWN"}
+LABEL_COLUMN = {"sky bet": ("sky", "bookmaker"), "best bookmaker": ("best", "bookmaker"),
+                "sporting life quote": ("sl", "quote_only"), "price": ("price", "quote_only")}
+
+
+def _merge_prices(into, new):
+    for k, v in new.items():
+        into.setdefault(k, set()).update(v)
+
+
+def _longshot_source_check(ls, rp, prices_name, where):
+    """A longshot dict's price must come from the column its price_source label names (or, in the compact file, its price_kind)."""
+    if not isinstance(ls, dict):
+        return
+    claimed = _price_of(ls)
+    src, kind = ls.get("price_source"), ls.get("price_kind")
+    if kind is not None and kind not in ("bookmaker", "quote_only"):
+        raise Refuse(f"{where}: longshot price_kind {kind!r} is not 'bookmaker' or 'quote_only'")
+    if src is not None:
+        label, sep, fname = str(src).partition(" in ")
+        spec = LABEL_COLUMN.get(label.strip().lower())
+        if spec is None or not sep:
+            raise Refuse(f"{where}: longshot price_source {src!r} is not '<label> in <prices file>' with a known label")
+        if prices_name and fname.strip() != prices_name:
+            raise Refuse(f"{where}: longshot price_source names {fname.strip()!r}, not the verified prices file {prices_name!r}")
+        col, expect_kind = spec
+        if kind is not None and kind != expect_kind:
+            raise Refuse(f"{where}: longshot price_source {label!r} is {expect_kind}, but price_kind says {kind!r}")
+        pool = rp.get(col, set())
+    elif kind == "bookmaker":
+        pool = rp.get("bookmaker", set()) | rp.get("sky", set())
+    elif kind == "quote_only":
+        pool = rp.get("sl", set()) | rp.get("price", set())
+    else:
+        raise Refuse(f"{where}: longshot claims a price but carries neither price_source nor price_kind; source identity is required (fail closed)")
+    if claimed is None or not any(abs(claimed - p) < 0.011 for p in pool):
+        raise Refuse(f"{where}: longshot price {claimed} is not held in the source column its price_source/price_kind names (a quote-only price cannot stand in for a bookmaker price)")
+
+
+def check_declared_runners(d, prices_bytes, prices_name=None):
     """V3 files, fail closed against the hash-verified prices file (course + off time):
     - a picked race must have its rows in the file, unless it carries a real no_price_reason;
     - win_pick / second / rpr_pick / longshot must each be a plausible name AND a declared runner (win_pick 'none' is refused);
@@ -295,12 +345,25 @@ def check_declared_runners(d, prices_bytes):
     - where the file holds a runner at 15.00+ in a field of 6+, a longshot naming a qualifying runner is required (a reason cannot bypass it)."""
     import csv
     import io
-    declared = {}
-    for row in csv.DictReader(io.StringIO(prices_bytes.decode("utf-8", "replace"))):
-        race = declared.setdefault((str(row.get("course", "")).strip().lower(), str(row.get("off_time") or row.get("time") or "").strip()), {})
-        race.setdefault(_key(row.get("horse", "")), set()).update(_source_prices(row))
+    declared, inactive = {}, {}
+    reader = csv.DictReader(io.StringIO(prices_bytes.decode("utf-8", "replace")))
+    if "status" not in (reader.fieldnames or []):
+        raise Refuse("the verified prices file has no 'status' column; cannot tell runners from non-runners (fail closed)")
+    for row in reader:
+        k = (str(row.get("course", "")).strip().lower(), str(row.get("off_time") or row.get("time") or "").strip())
+        st = str(row.get("status") or "").strip().upper()
+        if st in INACTIVE_STATUS:
+            inactive.setdefault(k, set()).add(_key(row.get("horse", "")))
+            continue   # a withdrawn / non-runner row is never a declared runner and never an eligible longshot
+        if st not in ACTIVE_STATUS:
+            raise Refuse(f"the verified prices file has a row for {row.get('horse')!r} with a blank or unknown status {st!r}; refused (fail closed)")
+        race = declared.setdefault(k, {})
+        _merge_prices(race.setdefault(_key(row.get("horse", "")), {}), _source_prices(row))
     for r in d.get("races", []):
         if not r.get("win_pick"):
+            named = [f for f in ("second", "rpr_pick", "longshot") if _horse_name(r.get(f).get("name") if isinstance(r.get(f), dict) else r.get(f))]
+            if named:
+                raise Refuse(f"race {r['course']} {r['time']}: has no win_pick but names {named}; a no-pick race must carry no selections")
             continue
         where = f"race {r['course']} {r['time']}"
         runners = declared.get((str(r.get("course", "")).strip().lower(), str(r.get("time", "")).strip()))
@@ -315,15 +378,19 @@ def check_declared_runners(d, prices_bytes):
                 if f == "win_pick":
                     raise Refuse(f"{where}: win_pick {v!r} is not a usable runner name (a placeholder such as 'none' is refused)")
                 continue   # second / rpr_pick / longshot may be a reason instead; the checks below decide whether that is allowed
+            if _key(n) in inactive.get((str(r.get("course", "")).strip().lower(), str(r.get("time", "")).strip()), set()):
+                raise Refuse(f"{where}: {f} {n!r} is a non-runner / withdrawn in the verified prices file")
             if _key(n) not in runners:
                 raise Refuse(f"{where}: {f} {n!r} is not a declared runner in the verified prices file")
         ls = r.get("longshot")
         claimed = _price_of(ls)
         if claimed is not None:
             ln = _key(_horse_name(ls.get("name") if isinstance(ls, dict) else ls) or "")
-            if ln in runners and not any(abs(claimed - p) < 0.011 for p in runners[ln]):
+            if ln in runners and not any(abs(claimed - p) < 0.011 for p in runners[ln].get("any", ())):
                 raise Refuse(f"{where}: longshot price {claimed} is not a price the verified prices file holds for that runner")
-        eligible = {k for k, q in runners.items() if any(p >= LONGSHOT_MIN_PRICE for p in q)} if len(runners) >= 6 else set()
+            if ln in runners:
+                _longshot_source_check(ls, runners[ln], prices_name, where)
+        eligible = {k for k, q in runners.items() if any(p >= LONGSHOT_MIN_PRICE for p in q.get("any", ()))} if len(runners) >= 6 else set()
         if eligible:
             ln = _key(_horse_name(ls.get("name") if isinstance(ls, dict) else ls) or "")
             if ln not in eligible or not _longshot_ok(ls):
@@ -335,8 +402,238 @@ def check_declared_runners(d, prices_bytes):
             except (TypeError, ValueError):
                 bpf = None
             wn = _key(_horse_name(r.get("win_pick")) or "")
-            if bpf is not None and wn in runners and runners[wn] and not any(abs(bpf - p) < 0.011 for p in runners[wn]):
-                raise Refuse(f"{where}: best_price {bpf} is not a price the verified prices file holds for the win pick")
+            if bpf is not None and wn in runners:
+                if not runners[wn]["best"]:
+                    raise Refuse(f"{where}: best_price {bpf} is asserted but the verified prices file has no best_dec for the win pick (no other column may stand in)")
+                if not any(abs(bpf - p) < 0.011 for p in runners[wn]["best"]):
+                    raise Refuse(f"{where}: best_price {bpf} is not the best_dec price the verified prices file holds for the win pick")
+
+
+EVIDENCE_RECORD_KEYS = {"zans_reasons": "win_angles", "zans_cautions": "win_caution", "data_reasons": "data_angles", "second": "second",
+                        "zans_chance": "chance", "data_chance": "data_chance", "data_conf": "data_conf", "rpr_pick": "rpr_pick",
+                        "rpr_reason": "rpr_reason", "price_at_pick": "price", "going": "going", "longshot_zans_label": "longshot",
+                        "data_gap": "data_gap", "drift_warning": "drift_warning"}
+EVIDENCE_PRICE_FIELDS = ("sky_bet_price", "best_price")
+EVIDENCE_FIELDS_REQUIRED = frozenset(EVIDENCE_RECORD_KEYS) | frozenset(EVIDENCE_PRICE_FIELDS)    # fixed schema: a builder cannot shrink it
+REASON_FIELDS_REQUIRED = ("zans_reasons", "zans_cautions", "data_reasons", "second", "rpr_reason")
+EVIDENCE_TEXT_FIELDS = ("zans_reasons", "zans_cautions", "data_reasons", "rpr_reason")   # reason text that must be traceable to the hashed pick record
+EVIDENCE_NAME_FIELDS = ("second", "rpr_pick")                                           # a runner named here must appear in the hashed pick record
+EVIDENCE_NUM_FIELDS = ("zans_chance", "data_chance", "data_conf", "price_at_pick")
+EVIDENCE_BOOL_FIELDS = ("data_gap", "drift_warning")                                    # absent in the file = false
+EVIDENCE_RACE_KEY = {"zans_cautions": "cautions"}                                      # race-row name when it differs from the evidence name
+NONE_LISTED = "none listed"
+PICK_NAME_KEYS = ("win", "horse", "pick", "win_pick", "selection", "name")
+HEX64 = re.compile(r"[0-9a-f]{64}")
+
+
+def _h(o_):
+    return hashlib.sha256(json.dumps(o_, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")).hexdigest()
+
+
+def _norm_text(x):
+    return re.sub(r"[^a-z0-9]+", " ", str(x).lower()).strip()
+
+
+def _strings(v):
+    if isinstance(v, str):
+        yield v
+    elif isinstance(v, dict):
+        for x in v.values():
+            yield from _strings(x)
+    elif isinstance(v, (list, tuple)):
+        for x in v:
+            yield from _strings(x)
+
+
+def _off_utc(date, hhmm):
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    h, m = str(hhmm).split(":")
+    return datetime.fromisoformat(date).replace(hour=int(h), minute=int(m), tzinfo=ZoneInfo("Europe/London")).astimezone(ZoneInfo("UTC"))
+
+
+def _captured(ts):
+    from datetime import datetime, timezone
+    try:
+        t = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+    return t if t.tzinfo else t.replace(tzinfo=timezone.utc)
+
+
+def _num(x):
+    try:
+        f = float(x)
+    except (TypeError, ValueError):
+        return None
+    return f if math.isfinite(f) else None
+
+
+def check_evidence(d, getter):
+    """V3 files: every picked race needs immutable evidence ids that are re-computed from the hash-verified source bytes.
+    FIXED schema: evidence_fields / reason_fields / evidence_map must be exactly the required sets (a builder cannot omit a field to skip its check).
+    Per picked race: the pick record is matched on its own course AND time (both mandatory) and its full sha256 must equal pick_sha256; the
+    record's horse must be the win pick; the pick source and the price source must each be captured strictly before the off; every populated
+    field is compared with its mapped record value (text traceable, names present, numbers equal, booleans equal) or listed NOT VERIFIED;
+    price_row_sha256 / longshot_row_sha256 = the runner's row in the prices file; best_price = best_dec, sky_bet_price = the Sky Bet term;
+    an unverified reason field caps confidence at 6. Evidence ids are unique. Public copies are authoritative; each source's blob_sha1 must be the
+    git blob hash of those same bytes (binds the public copy to the original blob without the private repo)."""
+    import csv
+    import io
+    commit = d["racing_branch_commit"]
+    srcs = {}
+    for x in d["sources"]:
+        i = x.get("id")
+        if i is not None:
+            if i in srcs:
+                raise Refuse(f"duplicate source id {i!r}")
+            srcs[i] = x
+    fields = d.get("evidence_fields")
+    if not isinstance(fields, list) or set(fields) != EVIDENCE_FIELDS_REQUIRED or len(fields) != len(set(fields)):
+        raise Refuse("V3 evidence_fields must be exactly the required set: " + ", ".join(sorted(EVIDENCE_FIELDS_REQUIRED)))
+    if tuple(d.get("reason_fields") or ()) != REASON_FIELDS_REQUIRED:
+        raise Refuse("V3 reason_fields must be exactly " + ", ".join(REASON_FIELDS_REQUIRED))
+    emap = (d.get("evidence_map") or {}).get("pick_record_keys")
+    if emap != EVIDENCE_RECORD_KEYS:
+        raise Refuse("V3 evidence_map.pick_record_keys must be exactly the required field-to-record-key map")
+    if not re.fullmatch(r"[0-9a-f]{40}", str(d.get("racing_commit_original") or "")):
+        raise Refuse("V3 file needs racing_commit_original (40-hex original racing commit)")
+    cache, seen_ids = {}, set()
+
+    def blob(src, where):
+        x = srcs.get(src)
+        if x is None:
+            raise Refuse(f"{where}: evidence names source {src!r} which is not in sources[]")
+        if x["path"] not in cache:
+            b = getter(commit, x["path"])
+            if hashlib.sha1(b"blob %d\0" % len(b) + b).hexdigest() != str(x.get("blob_sha1") or ""):
+                raise Refuse(f"source {x['path']}: blob_sha1 is not the git blob hash of the verified bytes (original-source binding)")
+            if not str(x.get("origin_path") or "").strip():
+                raise Refuse(f"source {x['path']}: origin_path is missing")
+            cache[x["path"]] = b
+        return x, cache[x["path"]]
+
+    for r in d.get("races", []):
+        if not r.get("win_pick"):
+            continue
+        where = f"race {r['course']} {r['time']}"
+        ev = r.get("evidence")
+        if not isinstance(ev, dict) or not re.fullmatch(r"E\d+", str(ev.get("id") or "")) or not HEX64.fullmatch(str(ev.get("pick_sha256") or "")):
+            raise Refuse(f"{where}: a picked race needs evidence {{id 'E<n>', src, pick_sha256 (full 64-hex)}}")
+        if ev["id"] in seen_ids:
+            raise Refuse(f"{where}: duplicate evidence id {ev['id']}")
+        seen_ids.add(ev["id"])
+        nv = r.get("not_verified") or []
+        if not isinstance(nv, list) or not set(nv) <= EVIDENCE_FIELDS_REQUIRED:
+            raise Refuse(f"{where}: not_verified must be a list that is a subset of evidence_fields")
+        off = _off_utc(d["date"], r["time"])
+
+        def before_off(x, what):
+            cap = _captured(x.get("captured_utc"))
+            if cap is None or cap >= off:
+                raise Refuse(f"{where}: {what} captured_utc {x.get('captured_utc')!r} is not strictly before the off ({off.isoformat()})")
+        px, b = blob(ev.get("src"), where)
+        before_off(px, "the pick source")
+        try:
+            doc = json.loads(b.decode("utf-8"))
+            recs = doc.get("picks")
+        except Exception:   # noqa: BLE001
+            doc, recs = {}, None
+        if not isinstance(recs, list):
+            raise Refuse(f"{where}: evidence source is not a course file with a picks list")
+        ck = _key(r["course"])
+        fcourse = doc.get("course") if isinstance(doc.get("course"), str) else None   # the course may sit at file level (course file) instead of on each record
+
+        def course_of(q_):
+            return q_["course"] if isinstance(q_.get("course"), str) and q_["course"].strip() else fcourse
+        hits = [q for q in recs if isinstance(q, dict) and str(q.get("time")).strip() == str(r["time"]).strip()
+                and isinstance(course_of(q), str) and _key(course_of(q)) == ck]
+        if len(hits) != 1:
+            raise Refuse(f"{where}: the pinned source holds {len(hits)} pick records with this exact course and time (need exactly 1)")
+        q = hits[0]
+        if _h(q) != ev["pick_sha256"]:
+            raise Refuse(f"{where}: pick_sha256 does not match the pick record in the pinned source")
+        named = [q[k] for k in PICK_NAME_KEYS if isinstance(q.get(k), str) and q.get(k).strip()]
+        if not named or _key(r["win_pick"]) not in {_key(n) for n in named}:
+            raise Refuse(f"{where}: win_pick {r['win_pick']!r} is not the horse named in the hashed pick record (a runner key is mandatory)")
+        rec_all = _norm_text(" ".join(_strings(q)))
+        for f in sorted(EVIDENCE_FIELDS_REQUIRED - set(EVIDENCE_PRICE_FIELDS)):
+            rk = EVIDENCE_RACE_KEY.get(f, f)
+            rv, rrec = r.get(rk), q.get(EVIDENCE_RECORD_KEYS[f])
+            if f in nv:
+                continue
+            if f in EVIDENCE_TEXT_FIELDS:
+                if rv in (None, "", [], {}):
+                    continue
+                rec = _norm_text(" ".join(_strings(rrec)))
+                shown = [_norm_text(t) for t in _strings(rv)]
+                if shown == [NONE_LISTED]:   # "none listed" = verified empty: only when the record key exists and is empty
+                    if EVIDENCE_RECORD_KEYS[f] not in q or rrec not in (None, "", [], {}):
+                        raise Refuse(f"{where}: {f} says 'none listed' but the hashed pick record "
+                                     + ("has no such key" if EVIDENCE_RECORD_KEYS[f] not in q else "holds content under it"))
+                    continue
+                if not rec:
+                    raise Refuse(f"{where}: {f} is shown as verified but the hashed pick record holds nothing under {EVIDENCE_RECORD_KEYS[f]!r}")
+                for t in _strings(rv):
+                    tt = _norm_text(re.sub(r"(\u2026|\.\.\.)$", "", t.strip()))
+                    if tt and tt not in rec:
+                        raise Refuse(f"{where}: {f} text is not found in the hashed pick record (unsupported reason): {t[:60]!r}")
+            elif f in EVIDENCE_NAME_FIELDS:
+                if rv in (None, ""):
+                    continue
+                nm = _horse_name(rv)
+                if nm is None or _norm_text(nm) not in rec_all:
+                    raise Refuse(f"{where}: {f} {rv!r} does not name a runner found in the hashed pick record")
+            elif f in EVIDENCE_NUM_FIELDS:
+                if rv is None:
+                    continue
+                a_, b_ = _num(rv), _num(rrec)
+                if a_ is None or b_ is None or abs(a_ - b_) > 0.0051:
+                    raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
+            elif f in EVIDENCE_BOOL_FIELDS:
+                if bool(rv) != bool(rrec):
+                    raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
+            elif rv not in (None, "", [], {}):    # going, longshot_zans_label: normalised text must match the record
+                if _norm_text(rv if isinstance(rv, str) else " ".join(_strings(rv))) != _norm_text(rrec if isinstance(rrec, str) else " ".join(_strings(rrec))):
+                    raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
+        if any(f in nv for f in REASON_FIELDS_REQUIRED):
+            try:
+                big = int(r.get("confidence")) > GAP_CONFIDENCE_CAP
+            except (TypeError, ValueError):
+                big = False
+            if big and r.get("confidence_capped") != GAP_CONFIDENCE_CAP:
+                raise Refuse(f"{where}: a reason field is NOT VERIFIED, so confidence_capped must be {GAP_CONFIDENCE_CAP}")
+        ls = r.get("longshot")
+        lname = _horse_name(ls.get("name") if isinstance(ls, dict) else ls) if ls else None
+        priced = [f for f in EVIDENCE_PRICE_FIELDS if r.get(f) is not None and f not in nv]
+        if ev.get("price_captured_after_off") and priced:
+            raise Refuse(f"{where}: prices were captured after the off, so {priced} must be listed in not_verified")
+        if not priced and not (lname and "longshot_zans_label" not in nv):
+            continue
+        ps = srcs.get(ev.get("price_src"))
+        if ps is None or ps["path"] != d["prices_file"]:
+            raise Refuse(f"{where}: price evidence needs price_src = the prices file")
+        before_off(ps, "the prices file")
+        _x, pb = blob(ev["price_src"], where)
+        allrows = [e for e in csv.DictReader(io.StringIO(pb.decode("utf-8", "replace")))
+                   if str(e.get("off_time") or e.get("time") or "").strip() == str(r["time"]).strip() and _key(e.get("course", "")) == ck
+                   and str(e.get("status") or "").strip().upper() in ACTIVE_STATUS]
+
+        def row_for(name, field):
+            h = ev.get(field)
+            if not HEX64.fullmatch(str(h or "")):
+                raise Refuse(f"{where}: {field} (full 64-hex) is required")
+            row = next((e for e in allrows if _key(e.get("horse", "")) == _key(name) and _h(dict(e)) == h), None)
+            if row is None:
+                raise Refuse(f"{where}: {field} does not match {name!r}'s row in the prices file")
+            return row
+        if priced:
+            sp = _source_prices(row_for(_horse_name(r["win_pick"]) or "", "price_row_sha256"))
+            for f, col in (("best_price", "best"), ("sky_bet_price", "sky")):
+                if f in priced and not any(abs(float(r[f]) - p) < 0.011 for p in sp[col]):
+                    raise Refuse(f"{where}: {f} {r[f]} is not the {col} price in the hashed row")
+        if lname and "longshot_zans_label" not in nv:
+            row_for(lname, "longshot_row_sha256")
 
 
 def _body(text, extra=""):
