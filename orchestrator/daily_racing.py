@@ -424,9 +424,10 @@ EVIDENCE_PRICE_FIELDS = ("sky_bet_price", "best_price")
 EVIDENCE_FIELDS_REQUIRED = frozenset(EVIDENCE_RECORD_KEYS) | frozenset(EVIDENCE_PRICE_FIELDS)    # fixed schema: a builder cannot shrink it
 REASON_FIELDS_REQUIRED = ("zans_reasons", "zans_cautions", "data_reasons", "second", "second_reason", "rpr_reason", "longshot_reason")
 EVIDENCE_TEXT_FIELDS = ("zans_reasons", "zans_cautions", "data_reasons", "second_reason", "rpr_reason", "longshot_reason")   # reason text that must be traceable to the hashed pick record
+EVIDENCE_TEXT_VALUE_FIELDS = ("drift_warning",)                                        # exact source-bound text; empty string means no warning
 EVIDENCE_NAME_FIELDS = ("second", "rpr_pick")                                           # a runner named here must appear in the hashed pick record
 EVIDENCE_NUM_FIELDS = ("zans_chance", "data_chance", "data_conf", "price_at_pick")
-EVIDENCE_BOOL_FIELDS = ("data_gap", "drift_warning")                                    # absent in the file = false
+EVIDENCE_BOOL_FIELDS = ("data_gap",)                                                   # real boolean only
 EVIDENCE_RACE_KEY = {"zans_cautions": "cautions"}                                      # race-row name when it differs from the evidence name
 NONE_LISTED = "none listed"
 PICK_NAME_KEYS = ("win", "horse", "pick", "win_pick", "selection", "name")
@@ -479,7 +480,7 @@ def _num(x):
 def check_evidence(d, getter):
     """V3 files: every picked race needs immutable evidence ids re-computed from hash-verified public source bytes.
     FIXED schema: evidence_fields / reason_fields / evidence_map are exact; every populated reason, runner name, number and boolean is checked
-    against its mapped pick-record field or explicitly marked NOT VERIFIED. second_reason and longshot_reason are included in the fixed schema.
+    against its mapped pick-record field or explicitly marked NOT VERIFIED. drift_warning is exact source-bound text (including empty string); second_reason and longshot_reason are included in the fixed schema.
     Pick and price source capture timestamps must be timezone-aware and strictly pre-off. Price and longshot row hashes bind to exact active rows.
     An unverified reason needs a finite confidence and a numeric confidence_capped of 6 when the underlying confidence exceeds 6.
     The public copy path, full SHA256 and Git blob SHA1 are verified. The original private source path/commit is NOT independently verified by
@@ -533,6 +534,8 @@ def check_evidence(d, getter):
         nv = r.get("not_verified") or []
         if not isinstance(nv, list) or not set(nv) <= EVIDENCE_FIELDS_REQUIRED:
             raise Refuse(f"{where}: not_verified must be a list that is a subset of evidence_fields")
+        if "drift_warning" in nv:
+            raise Refuse(f"{where}: drift_warning is a required source-bound text value and cannot be marked NOT VERIFIED")
         off = _off_utc(d["date"], r["time"])
 
         def before_off(x, what):
@@ -568,7 +571,12 @@ def check_evidence(d, getter):
             rv, rrec = r.get(rk), q.get(EVIDENCE_RECORD_KEYS[f])
             if f in nv:
                 continue
-            if f in EVIDENCE_TEXT_FIELDS:
+            if f in EVIDENCE_TEXT_VALUE_FIELDS:
+                if not isinstance(rv, str) or not isinstance(rrec, str):
+                    raise Refuse(f"{where}: {f} and its mapped source field {EVIDENCE_RECORD_KEYS[f]!r} must both be strings")
+                if rv != rrec:
+                    raise Refuse(f"{where}: {f} does not equal the exact hashed pick-record text (including an empty string)")
+            elif f in EVIDENCE_TEXT_FIELDS:
                 if rv in (None, "", [], {}):
                     continue
                 rec = _norm_text(" ".join(_strings(rrec)))
