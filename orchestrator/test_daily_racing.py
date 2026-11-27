@@ -65,26 +65,24 @@ def test_empty_picks_make_no_call():
         r.plan(file_bytes(races=[{**RACE, "win_pick": None, "status": "no pick"}]), [], ENV, TODAY)
 
 
-def test_ledger_shared_daily_slot_shared_month_and_dedup():
+def test_global_paid_slot_blocks_products_and_racing_cross_route():
     data = file_bytes()
-    r.plan(data, [], ENV, TODAY)
-    batch_slot = {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}
-    r.plan(data, [batch_slot], ENV, TODAY)                # a products run does NOT block racing (own daily run)
-    h = r.fingerprint(data)[:16]
-    with pytest.raises(r.Skip):                           # same file, attempted: no auto retry
+    batch_slot = {"body": o.slot_tag("live", TODAY, "b" * 64, 0.3)}
+    with pytest.raises(o.Stop, match="shared one-paid-run"):
+        r.plan(data, [batch_slot], ENV, TODAY)
+    h = r.fingerprint(data)
+    assert len(h) == 64
+    with pytest.raises(r.Skip):
         r.plan(data, [{"body": o.slot_tag("racing", TODAY, h, 0.7)}], ENV, TODAY)
-    other = {"body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}
-    with pytest.raises(o.Stop, match="already used"):
-        r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [other], ENV, TODAY)
-    import orchestrator.daily_batch as b                  # and a racing run does NOT block the products batch
-    b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [other], ENV, TODAY)
-    two = [other, {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}]   # but each route is still capped at 1 a day
-    with pytest.raises(o.Stop, match="already used"):
-        b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, two, ENV, TODAY)
+    racing_slot = {"body": o.slot_tag("racing", TODAY, "c" * 64, 0.7)}
+    with pytest.raises(o.Stop, match="shared one-paid-run"):
+        r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [racing_slot], ENV, TODAY)
+    import orchestrator.daily_batch as b
+    with pytest.raises(o.Stop, match="shared one-paid-run"):
+        b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [racing_slot], ENV, TODAY)
     with pytest.raises(o.Stop, match="MONTH"):
         r.plan(data, [], {**ENV, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)
-    # racing slots count against the shared month
-    big = [{"body": o.slot_tag("racing", "2026-11-%02d" % d, "%x" % (d + 100), 1.0)} for d in range(1, 27)]
+    big = [{"body": o.slot_tag("racing", "2026-11-%02d" % d, "%064x" % (d + 100), 1.0)} for d in range(1, 27)]
     with pytest.raises(o.Stop, match="MONTH"):
         r.plan(data, big, ENV, TODAY)
 
@@ -94,12 +92,14 @@ def test_e2e_two_calls_slot_first_settle_and_advisory_summary(monkeypatch):
     claude, openai = setup()
     v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append)
     assert not bad and set(v) == {"Claude", "ChatGPT"} and o.SLOT in posted[0] and ":racing:" in posted[0]
+    assert len(h) == 64 and h in posted[0]
     assert "never changes a pick" in posted[1] and "HOLD" not in posted[1] and "INDEPENDENT calls" in posted[1]
-    assert f"<!-- {o.MARKER}:{h} -->" in posted[1] and h in posted[0]
+    assert o.MARKER not in posted[1]
     sent = []
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: sent.append(body["body"]) or {})
-    o.settle(ENV, "r/r", "26", TODAY, h, reserve)
-    assert sent and "OVERRUN" not in sent[0]
+    settled = o.settle(ENV, "r/r", "26", TODAY, h, reserve,
+                       completion_markers=[f"<!-- {o.MARKER}:{h} -->"])
+    assert settled and sent and "OVERRUN" not in sent[0] and f"<!-- {o.MARKER}:{h} -->" in sent[0]
 
 
 def test_first_failure_stops_before_the_second_provider_and_holds():
