@@ -42,7 +42,7 @@ MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = ref
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_LIVE_RUNS_PER_DAY = 1              # hard ceiling (Alex 26 Nov: ONE batched paid run a day); variable may only lower it
+MAX_LIVE_RUNS_PER_DAY = 3              # TEMPORARY set-up ceiling (Alex 27 Nov 05:30 and 05:30:27: "More than one a day. Get everything resolved"), shared by every paid route. RESTORE TO 1 after set-up (Alex 26 Nov rule). The variable may only lower it.
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
 MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
 PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
@@ -104,15 +104,29 @@ SLOT_RE = re.compile(r"<!-- " + SLOT + r":(mock|live|racing|retro):(\d{4}-\d{2}-
 
 
 def _slots(comments, mode):
+    """Only workflow-authored reservation markers count; public comments cannot spoof the spend ledger."""
     for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
         for m in SLOT_RE.finditer(c.get("body") or ""):
             if m.group(1) == mode:
                 yield m
 
 
+PAID_MODES = ("live", "racing", "retro")
+
+
 def runs_today(comments, today, mode):
-    """Counts reserved slots (posted before any paid call), not summaries, so failed runs count too."""
+    """One shared paid slot across every paid route; free mock slots are separate."""
+    if mode in PAID_MODES:
+        return sum(1 for mode_ in PAID_MODES for m in _slots(comments, mode_) if m.group(2) == today)
     return sum(1 for m in _slots(comments, mode) if m.group(2) == today)
+
+
+def attempted(comments, h):
+    """Any reserved slot for this exact fingerprint blocks a retry, even on a later UTC day."""
+    return any(m.group(3) == h or (len(m.group(3)) == 16 and h.startswith(m.group(3)))
+               for mode_ in PAID_MODES for m in _slots(comments, mode_))
 
 
 SETTLE = "zans-orch-settle"
@@ -182,13 +196,29 @@ def raw_url(u):
     return (m.group(1) if m else ""), u
 
 
-def fetch_artifacts(urls, getter=None):
-    """Returns text blocks. Text files are fetched (size-capped); other files are listed by link only."""
+SHA64_RE = re.compile(r"[0-9a-f]{64}")
+
+
+def parse_shas(raw, urls):
+    """One full 64-hex sha256 per artifact, same order as the links. Never shortened."""
+    shas = [x.strip().lower() for x in (raw or "").split() if x.strip()]
+    if len(shas) != len(urls) or not all(SHA64_RE.fullmatch(x) for x in shas):
+        raise Stop("REFUSED: provide exactly one full 64-character sha256 per artifact, in the same order as the links.")
+    return shas
+
+
+def artifact_ids(h, urls, shas):
+    """Stable per-artifact result ids, quoted in the summary and in the correction handoff."""
+    return [f"{h[:12]}-A{i}-{sha[:12]}" for i, (u, sha) in enumerate(zip(urls, shas), 1)]
+
+
+def fetch_artifacts(urls, getter=None, shas=None):
+    """Returns text blocks. Text files are fetched (size-capped) and, when shas are given, byte-verified."""
     if len(urls) > MAX_ARTIFACTS:
         raise Stop(f"REFUSED: more than {MAX_ARTIFACTS} artifacts.")
     getter = getter or _get_bytes
     blocks, total = [], 0
-    for u in urls:
+    for idx, u in enumerate(urls):
         owner, raw = raw_url(u)
         if owner.lower() not in ALLOWED_OWNERS:
             raise Stop("REFUSED: artifact is outside the allowed GitHub owner.")
@@ -200,6 +230,8 @@ def fetch_artifacts(urls, getter=None):
         total += len(data)
         if total > MAX_ARTIFACTS_TOTAL:
             raise Stop("REFUSED: artifacts are over the total size cap.")
+        if shas is not None and hashlib.sha256(data).hexdigest() != shas[idx]:
+            raise Stop(f"REFUSED: artifact {idx + 1} bytes do not match the sha256 supplied; nothing was sent.")
         blocks.append(f"[{u}]\n" + data.decode("utf-8", "replace"))
     return "\n\n".join(blocks)
 
@@ -309,12 +341,13 @@ def check_artifacts(urls):
 
 def run_hash(task, urls, mode="live"):
     """Mode is part of the key, so a mock run never blocks the live run of the same task."""
-    return hashlib.sha256(json.dumps([mode, task.strip(), sorted(urls)]).encode()).hexdigest()[:16]
+    return hashlib.sha256(json.dumps([mode, task.strip(), sorted(urls)]).encode()).hexdigest()
 
 
 def already_done(comments, h):
     tag = f"<!-- {MARKER}:{h} -->"
-    return any(tag in (c.get("body") or "") for c in comments)
+    return any((c.get("user") or {}).get("login") == TRUSTED_SETTLER and tag in (c.get("body") or "")
+               for c in comments)
 
 
 def untrusted(text):
@@ -586,15 +619,122 @@ def combined_fixes(rounds, limit=20):
     return out[:limit]
 
 
-def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQUESTS):
+CORRECTION = "zans-orch-correction"
+RECEIPT = "zans-orch-receipt"
+CORRECTION_RE = re.compile(r"<!-- " + CORRECTION + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
+RECEIPT_RE = re.compile(r"<!-- " + RECEIPT + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
+
+
+def correction_id(fixes):
+    return hashlib.sha256(json.dumps(fixes, sort_keys=True).encode()).hexdigest()
+
+
+SENSITIVE_RE = re.compile(r"(sk-[A-Za-z0-9_-]{16,}|ghp_[A-Za-z0-9]{16,}|github_pat_\w{20,}|BEGIN [A-Z ]*PRIVATE KEY|"
+                          r"[\w.+-]+@[\w-]+\.[\w.-]+|\bAKIA[0-9A-Z]{12,}\b)")
+
+
+def redact(text):
+    """Keys, tokens and email addresses never appear in a public correction or summary line."""
+    return SENSITIVE_RE.sub("[redacted]", str(text))
+
+
+GATE_VERDICTS = ("REVISE", "REJECT")
+NO_FIX_ITEM = "No fix list was given by the reviewers: a person must resolve the reasons listed above."
+
+
+def gate_items(verdicts, limit=20):
+    """The items a correction receipt must answer: every fix (Claude first), else every reason, else one placeholder, so a
+    REVISE/REJECT can never open a gate with nothing to close."""
+    seen, out = set(), []
+    for key in ("fixes", "reasons"):
+        for v in verdicts:
+            if key == "reasons" and (v or {}).get("verdict") not in GATE_VERDICTS:
+                continue   # a PASSing reviewer's reasons are not things to fix
+            for f in (v or {}).get(key, []):
+                k = " ".join(str(f).lower().split())
+                if k and k not in seen:
+                    seen.add(k)
+                    out.append(f)
+        if out:
+            break
+    return (out or [NO_FIX_ITEM])[:limit]
+
+
+def opens_gate(verdicts):
+    """True when any reviewer asked for changes or rejected: the artifact is not complete and needs a closed gate."""
+    return any((v or {}).get("verdict") in GATE_VERDICTS for v in verdicts)
+
+
+def gate_lines(h, items):
+    """Correction gate marker. Owner decision (Alex, 27 Nov 05:37): the route does NOT have to be private, so it stays in
+    this public repo. The fix text is the review output already shown above; keys, tokens and emails are redacted. The
+    block opens a gate that only the receipt workflow (allowlisted actor, bot-posted) closes."""
+    cid = correction_id(items)
+    return ["", "**Correction gate (open until a bot-posted receipt closes it; private routing not required, owner decision 27 Nov; this repo is public):**",
+            f"- Correction id: `{cid}` ({len(items)} fixes, listed above).",
+            "- Close it only with the 'ZANS correction receipt' workflow (allowlisted actor, main branch) giving run "
+            f"`{h}`, this correction id and exactly one decision per fix, numbered 1 to {len(items)}: "
+            "'N=applied <commit sha of the change>' or 'N=rejected <reason>'. Only that bot-posted receipt counts. "
+            "No further paid run on any route until then.",
+            f"<!-- {CORRECTION}:{h}:{cid} -->"]
+
+
+def correction_block(h, rounds):
+    last = rounds[-1] if rounds else {}
+    return gate_lines(h, gate_items([last.get("Claude"), last.get("OpenAI")]))
+
+
+def gate_count(comments, run, cid):
+    """How many fixes the gate with this exact run + correction id listed (read from its own bot-posted comment)."""
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        b = c.get("body") or ""
+        if f"<!-- {CORRECTION}:{run}:{cid} -->" in b:
+            m = re.search(r"Correction id: `" + cid + r"` \((\d+) fixes", b)
+            if m:
+                return int(m.group(1))
+    return None
+
+
+def pending_corrections(comments):
+    """(run, correction) pairs with no valid receipt. Both the correction and its receipt must be posted by the workflow
+    bot, and the receipt must be newer than the correction; a person's or stranger's comment never closes a gate."""
+    opened = {}
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        for m in CORRECTION_RE.finditer(c.get("body") or ""):
+            opened.setdefault(m.groups(), c.get("created_at") or "")
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        for m in RECEIPT_RE.finditer(c.get("body") or ""):
+            k = m.groups()
+            if k in opened and (c.get("created_at") or "") >= opened[k]:
+                opened.pop(k)
+    return list(opened)
+
+
+def require_no_pending_corrections(comments):
+    if pending_corrections(comments):
+        raise Stop("STOPPED: an earlier run has a correction gate with no bot-posted receipt. Close it with the "
+                   "correction receipt workflow first; no paid run on any route until then.")
+
+
+def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQUESTS, shas=None):
     mock = mode != "live"
     head = (f"**ZANS two-reviewer check (SYNTHETIC MOCK) | {outcome}**" if mock
             else f"**ZANS two-reviewer check (live) | {outcome}**")
-    lines = [f"<!-- {MARKER}:{h} -->", head, ""]
+    lines = [head, ""]
     if mock:
         lines += ["**SYNTHETIC MOCK RUN: zero paid API calls. The verdicts below are scripted test data. "
                   "This is NOT a review of the artifacts and gives no verdict on them.**", ""]
-    lines += [f"Task: {task[:300]}", "Artifacts:"] + [f"- {u}" for u in urls] + [""]
+    if shas:
+        lines += [f"Task: {task[:300]}", "Artifacts (result id, sha256 of the bytes reviewed):"]
+        lines += [f"- `{rid}` sha256 `{sha}` {u}" for rid, sha, u in zip(artifact_ids(h, urls, shas), shas, urls)] + [""]
+    else:
+        lines += [f"Task: {task[:300]}", "Artifacts:"] + [f"- {u}" for u in urls] + [""]
     for r in rounds:
         for who in ("Claude", "OpenAI"):
             if who not in r:
@@ -602,10 +742,13 @@ def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQ
                 continue
             v = r[who]
             lines.append(f"- Round {r['round']} {who}: **{v['verdict']}**. {v['ack']}")
-            lines += [f"  - reason: {x}" for x in v["reasons"]] + [f"  - fix: {x}" for x in v["fixes"]]
-    if outcome.startswith("AGREED REVISE"):
-        fixes = combined_fixes(rounds)
-        lines += ["", "**Combined fix list (both reviewers, final round):**"] + [f"{i}. {x}" for i, x in enumerate(fixes, 1)]
+            lines += [f"  - reason: {redact(x)}" for x in v["reasons"]] + [f"  - fix: {redact(x)}" for x in v["fixes"]]
+    if outcome.startswith(("AGREED REVISE", "NO AGREEMENT", "STOPPED: rejected")):
+        last = rounds[-1] if rounds else {}
+        items = gate_items([last.get("Claude"), last.get("OpenAI")])
+        lines += ["", "**Combined fix list (both reviewers, final round):**"] + [f"{i}. {redact(x)}" for i, x in enumerate(items, 1)]
+        if not mock:
+            lines += correction_block(h, rounds)
     paid = 0 if mock else requests
     lines += ["", f"Paid API requests: {paid} of {max_requests}. Nothing was deployed, published, ordered or spent "
               "beyond these capped calls.", "", "---", "_Generated by [Claude Code](https://claude.ai/code)_"]
@@ -632,25 +775,29 @@ def comments_since(env, repo, issue, since):
     raise Stop("STOPPED: too many comments to count run slots and spend safely.")
 
 
-def settle(env, repo, issue, today, h, reserve):
-    """After a live run (finished or stopped by a cap), post its measured cost so the month counts real spend.
-    Only when EVERY paid call reported usage at a known price; otherwise nothing is posted and the full
-    reservation stays. The conservative measured amount is recorded even when it is ABOVE the reservation
-    (flagged as an overrun). A failure here keeps the full reservation (safe)."""
+def settle(env, repo, issue, today, h, reserve, completion_markers=()):
+    """Post measured settlement; completion markers are atomic with a successful, non-overrun settlement."""
     if not RUN_COST["complete"]:
         print("not settled: a paid call did not report usage; the full reservation stays")
-        return
-    usd = round(RUN_COST["usd"] * SETTLE_SAFETY, 4)   # the conservative measured amount, NOT clamped to the reserve
+        return False
+    usd = round(RUN_COST["usd"] * SETTLE_SAFETY, 4)
     over = usd > reserve
+    body = (f"{settle_tag(today, h, usd, over)}\nZANS two-reviewer check: run {h} settled at USD {usd:.2f} "
+            f"(measured tokens x list price x {SETTLE_SAFETY}, an estimate, not the provider bill). "
+            + (f"**OVERRUN: above the USD {reserve:.2f} reservation. Further live runs are blocked this month.**"
+               if over else f"The rest of the USD {reserve:.2f} reservation is released."))
+    # A result/summary alone is never completion. Only attach dedup markers to this trusted bot comment
+    # after known usage has been settled and the measured amount is within the reservation.
+    if not over and completion_markers:
+        body += "\n\n" + "\n".join(completion_markers)
+    body += "\n\n---\n_Generated by [Claude Code](https://claude.ai/code)_"
     try:
-        gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
-           {"body": f"{settle_tag(today, h, usd, over)}\nZANS two-reviewer check: run {h} settled at ${usd:.2f} (measured "
-                    f"tokens x list price x {SETTLE_SAFETY}, an estimate, not the provider bill). "
-                    + (f"**OVERRUN: above the ${reserve:.2f} reservation. Further live runs are blocked this month.**"
-                       if over else f"The rest of the ${reserve:.2f} reservation is released.") + f"\n\n---\n_Generated by [Claude Code](https://claude.ai/code)_"})
-        print(f"settled: ${usd:.4f}")
-    except Exception as e:   # noqa: BLE001 - settle is optional; the reservation already covers the run
+        gh(env, "POST", f"repos/{repo}/issues/{issue}/comments", {"body": body})
+        print(f"settled: USD {usd:.4f}")
+        return not over
+    except Exception as e:   # noqa: BLE001 - a failed settle keeps the full reservation and emits no markers
         print(f"not settled ({type(e).__name__}); the full reservation stays")
+        return False
 
 
 def main(env=None):
@@ -673,6 +820,7 @@ def main(env=None):
         if not 1 <= rounds_cap <= MAX_ROUNDS:
             raise Stop(f"REFUSED: rounds must be 1 to {MAX_ROUNDS}.")
         check_artifacts(urls)
+        shas = parse_shas(env.get("ORCH_SHA256", ""), urls) if (mode == "live" or env.get("ORCH_SHA256", "").strip()) else None
         h = run_hash(task, urls, mode)
         meta = gh(env, "GET", f"repos/{repo}/issues/{issue}")
         checklist = meta.get("body") or ""
@@ -686,13 +834,19 @@ def main(env=None):
             raise Stop(f"SKIPPED: this task + artifact set was already reviewed in {mode} mode ({h}).")
         today = time.strftime("%Y-%m-%d", time.gmtime())
         month = today[:7]
-        recent = comments_since(env, repo, issue, month + "-01T00:00:00Z")   # whole UTC month
+        y, m = int(today[:4]), int(today[5:7])
+        history_since = f"{y - (m == 1)}-{(m - 2) % 12 + 1:02d}-01T00:00:00Z"
+        recent = comments_since(env, repo, issue, history_since)   # previous + current month: dedup and ledger
+        if mode in PAID_MODES and attempted(recent, h):
+            raise Stop("SKIPPED: this exact artifact set was already attempted; no automatic paid retry.")
         if runs_today(recent, today, mode) >= day_cap(env, mode):
-            raise Stop(f"STOPPED: daily {mode} run cap reached.")
+            raise Stop("STOPPED: the shared one paid run per UTC day is already used by a paid route.")
         if mode == "live" and overruns(recent, month):
             raise Stop("STOPPED: an earlier live run this month cost MORE than its reservation. No further live runs "
                        "until the owner reviews the cap and the pricing table.")
-        files = fetch_artifacts(urls) if mode == "live" else ""
+        if mode == "live":
+            require_no_pending_corrections(recent)
+        files = fetch_artifacts(urls, shas=shas) if mode == "live" else ""
         reserve = 0.0
         if mode == "live":
             if worst_case_usd(preflight(task, urls, comments, files, checklist, rounds_cap), 2 * rounds_cap) > owner_budget(env):
@@ -717,18 +871,29 @@ def main(env=None):
                     f"worst case ${reserve:.2f} reserved against the monthly budget). "
                     "The summary follows; if none appears, the run failed and the slot is still used.\n\n---\n"
                     "_Generated by [Claude Code](https://claude.ai/code)_"})
+        summary_posted, review_complete = False, False
         try:
             outcome, rounds, requests = review(env, task, urls, comments, claude, openai, files=files,
                                                checklist=checklist,
                                                budget_usd=min(reserve, owner_budget(env)) if mode == "live" else None,
                                                rounds_cap=rounds_cap)
+            review_complete = bool(rounds) and all(
+                "Claude" in r and "OpenAI" in r
+                and r["Claude"]["verdict"] != "BLOCKER" and r["OpenAI"]["verdict"] != "BLOCKER"
+                for r in rounds)
+            # Complete means the FINAL round is PASS + PASS and no correction gate opened (REVISE/REJECT never completes).
+            last = rounds[-1] if rounds else {}
+            review_complete = review_complete and not opens_gate([last.get("Claude"), last.get("OpenAI")]) \
+                and all(last.get(w, {}).get("verdict") == "PASS" for w in ("Claude", "OpenAI"))
             if mode != "live" and outcome.startswith("AGREED"):
                 outcome = "MOCK COMPLETE: scripted PASS/PASS, pipeline works (no real verdict)"
             gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
-               {"body": summary(h, task, urls, outcome, rounds, requests, mode, 2 * rounds_cap)})
-        finally:   # also after a cap stop: settle the calls actually made (or keep the full reservation)
+               {"body": summary(h, task, urls, outcome, rounds, requests, mode, 2 * rounds_cap, shas)})
+            summary_posted = True
+        finally:   # settlement is the only place a trusted completion marker may be emitted (also after a cap stop)
             if slot_posted:
-                settle(env, repo, issue, today, h, reserve)
+                markers = [f"<!-- {MARKER}:{h} -->"] if summary_posted and review_complete else []
+                settle(env, repo, issue, today, h, reserve, completion_markers=markers)
         print(f"done: {outcome} ({requests} requests)")  # outcome only - no prompt or comment text in logs
         return 0
     except Stop as s:

@@ -1,0 +1,40 @@
+# Closes a correction gate. Manual, main only, allowlisted actor only. No provider keys, no paid call.
+name: ZANS correction receipt
+on:
+  workflow_dispatch:
+    inputs:
+      run:
+        description: Full 64-character run id from the correction gate comment
+        required: true
+      correction:
+        description: Full 64-character correction id from the same comment
+        required: true
+      decisions:
+        description: "Exactly one decision per fix, 1 to N, separated by semicolons: 'N=applied <40-hex commit sha>' or 'N=rejected <reason, 10+ chars>'"
+        required: true
+concurrency:
+  group: zans-orchestrator
+  cancel-in-progress: false
+permissions:
+  contents: read
+  issues: write
+jobs:
+  receipt:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout this commit (plain git, no token)
+        run: |
+          git init -q .
+          git fetch -q --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" "${GITHUB_SHA}"
+          git checkout -q FETCH_HEAD
+      - name: Post receipt
+        env:
+          ZANS_ORCH_ALLOWED_ACTORS: ${{ vars.ZANS_ORCH_ALLOWED_ACTORS }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ORCH_ISSUE: "26"
+          ORCH_RUN: ${{ inputs.run }}
+          ORCH_CORRECTION: ${{ inputs.correction }}
+          ORCH_DECISIONS: ${{ inputs.decisions }}
+        run: python3 -m orchestrator.receipt

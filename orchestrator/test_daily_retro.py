@@ -8,9 +8,10 @@ import orchestrator.orchestrate as o
 
 TODAY = "2026-11-26"
 ENV = {"ZANS_ORCH_ENABLED": "true", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_ACTOR": "zankendo2-ship-it",
-       "ZANS_ORCH_MAX_RUNS_PER_DAY": "3", "ZANS_ORCH_MAX_USD_PER_MONTH": "25", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
+       "ZANS_ORCH_MAX_RUNS_PER_DAY": "1", "ZANS_ORCH_MAX_USD_PER_MONTH": "25", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
        "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k", "ANTHROPIC_MODEL": "claude-sonnet-5-5", "OPENAI_MODEL": "gpt-6.2-astra",
        "GITHUB_REF": "refs/heads/main", "ORCH_MODE": "live", "GITHUB_EVENT_NAME": "workflow_dispatch"}
+BOT = {"login": "github-actions[bot]"}
 
 
 def data(n=8000):
@@ -25,7 +26,7 @@ def verdict(v="PASS"):
     return json.dumps({"ack": "ok", "verdict": v, "reasons": ["r"], "fixes": []})
 
 
-def callers(c1="PASS", o2="REVISE", c3="PASS", model_c="claude-sonnet-5-5"):
+def callers(c1="PASS", o2="PASS", c3="PASS", model_c="claude-sonnet-5-5"):
     calls, seq = [], {"Claude": [c1, c3], "OpenAI": [o2]}
 
     def make(who, stopv, model):
@@ -51,22 +52,27 @@ def test_validate_refuses(d, s):
         r.validate(d, s if s is not None else sha(d))
 
 
+ONE = {**ENV, "ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}   # owner hard cap: one shared paid slot per UTC day
+
+
 def test_plan_rules_one_slot_date_lock_and_month():
     d = data()
-    r.plan(d, sha(d), [], ENV, TODAY)
+    r.plan(d, sha(d), [], ONE, TODAY)
     with pytest.raises(o.Stop, match="only for"):
-        r.plan(d, sha(d), [], ENV, "2026-11-27")
-    h = sha(d)[:16]
+        r.plan(d, sha(d), [], ONE, "2026-11-27")
+    h = sha(d)
     with pytest.raises(o.Stop, match="already attempted"):
-        r.plan(d, sha(d), [{"body": o.slot_tag("retro", TODAY, h, 0.5)}], ENV, TODAY)
+        r.plan(d, sha(d), [{"user": BOT, "body": o.slot_tag("retro", TODAY, h, 0.5)}], ONE, TODAY)
     d2 = data(7000)
-    with pytest.raises(o.Stop, match="already used"):
-        r.plan(d2, sha(d2), [{"body": o.slot_tag("retro", TODAY, "deadbeef", 0.5)}], ENV, TODAY)
-    # does NOT use or block the other routes' daily runs
-    r.plan(d, sha(d), [{"body": o.slot_tag("live", TODAY, "abc123", 2.45)}, {"body": o.slot_tag("racing", TODAY, "beef", 0.7)}], ENV, TODAY)
-    big = [{"body": o.slot_tag("live", "2026-11-%02d" % n, "%x" % (n + 100), 1.0)} for n in range(1, 26)]
+    with pytest.raises(o.Stop, match="shared one paid run"):
+        r.plan(d2, sha(d2), [{"user": BOT, "body": o.slot_tag("retro", TODAY, "deadbeef", 0.5)}], ONE, TODAY)
+    # Every paid route consumes the same daily slot.
+    for mode in ("live", "racing"):
+        with pytest.raises(o.Stop, match="shared one paid run"):
+            r.plan(d, sha(d), [{"user": BOT, "body": o.slot_tag(mode, TODAY, "abc123", 2.45)}], ONE, TODAY)
+    big = [{"user": BOT, "body": o.slot_tag("live", "2026-11-%02d" % n, "%064x" % (n + 100), 1.0)} for n in range(1, 26)]
     with pytest.raises(o.Stop, match="MONTH"):
-        r.plan(d, sha(d), big, ENV, TODAY)
+        r.plan(d, sha(d), big, ONE, TODAY)
     with pytest.raises(o.Stop, match="PER_RUN"):
         r.plan(d, sha(d), [], {**ENV, "ZANS_ORCH_MAX_USD_PER_RUN": "0.3"}, TODAY)
 
@@ -85,8 +91,15 @@ def test_live_three_calls_in_order_slot_first_exact_replies_and_marker():
     posted = []
     steps, h, reserve, bad = r.run(ENV, d, sha(d), [], TODAY, c, oa, posted.append)
     assert calls == ["Claude", "OpenAI", "Claude"] and not bad and set(steps) == {1, 2, 3}
-    assert o.SLOT in posted[0] and f"<!-- {o.MARKER}:{h} -->" in posted[1]
-    assert "1. Claude" in posted[1] and "2. ChatGPT: challenge: REVISE" in posted[1] and "3. Claude" in posted[1]
+    assert o.SLOT in posted[0] and o.MARKER not in posted[1] and o.CORRECTION not in posted[1]
+    assert "1. Claude" in posted[1] and "2. ChatGPT: challenge: PASS" in posted[1] and "3. Claude" in posted[1]
+    settled_comments = []
+    monkeypatch = pytest.MonkeyPatch()
+    monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: settled_comments.append(body["body"]) or {})
+    settled = o.settle(ENV, "r/r", "26", TODAY, h, reserve,
+                       completion_markers=[f"<!-- {o.MARKER}:{h} -->"])
+    monkeypatch.undo()
+    assert settled and settled_comments and f"<!-- {o.MARKER}:{h} -->" in settled_comments[0]
 
 
 @pytest.mark.parametrize("c1,expected", [("REJECT", ["Claude"]), ("BLOCKER", ["Claude"])])
@@ -118,7 +131,7 @@ def test_main_refuses_schedule_and_runs_dispatch_end_to_end(monkeypatch):
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": sha_c} if m == "GET" else (posts.append(body["body"]) or {}))
     monkeypatch.setattr(o, "_get_bytes", lambda url, limit: d if sha_c in url and url.endswith(r.PATH) else pytest.fail(url))
     monkeypatch.setattr(o, "comments_since", lambda *a, **k: [])
-    monkeypatch.setattr(o, "settle", lambda *a: settles.append(a))
+    monkeypatch.setattr(o, "settle", lambda *a, **k: settles.append((a, k)))
     calls, c, oa = callers()
     monkeypatch.setattr(o, "call_claude", c)
     monkeypatch.setattr(o, "call_openai", oa)
@@ -155,3 +168,11 @@ def test_summary_is_labelled_bounded_not_verbatim():
     posted = []
     r.run(ENV, d, sha(d), [], TODAY, c, oa, posted.append)
     assert "BOUNDED and SANITIZED" in posted[1] and "NOT the file" in posted[1] and "exact replies" not in posted[1].lower()
+
+
+def test_revise_opens_a_gate_and_is_not_complete():
+    d = data()
+    calls, c, oa = callers(o2="REVISE")
+    posted = []
+    steps, h, reserve, bad = r.run(ENV, d, sha(d), [], TODAY, c, oa, posted.append)
+    assert bad and o.CORRECTION in posted[1] and f"{o.CORRECTION}:{h}:" in posted[1]

@@ -20,6 +20,10 @@ on:
       artifacts:
         description: Space-separated TEXT file links pinned to a 40-character commit SHA (no images/video)
         required: true
+      sha256:
+        description: Space-separated full 64-character sha256 of each artifact, same order as the links (required for live)
+        required: false
+        default: ""
       rounds:
         description: Review rounds, 1 to 3 (1 round = one Claude call + one OpenAI call). Use 1 for large file sets.
         required: false
@@ -72,6 +76,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           ORCH_MODE: ${{ inputs.mode }}
           ORCH_ROUNDS: ${{ inputs.rounds }}
+          ORCH_SHA256: ${{ inputs.sha256 }}
           ORCH_ISSUE: ${{ inputs.issue }}
           ORCH_TASK: ${{ inputs.task }}
           ORCH_ARTIFACTS: ${{ inputs.artifacts }}

@@ -84,11 +84,11 @@ def test_plan_shared_ledger_caps_duplicate_and_overrun():
     i, _ = art("a")
     items, texts = [i], {"a": "hello"}
     assert b.plan(items, TODAY, texts, [], ENV, TODAY)["reserve"] <= 0.30
-    slot = {"body": o.slot_tag("live", TODAY, "abc123", 2.45)}          # an ORCHESTRATOR run today, other route
+    slot = {"user": BOT, "body": o.slot_tag("live", TODAY, "abc123", 2.45)}          # an ORCHESTRATOR run today, other route
     with pytest.raises(o.Stop, match="already used"):
         b.plan(items, TODAY, texts, [slot], ENV, TODAY)
     with pytest.raises(b.Skip):
-        b.plan(items, TODAY, texts, [{"body": f"<!-- {o.MARKER}:{b.batch_hash(TODAY, items)} -->"}], ENV, TODAY)
+        b.plan(items, TODAY, texts, [{"user": BOT, "body": f"<!-- {o.MARKER}:{b.batch_hash(TODAY, items)} -->"}], ENV, TODAY)
     over = {"user": BOT, "body": o.settle_tag("2026-11-10", "dead", 3.1, over=True)}
     with pytest.raises(o.Stop, match="more than its reservation"):
         b.plan(items, TODAY, texts, [over], ENV, TODAY)
@@ -140,13 +140,16 @@ def test_e2e_mocked_reserve_first_one_call_internal_summary_and_settle(monkeypat
         return good([i]), "stop"
     (outcome, h, reserve), posted, calls = e2e(ENV, [], caller, [i], data)
     assert calls == [1] and "a=PASS" in outcome
-    assert o.SLOT in posted[0] and "reviewed" in posted[1]                  # slot posted BEFORE the result
+    assert o.SLOT in posted[0] and b.attempt_marker(i) in posted[0]
+    assert "reviewed" in posted[1] and "never the owner's approval" in posted[1]
+    assert o.MARKER not in posted[1] and b.item_marker(i) not in posted[1]
     assert reserve == b.worst_case_usd() <= 0.30
-    assert "never the owner's approval" in posted[1]
     sent = []
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: sent.append(body["body"]) or {})
-    o.settle(ENV, "r/r", "26", TODAY, h, reserve)
-    assert sent and o.SETTLE in sent[0] and "OVERRUN" not in sent[0]
+    settled = o.settle(ENV, "r/r", "26", TODAY, h, reserve,
+                       completion_markers=[f"<!-- {o.MARKER}:{h} -->", b.item_marker(i)])
+    assert settled and sent and o.SETTLE in sent[0] and "OVERRUN" not in sent[0]
+    assert f"<!-- {o.MARKER}:{h} -->" in sent[0] and b.item_marker(i) in sent[0]
 
 
 def test_e2e_invalid_output_no_retry_and_no_verdict():
@@ -167,7 +170,7 @@ def test_e2e_provider_failure_keeps_full_reservation_and_does_not_retry():
 def test_second_batch_same_day_makes_zero_calls():
     i, data = art("a")
     _, posted, _ = e2e(ENV, [], lambda e, p: (good([i]), "stop"), [i], data)
-    comments = [{"body": posted[0]}, {"body": posted[1]}]
+    comments = [{"user": BOT, "body": posted[0]}, {"user": BOT, "body": posted[1]}]
     j, data2 = art("b")
     with pytest.raises(o.Stop, match="already used"):
         e2e(ENV, comments, lambda e, p: pytest.fail("called"), [j], data2)
@@ -185,6 +188,7 @@ def test_mock_mode_reserves_nothing_and_never_calls_provider(monkeypatch):
 def test_fingerprint_ignores_date_and_commit_so_unchanged_bytes_are_not_charged_twice():
     i, _ = art("a")
     j = {**i, "url": i["url"].replace(SHA, "b" * 40)}
+    assert len(b.batch_hash("2026-11-27", [i])) == 64
     assert b.batch_hash("2026-11-27", [i]) == b.batch_hash("2026-12-01", [j])
     assert b.batch_hash("2026-11-27", [i], "mock") != b.batch_hash("2026-11-27", [i], "live")
 
@@ -219,17 +223,41 @@ def test_per_artifact_dedup_and_failed_slot_is_not_retried():
     a, _ = art("a")
     c, _ = art("c")
     done = {"user": BOT, "body": b.item_marker(a)}
+    attempted = {"user": BOT, "body": b.attempt_marker(a)}
     assert b.unreviewed([a, c], [done]) == [c]
-    assert b.unreviewed([a, c], [{"user": {"login": "someone"}, "body": b.item_marker(a)}]) == [a, c]   # untrusted ignored
-    slot = {"body": o.slot_tag("live", "2026-11-26", b.batch_hash(TODAY, [a]), 0.3)}   # earlier failed attempt, no summary
+    assert b.unreviewed([a, c], [attempted]) == [c]
+    assert b.unreviewed([a, c], [{"user": {"login": "someone"}, "body": b.item_marker(a)}]) == [a, c]
+    slot = {"user": BOT, "body": o.slot_tag("live", "2026-11-26", b.batch_hash(TODAY, [a]), 0.3)}   # earlier failed attempt, no summary
     with pytest.raises(b.Skip, match="attempted"):
         b.plan([a], TODAY, {"a": "x"}, [slot], ENV, TODAY)
 
 
-def test_no_owner_ready_marker_on_unknown_usage_or_mock():
+def test_summary_never_emits_completion_markers_before_settlement():
     a, _ = art("a")
-    o.RUN_COST.update(usd=0.0, complete=False)
-    assert "zans-orch-item" not in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "live")
-    o.RUN_COST.update(usd=0.0, complete=True)
-    assert "zans-orch-item" in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "live")
-    assert "zans-orch-item" not in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "mock")
+    results = {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}
+    for complete in (False, True):
+        o.RUN_COST.update(usd=0.0, complete=complete)
+        summary = b.summary("h", TODAY, [a], "reviewed a=PASS", results, "live")
+        assert o.MARKER not in summary and b.item_marker(a) not in summary
+    mock = b.summary("h", TODAY, [a], "mock", results, "mock")
+    assert "SYNTHETIC MOCK" in mock and o.MARKER not in mock and b.item_marker(a) not in mock
+
+
+def test_revise_item_opens_gate_gets_no_completion_marker_and_blocks_later_routes():
+    a, data = art("a")
+    c, _ = art("c")
+    items = [a, c]
+    def reply(e, p):
+        return json.dumps({"results": [{"id": "a", "verdict": "PASS", "reasons": ["r"], "fixes": []},
+                                       {"id": "c", "verdict": "REVISE", "reasons": ["r"], "fixes": ["do X"]}]}), "stop"
+    (outcome, h, reserve), posted, calls = e2e({**ENV, "ORCH_MODE": "live"}, [], reply, items, data)
+    summ = posted[-1]
+    assert f"{o.CORRECTION}:{h}:" in summ and "1 fixes" in summ
+    markers = b.completion_markers(h, items, outcome)
+    assert f"<!-- {o.MARKER}:{h} -->" not in markers                 # run is NOT complete
+    assert b.item_marker(a) in markers and b.item_marker(c) not in markers   # only the PASS item is marked
+    gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": summ, "created_at": "2026-11-27T05:00:00Z"}
+    with pytest.raises(o.Stop, match="correction gate"):
+        o.require_no_pending_corrections([gate])
+    all_pass = "reviewed a=PASS, c=PASS"
+    assert f"<!-- {o.MARKER}:{h} -->" in b.completion_markers(h, items, all_pass)
