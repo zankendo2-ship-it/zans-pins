@@ -1,0 +1,644 @@
+[
+ {
+  "exact_rpr_pick": "",
+  "exact_rpr": null,
+  "exact_rpr_run": "no runner has run on this exact going over this trip",
+  "exact_weight_change": null,
+  "exact_confirmed": false,
+  "time": "11:50",
+  "race": "Watch On Racing TV Juvenile Maiden Hurdle (GBB Race)",
+  "distance": "1m7\u00bdf",
+  "field": [
+   {
+    "name": "Guevara",
+    "chance": 0.3569,
+    "angles": [],
+    "cautions": [
+     "back from 145 days at under 2/1 (NOTE: no trap in data)"
+    ]
+   },
+   {
+    "name": "Elm Creek",
+    "chance": 0.35,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Shushi",
+    "chance": 0.1967,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Northern Man",
+    "chance": 0.0442,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Phantom Shadow",
+    "chance": 0.0413,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Royal Baroness",
+    "chance": 0.0059,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Al Qatem",
+    "chance": 0.0049,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good To Soft",
+  "runners": 7,
+  "handicap": false,
+  "class": "4",
+  "win": "Guevara",
+  "price": "2.25",
+  "chance": 0.3569497025419146,
+  "fair": "2.81",
+  "confidence": 7,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": true,
+  "evidence_agrees": false,
+  "evidence_pick": "Elm Creek",
+  "data_pick": "Elm Creek",
+  "data_chance": 0.2999,
+  "data_conf": 5,
+  "data_price": "2.50",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [],
+  "evidence_chance": 0.29,
+  "evidence_price": "2.50",
+  "short_fav_caution": true,
+  "win_angles": [],
+  "win_caution": [
+   "back from 145 days at under 2/1 (NOTE: no trap in data)"
+  ],
+  "move": "2.75 -> 2.25 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Elm Creek 2.50 (35%)",
+  "rpr_pick": "Elm Creek",
+  "rpr_reason": "RPR 102; distance 0/1, going 0/1 (wins/runs); passed over: Shushi (107) not run on the going; weight +2lb vs last run - fine",
+  "anchor": "Elm Creek (RPR 81 at trip/going) = RPR PICK",
+  "longshot": "Al Qatem 101.00 SPECULATIVE (ranked 4th by us)",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Guevara"
+ },
+ {
+  "exact_rpr_pick": "Carcaci Castle",
+  "exact_rpr": 112,
+  "exact_rpr_run": "RPR 112 at Musselburgh 2025-12-22, good to soft 20.5f (finished 2); carried 11-9 then, 12-0 today (5lb heavier)",
+  "exact_weight_change": 5,
+  "exact_confirmed": true,
+  "time": "12:20",
+  "race": "Musselburgh Racecourse Premium Annual Membership Handicap Chase",
+  "distance": "2m4\u00bdf",
+  "field": [
+   {
+    "name": "Nevershedatear",
+    "chance": 0.4332,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Carcaci Castle",
+    "chance": 0.1554,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Flash Du Pistolet",
+    "chance": 0.149,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Huit Reflets",
+    "chance": 0.1093,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Too Cool Forshrule",
+    "chance": 0.0904,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Humble Jumble",
+    "chance": 0.0626,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good To Soft",
+  "runners": 6,
+  "handicap": true,
+  "class": "5",
+  "win": "Nevershedatear",
+  "price": "2.20",
+  "chance": 0.4332058224452283,
+  "fair": "2.31",
+  "confidence": 7,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": false,
+  "evidence_pick": "Carcaci Castle",
+  "data_pick": "Carcaci Castle",
+  "data_chance": 0.3578,
+  "data_conf": 6,
+  "data_price": "6.00",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [],
+  "evidence_chance": 0.347,
+  "evidence_price": "6.00",
+  "short_fav_caution": true,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "2.00 -> 2.20 (drifted)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Carcaci Castle 6.00 (16%)",
+  "rpr_pick": "Carcaci Castle",
+  "rpr_reason": "RPR 112; distance 0/4, going 1/8 (wins/runs); WARNING up 10lb on last run and never placed carrying this much",
+  "anchor": "Carcaci Castle (RPR 112 at trip/going) = RPR PICK",
+  "longshot": "no longshot",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Nevershedatear"
+ },
+ {
+  "exact_rpr_pick": "Oor Wish",
+  "exact_rpr": 86,
+  "exact_rpr_run": "RPR 86 at Kelso 2026-03-21, good to soft 16f (finished 6); carried 10-12 then, 10-11 today (1lb lighter)",
+  "exact_weight_change": -1,
+  "exact_confirmed": false,
+  "time": "12:50",
+  "race": "Protech Network Solutions Ltd Maiden Hurdle (Go North Night Nurse Series Qualifier) (GBB Race)",
+  "distance": "1m7\u00bdf",
+  "field": [
+   {
+    "name": "Novak",
+    "chance": 0.6459,
+    "angles": [],
+    "cautions": [
+     "back from 181 days at under 2/1 (NOTE: no trap in data)"
+    ]
+   },
+   {
+    "name": "Hunters Spring",
+    "chance": 0.1646,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Oor Wish",
+    "chance": 0.0863,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Tee Aitch Aye",
+    "chance": 0.0317,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Falcon Nine",
+    "chance": 0.0317,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Battle Of Arsuf",
+    "chance": 0.0317,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Brand New Man",
+    "chance": 0.0079,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good To Soft",
+  "runners": 7,
+  "handicap": false,
+  "class": "4",
+  "win": "Novak",
+  "price": "1.25",
+  "chance": 0.6458974104573867,
+  "fair": "1.55",
+  "confidence": 10,
+  "verdict": "BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": false,
+  "evidence_pick": "Oor Wish",
+  "data_pick": "Hunters Spring",
+  "data_chance": 0.3622,
+  "data_conf": 7,
+  "data_price": "7.00",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [],
+  "evidence_chance": 0.353,
+  "evidence_price": "11.00",
+  "short_fav_caution": true,
+  "win_angles": [],
+  "win_caution": [
+   "back from 181 days at under 2/1 (NOTE: no trap in data)"
+  ],
+  "move": "1.73 -> 1.25 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Hunters Spring 7.00 (16%)",
+  "rpr_pick": "Hunters Spring",
+  "rpr_reason": "RPR 113; distance 0/4, going 0/3 (wins/runs); passed over: Novak (125) not run on the going; weight -4lb vs last run - fine",
+  "anchor": "Hunters Spring (RPR 96 at trip/going) = RPR PICK",
+  "longshot": "Battle Of Arsuf 19.00 STRONG (ranked 3rd by us)",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Novak"
+ },
+ {
+  "exact_rpr_pick": "A Chara",
+  "exact_rpr": 109,
+  "exact_rpr_run": "RPR 109 at Southwell 2025-12-14, good to soft 20.5f (finished 2); carried 11-4 then, 11-8 today (4lb heavier)",
+  "exact_weight_change": 4,
+  "exact_confirmed": false,
+  "time": "13:25",
+  "race": "100% Racing TV Profits Back To Racing Mares' Handicap Hurdle (Challenger Mares' Hurdle Series Qual')",
+  "distance": "2m4f",
+  "field": [
+   {
+    "name": "Iamyouare",
+    "chance": 0.379,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Gintime",
+    "chance": 0.3139,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Snowrocco",
+    "chance": 0.1962,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "A Chara",
+    "chance": 0.1108,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good To Soft",
+  "runners": 4,
+  "handicap": true,
+  "class": "4",
+  "win": "Iamyouare",
+  "price": "2.20",
+  "chance": 0.3790464979399647,
+  "fair": "2.64",
+  "confidence": 7,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Iamyouare",
+  "data_pick": "Iamyouare",
+  "data_chance": 0.3121,
+  "data_conf": 6,
+  "data_price": "2.20",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [],
+  "evidence_chance": 0.302,
+  "evidence_price": "2.20",
+  "short_fav_caution": false,
+  "win_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "win_caution": [],
+  "move": "2.10 -> 2.20 (drifted)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Gintime 3.25 (31%)",
+  "rpr_pick": "Snowrocco",
+  "rpr_reason": "RPR 116; distance 0/3, going 2/5 (wins/runs); passed over: Gintime (120) not run at the trip; up 7lb on last run BUT has finished top-3 2x carrying 163lb+ before - can cope",
+  "anchor": "Snowrocco (RPR 113 at trip/going) = RPR PICK",
+  "longshot": "no longshot",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Iamyouare"
+ },
+ {
+  "exact_rpr_pick": "Magnolia",
+  "exact_rpr": 105,
+  "exact_rpr_run": "RPR 105 at Perth 2026-05-14, good to soft 16f (finished 3); carried 11-1 then, 12-0 today (13lb heavier)",
+  "exact_weight_change": 13,
+  "exact_confirmed": true,
+  "time": "14:00",
+  "race": "Musselburgh Racecourse 2027 Annual Membership Handicap Chase (Go North One Man Series Qual') (GBB)",
+  "distance": "2m",
+  "field": [
+   {
+    "name": "Laristote",
+    "chance": 0.3193,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Masterfield",
+    "chance": 0.3163,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Magnolia",
+    "chance": 0.176,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Scriabin",
+    "chance": 0.1101,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Ask A Sainte",
+    "chance": 0.0783,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good To Soft",
+  "runners": 5,
+  "handicap": true,
+  "class": "4",
+  "win": "Laristote",
+  "price": "3.00",
+  "chance": 0.31930189895384004,
+  "fair": "3.14",
+  "confidence": 5,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Laristote",
+  "data_pick": "Laristote",
+  "data_chance": 0.2839,
+  "data_conf": 5,
+  "data_price": "3.00",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.286,
+  "evidence_price": "3.00",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "5.50 -> 3.00 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Masterfield 2.88 (32%)",
+  "rpr_pick": "Masterfield",
+  "rpr_reason": "RPR 115; distance 0/3, going 0/2 (wins/runs); weight -2lb vs last run - fine",
+  "anchor": "Magnolia (RPR 121 at trip/going) = shortlist (our chance 18%)",
+  "longshot": "no longshot",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Laristote"
+ },
+ {
+  "exact_rpr_pick": "Scots Poet",
+  "exact_rpr": 113,
+  "exact_rpr_run": "RPR 113 at Perth 2024-05-16, good to soft 16f (finished 4); carried 11-3 then, 11-5 today (2lb heavier)",
+  "exact_weight_change": 2,
+  "exact_confirmed": false,
+  "time": "14:32",
+  "race": "Edinburgh Rugby 1872 Cup Handicap Hurdle (Go North Sea Pigeon Hurdle Series Qualifier)",
+  "distance": "1m7\u00bdf",
+  "field": [
+   {
+    "name": "Nobotheratall",
+    "chance": 0.2783,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Bruce Banner",
+    "chance": 0.2614,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Gemini Man",
+    "chance": 0.1729,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Saint Polo",
+    "chance": 0.1513,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Scots Poet",
+    "chance": 0.1193,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Shooting",
+    "chance": 0.0169,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good To Soft",
+  "runners": 6,
+  "handicap": true,
+  "class": "4",
+  "win": "Nobotheratall",
+  "price": "3.00",
+  "chance": 0.2782608695652174,
+  "fair": "3.60",
+  "confidence": 5,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Nobotheratall",
+  "data_pick": "Nobotheratall",
+  "data_chance": 0.2666,
+  "data_conf": 5,
+  "data_price": "3.00",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.269,
+  "evidence_price": "3.00",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "3.75 -> 3.00 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Bruce Banner 3.25 (26%)",
+  "rpr_pick": "Gemini Man",
+  "rpr_reason": "RPR 114; distance 1/11, going 0/7 (wins/runs); weight check not possible - its last run (23 days ago) isn't in our results yet",
+  "anchor": "Scots Poet (RPR 113 at trip/going) = shortlist (our chance 12%)",
+  "longshot": "Shooting 34.00 SPECULATIVE (ranked 6th by us)",
+  "watchlist": [],
+  "pace": "Even pace likely - two habitual front-runners",
+  "changed": false,
+  "model_pick": "Nobotheratall"
+ },
+ {
+  "exact_rpr_pick": "Lone Star",
+  "exact_rpr": 118,
+  "exact_rpr_run": "RPR 118 at Musselburgh 2023-03-24, good to soft 20f (finished 1); carried 11-0 then, 10-9 today (5lb lighter)",
+  "exact_weight_change": -5,
+  "exact_confirmed": false,
+  "time": "15:07",
+  "race": "Racing TV Conditional Jockeys' Handicap Hurdle",
+  "distance": "2m4f",
+  "field": [
+   {
+    "name": "Lillistar",
+    "chance": 0.2104,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Beat The Retreat",
+    "chance": 0.1737,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Lone Star",
+    "chance": 0.1568,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Presentandcorrect",
+    "chance": 0.1553,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Walk On Son",
+    "chance": 0.138,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Evenwood Sonofagun",
+    "chance": 0.1012,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "National Question",
+    "chance": 0.0496,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "On The Bubble",
+    "chance": 0.0149,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good To Soft",
+  "runners": 8,
+  "handicap": true,
+  "class": "5",
+  "win": "Lillistar",
+  "price": "3.50",
+  "chance": 0.21043227951759394,
+  "fair": "4.76",
+  "confidence": 4,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": false,
+  "evidence_pick": "Presentandcorrect",
+  "data_pick": "Presentandcorrect",
+  "data_chance": 0.2395,
+  "data_conf": 4,
+  "data_price": "5.50",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [],
+  "evidence_chance": 0.231,
+  "evidence_price": "5.50",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "3.25 -> 3.50 (drifted)",
+  "drift_switch": "",
+  "drift_warning": "Lillistar drifted 2.88 -> 3.50 overnight - still our pick on the evidence, kept out of the multiples",
+  "drift_alt": "Beat The Retreat",
+  "second": "Beat The Retreat 5.00 (17%)",
+  "rpr_pick": "Lone Star",
+  "rpr_reason": "RPR 113; distance 5/31, going 4/11 (wins/runs); weight -7lb vs last run - fine",
+  "anchor": "Lone Star (RPR 118 at trip/going) = RPR PICK",
+  "longshot": "On The Bubble 41.00 SPECULATIVE (ranked 8th by us)",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Lillistar"
+ }
+]

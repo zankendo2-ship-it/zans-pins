@@ -1,0 +1,66 @@
+{
+  "course_id": "doncaster",
+  "course_name": "Doncaster",
+  "track_name": "Doncaster",
+  "country": "Great Britain",
+  "code": "Flat and jumps, turf",
+  "months_used": "flat from March to November, jumps in the winter",
+  "identity": [
+    [
+      "Direction",
+      "Left-handed, flat and jumps"
+    ],
+    [
+      "Character",
+      "Very galloping and fair, basically flat"
+    ],
+    [
+      "Gradient",
+      "A slight rise (Rose Hill) about 10f from home"
+    ],
+    [
+      "Straight mile",
+      "5f to 1m run on the straight course (the Lincoln is run here); a separate round-course mile starts in a chute"
+    ],
+    [
+      "Ground",
+      "Free-draining; usually good or quicker"
+    ],
+    [
+      "Surface",
+      "Turf"
+    ]
+  ],
+  "layout": [
+    "A left-handed, galloping and almost level track; the only real gradient is a gentle climb over Rose Hill around ten furlongs out.",
+    "All races from five furlongs to a mile can be run on the straight course, with a separate one-mile start on the round course in a chute."
+  ],
+  "tactics": [
+    "One of the fairest tracks in Britain: form from Doncaster tends to hold up well elsewhere.",
+    "On the straight course there is no strong side bias; winners come from the far side, the stands' rail and the middle.",
+    "Horses need to be good and genuine to win, but the course itself sets few traps."
+  ],
+  "ground": [
+    "Good drainage means the ground is often good or quicker, and runners usually see their races out."
+  ],
+  "guide_note": null,
+  "schematic": null,
+  "sources": [
+    [
+      "Course guide",
+      "HorseRacingBettingSites.co.uk, Doncaster racecourse guide (course facts paraphrased in ZANS's own words)"
+    ],
+    [
+      "Historic results",
+      "UK and Irish results, 2018 to 2026 (ZANS results database)"
+    ],
+    [
+      "Course map",
+      "Track lines from OpenStreetMap, © OpenStreetMap contributors (ODbL)"
+    ],
+    [
+      "Prices",
+      "Best available bookmaker prices, collected by ZANS at the time shown"
+    ]
+  ]
+}

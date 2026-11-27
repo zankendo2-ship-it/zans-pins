@@ -1,0 +1,35 @@
+{
+  "course_id": "southwell", "course_name": "Southwell", "track_name": "All-weather (Tapeta)",
+  "country": "Great Britain", "code": "Flat, all-weather",
+  "months_used": "all year round",
+  "identity": [
+    ["Direction", "Left-handed oval"],
+    ["Character", "Flat, fair, and compared by jockeys to an American dirt track"],
+    ["Circuit", "About 1m2f round, with a home straight of about 3f"],
+    ["Straight course", "5f races (and the 1m6f start) use a straight chute before the final bend"],
+    ["Surface", "Tapeta, which replaced the old Fibresand surface"],
+    ["Starts", "1m2f to 1m5f in front of the stands; 6f, 7f and 1m on the back straight"]
+  ],
+  "layout": [
+    "Most races are run on a conventional left-handed oval of about a mile and a quarter, with a run-in of roughly three furlongs after the final turn.",
+    "Five-furlong races use a straight course, so they are run without a bend; the 1m6f start also sits on that chute before the runners join the oval.",
+    "The final turn is on the tight side by British standards, a little more sweeping than a typical American dirt track."
+  ],
+  "tactics": [
+    "With a flat track and a fair surface, few horses are beaten by the course itself; racing position into the final turn can matter on the tighter bends.",
+    "Straight 5f races and round-course races call for different things, so read the sprint figures separately from the round-course figures.",
+    "Tapeta can ride on the slow side, which can hold times down; a moderate time here is not always a weak performance."
+  ],
+  "ground": [
+    "An artificial Tapeta surface, so the going is described as standard, standard to slow or similar rather than good or soft.",
+    "The surface changed from Fibresand to Tapeta; ZANS figures here only use races run on Tapeta, so older Fibresand form does not mix in."
+  ],
+  "guide_note": "Course guides describe Tapeta tracks as fair and note that official ratings earned here can come out a few pounds low because times are slower; that is a guide view, not a ZANS measurement.",
+  "schematic": null,
+  "sources": [
+    ["Course guide", "HorseRacingBettingSites.co.uk, Southwell racecourse guide (course facts paraphrased in ZANS's own words)"],
+    ["Historic results", "UK and Irish results, 2018 to 2026 (ZANS results database; Tapeta era only)"],
+    ["Course map", "Track lines from OpenStreetMap, © OpenStreetMap contributors (ODbL)"],
+    ["Prices", "Best available bookmaker prices, collected by ZANS at the time shown"]
+  ]
+}

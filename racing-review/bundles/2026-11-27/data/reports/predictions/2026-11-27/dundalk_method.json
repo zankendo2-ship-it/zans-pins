@@ -1,0 +1,899 @@
+[
+ {
+  "exact_rpr_pick": "Chicago Caray",
+  "exact_rpr": 64,
+  "exact_rpr_run": "RPR 64 at Dundalk (AW) (IRE) 2026-10-28, standard 7f (finished 4); carried 9-7 then, 9-2 today (5lb lighter)",
+  "exact_weight_change": -5,
+  "exact_confirmed": false,
+  "time": "17:30",
+  "race": "BAR 1 Casino Claiming Race",
+  "distance": "7f",
+  "field": [
+   {
+    "name": "Chicago Caray",
+    "chance": 0.3023,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Rejoinder",
+    "chance": 0.2893,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Pal Of Mine",
+    "chance": 0.1391,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Let Me Free",
+    "chance": 0.0851,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Present Perfect",
+    "chance": 0.0581,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "In Sequence",
+    "chance": 0.04,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Waysong",
+    "chance": 0.038,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Chachaboo",
+    "chance": 0.033,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Victorious Star",
+    "chance": 0.015,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Standard",
+  "runners": 9,
+  "handicap": false,
+  "class": "",
+  "win": "Chicago Caray",
+  "price": "2.75",
+  "chance": 0.30230230230230226,
+  "fair": "3.31",
+  "confidence": 6,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Chicago Caray",
+  "data_pick": "Chicago Caray",
+  "data_chance": 0.185,
+  "data_conf": 3,
+  "data_price": "2.75",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.185,
+  "evidence_price": "2.75",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "3.00 -> 2.75 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Rejoinder 3.00 (29%)",
+  "rpr_pick": "Chicago Caray",
+  "rpr_reason": "RPR 76; distance 0/3, going 0/3 (wins/runs); passed over: Rejoinder (84) not run at the trip; weight -4lb vs last run - fine",
+  "anchor": "Chicago Caray (RPR 64 at trip/going) = WIN PICK",
+  "longshot": "Waysong 17.00 SPECULATIVE (ranked 5th by us)",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Chicago Caray"
+ },
+ {
+  "exact_rpr_pick": "Moyanna Castle",
+  "exact_rpr": 63,
+  "exact_rpr_run": "RPR 63 at Dundalk (AW) (IRE) 2026-11-04, standard 6f (finished 2); carried 8-4 then, 9-2 today (12lb heavier)",
+  "exact_weight_change": 12,
+  "exact_confirmed": false,
+  "time": "18:00",
+  "race": "Irish Stallion Farms EBF Fillies Maiden",
+  "distance": "6f",
+  "field": [
+   {
+    "name": "Rias Angel",
+    "chance": 0.2255,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Kodiak Gold",
+    "chance": 0.1517,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Moyanna Castle",
+    "chance": 0.1088,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Thosegirlsdontplay",
+    "chance": 0.0838,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Bedouin Star",
+    "chance": 0.0818,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Musical Gems",
+    "chance": 0.0749,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Swietenia",
+    "chance": 0.0739,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Raziyya",
+    "chance": 0.0639,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Whos Liby",
+    "chance": 0.0469,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Solar Palace",
+    "chance": 0.0299,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Castledown",
+    "chance": 0.022,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Pop It Pebbles",
+    "chance": 0.016,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Aztec Moon",
+    "chance": 0.013,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Faymiss",
+    "chance": 0.008,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Standard",
+  "runners": 14,
+  "handicap": false,
+  "class": "",
+  "win": "Rias Angel",
+  "price": "3.75",
+  "chance": 0.22554890219560877,
+  "fair": "4.44",
+  "confidence": 4,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Rias Angel",
+  "data_pick": "Rias Angel",
+  "data_chance": 0.178,
+  "data_conf": 3,
+  "data_price": "3.75",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.178,
+  "evidence_price": "3.75",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "5.50 -> 3.75 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Kodiak Gold 5.00 (15%)",
+  "rpr_pick": "Moyanna Castle",
+  "rpr_reason": "RPR 75; distance 0/2, going 0/2 (wins/runs); passed over: Rias Angel (79) not run at the trip; WARNING up 12lb on last run and never placed carrying this much",
+  "anchor": "Rias Angel (RPR 67 at trip/going) = WIN PICK",
+  "longshot": "Solar Palace 21.00 SPECULATIVE (ranked 8th by us)",
+  "watchlist": [],
+  "pace": "Pace unclear - too few runners with readable running styles",
+  "changed": false,
+  "model_pick": "Rias Angel"
+ },
+ {
+  "exact_rpr_pick": "Invincible Irish",
+  "exact_rpr": 64,
+  "exact_rpr_run": "RPR 64 at Dundalk (AW) (IRE) 2026-11-11, standard 6f (finished 2); carried 9-8 then, 9-12 today (4lb heavier)",
+  "exact_weight_change": 4,
+  "exact_confirmed": true,
+  "time": "18:30",
+  "race": "Campbell & Haughey Solicitors Nursery Handicap",
+  "distance": "6f",
+  "field": [
+   {
+    "name": "Invincible Irish",
+    "chance": 0.5441,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Scarlet Dream",
+    "chance": 0.1405,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Tina Tereshkova",
+    "chance": 0.1056,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Stellar Path",
+    "chance": 0.0653,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Sorrento Sunset",
+    "chance": 0.0648,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Mirissa Beach",
+    "chance": 0.0369,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "No Time Faults",
+    "chance": 0.0319,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Chiquitita Bee",
+    "chance": 0.011,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Standard",
+  "runners": 8,
+  "handicap": true,
+  "class": "",
+  "win": "Invincible Irish",
+  "price": "1.67",
+  "chance": 0.5440848214285715,
+  "fair": "1.84",
+  "confidence": 9,
+  "verdict": "BET",
+  "old_rule_bet": true,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Invincible Irish",
+  "data_pick": "Invincible Irish",
+  "data_chance": 0.584,
+  "data_conf": 9,
+  "data_price": "1.67",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.585,
+  "evidence_price": "1.67",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "2.38 -> 1.67 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Scarlet Dream 5.00 (14%)",
+  "rpr_pick": "Invincible Irish",
+  "rpr_reason": "RPR 66; distance 0/1, going 0/2 (wins/runs); WARNING up 19lb on last run and never placed carrying this much",
+  "anchor": "Invincible Irish (RPR 64 at trip/going) = WIN PICK",
+  "longshot": "Chiquitita Bee 41.00 SPECULATIVE (ranked 6th by us)",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Invincible Irish"
+ },
+ {
+  "exact_rpr_pick": "Go Athletico",
+  "exact_rpr": 80,
+  "exact_rpr_run": "RPR 80 at Dundalk (AW) 2025-10-31, standard 6f (finished 7); carried 9-13 then, 10-2 today (3lb heavier)",
+  "exact_weight_change": 3,
+  "exact_confirmed": false,
+  "time": "19:00",
+  "race": "Killowen Contracts Handicap",
+  "distance": "6f",
+  "field": [
+   {
+    "name": "My Cubby Bear",
+    "chance": 0.1333,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Carrigans Grove",
+    "chance": 0.1332,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Go Athletico",
+    "chance": 0.1269,
+    "angles": [],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Blue Anthem",
+    "chance": 0.1093,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Thaloria",
+    "chance": 0.0972,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Saint Acclaim",
+    "chance": 0.0954,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Alfred Tennyson",
+    "chance": 0.093,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Andaman Fifty",
+    "chance": 0.0815,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Sovereign Cry",
+    "chance": 0.0343,
+    "angles": [],
+    "cautions": [
+     "slow away 2+ of last 4, up to 1m: A/E 0.89 (167)"
+    ]
+   },
+   {
+    "name": "Mint Man",
+    "chance": 0.0308,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Im Spartacus",
+    "chance": 0.0229,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "All Hail",
+    "chance": 0.0179,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Dandyville",
+    "chance": 0.0134,
+    "angles": [],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Leonie",
+    "chance": 0.0109,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Standard",
+  "runners": 14,
+  "handicap": true,
+  "class": "",
+  "win": "My Cubby Bear",
+  "price": "5.50",
+  "chance": 0.13333333333333333,
+  "fair": "7.50",
+  "confidence": 2,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": false,
+  "evidence_pick": "Carrigans Grove",
+  "data_pick": "Carrigans Grove",
+  "data_chance": 0.1524,
+  "data_conf": 3,
+  "data_price": "6.50",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.153,
+  "evidence_price": "6.50",
+  "short_fav_caution": false,
+  "win_angles": [
+   "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+  ],
+  "win_caution": [],
+  "move": "4.50 -> 5.50 (drifted)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Carrigans Grove 6.50 (13%)",
+  "rpr_pick": "Saint Acclaim",
+  "rpr_reason": "RPR 78; distance 0/3, going 0/2 (wins/runs); weight +0lb vs last run - fine",
+  "anchor": "Sovereign Cry (RPR 81 at trip/going) = shortlist (our chance 3%)",
+  "longshot": "Leonie 51.00 SPECULATIVE (ranked 9th by us)",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": true,
+  "model_pick": "Carrigans Grove"
+ },
+ {
+  "exact_rpr_pick": "Tatateo",
+  "exact_rpr": 89,
+  "exact_rpr_run": "RPR 89 at Dundalk (AW) 2026-02-06, standard 16f (finished 1); carried 9-1 then, 9-7 today (6lb heavier)",
+  "exact_weight_change": 6,
+  "exact_confirmed": false,
+  "time": "19:30",
+  "race": "BAR 1 Betting 'Bet 10 Get 50' Handicap",
+  "distance": "2m",
+  "field": [
+   {
+    "name": "Not Just Any Eagle",
+    "chance": 0.2065,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Murat",
+    "chance": 0.1879,
+    "angles": [],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Star Harbour",
+    "chance": 0.1481,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Zoffman",
+    "chance": 0.1085,
+    "angles": [],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Delta",
+    "chance": 0.0839,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Glenroyal",
+    "chance": 0.0656,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Spicy Margarita",
+    "chance": 0.0619,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Pillar Of Hope",
+    "chance": 0.061,
+    "angles": [],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Tatateo",
+    "chance": 0.0464,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Mister Adam",
+    "chance": 0.0303,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Standard",
+  "runners": 10,
+  "handicap": true,
+  "class": "",
+  "win": "Not Just Any Eagle",
+  "price": "3.50",
+  "chance": 0.20648143813869702,
+  "fair": "4.85",
+  "confidence": 4,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Not Just Any Eagle",
+  "data_pick": "Not Just Any Eagle",
+  "data_chance": 0.2657,
+  "data_conf": 5,
+  "data_price": "3.50",
+  "data_angles": [
+   "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+  ],
+  "data_cautions": [
+   "age 6+: A/E 0.90 (752)"
+  ],
+  "evidence_chance": 0.265,
+  "evidence_price": "3.50",
+  "short_fav_caution": false,
+  "win_angles": [
+   "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+  ],
+  "win_caution": [
+   "age 6+: A/E 0.90 (752)"
+  ],
+  "move": "",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Murat 4.50 (19%)",
+  "rpr_pick": "Tatateo",
+  "rpr_reason": "RPR 96; distance 1/2, going 1/5 (wins/runs); passed over: Murat (100) not run on the going, Pillar Of Hope (99) not run at the trip; weight check not possible - its last run (18 days ago) isn't in our results yet",
+  "anchor": "Tatateo (RPR 89 at trip/going) = RPR PICK",
+  "longshot": "Tatateo 15.00 SPECULATIVE (ranked 5th by us)",
+  "watchlist": [],
+  "pace": "Lone front-runner - Murat could get an easy lead",
+  "changed": false,
+  "model_pick": "Not Just Any Eagle"
+ },
+ {
+  "exact_rpr_pick": "One Cool Bear",
+  "exact_rpr": 65,
+  "exact_rpr_run": "RPR 65 at Dundalk (AW) (IRE) 2026-10-30, standard 5f (finished 2); carried 9-11 then, 10-2 today (5lb heavier)",
+  "exact_weight_change": 5,
+  "exact_confirmed": true,
+  "time": "20:00",
+  "race": "BAR 1 Betting 'Weekly Rewards' Apprentice Handicap",
+  "distance": "5f",
+  "field": [
+   {
+    "name": "Bye Bye Now",
+    "chance": 0.2156,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "One Cool Bear",
+    "chance": 0.1703,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "The Love Machine",
+    "chance": 0.1209,
+    "angles": [],
+    "cautions": [
+     "slow away 2+ of last 4, up to 1m: A/E 0.89 (167)"
+    ]
+   },
+   {
+    "name": "Astute Power",
+    "chance": 0.1189,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "The Cosy Corner",
+    "chance": 0.0997,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Shamanka",
+    "chance": 0.0645,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Phils Dream",
+    "chance": 0.0557,
+    "angles": [],
+    "cautions": [
+     "slow away 2+ of last 4, up to 1m: A/E 0.89 (167)",
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Gaineamh Min",
+    "chance": 0.0513,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Star Allure",
+    "chance": 0.0482,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Hasiyna",
+    "chance": 0.0348,
+    "angles": [],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Prince Andorra",
+    "chance": 0.0201,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Standard",
+  "runners": 11,
+  "handicap": true,
+  "class": "",
+  "win": "Bye Bye Now",
+  "price": "3.75",
+  "chance": 0.2155832433390822,
+  "fair": "4.64",
+  "confidence": 4,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": false,
+  "evidence_pick": "Astute Power",
+  "data_pick": "Astute Power",
+  "data_chance": 0.1631,
+  "data_conf": 3,
+  "data_price": "6.50",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.163,
+  "evidence_price": "6.50",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "One Cool Bear 4.00 (17%)",
+  "rpr_pick": "Bye Bye Now",
+  "rpr_reason": "RPR 66; distance 1/8, going 1/7 (wins/runs); weight +3lb vs last run - fine",
+  "anchor": "Shamanka (RPR 67 at trip/going) = shortlist (our chance 6%)",
+  "longshot": "Gaineamh Min 17.00 STRONG (ranked 2nd by us)",
+  "watchlist": [],
+  "pace": "Lone front-runner - Bye Bye Now could get an easy lead",
+  "changed": false,
+  "model_pick": "Bye Bye Now"
+ },
+ {
+  "exact_rpr_pick": "Tribal Moon",
+  "exact_rpr": 77,
+  "exact_rpr_run": "RPR 77 at Dundalk (AW) 2025-11-28, standard 10.5f (finished 2); carried 10-0 then, 9-8 today (6lb lighter)",
+  "exact_weight_change": -6,
+  "exact_confirmed": false,
+  "time": "20:30",
+  "race": "Saddle Cocktail Bar At Dundalk Stadium Handicap",
+  "distance": "1m2\u00bdf",
+  "field": [
+   {
+    "name": "Movin And Groovin",
+    "chance": 0.1461,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Usuario Amigo",
+    "chance": 0.1451,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Riyazanka",
+    "chance": 0.1392,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Flying Fortress",
+    "chance": 0.1158,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Love Orchid",
+    "chance": 0.0954,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Anightaway",
+    "chance": 0.0855,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Tribal Moon",
+    "chance": 0.0835,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Flame Of Forest",
+    "chance": 0.0548,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Wild Berries",
+    "chance": 0.0418,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "A Pretty Penny",
+    "chance": 0.0318,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Emily Estherfaye",
+    "chance": 0.0169,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Afloat",
+    "chance": 0.0162,
+    "angles": [],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Satono Chevalier",
+    "chance": 0.0149,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   },
+   {
+    "name": "Isthatrightkatie",
+    "chance": 0.0129,
+    "angles": [
+     "usually races prominent: Dundalk A/E 1.18 (2025) / 1.08 (2026), 1,364 runs; all GB/IRE AW 1.02 / 1.01 - TRIAL v13.4"
+    ],
+    "cautions": [
+     "age 6+: A/E 0.90 (752)"
+    ]
+   }
+  ],
+  "going": "Standard",
+  "runners": 14,
+  "handicap": true,
+  "class": "",
+  "win": "Movin And Groovin",
+  "price": "5.00",
+  "chance": 0.14614139010485594,
+  "fair": "6.85",
+  "confidence": 2,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": false,
+  "evidence_pick": "Riyazanka",
+  "data_pick": "Riyazanka",
+  "data_chance": 0.2338,
+  "data_conf": 4,
+  "data_price": "7.00",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.235,
+  "evidence_price": "7.00",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "3.25 -> 5.00 (drifted)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Usuario Amigo 4.33 (15%)",
+  "rpr_pick": "Tribal Moon",
+  "rpr_reason": "RPR 76; distance 0/5, going 2/15 (wins/runs); passed over: Riyazanka (80) not run at the trip; weight +0lb vs last run - fine",
+  "anchor": "Afloat (RPR 80 at trip/going) = shortlist (our chance 2%)",
+  "longshot": "Wild Berries 17.00 SPECULATIVE (ranked 5th by us)",
+  "watchlist": [],
+  "pace": "Lone front-runner - A Pretty Penny could get an easy lead",
+  "changed": false,
+  "model_pick": "Movin And Groovin"
+ }
+]

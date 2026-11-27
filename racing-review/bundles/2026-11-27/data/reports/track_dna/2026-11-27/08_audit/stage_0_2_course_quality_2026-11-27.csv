@@ -1,0 +1,6 @@
+course_id,course_name,race_code,accepted_evidence_count,quality_status,missing_dna_fields,missing_evidence_fields,warnings
+doncaster,Doncaster,JUMPS,0,SOURCE_LAYER_REVIEW_REQUIRED,track_direction | layout_context | jumping_context,layout | jumping_configuration,NO_ACCEPTED_EVIDENCE | TRACK_DIRECTION_NOT_CONFIRMED
+dundalk,Dundalk,AW_FLAT,0,SOURCE_LAYER_REVIEW_REQUIRED,relevant_section_status | track_direction | layout_context | surface_context | distance_configuration,layout | surface_context,NO_RELEVANT_SECTION_TEXT | NO_ACCEPTED_EVIDENCE | TRACK_DIRECTION_NOT_CONFIRMED
+musselburgh,Musselburgh,JUMPS,0,SOURCE_LAYER_REVIEW_REQUIRED,track_direction | layout_context | jumping_context,layout | jumping_configuration,NO_ACCEPTED_EVIDENCE | TRACK_DIRECTION_NOT_CONFIRMED
+newbury,Newbury,JUMPS,2,SOURCE_LAYER_REVIEW_REQUIRED,track_direction,,TRACK_DIRECTION_NOT_CONFIRMED
+southwell,Southwell,AW_FLAT,11,SOURCE_LAYER_PASS_WITH_REVIEW_NOTES,track_direction,,TRACK_DIRECTION_NOT_CONFIRMED

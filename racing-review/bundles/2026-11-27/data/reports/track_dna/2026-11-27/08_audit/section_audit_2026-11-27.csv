@@ -1,0 +1,6 @@
+course_id,race_code,source_url,section_status,section_label,start_line,end_line,relevant_line_count,excluded_line_count,relevant_section_file
+doncaster,JUMPS,https://www.horseracingbettingsites.co.uk/racecourses/doncaster/,RELEVANT_SECTION_EXTRACTED,JUMPS_SECTION,16,17,2,171,reports/track_dna/2026-11-27/03_relevant_sections/GB/doncaster/doncaster_jumps_relevant_section.txt
+dundalk,AW_FLAT,https://www.irishracing.com/racecourses/dundalk,SECTION_REVIEW_REQUIRED,FLAT_OR_AW_SECTION,,,0,2069,reports/track_dna/2026-11-27/03_relevant_sections/IRE/dundalk/dundalk_aw_flat_relevant_section.txt
+musselburgh,JUMPS,https://www.horseracingbettingsites.co.uk/racecourses/musselburgh/,RELEVANT_SECTION_EXTRACTED,JUMPS_SECTION,15,16,2,160,reports/track_dna/2026-11-27/03_relevant_sections/GB/musselburgh/musselburgh_jumps_relevant_section.txt
+newbury,JUMPS,https://www.horseracingbettingsites.co.uk/racecourses/newbury/,RELEVANT_SECTION_EXTRACTED,JUMPS_SECTION,16,17,2,279,reports/track_dna/2026-11-27/03_relevant_sections/GB/newbury/newbury_jumps_relevant_section.txt
+southwell,AW_FLAT,https://www.horseracingbettingsites.co.uk/racecourses/southwell/,RELEVANT_SECTION_EXTRACTED,FLAT_OR_AW_SECTION,17,30,14,53,reports/track_dna/2026-11-27/03_relevant_sections/GB/southwell/southwell_aw_flat_relevant_section.txt

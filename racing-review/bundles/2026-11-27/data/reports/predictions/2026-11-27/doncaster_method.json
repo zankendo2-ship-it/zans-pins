@@ -1,0 +1,636 @@
+[
+ {
+  "exact_rpr_pick": "Kent De Thaix",
+  "exact_rpr": 122,
+  "exact_rpr_run": "RPR 122 at Newcastle 2026-10-27, good 24f (finished 2); carried 11-0 then, 11-1 today (1lb heavier)",
+  "exact_weight_change": 1,
+  "exact_confirmed": false,
+  "time": "12:00",
+  "race": "Golden Scoop Novices' Limited Handicap Chase (GBB Race)",
+  "distance": "3m",
+  "field": [
+   {
+    "name": "Kent De Thaix",
+    "chance": 0.3758,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Palamon",
+    "chance": 0.3399,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Kayf Dancer",
+    "chance": 0.2843,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good",
+  "runners": 3,
+  "handicap": true,
+  "class": "3",
+  "win": "Kent De Thaix",
+  "price": "2.20",
+  "chance": 0.37581779723547637,
+  "fair": "2.67",
+  "confidence": 6,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": false,
+  "evidence_pick": "Palamon",
+  "data_pick": "Palamon",
+  "data_chance": 0.4063,
+  "data_conf": 7,
+  "data_price": "2.75",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [],
+  "evidence_chance": 0.395,
+  "evidence_price": "2.75",
+  "short_fav_caution": true,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "3.25 -> 2.20 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Palamon 2.75 (34%)",
+  "rpr_pick": "Palamon",
+  "rpr_reason": "RPR 142; distance 0/3, going 4/14 (wins/runs); up 22lb after WINNING last time (the handicapper's rise) - has to prove it can follow up off the higher mark",
+  "anchor": "Kent De Thaix (RPR 122 at trip/going) = WIN PICK",
+  "longshot": "no longshot",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Kent De Thaix"
+ },
+ {
+  "exact_rpr_pick": "",
+  "exact_rpr": null,
+  "exact_rpr_run": "no runner has run on this exact going over this trip",
+  "exact_weight_change": null,
+  "exact_confirmed": false,
+  "time": "12:30",
+  "race": "Steve Martin Memorial EBF Junior \"National Hunt\" Hurdle (GBB Race)",
+  "distance": "2m\u00bdf",
+  "field": [
+   {
+    "name": "Navrom",
+    "chance": 0.302,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Invino Honnetete",
+    "chance": 0.259,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Low Tide",
+    "chance": 0.165,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Fiery Logic",
+    "chance": 0.163,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Jubilate",
+    "chance": 0.106,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Dundeelin",
+    "chance": 0.005,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good",
+  "runners": 6,
+  "handicap": false,
+  "class": "4",
+  "win": "Navrom",
+  "price": "2.88",
+  "chance": 0.302,
+  "fair": "3.32",
+  "confidence": 6,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Navrom",
+  "data_pick": "Navrom",
+  "data_chance": 0.2553,
+  "data_conf": 5,
+  "data_price": "2.88",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.255,
+  "evidence_price": "2.88",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "2.10 -> 2.88 (drifted)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Invino Honnetete 3.25 (26%)",
+  "rpr_pick": "",
+  "rpr_reason": "No runner has an RPR",
+  "anchor": "no runner has an RPR at this trip on this going",
+  "longshot": "Dundeelin 126.00 SPECULATIVE (ranked 6th by us)",
+  "watchlist": [],
+  "pace": "Pace unclear - too few runners with readable running styles",
+  "changed": false,
+  "model_pick": "Navrom"
+ },
+ {
+  "exact_rpr_pick": "Regal Thunder",
+  "exact_rpr": 76,
+  "exact_rpr_run": "RPR 76 at Newcastle 2026-11-05, good 20.5f (finished 5); carried 11-4 then, 11-4 today (same weight)",
+  "exact_weight_change": 0,
+  "exact_confirmed": false,
+  "time": "13:00",
+  "race": "Ice Cream Direct UK Members Maiden Hurdle (GBB Race)",
+  "distance": "2m5f",
+  "field": [
+   {
+    "name": "Mattys Mate",
+    "chance": 0.6354,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": [
+     "back from 177 days at under 2/1 (NOTE: no trap in data)"
+    ]
+   },
+   {
+    "name": "Masterius",
+    "chance": 0.191,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Regal Thunder",
+    "chance": 0.063,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Dshipdatnevrsailed",
+    "chance": 0.0601,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Landsborough",
+    "chance": 0.0504,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good",
+  "runners": 5,
+  "handicap": false,
+  "class": "4",
+  "win": "Mattys Mate",
+  "price": "1.53",
+  "chance": 0.6353762606671838,
+  "fair": "1.58",
+  "confidence": 10,
+  "verdict": "BET",
+  "old_rule_bet": true,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Mattys Mate",
+  "data_pick": "Mattys Mate",
+  "data_chance": 0.5849,
+  "data_conf": 9,
+  "data_price": "1.53",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [
+   "back from 177 days at under 2/1 (NOTE: no trap in data)"
+  ],
+  "evidence_chance": 0.573,
+  "evidence_price": "1.53",
+  "short_fav_caution": false,
+  "win_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "win_caution": [
+   "back from 177 days at under 2/1 (NOTE: no trap in data)"
+  ],
+  "move": "1.44 -> 1.53 (drifted)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Masterius 4.00 (19%)",
+  "rpr_pick": "Regal Thunder",
+  "rpr_reason": "RPR 86; distance 0/1, going 0/3 (wins/runs); passed over: Masterius (105) not run at the trip; weight +0lb vs last run - fine",
+  "anchor": "Regal Thunder (RPR 76 at trip/going) = RPR PICK",
+  "longshot": "no longshot",
+  "watchlist": [],
+  "pace": "Lone front-runner - Masterius could get an easy lead",
+  "changed": false,
+  "model_pick": "Mattys Mate"
+ },
+ {
+  "exact_rpr_pick": "Toothless",
+  "exact_rpr": 131,
+  "exact_rpr_run": "RPR 131 at Ffos Las 2026-10-29, good 19.5f (finished 1); carried 11-3 then, 11-9 today (6lb heavier)",
+  "exact_weight_change": 6,
+  "exact_confirmed": false,
+  "time": "13:35",
+  "race": "Kelly's Dairy Soft Ice Cream Handicap Chase (GBB Race)",
+  "distance": "2m3f",
+  "field": [
+   {
+    "name": "Cuban Court",
+    "chance": 0.2643,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Toothless",
+    "chance": 0.2453,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Bowmore",
+    "chance": 0.1885,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Primoz",
+    "chance": 0.1695,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Jaipaletemps",
+    "chance": 0.0947,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Il Ridoto",
+    "chance": 0.0377,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   }
+  ],
+  "going": "Good",
+  "runners": 6,
+  "handicap": true,
+  "class": "3",
+  "win": "Cuban Court",
+  "price": "3.75",
+  "chance": 0.2642600717989629,
+  "fair": "3.79",
+  "confidence": 4,
+  "verdict": "NO BET",
+  "old_rule_bet": false,
+  "data_gap": false,
+  "evidence_agrees": false,
+  "evidence_pick": "Toothless",
+  "data_pick": "Toothless",
+  "data_chance": 0.306,
+  "data_conf": 5,
+  "data_price": "3.25",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.308,
+  "evidence_price": "3.25",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "13.00 -> 3.75 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Toothless 3.25 (25%)",
+  "rpr_pick": "Cuban Court",
+  "rpr_reason": "RPR 145; distance 4/12, going 3/14 (wins/runs); weight -19lb vs last run - fine",
+  "anchor": "Il Ridoto (RPR 151 at trip/going) = shortlist (our chance 4%)",
+  "longshot": "Il Ridoto 23.00 STRONG (ranked 3rd by us)",
+  "watchlist": [],
+  "pace": "Even pace likely - two habitual front-runners",
+  "changed": false,
+  "model_pick": "Cuban Court"
+ },
+ {
+  "exact_rpr_pick": "Blue Sky Dreaming",
+  "exact_rpr": 108,
+  "exact_rpr_run": "RPR 108 at Ludlow 2025-11-24, good 16f (finished 4); carried 11-4 then, 11-13 today (9lb heavier)",
+  "exact_weight_change": 9,
+  "exact_confirmed": false,
+  "time": "14:10",
+  "race": "Cadburys Ice Cream Novices' Handicap Hurdle",
+  "distance": "2m\u00bdf",
+  "field": [
+   {
+    "name": "Nobody Told Me",
+    "chance": 0.548,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "River Glance",
+    "chance": 0.1368,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Blue Sky Dreaming",
+    "chance": 0.1088,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Moi Mon Vieux",
+    "chance": 0.0908,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Hijo De La Luna",
+    "chance": 0.0419,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Gallant Lion",
+    "chance": 0.0367,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Kennys Jewel",
+    "chance": 0.015,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Laios Tresor",
+    "chance": 0.014,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Enziya",
+    "chance": 0.008,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good",
+  "runners": 9,
+  "handicap": true,
+  "class": "5",
+  "win": "Nobody Told Me",
+  "price": "1.62",
+  "chance": 0.5480409283753432,
+  "fair": "1.83",
+  "confidence": 9,
+  "verdict": "BET",
+  "old_rule_bet": true,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Nobody Told Me",
+  "data_pick": "Nobody Told Me",
+  "data_chance": 0.323,
+  "data_conf": 6,
+  "data_price": "1.62",
+  "data_angles": [],
+  "data_cautions": [],
+  "evidence_chance": 0.324,
+  "evidence_price": "1.62",
+  "short_fav_caution": false,
+  "win_angles": [],
+  "win_caution": [],
+  "move": "2.25 -> 1.62 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "River Glance 5.50 (14%)",
+  "rpr_pick": "Nobody Told Me",
+  "rpr_reason": "RPR 109; distance 1/7, going 1/5 (wins/runs); up 5lb after WINNING last time (the handicapper's rise) - has to prove it can follow up off the higher mark",
+  "anchor": "Blue Sky Dreaming (RPR 108 at trip/going) = shortlist (our chance 11%)",
+  "longshot": "Hijo De La Luna 17.00 SPECULATIVE (ranked 5th by us)",
+  "watchlist": [],
+  "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+  "changed": false,
+  "model_pick": "Nobody Told Me"
+ },
+ {
+  "exact_rpr_pick": "Klapton Boy",
+  "exact_rpr": 83,
+  "exact_rpr_run": "RPR 83 at Wetherby 2024-11-16, good 19.5f (finished 2); carried 10-13 then, 10-9 today (4lb lighter)",
+  "exact_weight_change": -4,
+  "exact_confirmed": false,
+  "time": "14:45",
+  "race": "Download The At The Races App Handicap Hurdle (Go North Cab On Target Series Qualifier)",
+  "distance": "2m3\u00bdf",
+  "field": [
+   {
+    "name": "Anxious Moments",
+    "chance": 0.4741,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Thesoldiersminit",
+    "chance": 0.1877,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Bannister",
+    "chance": 0.0782,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Dusky Days",
+    "chance": 0.0723,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Snapaudaciaheros",
+    "chance": 0.0616,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Bouboule",
+    "chance": 0.0528,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Klapton Boy",
+    "chance": 0.0498,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Eyeeye",
+    "chance": 0.0235,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good",
+  "runners": 8,
+  "handicap": true,
+  "class": "5",
+  "win": "Anxious Moments",
+  "price": "2.00",
+  "chance": 0.4741471996872251,
+  "fair": "2.11",
+  "confidence": 8,
+  "verdict": "BET",
+  "old_rule_bet": true,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Anxious Moments",
+  "data_pick": "Anxious Moments",
+  "data_chance": 0.3443,
+  "data_conf": 6,
+  "data_price": "2.00",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [],
+  "evidence_chance": 0.333,
+  "evidence_price": "2.00",
+  "short_fav_caution": false,
+  "win_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "win_caution": [],
+  "move": "2.75 -> 2.00 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Thesoldiersminit 4.00 (19%)",
+  "rpr_pick": "Dusky Days",
+  "rpr_reason": "RPR 101; distance 0/3, going 2/21 (wins/runs); passed over: Anxious Moments (104) not run at the trip; up 12lb on last run BUT has finished top-3 8x carrying 158lb+ before - can cope",
+  "anchor": "Bannister (RPR 107 at trip/going) = shortlist (our chance 8%)",
+  "longshot": "Eyeeye 23.00 SPECULATIVE (ranked 8th by us)",
+  "watchlist": [],
+  "pace": "Lone front-runner - Dusky Days could get an easy lead",
+  "changed": false,
+  "model_pick": "Anxious Moments"
+ },
+ {
+  "exact_rpr_pick": "Sledgehammer",
+  "exact_rpr": 116,
+  "exact_rpr_run": "RPR 116 at Southwell 2026-11-24, good 24.5f (finished 1); carried 11-8 then, 11-2 today (6lb lighter)",
+  "exact_weight_change": -6,
+  "exact_confirmed": true,
+  "time": "15:20",
+  "race": "Apres Village At Doncaster Racecourse \"Hands & Heels\" Handicap Hurdle (Cond/Am) (Racing Excellence)",
+  "distance": "3m\u00bdf",
+  "field": [
+   {
+    "name": "Sledgehammer",
+    "chance": 0.7415,
+    "angles": [
+     "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+    ],
+    "cautions": []
+   },
+   {
+    "name": "Biglesisback",
+    "chance": 0.108,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Johnny Moonshine",
+    "chance": 0.0965,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Vaguely Royal",
+    "chance": 0.0367,
+    "angles": [],
+    "cautions": []
+   },
+   {
+    "name": "Glitz And Glamour",
+    "chance": 0.0174,
+    "angles": [],
+    "cautions": []
+   }
+  ],
+  "going": "Good",
+  "runners": 5,
+  "handicap": true,
+  "class": "5",
+  "win": "Sledgehammer",
+  "price": "1.44",
+  "chance": 0.7414624734709628,
+  "fair": "1.35",
+  "confidence": 10,
+  "verdict": "BET",
+  "old_rule_bet": true,
+  "data_gap": false,
+  "evidence_agrees": true,
+  "evidence_pick": "Sledgehammer",
+  "data_pick": "Sledgehammer",
+  "data_chance": 0.6275,
+  "data_conf": 10,
+  "data_price": "1.44",
+  "data_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "data_cautions": [],
+  "evidence_chance": 0.616,
+  "evidence_price": "1.44",
+  "short_fav_caution": false,
+  "win_angles": [
+   "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+  ],
+  "win_caution": [],
+  "move": "2.63 -> 1.44 (shortened)",
+  "drift_switch": "",
+  "drift_warning": "",
+  "drift_alt": "",
+  "second": "Biglesisback 5.00 (11%)",
+  "rpr_pick": "Biglesisback",
+  "rpr_reason": "RPR 114; distance 0/2, going 0/3 (wins/runs); up 7lb on last run BUT has finished top-3 1x carrying 159lb+ before - can cope",
+  "anchor": "Sledgehammer (RPR 116 at trip/going) = WIN PICK",
+  "longshot": "no longshot",
+  "watchlist": [],
+  "pace": "Lone front-runner - Biglesisback could get an easy lead",
+  "changed": false,
+  "model_pick": "Sledgehammer"
+ }
+]

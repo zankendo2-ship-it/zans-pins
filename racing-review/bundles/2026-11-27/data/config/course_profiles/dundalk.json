@@ -1,0 +1,65 @@
+{
+  "course_id": "dundalk",
+  "course_name": "Dundalk",
+  "track_name": "Dundalk (Polytrack)",
+  "country": "Ireland",
+  "code": "Flat, all-weather",
+  "months_used": "all year, with many winter evening meetings",
+  "identity": [
+    [
+      "Direction",
+      "Left-handed"
+    ],
+    [
+      "Surface",
+      "Polytrack"
+    ],
+    [
+      "Circuit",
+      "A flat, fair oval of about 1m2f"
+    ],
+    [
+      "Home straight",
+      "About 2½f"
+    ],
+    [
+      "Sprints",
+      "5f starts in a chute, so the minimum trip does not start on a bend"
+    ],
+    [
+      "Character",
+      "Often rides fast"
+    ]
+  ],
+  "layout": [
+    "A flat, left-handed Polytrack oval of about a mile and a quarter with a run-in of around two and a half furlongs.",
+    "A chute means five-furlong races start on the straight rather than on a bend."
+  ],
+  "tactics": [
+    "Guides report low draws having an edge at all trips and prominent racers doing well over five to seven furlongs; the ZANS figures below test both claims.",
+    "The surface often rides fast, which can be against horses that prefer slow ground on turf."
+  ],
+  "ground": [
+    "Synthetic Polytrack; going reads standard or similar."
+  ],
+  "guide_note": "Low draws and prominent racers are said to be favoured, especially from 5f to 7f.",
+  "schematic": null,
+  "sources": [
+    [
+      "Course guide",
+      "IrishRacing.com, Dundalk racecourse guide (course facts paraphrased in ZANS's own words)"
+    ],
+    [
+      "Historic results",
+      "UK and Irish results, 2018 to 2026 (ZANS results database)"
+    ],
+    [
+      "Course map",
+      "Track lines from OpenStreetMap, © OpenStreetMap contributors (ODbL)"
+    ],
+    [
+      "Prices",
+      "Best available bookmaker prices, collected by ZANS at the time shown"
+    ]
+  ]
+}

@@ -1,0 +1,14 @@
+course_id,course_name,country,race_code,surface,official_going,field_name,value,confidence,source_url
+newbury,Newbury,GB,JUMPS,TURF,GOOD,source_status,FETCHED,FETCH_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,relevant_section_status,RELEVANT_SECTION_EXTRACTED,SECTION_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,layout_context,The home straight runs almost exactly east to west.,SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,jumping_context,"Track Details Newbury boasts a fairly large expanse near the Greenham area, enabling it to host Flat, hurdle and steeplechase races.",SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+newbury,Newbury,GB,JUMPS,TURF,GOOD,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats

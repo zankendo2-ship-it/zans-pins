@@ -1,0 +1,11 @@
+{
+ "date": "2026-11-27",
+ "runners": 331,
+ "COMPLETE": 272,
+ "PARTIAL": 16,
+ "BEHIND": 1,
+ "MISSING": 7,
+ "DEBUT": 35,
+ "latest_run_in_history": "2026-11-25",
+ "rule": "Missing history is neutral: never scored, penalised or used to exclude."
+}

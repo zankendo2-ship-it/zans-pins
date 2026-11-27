@@ -1,0 +1,55 @@
+{
+ "date": "2026-11-27",
+ "runners": 331,
+ "with_speed_figure": 272,
+ "with_pace_role": 266,
+ "standards": 1141,
+ "last_going_allowance": {
+  "doncaster FLAT": {
+   "date": "2026-11-07",
+   "allowance_s_per_f": 0.39,
+   "races_run": "0.39 s/f slower than typical good ground"
+  },
+  "doncaster JUMPS": {
+   "date": "2026-03-13",
+   "allowance_s_per_f": 0.46,
+   "races_run": "0.46 s/f slower than typical good ground"
+  },
+  "dundalk AW_FLAT": {
+   "date": "2026-11-25",
+   "allowance_s_per_f": -0.01,
+   "races_run": "like typical good ground (-0.01 s/f)"
+  },
+  "musselburgh FLAT": {
+   "date": "2026-11-04",
+   "allowance_s_per_f": 0.44,
+   "races_run": "0.44 s/f slower than typical good ground"
+  },
+  "musselburgh JUMPS": {
+   "date": "2026-03-20",
+   "allowance_s_per_f": -0.23,
+   "races_run": "0.23 s/f faster than typical good ground"
+  },
+  "newbury FLAT": {
+   "date": "2026-09-19",
+   "allowance_s_per_f": -0.18,
+   "races_run": "0.18 s/f faster than typical good ground"
+  },
+  "newbury JUMPS": {
+   "date": "2026-11-05",
+   "allowance_s_per_f": 0.48,
+   "races_run": "0.48 s/f slower than typical good ground"
+  },
+  "southwell AW_FLAT": {
+   "date": "2026-11-17",
+   "allowance_s_per_f": 0.17,
+   "races_run": "0.17 s/f slower than typical good ground"
+  },
+  "southwell JUMPS": {
+   "date": "2026-11-24",
+   "allowance_s_per_f": 0.26,
+   "races_run": "0.26 s/f slower than typical good ground"
+  }
+ },
+ "rule": "Evidence only; missing figures are neutral, never zero."
+}

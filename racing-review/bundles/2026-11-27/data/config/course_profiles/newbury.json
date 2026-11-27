@@ -1,0 +1,62 @@
+{
+  "course_id": "newbury",
+  "course_name": "Newbury",
+  "track_name": "Newbury",
+  "country": "Great Britain",
+  "code": "Flat and jumps, turf",
+  "months_used": "flat from spring to autumn, jumps in winter",
+  "identity": [
+    [
+      "Direction",
+      "Left-handed"
+    ],
+    [
+      "Character",
+      "Galloping and among the fairest tracks in Britain"
+    ],
+    [
+      "Straight mile",
+      "Undulating; used for races such as the Lockinge"
+    ],
+    [
+      "Round mile",
+      "Starts in a chute, one turn after about 3f, then a 5f straight"
+    ],
+    [
+      "Surface",
+      "Turf"
+    ]
+  ],
+  "layout": [
+    "A wide, galloping, left-handed course with an undulating straight mile; the home straight runs almost exactly east to west.",
+    "Races from nine to thirteen furlongs start on the back straight; the round mile starts in a chute and makes one turn into a five-furlong straight."
+  ],
+  "tactics": [
+    "Suits big, long-striding horses, especially when rain makes it testing.",
+    "Many winners come down the middle of the straight course; the stands' rail can be favoured depending on field size and stall position.",
+    "Only the round mile start is notably draw-sensitive."
+  ],
+  "ground": [
+    "Soft ground makes Newbury a stiff test that suits long-striding stayers."
+  ],
+  "guide_note": null,
+  "schematic": null,
+  "sources": [
+    [
+      "Course guide",
+      "HorseRacingBettingSites.co.uk, Newbury racecourse guide (course facts paraphrased in ZANS's own words)"
+    ],
+    [
+      "Historic results",
+      "UK and Irish results, 2018 to 2026 (ZANS results database)"
+    ],
+    [
+      "Course map",
+      "Track lines from OpenStreetMap, © OpenStreetMap contributors (ODbL)"
+    ],
+    [
+      "Prices",
+      "Best available bookmaker prices, collected by ZANS at the time shown"
+    ]
+  ]
+}

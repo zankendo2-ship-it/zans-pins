@@ -1,0 +1,61 @@
+{
+  "course_id": "musselburgh",
+  "course_name": "Musselburgh",
+  "track_name": "Musselburgh",
+  "country": "Great Britain",
+  "code": "Flat and jumps, turf",
+  "months_used": "all year: flat and jumps",
+  "identity": [
+    [
+      "Direction",
+      "Right-handed"
+    ],
+    [
+      "Character",
+      "Sharp, with two tight turns linking two long straights"
+    ],
+    [
+      "Straight course",
+      "Sprints run on a straight course"
+    ],
+    [
+      "Ground",
+      "Excellent drainage; rarely very testing"
+    ],
+    [
+      "Surface",
+      "Turf"
+    ]
+  ],
+  "layout": [
+    "A sharp, right-handed track near Edinburgh where two tight turns link the back and home straights; the course was reconfigured to ease what was once Britain's tightest bend."
+  ],
+  "tactics": [
+    "Balance matters, as at Chester; speedy horses that stay the trip usually do better than big gallopers on the round course.",
+    "A good turn of foot can open up a winning gap quickly.",
+    "Guides favour low draws on the round course up to about nine furlongs, and high draws on the straight course where fields group on the stands' rail."
+  ],
+  "ground": [
+    "Good drainage keeps the going on the fast side, which helps speedier types."
+  ],
+  "guide_note": "Low draws on the round course and high draws (stands' rail) on the straight course are the guide view; our draw figures check both.",
+  "schematic": null,
+  "sources": [
+    [
+      "Course guide",
+      "HorseRacingBettingSites.co.uk, Musselburgh racecourse guide (course facts paraphrased in ZANS's own words)"
+    ],
+    [
+      "Historic results",
+      "UK and Irish results, 2018 to 2026 (ZANS results database)"
+    ],
+    [
+      "Course map",
+      "Track lines from OpenStreetMap, © OpenStreetMap contributors (ODbL)"
+    ],
+    [
+      "Prices",
+      "Best available bookmaker prices, collected by ZANS at the time shown"
+    ]
+  ]
+}

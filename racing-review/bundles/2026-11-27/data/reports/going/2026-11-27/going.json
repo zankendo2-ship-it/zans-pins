@@ -1,0 +1,723 @@
+{
+ "date": "2026-11-27",
+ "fetched_utc": "2026-11-27T11:10:21",
+ "meetings": [
+  {
+   "fixture_id": 1176,
+   "year": "2026",
+   "date": "2026-11-27",
+   "course_id": 34,
+   "type": "JUMP",
+   "going": null,
+   "in_places": null,
+   "goingstick": null,
+   "goingstick_at": null,
+   "smm_pct": null,
+   "ground_comment": "HURDLES: Good to Soft, Good in places.\nCHASE: Good, Good to Soft in places.",
+   "rails": "HURDLE: middle\nCHASE: full width (last 2 fences dolled off 6ft from inside).\nSplit bends in places.",
+   "stalls": "",
+   "watering": "47mm irrigation applied w/c 9th Nov. Over 70mm irrigation applied w/c 16th Nov. 15mm applied Monday, 15mm Tuesday, 15mm Wednesday & 15mm Thursday.",
+   "weather": "Forecast: Dry yesterday. Cloudy, gentle breeze with 2-4mm today. Then 8-12mm rain expected tomorrow until 4pm.",
+   "abandoned": null,
+   "history": [
+    {
+     "at": "2026-11-20 11:11:59",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good."
+    },
+    {
+     "at": "2026-11-21 07:57:37",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good."
+    },
+    {
+     "at": "2026-11-22 09:00:27",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good."
+    },
+    {
+     "at": "2026-11-22 09:03:11",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good"
+    },
+    {
+     "at": "2026-11-23 08:02:54",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good.\nWILL WALK TRACK ONCE FROST LIFTS & UPDATE."
+    },
+    {
+     "at": "2026-11-23 13:16:20",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good."
+    },
+    {
+     "at": "2026-11-24 10:00:32",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good."
+    },
+    {
+     "at": "2026-11-25 08:00:57",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good."
+    },
+    {
+     "at": "2026-11-26 07:56:52",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good, Good to Soft in places.\nCHASE: Good."
+    },
+    {
+     "at": "2026-11-27 07:36:00",
+     "going": null,
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "HURDLES: Good to Soft, Good in places.\nCHASE: Good, Good to Soft in places."
+    }
+   ],
+   "races": [
+    {
+     "race_id": 4964,
+     "time": "11:40",
+     "name": "THE CORAL \"BLACK FRIDAY PRICE BOOSTS\" 'NATIONAL HUNT' MAIDEN HURDLE RACE (CLASS 3) (DIV I) (GBB RACE)",
+     "dist": "2m 69y",
+     "dist_yards": 3589,
+     "extra_yards": 59,
+     "dist_run": "2m 128y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 4964,
+     "time": "12:10",
+     "name": "THE PLAY CORAL \"RACING-SUPER-SERIES\" FOR FREE 'NATIONAL HUNT' MAIDEN HURDLE RACE (CLASS 3) (DIV II) (GBB RACE)",
+     "dist": "2m 69y",
+     "dist_yards": 3589,
+     "extra_yards": 59,
+     "dist_run": "2m 128y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 23367,
+     "time": "12:40",
+     "name": "THE CORAL RACING CLUB NOVICES' LIMITED HANDICAP STEEPLE CHASE (CLASS 3) (For the Fulke Walwyn Trophy) (GBB RACE)",
+     "dist": "2m 92y",
+     "dist_yards": 3612,
+     "extra_yards": 8,
+     "dist_run": "2m 100y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 64199,
+     "time": "13:15",
+     "name": "THE CORAL \"DAILY REWARDS SHAKER\" FILLIES' JUVENILE HURDLE RACE (CLASS 1) (Listed Race) (GBB RACE)",
+     "dist": "2m 69y",
+     "dist_yards": 3589,
+     "extra_yards": 59,
+     "dist_run": "2m 128y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 4972,
+     "time": "13:50",
+     "name": "THE CORAL JOHN FRANCOME NOVICES' STEEPLE CHASE (CLASS 1)(Grade 2) (GBB RACE)",
+     "dist": "2m 3f 187y",
+     "dist_yards": 4367,
+     "extra_yards": 8,
+     "dist_run": "2m 3f 195y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 14466,
+     "time": "14:25",
+     "name": "THE CORAL \"BET\u00a310 GET\u00a350 SIGN UP OFFER\" HANDICAP STEEPLE CHASE (CLASS 2) (GBB RACE)",
+     "dist": "2m 3f 187y",
+     "dist_yards": 4367,
+     "extra_yards": 8,
+     "dist_run": "2m 3f 195y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 4970,
+     "time": "15:00",
+     "name": "THE CORAL LONG DISTANCE HURDLE RACE (CLASS 1)  (Grade 2) (GBB RACE)",
+     "dist": "3m 57y",
+     "dist_yards": 5337,
+     "extra_yards": 101,
+     "dist_run": "3m 158y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 4959,
+     "time": "15:35",
+     "name": "THE CORAL \"PIPPED-AT-THE-POST\" AND WIN HANDICAP HURDLE RACE (CLASS 3)",
+     "dist": "3m 57y",
+     "dist_yards": 5337,
+     "extra_yards": 101,
+     "dist_run": "3m 158y",
+     "going": null,
+     "abandoned": null
+    }
+   ],
+   "updated": "2026-11-27 07:35:59",
+   "course": "Newbury"
+  },
+  {
+   "fixture_id": 744,
+   "year": "2026",
+   "date": "2026-11-27",
+   "course_id": 15,
+   "type": "JUMP",
+   "going": "Good to Soft",
+   "in_places": "Soft",
+   "goingstick": null,
+   "goingstick_at": null,
+   "smm_pct": null,
+   "ground_comment": "",
+   "rails": "As standard, split bottom bend.",
+   "stalls": "",
+   "watering": "",
+   "weather": "9mm this morning.\nFriday 7*/2*. A.wet start, improving into the afternoon.",
+   "abandoned": null,
+   "history": [
+    {
+     "at": "2026-11-20 09:05:36",
+     "going": "Good to Soft",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    },
+    {
+     "at": "2026-11-23 09:17:49",
+     "going": "Good to Soft",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    },
+    {
+     "at": "2026-11-23 15:53:14",
+     "going": "Good to Soft",
+     "in_places": "Good",
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    },
+    {
+     "at": "2026-11-24 16:07:15",
+     "going": "Good to Soft",
+     "in_places": "Good",
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    },
+    {
+     "at": "2026-11-25 06:30:39",
+     "going": "Good to Soft",
+     "in_places": "Good",
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    },
+    {
+     "at": "2026-11-25 08:01:46",
+     "going": "Good to Soft",
+     "in_places": "Good",
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    },
+    {
+     "at": "2026-11-27 07:04:45",
+     "going": "Good to Soft",
+     "in_places": "Good",
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    },
+    {
+     "at": "2026-11-27 10:17:13",
+     "going": "Good to Soft",
+     "in_places": "Soft",
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    }
+   ],
+   "races": [
+    {
+     "race_id": 67358,
+     "time": "11:50",
+     "name": "THE WATCH ON RACING TV JUVENILE MAIDEN HURDLE RACE (CLASS 4) (GBB RACE)",
+     "dist": "1m 7f 124y",
+     "dist_yards": 3424,
+     "extra_yards": null,
+     "dist_run": "1m 7f 124y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 2325,
+     "time": "12:20",
+     "name": "THE MUSSELBURGH RACECOURSE PREMIUM ANNUAL MEMBERSHIP HANDICAP STEEPLE CHASE (CLASS 5)",
+     "dist": "2m 4f 68y",
+     "dist_yards": 4468,
+     "extra_yards": 24,
+     "dist_run": "2m 4f 92y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 2326,
+     "time": "12:50",
+     "name": "THE PROTECH NETWORK SOLUTIONS LTD MAIDEN HURDLE RACE (CLASS 4)  (Go North Night Nurse Series Qualifier) (GBB RACE)",
+     "dist": "1m 7f 124y",
+     "dist_yards": 3424,
+     "extra_yards": null,
+     "dist_run": "1m 7f 124y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 2413,
+     "time": "13:25",
+     "name": "THE 100% RACING TV PROFITS BACK TO RACING MARES' HANDICAP HURDLE RACE (CLASS 4) (Challenger Mares' Hurdle Series Qualifier)",
+     "dist": "2m 3f 171y",
+     "dist_yards": 4351,
+     "extra_yards": null,
+     "dist_run": "2m 3f 171y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 2324,
+     "time": "14:00",
+     "name": "THE MUSSELBURGH RACECOURSE 2027 ANNUAL MEMBERSHIP HANDICAP STEEPLE CHASE (CLASS 4) (Go North One Man Series Qualifier) (GBB RACE)",
+     "dist": "1m 7f 182y",
+     "dist_yards": 3482,
+     "extra_yards": 12,
+     "dist_run": "1m 7f 194y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 2323,
+     "time": "14:32",
+     "name": "THE EDINBURGH RUGBY 1872 CUP HANDICAP HURDLE RACE (CLASS 4)  (Go North Sea Pigeon Hurdle Series Qualifier)",
+     "dist": "1m 7f 124y",
+     "dist_yards": 3424,
+     "extra_yards": null,
+     "dist_run": "1m 7f 124y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 57695,
+     "time": "15:07",
+     "name": "THE RACING TV CONDITIONAL JOCKEYS' HANDICAP HURDLE RACE (CLASS 5)",
+     "dist": "2m 3f 171y",
+     "dist_yards": 4351,
+     "extra_yards": null,
+     "dist_run": "2m 3f 171y",
+     "going": null,
+     "abandoned": null
+    }
+   ],
+   "updated": "2026-11-27 10:17:13",
+   "course": "Musselburgh"
+  },
+  {
+   "fixture_id": 1084,
+   "year": "2026",
+   "date": "2026-11-27",
+   "course_id": 14,
+   "type": "JUMP",
+   "going": "Good",
+   "in_places": null,
+   "goingstick": "5.5",
+   "goingstick_at": "2026-11-27 07:45:00",
+   "smm_pct": null,
+   "ground_comment": "Watered to maintain GOOD",
+   "rails": "Shared Hotel bend - divided everywhere else. \nHurdles - outermost line \nChase - innermost line except for over Rose Hill and Turn in.",
+   "stalls": "",
+   "watering": "Watered to maintain GOOD ground",
+   "weather": "Dry yesterday. 1.6mm in the last week. \nNo frost this morning. \nOvercast with showers forecast from early morning and remaining through most of the day. \n 2-5C during the day with a fresh southerly breeze. \nChase track verti drained last weekend. \nWatered to maintain GOOD ground.",
+   "abandoned": null,
+   "history": [
+    {
+     "at": "2026-11-20 09:47:33",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-21 07:44:02",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-22 08:07:28",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-23 07:44:48",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-23 07:56:59",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-24 07:51:41",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-25 07:49:31",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": "5.8",
+     "goingstick_at": "2026-11-25 07:45:00",
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-26 07:54:01",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": "5.5",
+     "goingstick_at": "2026-11-26 07:45:00",
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-26 07:54:08",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": "5.5",
+     "goingstick_at": "2026-11-26 07:45:00",
+     "comment": "Watering to maintain"
+    },
+    {
+     "at": "2026-11-27 07:41:54",
+     "going": "Good",
+     "in_places": null,
+     "goingstick": "5.5",
+     "goingstick_at": "2026-11-27 07:45:00",
+     "comment": "Watered to maintain GOOD"
+    }
+   ],
+   "races": [
+    {
+     "race_id": 23321,
+     "time": "12:00",
+     "name": "THE GOLDEN SCOOP NOVICES' LIMITED HANDICAP STEEPLE CHASE (CLASS 3) (GBB RACE)",
+     "dist": "2m 7f 214y",
+     "dist_yards": 5274,
+     "extra_yards": 14,
+     "dist_run": "3m 8y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 60818,
+     "time": "12:30",
+     "name": "THE STEVE MARTIN MEMORIAL EBF JUNIOR 'NATIONAL HUNT' HURDLE RACE (CLASS 4) (GBB RACE)",
+     "dist": "2m 128y",
+     "dist_yards": 3648,
+     "extra_yards": 22,
+     "dist_run": "2m 150y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 23320,
+     "time": "13:00",
+     "name": "THE ICE CREAM DIRECT UK MEMBERS MAIDEN HURDLE RACE (CLASS 4) (GBB RACE)",
+     "dist": "2m 4f 181y",
+     "dist_yards": 4581,
+     "extra_yards": 22,
+     "dist_run": "2m 4f 203y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 23319,
+     "time": "13:35",
+     "name": "THE KELLY'S DAIRY SOFT ICE CREAM HANDICAP STEEPLE CHASE (CLASS 3) (GBB RACE)",
+     "dist": "2m 3f 31y",
+     "dist_yards": 4211,
+     "extra_yards": 7,
+     "dist_run": "2m 3f 38y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 67369,
+     "time": "14:10",
+     "name": "THE CADBURYS ICE CREAM NOVICES' HANDICAP HURDLE RACE (CLASS 5)",
+     "dist": "2m 128y",
+     "dist_yards": 3648,
+     "extra_yards": 22,
+     "dist_run": "2m 150y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 23322,
+     "time": "14:45",
+     "name": "THE DOWNLOAD THE AT THE RACES APP HANDICAP HURDLE RACE (CLASS 5)  (Go North Cab On Target Series Qualifier)",
+     "dist": "2m 3f 88y",
+     "dist_yards": 4268,
+     "extra_yards": 22,
+     "dist_run": "2m 3f 110y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 68219,
+     "time": "15:20",
+     "name": "THE APRES VILLAGE AT DONCASTER RACECOURSE 'HANDS & HEELS' HANDICAP HURDLE RACE (CLASS 4) (Conditional & Amateur Jockeys' Race)(Part of The Racing Excellence Series)",
+     "dist": "3m 84y",
+     "dist_yards": 5364,
+     "extra_yards": 44,
+     "dist_run": "3m 128y",
+     "going": null,
+     "abandoned": null
+    }
+   ],
+   "updated": "2026-11-27 07:41:54",
+   "course": "Doncaster"
+  },
+  {
+   "fixture_id": 16067,
+   "year": "2026",
+   "date": "2026-11-27",
+   "course_id": 47,
+   "type": "FLAT",
+   "going": "Standard",
+   "in_places": null,
+   "goingstick": null,
+   "goingstick_at": null,
+   "smm_pct": null,
+   "ground_comment": "The track will be cultivated to 3\" and reinstated with a Gallop-master finish.",
+   "rails": "",
+   "stalls": "5 furlong centre; remainder, inner",
+   "watering": "",
+   "weather": "Friday dry AM, showers during the afternoon.",
+   "abandoned": null,
+   "history": [
+    {
+     "at": "2026-11-13 10:20:29",
+     "going": "Standard",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "The track has undergone full decompaction (9\") and will be reinstated with a Gallop-master finish."
+    },
+    {
+     "at": "2026-11-13 10:20:48",
+     "going": "Standard",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": ""
+    },
+    {
+     "at": "2026-11-20 13:16:33",
+     "going": "Standard",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "The track will be cultivated to 3@ and reinstated with a Gallop-master finish."
+    },
+    {
+     "at": "2026-11-21 08:37:35",
+     "going": "Standard",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "The track will be cultivated to 3@ and reinstated with a Gallop-master finish."
+    },
+    {
+     "at": "2026-11-23 08:19:39",
+     "going": "Standard",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "The track will be cultivated to 3@ and reinstated with a Gallop-master finish."
+    },
+    {
+     "at": "2026-11-24 07:06:50",
+     "going": "Standard",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "The track will be cultivated to 3\" and reinstated with a Gallop-master finish."
+    },
+    {
+     "at": "2026-11-25 08:45:00",
+     "going": "Standard",
+     "in_places": null,
+     "goingstick": null,
+     "goingstick_at": null,
+     "comment": "The track will be cultivated to 3\" and reinstated with a Gallop-master finish."
+    }
+   ],
+   "races": [
+    {
+     "race_id": 19869,
+     "time": "14:40",
+     "name": "THE MIDNITE GOLDEN ROSE STAKES (CLASS 1)  (Listed Race)",
+     "dist": "6f 17y",
+     "dist_yards": 1337,
+     "extra_yards": null,
+     "dist_run": "6f 17y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 14713,
+     "time": "15:15",
+     "name": "THE MIDNITE CHURCHILL STAKES (CLASS 1)  (Listed Race)",
+     "dist": "1m 3f 24y",
+     "dist_yards": 2444,
+     "extra_yards": null,
+     "dist_run": "1m 3f 24y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 68249,
+     "time": "15:45",
+     "name": "THE ALL-WEATHER CHAMPIONSHIP IS BACK HANDICAP STAKES (CLASS 6)",
+     "dist": "1m 14y",
+     "dist_yards": 1774,
+     "extra_yards": null,
+     "dist_run": "1m 14y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 14964,
+     "time": "16:15",
+     "name": "THE AWC SEASON 14 HAS BEGUN EBF FILLIES' NOVICE STAKES (CLASS 3)  (DIV I) (GBB/GBBPLUS RACE)",
+     "dist": "1m 14y",
+     "dist_yards": 1774,
+     "extra_yards": null,
+     "dist_run": "1m 14y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 14964,
+     "time": "16:45",
+     "name": "THE AWC SEASON 14 HAS BEGUN EBF FILLIES' NOVICE STAKES (CLASS 3)  (DIV II) (GBB/GBBPLUS RACE)",
+     "dist": "1m 14y",
+     "dist_yards": 1774,
+     "extra_yards": null,
+     "dist_run": "1m 14y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 8519,
+     "time": "17:15",
+     "name": "THE AWC FINALS DAY AT NEWCASTLE 26TH MARCH EBF NOVICE STAKES (CLASS 3) (GBB RACE)",
+     "dist": "7f 15y",
+     "dist_yards": 1555,
+     "extra_yards": null,
+     "dist_run": "7f 15y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 30539,
+     "time": "17:45",
+     "name": "THE MIDNITE: BUILT FOR 2026 NOT 2006 SELLING STAKES (CLASS 4)",
+     "dist": "6f 16y",
+     "dist_yards": 1336,
+     "extra_yards": null,
+     "dist_run": "6f 16y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 7001,
+     "time": "18:15",
+     "name": "THE MIDNITE AIN'T YOUR GRANDAD'S BOOKIE HANDICAP STAKES (CLASS 6)",
+     "dist": "2m 103y",
+     "dist_yards": 3623,
+     "extra_yards": null,
+     "dist_run": "2m 103y",
+     "going": null,
+     "abandoned": null
+    },
+    {
+     "race_id": 37019,
+     "time": "18:45",
+     "name": "THE MIDNITE A NEXT GENERATION BETTING APP AMATEUR JOCKEYS' HANDICAP STAKES (CLASS 6)",
+     "dist": "1m 4f 15y",
+     "dist_yards": 2655,
+     "extra_yards": null,
+     "dist_run": "1m 4f 15y",
+     "going": null,
+     "abandoned": null
+    }
+   ],
+   "updated": "2026-11-27 06:15:45",
+   "course": "Southwell"
+  }
+ ]
+}

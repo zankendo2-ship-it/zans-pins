@@ -1,0 +1,1123 @@
+{
+ "published_utc": "2026-11-27T08:44:46Z",
+ "course": "southwell",
+ "picks": [
+  {
+   "exact_rpr_pick": "Montassib",
+   "exact_rpr": 74,
+   "exact_rpr_run": "RPR 74 at Newcastle (AW) 2020-09-03, standard 6f (finished 1); carried 9-2 then, 9-5 today (3lb heavier)",
+   "exact_weight_change": 3,
+   "exact_confirmed": false,
+   "time": "14:40",
+   "race": "Midnite Golden Rose Stakes (Listed Race)",
+   "distance": "6f",
+   "field": [
+    {
+     "name": "Soldiers Tree",
+     "chance": 0.2387,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Crestofdistinction",
+     "chance": 0.1878,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Beckfords Folly",
+     "chance": 0.1708,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Montassib",
+     "chance": 0.1691,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": [
+      "slow starter at 5-6f: A/E 0.89 (807)",
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Aint Nobody",
+     "chance": 0.0769,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Zen Diva",
+     "chance": 0.0759,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Partisan Hero",
+     "chance": 0.0597,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Hollywood Treasure",
+     "chance": 0.021,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 8,
+   "handicap": false,
+   "class": "1",
+   "win": "Soldiers Tree",
+   "price": "4.00",
+   "chance": 0.2387187746781877,
+   "fair": "4.19",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Beckfords Folly",
+   "data_pick": "Beckfords Folly",
+   "data_chance": 0.2225,
+   "data_conf": 4,
+   "data_price": "5.50",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.222,
+   "evidence_price": "5.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "3.25 -> 4.00 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "Soldiers Tree drifted 3.25 -> 4.00 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Crestofdistinction",
+   "second": "Crestofdistinction 4.50 (19%)",
+   "rpr_pick": "Soldiers Tree",
+   "rpr_reason": "RPR 124; distance 0/5, going 1/2 (wins/runs); weight -2lb vs last run - fine",
+   "anchor": "Montassib (RPR 116 at trip/going) = shortlist (our chance 17%)",
+   "longshot": "Hollywood Treasure 36.00 SPECULATIVE (ranked 6th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Soldiers Tree"
+  },
+  {
+   "exact_rpr_pick": "Military Order",
+   "exact_rpr": 118,
+   "exact_rpr_run": "RPR 118 at Dundalk (AW) (IRE) 2026-09-25, standard 10.5f (finished 1); carried 9-7 then, 9-7 today (same weight)",
+   "exact_weight_change": 0,
+   "exact_confirmed": true,
+   "time": "15:15",
+   "race": "Midnite Churchill Stakes (Listed Race)",
+   "distance": "1m3f",
+   "field": [
+    {
+     "name": "Military Order",
+     "chance": 0.4923,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Warrant Holder",
+     "chance": 0.2325,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Spinning Wheel",
+     "chance": 0.1173,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "By The Book",
+     "chance": 0.0879,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Old Harrovian",
+     "chance": 0.0396,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Zgharta",
+     "chance": 0.0303,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 6,
+   "handicap": false,
+   "class": "1",
+   "win": "Military Order",
+   "price": "1.83",
+   "chance": 0.4923478155388876,
+   "fair": "2.04",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": false,
+   "data_gap": true,
+   "evidence_agrees": true,
+   "evidence_pick": "Military Order",
+   "data_pick": "Military Order",
+   "data_chance": 0.5912,
+   "data_conf": 9,
+   "data_price": "1.83",
+   "data_angles": [],
+   "data_cautions": [
+    "age 6+: A/E 0.96 (6,700)"
+   ],
+   "evidence_chance": 0.595,
+   "evidence_price": "1.83",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [
+    "age 6+: A/E 0.96 (6,700)"
+   ],
+   "move": "1.80 -> 1.83 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Warrant Holder 3.75 (23%)",
+   "rpr_pick": "Military Order",
+   "rpr_reason": "RPR 125; distance 2/3, going 3/4 (wins/runs); passed over: Warrant Holder (126) not run at the trip; weight check not possible - its last run (14 days ago) isn't in our results yet",
+   "anchor": "Military Order (RPR 118 at trip/going) = WIN PICK",
+   "longshot": "Old Harrovian 19.00 SPECULATIVE (ranked 5th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Military Order"
+  },
+  {
+   "exact_rpr_pick": "Under The Sun",
+   "exact_rpr": 95,
+   "exact_rpr_run": "RPR 95 at Chelmsford (AW) 2024-04-06, standard 8f (finished 4); carried 9-7 then, 9-6 today (1lb lighter)",
+   "exact_weight_change": -1,
+   "exact_confirmed": false,
+   "time": "15:45",
+   "race": "All-Weather Championship Is Back Handicap",
+   "distance": "1m",
+   "field": [
+    {
+     "name": "El Fox",
+     "chance": 0.1988,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Under The Sun",
+     "chance": 0.1435,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Beauty Generation",
+     "chance": 0.1375,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lili Marleen",
+     "chance": 0.1144,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Boy Named Sioux",
+     "chance": 0.1134,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Mr Fustic",
+     "chance": 0.0757,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Bass Player",
+     "chance": 0.0527,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Tasever",
+     "chance": 0.0368,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)",
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Popeye Doyle",
+     "chance": 0.0281,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Fools Rush In",
+     "chance": 0.0274,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Double Time",
+     "chance": 0.0264,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)",
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Sunshine And Roses",
+     "chance": 0.0261,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Hint Of The Jungle",
+     "chance": 0.0191,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 13,
+   "handicap": true,
+   "class": "6",
+   "win": "El Fox",
+   "price": "3.75",
+   "chance": 0.1987500030113637,
+   "fair": "5.04",
+   "confidence": 3,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "El Fox",
+   "data_pick": "El Fox",
+   "data_chance": 0.1804,
+   "data_conf": 3,
+   "data_price": "3.75",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.18,
+   "evidence_price": "3.75",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "4.00 -> 3.75 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "El Fox drifted 3.25 -> 3.75 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Under The Sun",
+   "second": "Under The Sun 5.00 (14%)",
+   "rpr_pick": "Bass Player",
+   "rpr_reason": "RPR 77; distance 0/11, going 2/14 (wins/runs); weight -4lb vs last run - fine",
+   "anchor": "Bass Player (RPR 102 at trip/going) = RPR PICK",
+   "longshot": "Fools Rush In 26.00 SPECULATIVE (ranked 8th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "El Fox"
+  },
+  {
+   "exact_rpr_pick": "",
+   "exact_rpr": null,
+   "exact_rpr_run": "no runner has run on this exact going over this trip",
+   "exact_weight_change": null,
+   "exact_confirmed": false,
+   "time": "16:15",
+   "race": "AWC Season 14 Has Begun EBF Fillies' Novice Stakes (GBB/GBBPlus Race) (Div I)",
+   "distance": "1m",
+   "field": [
+    {
+     "name": "Gracious Gift",
+     "chance": 0.2567,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Southover Gardens",
+     "chance": 0.2105,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kalypsa",
+     "chance": 0.1797,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Signora Fortuna",
+     "chance": 0.1043,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Sassi Lady",
+     "chance": 0.0913,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Rose Chimes",
+     "chance": 0.0397,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Camatillo",
+     "chance": 0.0397,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ouattara",
+     "chance": 0.0348,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Choir Of Angels",
+     "chance": 0.0238,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Jumeirah Pearl",
+     "chance": 0.0136,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Final Dash",
+     "chance": 0.006,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 11,
+   "handicap": false,
+   "class": "3",
+   "win": "Gracious Gift",
+   "price": "3.50",
+   "chance": 0.2566869874302508,
+   "fair": "3.90",
+   "confidence": 5,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Gracious Gift",
+   "data_pick": "Gracious Gift",
+   "data_chance": 0.3799,
+   "data_conf": 7,
+   "data_price": "3.50",
+   "data_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.374,
+   "evidence_price": "3.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "4.50 -> 3.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Southover Gardens 3.75 (21%)",
+   "rpr_pick": "Choir Of Angels",
+   "rpr_reason": "RPR 35; distance 0/1, going 0/0 (wins/runs); nobody higher had run at both trip and going; passed over: Gracious Gift (72) not run at the trip, Jumeirah Pearl (46) not run at the trip, Choir Of Angels (35) not run on the going; weight +0lb vs last run - fine",
+   "anchor": "Jumeirah Pearl (RPR 34 at trip/going) = shortlist (our chance 1%)",
+   "longshot": "Rose Chimes 17.00 SPECULATIVE (ranked 5th by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Gracious Gift"
+  },
+  {
+   "exact_rpr_pick": "Graceful Gracie",
+   "exact_rpr": 45,
+   "exact_rpr_run": "RPR 45 at Wolverhampton (AW) 2026-11-16, standard 8.5f (finished 6); carried 9-2 then, 9-2 today (same weight)",
+   "exact_weight_change": 0,
+   "exact_confirmed": false,
+   "time": "16:45",
+   "race": "AWC Season 14 Has Begun EBF Fillies' Novice Stakes (GBB/GBBPlus Race) (Div II)",
+   "distance": "1m",
+   "field": [
+    {
+     "name": "Probing",
+     "chance": 0.5645,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Fredegund",
+     "chance": 0.1336,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "So This Is Love",
+     "chance": 0.0913,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Forest Bay",
+     "chance": 0.0776,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Evara",
+     "chance": 0.0383,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ever Flowing",
+     "chance": 0.0304,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Accoya",
+     "chance": 0.0216,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lady Bb",
+     "chance": 0.0177,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Moon In Matera",
+     "chance": 0.0118,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Princess Aurelia",
+     "chance": 0.0093,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Graceful Gracie",
+     "chance": 0.0039,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 11,
+   "handicap": false,
+   "class": "3",
+   "win": "Probing",
+   "price": "1.57",
+   "chance": 0.5644722497765644,
+   "fair": "1.78",
+   "confidence": 9,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Probing",
+   "data_pick": "Probing",
+   "data_chance": 0.4485,
+   "data_conf": 8,
+   "data_price": "1.57",
+   "data_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.442,
+   "evidence_price": "1.57",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "3.50 -> 1.57 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Fredegund 5.50 (13%)",
+   "rpr_pick": "Princess Aurelia",
+   "rpr_reason": "RPR 63; distance 0/1, going 0/0 (wins/runs); nobody higher had run at both trip and going; passed over: Probing (96) not run at the trip, So This Is Love (76) not run at the trip, Princess Aurelia (63) not run on the going; weight +0lb vs last run - fine",
+   "anchor": "Princess Aurelia (RPR 51 at trip/going) = RPR PICK",
+   "longshot": "Evara 17.00 SPECULATIVE (ranked 5th by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Probing"
+  },
+  {
+   "exact_rpr_pick": "",
+   "exact_rpr": null,
+   "exact_rpr_run": "no runner has run on this exact going over this trip",
+   "exact_weight_change": null,
+   "exact_confirmed": false,
+   "time": "17:15",
+   "race": "AWC Finals Day At Newcastle 26th March EBF Novice Stakes (GBB Race)",
+   "distance": "7f",
+   "field": [
+    {
+     "name": "Flick Of An Eye",
+     "chance": 0.295,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Ezz Al Leith",
+     "chance": 0.219,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kite Beach",
+     "chance": 0.1447,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Georges",
+     "chance": 0.1154,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Baysline",
+     "chance": 0.0948,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kokoro",
+     "chance": 0.0411,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Barbossa",
+     "chance": 0.0362,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Turbo Charger",
+     "chance": 0.0274,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Cites",
+     "chance": 0.0264,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 9,
+   "handicap": false,
+   "class": "3",
+   "win": "Flick Of An Eye",
+   "price": "3.00",
+   "chance": 0.29502996122664793,
+   "fair": "3.39",
+   "confidence": 5,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Flick Of An Eye",
+   "data_pick": "Flick Of An Eye",
+   "data_chance": 0.3393,
+   "data_conf": 6,
+   "data_price": "3.00",
+   "data_angles": [
+    "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.322,
+   "evidence_price": "3.00",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "2.75 -> 3.00 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "Flick Of An Eye drifted 2.38 -> 3.00 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Ezz Al Leith",
+   "second": "Ezz Al Leith 3.75 (22%)",
+   "rpr_pick": "Turbo Charger",
+   "rpr_reason": "RPR 69; distance 0/2, going 0/0 (wins/runs); nobody higher had run at both trip and going; passed over: Flick Of An Eye (86) not run at the trip, Turbo Charger (69) not run on the going, Cites (62) not run on the going; weight +0lb vs last run - fine",
+   "anchor": "Flick Of An Eye (RPR 78 at trip/going) = WIN PICK",
+   "longshot": "Kokoro 17.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Flick Of An Eye"
+  },
+  {
+   "exact_rpr_pick": "Purosangue",
+   "exact_rpr": 101,
+   "exact_rpr_run": "RPR 101 at Southwell (AW) 2025-04-06, standard 6f (finished 4); carried 9-9 then, 9-4 today (5lb lighter)",
+   "exact_weight_change": -5,
+   "exact_confirmed": true,
+   "time": "17:45",
+   "race": "Midnite: Built For 2026 Not 2006 Selling Stakes",
+   "distance": "6f",
+   "field": [
+    {
+     "name": "Purosangue",
+     "chance": 0.5208,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Moving Force",
+     "chance": 0.1778,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Bassenthwaite",
+     "chance": 0.1355,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Betsen",
+     "chance": 0.0932,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Buzz Box",
+     "chance": 0.0548,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Blackjack",
+     "chance": 0.0179,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    }
+   ],
+   "going": "Standard",
+   "runners": 6,
+   "handicap": false,
+   "class": "4",
+   "win": "Purosangue",
+   "price": "1.73",
+   "chance": 0.5207657444868886,
+   "fair": "1.93",
+   "confidence": 9,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Purosangue",
+   "data_pick": "Purosangue",
+   "data_chance": 0.3614,
+   "data_conf": 7,
+   "data_price": "1.73",
+   "data_angles": [
+    "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.343,
+   "evidence_price": "1.73",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "2.38 -> 1.73 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Moving Force 4.50 (18%)",
+   "rpr_pick": "Purosangue",
+   "rpr_reason": "RPR 100; distance 1/17, going 0/3 (wins/runs); weight +2lb vs last run - fine",
+   "anchor": "Purosangue (RPR 101 at trip/going) = WIN PICK",
+   "longshot": "Buzz Box 15.00 STRONG (ranked 3rd by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Purosangue"
+  },
+  {
+   "exact_rpr_pick": "Bodygroove",
+   "exact_rpr": 74,
+   "exact_rpr_run": "RPR 74 at Lingfield (AW) 2023-09-06, standard 16f (finished 3); carried 9-0 then, 9-4 today (4lb heavier)",
+   "exact_weight_change": 4,
+   "exact_confirmed": false,
+   "time": "18:15",
+   "race": "Midnite Ain't Your Grandad's Bookie Handicap",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "Saxophonic",
+     "chance": 0.3045,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Charlie Darling",
+     "chance": 0.1014,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Zephlyn",
+     "chance": 0.0858,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Storm On Jura",
+     "chance": 0.0856,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Dollars Dream",
+     "chance": 0.0577,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Choir Boy",
+     "chance": 0.0557,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Bodygroove",
+     "chance": 0.0553,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Someones Wish",
+     "chance": 0.0536,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Neddies Boy",
+     "chance": 0.0527,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Star Of Jupiter",
+     "chance": 0.0438,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Katana",
+     "chance": 0.0322,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Fashionelle",
+     "chance": 0.0283,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Angelardo",
+     "chance": 0.0219,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Smokey Malone",
+     "chance": 0.0215,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    }
+   ],
+   "going": "Standard",
+   "runners": 14,
+   "handicap": true,
+   "class": "6",
+   "win": "Saxophonic",
+   "price": "2.50",
+   "chance": 0.30445591853308596,
+   "fair": "3.29",
+   "confidence": 6,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Saxophonic",
+   "data_pick": "Saxophonic",
+   "data_chance": 0.1747,
+   "data_conf": 3,
+   "data_price": "2.50",
+   "data_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.169,
+   "evidence_price": "2.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "2.63 -> 2.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "Saxophonic drifted 2.10 -> 2.50 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Charlie Darling",
+   "second": "Charlie Darling 6.50 (10%)",
+   "rpr_pick": "Smokey Malone",
+   "rpr_reason": "RPR 71; distance 0/5, going 8/34 (wins/runs); weight +3lb vs last run - fine",
+   "anchor": "Bodygroove (RPR 74 at trip/going) = shortlist (our chance 6%)",
+   "longshot": "Smokey Malone 26.00 STRONG (ranked 2nd by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Saxophonic"
+  },
+  {
+   "exact_rpr_pick": "King Chaos",
+   "exact_rpr": 80,
+   "exact_rpr_run": "RPR 80 at Southwell (AW) 2024-10-21, standard 12f (finished 3); carried 9-4 then, 10-12 today (22lb heavier)",
+   "exact_weight_change": 22,
+   "exact_confirmed": false,
+   "time": "18:45",
+   "race": "Midnite A Next Generation Betting App Amateur Jockeys' Handicap",
+   "distance": "1m4f",
+   "field": [
+    {
+     "name": "Deep Sleep",
+     "chance": 0.1585,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Off Spin",
+     "chance": 0.1465,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Spec Of Light",
+     "chance": 0.1324,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Five Moons",
+     "chance": 0.0933,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "King Chaos",
+     "chance": 0.0753,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Its A Love Thing",
+     "chance": 0.0718,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Urban Road",
+     "chance": 0.0708,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Light Speed",
+     "chance": 0.0608,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Bint Al Daar",
+     "chance": 0.058,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "No Ordinary Joe",
+     "chance": 0.0364,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Ocean Heights",
+     "chance": 0.033,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Sisterandbrother",
+     "chance": 0.0265,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Flamingo Rose",
+     "chance": 0.0226,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Palazzo Persico",
+     "chance": 0.014,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 14,
+   "handicap": true,
+   "class": "6",
+   "win": "Deep Sleep",
+   "price": "5.50",
+   "chance": 0.15852757978552626,
+   "fair": "6.31",
+   "confidence": 3,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Deep Sleep",
+   "data_pick": "Deep Sleep",
+   "data_chance": 0.2469,
+   "data_conf": 4,
+   "data_price": "5.50",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.246,
+   "evidence_price": "5.50",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "4.50 -> 5.50 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Off Spin 5.00 (15%)",
+   "rpr_pick": "Bint Al Daar",
+   "rpr_reason": "RPR 56; distance 0/6, going 3/20 (wins/runs); passed over: Light Speed (57) not run at the trip, Deep Sleep (56) not run at the trip; WARNING up 18lb on last run and never placed carrying this much",
+   "anchor": "Ocean Heights (RPR 88 at trip/going) = shortlist (our chance 3%)",
+   "longshot": "No Ordinary Joe 17.00 SPECULATIVE (ranked 10th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Deep Sleep"
+  }
+ ]
+}
