@@ -255,7 +255,7 @@ def test_daily_cap_counts_reserved_slots_not_summaries(monkeypatch, capsys):
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
     env = LIVE_ENV
-    assert o.main(env) == 1 and "shared one paid run" in capsys.readouterr().out
+    assert o.main(env) == 1 and "shared daily paid-run ceiling" in capsys.readouterr().out
     assert not [c for c in calls if c[0] == "POST"]
 
 
