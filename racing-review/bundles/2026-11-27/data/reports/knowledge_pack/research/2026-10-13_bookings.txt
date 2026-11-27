@@ -1,0 +1,12 @@
+TEST - jockey bookings and owner first strings, UK/IRE 2015-2020 | 2021-2026, rolling 365-day records (earlier races only). A/E = winners / margin-free SP chance; win% = £1 win profit at SP. << = A/E 1.05+ both periods (200+ each).
+
+group                                                                              n    won   A/E   win% |       n    won   A/E   win%
+... and the horse is 6/1 or bigger                                              6863    359  0.83  -36.7 |    5794    337  0.96  -22.4
+ALL                                                                           654964  68822  1.00  -27.2 |  629691  66856  1.00  -25.6
+owner 2+ runners: FIRST STRING (owner's usual jockey)                           3374    490  1.04  -24.2 |    2358    335  1.04  -29.2
+owner 2+ runners: first string by jockey but NOT the shortest price             1006     70  0.98  -25.1 |     696     49  1.12  -34.5
+owner 2+ runners: second string (usual jockey rides another)                    4427    334  0.98  -32.0 |    2960    214  1.01  -28.6
+owner 2+ runners: second string by jockey but the SHORTEST price                1173    178  1.06  -24.7 |     773     99  0.99  -26.7
+top-20 jockey (any ride)                                                       87995  13959  1.02  -19.6 |   80535  12801  1.01  -18.3
+top-20 jockey riding for a trainer he rode for 0-1 times in a year             10990   1343  0.98  -27.0 |    9333   1151  0.99  -19.8
+trainer's usual jockey replaced by a top-20 jockey                             41775   6079  1.03  -19.2 |   40225   5496  1.00  -18.6

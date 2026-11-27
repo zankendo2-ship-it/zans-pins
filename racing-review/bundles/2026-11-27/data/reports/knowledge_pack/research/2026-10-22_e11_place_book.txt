@@ -1,0 +1,7 @@
+races {'place book better (P<W)': 572, 'place book worse (P>=W)': 147}
+place book better (P<W)    11.00+       bets  3357 won  106 placed   638  £1 E/W P/L  -1316.20  ROI -19.6%
+place book better (P<W)    all          bets  6170 won  573 placed  2082  £1 E/W P/L  -1916.23  ROI -15.5%
+place book better (P<W)    under 11.00  bets  2813 won  467 placed  1444  £1 E/W P/L   -600.03  ROI -10.7%
+place book worse (P>=W)    11.00+       bets   311 won   16 placed    52  £1 E/W P/L    -80.50  ROI -12.9%
+place book worse (P>=W)    all          bets   980 won  147 placed   329  £1 E/W P/L   -375.33  ROI -19.1%
+place book worse (P>=W)    under 11.00  bets   669 won  131 placed   277  £1 E/W P/L   -294.83  ROI -22.0%

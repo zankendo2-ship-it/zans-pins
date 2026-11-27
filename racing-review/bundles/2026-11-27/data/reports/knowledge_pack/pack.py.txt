@@ -1,0 +1,211 @@
+"""ZANS knowledge pack: everything the project knows, in one folder every Claude chat can read.
+
+    python scripts/knowledge_pack.py   ->  reports/knowledge_pack/
+        ZANS_product_data_pack.md   master summary (verified records, rules in force, methods index, research index)
+        project_memory.md           copy of CLAUDE.md (full history of decisions)
+        records/*.md                live trial records (copied as they stand)
+        research/*                  every research write-up (md/txt) + helper reports
+        methods/<course>_<CODE>.md  every course method in use
+        rules/RULES.md, research_queue.md
+        pack.py                     this script
+        index.html                  the page (links to every file)
+
+Published as one Artifact; other chats read it with Artifact action "read" + path. Rebuild + republish weekly
+(Sunday evening review) and after any method change.
+"""
+import datetime as dt
+import glob
+import html
+import json
+import os
+import re
+import shutil
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "reports" / "knowledge_pack"
+
+
+def read(p):
+    try:
+        return Path(p).read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return ""
+
+
+def first_lines(text, n=3):
+    out = []
+    for line in text.splitlines():
+        s = line.strip().lstrip("#").strip()
+        if s and not s.startswith("|---"):
+            out.append(s)
+        if len(out) >= n:
+            break
+    return out
+
+
+def slip_record():
+    rows, staked, pl = [], 0.0, 0.0
+    for f in sorted(glob.glob(str(ROOT / "reports/predictions/2026-*/slip_review.json"))):
+        d = json.loads(read(f) or "{}")
+        s, r = float(d.get("staked") or 0), float(d.get("returned") or 0)
+        staked += s
+        pl += r - s
+        rows.append((Path(f).parent.name, d.get("counted_slip", ""), s, r - s, pl))
+    return rows, staked, pl
+
+
+def headline(path, pattern=r"\*\*.*\*\*"):
+    m = re.findall(pattern, read(path))
+    return m[-1].strip("*") if m else ""
+
+
+def methods_index():
+    rows = []
+    for f in sorted(glob.glob(str(ROOT / "methods/*/*.md"))):
+        p = Path(f)
+        if p.parent.name in ("inbox",) or p.name.lower() == "readme.md":
+            continue
+        text = read(f)
+        ver = re.search(r"\bv(\d+(?:\.\d+)+)", text)
+        src = p.parent / "source"
+        owner = src.is_dir() and any(src.iterdir())
+        rows.append((p.parent.name, p.stem, "v" + ver.group(1) if ver else "?", "owner's method" if owner else "built from history"))
+    return rows
+
+
+def build():
+    if OUT.exists():
+        shutil.rmtree(OUT)
+    for sub in ("records", "research", "methods", "rules"):
+        (OUT / sub).mkdir(parents=True)
+
+    shutil.copy(ROOT / "CLAUDE.md", OUT / "project_memory.md")
+    shutil.copy(__file__, OUT / "pack.py.txt")
+    for f in ("rules/RULES.md", "config/research_queue.md"):
+        if (ROOT / f).exists():
+            shutil.copy(ROOT / f, OUT / "rules" / Path(f).name)
+    records = sorted(glob.glob(str(ROOT / "reports/predictions/*_record.md"))) + [
+        str(ROOT / "reports/predictions/leak_finder.md"), str(ROOT / "reports/customer/record.md"),
+        str(ROOT / "reports/angles/angles_record.md")]
+    for f in records:
+        if os.path.exists(f):
+            shutil.copy(f, OUT / "records" / Path(f).name)
+    research = sorted(glob.glob(str(ROOT / "reports/research/*.md")) + glob.glob(str(ROOT / "reports/research/*.txt"))
+                      + glob.glob(str(ROOT / "reports/research/helpers/*.md")))
+    for f in research:
+        shutil.copy(f, OUT / "research" / Path(f).name)
+    mrows = methods_index()
+    for course, code, *_ in mrows:
+        shutil.copy(ROOT / "methods" / course / f"{code}.md", OUT / "methods" / f"{course}_{code}.md")
+
+    rows, staked, pl = slip_record()
+    weights = json.loads(read(ROOT / "config/predict_weights.json") or "{}")
+    feats = weights.get("features") or []
+    today = dt.date.today().isoformat()
+
+    md = [f"# ZANS Racing - product data pack ({today})", "",
+          "Everything the ZANS project knows, in one file. Every figure below is copied from the project's own records "
+          "(locked packs, counted bet slips, settled results). Tests on history are labelled TEST. UK and Irish racing only.",
+          "", "Files in this pack: project_memory.md (every decision since 23 Sep), records/ (live trial records), "
+          "research/ (every study), methods/ (every course method), rules/ (pre-registered tests + research queue).", "",
+          "## 1. The bet slip - verified profit and loss (one counted slip per day, £10 a bet)", "",
+          f"**Total: {len(rows)} days, staked £{staked:,.2f}, profit/loss {'+' if pl >= 0 else '-'}£{abs(pl):,.2f}.**", "",
+          "| Date | Slip counted | Staked | Day P/L | Running |", "|---|---|---|---|---|"]
+    md += [f"| {d} | {c} | £{s:.2f} | {p:+.2f} | {r:+.2f} |" for d, c, s, p, r in rows]
+    md += ["", "## 2. Live records (as they stand in records/)", ""]
+    for f in records:
+        if os.path.exists(f):
+            h = headline(f) or " / ".join(first_lines(read(f), 2))
+            md.append(f"- **{Path(f).stem}**: {h}")
+    md += ["", "## 3. How the picks are made (model v10)", "",
+           f"- Win pick = conditional-logit model on {len(feats)} evidence features plus the market price, flat and jumps "
+           "fitted separately, then each course's method overlay (rule factors tested on history in two periods).",
+           "- Confidence 0-10 is a calibrated win chance. BET label = confidence 8+ AND the evidence-only model agrees.",
+           "- Features: " + ", ".join(feats), "",
+           "### Bet slip rules in force",
+           "- Win singles + doubles/trebles/Lucky 15/63 from 7/10+ win picks (any price from 1.00, trial since 20 Oct).",
+           "- Kept off every bet: 90+ days off; maiden/novice/beginners/bumper jumps; drifted 15%+; latest run missing or "
+           "abroad (data gap); never run at the trip (and on going, jumps); Southwell AW handicaps; Fairyhouse jumps "
+           "non-handicaps; heavy ground flat picks never on soft/heavy = single only (trial).",
+           "- Each-way singles and forecasts OFF; high-odds each-way Lucky 15 (12.00+, Sky Bet) ON; spread multiples.",
+           "- BET NOW emails: early value horses 15.00+ where Sky Bet pays EXTRA places.", "",
+           "## 4. Course methods in use", "", "| Course | Code | Version | Source |", "|---|---|---|---|"]
+    md += [f"| {c} | {k} | {v} | {s} |" for c, k, v, s in mrows]
+    md += ["", "## 5. Research - every study (full text in research/)", ""]
+    for f in research:
+        lines = first_lines(read(f), 3)
+        md.append(f"- **{Path(f).name}**: " + " - ".join(lines)[:400])
+    md += ["", "## 6. Data sources", "",
+           "- Results 2015-2026: Kaggle Racing Post extract (to May 2026) + our own Racing Post scrape (data-results) "
+           "+ Sporting Life results; UK/IRE only.",
+           "- Prices: Sporting Life feed (Betfair Sportsbook, Paddy Power, Sky Bet with places) at 5 checks a day.",
+           "- Racecards: Racing Post (rpscrape) cross-checked with The Racing API.",
+           "- Going, stewards' and vet reports: BHA (GB) and IHRB (Ireland). Weather: Open-Meteo.",
+           "- Course facts: course_kb artifact https://claude.ai/artifact/AP2pBbB9RbymKEmcfn2Kyt",
+           "- Live customer record: https://claude.ai/artifact/7Mq8DGaaQwFpZDHMXMb7hR", ""]
+    (OUT / "ZANS_product_data_pack.md").write_text("\n".join(md), encoding="utf-8")
+
+    files = sorted(p.relative_to(OUT).as_posix() for p in OUT.rglob("*") if p.is_file())
+    write_index(files, rows, staked, pl, mrows, research, today)
+    return files
+
+
+def write_index(files, rows, staked, pl, mrows, research, today):
+    groups = {}
+    for f in files:
+        groups.setdefault(f.split("/")[0] if "/" in f else "main", []).append(f)
+    labels = {"main": "Start here", "records": "Live records", "research": "Research", "methods": "Course methods",
+              "rules": "Rules + research queue"}
+    sections = []
+    for key in ("main", "records", "methods", "research", "rules"):
+        items = "".join(f'<li><a href="{html.escape(f)}">{html.escape(f.split("/")[-1])}</a></li>' for f in groups.get(key, [])
+                        if f != "index.html")
+        sections.append(f'<section><h2>{labels[key]} <span class="n">{len(groups.get(key, []))}</span></h2><ul>{items}</ul></section>')
+    last = rows[-7:]
+    trs = "".join(f"<tr><td>{d}</td><td>£{s:.2f}</td><td class=\"{'up' if p >= 0 else 'dn'}\">{p:+.2f}</td><td>{r:+.2f}</td></tr>"
+                  for d, _, s, p, r in last)
+    page = f"""<title>ZANS Knowledge Pack</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@500;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* ZANS house style: cream paper, ink, monochrome - single theme by the owner's rule */
+:root {{ --bg:#EAE2D8; --card:#F3EDE5; --line:#C9BDAE; --ink:#1C1C1C; --muted:#5E574F; --up:#1C1C1C; --dn:#7a3b2e;
+  --display:'Jost',system-ui,sans-serif; --body:'Source Sans 3',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace; }}
+body {{ background:var(--bg); color:var(--ink); font:16px/1.55 var(--body); margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px)); padding-block:28px 48px; }}
+main {{ max-width:880px; margin:0 auto; display:grid; gap:28px; }}
+h1 {{ font:700 2rem/1.1 var(--display); letter-spacing:.06em; margin:0; text-wrap:balance; }}
+.tag {{ font:500 .75rem var(--display); letter-spacing:.3em; text-transform:uppercase; color:var(--muted); }}
+p {{ margin:0; max-width:65ch; }}
+.tot {{ display:flex; flex-wrap:wrap; gap:12px 28px; font:500 1rem var(--display); }}
+.tot b {{ font:700 1.5rem var(--display); display:block; }}
+h2 {{ font:700 1.05rem var(--display); letter-spacing:.08em; text-transform:uppercase; margin:0 0 8px; border-bottom:1px solid var(--line); padding-bottom:6px; }}
+.n {{ font:400 .8rem var(--mono); color:var(--muted); }}
+ul {{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:4px 16px; }}
+li {{ min-width:0; overflow-wrap:anywhere; font:400 .85rem var(--mono); }}
+a {{ color:var(--ink); }} a:focus-visible {{ outline:2px solid var(--ink); }}
+.tw {{ overflow-x:auto; }} table {{ border-collapse:collapse; font:400 .85rem var(--mono); font-variant-numeric:tabular-nums; }}
+td,th {{ padding:4px 12px 4px 0; text-align:left; border-bottom:1px solid var(--line); }} .dn {{ color:var(--dn); }}
+.how {{ background:var(--card); border:1px solid var(--line); border-radius:4px; padding:14px 16px; font-size:.95rem; }}
+code {{ font-family:var(--mono); font-size:.85em; }}
+</style>
+<main>
+<header><div class="tag">ZANS — Horse Racing Tips</div><h1>Knowledge Pack</h1></header>
+<p>Everything the ZANS project knows, built {today} from the project's own records: the verified bet-slip record,
+live trial records, {len(mrows)} course methods and {len(research)} research studies, plus the full project memory.
+UK and Irish racing only. Tests on history are marked TEST in the files.</p>
+<div class="tot"><div><b>{len(rows)}</b>days on the counted slip</div><div><b>£{staked:,.2f}</b>staked</div>
+<div><b>{'+' if pl >= 0 else '-'}£{abs(pl):,.2f}</b>profit / loss</div></div>
+<div class="how"><b>For other Claude chats:</b> read this page with the Artifact tool (<code>action: "read"</code>) and add
+<code>path: "ZANS_product_data_pack.md"</code> for the master summary, or the path of any file listed below
+(for example <code>project_memory.md</code> or <code>research/2026-10-19_find_more_winners.md</code>).</div>
+<section><h2>Last 7 days</h2><div class="tw"><table><tr><th>Date</th><th>Staked</th><th>Day</th><th>Running</th></tr>{trs}</table></div></section>
+{''.join(sections)}
+</main>"""
+    (OUT / "index.html").write_text(page, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    fs = build()
+    print(f"{len(fs)} files -> {OUT}")

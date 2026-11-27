@@ -1,0 +1,39 @@
+Favourite                                                      2025: 4437/12499 35.5% ROI  -5.4% | 2026: 2650/7358 36.0% ROI  -5.1%
+Our pick (data + price)                                        2025: 4296/12499 34.4% ROI  -9.2% | 2026: 2532/7358 34.4% ROI -10.6%
+Form-only top horse (data, no price)                           2025: 3501/12499 28.0% ROI -10.5% | 2026: 1948/7358 26.5% ROI -15.4%
+Data horse NOT fav, SP 1-4, data/market >= 0                   2025: 346/1285 26.9% ROI -15.0% | 2026: 192/755 25.4% ROI -20.0%
+Data horse NOT fav, SP 4-7, data/market >= 0                   2025: 551/3185 17.3% ROI -14.9% | 2026: 282/1780 15.8% ROI -22.0%
+Data horse NOT fav, SP 7-13, data/market >= 0                  2025: 163/1586 10.3% ROI -14.4% | 2026: 93/991  9.4% ROI -19.0%
+Data horse NOT fav, SP 13-34, data/market >= 0                 2025: 20/460  4.3% ROI -26.5% | 2026: 17/378  4.5% ROI -25.4%
+Data horse NOT fav, SP 1-4, data/market >= 1.3                 2025: 147/515 28.5% ROI -10.2% | 2026: 66/263 25.1% ROI -19.0%
+Data horse NOT fav, SP 4-7, data/market >= 1.3                 2025: 329/1878 17.5% ROI -11.8% | 2026: 159/1061 15.0% ROI -25.4%
+Data horse NOT fav, SP 7-13, data/market >= 1.3                2025: 150/1491 10.1% ROI -15.6% | 2026: 88/944  9.3% ROI -18.8%
+Data horse NOT fav, SP 13-34, data/market >= 1.3               2025: 20/460  4.3% ROI -26.5% | 2026: 17/378  4.5% ROI -25.4%
+Data horse NOT fav, SP 1-4, data/market >= 1.6                 2025: 56/202 27.7% ROI -13.0% | 2026: 26/105 24.8% ROI -20.1%
+Data horse NOT fav, SP 4-7, data/market >= 1.6                 2025: 164/989 16.6% ROI -14.3% | 2026: 88/596 14.8% ROI -26.4%
+Data horse NOT fav, SP 7-13, data/market >= 1.6                2025: 117/1266  9.2% ROI -21.1% | 2026: 71/818  8.7% ROI -22.6%
+Data horse NOT fav, SP 13-34, data/market >= 1.6               2025: 20/460  4.3% ROI -26.5% | 2026: 17/378  4.5% ROI -25.4%
+Data horse NOT fav, SP 1-4, data/market >= 2.0                 2025: 12/42 28.6% ROI  -8.3% | 2026: 9/20 45.0% ROI +45.6%
+Data horse NOT fav, SP 4-7, data/market >= 2.0                 2025: 57/337 16.9% ROI -11.7% | 2026: 36/224 16.1% ROI -21.2%
+Data horse NOT fav, SP 7-13, data/market >= 2.0                2025: 67/809  8.3% ROI -27.3% | 2026: 52/568  9.2% ROI -16.8%
+Data horse NOT fav, SP 13-34, data/market >= 2.0               2025: 20/445  4.5% ROI -24.0% | 2026: 17/369  4.6% ROI -23.6%
+Joint value: our chance >= 10%, our chance/market >= 1.1       2025: 2331/7892 29.5% ROI  -6.4% | 2026: 1299/4716 27.5% ROI -10.8%
+Joint value: our chance >= 10%, our chance/market >= 1.2       2025: 421/1611 26.1% ROI  -6.4% | 2026: 262/1142 22.9% ROI -19.3%
+Joint value: our chance >= 10%, our chance/market >= 1.3       2025: 67/310 21.6% ROI -12.0% | 2026: 32/213 15.0% ROI -48.7%
+Joint value: our chance >= 15%, our chance/market >= 1.1       2025: 2265/7052 32.1% ROI  -5.5% | 2026: 1257/4211 29.9% ROI -11.0%
+Joint value: our chance >= 15%, our chance/market >= 1.2       2025: 394/1359 29.0% ROI  -5.9% | 2026: 247/973 25.4% ROI -18.2%
+Joint value: our chance >= 15%, our chance/market >= 1.3       2025: 61/260 23.5% ROI -13.3% | 2026: 31/174 17.8% ROI -41.2%
+Joint value: our chance >= 20%, our chance/market >= 1.1       2025: 2092/5909 35.4% ROI  -4.3% | 2026: 1147/3421 33.5% ROI  -9.4%
+Joint value: our chance >= 20%, our chance/market >= 1.2       2025: 361/1136 31.8% ROI  -5.4% | 2026: 217/759 28.6% ROI -16.9%
+Joint value: our chance >= 20%, our chance/market >= 1.3       2025: 54/199 27.1% ROI -10.1% | 2026: 29/130 22.3% ROI -31.3%
+Favourite when the data horse is the favourite too             2025: 2420/5944 40.7% ROI  -4.8% | 2026: 1364/3372 40.5% ROI  -6.6%
+Favourite when the data horse is a DIFFERENT horse             2025: 2017/6555 30.8% ROI  -6.0% | 2026: 1286/3986 32.3% ROI  -3.8%
+days 23 races 830
+All locked win picks                                    272/830 (33%)  £10 at 09:30 price -885.50
+  ...that were the 09:30 favourite                      253/750 (34%)  £10 at 09:30 price -864.40
+  ...that were NOT the favourite                        19/80 (24%)  £10 at 09:30 price -21.10
+7/10+ picks that were favourite                         141/271 (52%)  £10 at 09:30 price +123.60
+Under 7/10 picks that were favourite                    112/479 (23%)  £10 at 09:30 price -988.00
+7/10+ picks not favourite                               6/14 (43%)  £10 at 09:30 price +23.90
+Races where our evidence-only horse differed: evidence horse 61/455 (13%)  £10 at 09:30 price -1422.90
+Same races: our win pick                                134/455 (29%)  £10 at 09:30 price -539.00

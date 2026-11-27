@@ -1,0 +1,47 @@
+TEST - our own price checks 2026-09-24 .. 2026-10-15 (UK/IRE), results joined. A/E = winners / chance at the price we could take (margin-free at that check). 'at price' = £1 win profit at that check's best price; 'at SP' = at SP.
+
+stage | move | price band                                                  n  won   A/E  at price   at SP
+morning (09:30 -> noon) | drifted 15-30%                                 624   47  0.93    -27.6%  -39.5%
+morning (09:30 -> noon) | drifted 15-30% | 16.0+                         223    5  0.95    -39.5%  -61.7%
+morning (09:30 -> noon) | drifted 15-30% | 3.0-7.9                       151   18  0.77    -37.8%  -43.6%
+morning (09:30 -> noon) | drifted 15-30% | 8.0-15.9                      236   17  1.02    -13.1%  -19.9%
+morning (09:30 -> noon) | drifted 30%+                                   607   30  0.98    -47.6%  -50.1%
+morning (09:30 -> noon) | drifted 30%+ | 16.0+                           402    3  0.30    -77.9%  -83.6%
+morning (09:30 -> noon) | drifted 30%+ | 3.0-7.9                          54   12  1.47    +25.3%  +25.5%
+morning (09:30 -> noon) | drifted 30%+ | 8.0-15.9                        145   13  1.24     +7.6%  +12.8%
+morning (09:30 -> noon) | shortened 15-30%                               657   82  1.12     -5.0%   +7.8%
+morning (09:30 -> noon) | shortened 15-30% | 16.0+                       185    9  1.55    +31.9%  +60.5%
+morning (09:30 -> noon) | shortened 15-30% | 3.0-7.9                     218   46  1.29     +3.4%   +3.6%
+morning (09:30 -> noon) | shortened 15-30% | 8.0-15.9                    211   11  0.69    -42.9%  -28.0%
+morning (09:30 -> noon) | shortened 15-30% | price <3.0                   43   16  1.00    -20.0%  -22.2%
+morning (09:30 -> noon) | shortened 30%+                                 385   46  1.36     -7.1%   +2.6%
+morning (09:30 -> noon) | shortened 30%+ | 16.0+                         149    3  0.66    -51.7%  -47.7%
+morning (09:30 -> noon) | shortened 30%+ | 3.0-7.9                       107   24  1.45    +17.8%  +24.3%
+morning (09:30 -> noon) | shortened 30%+ | 8.0-15.9                      118   13  1.49    +24.2%  +45.8%
+morning (09:30 -> noon) | steady (within 15%)                           3452  390  0.98    -33.0%  -34.6%
+morning (09:30 -> noon) | steady (within 15%) | 16.0+                   1113   19  0.69    -59.2%  -60.3%
+morning (09:30 -> noon) | steady (within 15%) | 3.0-7.9                 1161  194  0.98    -18.2%  -20.0%
+morning (09:30 -> noon) | steady (within 15%) | 8.0-15.9                 924   64  0.90    -27.7%  -28.9%
+morning (09:30 -> noon) | steady (within 15%) | price <3.0               254  113  1.13     -4.5%   -9.1%
+overnight (day before -> 09:30) | drifted 15-30%                         665   54  0.90    -21.3%  -28.2%
+overnight (day before -> 09:30) | drifted 15-30% | 16.0+                 206    5  0.98    -16.0%  -30.8%
+overnight (day before -> 09:30) | drifted 15-30% | 3.0-7.9               192   23  0.75    -39.7%  -45.4%
+overnight (day before -> 09:30) | drifted 15-30% | 8.0-15.9              248   20  1.13    -11.5%  -13.5%
+overnight (day before -> 09:30) | drifted 30%+                          1470   76  0.94    -39.6%  -45.1%
+overnight (day before -> 09:30) | drifted 30%+ | 16.0+                   919   13  0.58    -56.3%  -67.6%
+overnight (day before -> 09:30) | drifted 30%+ | 3.0-7.9                 206   31  1.00    -22.6%  -22.4%
+overnight (day before -> 09:30) | drifted 30%+ | 8.0-15.9                338   30  1.22     -4.9%   +1.5%
+overnight (day before -> 09:30) | shortened 15-30%                       562   88  1.11    -15.4%  -21.6%
+overnight (day before -> 09:30) | shortened 15-30% | 16.0+               102    5  1.55    +18.6%   -5.9%
+overnight (day before -> 09:30) | shortened 15-30% | 3.0-7.9             238   45  1.12    -14.3%  -17.0%
+overnight (day before -> 09:30) | shortened 15-30% | 8.0-15.9            157    9  0.76    -43.6%  -44.3%
+overnight (day before -> 09:30) | shortened 15-30% | price <3.0           65   29  1.20     -4.4%   -7.9%
+overnight (day before -> 09:30) | shortened 30%+                         489   67  1.12     -7.1%   -8.3%
+overnight (day before -> 09:30) | shortened 30%+ | 16.0+                  98    5  1.76    +24.5%  +14.3%
+overnight (day before -> 09:30) | shortened 30%+ | 3.0-7.9               224   43  1.16     -1.3%   -2.5%
+overnight (day before -> 09:30) | shortened 30%+ | 8.0-15.9              146    9  0.78    -38.0%  -34.2%
+overnight (day before -> 09:30) | steady (within 15%)                   2123  248  1.03    -28.8%  -31.4%
+overnight (day before -> 09:30) | steady (within 15%) | 16.0+            643   14  0.87    -49.8%  -47.7%
+overnight (day before -> 09:30) | steady (within 15%) | 3.0-7.9          679  106  0.93    -22.0%  -25.8%
+overnight (day before -> 09:30) | steady (within 15%) | 8.0-15.9         636   48  1.02    -23.0%  -28.6%
+overnight (day before -> 09:30) | steady (within 15%) | price <3.0       165   80  1.24     +2.7%   -1.5%

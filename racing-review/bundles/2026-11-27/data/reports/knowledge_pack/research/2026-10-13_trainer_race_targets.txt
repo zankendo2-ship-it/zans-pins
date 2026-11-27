@@ -1,0 +1,17 @@
+TEST - trainers in the SAME race as earlier years (same course, trip, age band, sex restriction, grade, within 8 days of the date). Out of sample (earlier editions only). UK/IRE 2015-2020 | 2021-2026. A/E = winners / margin-free SP chance; win% = £1 win profit at SP. << = A/E 1.08+ both periods (100+ each).
+
+group                                                                                 n   won   A/E   win% |      n   won   A/E   win%
+ALL runners in races that ran in earlier years                                   374266 38809  1.00  -27.9 | 427702 45441  1.00  -25.8
+ALL runners in races that ran in earlier years [2yo race]                         44602  4714  1.00  -29.2 |  48296  5212  1.00  -27.4
+trainer 3+ earlier runners here, A/E 1.5+                                          7541   902  0.99  -23.4 |  15914  2040  1.02  -19.0
+trainer 3+ earlier runners here, A/E 1.5+ [2yo race]                               1516   193  1.01  -24.5 |   2787   407  1.10  -16.8
+trainer has WON this race before                                                  27910  4019  1.02  -21.8 |  44317  6418  1.02  -20.4
+trainer has WON this race before [2yo race]                                        4738   683  1.00  -25.4 |   7262  1147  1.05  -18.6
+trainer has run in this race before                                              125414 14184  1.01  -25.5 | 169340 19356  1.00  -24.2
+trainer has run in this race before [2yo race]                                    18980  2308  1.03  -22.9 |  23983  2804  0.99  -27.5
+trainer has won this race 2+ times before                                          3677   609  0.99  -23.8 |   9974  1752  1.06  -18.2
+trainer has won this race 2+ times before [2yo race]                                692   108  0.96  -31.0 |   2037   400  1.14   -2.2
+trainer runs in this race most years (3+ of last 4)                               12084  1481  1.04  -21.3 |  21311  2777  1.05  -21.0
+trainer runs in this race most years (3+ of last 4) [2yo race]                     2494   333  1.07   -9.1 |   4457   639  1.08  -13.6
+trainer won it before AND keeps coming back (2+ of last 4 years)                  14153  2029  1.03  -20.8 |  24583  3640  1.04  -19.8
+trainer won it before AND keeps coming back (2+ of last 4 years) [2yo race]        2787   410  1.04  -17.4 |   4691   766  1.09  -13.7

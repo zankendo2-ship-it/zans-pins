@@ -1,0 +1,43 @@
+angle                                                          n 18-21   A/E    ROI | n 22-26   A/E    ROI
+first-time visor | J                                               924  1.10  -14.9 |    1072  1.12  -14.8 <<
+headgear removed | F                                             10797  1.05  -20.7 |   12533  1.07  -12.2 <<
+owner has 2+ runners: shortest-priced one                         5517  1.04  -22.8 |    4716  1.05  -30.4
+sire poor on this going (A/E<=0.8) | J SOFT                       4938  1.05  -28.0 |    4324  1.02  -33.0
+sire good on this going (A/E>=1.2) | J SOFT                       4872  1.05  -16.2 |    5031  1.02  -31.2
+sire good on this going (A/E>=1.2) | F FIRM                       4196  1.02  -22.1 |    3059  1.02  -17.5
+sire good at this trip (A/E>=1.2) | F                            19972  1.02  -23.0 |   18901  1.02  -22.6
+sire good on this going (A/E>=1.2) | F SOFT                       4458  1.07  -27.4 |    3796  1.02  -24.9
+first-time tongue tie | J                                         4551  1.09  -26.7 |    5340  1.01  -28.3
+sire poor on this going (A/E<=0.8) | J FIRM                        194  1.01  -26.8 |      21  1.31   +4.8
+sire poor at this trip (A/E<=0.8) | F                            16250  1.01  -21.5 |   14043  1.01  -25.8
+sire poor on this going (A/E<=0.8) | F FIRM                       3050  1.05  -20.9 |    2831  1.00  -13.1
+sire poor on this going (A/E<=0.8) | F SOFT                       3498  1.03  -29.2 |    3175  1.00  -30.0
+first-time cheekpieces | J                                        4623  1.05  -19.7 |    5942  1.00  -23.5
+ALL                                                             440088  1.00  -26.9 |  509597  1.00  -25.6
+sire good at this trip (A/E>=1.2) | J                             8456  0.99  -32.2 |    8331  1.01  -25.4
+filly/mare v males (flat)                                        60434  0.99  -28.5 |   69802  1.00  -26.7
+sire good on this going (A/E>=1.2) + FIRST TIME on this going | F    2410  0.98  -29.9 |    2301  0.99  -20.2
+sire poor on this going (A/E<=0.8) + FIRST TIME on this going | J    1424  0.98  -43.1 |    1302  0.99  -43.7
+sire good on this going (A/E>=1.2) | J GOOD                       6722  0.98  -31.6 |    6814  1.01  -24.8
+sire good on this going (A/E>=1.2) | F GOOD                       5407  1.04  -21.1 |    6561  0.98  -28.3
+sire poor on this going (A/E<=0.8) | J GOOD                       7331  0.97  -37.3 |    8468  0.97  -33.4
+first-time blinkers | F                                           4428  0.97  -26.9 |    4692  1.06  -22.0
+sire poor on this going (A/E<=0.8) | F GOOD                       4618  1.00  -29.3 |    4602  0.96  -31.3
+sire poor at this trip (A/E<=0.8) | J                            12672  0.96  -35.7 |   11252  0.98  -38.4
+first-time tongue tie | F                                         3244  1.00  -34.9 |    4270  0.94  -27.0
+first-time visor | F                                              2719  0.96  -25.6 |    2835  0.94  -25.6
+mare v geldings (jumps)                                          20548  0.95  -37.1 |   24631  0.93  -35.1
+headgear removed | J                                              8608  0.91  -36.2 |    8708  0.99  -22.8
+first-time hood | F                                               2138  0.96  -36.1 |    2864  0.91  -41.8
+owner has 2+ runners: longer-priced one                           6083  0.91  -38.2 |    4932  0.94  -32.8
+first-time cheekpieces | F                                        6716  0.90  -31.9 |    8076  0.95  -27.0
+sire poor on this going (A/E<=0.8) + FIRST TIME on this going | F    2240  0.94  -42.1 |    2008  0.89  -37.1
+first-time hood | J                                               1746  0.87  -30.3 |    2071  1.01  -34.9
+sire good on this going (A/E>=1.2) + FIRST TIME on this going | J    1072  0.86  -43.8 |    1007  1.00  -29.3
+first-time blinkers | J                                           2275  0.97  -31.7 |    2228  0.86  -38.5
+first-time eye shield | F                                          158  0.95  -48.2 |      86  0.79  -10.7
+first-time eyeshield | F                                           258  0.98  -51.0 |     185  0.69  -48.5
+sire good on this going (A/E>=1.2) | J FIRM                         50  0.81  -37.4 |      41  0.60  -73.4
+first-time eyeshield | J                                            15  0.00 -100.0 |      12  1.71  -22.9
+first-time eye shield | J                                           11  0.00 -100.0 |       5  0.00 -100.0
+first-time c | F                                                     0  0.00   +0.0 |       1  0.00 -100.0
