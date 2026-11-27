@@ -21,6 +21,7 @@ import time
 import orchestrator.orchestrate as o
 
 BRANCH = "claude/project-thread-hgtq2b"   # the racing thread's own zans-pins branch (the only one it may push to)
+RACING_SOURCE_REPO = "zankendo2-ship-it/HORSE-RACING-EXTRACTION-"  # pinned source-pack repository
 UK_WINDOW = ("08:45", "09:25")      # Europe/London local time; two cron lines (winter/summer UTC) + this gate
 MAX_FILE_BYTES = 60_000
 MAX_INPUT_TOKENS = 30_000            # per call, JSON-escaped bytes + framing + request fields
@@ -101,6 +102,10 @@ def combined_sha256(sources):
     return hashlib.sha256(lines.encode()).hexdigest()
 
 
+def source_url(commit, path):
+    """Raw URL for a source artifact in the separately pinned racing-data repository."""
+    return f"https://raw.githubusercontent.com/{RACING_SOURCE_REPO}/{commit}/{path}"
+
 def verify_sources(data, getter):
     """Live only: every listed source is fetched at the immutable racing commit and its BYTES must hash to the listed
     sha256; the combined hash must follow combined_sha256(). Any gap refuses the run before any slot or paid call."""
@@ -108,6 +113,9 @@ def verify_sources(data, getter):
     src = d.get("sources")
     if not isinstance(src, list) or not src:
         raise Refuse("file has no 'sources' list (path + sha256 per source file); cannot verify the pack bytes")
+    prices_file = d.get("prices_file")
+    if not isinstance(prices_file, str) or not prices_file.strip():
+        raise Refuse("file is missing prices_file; price provenance cannot be verified")
     commit, seen = d["racing_branch_commit"], set()
     for x in src:
         if not isinstance(x, dict) or not re.fullmatch(r"[0-9a-f]{64}", str(x.get("sha256") or "")) \
@@ -122,6 +130,8 @@ def verify_sources(data, getter):
             raise Refuse(f"source {x['path']} could not be fetched at the racing commit")
         if hashlib.sha256(b).hexdigest() != x["sha256"]:
             raise Refuse(f"source {x['path']} bytes do not match the listed sha256")
+    if prices_file not in seen:
+        raise Refuse("prices_file is not included in the verified sources list")
     if combined_sha256(src) != d["pack_manifest_combined_sha256"]:
         raise Refuse("pack_manifest_combined_sha256 does not match the per-source hashes")
     return len(src)
@@ -265,7 +275,7 @@ def main(env=None):
         claude, openai = (o.call_claude, o.call_openai) if mode == "live" else (None, None)
         try:
             getter = lambda commit, path: o._get_bytes(  # noqa: E731
-                f"https://raw.githubusercontent.com/{repo}/{commit}/{path}", MAX_FILE_BYTES * 20)
+            getter = lambda commit, path: o._get_bytes(source_url(commit, path), MAX_FILE_BYTES * 20)  # noqa: E731
             verdicts, h, reserve, bad = run(env, data, comments, today, claude, openai, post, getter)
         except Skip as s:
             print("SKIPPED: " + str(s))
