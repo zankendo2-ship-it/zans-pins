@@ -1,0 +1,28 @@
+{
+ "date": "2026-11-27",
+ "batch": "daily",
+ "items": [
+  {
+   "item": "print-qa/2026-11-26-mugB/etsy-pack/README - spec, storyboard, music, copyright check.md",
+   "ref": "10f2836ada6457a5a09addec52dced347cc78184",
+   "sha256": "625d4a00de5e1ca9345ccbac79e1c9e8b57de9474489d14792d77921748ade7f",
+   "self_check": true,
+   "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/10f2836ada6457a5a09addec52dced347cc78184/print-qa/2026-11-26-mugB/etsy-pack/README%20-%20spec,%20storyboard,%20music,%20copyright%20check.md"
+  },
+  {
+   "item": "print-qa/2026-11-26-mugB/etsy-pack/build_photos.py",
+   "ref": "10f2836ada6457a5a09addec52dced347cc78184",
+   "sha256": "ac8d1ab8e5f44a2d0320ce994508b462734af267275ff8ba07e75151ffa244af",
+   "self_check": true,
+   "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/10f2836ada6457a5a09addec52dced347cc78184/print-qa/2026-11-26-mugB/etsy-pack/build_photos.py"
+  },
+  {
+   "item": "print-qa/2026-11-26-mugB/etsy-pack/build_video_stills.py",
+   "ref": "10f2836ada6457a5a09addec52dced347cc78184",
+   "sha256": "b06b8d677967495685dd025bed917f2ea288f2b5dcbfbe1d2426c5e18d8dd6b6",
+   "self_check": true,
+   "url": "https://github.com/zankendo2-ship-it/zans-pins/blob/10f2836ada6457a5a09addec52dced347cc78184/print-qa/2026-11-26-mugB/etsy-pack/build_video_stills.py"
+  }
+ ],
+ "note": "Text artifacts only (Mug B Etsy pack README + build scripts, revised after ChatGPT #7204216509). Images need ChatGPT visual QA on #26."
+}
