@@ -7,7 +7,7 @@ import orchestrator.orchestrate as o
 
 TODAY = "2026-11-27"
 ENV = {"ZANS_ORCH_ENABLED": "true", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_ACTOR": "zankendo2-ship-it",
-       "ZANS_ORCH_MAX_RUNS_PER_DAY": "3", "ZANS_ORCH_MAX_USD_PER_MONTH": "25", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
+       "ZANS_ORCH_MAX_RUNS_PER_DAY": "1", "ZANS_ORCH_MAX_USD_PER_MONTH": "25", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
        "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k", "ANTHROPIC_MODEL": "claude-sonnet-5-5", "OPENAI_MODEL": "gpt-6.2-astra",
        "GITHUB_REF": "refs/heads/main", "ORCH_MODE": "live"}
 BOT = {"login": "github-actions[bot]"}
@@ -17,10 +17,18 @@ RACE = {"time": "13:00", "course": "Ascot", "win_pick": "A", "confidence": "8", 
         "best_price": 2.5, "no_sky_price": False, "data_pick": "A", "agent_b": None, "gemini_api": None}
 
 
+import hashlib
+SRCS = {"sent/3_d0_morning_0845/predictions.json": b'{"p": 1}', "sent/3_d0_morning_0845/betslip.json": b'{"b": 2}',
+        "reports/price_stages/2026-11-27/d0_0815.csv": b"course,time,horse,price\nAscot,13:00,A,2.5\n"}
+PRICE_PATH = "reports/price_stages/2026-11-27/d0_0815.csv"
+SOURCES = [{"path": k, "sha256": hashlib.sha256(v).hexdigest()} for k, v in SRCS.items()]
+GETTER = lambda commit, path: SRCS[path]   # noqa: E731
+
+
 def file_bytes(**kw):
     d = {"date": TODAY, "frozen_at_utc": TODAY + "T08:45:00Z", "built_utc": TODAY + "T08:50:00Z", "pack": "3_d0_morning_0845",
-         "pack_manifest_combined_sha256": "a" * 64, "racing_branch_commit": "b" * 40,
-         "races": [RACE]}
+          "pack_manifest_combined_sha256": r.combined_sha256(SOURCES), "racing_branch_commit": "b" * 40,
+          "prices_file": PRICE_PATH, "sources": SOURCES, "races": [RACE]}
     d.update(kw)
     return json.dumps(d).encode()
 
@@ -65,41 +73,44 @@ def test_empty_picks_make_no_call():
         r.plan(file_bytes(races=[{**RACE, "win_pick": None, "status": "no pick"}]), [], ENV, TODAY)
 
 
-def test_ledger_shared_daily_slot_shared_month_and_dedup():
+ONE = {**ENV, "ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}   # owner hard cap: one shared paid slot per UTC day
+
+
+def test_global_paid_slot_blocks_products_and_racing_cross_route():
     data = file_bytes()
-    r.plan(data, [], ENV, TODAY)
-    batch_slot = {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}
-    r.plan(data, [batch_slot], ENV, TODAY)                # a products run does NOT block racing (own daily run)
-    h = r.fingerprint(data)[:16]
-    with pytest.raises(r.Skip):                           # same file, attempted: no auto retry
-        r.plan(data, [{"body": o.slot_tag("racing", TODAY, h, 0.7)}], ENV, TODAY)
-    other = {"body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}
-    with pytest.raises(o.Stop, match="already used"):
-        r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [other], ENV, TODAY)
-    import orchestrator.daily_batch as b                  # and a racing run does NOT block the products batch
-    b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [other], ENV, TODAY)
-    two = [other, {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}]   # but each route is still capped at 1 a day
-    with pytest.raises(o.Stop, match="already used"):
-        b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, two, ENV, TODAY)
+    batch_slot = {"user": BOT, "body": o.slot_tag("live", TODAY, "b" * 64, 0.3)}
+    with pytest.raises(o.Stop, match="shared one paid run"):
+        r.plan(data, [batch_slot], ONE, TODAY)
+    h = r.fingerprint(data)
+    assert len(h) == 64
+    with pytest.raises(r.Skip):
+        r.plan(data, [{"user": BOT, "body": o.slot_tag("racing", TODAY, h, 0.7)}], ONE, TODAY)
+    racing_slot = {"user": BOT, "body": o.slot_tag("racing", TODAY, "c" * 64, 0.7)}
+    with pytest.raises(o.Stop, match="shared one paid run"):
+        r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [racing_slot], ONE, TODAY)
+    import orchestrator.daily_batch as b
+    with pytest.raises(o.Stop, match="shared one paid run"):
+        b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [racing_slot], ONE, TODAY)
     with pytest.raises(o.Stop, match="MONTH"):
-        r.plan(data, [], {**ENV, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)
-    # racing slots count against the shared month
-    big = [{"body": o.slot_tag("racing", "2026-11-%02d" % d, "%x" % (d + 100), 1.0)} for d in range(1, 27)]
+        r.plan(data, [], {**ONE, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)
+    big = [{"user": BOT, "body": o.slot_tag("racing", "2026-11-%02d" % d, "%064x" % (d + 100), 1.0)} for d in range(1, 27)]
     with pytest.raises(o.Stop, match="MONTH"):
-        r.plan(data, big, ENV, TODAY)
+        r.plan(data, big, ONE, TODAY)
 
 
 def test_e2e_two_calls_slot_first_settle_and_advisory_summary(monkeypatch):
     posted = []
     claude, openai = setup()
-    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append)
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append, GETTER)
     assert not bad and set(v) == {"Claude", "ChatGPT"} and o.SLOT in posted[0] and ":racing:" in posted[0]
+    assert len(h) == 64 and h in posted[0]
     assert "never changes a pick" in posted[1] and "HOLD" not in posted[1] and "INDEPENDENT calls" in posted[1]
-    assert f"<!-- {o.MARKER}:{h} -->" in posted[1] and h in posted[0]
+    assert o.MARKER not in posted[1]
     sent = []
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: sent.append(body["body"]) or {})
-    o.settle(ENV, "r/r", "26", TODAY, h, reserve)
-    assert sent and "OVERRUN" not in sent[0]
+    settled = o.settle(ENV, "r/r", "26", TODAY, h, reserve,
+                       completion_markers=[f"<!-- {o.MARKER}:{h} -->"])
+    assert settled and sent and "OVERRUN" not in sent[0] and f"<!-- {o.MARKER}:{h} -->" in sent[0]
 
 
 def test_first_failure_stops_before_the_second_provider_and_holds():
@@ -110,26 +121,26 @@ def test_first_failure_stops_before_the_second_provider_and_holds():
         raise OSError("net")
     _, openai = setup()
     o2 = lambda e, t: calls.append("openai") or openai(e, t)   # noqa: E731
-    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, boom, o2, posted.append)
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, boom, o2, posted.append, GETTER)
     assert bad and set(v) == {"Claude"} and calls == ["claude"] and o.RUN_COST["complete"] is False
     assert "HOLD" in posted[1] and f"<!-- {o.MARKER}:" not in posted[1]
     posted2 = []
     claude, bad_openai = setup()[0], (lambda e, t: (_ for _ in ()).throw(OSError("x")))
-    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, bad_openai, posted2.append)
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, bad_openai, posted2.append, GETTER)
     assert bad and v["ChatGPT"]["verdict"] == "BLOCKER" and "HOLD" in posted2[1]
 
 
 def test_unverified_served_model_holds():
     posted = []
     claude, openai = setup(model_c="unverified:other")
-    v, *_ = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append)
+    v, *_ = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append, GETTER)
     assert o.RUN_COST["complete"] is False and "HOLD" in posted[1] and set(v) == {"Claude"}   # second provider not called
 
 
 def test_mock_is_synthetic_and_reserves_nothing(monkeypatch):
     monkeypatch.setattr(o, "_post", lambda *a, **k: pytest.fail("network in mock"))
     posted = []
-    v, h, reserve, bad = r.run({**ENV, "ORCH_MODE": "mock"}, file_bytes(), [], TODAY, None, None, posted.append)
+    v, h, reserve, bad = r.run({**ENV, "ORCH_MODE": "mock"}, file_bytes(), [], TODAY, None, None, posted.append, GETTER)
     assert reserve == 0.0 and v == {} and len(posted) == 1 and "SYNTHETIC MOCK" in posted[0]
     assert o.SLOT not in posted[0] and f"<!-- {o.MARKER}" not in posted[0]     # no slot, no dedup marker
 
@@ -140,7 +151,13 @@ def test_scheduled_main_reads_file_at_resolved_sha_and_exits_nonzero_on_failure(
     monkeypatch.setattr(r.time, "strftime", lambda *a: TODAY)
     monkeypatch.setattr(o, "uk_window_ok", lambda *a, **k: True)
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": sha} if m == "GET" else (posts.append(body["body"]) or {}))
-    monkeypatch.setattr(o, "_get_bytes", lambda url, n: (seen.append(url), file_bytes())[1])
+    def fetch(url, n):
+        for path, body in SRCS.items():     # pack source files, fetched at the commit named in the sealed file
+            if url == f"https://raw.githubusercontent.com/zankendo2-ship-it/HORSE-RACING-EXTRACTION-/{'b' * 40}/{path}":
+                return body
+        seen.append(url)
+        return file_bytes()
+    monkeypatch.setattr(o, "_get_bytes", fetch)
     monkeypatch.setattr(o, "comments_since", lambda *a: [])
     claude, _ = setup()
 
@@ -185,14 +202,14 @@ def test_claude_reject_makes_no_second_call():
     calls, posted = [], []
     claude, openai = setup()
     rej = lambda e, t: (claude(e, t), json.dumps({"ack": "ok", "verdict": "REJECT", "reasons": ["bad"], "fixes": []}))[1]  # noqa: E731
-    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, rej, lambda e, t: calls.append("openai") or openai(e, t), posted.append)
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, rej, lambda e, t: calls.append("openai") or openai(e, t), posted.append, GETTER)
     assert calls == [] and set(v) == {"Claude"} and bad
 
 
 def test_mock_ignores_paid_ledger_caps_and_slots(monkeypatch):
     import orchestrator.daily_batch as b
-    full = [{"body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}, {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}]
-    big = [{"body": o.slot_tag("racing", "2026-11-%02d" % d, "%x" % (d + 100), 1.0)} for d in range(1, 27)]
+    full = [{"user": BOT, "body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}, {"user": BOT, "body": o.slot_tag("live", TODAY, "abc123", 0.3)}]
+    big = [{"user": BOT, "body": o.slot_tag("racing", "2026-11-%02d" % d, "%064x" % (d + 100), 1.0)} for d in range(1, 27)]
     env = {**ENV, "ORCH_MODE": "mock", "ZANS_ORCH_MAX_USD_PER_MONTH": "0.1"}
     p = r.plan(file_bytes(), full + big, env, TODAY)
     assert p["hash"] and p["prompt"]
@@ -207,7 +224,7 @@ def test_real_racing_exporter_fixture_passes_consumer_offline_zero_provider_call
     boom = lambda *a, **k: pytest.fail("provider call in an offline mock")   # noqa: E731
     posted = []
     env = {**ENV, "ORCH_MODE": "mock"}
-    v, h, reserve, bad = r.run(env, raw, [], "2026-11-26", boom, boom, posted.append)
+    v, h, reserve, bad = r.run(env, raw, [], "2026-11-26", boom, boom, posted.append, GETTER)
     assert v == {} and len(posted) == 1 and "SYNTHETIC MOCK" in posted[0]
     p = r.plan(raw, [], env, "2026-11-26")
     assert len(json.loads(raw)["races"]) == 35 and p["prompt"]
@@ -227,3 +244,42 @@ def test_mock_main_real_fixture_no_provider_calls(monkeypatch):
            "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_EVENT_NAME": "workflow_dispatch"}
     assert r.main(env) == 0
     assert len(posts) == 1 and "SYNTHETIC MOCK" in posts[0] and o.SLOT not in posts[0]
+
+
+def test_source_url_uses_the_pinned_racing_data_repository():
+    assert r.source_url("a" * 40, "reports/predictions/x.json") == (
+        "https://raw.githubusercontent.com/zankendo2-ship-it/HORSE-RACING-EXTRACTION-/"
+        + "a" * 40 + "/reports/predictions/x.json"
+    )
+
+
+def test_source_bytes_and_combined_hash_are_verified_before_any_slot():
+    assert r.verify_sources(file_bytes(), GETTER) == 3
+    for bad in (file_bytes(sources=None), file_bytes(sources=[]),
+                file_bytes(pack_manifest_combined_sha256="0" * 64),
+                file_bytes(sources=[{**SOURCES[0], "sha256": "0" * 64}, SOURCES[1]]),
+                file_bytes(sources=[{**SOURCES[0], "path": "../x"}, SOURCES[1]]),
+                file_bytes(prices_file="reports/price_stages/unsealed.csv"),
+                file_bytes(sources=[SOURCES[0], SOURCES[0]])):
+        with pytest.raises(r.Refuse):
+            r.verify_sources(bad, GETTER)
+    with pytest.raises(r.Refuse):
+        r.verify_sources(file_bytes(), lambda c, p: b"tampered")
+    posted = []
+    with pytest.raises(r.Refuse):   # live run with tampered bytes: refused before the slot comment, zero calls
+        r.run(ENV, file_bytes(), [], TODAY, None, None, posted.append, lambda c, p: b"tampered")
+    assert posted == []
+
+
+def test_revise_opens_a_gate_and_is_not_complete():
+    claude, openai = setup()
+    def revise(e, t):
+        o.LAST_STOP["OpenAI"] = "stop"
+        o.LAST_USAGE["OpenAI"] = ("gpt-6.2-astra", 3000, 300)
+        return json.dumps({"ack": "x", "verdict": "REVISE", "reasons": ["bad"], "fixes": ["fix the pick"]})
+    posted = []
+    verdicts, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, revise, posted.append, GETTER)
+    assert bad and f"{o.CORRECTION}:{h}:" in posted[-1] and "1 fixes" in posted[-1]
+    gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": posted[-1], "created_at": "2026-11-27T05:00:00Z"}
+    with pytest.raises(o.Stop, match="correction gate"):
+        o.require_no_pending_corrections([gate])

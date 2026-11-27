@@ -1,0 +1,22 @@
+# Test-only CI for the orchestrator code. No secrets, no write permissions, no API calls, no third-party actions.
+name: ZANS orchestrator tests
+on:
+  pull_request:
+    paths: ["orchestrator/**", ".github/workflows/zans-*.yml"]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout this commit (plain git, no token)
+        run: |
+          git init -q .
+          git fetch -q --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" "${GITHUB_SHA}"
+          git checkout -q FETCH_HEAD
+      - name: Tests (deps pinned by hash)
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install -q --require-hashes --no-deps -r orchestrator/requirements-test.txt
+          /tmp/venv/bin/python -m pytest -q orchestrator

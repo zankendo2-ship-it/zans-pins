@@ -17,8 +17,8 @@
   - 3 rounds, and 6 API requests per run;
   - the first REJECT or BLOCKER stops the run at once, so the other reviewer is not called;
   - 1,500 output tokens per call, 120 s per call, 10 min per run;
-  - **at most 1 live (paid) run per UTC day** (hard ceiling, Alex 26 Nov: gather the day's items and send them in ONE batched run; $2.45 is reserved up front, then the run is settled at its measured cost). Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` = 1 set explicitly; empty or invalid means 0 live runs. Raising the ceiling needs a code change and a review;
-  - **owner budgets:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (Alex approved `3`) and `ZANS_ORCH_MAX_USD_PER_MONTH` (Alex approved `10`). Missing, zero, negative or non-finite (`nan`, `inf`) values refuse live. Every call is priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price:
+  - **a shared daily count of paid runs across manual/live, products, racing and retro routes.** Alex's rule of 26 Nov was ONE batched run a day. On 27 Nov 05:30 UTC he asked for MORE than one a day while setting up and fixing issues, so the code ceiling is TEMPORARILY 3 (`MAX_LIVE_RUNS_PER_DAY`, one line, marked TEMPORARY; set it back to 1 after set-up). USD 2.45 is reserved up front per run, then settled at measured cost. Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` set explicitly (1 to 3); empty or invalid means 0 live runs;
+  - **owner budgets:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (Alex approved `3`) and `ZANS_ORCH_MAX_USD_PER_MONTH` (set by Alex himself; this PR never changes it). Missing, zero, negative or non-finite (`nan`, `inf`) values refuse live. Every call is priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price:
     - **before the run**, the worst case is worked out. The run is refused if that is over the per-run budget, or if it plus this month's reservations is over the monthly budget;
     - the full hard-cap worst run (**$2.45**) is **reserved in the slot comment** before any paid call, whatever the estimate, so failed runs count against the month;
     - **after the run** (finished or stopped by a cap), the workflow posts a settle comment with the measured cost: provider-reported tokens x list price x 1.25. The month then counts that measured amount even if it is above the reservation (flagged as an overrun that blocks further live runs). A run with any call missing usage data, an unknown model price, or a crash is never settled and keeps the full $2.45. Only settle comments by `github-actions[bot]` count;
@@ -33,8 +33,9 @@
   - files only from `zankendo2-ship-it` repos;
   - one run at a time (concurrency lock).
 - **Shared context.** Every review loads `orchestrator/ZANS_RULES.md` (the shared rules) and the **#26 issue body (the canonical checklist) as its own section, in full**. It is never cut by the comment cap; if it is over 14k characters the run is refused. It also loads the newest #26 comments and the text of the pinned files.
-- **Dedup.** It skips a mode + task + artifact set it has already reviewed. Mock and live have separate keys, so a mock never blocks the live run.
+- **Dedup.** A full 64-hex fingerprint and the pre-call slot prevent a retry of an unchanged paid artifact set, even after a failed attempt or on a later day. Mock and live have separate keys, so a mock never blocks the live run. Completion markers are emitted only in the trusted settlement comment after known, non-overrun usage; unknown usage, overrun or failed settlement never marks an artifact complete.
 - **Untrusted data.** Issue comments and artifacts go to the models inside untrusted-data markers, which the models are told to ignore instructions in. Any reply that isn't a valid verdict counts as BLOCKER, never PASS. That includes wrong field types, such as reasons not being a list of text.
+- **Correction routing limitation.** The current workflow does not implement a private Claude-thread handoff or receipt. Its GitHub summary is public on #26; corrections must be relayed manually until a tested internal route is added. Do not claim private routing or automatic re-review.
 - **No secrets or comment text in logs.** Keys are only passed in `live` mode and are never printed. The job has `contents: read` and `issues: write` only.
 - **Mock is labelled synthetic.** `mock` mode makes no model calls. Its summary says SYNTHETIC MOCK, zero paid API calls, and that it gives no verdict on the files.
 - **Pinned supply chain.** No third-party actions: a plain `git` checkout of the exact commit on the pinned `ubuntu-24.04` image. The test dependencies are installed with `--require-hashes`. The tests run before every review.
@@ -55,7 +56,7 @@
 6. Only after ChatGPT and Claude both PASS the mock result, and Alex has approved a budget, set:
    - `ZANS_ORCH_MAX_RUNS_PER_DAY` = `1`;
    - `ZANS_ORCH_MAX_USD_PER_RUN` = `3` (the per-run budget Alex approved);
-   - `ZANS_ORCH_MAX_USD_PER_MONTH` = `10` (the monthly budget Alex approved; failed runs count);
+   - `ZANS_ORCH_MAX_USD_PER_MONTH` = Alex sets this himself (failed runs count; no value is mandated here);
    - `ZANS_ORCH_ENABLED` = `true`.
 
    Then run one `live` test on a small synthetic text file. If the first call rejects a model setting, the run stops as BLOCKER (never PASS). That first call is the model compatibility check.
@@ -76,3 +77,12 @@ This pilot is started by a button press. The goal is fully automatic Claude <-> 
 - This repo is **public**: anything the reviewers write in the summary comment is public too.
 - Workflow runs count toward the repo's GitHub Actions minutes. Each run is about 1-2 minutes.
 - The existing hourly ChatGPT review stays as the fallback.
+
+
+## Correction handling (all paid routes)
+- Any REVISE or REJECT (manual run: AGREED REVISE, NO AGREEMENT, STOPPED: rejected; daily batch, racing, retro: any reviewer verdict) opens a **correction gate** in the bot-posted summary, lists every fix (or the reasons, or a placeholder if none were given), and posts NO completion marker for that run. In the daily batch only PASSing items are marked complete.
+- The gate blocks every paid route (manual, batch, racing, retro) until the 'ZANS correction receipt' workflow posts a bot-authored receipt with exactly one decision per fix, numbered 1 to N: `N=applied <40-hex commit that exists in this repo>` or `N=rejected <reason of 10+ characters>`.
+- **Automatic routing of fixes to a Claude thread and automatic re-review are NOT built: BLOCKED.** The gate is the enforced stop: paid runs stay stopped after a REVISE until a person closes it with evidence. Alex's decision 27 Nov: the route need not be private.
+
+### Known limitation: one GitHub login
+Alex, Claude and ChatGPT all act through the same GitHub login, so comments cannot prove who wrote them. The gate therefore never trusts a human-authored comment: a gate opens only from a `github-actions[bot]` comment and closes only from a `github-actions[bot]` receipt posted by the receipt workflow (main branch, allowlisted login), and an `applied` decision must name a commit that exists in this repo. This stops an ordinary comment from impersonating a correction or a receipt. It does NOT prove that a Claude revision was made by Claude, and the receipt workflow is manual: this is not an automatic correction-to-Claude-to-OpenAI loop and must not be described as one. A signed receipt would need a repository secret that only the owner can create; none is configured.

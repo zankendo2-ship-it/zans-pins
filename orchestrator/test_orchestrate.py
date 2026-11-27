@@ -9,6 +9,7 @@ SHA = "a" * 40
 URL = f"https://github.com/zankendo2-ship-it/zans-pins/blob/{SHA}/visibility/x.md?raw=true"
 PNG = f"https://github.com/zankendo2-ship-it/zans-pins/blob/{SHA}/visibility/x.png?raw=true"
 ENV = {"ZANS_ORCH_ENABLED": "true", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_ACTOR": "zankendo2-ship-it"}
+BOT = {"login": "github-actions[bot]"}
 
 
 def V(v, ack="ok"):
@@ -76,9 +77,10 @@ def test_no_links_refused():
 
 def test_dedup_by_task_and_artifact_hash():
     h = o.run_hash("task", [URL])
+    assert len(h) == 64
     assert h == o.run_hash(" task ", [URL])
     assert h != o.run_hash("task", [URL.replace("a" * 40, "b" * 40)])
-    assert o.already_done([{"body": f"x <!-- zans-orch:{h} -->"}], h)
+    assert o.already_done([{"user": BOT, "body": f"x <!-- zans-orch:{h} -->"}], h)
     assert not o.already_done([{"body": "nothing"}], h)
 
 
@@ -154,9 +156,10 @@ def test_context_is_capped():
     assert len(o.build_context(big)) <= o.MAX_CONTEXT_CHARS + 500
 
 
-def test_summary_has_marker_and_no_secrets():
-    s = o.summary("h1", "task", [URL], "AGREED", [{"round": 1, "Claude": V("PASS"), "OpenAI": V("PASS")}], 2, "mock")
-    assert "<!-- zans-orch:h1 -->" in s and "API_KEY" not in s
+def test_summary_has_no_completion_marker_or_secrets():
+    # Completion is recorded only in the trusted post-settlement comment, never in the summary.
+    s = o.summary("h1", "task", [URL], "AGREED", [{"round": 1, "Claude": V("PASS"), "OpenAI": V("PASS")}], 2, "live")
+    assert "<!-- zans-orch:h1 -->" not in s and "API_KEY" not in s
 
 
 def test_main_live_disabled_exits_clean_without_network(capsys):
@@ -178,7 +181,7 @@ def fake_github(calls, comments=(), since=()):
 LIVE_EXTRA = {"ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
               "ANTHROPIC_MODEL": "claude-sonnet-5-5", "OPENAI_MODEL": "gpt-6.2-astra", "GITHUB_REF": "refs/heads/main",
               "ZANS_ORCH_MAX_RUNS_PER_DAY": "1", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
-              "ZANS_ORCH_MAX_USD_PER_MONTH": "10"}
+              "ZANS_ORCH_MAX_USD_PER_MONTH": "10", "ORCH_SHA256": "a" * 64}
 MOCK_ENV = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
             "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_TOKEN": "t"}
 
@@ -199,13 +202,13 @@ def test_main_mock_end_to_end(monkeypatch, capsys):
 
 def test_main_skips_duplicate(monkeypatch, capsys):
     h = o.run_hash("review x", [URL], "mock")
-    monkeypatch.setattr(o, "gh", fake_github([], comments=[{"body": f"<!-- zans-orch:{h} -->"}]))
+    monkeypatch.setattr(o, "gh", fake_github([], comments=[{"user": BOT, "body": f"<!-- zans-orch:{h} -->"}]))
     assert o.main(MOCK_ENV) == 0 and "SKIPPED" in capsys.readouterr().out
 
 
 def test_mock_does_not_block_live_dedup():
     assert o.run_hash("t", [URL], "mock") != o.run_hash("t", [URL], "live")
-    assert not o.already_done([{"body": f"<!-- zans-orch:{o.run_hash('t', [URL], 'mock')} -->"}],
+    assert not o.already_done([{"user": BOT, "body": f"<!-- zans-orch:{o.run_hash('t', [URL], 'mock')} -->"}],
                               o.run_hash("t", [URL], "live"))
 
 
@@ -248,25 +251,50 @@ def test_request_cap_is_six():
 def test_daily_cap_counts_reserved_slots_not_summaries(monkeypatch, capsys):
     today = __import__("time").strftime("%Y-%m-%d", __import__("time").gmtime())
     # a failed live run leaves only its slot marker (no summary) - it must still count
-    slots = [{"body": o.slot_tag("live", today, "dead")}]
+    slots = [{"user": BOT, "body": o.slot_tag("live", today, "dead")}]
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
     env = LIVE_ENV
-    assert o.main(env) == 1 and "daily live run cap" in capsys.readouterr().out
+    assert o.main(env) == 1 and "shared one paid run" in capsys.readouterr().out
     assert not [c for c in calls if c[0] == "POST"]
 
 
-def test_mock_slots_do_not_use_live_slot():
+def test_global_paid_slot_counts_live_racing_and_retro_but_not_mock():
     today = "2026-11-25"
-    assert o.runs_today([{"body": o.slot_tag("mock", today, "a")}], today, "live") == 0
-    assert o.runs_today([{"body": o.slot_tag("live", today, "a")}], today, "live") == 1
+    mock = {"user": BOT, "body": o.slot_tag("mock", today, "a")}
+    live = {"user": BOT, "body": o.slot_tag("live", today, "b")}
+    racing = {"user": BOT, "body": o.slot_tag("racing", today, "c")}
+    retro = {"user": BOT, "body": o.slot_tag("retro", today, "d")}
+    assert o.runs_today([mock], today, "live") == 0
+    assert o.runs_today([live], today, "racing") == 1
+    assert o.runs_today([racing], today, "live") == 1
+    assert o.runs_today([retro], today, "live") == 1
+    assert o.runs_today([live, racing], today, "retro") == 2
+
+
+def test_any_paid_slot_blocks_exact_fingerprint_retry_across_days():
+    h = "a" * 64
+    old = {"user": BOT, "body": o.slot_tag("racing", "2026-11-25", h)}
+    assert o.attempted([old], h)
+    legacy = {"user": BOT, "body": o.slot_tag("live", "2026-11-24", h[:16])}
+    assert o.attempted([legacy], h)       # preserve legacy 16-hex reservation dedup during migration
+    assert not o.attempted([old], "b" * 64)
+
+def test_untrusted_comments_cannot_spend_or_dedup():
+    today, h = "2026-11-25", "c" * 64
+    fake = {"user": {"login": "stranger"},
+            "body": o.slot_tag("live", today, h, 99.0) + f" <!-- {o.MARKER}:{h} -->"}
+    assert o.runs_today([fake], today, "live") == 0
+    assert not o.attempted([fake], h)
+    assert o.reserved_this_month([fake], today[:7]) == 0
+    assert not o.already_done([fake], h)
 
 
 def test_slot_reserved_before_any_paid_call(monkeypatch):
     order = []
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: order.append(("gh", m)) or (
         {"comments": 0, "body": ""} if path.endswith("/26") else ([] if m == "GET" else {"id": 1})))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "file text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "file text")
 
     def boom(env, text):
         order.append(("model", "call"))
@@ -280,8 +308,8 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
 
 
 def test_live_day_cap_hard_one_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 1          # Alex 26 Nov: one batched paid run a day
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
+    assert o.MAX_LIVE_RUNS_PER_DAY == 3          # TEMPORARY set-up ceiling (Alex 27 Nov 05:30); restore to 1 after set-up
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -451,11 +479,11 @@ def test_verdict_text_cleaned_so_escaped_size_is_bounded():
 def test_monthly_reservation_counts_failed_runs_and_blocks(monkeypatch, capsys):
     today = __import__("time").strftime("%Y-%m-%d", __import__("time").gmtime())
     # earlier live runs this month (one failed, no summary) already reserved $9.50
-    slots = [{"body": o.slot_tag("live", today[:8] + "01", "a", 4.75)}, {"body": o.slot_tag("live", today[:8] + "01", "b", 4.75)}]
+    slots = [{"user": BOT, "body": o.slot_tag("live", today[:8] + "01", "a", 4.75)}, {"user": BOT, "body": o.slot_tag("live", today[:8] + "01", "b", 4.75)}]
     assert o.reserved_this_month(slots, today[:7]) == 9.5
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "call_claude", lambda e, t: pytest.fail("no paid call allowed"))
     monkeypatch.setattr(o, "call_openai", lambda e, t: pytest.fail("no paid call allowed"))
     assert o.main(LIVE_ENV) == 1 and "ZANS_ORCH_MAX_USD_PER_MONTH" in capsys.readouterr().out
@@ -463,11 +491,11 @@ def test_monthly_reservation_counts_failed_runs_and_blocks(monkeypatch, capsys):
 
 
 def test_slot_records_reserved_amount_and_unknown_counts_as_worst():
-    assert o.reserved_this_month([{"body": o.slot_tag("live", "2026-11-03", "a", 1.5)}], "2026-11") == 1.5
-    legacy = [{"body": "<!-- zans-orch-slot:live:2026-11-03:abc -->"}]
+    assert o.reserved_this_month([{"user": BOT, "body": o.slot_tag("live", "2026-11-03", "a", 1.5)}], "2026-11") == 1.5
+    legacy = [{"user": BOT, "body": "<!-- zans-orch-slot:live:2026-11-03:abc -->"}]
     assert o.reserved_this_month(legacy, "2026-11") == o.WORST_RUN_USD
-    assert o.reserved_this_month([{"body": o.slot_tag("live", "2026-10-30", "a", 2)}], "2026-11") == 0
-    assert o.reserved_this_month([{"body": o.slot_tag("mock", "2026-11-03", "a", 2)}], "2026-11") == 0
+    assert o.reserved_this_month([{"user": BOT, "body": o.slot_tag("live", "2026-10-30", "a", 2)}], "2026-11") == 0
+    assert o.reserved_this_month([{"user": BOT, "body": o.slot_tag("mock", "2026-11-03", "a", 2)}], "2026-11") == 0
 
 
 def test_shared_rules_file_loaded():
@@ -477,7 +505,7 @@ def test_shared_rules_file_loaded():
 def test_live_slot_reserves_hard_worst_and_calls_capped_by_it(monkeypatch):
     calls, seen = [], {}
     monkeypatch.setattr(o, "gh", fake_github(calls))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "preflight", lambda *a, **k: 0)   # even a too-small estimate cannot shrink the reserve
 
     def fake_review(*a, budget_usd=None, **k):
@@ -526,12 +554,9 @@ def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypat
 
 
 def test_daily_live_ceiling_is_1_and_variable_can_only_lower_it():
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 1
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
-
-
-BOT = {"login": "github-actions[bot]"}
 
 
 def test_settled_run_counts_measured_cost_not_reservation():
@@ -558,10 +583,12 @@ def test_usage_cost_known_models_only():
         assert i <= o.WORST_USD_PER_M_IN and o_ <= o.WORST_USD_PER_M_OUT
 
 
-def _usage_post(with_usage=True):
-    good = '{"ack":"a","verdict":"REVISE","reasons":["r"],"fixes":["f"]}'
+def _usage_post(with_usage=True, claude_v="REVISE", openai_v="REVISE"):
+    def mk(v):
+        return '{"ack":"a","verdict":"%s","reasons":["r"],"fixes":%s}' % (v, '["f"]' if v != "PASS" else "[]")
 
     def fake_post(url, headers, body):
+        good = mk(claude_v if "anthropic" in url else openai_v)
         if "anthropic" in url:
             d = {"model": "claude-sonnet-5-5", "stop_reason": "end_turn", "content": [{"type": "text", "text": good}]}
             if with_usage:
@@ -577,12 +604,15 @@ def _usage_post(with_usage=True):
 def test_live_run_posts_settle_with_measured_cost(monkeypatch):
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "_post", _usage_post(True))
     assert o.main(LIVE_ENV) == 0
     posts = [c[2]["body"] for c in calls if c[0] == "POST"]
     assert "zans-orch-slot:live:" in posts[0] and "AGREED REVISE" in posts[1]
+    assert f"<!-- {o.MARKER}:" not in posts[1]
     m = o.SETTLE_RE.search(posts[2])
+    assert f"<!-- {o.MARKER}:" not in posts[2]       # AGREED REVISE opens a gate: never a completion marker
+    assert "zans-orch-correction:" in posts[1]
     # 2 calls (matching REVISE stops): Claude 0.045 + OpenAI 0.18 = 0.225, x1.25 safety
     assert m and abs(float(m.group(3)) - 0.2813) < 1e-3
 
@@ -590,7 +620,7 @@ def test_live_run_posts_settle_with_measured_cost(monkeypatch):
 def test_missing_usage_never_settles(monkeypatch, capsys):
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "_post", _usage_post(False))
     o.main(LIVE_ENV)
     posts = [c[2]["body"] for c in calls if c[0] == "POST"]
@@ -601,7 +631,7 @@ def test_missing_usage_never_settles(monkeypatch, capsys):
 def test_replaced_review_never_settles(monkeypatch):
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "review", lambda *a, **k: ("AGREED", [], 2))
     o.main(LIVE_ENV)
     assert not any(o.SETTLE in (c[2] or {}).get("body", "") for c in calls if c[0] == "POST")
@@ -690,11 +720,13 @@ def test_settle_flags_overrun_when_cost_exceeds_reserve():
     orig = o.gh
     try:
         o.gh = lambda env, method, path, body=None: posted.append(body)
-        o.settle({}, "r/x", "26", "2026-11-26", "abc", 2.45)
+        settled = o.settle({}, "r/x", "26", "2026-11-26", "abc", 2.45,
+                           completion_markers=["<!-- zans-orch:abc -->"])
     finally:
         o.gh = orig
     m = o.SETTLE_RE.search(posted[0]["body"])
     assert m and m.group(4) and float(m.group(3)) == 5.0 and "OVERRUN" in posted[0]["body"]
+    assert settled is False and "<!-- zans-orch:abc -->" not in posted[0]["body"]
 
 
 def test_rounds_cap_one_round_fits_big_files_and_limits_calls():
@@ -709,3 +741,216 @@ def test_rounds_cap_one_round_fits_big_files_and_limits_calls():
 def test_rounds_cap_clamped():
     out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REVISE")] * 9), o.mock_caller([V("PASS")] * 9), rounds_cap=99)
     assert req == 2 * o.MAX_ROUNDS
+
+
+# ---- sha256 byte verification, per-artifact result ids, correction handoff + receipt ----
+GOOD = b"hello listing"
+GOOD_SHA = __import__("hashlib").sha256(GOOD).hexdigest()
+
+
+def test_fetch_verifies_sha256_bytes():
+    u = f"https://github.com/zankendo2-ship-it/r/blob/{SHA}/a.md"
+    out = o.fetch_artifacts([u], getter=lambda url, limit: GOOD, shas=[GOOD_SHA])
+    assert "hello listing" in out
+    with pytest.raises(o.Stop, match="do not match the sha256"):
+        o.fetch_artifacts([u], getter=lambda url, limit: GOOD + b"x", shas=[GOOD_SHA])
+
+
+def test_parse_shas_requires_full_64_hex_one_per_artifact():
+    assert o.parse_shas(GOOD_SHA, [URL]) == [GOOD_SHA]
+    for bad in ("", GOOD_SHA[:16], GOOD_SHA.upper() + "0", GOOD_SHA + " " + GOOD_SHA):
+        with pytest.raises(o.Stop):
+            o.parse_shas(bad, [URL])
+
+
+def test_live_refuses_without_sha256(capsys):
+    env = {k: v for k, v in LIVE_ENV.items() if k != "ORCH_SHA256"}
+    assert o.main(env) == 1 and "sha256" in capsys.readouterr().out
+
+
+def test_artifact_ids_and_summary_show_sha_and_id():
+    h = "b" * 64
+    ids = o.artifact_ids(h, [URL], [GOOD_SHA])
+    assert ids == [f"{'b' * 12}-A1-{GOOD_SHA[:12]}"]
+    s = o.summary(h, "t", [URL], "AGREED: both PASS (x)", [{"round": 1, "Claude": V("PASS"), "OpenAI": V("PASS")}], 2, "live", 2, [GOOD_SHA])
+    assert ids[0] in s and GOOD_SHA in s
+
+
+def test_correction_gate_needs_a_bot_posted_newer_receipt():
+    h = "c" * 64
+    rounds = [{"round": 1, "Claude": {**V("REVISE"), "fixes": ["fix A"]}, "OpenAI": {**V("REVISE"), "fixes": ["fix B"]}}]
+    live = o.summary(h, "t", [URL], "AGREED REVISE: both reviewers want changes", rounds, 2, "live", 2, [GOOD_SHA])
+    mock = o.summary(h, "t", [URL], "AGREED REVISE: both reviewers want changes", rounds, 0, "mock", 2, [GOOD_SHA])
+    assert o.CORRECTION in live and o.CORRECTION not in mock and "not required" in live
+    cid = o.correction_id(o.combined_fixes(rounds))
+    BOT = {"login": o.TRUSTED_SETTLER}
+    gate = {"user": BOT, "body": live, "created_at": "2026-11-27T05:00:00Z"}
+    rec = lambda login, run, c, at: {"user": {"login": login}, "created_at": at,   # noqa: E731
+                                     "body": f"<!-- {o.RECEIPT}:{run}:{c} -->"}
+    assert o.pending_corrections([gate]) == [(h, cid)]
+    assert o.pending_corrections([gate, rec(o.TRUSTED_SETTLER, h, cid, "2026-11-27T05:05:00Z")]) == []        # valid
+    assert o.pending_corrections([gate, rec("zankendo2-ship-it", h, cid, "2026-11-27T05:05:00Z")]) == [(h, cid)]  # owner/stranger/any non-bot
+    assert o.pending_corrections([gate, rec("stranger", h, cid, "2026-11-27T05:05:00Z")]) == [(h, cid)]
+    assert o.pending_corrections([gate, rec(o.TRUSTED_SETTLER, "d" * 64, cid, "2026-11-27T05:05:00Z")]) == [(h, cid)]   # wrong run
+    assert o.pending_corrections([gate, rec(o.TRUSTED_SETTLER, h, "e" * 64, "2026-11-27T05:05:00Z")]) == [(h, cid)]    # wrong hash
+    assert o.pending_corrections([gate, rec(o.TRUSTED_SETTLER, h, cid, "2026-11-27T04:00:00Z")]) == [(h, cid)]          # older than gate
+    assert o.pending_corrections([{**gate, "user": {"login": "someone"}}]) == []                                         # forged gate
+
+
+SHA40 = "a" * 40
+
+
+def _gate(h, n):
+    items = [f"fix {i}" for i in range(1, n + 1)]
+    body = "\n".join(o.gate_lines(h, items))
+    return {"user": {"login": o.TRUSTED_SETTLER}, "body": body, "created_at": "2026-11-27T05:00:00Z"}, o.correction_id(items)
+
+
+def test_receipt_needs_exactly_one_decision_per_fix_with_evidence():
+    import orchestrator.receipt as rc
+    h = "c" * 64
+    gate, cid = _gate(h, 2)
+    ok = lambda sha: sha == SHA40          # noqa: E731 - stands in for "commit exists in this repo"
+    good = f"1=applied {SHA40}; 2=rejected not needed because already covered"
+    body = rc.build({}, [gate], h, cid, good, verify=ok)
+    assert f"<!-- {o.RECEIPT}:{h}:{cid} -->" in body and "2 decisions" in body
+    closed = {"user": {"login": o.TRUSTED_SETTLER}, "body": body, "created_at": "2026-11-27T05:10:00Z"}
+    for args in (([gate, closed], h, cid, good),                       # already closed
+                 ([gate], "d" * 64, cid, good), ([gate], h, "e" * 64, good),
+                 ([gate], h, cid, ""), ([gate], h, cid, "1=maybe x"), ([gate], "abc", cid, good),
+                 ([gate], h, cid, f"1=applied {SHA40}"),               # missing decision 2
+                 ([gate], h, cid, f"1=applied {SHA40}; 1=rejected twice over x"),   # duplicate index, missing 2
+                 ([gate], h, cid, f"1=applied {SHA40}; 2=rejected not needed because; 3=rejected out of range x"),
+                 ([gate], h, cid, f"1=applied {SHA40}; 2=applied"),    # applied with no evidence
+                 ([gate], h, cid, "1=applied " + "b" * 40 + "; 2=rejected not needed because"),   # commit not found
+                 ([gate], h, cid, f"1=applied {SHA40}; 2=rejected no")):                 # reason too short
+        with pytest.raises(o.Stop):
+            rc.build({}, *args, verify=ok)
+    assert rc.main({"GITHUB_ACTOR": "stranger", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_REF": o.MAIN_REF,
+                    "ORCH_ISSUE": "26"}) == 1
+    assert rc.main({"GITHUB_ACTOR": "zankendo2-ship-it", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it",
+                    "GITHUB_REF": "refs/heads/x", "ORCH_ISSUE": "26"}) == 1
+
+
+def test_live_blocked_while_correction_has_no_receipt(monkeypatch, capsys):
+    h, cid = "d" * 64, "e" * 64
+    posted = [{"user": {"login": o.TRUSTED_SETTLER}, "body": f"<!-- {o.CORRECTION}:{h}:{cid} -->",
+               "created_at": "2026-11-27T01:00:00Z"}]
+    monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"body": "", "comments": 0} if m == "GET" and "comments" not in path else [])
+    monkeypatch.setattr(o, "comments_since", lambda *a, **k: posted)
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "x")
+    assert o.main(LIVE_ENV) == 1 and "receipt" in capsys.readouterr().out
+
+
+def test_manual_no_agreement_and_empty_fixes_also_open_a_gate():
+    h = "c" * 64
+    pv = {**V("PASS"), "fixes": []}
+    rv = {**V("REVISE"), "fixes": [], "reasons": ["thin evidence"]}
+    for outcome, rounds in (("NO AGREEMENT after the round cap - the stricter verdict REVISE stands - needs a person",
+                             [{"round": 1, "Claude": pv, "OpenAI": rv}]),
+                            ("AGREED REVISE: both reviewers want changes", [{"round": 1, "Claude": rv, "OpenAI": rv}]),
+                            ("STOPPED: rejected", [{"round": 1, "Claude": {**V("REJECT"), "fixes": []}}])):
+        live = o.summary(h, "t", [URL], outcome, rounds, 2, "live", 2, [GOOD_SHA])
+        assert f"{o.CORRECTION}:{h}:" in live and "1 fixes" in live
+    ok = o.summary(h, "t", [URL], "AGREED: both PASS (x)", [{"round": 1, "Claude": pv, "OpenAI": pv}], 2, "live", 2, [GOOD_SHA])
+    assert o.CORRECTION not in ok
+
+
+def test_open_gate_blocks_every_route_and_non_bot_receipt_does_not_unblock():
+    import orchestrator.daily_batch as b2
+    import orchestrator.daily_racing as r2
+    import orchestrator.daily_retro as t2
+    import orchestrator.test_daily_batch as tb
+    import orchestrator.test_daily_racing as tr
+    import orchestrator.test_daily_retro as tt
+    h = "c" * 64
+    bot_gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": "\n".join(o.gate_lines(h, ["fix 1"])), "created_at": "2026-11-27T05:00:00Z"}
+    cid = o.correction_id(["fix 1"])
+    human_receipt = {"user": {"login": "zankendo2-ship-it"}, "created_at": "2026-11-27T05:05:00Z",
+                     "body": f"<!-- {o.RECEIPT}:{h}:{cid} -->"}     # a shared-login comment can never close a gate
+    item, _ = tb.art("a")
+    d = tt.data()
+    for comments in ([bot_gate], [bot_gate, human_receipt]):
+        with pytest.raises(o.Stop, match="correction gate"):
+            r2.plan(tr.file_bytes(), comments, tr.ENV, tr.TODAY)
+        with pytest.raises(o.Stop, match="correction gate"):
+            b2.plan([item], tb.TODAY, {"a": "hello"}, comments, tb.ENV, tb.TODAY)
+        with pytest.raises(o.Stop, match="correction gate"):
+            t2.plan(d, tt.sha(d), comments, tt.ENV, tt.TODAY)
+
+
+def test_every_paid_route_shares_the_correction_gate():
+    import orchestrator.daily_racing as r2
+    import orchestrator.daily_batch as b2
+    import orchestrator.daily_retro as t2
+    for mod in (r2, b2, t2):
+        assert "require_no_pending_corrections" in open(mod.__file__).read()
+
+
+def test_shared_setup_ceiling_counts_every_paid_route_together():
+    # Alex 27 Nov 05:30: more than one paid run a day while setting up. One shared count across live/racing/retro:
+    # three runs on any mix of routes are allowed, a fourth on any route is refused.
+    env = {"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}
+    today = "2026-11-27"
+    tag = lambda m, i: {"user": {"login": o.TRUSTED_SETTLER}, "body": o.slot_tag(m, today, f"{i:064x}", 0.5)}  # noqa: E731
+    slots = [tag("live", 1), tag("racing", 2)]
+    for route in ("live", "racing", "retro"):
+        assert o.runs_today(slots, today, route) == 2 < o.day_cap(env, route)
+    slots.append(tag("retro", 3))
+    for route in ("live", "racing", "retro"):
+        assert o.runs_today(slots, today, route) >= o.day_cap(env, route)
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1      # the variable can restore one a day
+
+
+def test_failed_settle_post_keeps_reservation_and_emits_no_marker(capsys):
+    o.RUN_COST.update(usd=0.5, complete=True)
+    orig = o.gh
+
+    def boom(env, method, path, body=None):
+        raise OSError("network down")
+    try:
+        o.gh = boom
+        ok = o.settle({}, "r/x", "26", "2026-11-27", "abc", 2.45, completion_markers=["<!-- zans-orch:abc -->"])
+    finally:
+        o.gh = orig
+    assert ok is False and "full reservation stays" in capsys.readouterr().out
+
+
+def test_overrun_blocks_later_live_runs_that_month():
+    over = {"user": {"login": o.TRUSTED_SETTLER}, "body": o.settle_tag("2026-11-27", "f" * 64, 5.0, over=True)}
+    assert o.overruns([over], "2026-11")
+    assert not o.overruns([over], "2026-12")
+    spoof = {"user": {"login": "someone"}, "body": o.settle_tag("2026-11-27", "f" * 64, 5.0, over=True)}
+    assert not o.overruns([spoof], "2026-11")
+
+
+def test_public_summary_redacts_keys_tokens_and_emails():
+    rounds = [{"round": 1, "Claude": {**V("REVISE"), "reasons": ["mail me at a.b@example.com"], "fixes": ["rotate sk-abcdefghijklmnopqrstuv now"]},
+               "OpenAI": {**V("REVISE"), "fixes": ["token ghp_abcdefghijklmnopqrstuv leaked"]}}]
+    s = o.summary("a" * 64, "t", [URL], "AGREED REVISE: x", rounds, 2, "live", 2, [GOOD_SHA])
+    for leak in ("a.b@example.com", "sk-abcdefghijklmnopqrstuv", "ghp_abcdefghijklmnopqrstuv"):
+        assert leak not in s
+    assert "[redacted]" in s
+
+
+@pytest.mark.parametrize("cv,ov", [("REVISE", "REVISE"), ("PASS", "REVISE"), ("REVISE", "PASS"), ("PASS", "REJECT"), ("REJECT", "PASS")])
+def test_manual_route_gate_outcomes_never_emit_run_marker(monkeypatch, cv, ov):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
+    monkeypatch.setattr(o, "_post", _usage_post(True, cv, ov))
+    o.main(LIVE_ENV)
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert any("zans-orch-correction:" in p for p in posts), (cv, ov)      # gate exists
+    assert not any(f"<!-- {o.MARKER}:" in p for p in posts), (cv, ov)      # no completion marker anywhere
+
+
+def test_manual_route_pass_pass_marker_only_in_settlement(monkeypatch):
+    calls = []
+    monkeypatch.setattr(o, "gh", fake_github(calls))
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
+    monkeypatch.setattr(o, "_post", _usage_post(True, "PASS", "PASS"))
+    assert o.main(LIVE_ENV) == 0
+    posts = [c[2]["body"] for c in calls if c[0] == "POST"]
+    assert not any("zans-orch-correction:" in p for p in posts)
+    assert f"<!-- {o.MARKER}:" not in posts[1] and f"<!-- {o.MARKER}:" in posts[2]
