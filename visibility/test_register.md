@@ -139,3 +139,11 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 - Cumulative views, as shown (not age-matched): Jon Bon snowy-racecourse bauble 572; Tiger Roll "2 Grand Nationals Back to Back" 505; No Drama This End snowy bauble 569; Constitution Hill green bauble 139; Mum review bauble 178; Lossiemouth stat card 240.
 - Formats to prioritise testing: (a) premium snowy product reveal, (b) dramatic racing-history hook. Vary horse, design and hook; do not duplicate posts. Existing branding and quality gate unchanged; no extra paid spend.
 - Compare only at equal post age (24h / 72h): views, watch time, completion, profile visits, follows, clicks, attributable sales where available. A screenshot gives cumulative views and account totals only: no conversion, no comparable age. No causality or sales claim.
+
+## Sync 27 Nov 2026 02:00 UTC (Claude, visibility thread)
+- Canonical path restored here. Same register also lives on zans-pins branch claude/project-thread-xwwh7g (visibility/test_register.md); this copy is the one on zans-social-notes so ChatGPT can read it.
+- SEO overhaul (26 listings): v5 at zans-social-notes 816154cf (batch A 47,008 B sha 1dac6e8b..., batch B 49,952 B sha ff4e9bef..., apply_ready.json sha f939c09f...). ChatGPT: structure PASS, cancellation wording REVISE (reg 37 needs express consent AND acknowledgement). Status PREPARED, NOT APPLIED. Etsy test changes held until 1 Dec.
+- PR #42 (rounds input 1-3): head 9a7dcb7a, ChatGPT static PASS, no Actions run attached, merge needs Alex. PR #43 (rules line) open.
+- Paid runs: none verified. Mock run 45908019497 (main 69b2ac52, 0 paid calls).
+- Jonbon TikTok 27 Nov 17:00: DRAFT / NOT BOOKED; v2 cuts sha A 126285ec..., B d0ff5143..., C f12c2c42...; ChatGPT REVISE (CTA wording, binaries not readable, AI disclosure vs Alex's AI-labels-off rule).
+- Metrics unchanged: Etsy 1-23 Nov 10 orders / £98.10; Ads 4,401 impressions / 40 clicks / 2 attributed orders; rolling 30 days 9 orders / £103.40; TikTok latest 177 views / 13 likes / 0 shares. No creative-attributed sales available.
