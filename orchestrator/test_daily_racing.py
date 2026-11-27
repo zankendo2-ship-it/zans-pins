@@ -381,7 +381,7 @@ def test_schema_v3_needs_review_detail_or_explicit_null_from_29_nov():
     with pytest.raises(r.Refuse, match="no usable"):                       # a picked race with null reasons is a gap, not an answer
         r.validate(json.dumps(d).encode(), "2026-11-29")
     ok = {**full, "zans_reasons": "top rated on course form", "cautions": "none", "data_chance": 0.31, "best_price": 2.5,
-          "second": "B", "rpr_pick": "A", "longshot": None, "longshot_reason": "no runner at 14/1 or more"}
+          "second": "Blue Sky", "rpr_pick": "Alpha Star", "longshot": None, "longshot_reason": "no runner is priced at 15.00 or more"}
     d["races"] = [ok]
     r.validate(json.dumps(d).encode(), "2026-11-29")
     d["races"] = [{**ok, "cautions": ""}]
@@ -392,7 +392,7 @@ def test_schema_v3_needs_review_detail_or_explicit_null_from_29_nov():
         d["races"] = [{**ok, **bad}]
         with pytest.raises(r.Refuse, match=why):
             r.validate(json.dumps(d).encode(), "2026-11-29")
-    d["races"] = [{**ok, "rpr_pick": None, "rpr_reason": "No runner has an RPR", "longshot": "X at 21.0", "longshot_reason": None}]
+    d["races"] = [{**ok, "rpr_pick": None, "rpr_reason": "No runner has an RPR yet", "longshot": "Long Shot at 21.0", "longshot_reason": None}]
     r.validate(json.dumps(d).encode(), "2026-11-29")
     d["races"] = [{**full, **{k: None for k in r.V3_DETAIL_FIELDS}, "win_pick": None, "status": "no pick"}, ok | {"course": "B"}]
     r.validate(json.dumps(d).encode(), "2026-11-29")                      # an unpicked race may carry nulls
@@ -401,8 +401,8 @@ def test_schema_v3_needs_review_detail_or_explicit_null_from_29_nov():
 
 def test_schema_v3_values_are_checked_not_just_present():
     d = json.loads(file_bytes(date="2026-11-29", frozen_at_utc="2026-11-29T08:45:00Z"))
-    ok = {**RACE, "second": "B", "data_pick": "A", "agent_b": None, "gemini_api": None, "data_gap": False, "price_move": None,
-          "rpr_pick": "A", "rpr_reason": None, "longshot": "X at 21.0", "zans_reasons": "top rated on course form",
+    ok = {**RACE, "second": "Blue Sky", "data_pick": "A", "agent_b": None, "gemini_api": None, "data_gap": False, "price_move": None,
+          "rpr_pick": "Alpha Star", "rpr_reason": None, "longshot": "Long Shot at 21.0", "zans_reasons": "top rated on course form",
           "cautions": "none", "data_chance": 0.31, "best_price": 2.5}
 
     def check(**chg):
@@ -410,15 +410,17 @@ def test_schema_v3_values_are_checked_not_just_present():
         r.validate(json.dumps(d).encode(), "2026-11-29")
 
     check()
-    check(longshot={"name": "X", "price": 21.0})
+    check(longshot={"name": "Long Shot", "price": 21.0})
+    check(longshot="Long Shot 20/1")
     check(best_price="2.5")
     check(second="none", second_reason="only two runners were declared in this race")
     check(rpr_pick="none", rpr_reason="no runner in this race has an RPR yet")
     check(longshot="none", longshot_reason="no runner is priced at 14/1 or more")
-    for chg, why in (({"second": "none"}, "second"), ({"second": "N/A"}, "second"), ({"second": "x", "second_reason": "short"}, "second"),
+    for chg, why in (({"second": "none"}, "second"), ({"second": "N/A"}, "second"), ({"second": "x", "second_reason": "short"}, "second"), ({"second": "B"}, "second"), ({"second": "N.A."}, "second"), ({"second": "Nobody", "second_reason": None, "second": "7"}, "second"),
+                     ({"second": "none", "second_reason": "filler words"}, "second"), ({"rpr_pick": "A"}, "rpr_pick"),
                      ({"rpr_pick": "none", "rpr_reason": None}, "rpr_pick"), ({"rpr_pick": "-", "rpr_reason": "tbc"}, "rpr_pick"),
-                     ({"longshot": "none"}, "longshot"), ({"longshot": "some horse"}, "longshot"),
-                     ({"longshot": {"name": "X", "price": 0.5}}, "longshot"), ({"longshot": True}, "longshot"),
+                     ({"longshot": "none"}, "longshot"), ({"longshot": "some horse"}, "longshot"), ({"longshot": "Rank 2 horse"}, "longshot"), ({"longshot": "Short Price at 9.0"}, "longshot"), ({"longshot": "Short Price 6/1"}, "longshot"), ({"longshot": "B at 21.0"}, "longshot"), ({"longshot": {"name": "", "price": 21.0}}, "longshot"),
+                     ({"longshot": {"name": "Long Shot", "price": 0.5}}, "longshot"), ({"longshot": True}, "longshot"),
                      ({"best_price": True}, "best_price"), ({"best_price": "abc"}, "best_price"), ({"best_price": -2.0}, "best_price"),
                      ({"best_price": 1.0}, "best_price"), ({"best_price": float("inf")}, "best_price"),
                      ({"data_chance": "0.3"}, "data_chance"), ({"data_chance": True}, "data_chance"), ({"data_chance": 1.5}, "data_chance"),
@@ -426,3 +428,27 @@ def test_schema_v3_values_are_checked_not_just_present():
         with pytest.raises(r.Refuse, match=why):
             check(**chg)
     check(sky_bet_price=None, best_price=None)             # no Sky price, nothing to compare
+
+
+def test_v3_named_runners_must_be_declared_in_the_verified_prices_file():
+    d = json.loads(file_bytes(date="2026-11-29", frozen_at_utc="2026-11-29T08:45:00Z"))
+    prices = b"course,time,horse,price\nAscot,13:00,Alpha Star,2.5\nAscot,13:00,Blue Sky (IRE),4.0\nAscot,13:00,Long Shot,21.0\n"
+    race = {**RACE, "second": "Blue Sky 4.00 (23%)", "rpr_pick": "Alpha Star", "longshot": "Long Shot at 21.0"}
+    d["races"] = [race]
+    r.check_declared_runners(d, prices)
+    for chg in ({"second": "Imaginary Horse"}, {"rpr_pick": "Phantom Runner"}, {"longshot": "Made Up Horse at 31.0"}, {"win_pick": "Not Declared"}):
+        d["races"] = [{**race, **chg}]
+        with pytest.raises(r.Refuse, match="not a declared runner"):
+            r.check_declared_runners(d, prices)
+    d["races"] = [{**race, "course": "Elsewhere", "second": "Imaginary Horse"}]
+    r.check_declared_runners(d, prices)       # race not in the prices file: unpriced, not checked here
+
+
+def test_declared_runner_check_reads_the_real_prices_columns():
+    d = json.loads(file_bytes(date="2026-11-29", frozen_at_utc="2026-11-29T08:45:00Z"))
+    prices = b"course,off_time,horse\nAscot,13:00,Alpha Star\nAscot,13:00,Blue Sky\n"
+    d["races"] = [{**RACE, "second": "Blue Sky 4.00 (23%)", "rpr_pick": "Alpha Star", "longshot": None}]
+    r.check_declared_runners(d, prices)
+    d["races"] = [{**RACE, "second": "Imaginary Horse", "longshot": None}]
+    with pytest.raises(r.Refuse, match="not a declared runner"):
+        r.check_declared_runners(d, prices)

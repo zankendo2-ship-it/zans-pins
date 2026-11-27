@@ -78,21 +78,64 @@ def _is_num(v):
     return isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v)
 
 
+LONGSHOT_MIN_PRICE = 15.0      # the ZANS longshot rule: our best-ranked runner at a live price of 15.00 (14/1) or bigger
+
+
+def _norm_placeholder(t):
+    return re.sub(r"[^a-z0-9/?]+", "", t.lower())
+
+
 def _text_ok(v, reason=False):
-    """A reviewable text value: a non-empty string that is not a bare placeholder; a reason must also be a real sentence."""
+    """A reviewable text value: not a bare placeholder (punctuation ignored); a reason must be a real sentence (3+ words, 15+ chars)."""
     if not isinstance(v, str):
         return False
     t = v.strip()
-    if not t or t.lower().strip(".! ") in PLACEHOLDERS:
+    if not t or _norm_placeholder(t) in {_norm_placeholder(x) for x in PLACEHOLDERS} or _norm_placeholder(t) == "":
         return False
-    return len(t) >= 10 if reason else True
+    if reason:
+        return len(t) >= 15 and len(t.split()) >= 3
+    return True
+
+
+def _horse_name(v):
+    """The runner name at the front of '<Name> 3.50 (23%)' / '<Name> at 21.0'; None when it is not a plausible name."""
+    if not isinstance(v, str):
+        return None
+    t = re.split(r"\s+(?:at\s+)?\d+(?:[./]\d+)?\b|\s*[(\[]", v.strip(), maxsplit=1)[0].strip()
+    if len(re.findall(r"[A-Za-z]", t)) < 3 or not re.fullmatch(r"[A-Za-z][A-Za-z0-9' .&-]*", t) or _norm_placeholder(t) in {_norm_placeholder(x) for x in PLACEHOLDERS}:
+        return None
+    return t
+
+
+def _name_ok(v):
+    return _horse_name(v) is not None
+
+
+def _price_of(v):
+    """Decimal price from text ('X at 21.0', 'X 15/1' fractions become decimal) or a dict; None if absent."""
+    if isinstance(v, dict):
+        for k in ("price", "odds", "sky_bet_price"):
+            if _is_num(v.get(k)):
+                return float(v[k])
+        return None
+    if not isinstance(v, str):
+        return None
+    m = re.search(r"(\d+)/(\d+)\b", v)
+    if m and int(m.group(2)):
+        return int(m.group(1)) / int(m.group(2)) + 1
+    m = re.search(r"\b(\d+\.\d+|\d{2,})\b", v)
+    return float(m.group(1)) if m else None
 
 
 def _longshot_ok(v):
-    """A longshot selection carries its price: text with a number in it ('X at 21.0'), or a dict with a positive price/odds."""
-    if isinstance(v, dict):
-        return any(_is_num(v.get(k)) and v[k] > 1 for k in ("price", "odds", "sky_bet_price"))
-    return _text_ok(v) and any(ch.isdigit() for ch in v)
+    """A longshot selection names a runner and carries a decimal price at or above the ZANS longshot threshold."""
+    name = v.get("name") or v.get("horse") if isinstance(v, dict) else v
+    price = _price_of(v)
+    return _name_ok(name) and price is not None and price >= LONGSHOT_MIN_PRICE
+
+
+def _key(name):
+    return re.sub(r"[^a-z0-9]", "", re.sub(r"\s*[(\[].*$", "", str(name).lower()))
 
 
 def validate(data, today):
@@ -158,12 +201,12 @@ def validate(data, today):
                     if v is None or (isinstance(v, str) and not v.strip()) or (isinstance(v, (list, dict)) and not v):
                         raise Refuse(f"race {r['course']} {r['time']} has a pick but no usable {k} (write 'none' or the reason; null is not reviewable)")
                 where = f"race {r['course']} {r['time']}"
-                if not (_text_ok(r.get("second")) or _text_ok(r.get("second_reason"), reason=True)):
+                if not (_name_ok(r.get("second")) or _text_ok(r.get("second_reason"), reason=True)):
                     raise Refuse(f"{where} has a pick but no usable second (a runner-up, or a second_reason; a bare placeholder like 'none' is not reviewable)")
-                if not (_text_ok(r.get("rpr_pick")) or _text_ok(r.get("rpr_reason"), reason=True)):
+                if not (_name_ok(r.get("rpr_pick")) or _text_ok(r.get("rpr_reason"), reason=True)):
                     raise Refuse(f"{where} has neither a real rpr_pick nor an rpr_reason (a bare placeholder like 'none' is not reviewable)")
                 if not (_longshot_ok(r.get("longshot")) or _text_ok(r.get("longshot_reason"), reason=True)):
-                    raise Refuse(f"{where} has neither a longshot with its price nor a longshot_reason (a bare placeholder like 'none' is not reviewable)")
+                    raise Refuse(f"{where} has neither a named longshot priced at 15.00 or more nor a longshot_reason (a bare placeholder like 'none' is not reviewable)")
                 dc = r.get("data_chance")
                 if not _is_num(dc) or not 0 <= dc <= 1:
                     raise Refuse(f"{where} has a pick but data_chance is not a number between 0 and 1")
@@ -217,7 +260,28 @@ def verify_sources(data, getter):
         raise Refuse("prices_file is not included in the verified sources list")
     if combined_sha256(src) != d["pack_manifest_combined_sha256"]:
         raise Refuse("pack_manifest_combined_sha256 does not match the per-source hashes")
+    if d["date"] >= SCHEMA_V3_FROM:
+        check_declared_runners(d, getter(commit, prices_file))
     return len(src)
+
+
+def check_declared_runners(d, prices_bytes):
+    """V3 files: every named second / RPR pick / longshot must be a runner in the verified prices file for that race
+    (course + off time). A race the prices file does not list is not checked here (it is unpriced, and says so)."""
+    import csv
+    import io
+    declared = {}
+    for row in csv.DictReader(io.StringIO(prices_bytes.decode("utf-8", "replace"))):
+        declared.setdefault((str(row.get("course", "")).strip().lower(), str(row.get("off_time") or row.get("time") or "").strip()), set()).add(_key(row.get("horse", "")))
+    for r in d.get("races", []):
+        names = declared.get((str(r.get("course", "")).strip().lower(), str(r.get("time", "")).strip()))
+        if not names or not r.get("win_pick"):
+            continue
+        for f in ("win_pick", "second", "rpr_pick", "longshot"):
+            v = r.get(f)
+            n = _horse_name(v.get("name") if isinstance(v, dict) else v)
+            if n and _key(n) not in names:
+                raise Refuse(f"race {r['course']} {r['time']}: {f} {n!r} is not a declared runner in the verified prices file")
 
 
 def _body(text, extra=""):
