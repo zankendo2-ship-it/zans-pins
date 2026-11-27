@@ -422,7 +422,7 @@ EVIDENCE_NUM_FIELDS = ("zans_chance", "data_chance", "data_conf", "price_at_pick
 EVIDENCE_BOOL_FIELDS = ("data_gap", "drift_warning")                                    # absent in the file = false
 EVIDENCE_RACE_KEY = {"zans_cautions": "cautions"}                                      # race-row name when it differs from the evidence name
 NONE_LISTED = "none listed"
-PICK_NAME_KEYS = ("horse", "pick", "win_pick", "selection", "name")
+PICK_NAME_KEYS = ("win", "horse", "pick", "win_pick", "selection", "name")
 HEX64 = re.compile(r"[0-9a-f]{64}")
 
 
@@ -535,14 +535,19 @@ def check_evidence(d, getter):
         px, b = blob(ev.get("src"), where)
         before_off(px, "the pick source")
         try:
-            recs = json.loads(b.decode("utf-8")).get("picks")
+            doc = json.loads(b.decode("utf-8"))
+            recs = doc.get("picks")
         except Exception:   # noqa: BLE001
-            recs = None
+            doc, recs = {}, None
         if not isinstance(recs, list):
             raise Refuse(f"{where}: evidence source is not a course file with a picks list")
         ck = _key(r["course"])
+        fcourse = doc.get("course") if isinstance(doc.get("course"), str) else None   # the course may sit at file level (course file) instead of on each record
+
+        def course_of(q_):
+            return q_["course"] if isinstance(q_.get("course"), str) and q_["course"].strip() else fcourse
         hits = [q for q in recs if isinstance(q, dict) and str(q.get("time")).strip() == str(r["time"]).strip()
-                and isinstance(q.get("course"), str) and _key(q["course"]) == ck]
+                and isinstance(course_of(q), str) and _key(course_of(q)) == ck]
         if len(hits) != 1:
             raise Refuse(f"{where}: the pinned source holds {len(hits)} pick records with this exact course and time (need exactly 1)")
         q = hits[0]

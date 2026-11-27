@@ -793,3 +793,24 @@ def test_evidence_none_listed_is_verified_empty_only_when_the_record_key_is_empt
     d, f = _with_rec(win_angles=r)
     with pytest.raises(r.Refuse, match="no such key"):
         _ev(_evd_with(d, zans_reasons="none listed"), f)                     # key absent is not verified-empty
+
+
+def test_evidence_course_may_be_file_level_and_win_key_names_the_horse():
+    rec = {k: v for k, v in _REC.items() if k not in ("course", "horse")}
+    rec["win"] = "Alpha Star"
+    for fc, ok in (("ascot", True), ("Ascot", True), ("newbury", False), (None, False)):
+        doc = {"published_utc": "x", "picks": [rec]}
+        if fc:
+            doc["course"] = fc
+        files = {**_FILES, "c/ascot.json": json.dumps(doc).encode()}
+        d = _evd(); d["sources"][0]["blob_sha1"] = _blob(files["c/ascot.json"]); d["races"][0]["evidence"]["pick_sha256"] = r._h(rec)
+        if ok:
+            _ev(d, files)
+        else:
+            with pytest.raises(r.Refuse, match="exact course and time"):
+                _ev(d, files)
+    doc = {"course": "ascot", "picks": [{**rec, "win": "Blue Sky"}]}
+    files = {**_FILES, "c/ascot.json": json.dumps(doc).encode()}
+    d = _evd(); d["sources"][0]["blob_sha1"] = _blob(files["c/ascot.json"]); d["races"][0]["evidence"]["pick_sha256"] = r._h(doc["picks"][0])
+    with pytest.raises(r.Refuse, match="not the horse"):
+        _ev(d, files)
