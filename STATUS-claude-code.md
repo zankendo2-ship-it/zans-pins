@@ -441,3 +441,30 @@ Faces: all three scenes now from behind, no face visible. Hooves: each picture s
 Per-card still sha256: 1 9c8fc175499976d5c449a37dde7757dd493ba2f4c69e0c8ea8c1da46c850a1c7; 2 ebd5ac13d9a29ec1d1391dfcbd11fad36bf4dde6dd8924cc8bfa6dd9494c2ea5; 3 64ef5bc3e0ea2d1a3ad9b476450a18920111decba7d8f4a4f394c94abe223ad3; 4 a610be2035a2368516e415e4198e2f42477d5042015b36231334f5f598f7eacc.
 Video sha256: A e6f744517423d900255d7fd3c671bbd4fbe11a0b8cce99f883952381170a9f94; B 10ef3675c0655e019c3cc40b0e40fbf816c661963e17af37e9b926aa0e81ea3f; C 22ff293e0609c8b64bb151ccb9fe8e96d1277719c7ee11f8d80ffa3a59e9e336. Timestamped transcripts: `transcripts-and-sha256-v6.json`. Messaging growth (session_012o9aG4EUX3kTe8owuZHW3z) fails from this session, so this entry is the hand-off. ETA: done now.
 
+
+## PER-ASSET CHECKLIST (ADVICE c1957a8) - Jonbon v6 and Lossiemouth v2.6, 27 Nov (text; nothing booked, Alex has not approved)
+
+### Jonbon (Fri 27 Nov 17:00), cards 1-4
+| Item | Status |
+|---|---|
+| Horse | Jonbon (spelt as one word). Cards 1-3 are AI-made illustrations of a generic bay horse seen from behind, NOT the real Jonbon; each card carries 'Illustration - not race footage'. Card 4 = our bauble. |
+| Race / dates | Shloer Chase, Cheltenham: 2023, 2024, 2026 (2 sources each, per the earlier Jonbon request: Jockey Club + RTE 2023; RTE + Sky Sports 2024; Sporting Life + Express & Star 2026). 2025 second, not claimed; 'in a row' not used. No race times, odds or 'can he win'. |
+| Rider | Not named anywhere; the AI rider is generic, face not visible. |
+| Silks | Owner colours green with gold/yellow hoops: Sporting Life ('green and gold hoops') + Horse & Hound ('green and gold'). Scenes and bands show green with yellow hoops and a white cap. NOT VERIFIED: white cap; exact shade 'emerald'. Owner never named in the video. |
+| Coat | Bay gelding: ONE named source (Sky Sports horse profile). NOT VERIFIED with a second source; face marking not confirmed. |
+| Metal strips | Gold ZANS strips top and bottom on every frame (28px asset overlay); silks bands inside them: cap colour (white) under the top strip, silks (green/yellow hoops) above the bottom strip. |
+| Words / TikTok shield | Card, voice and caption scanned: no odds, stalls, draw, going, win/winner/winning, bet, price, guide, tips, 18+, link in bio, or pound sign. CTA 'Search ZANS Racing on Etsy'. Five tags max. |
+| Voice | Gemini Aoede, locked style; end line 'Zans Racing' phonetic. Mixed-audio transcripts vary (Zan's / Zans / Zanz). |
+| NOT VERIFIED | White cap; second coat source; the independent TikTok checker (my script scan only); the own-brand/commercial toggle on the end card (Alex at booking); AI-label toggle stays OFF per Alex. |
+
+### Lossiemouth (Sat 28 Nov 12:30), cards 1-4
+| Item | Status |
+|---|---|
+| Horse | Lossiemouth. Cards 1-3 AI-made illustrations of a generic GREY mare seen from behind (not the real mare), labelled illustration. Card 4 = our bauble (pink with green spots, name LOSSIEMOUTH). |
+| Race / dates | Two Champion Hurdles in 2026: Cheltenham (March) and Punchestown (May), 2 sources each per the reviewer's earlier pass. No race times/odds/'win'. Honeysuckle named only in the debate question. |
+| Rider | Not named; generic AI rider, face not visible. |
+| Silks | Pink with green spots, pink cap, taken from our own designer colours (templates/posts.json), not re-checked today against a racecard or 2 sources. NOT VERIFIED against sources; the owner is not named. |
+| Coat | Grey: Wikipedia, Irish Racing, Sky Sports (3 named sources). |
+| Metal strips | Gold ZANS strips top and bottom on every frame; silks bands: pink cap band under the top strip, pink with green spots band above the bottom strip. |
+| Words / TikTok shield | Same scan as Jonbon, no hits. 'Favourite' question, no superlatives. |
+| NOT VERIFIED | Lossiemouth's real silks and cap vs a racecard in 2 sources; independent TikTok checker; transcripts vary on 'Zans Racing'. |
