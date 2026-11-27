@@ -372,7 +372,7 @@ def test_chunked_failure_in_a_later_chunk_stops_and_holds():
 
 def test_schema_v3_needs_review_detail_or_explicit_null_from_29_nov():
     d = json.loads(file_bytes(date="2026-11-29", frozen_at_utc="2026-11-29T08:45:00Z"))
-    full = {**RACE, "second": None, "data_pick": "A", "agent_b": None, "gemini_api": None, "data_gap": False, "price_move": None,
+    full = {**RACE, "confidence": 8, "second": None, "data_pick": "A", "agent_b": None, "gemini_api": None, "data_gap": False, "price_move": None,
             "rpr_pick": None, "rpr_reason": "none", "longshot": None}
     d["races"] = [dict(full)]
     with pytest.raises(r.Refuse, match="review detail"):
