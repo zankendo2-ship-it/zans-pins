@@ -810,20 +810,28 @@ def test_receipt_needs_exactly_one_decision_per_fix_with_evidence():
     import orchestrator.receipt as rc
     h = "c" * 64
     gate, cid = _gate(h, 2)
-    ok = lambda sha: sha == SHA40          # noqa: E731 - stands in for "commit exists in this repo"
-    good = f"1=applied {SHA40}; 2=rejected not needed because already covered"
+    P, D = "racing-review/2026-11-28.json", "a" * 64
+    ok = lambda sha, path, dg: (sha, path, dg) == (SHA40, P, D)   # noqa: E731 - stands in for the repo proof check
+    ev = f"{SHA40} {P} {D}"
+    good = f"1=applied {ev}; 2=rejected not needed because already covered"
     body = rc.build({}, [gate], h, cid, good, verify=ok)
     assert f"<!-- {o.RECEIPT}:{h}:{cid} -->" in body and "2 decisions" in body
     closed = {"user": {"login": o.TRUSTED_SETTLER}, "body": body, "created_at": "2026-11-27T05:10:00Z"}
     for args in (([gate, closed], h, cid, good),                       # already closed
                  ([gate], "d" * 64, cid, good), ([gate], h, "e" * 64, good),
                  ([gate], h, cid, ""), ([gate], h, cid, "1=maybe x"), ([gate], "abc", cid, good),
-                 ([gate], h, cid, f"1=applied {SHA40}"),               # missing decision 2
-                 ([gate], h, cid, f"1=applied {SHA40}; 1=rejected twice over x"),   # duplicate index, missing 2
-                 ([gate], h, cid, f"1=applied {SHA40}; 2=rejected not needed because; 3=rejected out of range x"),
-                 ([gate], h, cid, f"1=applied {SHA40}; 2=applied"),    # applied with no evidence
-                 ([gate], h, cid, "1=applied " + "b" * 40 + "; 2=rejected not needed because"),   # commit not found
-                 ([gate], h, cid, f"1=applied {SHA40}; 2=rejected no")):                 # reason too short
+                 ([gate], h, cid, f"1=applied {ev}"),                  # missing decision 2
+                 ([gate], h, cid, f"1=applied {ev}; 1=rejected twice over x"),   # duplicate index, missing 2
+                 ([gate], h, cid, f"1=applied {ev}; 2=rejected not needed because; 3=rejected out of range x"),
+                 ([gate], h, cid, f"1=applied {ev}; 2=applied"),       # applied with no evidence
+                 ([gate], h, cid, f"1=applied {SHA40}; 2=rejected not needed because"),   # bare commit, no path/hash
+                 ([gate], h, cid, f"1=applied {SHA40} {P}; 2=rejected not needed because"),   # partial: no hash
+                 ([gate], h, cid, f"1=applied {SHA40} {P} {'b'*64}; 2=rejected not needed because"),   # wrong hash
+                 ([gate], h, cid, f"1=applied {SHA40} other/file.json {D}; 2=rejected not needed because"),   # unrelated path
+                 ([gate], h, cid, f"1=applied {SHA40} ../x.json {D}; 2=rejected not needed because"),   # path traversal
+                 ([gate], h, cid, "1=applied " + "b" * 40 + f" {P} {D}; 2=rejected not needed because"),   # wrong/unrelated commit
+                 ([gate], h, cid, f"1=applied {ev}; 2=applied {ev}"),  # same proof reused for two fixes
+                 ([gate], h, cid, f"1=applied {ev}; 2=rejected no")):                 # reason too short
         with pytest.raises(o.Stop):
             rc.build({}, *args, verify=ok)
     assert rc.main({"GITHUB_ACTOR": "stranger", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_REF": o.MAIN_REF,
@@ -954,3 +962,21 @@ def test_manual_route_pass_pass_marker_only_in_settlement(monkeypatch):
     posts = [c[2]["body"] for c in calls if c[0] == "POST"]
     assert not any("zans-orch-correction:" in p for p in posts)
     assert f"<!-- {o.MARKER}:" not in posts[1] and f"<!-- {o.MARKER}:" in posts[2]
+
+
+def test_fix_evidence_checks_commit_path_and_file_hash(monkeypatch):
+    import base64
+    import hashlib
+    import orchestrator.receipt as rc
+    data = b'{"fixed": true}'
+    dg = hashlib.sha256(data).hexdigest()
+    def fake_gh(env, method, path, body=None):
+        if path.startswith("repos/r/commits/"):
+            return {"sha": SHA40, "files": [{"filename": "racing-review/x.json"}]}
+        return {"encoding": "base64", "content": base64.b64encode(data).decode()}
+    monkeypatch.setattr(o, "gh", fake_gh)
+    assert rc.fix_evidence_ok({}, "r", SHA40, "racing-review/x.json", dg)
+    assert not rc.fix_evidence_ok({}, "r", SHA40, "racing-review/x.json", "0" * 64)     # wrong hash
+    assert not rc.fix_evidence_ok({}, "r", SHA40, "other.json", dg)                    # commit did not change that path
+    monkeypatch.setattr(o, "gh", lambda *a, **k: (_ for _ in ()).throw(OSError("down")))
+    assert not rc.fix_evidence_ok({}, "r", SHA40, "racing-review/x.json", dg)           # provider/API failure fails closed

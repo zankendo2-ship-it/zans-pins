@@ -10,7 +10,7 @@ on:
         description: Full 64-character correction id from the same comment
         required: true
       decisions:
-        description: "Exactly one decision per fix, 1 to N, separated by semicolons: 'N=applied <40-hex commit sha>' or 'N=rejected <reason, 10+ chars>'"
+        description: "Exactly one decision per fix, 1 to N, separated by semicolons: 'N=applied <40-hex commit> <changed path> <sha256 of file at commit>' or 'N=rejected <reason, 10+ chars>'"
         required: true
 concurrency:
   group: zans-orchestrator

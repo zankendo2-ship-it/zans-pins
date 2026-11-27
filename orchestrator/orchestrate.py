@@ -674,7 +674,7 @@ def gate_lines(h, items):
             f"- Correction id: `{cid}` ({len(items)} fixes, listed above).",
             "- Close it only with the 'ZANS correction receipt' workflow (allowlisted actor, main branch) giving run "
             f"`{h}`, this correction id and exactly one decision per fix, numbered 1 to {len(items)}: "
-            "'N=applied <commit sha of the change>' or 'N=rejected <reason>'. Only that bot-posted receipt counts. "
+            "'N=applied <commit> <changed path> <sha256 of that file at the commit>' (bound proof, checked against the repo) or 'N=rejected <reason>'. Only that bot-posted receipt counts. "
             "No further paid run on any route until then.",
             f"<!-- {CORRECTION}:{h}:{cid} -->"]
 
