@@ -817,8 +817,10 @@ def test_receipt_needs_exactly_one_decision_per_fix_with_evidence():
     body = rc.build({}, [gate], h, cid, good, verify=ok)
     assert f"<!-- {o.FIXED}:{h}:{cid} -->" in body and f"<!-- {o.RECEIPT}:{h}:{cid} -->" not in body and "2 decisions" in body
     only_rej = rc.build({}, [gate], h, cid, "1=rejected not a real issue here; 2=rejected not needed because", verify=ok)
-    assert f"<!-- {o.RECEIPT}:{h}:{cid} -->" in only_rej          # nothing applied: nothing to re-review, gate closes
-    closed = {"user": {"login": o.TRUSTED_SETTLER}, "body": only_rej, "created_at": "2026-11-27T05:10:00Z"}
+    assert f"<!-- {o.RECEIPT}:{h}:{cid} -->" not in only_rej and f"<!-- {o.REJECTED}:{h}:{cid} -->" in only_rej   # rejection-only never closes
+    rej_only_c = {"user": {"login": o.TRUSTED_SETTLER}, "body": only_rej, "created_at": "2026-11-27T05:10:00Z"}
+    assert o.pending_corrections([gate, rej_only_c]) == [(h, cid)]                      # gate still open: every paid route stays blocked
+    closed = {"user": {"login": o.TRUSTED_SETTLER}, "body": f"<!-- {o.RECEIPT}:{h}:{cid} -->", "created_at": "2026-11-27T05:10:00Z"}
     fixed = {"user": {"login": o.TRUSTED_SETTLER}, "body": body, "created_at": "2026-11-27T05:10:00Z"}
     assert o.pending_corrections([gate, fixed]) == [(h, cid)]       # a fix receipt alone never closes the gate
     for args in (([gate, closed], h, cid, good),                       # already closed

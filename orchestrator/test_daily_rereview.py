@@ -142,7 +142,7 @@ def test_refusals_make_no_call():
     only_rej = rc.build({}, [comments[0]], H1, cid, "1=rejected not a real issue here", verify=None)
     for args in ((comments, "d" * 64, cid, fetch()), (comments, H1, "d" * 64, fetch()),
                  (comments, H1, cid, fetch(b"tampered")), (comments, H1, cid, fetch(V1)), ([comments[0]], H1, cid, fetch()),
-                 (comments + [bot(only_rej)], H1, cid, fetch())):
+                 ([comments[0], bot(only_rej)], H1, cid, fetch())):      # a rejection-only receipt is not a fix receipt: nothing to re-review
         with pytest.raises(rr.Refuse):
             rr.rereview(LIVE, args[0], args[1], args[2], args[3], GETTER, c, c, lambda b: None)
     assert not calls
@@ -237,3 +237,23 @@ def test_old_style_gate_items_are_recovered_only_when_they_hash_to_the_correctio
     assert o.gate_item_texts([tampered, old_gate], H1, cid) == {}
     spoof = {**summary, "user": {"login": "someone-else"}}
     assert o.gate_item_texts([spoof, old_gate], H1, cid) == {}
+
+
+def test_receipt_workflow_runs_the_independent_re_review_only_when_the_owner_variable_is_set():
+    import pathlib
+    wf = (pathlib.Path(__file__).parent.parent / ".github/workflows/zans-correction-receipt.yml").read_text()
+    step = wf[wf.index("Automatic independent re-review"):]
+    assert "vars.ZANS_ORCH_AUTO_REREVIEW == 'mock' || vars.ZANS_ORCH_AUTO_REREVIEW == 'live'" in step
+    assert "contains(inputs.decisions, '=applied')" in step                       # a rejection-only receipt never triggers a re-review
+    assert "ORCH_MODE: ${{ vars.ZANS_ORCH_AUTO_REREVIEW }}" in step and "python -m orchestrator.daily_rereview" in step
+    assert "ANTHROPIC_API_KEY: ${{ vars.ZANS_ORCH_AUTO_REREVIEW == 'live' && secrets.ANTHROPIC_API_KEY || '' }}" in step   # keys only when live
+    assert wf.index("Post receipt") < wf.index("Automatic independent re-review")  # receipt first, then the re-review reads it
+
+
+def test_chunked_item_answers_close_only_when_no_chunk_says_not_resolved():
+    items = [1, 2]
+    good = {"Claude": verdict("PASS", reasons=["[1/2] ITEM 1: RESOLVED a", "[1/2] ITEM 2: RESOLVED (not in this chunk)", "[2/2] ITEM 1: RESOLVED (not in this chunk)", "[2/2] ITEM 2: RESOLVED b"]),
+            "ChatGPT": verdict("PASS", reasons=["[1/2] ITEM 1: RESOLVED", "[2/2] ITEM 2: RESOLVED", "[1/2] ITEM 2: RESOLVED", "[2/2] ITEM 1: RESOLVED"])}
+    assert rr.items_resolved(good, items)
+    bad = {**good, "ChatGPT": verdict("PASS", reasons=["[1/2] ITEM 1: RESOLVED", "[2/2] ITEM 2: NOT RESOLVED", "[1/2] ITEM 2: RESOLVED"])}
+    assert not rr.items_resolved(bad, items)
