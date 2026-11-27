@@ -153,3 +153,16 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 - Jonbon v2: facts and contact sheet (46fbe5f, sha cbffe87e...) PASS; video REVISE (frame 3 superlative, AI disclosure conflict with Alex's AI-label-off rule, no MP4/audio transcript readable by ChatGPT). DRAFT / NOT BOOKED.
 - This file was copied to zans-social-notes (a3971828) and is NOT yet on main; a docs PR to main is open for Alex to merge.
 - 27 Nov racing handoff: due 08:50 UK; absence at 02:00 UTC is expected (ChatGPT amended its REJECT).
+
+### Amendment 27 Nov 02:25 UTC (ChatGPT 7207886394 on PR #44)
+- SEO v7 (commit 6eab092c, batch A 47,723 B sha ab870f90..., batch B 50,392 B sha 5db9cb8f..., apply_ready.json sha 51749651...): 26-listing structure valid; all 21 guide cancellation clauses say "expressly consented at checkout" plus acknowledgement. PASS for wording pending ChatGPT re-review. APPLY BLOCKED: Etsy checkout and order-confirmation email capturing both consent and acknowledgement is UNVERIFIED. Nothing applied to Etsy.
+- Jonbon v2 contact sheet (46fbe5f): sequence and end-card CTA PASS; frame 3 "BRITAIN'S BEST CHASER?" REVISE (unsupported superlative); realistic AI backgrounds need TikTok AIGC label or explicit disclosure, which conflicts with Alex's 25 Nov AI-label-off rule (his decision). DRAFT / NOT BOOKED; no MP4/audio delivered yet.
+- PR #43 rules edit (head 50510b12) NOT merged; awaiting Alex's decision on the "AI labels off" conflict.
+- Paid-workflow blockers: daily-slot conflict (separate live/racing/retro slots), completion markers posted before settlement, no internal correction handoff, racing uses a 16-character hash. Run 45908019497 is mock, zero paid calls, not operational. PR #42 (rounds input) open, needs Alex's merge.
+- 27 Nov racing handoff due 08:50 UK; absence at 02:15 is expected.
+
+### Amendment 27 Nov 04:30 UTC (ChatGPT 7209771658)
+- Jonbon v3 (contact sheet and transcripts at zans-social-notes 5008279): copy and end-card CTA PASS; frames 1-3 REJECT as reviewer advice only (not Alex's approval; AI-visuals reading differs from Alex's AI-labels-off rule, his call); frame 4 provenance REVISE; no MP4/audio readable by ChatGPT. Sent to the social thread. DRAFT / NOT BOOKED; 17:00 UK needs Alex's yes and music pick.
+- PR #45 (ChatGPT draft, global slot and settlement gating): head 9c90a196 had 168 pass / 2 fail (retro refusal message, settlement-marker test); correction 2cce2969 gives 170 pass (re-run here 04:26 UTC). Still REVISE, DRAFT, unmerged, inactive. Open: private Claude correction route and receipt, sha256 byte verification, per-listing result IDs, 64-hex racing fingerprint. PR #42 (rounds input) to be integrated with #45 after Alex decides one global paid slot; per-route slots not restored.
+- Racing handoff (racing-review/2026-11-27.json) and daily manifest absent at 04:14 and 04:26 UTC; window is future (08:50 UK), not a miss yet.
+- Metrics unchanged, no creative-attributed sales. No Etsy edits, bookings, paid calls or merges.
