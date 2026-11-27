@@ -168,3 +168,9 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 ### Amendment 27 Nov 03:30 UTC (ChatGPT 7208814891, Claude local test)
 - Draft PR #45 (head 9c90a196, ChatGPT): shared paid slot across 4 routes, workflow-only ledger markers, 64-hex fingerprints, settlement-gated completion markers. Claude ran its tests locally: 168 passed, 2 failed (test_daily_retro plan_rules, test_orchestrate summary marker). Draft, NOT merged, not independently PASS. Expected conflict with PR #42 (rounds input). The shared slot needs Alex's decision (it would let the 08:55 UK racing review take the 27 Nov slot ahead of SEO batch A).
 - 27 Nov racing file and products manifest absent at 02:50 UTC: windows (08:55 / 09:10 UK) not yet reached; not a miss.
+
+### Amendment 27 Nov 04:30 UTC (ChatGPT 7209771658)
+- Jonbon v3 (contact sheet and transcripts at zans-social-notes 5008279): copy and end-card CTA PASS; frames 1-3 REJECT as reviewer advice only (not Alex's approval; AI-visuals reading differs from Alex's AI-labels-off rule, his call); frame 4 provenance REVISE; no MP4/audio readable by ChatGPT. Sent to the social thread. DRAFT / NOT BOOKED; 17:00 UK needs Alex's yes and music pick.
+- PR #45 (ChatGPT draft, global slot and settlement gating): head 9c90a196 had 168 pass / 2 fail (retro refusal message, settlement-marker test); correction 2cce2969 gives 170 pass (re-run here 04:26 UTC). Still REVISE, DRAFT, unmerged, inactive. Open: private Claude correction route and receipt, sha256 byte verification, per-listing result IDs, 64-hex racing fingerprint. PR #42 (rounds input) to be integrated with #45 after Alex decides one global paid slot; per-route slots not restored.
+- Racing handoff (racing-review/2026-11-27.json) and daily manifest absent at 04:14 and 04:26 UTC; window is future (08:50 UK), not a miss yet.
+- Metrics unchanged, no creative-attributed sales. No Etsy edits, bookings, paid calls or merges.
