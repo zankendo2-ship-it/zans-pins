@@ -397,3 +397,32 @@ def test_schema_v3_needs_review_detail_or_explicit_null_from_29_nov():
     d["races"] = [{**full, **{k: None for k in r.V3_DETAIL_FIELDS}, "win_pick": None, "status": "no pick"}, ok | {"course": "B"}]
     r.validate(json.dumps(d).encode(), "2026-11-29")                      # an unpicked race may carry nulls
     r.validate(json.dumps({**d, "date": "2026-11-28", "frozen_at_utc": "2026-11-28T08:45:00Z", "races": [full]}).encode(), "2026-11-28")
+
+
+def test_schema_v3_values_are_checked_not_just_present():
+    d = json.loads(file_bytes(date="2026-11-29", frozen_at_utc="2026-11-29T08:45:00Z"))
+    ok = {**RACE, "second": "B", "data_pick": "A", "agent_b": None, "gemini_api": None, "data_gap": False, "price_move": None,
+          "rpr_pick": "A", "rpr_reason": None, "longshot": "X at 21.0", "zans_reasons": "top rated on course form",
+          "cautions": "none", "data_chance": 0.31, "best_price": 2.5}
+
+    def check(**chg):
+        d["races"] = [{**ok, **chg}]
+        r.validate(json.dumps(d).encode(), "2026-11-29")
+
+    check()
+    check(longshot={"name": "X", "price": 21.0})
+    check(best_price="2.5")
+    check(second="none", second_reason="only two runners were declared in this race")
+    check(rpr_pick="none", rpr_reason="no runner in this race has an RPR yet")
+    check(longshot="none", longshot_reason="no runner is priced at 14/1 or more")
+    for chg, why in (({"second": "none"}, "second"), ({"second": "N/A"}, "second"), ({"second": "x", "second_reason": "short"}, "second"),
+                     ({"rpr_pick": "none", "rpr_reason": None}, "rpr_pick"), ({"rpr_pick": "-", "rpr_reason": "tbc"}, "rpr_pick"),
+                     ({"longshot": "none"}, "longshot"), ({"longshot": "some horse"}, "longshot"),
+                     ({"longshot": {"name": "X", "price": 0.5}}, "longshot"), ({"longshot": True}, "longshot"),
+                     ({"best_price": True}, "best_price"), ({"best_price": "abc"}, "best_price"), ({"best_price": -2.0}, "best_price"),
+                     ({"best_price": 1.0}, "best_price"), ({"best_price": float("inf")}, "best_price"),
+                     ({"data_chance": "0.3"}, "data_chance"), ({"data_chance": True}, "data_chance"), ({"data_chance": 1.5}, "data_chance"),
+                     ({"data_chance": -0.1}, "data_chance"), ({"data_chance": float("nan")}, "data_chance")):
+        with pytest.raises(r.Refuse, match=why):
+            check(**chg)
+    check(sky_bet_price=None, best_price=None)             # no Sky price, nothing to compare
