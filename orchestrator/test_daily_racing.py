@@ -82,7 +82,7 @@ def test_global_paid_slot_blocks_products_and_racing_cross_route():
         b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [racing_slot], ENV, TODAY)
     with pytest.raises(o.Stop, match="MONTH"):
         r.plan(data, [], {**ENV, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)
-    big = [{"body": o.slot_tag("racing", "2026-11-%02d" % d, "%064x" % (d + 100), 1.0)} for d in range(1, 27)]
+    big = [{"user": BOT, "body": o.slot_tag("racing", "2026-11-%02d" % d, "%064x" % (d + 100), 1.0)} for d in range(1, 27)]
     with pytest.raises(o.Stop, match="MONTH"):
         r.plan(data, big, ENV, TODAY)
 
