@@ -7,8 +7,8 @@ Caption: A Christmas bauble for the racing fan in your family. Any name, any rac
 Hashtags: #christmasbaubles #horseracinggifts #personalisedbauble #racingsilks #christmasdecorations
 
 ## 2. Ascot Flat Beginner guide (2-ascot-guide-4x5.jpg)
-Source: Ascot Flat Beginner main photo v2 (etsy-seo/2026-11-23/new main photos v2 phone-safe). No page count on the image or in the caption. Not confirmed live.
-Caption: Know the course before the off. Our Ascot Flat Beginner guide explains the course map, which starting stalls do best, every type of ground and the trainers and jockeys to know. Instant PDF download, colour and print versions. Search ZANS Racing on Etsy. Which course should we cover next?
+Source: LIVE Etsy main photo for Ascot Flat Beginner (image 8968149183, Layout C, 2700x2025), cropped centre to 4:5, its own copper strips kept top and bottom. No page count on the image or in the caption.
+Caption: Ascot made simple. Our Ascot Flat Beginner guide explains the course map, which starting stalls do best, every type of ground and the trainers and jockeys to know. Instant PDF download, colour and print versions. Search ZANS Racing on Etsy. Which course should we cover next?
 Hashtags: #horseracing #ascot #racingguide #horseracingtips #racingforbeginners
 
 Suggested slots: item 1 tonight 17:00 if booked by then, item 2 tomorrow 12:30.
