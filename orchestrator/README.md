@@ -18,7 +18,7 @@
   - the first REJECT or BLOCKER stops the run at once, so the other reviewer is not called;
   - 1,500 output tokens per call, 120 s per call, 10 min per run;
   - **at most 1 paid run total per UTC day across manual/live, products, racing and retro routes** (one shared slot; any paid route blocks every other paid route for that UTC day). Alex's instruction is to gather the day's items into ONE batched run; USD 2.45 is reserved up front for the manual two-reviewer route, then settled at measured cost. Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` = 1 set explicitly; empty or invalid means 0 live runs. Raising the ceiling needs a code change and a review;
-  - **owner budgets:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (Alex approved `3`) and `ZANS_ORCH_MAX_USD_PER_MONTH` (Alex approved `10`). Missing, zero, negative or non-finite (`nan`, `inf`) values refuse live. Every call is priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price:
+  - **owner budgets:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (Alex approved `3`) and `ZANS_ORCH_MAX_USD_PER_MONTH` (Alex approved `25`). Missing, zero, negative or non-finite (`nan`, `inf`) values refuse live. Every call is priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price:
     - **before the run**, the worst case is worked out. The run is refused if that is over the per-run budget, or if it plus this month's reservations is over the monthly budget;
     - the full hard-cap worst run (**$2.45**) is **reserved in the slot comment** before any paid call, whatever the estimate, so failed runs count against the month;
     - **after the run** (finished or stopped by a cap), the workflow posts a settle comment with the measured cost: provider-reported tokens x list price x 1.25. The month then counts that measured amount even if it is above the reservation (flagged as an overrun that blocks further live runs). A run with any call missing usage data, an unknown model price, or a crash is never settled and keeps the full $2.45. Only settle comments by `github-actions[bot]` count;
@@ -56,7 +56,7 @@
 6. Only after ChatGPT and Claude both PASS the mock result, and Alex has approved a budget, set:
    - `ZANS_ORCH_MAX_RUNS_PER_DAY` = `1`;
    - `ZANS_ORCH_MAX_USD_PER_RUN` = `3` (the per-run budget Alex approved);
-   - `ZANS_ORCH_MAX_USD_PER_MONTH` = `10` (the monthly budget Alex approved; failed runs count);
+   - `ZANS_ORCH_MAX_USD_PER_MONTH` = `25` (the monthly budget Alex approved; failed runs count);
    - `ZANS_ORCH_ENABLED` = `true`.
 
    Then run one `live` test on a small synthetic text file. If the first call rejects a model setting, the run stops as BLOCKER (never PASS). That first call is the model compatibility check.
