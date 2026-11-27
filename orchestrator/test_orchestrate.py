@@ -9,6 +9,7 @@ SHA = "a" * 40
 URL = f"https://github.com/zankendo2-ship-it/zans-pins/blob/{SHA}/visibility/x.md?raw=true"
 PNG = f"https://github.com/zankendo2-ship-it/zans-pins/blob/{SHA}/visibility/x.png?raw=true"
 ENV = {"ZANS_ORCH_ENABLED": "true", "ZANS_ORCH_ALLOWED_ACTORS": "zankendo2-ship-it", "GITHUB_ACTOR": "zankendo2-ship-it"}
+BOT = {"login": "github-actions[bot]"}
 
 
 def V(v, ack="ok"):
@@ -79,7 +80,7 @@ def test_dedup_by_task_and_artifact_hash():
     assert len(h) == 64
     assert h == o.run_hash(" task ", [URL])
     assert h != o.run_hash("task", [URL.replace("a" * 40, "b" * 40)])
-    assert o.already_done([{"body": f"x <!-- zans-orch:{h} -->"}], h)
+    assert o.already_done([{"user": BOT, "body": f"x <!-- zans-orch:{h} -->"}], h)
     assert not o.already_done([{"body": "nothing"}], h)
 
 
@@ -200,13 +201,13 @@ def test_main_mock_end_to_end(monkeypatch, capsys):
 
 def test_main_skips_duplicate(monkeypatch, capsys):
     h = o.run_hash("review x", [URL], "mock")
-    monkeypatch.setattr(o, "gh", fake_github([], comments=[{"body": f"<!-- zans-orch:{h} -->"}]))
+    monkeypatch.setattr(o, "gh", fake_github([], comments=[{"user": BOT, "body": f"<!-- zans-orch:{h} -->"}]))
     assert o.main(MOCK_ENV) == 0 and "SKIPPED" in capsys.readouterr().out
 
 
 def test_mock_does_not_block_live_dedup():
     assert o.run_hash("t", [URL], "mock") != o.run_hash("t", [URL], "live")
-    assert not o.already_done([{"body": f"<!-- zans-orch:{o.run_hash('t', [URL], 'mock')} -->"}],
+    assert not o.already_done([{"user": BOT, "body": f"<!-- zans-orch:{o.run_hash('t', [URL], 'mock')} -->"}],
                               o.run_hash("t", [URL], "live"))
 
 
@@ -249,7 +250,7 @@ def test_request_cap_is_six():
 def test_daily_cap_counts_reserved_slots_not_summaries(monkeypatch, capsys):
     today = __import__("time").strftime("%Y-%m-%d", __import__("time").gmtime())
     # a failed live run leaves only its slot marker (no summary) - it must still count
-    slots = [{"body": o.slot_tag("live", today, "dead")}]
+    slots = [{"user": BOT, "body": o.slot_tag("live", today, "dead")}]
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
     env = LIVE_ENV
@@ -259,10 +260,10 @@ def test_daily_cap_counts_reserved_slots_not_summaries(monkeypatch, capsys):
 
 def test_global_paid_slot_counts_live_racing_and_retro_but_not_mock():
     today = "2026-11-25"
-    mock = {"body": o.slot_tag("mock", today, "a")}
-    live = {"body": o.slot_tag("live", today, "b")}
-    racing = {"body": o.slot_tag("racing", today, "c")}
-    retro = {"body": o.slot_tag("retro", today, "d")}
+    mock = {"user": BOT, "body": o.slot_tag("mock", today, "a")}
+    live = {"user": BOT, "body": o.slot_tag("live", today, "b")}
+    racing = {"user": BOT, "body": o.slot_tag("racing", today, "c")}
+    retro = {"user": BOT, "body": o.slot_tag("retro", today, "d")}
     assert o.runs_today([mock], today, "live") == 0
     assert o.runs_today([live], today, "racing") == 1
     assert o.runs_today([racing], today, "live") == 1
@@ -272,9 +273,18 @@ def test_global_paid_slot_counts_live_racing_and_retro_but_not_mock():
 
 def test_any_paid_slot_blocks_exact_fingerprint_retry_across_days():
     h = "a" * 64
-    old = {"body": o.slot_tag("racing", "2026-11-25", h)}
+    old = {"user": BOT, "body": o.slot_tag("racing", "2026-11-25", h)}
     assert o.attempted([old], h)
     assert not o.attempted([old], "b" * 64)
+
+def test_untrusted_comments_cannot_spend_or_dedup():
+    today, h = "2026-11-25", "c" * 64
+    fake = {"user": {"login": "stranger"},
+            "body": o.slot_tag("live", today, h, 99.0) + f" <!-- {o.MARKER}:{h} -->"}
+    assert o.runs_today([fake], today, "live") == 0
+    assert not o.attempted([fake], h)
+    assert o.reserved_this_month([fake], today[:7]) == 0
+    assert not o.already_done([fake], h)
 
 
 def test_slot_reserved_before_any_paid_call(monkeypatch):
@@ -466,7 +476,7 @@ def test_verdict_text_cleaned_so_escaped_size_is_bounded():
 def test_monthly_reservation_counts_failed_runs_and_blocks(monkeypatch, capsys):
     today = __import__("time").strftime("%Y-%m-%d", __import__("time").gmtime())
     # earlier live runs this month (one failed, no summary) already reserved $9.50
-    slots = [{"body": o.slot_tag("live", today[:8] + "01", "a", 4.75)}, {"body": o.slot_tag("live", today[:8] + "01", "b", 4.75)}]
+    slots = [{"user": BOT, "body": o.slot_tag("live", today[:8] + "01", "a", 4.75)}, {"user": BOT, "body": o.slot_tag("live", today[:8] + "01", "b", 4.75)}]
     assert o.reserved_this_month(slots, today[:7]) == 9.5
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
@@ -478,11 +488,11 @@ def test_monthly_reservation_counts_failed_runs_and_blocks(monkeypatch, capsys):
 
 
 def test_slot_records_reserved_amount_and_unknown_counts_as_worst():
-    assert o.reserved_this_month([{"body": o.slot_tag("live", "2026-11-03", "a", 1.5)}], "2026-11") == 1.5
-    legacy = [{"body": "<!-- zans-orch-slot:live:2026-11-03:abc -->"}]
+    assert o.reserved_this_month([{"user": BOT, "body": o.slot_tag("live", "2026-11-03", "a", 1.5)}], "2026-11") == 1.5
+    legacy = [{"user": BOT, "body": "<!-- zans-orch-slot:live:2026-11-03:abc -->"}]
     assert o.reserved_this_month(legacy, "2026-11") == o.WORST_RUN_USD
-    assert o.reserved_this_month([{"body": o.slot_tag("live", "2026-10-30", "a", 2)}], "2026-11") == 0
-    assert o.reserved_this_month([{"body": o.slot_tag("mock", "2026-11-03", "a", 2)}], "2026-11") == 0
+    assert o.reserved_this_month([{"user": BOT, "body": o.slot_tag("live", "2026-10-30", "a", 2)}], "2026-11") == 0
+    assert o.reserved_this_month([{"user": BOT, "body": o.slot_tag("mock", "2026-11-03", "a", 2)}], "2026-11") == 0
 
 
 def test_shared_rules_file_loaded():
@@ -544,9 +554,6 @@ def test_daily_live_ceiling_is_1_and_variable_can_only_lower_it():
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
-
-
-BOT = {"login": "github-actions[bot]"}
 
 
 def test_settled_run_counts_measured_cost_not_reservation():
