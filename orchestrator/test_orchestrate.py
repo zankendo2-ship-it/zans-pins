@@ -307,9 +307,9 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
     assert order.count(("model", "call")) == 1        # failed Claude call = BLOCKER, OpenAI never called
 
 
-def test_live_day_cap_hard_one_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 6          # TEMPORARY set-up ceiling (Alex 27 Nov 05:30); restore to 1 after set-up
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 6
+def test_live_day_cap_hard_three_and_variable_only_lowers():
+    assert o.MAX_LIVE_RUNS_PER_DAY == 3          # preserve the previously documented maximum; restore to 1 after set-up
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -553,9 +553,9 @@ def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypat
     assert req == 1 and "stop reason: max_tokens" in rounds[0]["Claude"]["reasons"][0]
 
 
-def test_daily_live_ceiling_is_1_and_variable_can_only_lower_it():
+def test_daily_live_ceiling_is_three_and_variable_can_only_lower_it():
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 6
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
 
 
