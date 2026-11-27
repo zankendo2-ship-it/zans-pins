@@ -722,13 +722,22 @@ def pending_corrections(comments):
 
 
 def gate_item_texts(comments, run, cid):
-    """{N: text} of the fixes the bot-posted gate listed (so a re-review can be asked about every original item)."""
-    for c in comments:
-        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
-            continue
+    """{N: text} of the fixes the gate listed (so a re-review can be asked about every original item). New gates list them
+    as '- Fix N:' lines. Gates opened before that change are recovered from the run's own bot summary ('- fix:' lines), and
+    only when those lines hash back to the gate's correction id, so a reworded or partial list is never accepted."""
+    bots = [c for c in comments if (c.get("user") or {}).get("login") == TRUSTED_SETTLER]
+    for c in bots:
         b = c.get("body") or ""
         if f"<!-- {CORRECTION}:{run}:{cid} -->" in b:
-            return {int(m.group(1)): m.group(2).strip() for m in re.finditer(r"^- Fix (\d+): (.+)$", b, re.M)}
+            found = {int(m.group(1)): m.group(2).strip() for m in re.finditer(r"^- Fix (\d+): (.+)$", b, re.M)}
+            if found:
+                return found
+    for c in bots:
+        b = c.get("body") or ""
+        if f"`{run}`" in b and "- fix: " in b:
+            fixes = [m.group(1).strip() for m in re.finditer(r"^\s+- fix: (.+)$", b, re.M)]
+            if fixes and correction_id(fixes) == cid:
+                return {i: x for i, x in enumerate(fixes, 1)}
     return {}
 
 

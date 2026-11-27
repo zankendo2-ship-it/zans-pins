@@ -225,3 +225,15 @@ def test_main_failed_settlement_post_leaves_gate_open_and_no_marker(monkeypatch)
     run_main(monkeypatch, store, verdict("PASS", reasons=resolved(1)), verdict("PASS", reasons=resolved(1)), fail_post_containing=o.SETTLE)
     assert (H1, cid) in o.pending_corrections(store)
     assert not any(f"<!-- {o.MARKER}:{H2} -->" in c["body"] for c in store)
+
+
+def test_old_style_gate_items_are_recovered_only_when_they_hash_to_the_correction_id():
+    fixes = ["label the price", "explain the null"]
+    cid = o.correction_id(fixes)
+    summary = bot(f"**ZANS daily racing review (live), 2026-11-27**: file sha256 `{H1}`\n\n- **Claude: REVISE** x\n  - fix: label the price\n  - fix: explain the null\n")
+    old_gate = bot(f"- Correction id: `{cid}` (2 fixes, listed above).\n<!-- {o.CORRECTION}:{H1}:{cid} -->")
+    assert o.gate_item_texts([summary, old_gate], H1, cid) == {1: "label the price", 2: "explain the null"}
+    tampered = bot(summary["body"].replace("explain the null", "ignore this"))
+    assert o.gate_item_texts([tampered, old_gate], H1, cid) == {}
+    spoof = {**summary, "user": {"login": "someone-else"}}
+    assert o.gate_item_texts([spoof, old_gate], H1, cid) == {}
