@@ -1,10 +1,10 @@
 import asyncio, os, shutil
 from playwright.async_api import async_playwright
 V='/mnt/project-files/bauble-style-mugs-v3'
-S=V+'/scene-photos'
+S='/tmp/claude-0/sp'
 FD='/mnt/attach/project-files/ascot-advanced-pro/shared-build/guide/fonts'
 OUT='/tmp/claude-0/shots/out'; os.makedirs(OUT,exist_ok=True)
-names=['Loussiemoo','Zoo Olympios','Rexs Romance']
+names=['Lossiemoo','Zoo Olympios','Rexs Romance']
 CSS=f"""
 @font-face{{font-family:Jost;font-weight:600;src:url('file://{FD}/Jost-600-normal.woff2')}}
 @font-face{{font-family:Jost;font-weight:700;src:url('file://{FD}/Jost-700-normal.woff2')}}
@@ -25,7 +25,7 @@ pages={}
 pages['01 cover']=page(f"""
 <div class='h' style='top:130px;font-size:150px'>FULLY CUSTOMISED</div>
 <div class='h w' style='top:300px;font-size:76px'>YOUR SILKS ON YOUR MUG</div>
-<div class='frame' style='left:845px;top:420px;width:1010px;height:1262px'><img src='file://{ph("Loussiemoo")}'></div>
+<div class='frame' style='left:845px;top:420px;width:1010px;height:1262px'><img src='file://{ph("Lossiemoo")}'></div>
 <div class='pill' style='top:1722px'>11oz WRAPAROUND PRINT</div>""")
 # 2 three examples
 fr=''.join(f"<div class='frame' style='left:{150+i*820}px;top:400px;width:760px;height:1100px'><img src='file://{ph(n)}'></div>" for i,n in enumerate(names))

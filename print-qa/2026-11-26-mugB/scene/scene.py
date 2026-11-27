@@ -43,5 +43,5 @@ def wrap(art_png, out):
 if __name__ == '__main__':
     Image.new('RGB', (2475, 1155), (255, 255, 255)).save('/tmp/claude-0/blank-art.png')
     o = os.path.join(OUT, 'BLANK master - scene.png'); wrap('/tmp/claude-0/blank-art.png', o); print(o)
-    for ref, n in (('loussiemoo', 'Loussiemoo'), ('zoo-olympios', 'Zoo Olympios'), ('rexs-romance', 'Rexs Romance')):
+    for ref, n in (('lossiemoo', 'Lossiemoo'), ('zoo-olympios', 'Zoo Olympios'), ('rexs-romance', 'Rexs Romance')):
         o = os.path.join(OUT, f'{n} bauble-style mug - scene.png'); wrap(os.path.join(ART, f'{ref}-bauble-style-mug-2475x1155.png'), o); print(o)

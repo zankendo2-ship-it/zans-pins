@@ -1,6 +1,6 @@
 import asyncio
 from playwright.async_api import async_playwright
-S='/mnt/project-files/bauble-style-mugs-v3/scene-photos'
+S='/tmp/claude-0/sp'
 FD='/mnt/attach/project-files/ascot-advanced-pro/shared-build/guide/fonts'
 CSS=f"""@font-face{{font-family:Jost;font-weight:700;src:url('file://{FD}/Jost-700-normal.woff2')}}
 *{{box-sizing:border-box;margin:0}}body{{width:1080px;height:1920px;background:#0C3726;font-family:Jost;font-weight:700;position:relative;overflow:hidden;color:#fff;text-align:center}}
@@ -10,9 +10,9 @@ CSS=f"""@font-face{{font-family:Jost;font-weight:700;src:url('file://{FD}/Jost-7
 def pg(b): return f"<html><head><style>{CSS}</style></head><body><div class='strip t'>ZANS RACING</div>{b}<div class='strip b'>ZANS RACING</div></body></html>"
 im=lambda n:f"<div class='f' style='top:380px;height:1200px'><img src='file://{S}/{n} mug - in the listing scene.jpg'></div>"
 sc={
-'1 hook (0-3s)':f"<div class='h' style='top:140px;font-size:110px'>YOUR SILKS.<br>ON A MUG.</div>"+im('Loussiemoo')+"<div class='h w' style='top:1640px;font-size:70px'>FULLY CUSTOMISED</div>",
+'1 hook (0-3s)':f"<div class='h' style='top:140px;font-size:110px'>YOUR SILKS.<br>ON A MUG.</div>"+im('Lossiemoo')+"<div class='h w' style='top:1640px;font-size:70px'>FULLY CUSTOMISED</div>",
 '2 examples (3-7s)':f"<div class='h' style='top:140px;font-size:100px'>ANY COLOURS.<br>ANY NAME.</div>"+im('Zoo Olympios')+"<div class='h w' style='top:1640px;font-size:70px'>YOUR DESIGN, YOUR MUG</div>",
-'3 more (7-11s)':f"<div class='h' style='top:140px;font-size:100px'>MAKE IT<br>YOURS</div>"+im('Loussiemoo')+"<div class='h w' style='top:1640px;font-size:70px'>11oz FULL WRAPAROUND</div>",
+'3 more (7-11s)':f"<div class='h' style='top:140px;font-size:100px'>MAKE IT<br>YOURS</div>"+im('Lossiemoo')+"<div class='h w' style='top:1640px;font-size:70px'>11oz FULL WRAPAROUND</div>",
 '4 end card (11-15s)':"<div class='h' style='top:560px;font-size:104px'>AVAILABLE NOW</div><div class='h w' style='top:760px;font-size:68px'>at zanshorseracing.co.uk</div><div class='h w' style='top:930px;font-size:52px'>Also on Etsy: ZANS Racing</div>",
 }
 async def m():

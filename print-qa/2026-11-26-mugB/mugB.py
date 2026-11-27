@@ -15,7 +15,7 @@ S = (W / MM) / (990 / 74.9) * 6.2 / 5.3   # 1.045: bauble design scaled up 17% s
 FACES = (W / 4, 3 * W / 4)
 APEX_MM = 6.2 + 24 * S / (W / MM) - 2 * S / (W / MM)   # centre of the button so its top edge is 6.2 mm from the top
 PANEL_CY = 600                          # name panel centre on the mug (bauble: 545 of 990)
-ITEMS = [('loussiemoo', 'ZBA-disc-F3B5C9-6CC24A-plain-F3B5C9', '#F3B5C9', 'lossiemouth'),
+ITEMS = [('lossiemoo', 'ZBA-disc-F3B5C9-6CC24A-plain-F3B5C9', '#F3B5C9', 'lossiemouth'),
          ('zoo-olympios', 'ZBA-spot_diag-F5D130-1C1C1C-plain-1C1C1C', '#1C1C1C', None),
          ('rexs-romance', 'ZBA-plain-1C4FA0-FFFFFF-plain-FFFFFF', '#FFFFFF', None)]
 
