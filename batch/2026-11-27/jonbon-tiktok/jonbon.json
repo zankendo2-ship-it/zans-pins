@@ -4,19 +4,22 @@
  "accent": "#F5D130",
  "frames": {
   "1": {
-   "bg": "number-one-post.png",
+   "bg": "jonbon-ai-gallop.webp",
    "pos": "top",
-   "html": "<div class='k' style='top:470px;color:ACC'>JONBON</div><div class='t' style='top:540px;font-size:100px;white-space:nowrap'>THREE SHLOER<br>CHASE<br>VICTORIES</div><div class='t' style='top:930px;font-size:84px;color:ACC'>AT CHELTENHAM</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:44px;letter-spacing:7px;color:ACC'>JONBON</div><div class='t' style='top:508px;font-size:84px;white-space:nowrap'>THREE SHLOER<br>CHASE VICTORIES</div><div class='t' style='top:694px;font-size:64px;white-space:nowrap;color:ACC'>AT CHELTENHAM</div>",
+   "dy": 400
   },
   "2": {
-   "bg": "crowd-roar.webp",
-   "pos": "bot",
-   "html": "<div class='k' style='top:1010px;color:ACC'>THE SHLOER CHASE VICTORIES</div><div class='t' style='top:1100px;font-size:150px'>2023<br>2024<br>2026</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+   "bg": "jonbon-ai-fence.webp",
+   "pos": "top",
+   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:36px;letter-spacing:7px;color:ACC'>THE SHLOER CHASE VICTORIES</div><div class='t' style='top:500px;font-size:76px;white-space:nowrap'>2023 \u00b7 2024 \u00b7 2026</div>",
+   "dy": 450
   },
   "3": {
-   "bg": "dawn-course.webp",
+   "bg": "jonbon-ai-hurdle.webp",
    "pos": "top",
-   "html": "<div class='k' style='top:470px;color:ACC'>THE HOME OF JUMP RACING</div><div class='t' style='top:570px;font-size:78px'>YOUR FAVOURITE<br>JONBON MOMENT?</div><div class='t' style='top:930px;font-size:60px;font-weight:600;color:ACC'>TELL US IN THE COMMENTS</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:38px;letter-spacing:7px;color:ACC'>THE HOME OF JUMP RACING</div><div class='t' style='top:502px;font-size:78px;white-space:nowrap'>YOUR FAVOURITE<br>JONBON MOMENT?</div><div class='t' style='top:676px;font-size:50px;white-space:nowrap;color:ACC'>TELL US IN THE COMMENTS</div>",
+   "dy": 450
   },
   "4": {
    "bg": "jonbon-bauble.png",

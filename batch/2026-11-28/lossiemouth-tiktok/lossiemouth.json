@@ -4,19 +4,22 @@
  "accent": "#F5D130",
  "frames": {
   "1": {
-   "bg": "dawn-course.webp",
+   "bg": "lossiemouth-grey-hurdle.webp",
    "pos": "top",
-   "html": "<div class='k' style='top:470px;color:ACC'>LOSSIEMOUTH</div><div class='t' style='top:550px;font-size:112px;white-space:nowrap'>2 CHAMPION<br>HURDLES</div><div class='t' style='top:800px;font-size:96px;color:ACC'>IN 2026</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:44px;letter-spacing:7px;color:ACC'>LOSSIEMOUTH</div><div class='t' style='top:508px;font-size:66px;white-space:nowrap'>2 CHAMPION HURDLES</div><div class='t' style='top:594px;font-size:84px;white-space:nowrap;color:ACC'>IN 2026</div>",
+   "dy": 420
   },
   "2": {
-   "bg": "festival-valley.webp",
-   "pos": "bot",
-   "html": "<div class='k' style='top:1010px;font-size:38px;letter-spacing:7px;color:ACC'>ONE MARE. TWO COURSES.</div><div class='t' style='top:1090px;font-size:92px'>CHELTENHAM<br>IN MARCH</div><div class='t' style='top:1300px;font-size:92px;color:ACC'>PUNCHESTOWN<br>IN MAY</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+   "bg": "lossiemouth-grey-gallop.webp",
+   "pos": "top",
+   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:36px;letter-spacing:7px;color:ACC'>ONE MARE. TWO COURSES.</div><div class='t' style='top:500px;font-size:62px;white-space:nowrap'>CHELTENHAM IN MARCH</div><div class='t' style='top:582px;font-size:62px;white-space:nowrap;color:ACC'>PUNCHESTOWN IN MAY</div>",
+   "dy": 380
   },
   "3": {
-   "bg": "crowd-roar.webp",
+   "bg": "lossiemouth-grey-behind.webp",
    "pos": "top",
-   "html": "<div class='k' style='top:470px;font-size:38px;letter-spacing:7px;color:ACC'>YOUR FAVOURITE JUMPS MARE?</div><div class='t' style='top:560px;font-size:92px'>HONEYSUCKLE<br>or<br>LOSSIEMOUTH?</div><div class='t' style='top:900px;font-size:50px;font-weight:600;color:ACC'>TELL US IN THE COMMENTS</div><div style='position:absolute;left:0;right:0;top:360px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:36px;letter-spacing:3px'>Illustration - not race footage</span></div>"
+   "html": "<div style='position:absolute;left:0;right:0;top:345px;text-align:center'><span style='display:inline-block;background:rgba(0,0,0,.55);padding:10px 26px;border-radius:8px;font-weight:600;font-size:34px;letter-spacing:3px'>Illustration - not race footage</span></div><div class='k' style='top:430px;font-size:36px;letter-spacing:7px;color:ACC'>YOUR FAVOURITE JUMPS MARE?</div><div class='t' style='top:500px;font-size:76px;white-space:nowrap'>HONEYSUCKLE<br>or LOSSIEMOUTH?</div><div class='t' style='top:670px;font-size:50px;white-space:nowrap;color:ACC'>TELL US IN THE COMMENTS</div>",
+   "dy": 450
   },
   "4": {
    "bg": "lossiemouth-bauble.png",

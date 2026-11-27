@@ -394,3 +394,19 @@ New tool `templates/tiktok_bands.py`: cap colour band directly under the top met
 - Lossiemouth v2.4 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.4-DRAFT.mp4` sha256 `d95b98c5553bbb71c2338411263b7d2d4f6218bed7b8b7094780b88c6fa60d01`
 
 Nothing booked.
+
+## REVIEW REQUEST - TikTok videos with AI-made horses + silks bands: Jonbon v5 (Fri 17:00) and Lossiemouth v2.5 (Sat 12:30). Alex asked for this to go to Claude for review FIRST (27 Nov).
+
+What Alex asked for: put actual horses in (AI-made), silks colours band at the bottom and cap colour band at the top on every post, Lossiemouth in it. He rejected my first Lossiemouth scenes: wrong horse colour.
+What changed: 3 AI-made racing scenes per horse (FLUX Krea, 5-part prompts, 864x1536, 30 steps, no text/logos) used on cards 1-3 with the text moved into the sky above the horse; card 4 still the bauble. Silks bands from new `templates/tiktok_bands.py` (cap colour under the top strip, silks above the bottom strip) on all 4 cards. Voice, music, facts, caption unchanged. Metal strips on top. Scenes in each post's `scenes/` folder; seeds: Jonbon 1144765813 (gallop), 508615146 (hurdle), fence image seed 1144765812 (file `jonbon-ai-fence.webp`); Lossiemouth 1688785574 (hurdle), 1611543074 (gallop), 2014734198 (from behind).
+COAT COLOURS (checked today): Lossiemouth = GREY (Wikipedia, Irish Racing 'the beautiful grey', Sky Sports; my first set was bay = wrong, binned, now grey mare). Jonbon = bay gelding per ONE named source (Sky Sports horse profile); a 2nd named source not yet found. White marking on the face is not confirmed for either.
+SILKS: Lossiemouth pink with green spots, pink cap (posts.json, Alex's designer colours). Jonbon green with yellow hoops, white cap: owner colours 2 named sources (Sporting Life, Horse & Hound); white cap still unconfirmed. Jonbon scene hoops: gallop and fence images show clean yellow hoops; the third image (`jonbon-ai-hurdle.webp`) shows ring shapes on the chest, a weaker silks match: reviewer to judge or tell me to regenerate.
+KNOWN FLAGS: (1) AI jockeys' faces are partly visible under goggles (generic, not a real person); (2) tiny garbled lettering on saddle cloths; (3) several hooves are cropped by the bottom band; (4) the label 'Illustration - not race footage' stays on cards 1-3; (5) ChatGPT's relayed 'no-AI social rule' is not something Alex has said to me: he told me today to use AI-made horses; (6) the mixed-audio transcripts still vary on 'Zans Racing' (Zan's / Zann's). TikTok word scan not re-run since the card text was re-authored: same words, new line breaks.
+Alex has NOT approved these. Nothing is booked.
+
+- Jonbon v5 A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v5-DRAFT.mp4` sha256 `c478ff5748c4732caf63c8d226c3a8b1c3d4c5969cda397b669610cfa9a0e80a`
+- Jonbon v5 B: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v5-DRAFT.mp4` sha256 `72b4d65a899b99cee354059e58ddd797d686674132eb540401037b48e09f0066`
+- Jonbon v5 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v5-DRAFT.mp4` sha256 `dda4048746c6934001d7db1da3f084f9a6b8642a3be4a19db48609e606b63d19`
+- Lossiemouth v2.5 A: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.5-DRAFT.mp4` sha256 `839c131975956939a012de210fa7a4378dcaf1c0fc9526cc866e977d6b042f24`
+- Lossiemouth v2.5 B: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.5-DRAFT.mp4` sha256 `42cba98e3142a5745f60491cb9df18ba10359d5a41ddac877be7285719a56686`
+- Lossiemouth v2.5 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.5-DRAFT.mp4` sha256 `55a670028f1ab557e206126c77eb89402e7c370779b920576fd81be1b5dcec12`
