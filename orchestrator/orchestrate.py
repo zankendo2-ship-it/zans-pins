@@ -622,6 +622,10 @@ def combined_fixes(rounds, limit=20):
 CORRECTION = "zans-orch-correction"
 RECEIPT = "zans-orch-receipt"
 CORRECTION_RE = re.compile(r"<!-- " + CORRECTION + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
+FIXED = "zans-orch-fixed"        # receipt with applied fixes: does NOT close the gate; only a PASS/PASS re-review does
+PARENT = "zans-orch-parent"      # a re-review that failed opened a new gate whose parent is the older gate
+FIXED_RE = re.compile(r"<!-- " + FIXED + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
+PARENT_RE = re.compile(r"<!-- " + PARENT + r":([0-9a-f]{64}):([0-9a-f]{64}):([0-9a-f]{64}):([0-9a-f]{64}) -->")
 RECEIPT_RE = re.compile(r"<!-- " + RECEIPT + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
 
 
@@ -674,7 +678,7 @@ def gate_lines(h, items):
             f"- Correction id: `{cid}` ({len(items)} fixes, listed above).",
             "- Close it only with the 'ZANS correction receipt' workflow (allowlisted actor, main branch) giving run "
             f"`{h}`, this correction id and exactly one decision per fix, numbered 1 to {len(items)}: "
-            "'N=applied <commit sha of the change>' or 'N=rejected <reason>'. Only that bot-posted receipt counts. "
+            "'N=applied <commit> <changed path> <sha256 of that file at the commit>' (bound proof, checked against the repo) or 'N=rejected <reason>'. Only that bot-posted receipt counts. "
             "No further paid run on any route until then.",
             f"<!-- {CORRECTION}:{h}:{cid} -->"]
 
@@ -716,8 +720,25 @@ def pending_corrections(comments):
     return list(opened)
 
 
-def require_no_pending_corrections(comments):
-    if pending_corrections(comments):
+def gate_chain(comments, run, cid):
+    """This gate plus every older gate it descends from (bot-posted parent markers only): a PASS/PASS re-review of the
+    corrected artifact closes the whole chain, never a sibling gate."""
+    parents = {}
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        for m in PARENT_RE.finditer(c.get("body") or ""):
+            parents[(m.group(1), m.group(2))] = (m.group(3), m.group(4))
+    chain, k = [], (run, cid)
+    while k and k not in chain and len(chain) < 20:
+        chain.append(k)
+        k = parents.get(k)
+    return chain
+
+
+def require_no_pending_corrections(comments, allow=None):
+    pend = [k for k in pending_corrections(comments) if k != allow]
+    if pend:
         raise Stop("STOPPED: an earlier run has a correction gate with no bot-posted receipt. Close it with the "
                    "correction receipt workflow first; no paid run on any route until then.")
 
