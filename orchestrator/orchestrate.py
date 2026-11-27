@@ -125,7 +125,8 @@ def runs_today(comments, today, mode):
 
 def attempted(comments, h):
     """Any reserved slot for this exact fingerprint blocks a retry, even on a later UTC day."""
-    return any(m.group(3) == h for mode_ in PAID_MODES for m in _slots(comments, mode_))
+    return any(m.group(3) == h or (len(m.group(3)) == 16 and h.startswith(m.group(3)))
+               for mode_ in PAID_MODES for m in _slots(comments, mode_))
 
 
 SETTLE = "zans-orch-settle"
