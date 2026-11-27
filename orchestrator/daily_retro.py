@@ -1,5 +1,5 @@
 """ONE-OFF retrospective review of the 26 Nov 2026 racing day (Alex, 26 Nov 20:31 UTC: "I want it doing now to see how you
-work together"). Manual workflow_dispatch only. Three paid calls, no retries, own daily slot (route 'retro'), shared monthly cap:
+work together"). Manual workflow_dispatch only. Three paid calls, no retries, one shared daily paid slot across all routes, shared monthly cap:
   1. Claude: retrospective findings on the pinned, settled text file.
   2. OpenAI: challenges Claude's conclusions and gives its own (sees the file and Claude's reply).
   3. Claude: answers the challenge, conceding or defending each point (sees both replies, not the file again).
@@ -99,12 +99,12 @@ def step_bounds(text):
 
 def plan(data, expected_sha, comments, env, today):
     text = validate(data, expected_sha)
-    h = hashlib.sha256(data).hexdigest()[:16]
+    h = hashlib.sha256(data).hexdigest()
     if env.get("ORCH_MODE", "mock") != "live":
         return {"hash": h, "reserve": worst_case_usd(text), "text": text, "sha256": expected_sha}
     if today != ALLOWED_DATE:
         raise o.Stop(f"REFUSED: this one-off review is only for {ALLOWED_DATE} (UTC).")
-    if o.already_done(comments, h) or any(m.group(3) == h for m in o._slots(comments, "retro")):
+    if o.already_done(comments, h) or o.attempted(comments, h):
         raise o.Stop("STOPPED: this exact file was already attempted (slot used); no automatic paid retry.")
     if o.runs_today(comments, today, "retro") >= o.day_cap(env, "retro"):
         raise o.Stop("STOPPED: the one-off retrospective run is already used.")
@@ -142,8 +142,7 @@ def ask(env, who, fn, text):
 
 
 def summary(p, today, steps, mode):
-    marker = f"<!-- {o.MARKER}:{p['hash']} -->" if mode == "live" and o.RUN_COST["complete"] and len(steps) == 3 else ""
-    lines = [marker, f"**ZANS one-off retrospective review of 26 Nov racing ({mode})**: file sha256 `{p['sha256']}`", ""]
+    lines = [f"**ZANS one-off retrospective review of 26 Nov racing ({mode})**: file sha256 `{p['sha256']}`", ""]
     if mode != "live":
         lines += ["**SYNTHETIC MOCK: plumbing check only; no provider was called and there is no review.**", ""]
     elif not o.RUN_COST["complete"] or len(steps) < 3:
@@ -216,11 +215,12 @@ def main(env=None):
         post = lambda body: o.gh(env, "POST", f"repos/{repo}/issues/{issue}/comments", {"body": body})  # noqa: E731
         claude, openai = (o.call_claude, o.call_openai) if mode == "live" else (None, None)
         try:
-            _, h, reserve, bad = run(env, data, env.get("RETRO_SHA256", "").strip(), comments, today, claude, openai, post)
+            steps, h, reserve, bad = run(env, data, env.get("RETRO_SHA256", "").strip(), comments, today, claude, openai, post)
         except Refuse as r:
             raise o.Stop("REFUSED: " + str(r))
         if mode == "live":
-            o.settle(env, repo, issue, today, h, reserve)
+            markers = [f"<!-- {o.MARKER}:{h} -->"] if len(steps) == 3 and not bad else []
+            o.settle(env, repo, issue, today, h, reserve, completion_markers=markers)
         print("done: retrospective " + ("had a failed call" if bad else "complete"))
         return 1 if bad else 0
     except o.Stop as s:
