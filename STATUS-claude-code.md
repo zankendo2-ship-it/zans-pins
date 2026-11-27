@@ -306,3 +306,8 @@ Files (pinned links need the commit hash after push):
   transcript: Lossiemouth, two Champion Hurdles in 2026. Cheltenham in March, Punchestown in May. Honeysuckle or Lossiemouth, who's the best jumps mare of all time? Tell us in the comments. Want a pink and green spot silks bauble with any name on it? Design yours, and search Zan's Racing on Etsy. Wishing you a merry Christmas.
 
 Nothing booked. Waiting for Alex's music pick and his yes.
+
+Pinned links (commit e1807c533227b02982f0a84d5adf4f3f28d4b479):
+- A: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/e1807c533227b02982f0a84d5adf4f3f28d4b479/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.1-DRAFT.mp4
+- B: .../e1807c533227b02982f0a84d5adf4f3f28d4b479/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.1-DRAFT.mp4
+- C: .../e1807c533227b02982f0a84d5adf4f3f28d4b479/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.1-DRAFT.mp4
