@@ -807,3 +807,25 @@ def test_temporary_setup_ceiling_allows_three_paid_runs_not_four():
     assert o.runs_today(slots, today, "live") == 2 < o.day_cap(env, "live")       # a third is allowed
     slots.append({"user": {"login": o.TRUSTED_SETTLER}, "body": o.slot_tag("retro", today, "f" * 64, 0.5)})
     assert o.runs_today(slots, today, "live") >= o.day_cap(env, "live")           # a fourth is refused
+
+
+def test_failed_settle_post_keeps_reservation_and_emits_no_marker(capsys):
+    o.RUN_COST.update(usd=0.5, complete=True)
+    orig = o.gh
+
+    def boom(env, method, path, body=None):
+        raise OSError("network down")
+    try:
+        o.gh = boom
+        ok = o.settle({}, "r/x", "26", "2026-11-27", "abc", 2.45, completion_markers=["<!-- zans-orch:abc -->"])
+    finally:
+        o.gh = orig
+    assert ok is False and "full reservation stays" in capsys.readouterr().out
+
+
+def test_overrun_blocks_later_live_runs_that_month():
+    over = {"user": {"login": o.TRUSTED_SETTLER}, "body": o.settle_tag("2026-11-27", "f" * 64, 5.0, over=True)}
+    assert o.overruns([over], "2026-11")
+    assert not o.overruns([over], "2026-12")
+    spoof = {"user": {"login": "someone"}, "body": o.settle_tag("2026-11-27", "f" * 64, 5.0, over=True)}
+    assert not o.overruns([spoof], "2026-11")

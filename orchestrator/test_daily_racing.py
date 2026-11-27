@@ -17,10 +17,16 @@ RACE = {"time": "13:00", "course": "Ascot", "win_pick": "A", "confidence": "8", 
         "best_price": 2.5, "no_sky_price": False, "data_pick": "A", "agent_b": None, "gemini_api": None}
 
 
+import hashlib
+SRCS = {"sent/3_d0_morning_0845/predictions.json": b'{"p": 1}', "sent/3_d0_morning_0845/betslip.json": b'{"b": 2}'}
+SOURCES = [{"path": k, "sha256": hashlib.sha256(v).hexdigest()} for k, v in SRCS.items()]
+GETTER = lambda commit, path: SRCS[path]   # noqa: E731
+
+
 def file_bytes(**kw):
     d = {"date": TODAY, "frozen_at_utc": TODAY + "T08:45:00Z", "built_utc": TODAY + "T08:50:00Z", "pack": "3_d0_morning_0845",
-         "pack_manifest_combined_sha256": "a" * 64, "racing_branch_commit": "b" * 40,
-         "races": [RACE]}
+         "pack_manifest_combined_sha256": r.combined_sha256(SOURCES), "racing_branch_commit": "b" * 40,
+         "sources": SOURCES, "races": [RACE]}
     d.update(kw)
     return json.dumps(d).encode()
 
@@ -93,7 +99,7 @@ def test_global_paid_slot_blocks_products_and_racing_cross_route():
 def test_e2e_two_calls_slot_first_settle_and_advisory_summary(monkeypatch):
     posted = []
     claude, openai = setup()
-    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append)
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append, GETTER)
     assert not bad and set(v) == {"Claude", "ChatGPT"} and o.SLOT in posted[0] and ":racing:" in posted[0]
     assert len(h) == 64 and h in posted[0]
     assert "never changes a pick" in posted[1] and "HOLD" not in posted[1] and "INDEPENDENT calls" in posted[1]
@@ -113,26 +119,26 @@ def test_first_failure_stops_before_the_second_provider_and_holds():
         raise OSError("net")
     _, openai = setup()
     o2 = lambda e, t: calls.append("openai") or openai(e, t)   # noqa: E731
-    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, boom, o2, posted.append)
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, boom, o2, posted.append, GETTER)
     assert bad and set(v) == {"Claude"} and calls == ["claude"] and o.RUN_COST["complete"] is False
     assert "HOLD" in posted[1] and f"<!-- {o.MARKER}:" not in posted[1]
     posted2 = []
     claude, bad_openai = setup()[0], (lambda e, t: (_ for _ in ()).throw(OSError("x")))
-    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, bad_openai, posted2.append)
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, claude, bad_openai, posted2.append, GETTER)
     assert bad and v["ChatGPT"]["verdict"] == "BLOCKER" and "HOLD" in posted2[1]
 
 
 def test_unverified_served_model_holds():
     posted = []
     claude, openai = setup(model_c="unverified:other")
-    v, *_ = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append)
+    v, *_ = r.run(ENV, file_bytes(), [], TODAY, claude, openai, posted.append, GETTER)
     assert o.RUN_COST["complete"] is False and "HOLD" in posted[1] and set(v) == {"Claude"}   # second provider not called
 
 
 def test_mock_is_synthetic_and_reserves_nothing(monkeypatch):
     monkeypatch.setattr(o, "_post", lambda *a, **k: pytest.fail("network in mock"))
     posted = []
-    v, h, reserve, bad = r.run({**ENV, "ORCH_MODE": "mock"}, file_bytes(), [], TODAY, None, None, posted.append)
+    v, h, reserve, bad = r.run({**ENV, "ORCH_MODE": "mock"}, file_bytes(), [], TODAY, None, None, posted.append, GETTER)
     assert reserve == 0.0 and v == {} and len(posted) == 1 and "SYNTHETIC MOCK" in posted[0]
     assert o.SLOT not in posted[0] and f"<!-- {o.MARKER}" not in posted[0]     # no slot, no dedup marker
 
@@ -143,7 +149,13 @@ def test_scheduled_main_reads_file_at_resolved_sha_and_exits_nonzero_on_failure(
     monkeypatch.setattr(r.time, "strftime", lambda *a: TODAY)
     monkeypatch.setattr(o, "uk_window_ok", lambda *a, **k: True)
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"sha": sha} if m == "GET" else (posts.append(body["body"]) or {}))
-    monkeypatch.setattr(o, "_get_bytes", lambda url, n: (seen.append(url), file_bytes())[1])
+    def fetch(url, n):
+        for path, body in SRCS.items():     # pack source files, fetched at the commit named in the sealed file
+            if url == f"https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/{'b' * 40}/{path}":
+                return body
+        seen.append(url)
+        return file_bytes()
+    monkeypatch.setattr(o, "_get_bytes", fetch)
     monkeypatch.setattr(o, "comments_since", lambda *a: [])
     claude, _ = setup()
 
@@ -188,7 +200,7 @@ def test_claude_reject_makes_no_second_call():
     calls, posted = [], []
     claude, openai = setup()
     rej = lambda e, t: (claude(e, t), json.dumps({"ack": "ok", "verdict": "REJECT", "reasons": ["bad"], "fixes": []}))[1]  # noqa: E731
-    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, rej, lambda e, t: calls.append("openai") or openai(e, t), posted.append)
+    v, h, reserve, bad = r.run(ENV, file_bytes(), [], TODAY, rej, lambda e, t: calls.append("openai") or openai(e, t), posted.append, GETTER)
     assert calls == [] and set(v) == {"Claude"} and bad
 
 
@@ -210,7 +222,7 @@ def test_real_racing_exporter_fixture_passes_consumer_offline_zero_provider_call
     boom = lambda *a, **k: pytest.fail("provider call in an offline mock")   # noqa: E731
     posted = []
     env = {**ENV, "ORCH_MODE": "mock"}
-    v, h, reserve, bad = r.run(env, raw, [], "2026-11-26", boom, boom, posted.append)
+    v, h, reserve, bad = r.run(env, raw, [], "2026-11-26", boom, boom, posted.append, GETTER)
     assert v == {} and len(posted) == 1 and "SYNTHETIC MOCK" in posted[0]
     p = r.plan(raw, [], env, "2026-11-26")
     assert len(json.loads(raw)["races"]) == 35 and p["prompt"]
@@ -230,3 +242,20 @@ def test_mock_main_real_fixture_no_provider_calls(monkeypatch):
            "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_EVENT_NAME": "workflow_dispatch"}
     assert r.main(env) == 0
     assert len(posts) == 1 and "SYNTHETIC MOCK" in posts[0] and o.SLOT not in posts[0]
+
+
+def test_source_bytes_and_combined_hash_are_verified_before_any_slot():
+    assert r.verify_sources(file_bytes(), GETTER) == 2
+    for bad in (file_bytes(sources=None), file_bytes(sources=[]),
+                file_bytes(pack_manifest_combined_sha256="0" * 64),
+                file_bytes(sources=[{**SOURCES[0], "sha256": "0" * 64}, SOURCES[1]]),
+                file_bytes(sources=[{**SOURCES[0], "path": "../x"}, SOURCES[1]]),
+                file_bytes(sources=[SOURCES[0], SOURCES[0]])):
+        with pytest.raises(r.Refuse):
+            r.verify_sources(bad, GETTER)
+    with pytest.raises(r.Refuse):
+        r.verify_sources(file_bytes(), lambda c, p: b"tampered")
+    posted = []
+    with pytest.raises(r.Refuse):   # live run with tampered bytes: refused before the slot comment, zero calls
+        r.run(ENV, file_bytes(), [], TODAY, None, None, posted.append, lambda c, p: b"tampered")
+    assert posted == []
