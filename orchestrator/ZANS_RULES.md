@@ -18,7 +18,8 @@ Public repo: no customer data, addresses, order IDs or keys belong here or in an
 - Brand: ZANS Racing Tools & Gifts. House style: racing green and gold.
 - Never name racehorse owners. No Juddmonte silks. Famous silks colours are otherwise allowed, with no names on products.
 - No betting tips. No "gamble responsibly" wording on Etsy. No "For adults aged 18 and over" or any 18+ wording in Etsy-facing text (owner checklist, #26).
-- No AI mentions added to descriptions, and AI labels are off on social posts.
+- Etsy AI transparency: preserve existing AI disclosures; disclose seller-prompted AI creations and AI-edited listing images wherever Etsy requires it. Do not add unnecessary AI claims or remove required disclosures.
+- TikTok AI transparency: do not default to labels OFF. Label AI-generated content containing realistic images, audio or video as TikTok requires; follow current guidance for clearly stylised/non-realistic content.
 - TikTok: never say "link in bio". Say "Search ZANS Racing on Etsy".
 - Thumbnails: one bold line readable at phone-tile size. Guides are always ordered Beginner > Advanced > Pro.
 - Jockey faces are hidden by pose only, never blurred and never AI faces.
