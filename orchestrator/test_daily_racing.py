@@ -67,14 +67,14 @@ def test_empty_picks_make_no_call():
 
 def test_global_paid_slot_blocks_products_and_racing_cross_route():
     data = file_bytes()
-    batch_slot = {"body": o.slot_tag("live", TODAY, "b" * 64, 0.3)}
+    batch_slot = {"user": BOT, "body": o.slot_tag("live", TODAY, "b" * 64, 0.3)}
     with pytest.raises(o.Stop, match="shared one paid run"):
         r.plan(data, [batch_slot], ENV, TODAY)
     h = r.fingerprint(data)
     assert len(h) == 64
     with pytest.raises(r.Skip):
-        r.plan(data, [{"body": o.slot_tag("racing", TODAY, h, 0.7)}], ENV, TODAY)
-    racing_slot = {"body": o.slot_tag("racing", TODAY, "c" * 64, 0.7)}
+        r.plan(data, [{"user": BOT, "body": o.slot_tag("racing", TODAY, h, 0.7)}], ENV, TODAY)
+    racing_slot = {"user": BOT, "body": o.slot_tag("racing", TODAY, "c" * 64, 0.7)}
     with pytest.raises(o.Stop, match="shared one paid run"):
         r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [racing_slot], ENV, TODAY)
     import orchestrator.daily_batch as b
@@ -191,8 +191,8 @@ def test_claude_reject_makes_no_second_call():
 
 def test_mock_ignores_paid_ledger_caps_and_slots(monkeypatch):
     import orchestrator.daily_batch as b
-    full = [{"body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}, {"body": o.slot_tag("live", TODAY, "abc123", 0.3)}]
-    big = [{"body": o.slot_tag("racing", "2026-11-%02d" % d, "%x" % (d + 100), 1.0)} for d in range(1, 27)]
+    full = [{"user": BOT, "body": o.slot_tag("racing", TODAY, "deadbeef", 0.7)}, {"user": BOT, "body": o.slot_tag("live", TODAY, "abc123", 0.3)}]
+    big = [{"user": BOT, "body": o.slot_tag("racing", "2026-11-%02d" % d, "%064x" % (d + 100), 1.0)} for d in range(1, 27)]
     env = {**ENV, "ORCH_MODE": "mock", "ZANS_ORCH_MAX_USD_PER_MONTH": "0.1"}
     p = r.plan(file_bytes(), full + big, env, TODAY)
     assert p["hash"] and p["prompt"]
