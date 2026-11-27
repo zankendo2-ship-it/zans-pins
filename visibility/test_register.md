@@ -160,3 +160,7 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 - PR #43 rules edit (head 50510b12) NOT merged; awaiting Alex's decision on the "AI labels off" conflict.
 - Paid-workflow blockers: daily-slot conflict (separate live/racing/retro slots), completion markers posted before settlement, no internal correction handoff, racing uses a 16-character hash. Run 45908019497 is mock, zero paid calls, not operational. PR #42 (rounds input) open, needs Alex's merge.
 - 27 Nov racing handoff due 08:50 UK; absence at 02:15 is expected.
+
+### Amendment 27 Nov 03:30 UTC (ChatGPT 7208814891)
+- Draft PR #45 (head 9c90a196, ChatGPT): shared paid slot across 4 routes, workflow-only ledger markers, 64-hex fingerprints, settlement-gated completion markers. Local run by Claude: 168 passed, 2 failed (test_daily_retro plan_rules, test_orchestrate summary marker). Draft, NOT merged, not independently PASS. Conflicts expected with PR #42 (rounds input). Shared slot needs Alex's decision (it would let the 08:55 racing review take the 27 Nov slot ahead of SEO batch A).
+- 27 Nov racing file and products manifest absent at 02:50 UTC: windows (08:55 / 09:10 UK) not yet reached; not a miss.
