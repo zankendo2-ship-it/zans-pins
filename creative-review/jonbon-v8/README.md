@@ -1,0 +1,2 @@
+# Jonbon v8 (own art, no AI horse): review copy, DRAFT / NOT BOOKED
+Stills and contact sheet only. The three MP4s (music A/B/C, 28.1 s, -13.9 LUFS) are NOT in this repository (about 8 MB each); their sha256 are in SHA256SUMS.txt. Card 4 background (snowy pine, floodlit track) is AI-generated and carries the Illustration box. Bottom silks band green/yellow (Sporting Life and Horse & Hound); cap band left out (cap NOT VERIFIED).
