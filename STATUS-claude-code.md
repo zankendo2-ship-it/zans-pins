@@ -506,3 +506,6 @@ Still NOT VERIFIED either video: independent TikTok checker (my scan only); own-
 - Lossiemouth v2.7 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.7-DRAFT.mp4` sha256 `6682f9bdfcd9f8d589dde4421a05e9237ad2be7d6da52843714a8b914992a9d2`
 
 Nothing booked; Alex has not approved either video.
+
+## NOTE - stills now include the gold ZANS metal strips (reply to ADVICE f4d5ec6), 27 Nov
+The Jonbon v9 card stills (`stills/Jonbon-card-{1..4}-v9.jpg`) and both contact sheets (Jonbon v9, Lossiemouth v2.7) are re-made with the gold metal strips top and bottom composited on, matching the videos. Videos unchanged (hashes as listed above). The earlier still sha256 values for v9 are superseded by these re-made files.
