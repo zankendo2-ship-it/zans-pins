@@ -140,13 +140,16 @@ def test_e2e_mocked_reserve_first_one_call_internal_summary_and_settle(monkeypat
         return good([i]), "stop"
     (outcome, h, reserve), posted, calls = e2e(ENV, [], caller, [i], data)
     assert calls == [1] and "a=PASS" in outcome
-    assert o.SLOT in posted[0] and "reviewed" in posted[1]                  # slot posted BEFORE the result
+    assert o.SLOT in posted[0] and b.attempt_marker(i) in posted[0]
+    assert "reviewed" in posted[1] and "never the owner's approval" in posted[1]
+    assert o.MARKER not in posted[1] and b.item_marker(i) not in posted[1]
     assert reserve == b.worst_case_usd() <= 0.30
-    assert "never the owner's approval" in posted[1]
     sent = []
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: sent.append(body["body"]) or {})
-    o.settle(ENV, "r/r", "26", TODAY, h, reserve)
-    assert sent and o.SETTLE in sent[0] and "OVERRUN" not in sent[0]
+    settled = o.settle(ENV, "r/r", "26", TODAY, h, reserve,
+                       completion_markers=[f"<!-- {o.MARKER}:{h} -->", b.item_marker(i)])
+    assert settled and sent and o.SETTLE in sent[0] and "OVERRUN" not in sent[0]
+    assert f"<!-- {o.MARKER}:{h} -->" in sent[0] and b.item_marker(i) in sent[0]
 
 
 def test_e2e_invalid_output_no_retry_and_no_verdict():
@@ -185,6 +188,7 @@ def test_mock_mode_reserves_nothing_and_never_calls_provider(monkeypatch):
 def test_fingerprint_ignores_date_and_commit_so_unchanged_bytes_are_not_charged_twice():
     i, _ = art("a")
     j = {**i, "url": i["url"].replace(SHA, "b" * 40)}
+    assert len(b.batch_hash("2026-11-27", [i])) == 64
     assert b.batch_hash("2026-11-27", [i]) == b.batch_hash("2026-12-01", [j])
     assert b.batch_hash("2026-11-27", [i], "mock") != b.batch_hash("2026-11-27", [i], "live")
 
@@ -219,17 +223,21 @@ def test_per_artifact_dedup_and_failed_slot_is_not_retried():
     a, _ = art("a")
     c, _ = art("c")
     done = {"user": BOT, "body": b.item_marker(a)}
+    attempted = {"user": BOT, "body": b.attempt_marker(a)}
     assert b.unreviewed([a, c], [done]) == [c]
-    assert b.unreviewed([a, c], [{"user": {"login": "someone"}, "body": b.item_marker(a)}]) == [a, c]   # untrusted ignored
+    assert b.unreviewed([a, c], [attempted]) == [c]
+    assert b.unreviewed([a, c], [{"user": {"login": "someone"}, "body": b.item_marker(a)}]) == [a, c]
     slot = {"body": o.slot_tag("live", "2026-11-26", b.batch_hash(TODAY, [a]), 0.3)}   # earlier failed attempt, no summary
     with pytest.raises(b.Skip, match="attempted"):
         b.plan([a], TODAY, {"a": "x"}, [slot], ENV, TODAY)
 
 
-def test_no_owner_ready_marker_on_unknown_usage_or_mock():
+def test_summary_never_emits_completion_markers_before_settlement():
     a, _ = art("a")
-    o.RUN_COST.update(usd=0.0, complete=False)
-    assert "zans-orch-item" not in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "live")
-    o.RUN_COST.update(usd=0.0, complete=True)
-    assert "zans-orch-item" in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "live")
-    assert "zans-orch-item" not in b.summary("h", TODAY, [a], "ok", {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}, "mock")
+    results = {"a": {"verdict": "PASS", "reasons": [], "fixes": []}}
+    for complete in (False, True):
+        o.RUN_COST.update(usd=0.0, complete=complete)
+        summary = b.summary("h", TODAY, [a], "reviewed a=PASS", results, "live")
+        assert o.MARKER not in summary and b.item_marker(a) not in summary
+    mock = b.summary("h", TODAY, [a], "mock", results, "mock")
+    assert "SYNTHETIC MOCK" in mock and o.MARKER not in mock and b.item_marker(a) not in mock
