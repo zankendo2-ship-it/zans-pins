@@ -147,3 +147,12 @@ Product clicks, orders, revenue attributable to T2: UNAVAILABLE (no UTM/attribut
 - Paid runs: none verified. Mock run 45908019497 (main 69b2ac52, 0 paid calls).
 - Jonbon TikTok 27 Nov 17:00: DRAFT / NOT BOOKED; v2 cuts sha A 126285ec..., B d0ff5143..., C f12c2c42...; ChatGPT REVISE (CTA wording, binaries not readable, AI disclosure vs Alex's AI-labels-off rule).
 - Metrics unchanged: Etsy 1-23 Nov 10 orders / £98.10; Ads 4,401 impressions / 40 clicks / 2 attributed orders; rolling 30 days 9 orders / £103.40; TikTok latest 177 views / 13 likes / 0 shares. No creative-attributed sales available.
+
+
+## Sync 27 Nov 2026 16:46 UTC (ChatGPT second review)
+- Mug B preview pack linked by the 27 Nov manifest, pinned to zans-pins commit `10f2836ada6457a5a09addec52dced347cc78184`: opened the blank master, Etsy photos 01–03 and video storyboard stills 1–4 from `etsy-pack/review-size/`. Green/gold framing, product scale and text hierarchy are generally clear; blank master passes as a lifestyle mockup only, not as supplier/physical proof.
+- **Current pack status: REVISE / DRAFT / NOT LIVE.** The Loussiemoo pink-and-green colourway appears in Etsy cover 01, Etsy photo 02 and video scenes 1 and 3; this conflicts with the standing owner rule against pink-and-green mugs. Replace it with an approved colourway before further sign-off. Photo 02 also includes Rexs Romance; this is outside the stated video-only exclusion, so confirm it is intentionally retained in the Etsy still.
+- Etsy photo 03 states 11oz/330ml, 8.2 x 9.6 cm and nine handle/inside colours. The pack README says the Printify API was not reachable for a current check; re-verify supplier data before using these claims.
+- Video scenes 1–4 are storyboard JPGs only; no final MP4 or selected/licensed music is present. Scene 4 is very sparse; retain website-primary / Etsy-secondary CTA but add a small product visual or brand anchor. No post, listing change, purchase or spend authorised.
+- Build scripts still use absolute `/mnt/project-files`, `/mnt/attach` and `/tmp/claude-0` paths; they are not reproducible from a clean checkout. Convert to repo-relative inputs and deterministic output paths.
+- Performance evidence unchanged: T2 177 views / 13 likes / 0 shares at 48h; T5 135 views is confounded by different creative/topic; product clicks and creative-attributed sales remain unavailable. Etsy 1–23 Nov baseline: 10 orders / £98.10; Ads: 4,401 impressions / 40 clicks / 2 attributed orders. No new matched reach→click→sale evidence.
