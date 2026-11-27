@@ -308,8 +308,8 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
 
 
 def test_live_day_cap_hard_one_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 3          # TEMPORARY set-up ceiling (Alex 27 Nov 05:30); restore to 1 after set-up
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
+    assert o.MAX_LIVE_RUNS_PER_DAY == 1          # preserve the existing owner-approved hard ceiling
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -554,8 +554,8 @@ def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypat
 
 
 def test_daily_live_ceiling_is_1_and_variable_can_only_lower_it():
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 1
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
 
 
@@ -887,19 +887,16 @@ def test_every_paid_route_shares_the_correction_gate():
         assert "require_no_pending_corrections" in open(mod.__file__).read()
 
 
-def test_shared_setup_ceiling_counts_every_paid_route_together():
-    # Alex 27 Nov 05:30: more than one paid run a day while setting up. One shared count across live/racing/retro:
-    # three runs on any mix of routes are allowed, a fourth on any route is refused.
-    env = {"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}
+def test_shared_one_paid_run_per_day_blocks_every_paid_route():
+    # Preserve one shared paid slot across live/racing/retro; any route's reservation blocks every other route.
+    env = {"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}
     today = "2026-11-27"
     tag = lambda m, i: {"user": {"login": o.TRUSTED_SETTLER}, "body": o.slot_tag(m, today, f"{i:064x}", 0.5)}  # noqa: E731
-    slots = [tag("live", 1), tag("racing", 2)]
+    slots = [tag("live", 1)]
     for route in ("live", "racing", "retro"):
-        assert o.runs_today(slots, today, route) == 2 < o.day_cap(env, route)
-    slots.append(tag("retro", 3))
-    for route in ("live", "racing", "retro"):
+        assert o.runs_today(slots, today, route) == 1
         assert o.runs_today(slots, today, route) >= o.day_cap(env, route)
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1      # the variable can restore one a day
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 1  # the variable cannot raise the hard ceiling
 
 
 def test_failed_settle_post_keeps_reservation_and_emits_no_marker(capsys):
