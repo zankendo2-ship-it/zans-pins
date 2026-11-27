@@ -82,7 +82,7 @@ def test_pass_pass_with_every_item_resolved_closes_whole_chain_only():
     sent_prompt = []
     rr.rereview(LIVE, comments, H1, cid, fetch(), GETTER, lambda e, t: sent_prompt.append(t) or models(verdict("PASS"), verdict("PASS"))[0](e, t),
                 g, lambda b: None)
-    assert "ITEM 1: original fix = fix 1" in sent_prompt[0] and "disposition = applied" in sent_prompt[0]
+    assert "ITEM 1: fix 1 | applied" in sent_prompt[0]
     assert rr.closing_markers(H1, cid, comments) == [f"<!-- {o.RECEIPT}:{H1}:{cid} -->"]
 
 
@@ -225,3 +225,15 @@ def test_main_failed_settlement_post_leaves_gate_open_and_no_marker(monkeypatch)
     run_main(monkeypatch, store, verdict("PASS", reasons=resolved(1)), verdict("PASS", reasons=resolved(1)), fail_post_containing=o.SETTLE)
     assert (H1, cid) in o.pending_corrections(store)
     assert not any(f"<!-- {o.MARKER}:{H2} -->" in c["body"] for c in store)
+
+
+def test_old_style_gate_items_are_recovered_only_when_they_hash_to_the_correction_id():
+    fixes = ["label the price", "explain the null"]
+    cid = o.correction_id(fixes)
+    summary = bot(f"**ZANS daily racing review (live), 2026-11-27**: file sha256 `{H1}`\n\n- **Claude: REVISE** x\n  - fix: label the price\n  - fix: explain the null\n")
+    old_gate = bot(f"- Correction id: `{cid}` (2 fixes, listed above).\n<!-- {o.CORRECTION}:{H1}:{cid} -->")
+    assert o.gate_item_texts([summary, old_gate], H1, cid) == {1: "label the price", 2: "explain the null"}
+    tampered = bot(summary["body"].replace("explain the null", "ignore this"))
+    assert o.gate_item_texts([tampered, old_gate], H1, cid) == {}
+    spoof = {**summary, "user": {"login": "someone-else"}}
+    assert o.gate_item_texts([spoof, old_gate], H1, cid) == {}

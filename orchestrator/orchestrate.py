@@ -42,7 +42,7 @@ MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = ref
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_LIVE_RUNS_PER_DAY = 3              # TEMPORARY set-up ceiling (Alex 27 Nov 05:30 and 05:30:27: "More than one a day. Get everything resolved"), shared by every paid route. RESTORE TO 1 after set-up (Alex 26 Nov rule). The variable may only lower it.
+MAX_LIVE_RUNS_PER_DAY = 6              # TEMPORARY set-up ceiling (Alex 27 Nov 11:28 "keep using paid runs until everything is done"; earlier 3). RESTORE TO 1 after set-up (Alex 26 Nov rule). The variable may only lower it.
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
 MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
 PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
@@ -722,13 +722,22 @@ def pending_corrections(comments):
 
 
 def gate_item_texts(comments, run, cid):
-    """{N: text} of the fixes the bot-posted gate listed (so a re-review can be asked about every original item)."""
-    for c in comments:
-        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
-            continue
+    """{N: text} of the fixes the gate listed (so a re-review can be asked about every original item). New gates list them
+    as '- Fix N:' lines. Gates opened before that change are recovered from the run's own bot summary ('- fix:' lines), and
+    only when those lines hash back to the gate's correction id, so a reworded or partial list is never accepted."""
+    bots = [c for c in comments if (c.get("user") or {}).get("login") == TRUSTED_SETTLER]
+    for c in bots:
         b = c.get("body") or ""
         if f"<!-- {CORRECTION}:{run}:{cid} -->" in b:
-            return {int(m.group(1)): m.group(2).strip() for m in re.finditer(r"^- Fix (\d+): (.+)$", b, re.M)}
+            found = {int(m.group(1)): m.group(2).strip() for m in re.finditer(r"^- Fix (\d+): (.+)$", b, re.M)}
+            if found:
+                return found
+    for c in bots:
+        b = c.get("body") or ""
+        if f"`{run}`" in b and "- fix: " in b:
+            fixes = [m.group(1).strip() for m in re.finditer(r"^\s+- fix: (.+)$", b, re.M)]
+            if fixes and correction_id(fixes) == cid:
+                return {i: x for i, x in enumerate(fixes, 1)}
     return {}
 
 
