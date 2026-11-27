@@ -426,3 +426,11 @@ Asked 'keep the two-reviewer rule for the Etsy changes, or bypass ChatGPT's chec
 - Jonbon v6 A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v6-DRAFT.mp4` sha256 `e6f744517423d900255d7fd3c671bbd4fbe11a0b8cce99f883952381170a9f94`
 - Jonbon v6 B: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v6-DRAFT.mp4` sha256 `10ef3675c0655e019c3cc40b0e40fbf816c661963e17af37e9b926aa0e81ea3f`
 - Jonbon v6 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v6-DRAFT.mp4` sha256 `22ff293e0609c8b64bb151ccb9fe8e96d1277719c7ee11f8d80ffa3a59e9e336`
+
+## FIXES DONE - Lossiemouth v2.6 (ADVICE b6f288a fixes 1, 3, 4), 27 Nov
+
+Faces: all three scenes now from behind, no face visible. Hooves: each picture scaled so every hoof sits above the bottom silks band. Lettering: plain saddle cloths, plain breeches (one tiny partial number on a saddle cloth remains). Coat: grey mare (Wikipedia, Irish Racing, Sky Sports). Silks: pink with green spots, pink cap (large green spots on the back, some pictures show 2-4 spots). Seeds: 2004355205 binned; used 454237717 (hurdle from behind), 718249718 (canter), 718249717 (walk away). Scenes in `scenes/lossiemouth-grey2-*.webp`. Voice, music, text, bands unchanged. Nothing booked; Alex has not approved.
+
+- Lossiemouth v2.6 A: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.6-DRAFT.mp4` sha256 `28ab04f114a6abf6fa12a9fe876cb89aecf8d1ffcb33f8f6ecec8667977c0a50`
+- Lossiemouth v2.6 B: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.6-DRAFT.mp4` sha256 `cbae68d9eb75668520c352df38acc7985854e89669b6888e3c729af80e763adb`
+- Lossiemouth v2.6 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.6-DRAFT.mp4` sha256 `6682f9bdfcd9f8d589dde4421a05e9237ad2be7d6da52843714a8b914992a9d2`
