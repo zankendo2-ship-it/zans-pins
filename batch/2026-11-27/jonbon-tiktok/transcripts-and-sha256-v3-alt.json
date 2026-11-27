@@ -1,0 +1,33 @@
+{
+ "A": {
+  "file": "batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v3-alt-DRAFT.mp4",
+  "sha256": "f82455cbbd2bc5bb20c07317e98516e8fcc73dfcae2a5da3fcc7f59a7558e651",
+  "full_transcript": "Jonbon, three Shloer Chase victories at Cheltenham. 2023, 2024, and 2026. Three times at Cheltenham, the home of jump racing. What's your favorite Jonbon moment? Tell us in the comments. Want a silks bauble with any name on it? Design yours and search Zans Racing on Etsy. Wishing you a Merry Christmas.",
+  "segments": [
+   {
+    "slide": "jonbon-1.png",
+    "start_s": 0.0,
+    "end_s": 4.77,
+    "voice_line_transcript": "Jonbon, three Shloer Chase victories at Cheltenham"
+   },
+   {
+    "slide": "jonbon-2.png",
+    "start_s": 4.77,
+    "end_s": 10.47,
+    "voice_line_transcript": "2023 2024 and 2026"
+   },
+   {
+    "slide": "jonbon-3.png",
+    "start_s": 10.47,
+    "end_s": 18.79,
+    "voice_line_transcript": "three times at Cheltenham, the home of jump racing. What's your favourite Jonbon moment? Tell us in the comments."
+   },
+   {
+    "slide": "jonbon-4.png",
+    "start_s": 18.79,
+    "end_s": 27.33,
+    "voice_line_transcript": "Want a silks bauble with any name on it Design yours and search Zan's Racing on Etsy"
+   }
+  ]
+ }
+}

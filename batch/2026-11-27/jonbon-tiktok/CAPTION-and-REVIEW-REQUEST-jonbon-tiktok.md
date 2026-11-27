@@ -8,12 +8,12 @@
 |---|---|---|
 | 1 (0 s, hook in the first frame) | JONBON / THREE SHLOER CHASE VICTORIES / AT CHELTENHAM | "Jonbon. Three Shlower Chase victories at Cheltenham!" (spelt phonetically so it is said right; card keeps Shloer) |
 | 2 | THE SHLOER CHASE VICTORIES: 2023 · 2024 · 2026 | "Twenty twenty-three. Twenty twenty-four. And twenty twenty-six!" |
-| 3 | THE HOME OF JUMP RACING / BRITAIN'S BEST CHASER? / TELL US IN THE COMMENTS | "Three times at Cheltenham, the home of jump racing. Is he Britain's best chaser? Tell us in the comments!" |
+| 3 | THE HOME OF JUMP RACING / YOUR FAVOURITE JONBON MOMENT? / TELL US IN THE COMMENTS | "Three times at Cheltenham, the home of jump racing. What's your favourite Jonbon moment? Tell us in the comments!" |
 | 4 end card (the only product shot) | DESIGN YOURS WITH ANY NAME / SEARCH ZANS RACING ON ETSY / WISHING YOU A MERRY CHRISTMAS | "Want a silks bauble with any name on it? Design yours, and search ZANS Racing on Etsy." then "Wishing you a Merry Christmas!" |
 Transcript check: clips 1 to 3 match their lines (clip 1 heard "Jonbon three Shloer Chase wins at Cheltenham"); clip 4 heard "silk bauble ... search for Zans racing on Etsy" (a small transcriber slip, not what was recorded).
 
 ## TikTok caption (5 tags, no link in bio, no price)
-> Jonbon: three Shloer Chase victories at Cheltenham, in 2023, 2024 and 2026. 🏇 Is he Britain's best chaser? Tell us in the comments 👇
+> Jonbon: three Shloer Chase victories at Cheltenham, in 2023, 2024 and 2026. 🏇 What's your favourite Jonbon moment? Tell us in the comments 👇
 >
 > Want a silks bauble with any name on it? Search ZANS Racing on Etsy.
 >
@@ -35,7 +35,7 @@ Title (TikTok): "Jonbon: three Shloer Chase victories at Cheltenham 🏇" (56 ch
 - [x] Hook and the number are on card 1 from frame 0.
 - [x] #horseracing + #Jonbon, 5 tags.
 - [x] No race times, odds, "can he win", or prices. No "link in bio", no 18+.
-- [x] Product on the end card only. AI scenes labelled "Illustration - not race footage".
+- [x] Product on the end card only. AI scenes labelled "AI-generated illustration" (v3; v3-alt keeps "Illustration - not race footage"; Alex chooses).
 - [x] Safe zone: all words inside y 340 to 1600, x 60 to 920.
 - [x] Music: three versions, all our own code-made beds (`batch/2026-11-21/conny-kempton/music/race-bed-A/B/C.mp3`), 0.30 gain under the voice; Alex picks one.
 Fixed per ADVICE 673917d: the word "wins" is gone (card 2, voice, caption, title now say "victories"); three music versions made. Remaining flag: Alex's yes to this cut came via the growth thread, not typed to me.

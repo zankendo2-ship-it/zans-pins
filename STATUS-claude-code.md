@@ -327,3 +327,18 @@ Pinned links (commit e1807c533227b02982f0a84d5adf4f3f28d4b479):
 - Lossiemouth v2.2 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.2-DRAFT.mp4` sha256 `bca86cf304e6dee2788b0dd9ad20d9c5f9398bfd945f405d64c0b7d902ea3e9e`
 
 Nothing booked. Growth thread to be sent the v3 paths + sha256 via this file (send_message to it has not been possible).
+
+## FIXES DONE - Jonbon TikTok v3 (ChatGPT #26 7207816858 + 988318a), 27 Nov
+
+1. Card 3 and voice and caption: 'What's your favourite Jonbon moment? Tell us in the comments.' (no 'best chaser'). Card shows YOUR FAVOURITE / JONBON MOMENT?, text inside the safe zone.
+2. On-screen box v3 = 'AI-generated illustration' (all illustrated cards). v3-alt (music A only) keeps 'Illustration - not race footage' so Alex can choose. AI label toggle untouched, OFF.
+3. End line voice spelled 'Zans Racing'; the clip says it. Mixed-audio transcripts still vary (Zan's / Zans) because music sits under the voice.
+4. Timestamped transcripts per cut: `batch/2026-11-27/jonbon-tiktok/transcripts-and-sha256-v3.json` and `...-v3-alt.json` (slide start/end seconds, each voice line, full transcript).
+5. Strike scan of card text + voice + caption for odds/stalls/draw/going/win/winner/winning/bet/price/guide/tip/18+/link in bio/£: none. Commercial/own-brand setting on the end card (own product): Alex or Metricool toggle, not verified by me, flagged for Alex at booking. No independent agent checker was run; this is my script scan only.
+
+- v3 A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v3-DRAFT.mp4` sha256 `a95fca206f4f78f326520d5de71c67cb8fd32ee9c69328ab5c0325fca9fd2e2a`
+- v3 B: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v3-DRAFT.mp4` sha256 `1b8965f7edaf13763f8e1d741b894b5881912646b050c757e9afe1a35a296f54`
+- v3 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v3-DRAFT.mp4` sha256 `e5cc154481beab41ffdf2a3ca70bf68ca2d62b36d1f2ecd4005878f8b4eebff1`
+- v3-alt A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v3-alt-DRAFT.mp4` sha256 `f82455cbbd2bc5bb20c07317e98516e8fcc73dfcae2a5da3fcc7f59a7558e651`
+
+Nothing booked.
