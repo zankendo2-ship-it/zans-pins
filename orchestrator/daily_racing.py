@@ -33,7 +33,9 @@ REVIEW_TASK = ("You are reviewing a horse-racing picks file that was sealed befo
                "implausible or contradictory; the three biggest disagreements between models. Do not invent facts. "
                "Reply in the required JSON: verdict PASS if the file is complete and consistent, REVISE if something "
                "must be fixed or explained, BLOCKER if the file is unusable; reasons = what you checked or found; "
-               "fixes = data fixes only.")
+               "fixes = data fixes only. KEEP THE REPLY SHORT (output is hard-capped at 1,500 tokens; a longer reply is cut off and "
+               "counts as a BLOCKER): JSON only, no preamble, ack one short sentence, at most 6 reasons and 4 fixes, "
+               "each under 30 words.")
 
 
 class Skip(Exception):

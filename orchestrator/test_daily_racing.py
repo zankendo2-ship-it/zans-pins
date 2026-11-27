@@ -283,3 +283,8 @@ def test_revise_opens_a_gate_and_is_not_complete():
     gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": posted[-1], "created_at": "2026-11-27T05:00:00Z"}
     with pytest.raises(o.Stop, match="correction gate"):
         o.require_no_pending_corrections([gate])
+
+
+def test_review_task_demands_a_short_reply_under_the_output_cap():
+    # 27 Nov live run 45982259588: a long Claude reply hit max_tokens (BLOCKER). The prompt must ask for brevity.
+    assert "KEEP THE REPLY SHORT" in r.REVIEW_TASK and "at most 6 reasons" in r.REVIEW_TASK
