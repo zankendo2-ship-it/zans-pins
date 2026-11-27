@@ -84,7 +84,7 @@ def test_plan_shared_ledger_caps_duplicate_and_overrun():
     i, _ = art("a")
     items, texts = [i], {"a": "hello"}
     assert b.plan(items, TODAY, texts, [], ENV, TODAY)["reserve"] <= 0.30
-    slot = {"body": o.slot_tag("live", TODAY, "abc123", 2.45)}          # an ORCHESTRATOR run today, other route
+    slot = {"user": BOT, "body": o.slot_tag("live", TODAY, "abc123", 2.45)}          # an ORCHESTRATOR run today, other route
     with pytest.raises(o.Stop, match="already used"):
         b.plan(items, TODAY, texts, [slot], ENV, TODAY)
     with pytest.raises(b.Skip):
@@ -227,7 +227,7 @@ def test_per_artifact_dedup_and_failed_slot_is_not_retried():
     assert b.unreviewed([a, c], [done]) == [c]
     assert b.unreviewed([a, c], [attempted]) == [c]
     assert b.unreviewed([a, c], [{"user": {"login": "someone"}, "body": b.item_marker(a)}]) == [a, c]
-    slot = {"body": o.slot_tag("live", "2026-11-26", b.batch_hash(TODAY, [a]), 0.3)}   # earlier failed attempt, no summary
+    slot = {"user": BOT, "body": o.slot_tag("live", "2026-11-26", b.batch_hash(TODAY, [a]), 0.3)}   # earlier failed attempt, no summary
     with pytest.raises(b.Skip, match="attempted"):
         b.plan([a], TODAY, {"a": "x"}, [slot], ENV, TODAY)
 
