@@ -283,9 +283,11 @@ def _source_prices(row):
         if x is not None:
             out[key].add(x)
     out["bookmaker"] |= out["best"]
-    for part in str(row.get("bookie_terms") or "").split("|"):
+    for part in [q for q in str(row.get("bookie_terms") or "").split("|") if q.strip()]:
         bits = part.split(";")
         x = _dec(bits[1]) if len(bits) > 1 else None
+        if len(bits) < 2 or not bits[0].strip() or x is None:
+            raise Refuse(f"the verified prices file has a malformed bookie_terms entry {part!r} for {row.get('horse')!r}; refused (fail closed)")
         if x is not None:
             out["bookmaker"].add(x)
             if bits[0].strip().lower().startswith("sky bet"):
@@ -329,7 +331,7 @@ def _longshot_source_check(ls, rp, prices_name, where):
     elif kind == "quote_only":
         pool = rp.get("sl", set()) | rp.get("price", set())
     else:
-        return
+        raise Refuse(f"{where}: longshot claims a price but carries neither price_source nor price_kind; source identity is required (fail closed)")
     if claimed is None or not any(abs(claimed - p) < 0.011 for p in pool):
         raise Refuse(f"{where}: longshot price {claimed} is not held in the source column its price_source/price_kind names (a quote-only price cannot stand in for a bookmaker price)")
 
@@ -399,9 +401,10 @@ def check_declared_runners(d, prices_bytes, prices_name=None):
             except (TypeError, ValueError):
                 bpf = None
             wn = _key(_horse_name(r.get("win_pick")) or "")
-            if bpf is not None and wn in runners and runners[wn].get("any"):
-                pool = runners[wn]["best"] or runners[wn]["any"]   # best_price is the best_dec column where the file has one
-                if not any(abs(bpf - p) < 0.011 for p in pool):
+            if bpf is not None and wn in runners:
+                if not runners[wn]["best"]:
+                    raise Refuse(f"{where}: best_price {bpf} is asserted but the verified prices file has no best_dec for the win pick (no other column may stand in)")
+                if not any(abs(bpf - p) < 0.011 for p in runners[wn]["best"]):
                     raise Refuse(f"{where}: best_price {bpf} is not the best_dec price the verified prices file holds for the win pick")
 
 
