@@ -490,3 +490,20 @@ def test_longshot_reason_cannot_bypass_a_qualifying_runner_in_the_file():
         r.check_declared_runners(_v3(longshot=None, longshot_reason="no value in the outsiders today"), PRICES)
     small = b"course,time,horse,price\nAscot,13:00,Alpha Star,2.5\nAscot,13:00,Blue Sky,4.0\nAscot,13:00,Long Shot,21.0\n"
     r.check_declared_runners(_v3(longshot=None, longshot_reason="field of three, longshot rule needs six"), small)
+
+
+def test_non_runner_row_is_not_a_declared_runner_or_eligible_longshot():
+    five = b"course,time,horse,price,status\n" + b"".join(b"Ascot,13:00,Horse %s,%d.0,RUNNER\n" % (n, 3 + i) for i, n in enumerate([b"Aa", b"Bb", b"Cc", b"Dd", b"Ee"]))
+    withdrawn = five + b"Ascot,13:00,Long Shot,21.0,NON_RUNNER\n"
+    base = {"win_pick": "Horse Aa", "second": "Horse Bb 4.0", "rpr_pick": "Horse Aa", "sky_bet_price": 3.0, "best_price": 3.0}
+    r.check_declared_runners(_v3(**{**base, "longshot": None, "longshot_reason": "no active runner priced at 15.00 or more"}), withdrawn)
+    with pytest.raises(r.Refuse, match="non-runner"):
+        r.check_declared_runners(_v3(**{**base, "longshot": "Long Shot at 21.0"}), withdrawn)
+    with pytest.raises(r.Refuse, match="non-runner"):
+        r.check_declared_runners(_v3(**{**base, "second": "Long Shot 21.0"}), withdrawn)
+
+
+def test_no_pick_race_must_carry_no_selections():
+    with pytest.raises(r.Refuse, match="no win_pick but names"):
+        r.check_declared_runners(_v3(win_pick=None, second="Blue Sky 4.0"), PRICES)
+    r.check_declared_runners(_v3(win_pick=None, second=None, rpr_pick=None, longshot=None), PRICES)

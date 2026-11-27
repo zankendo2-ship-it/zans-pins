@@ -295,12 +295,20 @@ def check_declared_runners(d, prices_bytes):
     - where the file holds a runner at 15.00+ in a field of 6+, a longshot naming a qualifying runner is required (a reason cannot bypass it)."""
     import csv
     import io
-    declared = {}
+    declared, inactive = {}, {}
     for row in csv.DictReader(io.StringIO(prices_bytes.decode("utf-8", "replace"))):
-        race = declared.setdefault((str(row.get("course", "")).strip().lower(), str(row.get("off_time") or row.get("time") or "").strip()), {})
+        k = (str(row.get("course", "")).strip().lower(), str(row.get("off_time") or row.get("time") or "").strip())
+        st = str(row.get("status") or "RUNNER").strip().upper()
+        if st != "RUNNER":
+            inactive.setdefault(k, set()).add(_key(row.get("horse", "")))
+            continue   # a withdrawn / non-runner row is never a declared runner and never an eligible longshot
+        race = declared.setdefault(k, {})
         race.setdefault(_key(row.get("horse", "")), set()).update(_source_prices(row))
     for r in d.get("races", []):
         if not r.get("win_pick"):
+            named = [f for f in ("second", "rpr_pick", "longshot") if _horse_name(r.get(f).get("name") if isinstance(r.get(f), dict) else r.get(f))]
+            if named:
+                raise Refuse(f"race {r['course']} {r['time']}: has no win_pick but names {named}; a no-pick race must carry no selections")
             continue
         where = f"race {r['course']} {r['time']}"
         runners = declared.get((str(r.get("course", "")).strip().lower(), str(r.get("time", "")).strip()))
@@ -315,6 +323,8 @@ def check_declared_runners(d, prices_bytes):
                 if f == "win_pick":
                     raise Refuse(f"{where}: win_pick {v!r} is not a usable runner name (a placeholder such as 'none' is refused)")
                 continue   # second / rpr_pick / longshot may be a reason instead; the checks below decide whether that is allowed
+            if _key(n) in inactive.get((str(r.get("course", "")).strip().lower(), str(r.get("time", "")).strip()), set()):
+                raise Refuse(f"{where}: {f} {n!r} is a non-runner / withdrawn in the verified prices file")
             if _key(n) not in runners:
                 raise Refuse(f"{where}: {f} {n!r} is not a declared runner in the verified prices file")
         ls = r.get("longshot")
