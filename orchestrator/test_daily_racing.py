@@ -380,12 +380,20 @@ def test_schema_v3_needs_review_detail_or_explicit_null_from_29_nov():
     d["races"] = [{**full, **{k: None for k in r.V3_DETAIL_FIELDS}}]
     with pytest.raises(r.Refuse, match="no usable"):                       # a picked race with null reasons is a gap, not an answer
         r.validate(json.dumps(d).encode(), "2026-11-29")
-    ok = {**full, "zans_reasons": "top rated on course form", "cautions": "none", "data_chance": 0.31, "best_price": None}
+    ok = {**full, "zans_reasons": "top rated on course form", "cautions": "none", "data_chance": 0.31, "best_price": 2.5,
+          "second": "B", "rpr_pick": "A", "longshot": None, "longshot_reason": "no runner at 14/1 or more"}
     d["races"] = [ok]
     r.validate(json.dumps(d).encode(), "2026-11-29")
     d["races"] = [{**ok, "cautions": ""}]
     with pytest.raises(r.Refuse, match="cautions"):
         r.validate(json.dumps(d).encode(), "2026-11-29")
+    for bad, why in (({"second": None}, "second"), ({"rpr_pick": None, "rpr_reason": None}, "rpr_pick"),
+                     ({"longshot": None, "longshot_reason": ""}, "longshot"), ({"best_price": None}, "best_price")):
+        d["races"] = [{**ok, **bad}]
+        with pytest.raises(r.Refuse, match=why):
+            r.validate(json.dumps(d).encode(), "2026-11-29")
+    d["races"] = [{**ok, "rpr_pick": None, "rpr_reason": "No runner has an RPR", "longshot": "X at 21.0", "longshot_reason": None}]
+    r.validate(json.dumps(d).encode(), "2026-11-29")
     d["races"] = [{**full, **{k: None for k in r.V3_DETAIL_FIELDS}, "win_pick": None, "status": "no pick"}, ok | {"course": "B"}]
     r.validate(json.dumps(d).encode(), "2026-11-29")                      # an unpicked race may carry nulls
     r.validate(json.dumps({**d, "date": "2026-11-28", "frozen_at_utc": "2026-11-28T08:45:00Z", "races": [full]}).encode(), "2026-11-28")

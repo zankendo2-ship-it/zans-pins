@@ -132,6 +132,17 @@ def validate(data, today):
                     v = r.get(k)
                     if v is None or (isinstance(v, str) and not v.strip()) or (isinstance(v, (list, dict)) and not v):
                         raise Refuse(f"race {r['course']} {r['time']} has a pick but no usable {k} (write 'none' or the reason; null is not reviewable)")
+                def usable(v):
+                    return not (v is None or (isinstance(v, str) and not v.strip()) or (isinstance(v, (list, dict)) and not v))
+                where = f"race {r['course']} {r['time']}"
+                if not usable(r.get("second")):
+                    raise Refuse(f"{where} has a pick but no usable second (the runner-up, or the reason none exists)")
+                if not (usable(r.get("rpr_pick")) or usable(r.get("rpr_reason"))):
+                    raise Refuse(f"{where} has neither an rpr_pick nor an rpr_reason")
+                if not (usable(r.get("longshot")) or usable(r.get("longshot_reason"))):
+                    raise Refuse(f"{where} has neither a longshot (with its price) nor a longshot_reason")
+                if r.get("sky_bet_price") is not None and not usable(r.get("best_price")):
+                    raise Refuse(f"{where} has a Sky price but no best_price")
     return text
 
 
