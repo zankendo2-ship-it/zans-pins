@@ -181,7 +181,7 @@ def fake_github(calls, comments=(), since=()):
 LIVE_EXTRA = {"ORCH_MODE": "live", "ANTHROPIC_API_KEY": "k", "OPENAI_API_KEY": "k",
               "ANTHROPIC_MODEL": "claude-sonnet-5-5", "OPENAI_MODEL": "gpt-6.2-astra", "GITHUB_REF": "refs/heads/main",
               "ZANS_ORCH_MAX_RUNS_PER_DAY": "1", "ZANS_ORCH_MAX_USD_PER_RUN": "3",
-              "ZANS_ORCH_MAX_USD_PER_MONTH": "10"}
+              "ZANS_ORCH_MAX_USD_PER_MONTH": "10", "ORCH_SHA256": "a" * 64}
 MOCK_ENV = {**ENV, "ORCH_MODE": "mock", "ORCH_TASK": "review x", "ORCH_ARTIFACTS": URL, "ORCH_ISSUE": "26",
             "GITHUB_REPOSITORY": "zankendo2-ship-it/zans-pins", "GITHUB_TOKEN": "t"}
 
@@ -294,7 +294,7 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
     order = []
     monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: order.append(("gh", m)) or (
         {"comments": 0, "body": ""} if path.endswith("/26") else ([] if m == "GET" else {"id": 1})))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "file text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "file text")
 
     def boom(env, text):
         order.append(("model", "call"))
@@ -308,8 +308,8 @@ def test_slot_reserved_before_any_paid_call(monkeypatch):
 
 
 def test_live_day_cap_hard_one_and_variable_only_lowers():
-    assert o.MAX_LIVE_RUNS_PER_DAY == 1          # Alex 26 Nov: one batched paid run a day
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 1
+    assert o.MAX_LIVE_RUNS_PER_DAY == 3          # TEMPORARY set-up ceiling (Alex 27 Nov); restore to 1 after set-up
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "50"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "0"}, "live") == 0
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "x"}, "live") == 0     # invalid = no live runs
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": ""}, "live") == 0      # empty = no live runs
@@ -483,7 +483,7 @@ def test_monthly_reservation_counts_failed_runs_and_blocks(monkeypatch, capsys):
     assert o.reserved_this_month(slots, today[:7]) == 9.5
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls, since=slots))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "call_claude", lambda e, t: pytest.fail("no paid call allowed"))
     monkeypatch.setattr(o, "call_openai", lambda e, t: pytest.fail("no paid call allowed"))
     assert o.main(LIVE_ENV) == 1 and "ZANS_ORCH_MAX_USD_PER_MONTH" in capsys.readouterr().out
@@ -505,7 +505,7 @@ def test_shared_rules_file_loaded():
 def test_live_slot_reserves_hard_worst_and_calls_capped_by_it(monkeypatch):
     calls, seen = [], {}
     monkeypatch.setattr(o, "gh", fake_github(calls))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "preflight", lambda *a, **k: 0)   # even a too-small estimate cannot shrink the reserve
 
     def fake_review(*a, budget_usd=None, **k):
@@ -554,8 +554,8 @@ def test_structured_reply_parses_and_truncated_reply_names_stop_reason(monkeypat
 
 
 def test_daily_live_ceiling_is_1_and_variable_can_only_lower_it():
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 1
-    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 1
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}, "live") == 3
+    assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "9"}, "live") == 3
     assert o.day_cap({"ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}, "live") == 1
 
 
@@ -602,7 +602,7 @@ def _usage_post(with_usage=True):
 def test_live_run_posts_settle_with_measured_cost(monkeypatch):
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "_post", _usage_post(True))
     assert o.main(LIVE_ENV) == 0
     posts = [c[2]["body"] for c in calls if c[0] == "POST"]
@@ -617,7 +617,7 @@ def test_live_run_posts_settle_with_measured_cost(monkeypatch):
 def test_missing_usage_never_settles(monkeypatch, capsys):
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "_post", _usage_post(False))
     o.main(LIVE_ENV)
     posts = [c[2]["body"] for c in calls if c[0] == "POST"]
@@ -628,7 +628,7 @@ def test_missing_usage_never_settles(monkeypatch, capsys):
 def test_replaced_review_never_settles(monkeypatch):
     calls = []
     monkeypatch.setattr(o, "gh", fake_github(calls))
-    monkeypatch.setattr(o, "fetch_artifacts", lambda urls: "small text")
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "small text")
     monkeypatch.setattr(o, "review", lambda *a, **k: ("AGREED", [], 2))
     o.main(LIVE_ENV)
     assert not any(o.SETTLE in (c[2] or {}).get("body", "") for c in calls if c[0] == "POST")
@@ -738,3 +738,72 @@ def test_rounds_cap_one_round_fits_big_files_and_limits_calls():
 def test_rounds_cap_clamped():
     out, rounds, req = o.review(ENV, "t", [URL], [], o.mock_caller([V("REVISE")] * 9), o.mock_caller([V("PASS")] * 9), rounds_cap=99)
     assert req == 2 * o.MAX_ROUNDS
+
+
+# ---- sha256 byte verification, per-artifact result ids, correction handoff + receipt ----
+GOOD = b"hello listing"
+GOOD_SHA = __import__("hashlib").sha256(GOOD).hexdigest()
+
+
+def test_fetch_verifies_sha256_bytes():
+    u = f"https://github.com/zankendo2-ship-it/r/blob/{SHA}/a.md"
+    out = o.fetch_artifacts([u], getter=lambda url, limit: GOOD, shas=[GOOD_SHA])
+    assert "hello listing" in out
+    with pytest.raises(o.Stop, match="do not match the sha256"):
+        o.fetch_artifacts([u], getter=lambda url, limit: GOOD + b"x", shas=[GOOD_SHA])
+
+
+def test_parse_shas_requires_full_64_hex_one_per_artifact():
+    assert o.parse_shas(GOOD_SHA, [URL]) == [GOOD_SHA]
+    for bad in ("", GOOD_SHA[:16], GOOD_SHA.upper() + "0", GOOD_SHA + " " + GOOD_SHA):
+        with pytest.raises(o.Stop):
+            o.parse_shas(bad, [URL])
+
+
+def test_live_refuses_without_sha256(capsys):
+    env = {k: v for k, v in LIVE_ENV.items() if k != "ORCH_SHA256"}
+    assert o.main(env) == 1 and "sha256" in capsys.readouterr().out
+
+
+def test_artifact_ids_and_summary_show_sha_and_id():
+    h = "b" * 64
+    ids = o.artifact_ids(h, [URL], [GOOD_SHA])
+    assert ids == [f"{'b' * 12}-A1-{GOOD_SHA[:12]}"]
+    s = o.summary(h, "t", [URL], "AGREED: both PASS (x)", [{"round": 1, "Claude": V("PASS"), "OpenAI": V("PASS")}], 2, "live", 2, [GOOD_SHA])
+    assert ids[0] in s and GOOD_SHA in s
+
+
+def test_correction_handoff_only_on_live_revise_and_needs_receipt():
+    h = "c" * 64
+    rounds = [{"round": 1, "Claude": {**V("REVISE"), "fixes": ["fix A"]}, "OpenAI": {**V("REVISE"), "fixes": ["fix B"]}}]
+    live = o.summary(h, "t", [URL], "AGREED REVISE: both reviewers want changes", rounds, 2, "live", 2, [GOOD_SHA])
+    mock = o.summary(h, "t", [URL], "AGREED REVISE: both reviewers want changes", rounds, 0, "mock", 2, [GOOD_SHA])
+    assert o.CORRECTION in live and o.CORRECTION not in mock
+    cid = o.correction_id(o.combined_fixes(rounds))
+    bot = {"user": {"login": o.TRUSTED_SETTLER}, "body": live}
+    assert o.pending_corrections([bot]) == [(h, cid)]
+    receipt = {"user": {"login": "zankendo2-ship-it"}, "body": f"<!-- {o.RECEIPT}:{h}:{cid} -->"}
+    assert o.pending_corrections([bot, receipt]) == []
+    forged = {"user": {"login": "someone"}, "body": live}
+    assert o.pending_corrections([forged]) == []
+
+
+def test_live_blocked_while_correction_has_no_receipt(monkeypatch, capsys):
+    h = "d" * 64
+    cid = "e" * 64
+    posted = [{"user": {"login": o.TRUSTED_SETTLER}, "body": f"<!-- {o.CORRECTION}:{h}:{cid} -->",
+               "created_at": "2026-11-27T01:00:00Z"}]
+    monkeypatch.setattr(o, "gh", lambda env, m, path, body=None: {"body": "", "comments": 0} if m == "GET" and "comments" not in path else [])
+    monkeypatch.setattr(o, "comments_since", lambda *a, **k: posted)
+    monkeypatch.setattr(o, "fetch_artifacts", lambda urls, shas=None: "x")
+    assert o.main(LIVE_ENV) == 1 and "receipt" in capsys.readouterr().out
+
+
+def test_temporary_setup_ceiling_allows_three_paid_runs_not_four():
+    env = {"ZANS_ORCH_MAX_RUNS_PER_DAY": "3"}
+    today = "2026-11-27"
+    slots = [{"user": {"login": o.TRUSTED_SETTLER}, "body": o.slot_tag(m, today, f"{i:064x}", 0.5)}
+             for i, m in enumerate(("live", "racing"))]
+    assert o.runs_today(slots, today, "live") == 2 < o.day_cap(env, "live")       # a third is allowed
+    slots.append({"user": {"login": o.TRUSTED_SETTLER}, "body": o.slot_tag("retro", today, "f" * 64, 0.5)})
+    assert o.runs_today(slots, today, "live") >= o.day_cap(env, "live")           # a fourth is refused

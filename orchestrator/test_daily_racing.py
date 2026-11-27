@@ -65,26 +65,29 @@ def test_empty_picks_make_no_call():
         r.plan(file_bytes(races=[{**RACE, "win_pick": None, "status": "no pick"}]), [], ENV, TODAY)
 
 
+ONE = {**ENV, "ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}   # cap-1 behaviour; the temporary set-up ceiling is 3
+
+
 def test_global_paid_slot_blocks_products_and_racing_cross_route():
     data = file_bytes()
     batch_slot = {"user": BOT, "body": o.slot_tag("live", TODAY, "b" * 64, 0.3)}
     with pytest.raises(o.Stop, match="shared one paid run"):
-        r.plan(data, [batch_slot], ENV, TODAY)
+        r.plan(data, [batch_slot], ONE, TODAY)
     h = r.fingerprint(data)
     assert len(h) == 64
     with pytest.raises(r.Skip):
-        r.plan(data, [{"user": BOT, "body": o.slot_tag("racing", TODAY, h, 0.7)}], ENV, TODAY)
+        r.plan(data, [{"user": BOT, "body": o.slot_tag("racing", TODAY, h, 0.7)}], ONE, TODAY)
     racing_slot = {"user": BOT, "body": o.slot_tag("racing", TODAY, "c" * 64, 0.7)}
     with pytest.raises(o.Stop, match="shared one paid run"):
-        r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [racing_slot], ENV, TODAY)
+        r.plan(file_bytes(frozen_at_utc=TODAY + "T08:46:00Z"), [racing_slot], ONE, TODAY)
     import orchestrator.daily_batch as b
     with pytest.raises(o.Stop, match="shared one paid run"):
-        b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [racing_slot], ENV, TODAY)
+        b.plan([{"id": "a", "url": "u", "sha256": "f" * 64}], TODAY, {"a": "x"}, [racing_slot], ONE, TODAY)
     with pytest.raises(o.Stop, match="MONTH"):
-        r.plan(data, [], {**ENV, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)
+        r.plan(data, [], {**ONE, "ZANS_ORCH_MAX_USD_PER_MONTH": "0.5"}, TODAY)
     big = [{"user": BOT, "body": o.slot_tag("racing", "2026-11-%02d" % d, "%064x" % (d + 100), 1.0)} for d in range(1, 27)]
     with pytest.raises(o.Stop, match="MONTH"):
-        r.plan(data, big, ENV, TODAY)
+        r.plan(data, big, ONE, TODAY)
 
 
 def test_e2e_two_calls_slot_first_settle_and_advisory_summary(monkeypatch):

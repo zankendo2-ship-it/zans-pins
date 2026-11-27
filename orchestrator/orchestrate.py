@@ -42,7 +42,7 @@ MAX_ARTIFACT_BYTES = 60_000            # per text artifact fetched (bigger = ref
 MAX_ARTIFACTS_TOTAL = 120_000          # all artifacts together
 MAX_ARTIFACTS = 6
 MAX_RULES_CHARS = 12_000               # shared project rules file
-MAX_LIVE_RUNS_PER_DAY = 1              # hard ceiling (Alex 26 Nov: ONE batched paid run a day); variable may only lower it
+MAX_LIVE_RUNS_PER_DAY = 3              # TEMPORARY set-up ceiling (Alex 27 Nov 05:30: more than one a day while finalising). RESTORE TO 1 after set-up (Alex 26 Nov rule: one batched paid run a day). The variable may only lower it.
 MAX_MOCK_RUNS_PER_DAY = 5              # free runs per UTC day
 MAX_INPUT_TOKENS_PER_RUN = 200_000     # bound over every actual call (UTF-8 bytes + overhead, see estimate_tokens)
 PER_CALL_OVERHEAD_TOKENS = 500         # message framing / special tokens added by the provider
@@ -196,13 +196,29 @@ def raw_url(u):
     return (m.group(1) if m else ""), u
 
 
-def fetch_artifacts(urls, getter=None):
-    """Returns text blocks. Text files are fetched (size-capped); other files are listed by link only."""
+SHA64_RE = re.compile(r"[0-9a-f]{64}")
+
+
+def parse_shas(raw, urls):
+    """One full 64-hex sha256 per artifact, same order as the links. Never shortened."""
+    shas = [x.strip().lower() for x in (raw or "").split() if x.strip()]
+    if len(shas) != len(urls) or not all(SHA64_RE.fullmatch(x) for x in shas):
+        raise Stop("REFUSED: provide exactly one full 64-character sha256 per artifact, in the same order as the links.")
+    return shas
+
+
+def artifact_ids(h, urls, shas):
+    """Stable per-artifact result ids, quoted in the summary and in the correction handoff."""
+    return [f"{h[:12]}-A{i}-{sha[:12]}" for i, (u, sha) in enumerate(zip(urls, shas), 1)]
+
+
+def fetch_artifacts(urls, getter=None, shas=None):
+    """Returns text blocks. Text files are fetched (size-capped) and, when shas are given, byte-verified."""
     if len(urls) > MAX_ARTIFACTS:
         raise Stop(f"REFUSED: more than {MAX_ARTIFACTS} artifacts.")
     getter = getter or _get_bytes
     blocks, total = [], 0
-    for u in urls:
+    for idx, u in enumerate(urls):
         owner, raw = raw_url(u)
         if owner.lower() not in ALLOWED_OWNERS:
             raise Stop("REFUSED: artifact is outside the allowed GitHub owner.")
@@ -214,6 +230,8 @@ def fetch_artifacts(urls, getter=None):
         total += len(data)
         if total > MAX_ARTIFACTS_TOTAL:
             raise Stop("REFUSED: artifacts are over the total size cap.")
+        if shas is not None and hashlib.sha256(data).hexdigest() != shas[idx]:
+            raise Stop(f"REFUSED: artifact {idx + 1} bytes do not match the sha256 supplied; nothing was sent.")
         blocks.append(f"[{u}]\n" + data.decode("utf-8", "replace"))
     return "\n\n".join(blocks)
 
@@ -601,7 +619,45 @@ def combined_fixes(rounds, limit=20):
     return out[:limit]
 
 
-def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQUESTS):
+CORRECTION = "zans-orch-correction"
+RECEIPT = "zans-orch-receipt"
+CORRECTION_RE = re.compile(r"<!-- " + CORRECTION + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
+RECEIPT_RE = re.compile(r"<!-- " + RECEIPT + r":([0-9a-f]{64}):([0-9a-f]{64}) -->")
+
+
+def correction_id(fixes):
+    return hashlib.sha256(json.dumps(fixes, sort_keys=True).encode()).hexdigest()
+
+
+def correction_block(h, rounds):
+    """Handoff to the Claude correction thread, with the receipt the next paid run waits for."""
+    fixes = combined_fixes(rounds)
+    if not fixes:
+        return []
+    cid = correction_id(fixes)
+    return ["", "**Correction handoff (to the Claude correction thread, not to ChatGPT):**",
+            f"- Correction id: `{cid}`",
+            f"- To close: the Claude correction thread posts a comment holding an HTML comment of the form {RECEIPT}:RUN:CORRECTION "
+            f"(run `{h}`, correction `{cid}`, joined by colons) after it has applied or rejected every fix. "
+            "No further paid run is allowed until that receipt exists.",
+            f"<!-- {CORRECTION}:{h}:{cid} -->"]
+
+
+def pending_corrections(comments):
+    """(run hash, correction id) pairs posted by the workflow with no matching receipt yet."""
+    done = {m.groups() for c in comments if (c.get("user") or {}).get("login") != TRUSTED_SETTLER
+            for m in RECEIPT_RE.finditer(c.get("body") or "")}   # a receipt must come from a person/thread, never the bot
+    out = []
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        for m in CORRECTION_RE.finditer(c.get("body") or ""):
+            if m.groups() not in done:
+                out.append(m.groups())
+    return out
+
+
+def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQUESTS, shas=None):
     mock = mode != "live"
     head = (f"**ZANS two-reviewer check (SYNTHETIC MOCK) | {outcome}**" if mock
             else f"**ZANS two-reviewer check (live) | {outcome}**")
@@ -609,7 +665,11 @@ def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQ
     if mock:
         lines += ["**SYNTHETIC MOCK RUN: zero paid API calls. The verdicts below are scripted test data. "
                   "This is NOT a review of the artifacts and gives no verdict on them.**", ""]
-    lines += [f"Task: {task[:300]}", "Artifacts:"] + [f"- {u}" for u in urls] + [""]
+    if shas:
+        lines += [f"Task: {task[:300]}", "Artifacts (result id, sha256 of the bytes reviewed):"]
+        lines += [f"- `{rid}` sha256 `{sha}` {u}" for rid, sha, u in zip(artifact_ids(h, urls, shas), shas, urls)] + [""]
+    else:
+        lines += [f"Task: {task[:300]}", "Artifacts:"] + [f"- {u}" for u in urls] + [""]
     for r in rounds:
         for who in ("Claude", "OpenAI"):
             if who not in r:
@@ -621,6 +681,8 @@ def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQ
     if outcome.startswith("AGREED REVISE"):
         fixes = combined_fixes(rounds)
         lines += ["", "**Combined fix list (both reviewers, final round):**"] + [f"{i}. {x}" for i, x in enumerate(fixes, 1)]
+        if not mock:
+            lines += correction_block(h, rounds)
     paid = 0 if mock else requests
     lines += ["", f"Paid API requests: {paid} of {max_requests}. Nothing was deployed, published, ordered or spent "
               "beyond these capped calls.", "", "---", "_Generated by [Claude Code](https://claude.ai/code)_"]
@@ -692,6 +754,7 @@ def main(env=None):
         if not 1 <= rounds_cap <= MAX_ROUNDS:
             raise Stop(f"REFUSED: rounds must be 1 to {MAX_ROUNDS}.")
         check_artifacts(urls)
+        shas = parse_shas(env.get("ORCH_SHA256", ""), urls) if (mode == "live" or env.get("ORCH_SHA256", "").strip()) else None
         h = run_hash(task, urls, mode)
         meta = gh(env, "GET", f"repos/{repo}/issues/{issue}")
         checklist = meta.get("body") or ""
@@ -715,7 +778,10 @@ def main(env=None):
         if mode == "live" and overruns(recent, month):
             raise Stop("STOPPED: an earlier live run this month cost MORE than its reservation. No further live runs "
                        "until the owner reviews the cap and the pricing table.")
-        files = fetch_artifacts(urls) if mode == "live" else ""
+        if mode == "live" and pending_corrections(recent):
+            raise Stop("STOPPED: an earlier run has a correction handoff with no receipt from the Claude correction thread. "
+                       "Post the receipt first; no further paid run until then.")
+        files = fetch_artifacts(urls, shas=shas) if mode == "live" else ""
         reserve = 0.0
         if mode == "live":
             if worst_case_usd(preflight(task, urls, comments, files, checklist, rounds_cap), 2 * rounds_cap) > owner_budget(env):
@@ -753,7 +819,7 @@ def main(env=None):
             if mode != "live" and outcome.startswith("AGREED"):
                 outcome = "MOCK COMPLETE: scripted PASS/PASS, pipeline works (no real verdict)"
             gh(env, "POST", f"repos/{repo}/issues/{issue}/comments",
-               {"body": summary(h, task, urls, outcome, rounds, requests, mode, 2 * rounds_cap)})
+               {"body": summary(h, task, urls, outcome, rounds, requests, mode, 2 * rounds_cap, shas)})
             summary_posted = True
         finally:   # settlement is the only place a trusted completion marker may be emitted (also after a cap stop)
             if slot_posted:

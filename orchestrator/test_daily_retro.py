@@ -52,24 +52,27 @@ def test_validate_refuses(d, s):
         r.validate(d, s if s is not None else sha(d))
 
 
+ONE = {**ENV, "ZANS_ORCH_MAX_RUNS_PER_DAY": "1"}   # cap-1 behaviour; the temporary set-up ceiling is 3
+
+
 def test_plan_rules_one_slot_date_lock_and_month():
     d = data()
-    r.plan(d, sha(d), [], ENV, TODAY)
+    r.plan(d, sha(d), [], ONE, TODAY)
     with pytest.raises(o.Stop, match="only for"):
-        r.plan(d, sha(d), [], ENV, "2026-11-27")
+        r.plan(d, sha(d), [], ONE, "2026-11-27")
     h = sha(d)
     with pytest.raises(o.Stop, match="already attempted"):
-        r.plan(d, sha(d), [{"user": BOT, "body": o.slot_tag("retro", TODAY, h, 0.5)}], ENV, TODAY)
+        r.plan(d, sha(d), [{"user": BOT, "body": o.slot_tag("retro", TODAY, h, 0.5)}], ONE, TODAY)
     d2 = data(7000)
     with pytest.raises(o.Stop, match="shared one paid run"):
-        r.plan(d2, sha(d2), [{"user": BOT, "body": o.slot_tag("retro", TODAY, "deadbeef", 0.5)}], ENV, TODAY)
+        r.plan(d2, sha(d2), [{"user": BOT, "body": o.slot_tag("retro", TODAY, "deadbeef", 0.5)}], ONE, TODAY)
     # Every paid route consumes the same daily slot.
     for mode in ("live", "racing"):
         with pytest.raises(o.Stop, match="shared one paid run"):
-            r.plan(d, sha(d), [{"user": BOT, "body": o.slot_tag(mode, TODAY, "abc123", 2.45)}], ENV, TODAY)
+            r.plan(d, sha(d), [{"user": BOT, "body": o.slot_tag(mode, TODAY, "abc123", 2.45)}], ONE, TODAY)
     big = [{"user": BOT, "body": o.slot_tag("live", "2026-11-%02d" % n, "%064x" % (n + 100), 1.0)} for n in range(1, 26)]
     with pytest.raises(o.Stop, match="MONTH"):
-        r.plan(d, sha(d), big, ENV, TODAY)
+        r.plan(d, sha(d), big, ONE, TODAY)
     with pytest.raises(o.Stop, match="PER_RUN"):
         r.plan(d, sha(d), [], {**ENV, "ZANS_ORCH_MAX_USD_PER_RUN": "0.3"}, TODAY)
 
