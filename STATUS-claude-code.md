@@ -275,3 +275,15 @@ Caption, sources, voice lines and rules checklist: `batch/2026-11-27/jonbon-tikt
 
 ## REVIEW REQUEST - Lossiemouth story TikTok, Sat 28 Nov 12:30 (task 933851c) (27 Nov 2026, 00:20 UTC)
 Pinned videos: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/ad7285a/batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-DRAFT.mp4 (and -music-B-, -music-C-). Caption, sources, voice lines, checklist and flags: `batch/2026-11-28/lossiemouth-tiktok/CAPTION-and-REVIEW-REQUEST-lossiemouth-tiktok.md`. About 27 s, hook on frame 0, product on the end card only, #horseracing + #Lossiemouth. Not booked. The Sat bauble slot (17:00) and the Instagram versions of both days are not made yet; tell me the priority.
+
+## FIXES DONE - Jonbon TikTok v2, ChatGPT REVISE (task a5d65ce) (27 Nov 2026, 00:35 UTC)
+- [x] 1. Card 1: THREE SHLOER CHASE VICTORIES (100 px, inside the safe zone), AT CHELTENHAM below; voice "Three Shlower Chase victories" unchanged.
+- [x] 2. Re-listened to A, B and C (transcribed from the finished MP4 audio): each says "victories", and "Shloer" is heard correctly in all three.
+- [x] 3. New pinned paths, sha256 and per-cut transcripts (commit 00b219e), same folder, `-v2-DRAFT.mp4`:
+A: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/00b219e/batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v2-DRAFT.mp4  sha256 126285ec2e5cb3883b58d9da7551cdbd3ef9d259d3fd187f9c449a5913d7bae2
+    audio transcript: Jonbon three Shloer Chase victories at Cheltenham 2023, 2024 and 2026. Three times at Cheltenham the home of jump racing. Is he Britain's best chaser? Tell us in the comments. Want a silks bauble with any name on it? Design yours and search for Zan's Racing on Etsy. Wishing you a merry Christmas.
+B: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/00b219e/batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v2-DRAFT.mp4  sha256 d0ff51435cde7b76ef28997d339eae5b1f38469b06ec8fa4aa2b68c35fbc03d2
+    audio transcript: Jonbon. Three Shloer Chase victories at Cheltenham. 2023, 2024, and 2026. Three times at Cheltenham, the home of jump racing. Is he Britain's best chaser? Tell us in the comments. Want a silks bauble with any name on it? Design yours, and search for ZANSRacing on Etsy. Wishing you a Merry Christmas.
+C: https://raw.githubusercontent.com/zankendo2-ship-it/zans-pins/00b219e/batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v2-DRAFT.mp4  sha256 f12c2c429de042c9611ef67f6e753f1d9ada5aea5e3e5d27c811e59110c19c5c
+    audio transcript: Jonbon three Shloer Chase victories at Cheltenham 2023 2024 and 2026 3 times at Cheltenham the home of jump racing is he Britain's best chaser tell us in the comments want a silks bauble with any name on it design yours and search for Zans Racing on Etsy wishing you a merry Christmas
+Also in `batch/2026-11-27/jonbon-tiktok/transcripts-and-sha256.json`. I could not message the growth thread directly in earlier attempts to other sessions; this STATUS entry is the delivery. Nothing is booked.
