@@ -13,6 +13,7 @@ file is a few cents. No retries: a failed or invalid call is recorded and not ru
 """
 import hashlib
 import json
+import math
 import os
 import re
 import sys
@@ -68,6 +69,30 @@ def worst_case_usd(chunks=1):
 
 def fingerprint(data):
     return hashlib.sha256(data).hexdigest()
+
+
+PLACEHOLDERS = {"none", "null", "nil", "n/a", "na", "-", "--", "unknown", "tbc", "tbd", "?", "nothing", "no", "false", "true", "0", "x"}
+
+
+def _is_num(v):
+    return isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v)
+
+
+def _text_ok(v, reason=False):
+    """A reviewable text value: a non-empty string that is not a bare placeholder; a reason must also be a real sentence."""
+    if not isinstance(v, str):
+        return False
+    t = v.strip()
+    if not t or t.lower().strip(".! ") in PLACEHOLDERS:
+        return False
+    return len(t) >= 10 if reason else True
+
+
+def _longshot_ok(v):
+    """A longshot selection carries its price: text with a number in it ('X at 21.0'), or a dict with a positive price/odds."""
+    if isinstance(v, dict):
+        return any(_is_num(v.get(k)) and v[k] > 1 for k in ("price", "odds", "sky_bet_price"))
+    return _text_ok(v) and any(ch.isdigit() for ch in v)
 
 
 def validate(data, today):
@@ -132,17 +157,25 @@ def validate(data, today):
                     v = r.get(k)
                     if v is None or (isinstance(v, str) and not v.strip()) or (isinstance(v, (list, dict)) and not v):
                         raise Refuse(f"race {r['course']} {r['time']} has a pick but no usable {k} (write 'none' or the reason; null is not reviewable)")
-                def usable(v):
-                    return not (v is None or (isinstance(v, str) and not v.strip()) or (isinstance(v, (list, dict)) and not v))
                 where = f"race {r['course']} {r['time']}"
-                if not usable(r.get("second")):
-                    raise Refuse(f"{where} has a pick but no usable second (the runner-up, or the reason none exists)")
-                if not (usable(r.get("rpr_pick")) or usable(r.get("rpr_reason"))):
-                    raise Refuse(f"{where} has neither an rpr_pick nor an rpr_reason")
-                if not (usable(r.get("longshot")) or usable(r.get("longshot_reason"))):
-                    raise Refuse(f"{where} has neither a longshot (with its price) nor a longshot_reason")
-                if r.get("sky_bet_price") is not None and not usable(r.get("best_price")):
-                    raise Refuse(f"{where} has a Sky price but no best_price")
+                if not (_text_ok(r.get("second")) or _text_ok(r.get("second_reason"), reason=True)):
+                    raise Refuse(f"{where} has a pick but no usable second (a runner-up, or a second_reason; a bare placeholder like 'none' is not reviewable)")
+                if not (_text_ok(r.get("rpr_pick")) or _text_ok(r.get("rpr_reason"), reason=True)):
+                    raise Refuse(f"{where} has neither a real rpr_pick nor an rpr_reason (a bare placeholder like 'none' is not reviewable)")
+                if not (_longshot_ok(r.get("longshot")) or _text_ok(r.get("longshot_reason"), reason=True)):
+                    raise Refuse(f"{where} has neither a longshot with its price nor a longshot_reason (a bare placeholder like 'none' is not reviewable)")
+                dc = r.get("data_chance")
+                if not _is_num(dc) or not 0 <= dc <= 1:
+                    raise Refuse(f"{where} has a pick but data_chance is not a number between 0 and 1")
+                if r.get("sky_bet_price") is not None:
+                    bp = r.get("best_price")
+                    if isinstance(bp, str):
+                        try:
+                            bp = float(bp)
+                        except ValueError:
+                            bp = None
+                    if not _is_num(bp) or bp <= 1:
+                        raise Refuse(f"{where} has a Sky price but best_price is not a finite decimal price above 1.0")
     return text
 
 
