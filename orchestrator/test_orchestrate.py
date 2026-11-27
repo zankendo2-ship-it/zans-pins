@@ -156,9 +156,10 @@ def test_context_is_capped():
     assert len(o.build_context(big)) <= o.MAX_CONTEXT_CHARS + 500
 
 
-def test_summary_has_marker_and_no_secrets():
-    s = o.summary("h1", "task", [URL], "AGREED", [{"round": 1, "Claude": V("PASS"), "OpenAI": V("PASS")}], 2, "mock")
-    assert "<!-- zans-orch:h1 -->" in s and "API_KEY" not in s
+def test_summary_has_no_completion_marker_or_secrets():
+    # Completion is recorded only in the trusted post-settlement comment, never in the summary.
+    s = o.summary("h1", "task", [URL], "AGREED", [{"round": 1, "Claude": V("PASS"), "OpenAI": V("PASS")}], 2, "live")
+    assert "<!-- zans-orch:h1 -->" not in s and "API_KEY" not in s
 
 
 def test_main_live_disabled_exits_clean_without_network(capsys):

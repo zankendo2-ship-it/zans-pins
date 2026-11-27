@@ -107,7 +107,7 @@ def plan(data, expected_sha, comments, env, today):
     if o.already_done(comments, h) or o.attempted(comments, h):
         raise o.Stop("STOPPED: this exact file was already attempted (slot used); no automatic paid retry.")
     if o.runs_today(comments, today, "retro") >= o.day_cap(env, "retro"):
-        raise o.Stop("STOPPED: the one-off retrospective run is already used.")
+        raise o.Stop("STOPPED: the shared one paid run per UTC day is already used by a paid route.")
     month = today[:7]
     if o.overruns(comments, month):
         raise o.Stop("STOPPED: an earlier run this month cost more than its reservation.")
