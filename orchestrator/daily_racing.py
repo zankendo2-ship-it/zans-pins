@@ -21,7 +21,7 @@ import time
 import orchestrator.orchestrate as o
 
 BRANCH = "claude/project-thread-hgtq2b"   # the racing thread's own zans-pins branch (the only one it may push to)
-RACING_SOURCE_REPO = "zankendo2-ship-it/HORSE-RACING-EXTRACTION-"  # pinned source-pack repository
+RACING_SOURCE_REPO = "zankendo2-ship-it/zans-pins"  # public copies of the sealed source bytes (the private racing repo is not readable by this workflow)
 UK_WINDOW = ("08:45", "09:25")      # Europe/London local time; two cron lines (winter/summer UTC) + this gate
 MAX_FILE_BYTES = 60_000
 MAX_INPUT_TOKENS = 30_000            # per call, JSON-escaped bytes + framing + request fields
