@@ -265,23 +265,78 @@ def verify_sources(data, getter):
     return len(src)
 
 
+def _source_prices(row):
+    """Every decimal price the verified prices row carries for a runner (test 'price', Sporting Life, best, each bookmaker)."""
+    out = set()
+    for k in ("price", "sl_dec", "best_dec"):
+        try:
+            x = float(row.get(k))
+            if x > 1:
+                out.add(x)
+        except (TypeError, ValueError):
+            pass
+    for part in str(row.get("bookie_terms") or "").split("|"):
+        bits = part.split(";")
+        if len(bits) > 1:
+            try:
+                x = float(bits[1])
+                if x > 1:
+                    out.add(x)
+            except ValueError:
+                pass
+    return out
+
+
 def check_declared_runners(d, prices_bytes):
-    """V3 files: every named second / RPR pick / longshot must be a runner in the verified prices file for that race
-    (course + off time). A race the prices file does not list is not checked here (it is unpriced, and says so)."""
+    """V3 files, fail closed against the hash-verified prices file (course + off time):
+    - a picked race must have its rows in the file, unless it carries a real no_price_reason;
+    - win_pick / second / rpr_pick / longshot must each be a plausible name AND a declared runner (win_pick 'none' is refused);
+    - a claimed longshot price, and best_price, must equal a price the file actually holds for that runner (no invented price);
+    - where the file holds a runner at 15.00+ in a field of 6+, a longshot naming a qualifying runner is required (a reason cannot bypass it)."""
     import csv
     import io
     declared = {}
     for row in csv.DictReader(io.StringIO(prices_bytes.decode("utf-8", "replace"))):
-        declared.setdefault((str(row.get("course", "")).strip().lower(), str(row.get("off_time") or row.get("time") or "").strip()), set()).add(_key(row.get("horse", "")))
+        race = declared.setdefault((str(row.get("course", "")).strip().lower(), str(row.get("off_time") or row.get("time") or "").strip()), {})
+        race.setdefault(_key(row.get("horse", "")), set()).update(_source_prices(row))
     for r in d.get("races", []):
-        names = declared.get((str(r.get("course", "")).strip().lower(), str(r.get("time", "")).strip()))
-        if not names or not r.get("win_pick"):
+        if not r.get("win_pick"):
             continue
+        where = f"race {r['course']} {r['time']}"
+        runners = declared.get((str(r.get("course", "")).strip().lower(), str(r.get("time", "")).strip()))
+        if not runners:
+            if _text_ok(r.get("no_price_reason"), reason=True):
+                continue
+            raise Refuse(f"{where} has a pick but no rows in the verified prices file and no no_price_reason (cannot verify its runners)")
         for f in ("win_pick", "second", "rpr_pick", "longshot"):
             v = r.get(f)
             n = _horse_name(v.get("name") if isinstance(v, dict) else v)
-            if n and _key(n) not in names:
-                raise Refuse(f"race {r['course']} {r['time']}: {f} {n!r} is not a declared runner in the verified prices file")
+            if n is None:
+                if f == "win_pick":
+                    raise Refuse(f"{where}: win_pick {v!r} is not a usable runner name (a placeholder such as 'none' is refused)")
+                continue   # second / rpr_pick / longshot may be a reason instead; the checks below decide whether that is allowed
+            if _key(n) not in runners:
+                raise Refuse(f"{where}: {f} {n!r} is not a declared runner in the verified prices file")
+        ls = r.get("longshot")
+        claimed = _price_of(ls)
+        if claimed is not None:
+            ln = _key(_horse_name(ls.get("name") if isinstance(ls, dict) else ls) or "")
+            if ln in runners and not any(abs(claimed - p) < 0.011 for p in runners[ln]):
+                raise Refuse(f"{where}: longshot price {claimed} is not a price the verified prices file holds for that runner")
+        eligible = {k for k, q in runners.items() if any(p >= LONGSHOT_MIN_PRICE for p in q)} if len(runners) >= 6 else set()
+        if eligible:
+            ln = _key(_horse_name(ls.get("name") if isinstance(ls, dict) else ls) or "")
+            if ln not in eligible or not _longshot_ok(ls):
+                raise Refuse(f"{where}: the verified prices file holds runner(s) at {LONGSHOT_MIN_PRICE:.2f} or more in a field of {len(runners)}, so a named qualifying longshot is required (longshot_reason cannot replace it)")
+        bp = r.get("best_price")
+        if bp is not None:
+            try:
+                bpf = float(bp)
+            except (TypeError, ValueError):
+                bpf = None
+            wn = _key(_horse_name(r.get("win_pick")) or "")
+            if bpf is not None and wn in runners and runners[wn] and not any(abs(bpf - p) < 0.011 for p in runners[wn]):
+                raise Refuse(f"{where}: best_price {bpf} is not a price the verified prices file holds for the win pick")
 
 
 def _body(text, extra=""):
