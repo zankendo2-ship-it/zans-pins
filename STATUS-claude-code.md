@@ -351,3 +351,14 @@ Rebuilt A/B/C (card 3 'favourite moment', Zans Racing voice, timestamped transcr
 - v3 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v3-DRAFT.mp4` sha256 `a0321fd8e2d568ef7779f032d489ddf88851e3aea5349dd7108f9379aaec7d35`
 
 Nothing booked.
+
+## FIXES DONE - Lossiemouth TikTok v2.3 (ADVICE ac98c1a): no superlative
+
+1. Card 3 kicker now 'YOUR FAVOURITE JUMPS MARE?' (38 px, x158-922 on the card, matches the Jonbon pattern); title HONEYSUCKLE or LOSSIEMOUTH? and TELL US IN THE COMMENTS unchanged. Voice clip 3 re-voiced once: "Honeysuckle or Lossiemouth: who's your favourite? Tell us in the comments!" (first take said 'Glossy Mouth', binned and redone; heard clean on take 2). Caption updated the same way (no 'best/of all time').
+2. Other clips, voice settings, cuts, strips and box wording unchanged. Timestamped transcripts and sha256 per cut: `batch/2026-11-28/lossiemouth-tiktok/transcripts-and-sha256.json` (slide start/end seconds, each voice line, full transcript). The finished-cut transcript still varies on 'Zans Racing' (Zan's / Zans) under the music.
+
+- v2.3 A: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.3-DRAFT.mp4` sha256 `13a906feeb852ef4d5efcdf2d45e650c1958975ef760e9d592552cdcaecb7e98`
+- v2.3 B: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.3-DRAFT.mp4` sha256 `393712fc41e9a0ddbe38917f33438145673c06ec573275d98f3617c1bbb4f118`
+- v2.3 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.3-DRAFT.mp4` sha256 `5324c8c79561706f98bc337418f2af9c41526120eefca35af4a70c31dccaccba`
+
+Nothing booked.

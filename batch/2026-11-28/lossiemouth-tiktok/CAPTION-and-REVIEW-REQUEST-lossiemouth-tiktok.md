@@ -6,11 +6,11 @@ Videos: `LOSSIEMOUTH-TikTok-Sat-1230-music-A/B/C-v2-DRAFT.mp4` (1080x1920, about
 |---|---|---|
 | 1 (hook, frame 0) | LOSSIEMOUTH / 2 CHAMPION HURDLES / IN 2026 | "Lossiemouth. Two Champion Hurdles in twenty twenty-six!" |
 | 2 | ONE MARE. TWO COURSES. CHELTENHAM IN MARCH / PUNCHESTOWN IN MAY | "Cheltenham in March. Punchestown in May." |
-| 3 | BEST JUMPS MARE EVER? HONEYSUCKLE or LOSSIEMOUTH? TELL US IN THE COMMENTS | "Honeysuckle or Lossiemouth: who's the best jumps mare of all time? Tell us in the comments!" |
+| 3 | YOUR FAVOURITE JUMPS MARE? HONEYSUCKLE or LOSSIEMOUTH? TELL US IN THE COMMENTS | "Honeysuckle or Lossiemouth: who's your favourite? Tell us in the comments!" |
 | 4 end card (only product shot) | DESIGN YOURS WITH ANY NAME / SEARCH ZANS RACING ON ETSY / WISHING YOU A MERRY CHRISTMAS | "Want a pink and green spots silks bauble with any name on it? Design yours, and search ZANS Racing on Etsy." then "Wishing you a Merry Christmas!" |
 
 ## Caption (5 tags, no link in bio, no price)
-> Lossiemouth: two Champion Hurdles in 2026, Cheltenham in March and Punchestown in May. 🏇 Honeysuckle or Lossiemouth: who's the best jumps mare of all time? Tell us in the comments 👇
+> Lossiemouth: two Champion Hurdles in 2026, Cheltenham in March and Punchestown in May. 🏇 Honeysuckle or Lossiemouth: who's your favourite? Tell us in the comments 👇
 >
 > Want a pink and green spots silks bauble with any name on it? Search ZANS Racing on Etsy.
 >
