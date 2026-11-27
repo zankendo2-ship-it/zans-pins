@@ -629,15 +629,24 @@ def correction_id(fixes):
     return hashlib.sha256(json.dumps(fixes, sort_keys=True).encode()).hexdigest()
 
 
+SENSITIVE_RE = re.compile(r"(sk-[A-Za-z0-9_-]{16,}|ghp_[A-Za-z0-9]{16,}|github_pat_\w{20,}|BEGIN [A-Z ]*PRIVATE KEY|"
+                          r"[\w.+-]+@[\w-]+\.[\w.-]+|\bAKIA[0-9A-Z]{12,}\b)")
+
+
+def redact(text):
+    """Keys, tokens and email addresses never appear in a public correction or summary line."""
+    return SENSITIVE_RE.sub("[redacted]", str(text))
+
+
 def correction_block(h, rounds):
-    """Correction handoff marker. The fix text is the review output already shown above (public, as the repo is public);
-    NO private payload is sent anywhere, because no authenticated private Claude destination is configured. The block
-    only opens a correction gate that the receipt workflow (allowlisted actor, bot-posted) closes."""
+    """Correction gate marker. Owner decision (Alex, 27 Nov 05:37): the route does NOT have to be private, so it stays in
+    this public repo. The fix text is the review output already shown above; keys, tokens and emails are redacted. The
+    block opens a gate that only the receipt workflow (allowlisted actor, bot-posted) closes."""
     fixes = combined_fixes(rounds)
     if not fixes:
         return []
     cid = correction_id(fixes)
-    return ["", "**Correction gate (BLOCKED until closed; private routing NOT configured, this repo is public):**",
+    return ["", "**Correction gate (open until a bot-posted receipt closes it; private routing not required, owner decision 27 Nov; this repo is public):**",
             f"- Correction id: `{cid}` ({len(fixes)} fixes, listed above).",
             "- Close it only with the 'ZANS correction receipt' workflow (allowlisted actor, main branch) giving run "
             f"`{h}`, this correction id and one applied/rejected decision per fix. Only that bot-posted receipt counts. "
@@ -690,10 +699,10 @@ def summary(h, task, urls, outcome, rounds, requests, mode, max_requests=MAX_REQ
                 continue
             v = r[who]
             lines.append(f"- Round {r['round']} {who}: **{v['verdict']}**. {v['ack']}")
-            lines += [f"  - reason: {x}" for x in v["reasons"]] + [f"  - fix: {x}" for x in v["fixes"]]
+            lines += [f"  - reason: {redact(x)}" for x in v["reasons"]] + [f"  - fix: {redact(x)}" for x in v["fixes"]]
     if outcome.startswith("AGREED REVISE"):
         fixes = combined_fixes(rounds)
-        lines += ["", "**Combined fix list (both reviewers, final round):**"] + [f"{i}. {x}" for i, x in enumerate(fixes, 1)]
+        lines += ["", "**Combined fix list (both reviewers, final round):**"] + [f"{i}. {redact(x)}" for i, x in enumerate(fixes, 1)]
         if not mock:
             lines += correction_block(h, rounds)
     paid = 0 if mock else requests

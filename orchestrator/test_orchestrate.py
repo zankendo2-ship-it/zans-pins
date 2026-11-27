@@ -778,7 +778,7 @@ def test_correction_gate_needs_a_bot_posted_newer_receipt():
     rounds = [{"round": 1, "Claude": {**V("REVISE"), "fixes": ["fix A"]}, "OpenAI": {**V("REVISE"), "fixes": ["fix B"]}}]
     live = o.summary(h, "t", [URL], "AGREED REVISE: both reviewers want changes", rounds, 2, "live", 2, [GOOD_SHA])
     mock = o.summary(h, "t", [URL], "AGREED REVISE: both reviewers want changes", rounds, 0, "mock", 2, [GOOD_SHA])
-    assert o.CORRECTION in live and o.CORRECTION not in mock and "NOT configured" in live
+    assert o.CORRECTION in live and o.CORRECTION not in mock and "not required" in live
     cid = o.correction_id(o.combined_fixes(rounds))
     BOT = {"login": o.TRUSTED_SETTLER}
     gate = {"user": BOT, "body": live, "created_at": "2026-11-27T05:00:00Z"}
@@ -861,3 +861,12 @@ def test_overrun_blocks_later_live_runs_that_month():
     assert not o.overruns([over], "2026-12")
     spoof = {"user": {"login": "someone"}, "body": o.settle_tag("2026-11-27", "f" * 64, 5.0, over=True)}
     assert not o.overruns([spoof], "2026-11")
+
+
+def test_public_summary_redacts_keys_tokens_and_emails():
+    rounds = [{"round": 1, "Claude": {**V("REVISE"), "reasons": ["mail me at a.b@example.com"], "fixes": ["rotate sk-abcdefghijklmnopqrstuv now"]},
+               "OpenAI": {**V("REVISE"), "fixes": ["token ghp_abcdefghijklmnopqrstuv leaked"]}}]
+    s = o.summary("a" * 64, "t", [URL], "AGREED REVISE: x", rounds, 2, "live", 2, [GOOD_SHA])
+    for leak in ("a.b@example.com", "sk-abcdefghijklmnopqrstuv", "ghp_abcdefghijklmnopqrstuv"):
+        assert leak not in s
+    assert "[redacted]" in s
