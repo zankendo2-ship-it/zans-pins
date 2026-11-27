@@ -18,15 +18,17 @@ RACE = {"time": "13:00", "course": "Ascot", "win_pick": "A", "confidence": "8", 
 
 
 import hashlib
-SRCS = {"sent/3_d0_morning_0845/predictions.json": b'{"p": 1}', "sent/3_d0_morning_0845/betslip.json": b'{"b": 2}'}
+SRCS = {"sent/3_d0_morning_0845/predictions.json": b'{"p": 1}', "sent/3_d0_morning_0845/betslip.json": b'{"b": 2}',
+        "reports/price_stages/2026-11-27/d0_0815.csv": b"course,time,horse,price\nAscot,13:00,A,2.5\n"}
+PRICE_PATH = "reports/price_stages/2026-11-27/d0_0815.csv"
 SOURCES = [{"path": k, "sha256": hashlib.sha256(v).hexdigest()} for k, v in SRCS.items()]
 GETTER = lambda commit, path: SRCS[path]   # noqa: E731
 
 
 def file_bytes(**kw):
     d = {"date": TODAY, "frozen_at_utc": TODAY + "T08:45:00Z", "built_utc": TODAY + "T08:50:00Z", "pack": "3_d0_morning_0845",
-         "pack_manifest_combined_sha256": r.combined_sha256(SOURCES), "racing_branch_commit": "b" * 40,
-         "sources": SOURCES, "races": [RACE]}
+          "pack_manifest_combined_sha256": r.combined_sha256(SOURCES), "racing_branch_commit": "b" * 40,
+          "prices_file": PRICE_PATH, "sources": SOURCES, "races": [RACE]}
     d.update(kw)
     return json.dumps(d).encode()
 
@@ -244,12 +246,20 @@ def test_mock_main_real_fixture_no_provider_calls(monkeypatch):
     assert len(posts) == 1 and "SYNTHETIC MOCK" in posts[0] and o.SLOT not in posts[0]
 
 
+def test_source_url_uses_the_pinned_racing_data_repository():
+    assert r.source_url("a" * 40, "reports/predictions/x.json") == (
+        "https://raw.githubusercontent.com/zankendo2-ship-it/HORSE-RACING-EXTRACTION-/"
+        + "a" * 40 + "/reports/predictions/x.json"
+    )
+
+
 def test_source_bytes_and_combined_hash_are_verified_before_any_slot():
-    assert r.verify_sources(file_bytes(), GETTER) == 2
+    assert r.verify_sources(file_bytes(), GETTER) == 3
     for bad in (file_bytes(sources=None), file_bytes(sources=[]),
                 file_bytes(pack_manifest_combined_sha256="0" * 64),
                 file_bytes(sources=[{**SOURCES[0], "sha256": "0" * 64}, SOURCES[1]]),
                 file_bytes(sources=[{**SOURCES[0], "path": "../x"}, SOURCES[1]]),
+                file_bytes(prices_file="reports/price_stages/unsealed.csv"),
                 file_bytes(sources=[SOURCES[0], SOURCES[0]])):
         with pytest.raises(r.Refuse):
             r.verify_sources(bad, GETTER)
