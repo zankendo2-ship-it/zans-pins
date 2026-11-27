@@ -600,7 +600,7 @@ import hashlib as _hl
 _REC = {"time": "13:00", "course": "Ascot", "horse": "Alpha Star", "win_angles": ["Won last time at this trip", "Trainer in form 4 from 9"],
         "win_caution": ["Up 5lb in the handicap"], "data_angles": ["Top speed figure"], "second": "Blue Sky 4.00 (23%)", "chance": 0.303,
         "data_chance": 0.31, "data_conf": 4, "rpr_pick": "Alpha Star", "rpr_reason": "Best RPR at trip", "price": 2.5, "going": "Good to Soft",
-        "longshot": "Long Shot at 21.0", "data_gap": False, "drift_warning": False, "second_reason": None, "longshot_reason": None}
+        "longshot": "Long Shot at 21.0", "data_gap": False, "drift_warning": "", "second_reason": None, "longshot_reason": None}
 _COURSE = json.dumps({"picks": [_REC, {**_REC, "time": "14:00", "horse": "Other"}]}).encode()
 _PR = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\n"
        b"Ascot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5|Paddy Power;2.7;3;1/5,RUNNER\n"
@@ -622,7 +622,7 @@ def _evd(**race):
          "races": [{"time": "13:00", "course": "Ascot", "win_pick": "Alpha Star", "confidence": 8, "zans_reasons": ["Won last time at this trip"],
                     "cautions": ["Up 5lb in the handicap"], "sky_bet_price": 2.6, "best_price": 2.6, "second": "Blue Sky 4.00 (23%)",
                     "rpr_pick": "Alpha Star", "zans_chance": 0.303, "data_chance": 0.31, "data_conf": 4, "price_at_pick": "2.50", "going": "Good to Soft",
-                    "longshot": "Long Shot at 21.0", "second_reason": None, "longshot_reason": None, "data_gap": False, "drift_warning": False,
+                    "longshot": "Long Shot at 21.0", "second_reason": None, "longshot_reason": None, "data_gap": False, "drift_warning": "",
                     "evidence": {"id": "E1", "src": "S1", "pick_sha256": r._h(_REC), "price_src": "S2", "price_row_sha256": r._h(_ROW),
                                  "longshot_row_sha256": r._h(_LROW)}, **race}]}
     return d
@@ -745,6 +745,33 @@ def test_evidence_boolean_fields_must_be_real_booleans():
     d, f = _with_rec(data_gap=True)
     d["races"][0]["data_gap"] = "false"
     with pytest.raises(r.Refuse, match="must be a boolean"):
+        _ev(d, f)
+
+
+def test_drift_warning_is_exact_source_bound_text_including_empty():
+    _ev()  # the empty source string is a verified "no warning", not a missing value
+    warning = "Lillistar drifted 2.88 -> 3.50 overnight - still our pick on the evidence, kept out of the multiples"
+    d, f = _with_rec(drift_warning=warning)
+    d["races"][0]["drift_warning"] = warning
+    _ev(d, f)
+
+    d["races"][0]["drift_warning"] = ""
+    with pytest.raises(r.Refuse, match="exact hashed pick-record text"):
+        _ev(d, f)  # an empty output cannot erase a source warning
+
+    d, f = _with_rec()
+    d["races"][0]["drift_warning"] = warning
+    with pytest.raises(r.Refuse, match="exact hashed pick-record text"):
+        _ev(d, f)  # a warning cannot be invented when the source is empty
+
+    d, f = _with_rec()
+    d["races"][0]["drift_warning"] = False
+    with pytest.raises(r.Refuse, match="must both be strings"):
+        _ev(d, f)
+
+    d, f = _with_rec()
+    d["races"][0]["not_verified"] = ["drift_warning"]
+    with pytest.raises(r.Refuse, match="cannot be marked NOT VERIFIED"):
         _ev(d, f)
 
 
