@@ -1,12 +1,12 @@
 # REVIEW REQUEST - Jonbon story TikTok, Fri 27 Nov 2026 17:00 UK (task c52f943), DRAFT
 
-**Video:** `JONBON-Shloer-TikTok-Fri-1700-music-A/B/C-DRAFT.mp4` (three music versions, 1080x1920, about 27 s, H.264 + AAC 48 kHz, whole mix -14.7 LUFS, peak -1.4 dBFS, metal strips top and bottom). Pinned link below.
+**Video:** `JONBON-Shloer-TikTok-Fri-1700-music-A/B/C-v2-DRAFT.mp4` (three music versions, 1080x1920, about 27 s, H.264 + AAC 48 kHz, whole mix -14.7 LUFS, peak -1.4 dBFS, metal strips top and bottom). Pinned link below.
 **Booking:** TikTok only, Fri 27 Nov 17:00 UK. Nothing booked. AI label OFF. Commercial content: own brand ON (merch). Needs Alex's approval of this finished video first.
 
 ## What it says (voice = Aoede, locked style; every clip transcribed)
 | Card | Words on screen | Voice |
 |---|---|---|
-| 1 (0 s, hook in the first frame) | JONBON / 3 SHLOER CHASES / AT CHELTENHAM | "Jonbon. Three Shlower Chase victories at Cheltenham!" (spelt phonetically so it is said right; card keeps Shloer) |
+| 1 (0 s, hook in the first frame) | JONBON / THREE SHLOER CHASE VICTORIES / AT CHELTENHAM | "Jonbon. Three Shlower Chase victories at Cheltenham!" (spelt phonetically so it is said right; card keeps Shloer) |
 | 2 | THE SHLOER CHASE VICTORIES: 2023 · 2024 · 2026 | "Twenty twenty-three. Twenty twenty-four. And twenty twenty-six!" |
 | 3 | THE HOME OF JUMP RACING / BRITAIN'S BEST CHASER? / TELL US IN THE COMMENTS | "Three times at Cheltenham, the home of jump racing. Is he Britain's best chaser? Tell us in the comments!" |
 | 4 end card (the only product shot) | DESIGN YOURS WITH ANY NAME / SEARCH ZANS RACING ON ETSY / WISHING YOU A MERRY CHRISTMAS | "Want a silks bauble with any name on it? Design yours, and search ZANS Racing on Etsy." then "Wishing you a Merry Christmas!" |
@@ -39,3 +39,6 @@ Title (TikTok): "Jonbon: three Shloer Chase victories at Cheltenham 🏇" (56 ch
 - [x] Safe zone: all words inside y 340 to 1600, x 60 to 920.
 - [x] Music: three versions, all our own code-made beds (`batch/2026-11-21/conny-kempton/music/race-bed-A/B/C.mp3`), 0.30 gain under the voice; Alex picks one.
 Fixed per ADVICE 673917d: the word "wins" is gone (card 2, voice, caption, title now say "victories"); three music versions made. Remaining flag: Alex's yes to this cut came via the growth thread, not typed to me.
+
+## v2 (27 Nov 2026) - ChatGPT REVISE (task a5d65ce)
+Card 1 now reads THREE SHLOER CHASE VICTORIES (100 px, all inside the safe zone), matching the voice. All three cuts re-listened: clip 1 says "victories" and "Shloer" is pronounced right in every cut. Per-cut transcripts and sha256 are in `transcripts-and-sha256.json`.
