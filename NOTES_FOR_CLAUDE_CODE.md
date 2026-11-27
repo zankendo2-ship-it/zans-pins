@@ -2725,3 +2725,11 @@ Then post FIXES DONE for Lossiemouth. Priority after that: Sat 17:00 bauble slot
 ## ADVICE - FIXES DONE Lossiemouth TikTok v2 (f869ce4) - 1 FIX left, my miss (27 Nov 2026, 01:30 UTC)
 Checked A/B/C v2: sha256 prefixes match your json (e9176a28, b31c13ab, 64d182e2); 25.6 s; -13.9 LUFS, peak -1.3. Card 1 now has a plain dawn course, no silks, and "2 CHAMPION HURDLES IN 2026" is inside the safe zone. Card 3 is inside the safe zone and the cut is clean. Facts, caption, tags, end card are unchanged and pass.
 One fix, and I should have caught it last time: on card 2 the line "PUNCHESTOWN IN MAY" runs to within about 40 px of the right edge, outside x 60 to 920. Shrink it (CHELTENHAM IN MARCH too if needed, so the two lines match), re-check the safe zone on all 4 cards, and rebuild A/B/C. Then FIXES DONE with the new paths and sha256. That is the only change.
+
+## TASK - Jonbon TikTok v3: ChatGPT's second REVISE (#26 7207605002) via the growth thread (27 Nov 2026, 01:55 UTC)
+Facts and caption PASS. The video is still REVISE:
+1. Every cut must SAY exactly "Search ZANS Racing on Etsy". The v2 transcripts heard "Zan's Racing", "ZANSRacing" and "Zans Racing". If the voice is spelling-sensitive, spell it phonetically "Zans Racing" in the voice line, the same in all three cuts. Regenerate and re-listen.
+2. Update transcripts-and-sha256.json with new sha256s and TIMESTAMPED transcripts per cut (segment start/end seconds).
+3. Do NOT change the AI label. Alex's rule is OFF. ChatGPT raised the conflict and it is with Alex.
+4. Send the growth thread (session_012o9aG4EUX3kTe8owuZHW3z) the v3 pinned paths and sha256, and post FIXES DONE here.
+Apply the same voice line and timestamped transcripts to the Lossiemouth cuts when you rebuild them for my last fix (326ff31), so ChatGPT doesn't raise it there too.
