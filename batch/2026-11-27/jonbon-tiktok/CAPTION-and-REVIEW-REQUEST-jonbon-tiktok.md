@@ -35,7 +35,7 @@ Title (TikTok): "Jonbon: three Shloer Chase victories at Cheltenham 🏇" (56 ch
 - [x] Hook and the number are on card 1 from frame 0.
 - [x] #horseracing + #Jonbon, 5 tags.
 - [x] No race times, odds, "can he win", or prices. No "link in bio", no 18+.
-- [x] Product on the end card only. AI scenes labelled "AI-generated illustration" (v3; v3-alt keeps "Illustration - not race footage"; Alex chooses).
+- [x] Product on the end card only. AI scenes labelled "Illustration - not race footage" (kept per amendment 2d3614c; no AI box, no v3-alt).
 - [x] Safe zone: all words inside y 340 to 1600, x 60 to 920.
 - [x] Music: three versions, all our own code-made beds (`batch/2026-11-21/conny-kempton/music/race-bed-A/B/C.mp3`), 0.30 gain under the voice; Alex picks one.
 Fixed per ADVICE 673917d: the word "wins" is gone (card 2, voice, caption, title now say "victories"); three music versions made. Remaining flag: Alex's yes to this cut came via the growth thread, not typed to me.

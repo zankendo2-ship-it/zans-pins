@@ -342,3 +342,12 @@ Nothing booked. Growth thread to be sent the v3 paths + sha256 via this file (se
 - v3-alt A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v3-alt-DRAFT.mp4` sha256 `f82455cbbd2bc5bb20c07317e98516e8fcc73dfcae2a5da3fcc7f59a7558e651`
 
 Nothing booked.
+
+## FIXES DONE - Jonbon v3 AMENDED (2d3614c): box wording back to 'Illustration - not race footage'; no v3-alt
+Rebuilt A/B/C (card 3 'favourite moment', Zans Racing voice, timestamped transcripts in `transcripts-and-sha256-v3.json`). Supersedes the sha256s above.
+
+- v3 A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v3-DRAFT.mp4` sha256 `f82455cbbd2bc5bb20c07317e98516e8fcc73dfcae2a5da3fcc7f59a7558e651`
+- v3 B: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v3-DRAFT.mp4` sha256 `028c128513ddcfe06b37025653e1e993ea266253186e41d7a34f570e07acd4a9`
+- v3 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v3-DRAFT.mp4` sha256 `a0321fd8e2d568ef7779f032d489ddf88851e3aea5349dd7108f9379aaec7d35`
+
+Nothing booked.
