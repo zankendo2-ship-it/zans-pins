@@ -261,33 +261,80 @@ def verify_sources(data, getter):
     if combined_sha256(src) != d["pack_manifest_combined_sha256"]:
         raise Refuse("pack_manifest_combined_sha256 does not match the per-source hashes")
     if d["date"] >= SCHEMA_V3_FROM:
-        check_declared_runners(d, getter(commit, prices_file))
+        check_declared_runners(d, getter(commit, prices_file), prices_name=prices_file.rsplit('/', 1)[-1])
     return len(src)
 
 
+def _dec(x):
+    try:
+        x = float(x)
+    except (TypeError, ValueError):
+        return None
+    return x if x > 1 else None
+
+
 def _source_prices(row):
-    """Every decimal price the verified prices row carries for a runner (test 'price', Sporting Life, best, each bookmaker)."""
-    out = set()
-    for k in ("price", "sl_dec", "best_dec"):
-        try:
-            x = float(row.get(k))
-            if x > 1:
-                out.add(x)
-        except (TypeError, ValueError):
-            pass
+    """Decimal prices a verified prices row carries for a runner, kept by source column/term:
+    sky = the 'Sky Bet v2' term of bookie_terms; best = best_dec; sl = sl_dec (a quote only); price = generic 'price' (quote only);
+    bookmaker = every bookmaker term plus best_dec; any = all of them."""
+    out = {"sky": set(), "best": set(), "sl": set(), "price": set(), "bookmaker": set()}
+    for col, key in (("price", "price"), ("sl_dec", "sl"), ("best_dec", "best")):
+        x = _dec(row.get(col))
+        if x is not None:
+            out[key].add(x)
+    out["bookmaker"] |= out["best"]
     for part in str(row.get("bookie_terms") or "").split("|"):
         bits = part.split(";")
-        if len(bits) > 1:
-            try:
-                x = float(bits[1])
-                if x > 1:
-                    out.add(x)
-            except ValueError:
-                pass
+        x = _dec(bits[1]) if len(bits) > 1 else None
+        if x is not None:
+            out["bookmaker"].add(x)
+            if bits[0].strip().lower().startswith("sky bet"):
+                out["sky"].add(x)
+    out["any"] = set().union(*out.values())
     return out
 
 
-def check_declared_runners(d, prices_bytes):
+ACTIVE_STATUS = {"RUNNER"}
+INACTIVE_STATUS = {"NONRUNNER", "NON_RUNNER", "NON-RUNNER", "WITHDRAWN"}
+LABEL_COLUMN = {"sky bet": ("sky", "bookmaker"), "best bookmaker": ("best", "bookmaker"),
+                "sporting life quote": ("sl", "quote_only"), "price": ("price", "quote_only")}
+
+
+def _merge_prices(into, new):
+    for k, v in new.items():
+        into.setdefault(k, set()).update(v)
+
+
+def _longshot_source_check(ls, rp, prices_name, where):
+    """A longshot dict's price must come from the column its price_source label names (or, in the compact file, its price_kind)."""
+    if not isinstance(ls, dict):
+        return
+    claimed = _price_of(ls)
+    src, kind = ls.get("price_source"), ls.get("price_kind")
+    if kind is not None and kind not in ("bookmaker", "quote_only"):
+        raise Refuse(f"{where}: longshot price_kind {kind!r} is not 'bookmaker' or 'quote_only'")
+    if src is not None:
+        label, sep, fname = str(src).partition(" in ")
+        spec = LABEL_COLUMN.get(label.strip().lower())
+        if spec is None or not sep:
+            raise Refuse(f"{where}: longshot price_source {src!r} is not '<label> in <prices file>' with a known label")
+        if prices_name and fname.strip() != prices_name:
+            raise Refuse(f"{where}: longshot price_source names {fname.strip()!r}, not the verified prices file {prices_name!r}")
+        col, expect_kind = spec
+        if kind is not None and kind != expect_kind:
+            raise Refuse(f"{where}: longshot price_source {label!r} is {expect_kind}, but price_kind says {kind!r}")
+        pool = rp.get(col, set())
+    elif kind == "bookmaker":
+        pool = rp.get("bookmaker", set()) | rp.get("sky", set())
+    elif kind == "quote_only":
+        pool = rp.get("sl", set()) | rp.get("price", set())
+    else:
+        return
+    if claimed is None or not any(abs(claimed - p) < 0.011 for p in pool):
+        raise Refuse(f"{where}: longshot price {claimed} is not held in the source column its price_source/price_kind names (a quote-only price cannot stand in for a bookmaker price)")
+
+
+def check_declared_runners(d, prices_bytes, prices_name=None):
     """V3 files, fail closed against the hash-verified prices file (course + off time):
     - a picked race must have its rows in the file, unless it carries a real no_price_reason;
     - win_pick / second / rpr_pick / longshot must each be a plausible name AND a declared runner (win_pick 'none' is refused);
@@ -296,14 +343,19 @@ def check_declared_runners(d, prices_bytes):
     import csv
     import io
     declared, inactive = {}, {}
-    for row in csv.DictReader(io.StringIO(prices_bytes.decode("utf-8", "replace"))):
+    reader = csv.DictReader(io.StringIO(prices_bytes.decode("utf-8", "replace")))
+    if "status" not in (reader.fieldnames or []):
+        raise Refuse("the verified prices file has no 'status' column; cannot tell runners from non-runners (fail closed)")
+    for row in reader:
         k = (str(row.get("course", "")).strip().lower(), str(row.get("off_time") or row.get("time") or "").strip())
-        st = str(row.get("status") or "RUNNER").strip().upper()
-        if st != "RUNNER":
+        st = str(row.get("status") or "").strip().upper()
+        if st in INACTIVE_STATUS:
             inactive.setdefault(k, set()).add(_key(row.get("horse", "")))
             continue   # a withdrawn / non-runner row is never a declared runner and never an eligible longshot
+        if st not in ACTIVE_STATUS:
+            raise Refuse(f"the verified prices file has a row for {row.get('horse')!r} with a blank or unknown status {st!r}; refused (fail closed)")
         race = declared.setdefault(k, {})
-        race.setdefault(_key(row.get("horse", "")), set()).update(_source_prices(row))
+        _merge_prices(race.setdefault(_key(row.get("horse", "")), {}), _source_prices(row))
     for r in d.get("races", []):
         if not r.get("win_pick"):
             named = [f for f in ("second", "rpr_pick", "longshot") if _horse_name(r.get(f).get("name") if isinstance(r.get(f), dict) else r.get(f))]
@@ -331,9 +383,11 @@ def check_declared_runners(d, prices_bytes):
         claimed = _price_of(ls)
         if claimed is not None:
             ln = _key(_horse_name(ls.get("name") if isinstance(ls, dict) else ls) or "")
-            if ln in runners and not any(abs(claimed - p) < 0.011 for p in runners[ln]):
+            if ln in runners and not any(abs(claimed - p) < 0.011 for p in runners[ln].get("any", ())):
                 raise Refuse(f"{where}: longshot price {claimed} is not a price the verified prices file holds for that runner")
-        eligible = {k for k, q in runners.items() if any(p >= LONGSHOT_MIN_PRICE for p in q)} if len(runners) >= 6 else set()
+            if ln in runners:
+                _longshot_source_check(ls, runners[ln], prices_name, where)
+        eligible = {k for k, q in runners.items() if any(p >= LONGSHOT_MIN_PRICE for p in q.get("any", ()))} if len(runners) >= 6 else set()
         if eligible:
             ln = _key(_horse_name(ls.get("name") if isinstance(ls, dict) else ls) or "")
             if ln not in eligible or not _longshot_ok(ls):
@@ -345,8 +399,10 @@ def check_declared_runners(d, prices_bytes):
             except (TypeError, ValueError):
                 bpf = None
             wn = _key(_horse_name(r.get("win_pick")) or "")
-            if bpf is not None and wn in runners and runners[wn] and not any(abs(bpf - p) < 0.011 for p in runners[wn]):
-                raise Refuse(f"{where}: best_price {bpf} is not a price the verified prices file holds for the win pick")
+            if bpf is not None and wn in runners and runners[wn].get("any"):
+                pool = runners[wn]["best"] or runners[wn]["any"]   # best_price is the best_dec column where the file has one
+                if not any(abs(bpf - p) < 0.011 for p in pool):
+                    raise Refuse(f"{where}: best_price {bpf} is not the best_dec price the verified prices file holds for the win pick")
 
 
 def _body(text, extra=""):

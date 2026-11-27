@@ -430,8 +430,8 @@ def test_schema_v3_values_are_checked_not_just_present():
     check(sky_bet_price=None, best_price=None)             # no Sky price, nothing to compare
 
 
-PRICES = (b"course,time,horse,price\nAscot,13:00,Alpha Star,2.5\nAscot,13:00,Blue Sky (IRE),4.0\nAscot,13:00,Long Shot,21.0\n"
-          b"Ascot,13:00,Cee Dee,6.0\nAscot,13:00,Dee Ess,8.0\nAscot,13:00,Eff Gee,9.0\n")
+PRICES = (b"course,time,horse,price,status\nAscot,13:00,Alpha Star,2.5,RUNNER\nAscot,13:00,Blue Sky (IRE),4.0,RUNNER\nAscot,13:00,Long Shot,21.0,RUNNER\n"
+          b"Ascot,13:00,Cee Dee,6.0,RUNNER\nAscot,13:00,Dee Ess,8.0,RUNNER\nAscot,13:00,Eff Gee,9.0,RUNNER\n")
 V3RACE = {**RACE, "win_pick": "Alpha Star", "second": "Blue Sky 4.00 (23%)", "rpr_pick": "Alpha Star", "longshot": "Long Shot at 21.0",
           "sky_bet_price": 2.5, "best_price": 2.5}
 
@@ -450,8 +450,8 @@ def test_v3_named_runners_must_be_declared_in_the_verified_prices_file():
 
 
 def test_declared_runner_check_reads_the_real_prices_columns():
-    real = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms\nAscot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5\n"
-            b"Ascot,13:00,Blue Sky,4.0,4.5,Sky Bet v2;4.5;3;1/5\n")
+    real = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\nAscot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5,RUNNER\n"
+            b"Ascot,13:00,Blue Sky,4.0,4.5,Sky Bet v2;4.5;3;1/5,RUNNER\n")
     d = _v3(longshot=None, longshot_reason="no runner priced at 15.00 or more", best_price=2.6)
     r.check_declared_runners(d, real)
     with pytest.raises(r.Refuse, match="not a declared runner"):
@@ -461,13 +461,13 @@ def test_declared_runner_check_reads_the_real_prices_columns():
 def test_longshot_price_must_match_a_price_in_the_verified_file():
     with pytest.raises(r.Refuse, match="longshot price 31.0 is not a price"):
         r.check_declared_runners(_v3(longshot="Long Shot at 31.0"), PRICES)
-    lowfile = PRICES.replace(b"Long Shot,21.0", b"Long Shot,3.0")   # source row 3.00 must not accept a claimed 21.00
+    lowfile = PRICES.replace(b"Long Shot,21.0,", b"Long Shot,3.0,")   # source row 3.00 must not accept a claimed 21.00
     with pytest.raises(r.Refuse):
         r.check_declared_runners(_v3(), lowfile)
 
 
 def test_best_price_must_match_a_price_in_the_verified_file():
-    with pytest.raises(r.Refuse, match="best_price 9.0 is not a price"):
+    with pytest.raises(r.Refuse, match="best_price 9.0 is not the best_dec price"):
         r.check_declared_runners(_v3(best_price=9.0), PRICES)
 
 
@@ -488,13 +488,13 @@ def test_placeholder_win_pick_is_refused():
 def test_longshot_reason_cannot_bypass_a_qualifying_runner_in_the_file():
     with pytest.raises(r.Refuse, match="named qualifying longshot is required"):
         r.check_declared_runners(_v3(longshot=None, longshot_reason="no value in the outsiders today"), PRICES)
-    small = b"course,time,horse,price\nAscot,13:00,Alpha Star,2.5\nAscot,13:00,Blue Sky,4.0\nAscot,13:00,Long Shot,21.0\n"
+    small = b"course,time,horse,price,status\nAscot,13:00,Alpha Star,2.5,RUNNER\nAscot,13:00,Blue Sky,4.0,RUNNER\nAscot,13:00,Long Shot,21.0,RUNNER\n"
     r.check_declared_runners(_v3(longshot=None, longshot_reason="field of three, longshot rule needs six"), small)
 
 
 def test_non_runner_row_is_not_a_declared_runner_or_eligible_longshot():
     five = b"course,time,horse,price,status\n" + b"".join(b"Ascot,13:00,Horse %s,%d.0,RUNNER\n" % (n, 3 + i) for i, n in enumerate([b"Aa", b"Bb", b"Cc", b"Dd", b"Ee"]))
-    withdrawn = five + b"Ascot,13:00,Long Shot,21.0,NON_RUNNER\n"
+    withdrawn = five + b"Ascot,13:00,Long Shot,21.0,NONRUNNER\n"
     base = {"win_pick": "Horse Aa", "second": "Horse Bb 4.0", "rpr_pick": "Horse Aa", "sky_bet_price": 3.0, "best_price": 3.0}
     r.check_declared_runners(_v3(**{**base, "longshot": None, "longshot_reason": "no active runner priced at 15.00 or more"}), withdrawn)
     with pytest.raises(r.Refuse, match="non-runner"):
@@ -507,3 +507,62 @@ def test_no_pick_race_must_carry_no_selections():
     with pytest.raises(r.Refuse, match="no win_pick but names"):
         r.check_declared_runners(_v3(win_pick=None, second="Blue Sky 4.0"), PRICES)
     r.check_declared_runners(_v3(win_pick=None, second=None, rpr_pick=None, longshot=None), PRICES)
+
+
+def test_prices_file_status_fails_closed():
+    nocol = b"course,time,horse,price\nAscot,13:00,Alpha Star,2.5\n"
+    with pytest.raises(r.Refuse, match="no 'status' column"):
+        r.check_declared_runners(_v3(), nocol)
+    for bad in (b"", b"MAYBE", b"runner-ish"):
+        f = b"course,time,horse,price,status\nAscot,13:00,Alpha Star,2.5," + bad + b"\n"
+        with pytest.raises(r.Refuse, match="blank or unknown status"):
+            r.check_declared_runners(_v3(), f)
+    ok = b"course,time,horse,price,status\nAscot,13:00,Alpha Star,2.5,RUNNER\nAscot,13:00,Blue Sky,4.0,NONRUNNER\n"
+    with pytest.raises(r.Refuse, match="non-runner"):
+        r.check_declared_runners(_v3(longshot=None, longshot_reason="field is two runners, no longshot"), ok)   # second = Blue Sky is the withdrawn one
+
+
+SRC = (b"course,off_time,horse,sl_dec,best_dec,bookie_terms,status\n"
+       b"Ascot,13:00,Alpha Star,2.5,2.6,Sky Bet v2;2.6;3;1/5|Paddy Power;2.7;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Blue Sky,4.0,4.5,Sky Bet v2;4.5;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Cee Dee,6.0,6.0,Sky Bet v2;6.0;3;1/5,RUNNER\nAscot,13:00,Dee Ess,8.0,8.0,Sky Bet v2;8.0;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Eff Gee,9.0,9.0,Sky Bet v2;9.0;3;1/5,RUNNER\n"
+       b"Ascot,13:00,Long Shot,21.0,19.0,Sky Bet v2;17.0;3;1/5|Paddy Power;19.0;3;1/5,RUNNER\n")
+
+
+def _v3s(**chg):
+    return _v3(**{"best_price": 2.6, **chg})
+
+
+def _ls(price, source, kind):
+    return {"name": "Long Shot", "price": price, "price_source": source, "price_kind": kind}
+
+
+def test_longshot_price_source_label_binds_to_its_own_column():
+    n = "d0_0959.csv"
+    r.check_declared_runners(_v3s(longshot=_ls(17.0, f"Sky Bet in {n}", "bookmaker")), SRC, n)
+    r.check_declared_runners(_v3s(longshot=_ls(19.0, f"best bookmaker in {n}", "bookmaker")), SRC, n)
+    with pytest.raises(r.Refuse, match="not held in the source column"):
+        r.check_declared_runners(_v3s(longshot=_ls(19.0, f"Sky Bet in {n}", "bookmaker")), SRC, n)   # 19.00 is Paddy Power / best, not Sky
+    with pytest.raises(r.Refuse, match="not held in the source column"):
+        r.check_declared_runners(_v3s(longshot=_ls(21.0, f"best bookmaker in {n}", "bookmaker")), SRC, n)   # 21.00 is the SL quote
+    with pytest.raises(r.Refuse, match="is quote_only"):
+        r.check_declared_runners(_v3s(longshot=_ls(21.0, f"Sporting Life quote in {n}", "bookmaker")), SRC, n)
+    with pytest.raises(r.Refuse, match="not the verified prices file"):
+        r.check_declared_runners(_v3s(longshot=_ls(17.0, "Sky Bet in other.csv", "bookmaker")), SRC, n)
+    with pytest.raises(r.Refuse, match="known label"):
+        r.check_declared_runners(_v3s(longshot=_ls(17.0, f"Betfred in {n}", "bookmaker")), SRC, n)
+
+
+def test_compact_longshot_kind_cannot_pass_a_quote_as_a_bookmaker_price():
+    c = {"name": "Long Shot", "price": 21.0, "price_kind": "bookmaker"}      # compact file: no price_source
+    with pytest.raises(r.Refuse, match="quote-only price cannot stand in"):
+        r.check_declared_runners(_v3s(longshot=c), SRC)
+    r.check_declared_runners(_v3s(longshot={**c, "price_kind": "quote_only"}), SRC)
+    r.check_declared_runners(_v3s(longshot={**c, "price": 17.0}), SRC)
+
+
+def test_best_price_is_bound_to_best_dec():
+    r.check_declared_runners(_v3s(best_price=2.6, longshot=_ls(17.0, "Sky Bet in x.csv", "bookmaker")), SRC)
+    with pytest.raises(r.Refuse, match="best_dec"):
+        r.check_declared_runners(_v3s(best_price=2.5, longshot=_ls(17.0, "Sky Bet in x.csv", "bookmaker")), SRC)   # 2.5 is only the SL quote
