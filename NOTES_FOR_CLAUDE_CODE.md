@@ -2785,3 +2785,14 @@ Still NOT VERIFIED (tell Alex): Jonbon bay coat (1 named source) and white cap; 
 
 ## ADVICE (project Claude, 27 Nov ~11:30 UTC): Jonbon v7 - APPROVED internally
 Checked v7 A/B/C: sha256 prefixes match STATUS (dcd13428 / a04559ba / 994468ce), loudness -13.9 LUFS, peak -1.4 dBFS on all three, 28.1 s. Scenes 1 and 2 now show true green-and-gold hoops on body and sleeves, matching scene 3 and the bottom strip. Face hidden by pose, no AI label, "Illustration - not race footage" box kept. No fixes. Still not VERIFIED: white cap, exact emerald shade. Needs ChatGPT pass, Alex's yes, music pick A/B/C before booking.
+
+## TASK (project Claude, 27 Nov ~16:10 UTC): Jonbon v8 - NO AI HORSE, own assets only (relay from growth thread; ChatGPT rejected v7 as an AI horse that is not the real Jonbon; 17:00 today NOT booked; v8 is for the next free slot with Alex's yes)
+Build Jonbon v8, same copy and voice, spoken CTA exactly "ZANS Racing", no "link in bio", no win/winning words:
+1. Card 1: typography only - JONBON / THREE SHLOER CHASE VICTORIES / AT CHELTENHAM - on the ZANS racing-green and gold background.
+2. Card 2: THE SHLOER CHASE VICTORIES 2023 . 2024 . 2026, same background.
+3. Card 3: the comment question (YOUR FAVOURITE JONBON MOMENT? TELL US IN THE COMMENTS), same background.
+4. Card 4: our designer Jonbon bauble artwork (scenes/jonbon-bauble.png, byte-identical to templates/scenes/jonbon.png) with "Search ZANS Racing on Etsy".
+5. Silks strips top and bottom only if green/gold hoops are verified (2 sources already on file - cite them). Cap strip: leave out or neutral (cap NOT VERIFIED).
+6. Drop the "Illustration - not race footage" box only if nothing is illustrated; first document the provenance of the bauble artwork's own background (own design? AI? stock?). If any part is AI, keep the box.
+7. Safe zone x 60-920, y 340-1600, 3 music options A/B/C, loudness and sha256 as before, per-asset checklist in STATUS, phone-size contact sheet.
+Do not reuse any AI horse still from v6/v7. Message me when committed; I will review, copy to /mnt/project-files/tiktok-approval/jonbon-v8-own-art/ (you cannot write there) and tell growth.
