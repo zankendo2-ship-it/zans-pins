@@ -1,0 +1,4 @@
+# ZANS video build checklist (permanent; Alex's firm rule, 27 Nov 2026)
+**On every card of every video: cap strip TOP + ZANS metal strip TOP and BOTTOM + silks strip BOTTOM.** Never omit the cap strip. If the cap or silks colour has no 2 independent named sources, still show the best-supported colour and write NOT VERIFIED in the per-asset checklist.
+Build: render cards, then `python3 templates/tiktok_bands.py <post key in posts.json> <card pngs>` (cap band under the top strip, silks band above the bottom strip; `--no-cap` is only for tests, never for a post), then the video build overlays `templates/assets/metal-strip-28px-9x16.png`.
+Also: faces hidden by pose only; coat/silks from 2 named sources; no AI horse passed off as the real horse (ChatGPT rejected that for Jonbon, 27 Nov); TikTok Strike Shield word scan; safe zone x 60-920, y 340-1600; 3 music options; per-asset checklist as text in STATUS; nothing booked without Alex's yes.
