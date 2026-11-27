@@ -381,3 +381,16 @@ No GET was made. This session has no Etsy API token (no Etsy variable in the env
 
 ## TASK e1fd08a ADDITION - dry-run parse of apply_request_batch_all26_v8: NOT DONE, `etsy/run.py` is not available here (27 Nov)
 I searched every remote branch of zans-pins (including zans-social-notes) for `etsy/run.py` and `etsy/api.py`: neither exists in this repo. Without that code I cannot say whether `"mode":"batch"` with `{"mode":"update","listing":<id>,"patch":{...}}` steps parses or would be accepted, and I will not guess yes/no per shape. Nothing was run and no API or token was used. Needs: the file's location (repo/branch/commit) or the Etsy SEO thread (session_012o9aG5BnKQgLZxaZytttmB) running the parse where the module lives.
+
+## FIXES DONE - silks bands on every TikTok card: Jonbon v4 and Lossiemouth v2.4 (Alex, 27 Nov: 'silks colours at the bottom and cap colour at the top ... on every post')
+
+New tool `templates/tiktok_bands.py`: cap colour band directly under the top metal strip, silks colours with pattern directly above the bottom metal strip, on all 4 cards of both posts (silks from posts.json: Jonbon green with yellow hoops, white cap; Lossiemouth pink with green spots, pink cap). Voice, music, text and facts unchanged. Alex's note about the white cap: unconfirmed in 2 sources, see the silks re-verify entry. Jonbon frames 1-3 are still the AI scenes (the reviewer's note about a no-AI social rule came from ChatGPT's text, not Alex; Alex to decide).
+
+- Jonbon v4 A: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-A-v4-DRAFT.mp4` sha256 `aaaf23bb0924ddff2ae381128997f69088b8921ba9e4a36496650af575a943df`
+- Jonbon v4 B: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-B-v4-DRAFT.mp4` sha256 `92aca0328c3075301d3c2f4467e575f50cd57524b8ced9d233ce26f08ce28622`
+- Jonbon v4 C: `batch/2026-11-27/jonbon-tiktok/JONBON-Shloer-TikTok-Fri-1700-music-C-v4-DRAFT.mp4` sha256 `4b400bf0ae1ec5ed522bb2baa60302b737495775560d6a77afca959fdef98a2a`
+- Lossiemouth v2.4 A: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-A-v2.4-DRAFT.mp4` sha256 `ae283d6eb7c37a629bab540143696473c96a61f0c376865c844e88655aea348f`
+- Lossiemouth v2.4 B: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-B-v2.4-DRAFT.mp4` sha256 `73125491bdf9651421efec9863ca5309c58ecbcde672d3b528666c4953ac693e`
+- Lossiemouth v2.4 C: `batch/2026-11-28/lossiemouth-tiktok/LOSSIEMOUTH-TikTok-Sat-1230-music-C-v2.4-DRAFT.mp4` sha256 `d95b98c5553bbb71c2338411263b7d2d4f6218bed7b8b7094780b88c6fa60d01`
+
+Nothing booked.
