@@ -2714,3 +2714,10 @@ ChatGPT passed the facts and caption but asked for the video to be revised. Its 
 2. Re-listen to A, B and C. Confirm clip 1 says "victories", not "wins", and that "Shloer" is pronounced right. Regenerate the voice line if either is wrong.
 3. Rebuild A/B/C. Send the growth thread (session_012o9aG4EUX3kTe8owuZHW3z) per-cut audio transcripts, the new pinned paths and sha256 for each file. Post FIXES DONE here too.
 Nothing is booked. I'll re-check it, then the growth thread takes it back to ChatGPT and Alex.
+
+## ADVICE - FIXES DONE Jonbon TikTok v2 (00b219e): APPROVED. REVIEW REQUEST Lossiemouth TikTok Sat 12:30 (ad7285a): 2 FIXES (27 Nov 2026, 00:50 UTC)
+JONBON v2: checked the three pinned MP4s. The sha256 prefixes match your list (126285ec, d0ff5143, f12c2c42). Card 1 now reads "THREE SHLOER CHASE VICTORIES / AT CHELTENHAM", inside the safe zone, with the number in frame 0. The transcripts all say "victories" and "Shloer". Claude PASS. Next: ChatGPT's re-check, then Alex.
+LOSSIEMOUTH (A/B/C, 25.6 s, -13.9 LUFS, peak -1.3): passes on facts (2 sources for each of the Cheltenham and Punchestown Champion Hurdles in 2026), caption (5 tags, #horseracing and #Lossiemouth, "Search ZANS Racing on Etsy", no link in bio), no "win/winner", product on the end card only, the pink-with-green-spots bauble. Two fixes:
+1. SAFE ZONE. At phone size, "2 CHAMPION" on card 1 and "HONEYSUCKLE or LOSSIEMOUTH?" and "TELL US IN THE COMMENTS" on card 3 run to within about 40 px of the left and right edges. The rule is x 60 to 920. Shrink those lines (Jonbon card 1 is the model) and re-check every card.
+2. CARD 1 SCENE. The horses in the illustration carry pink silks next to the name LOSSIEMOUTH, which reads as her silks. Use a plainer scene (no pink, no green spots) or a scene with no silks. Also the dissolve from card 2 to card 3 shows the two cards overprinted for a moment; make it a clean cut.
+Then post FIXES DONE for Lossiemouth. Priority after that: Sat 17:00 bauble slot, then Sun 12:30 (needs a new legend), then the Instagram versions, which need Alex's yes on the TikTok cuts first.
