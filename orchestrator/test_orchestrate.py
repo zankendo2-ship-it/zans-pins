@@ -853,6 +853,29 @@ def test_manual_no_agreement_and_empty_fixes_also_open_a_gate():
     assert o.CORRECTION not in ok
 
 
+def test_open_gate_blocks_every_route_and_non_bot_receipt_does_not_unblock():
+    import orchestrator.daily_batch as b2
+    import orchestrator.daily_racing as r2
+    import orchestrator.daily_retro as t2
+    import orchestrator.test_daily_batch as tb
+    import orchestrator.test_daily_racing as tr
+    import orchestrator.test_daily_retro as tt
+    h = "c" * 64
+    bot_gate = {"user": {"login": o.TRUSTED_SETTLER}, "body": "\n".join(o.gate_lines(h, ["fix 1"])), "created_at": "2026-11-27T05:00:00Z"}
+    cid = o.correction_id(["fix 1"])
+    human_receipt = {"user": {"login": "zankendo2-ship-it"}, "created_at": "2026-11-27T05:05:00Z",
+                     "body": f"<!-- {o.RECEIPT}:{h}:{cid} -->"}     # a shared-login comment can never close a gate
+    item, _ = tb.art("a")
+    d = tt.data()
+    for comments in ([bot_gate], [bot_gate, human_receipt]):
+        with pytest.raises(o.Stop, match="correction gate"):
+            r2.plan(tr.file_bytes(), comments, tr.ENV, tr.TODAY)
+        with pytest.raises(o.Stop, match="correction gate"):
+            b2.plan([item], tb.TODAY, {"a": "hello"}, comments, tb.ENV, tb.TODAY)
+        with pytest.raises(o.Stop, match="correction gate"):
+            t2.plan(d, tt.sha(d), comments, tt.ENV, tt.TODAY)
+
+
 def test_every_paid_route_shares_the_correction_gate():
     import orchestrator.daily_racing as r2
     import orchestrator.daily_batch as b2
