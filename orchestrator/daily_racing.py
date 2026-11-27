@@ -409,14 +409,25 @@ def check_declared_runners(d, prices_bytes, prices_name=None):
                     raise Refuse(f"{where}: best_price {bpf} is not the best_dec price the verified prices file holds for the win pick")
 
 
+EVIDENCE_RECORD_KEYS = {"zans_reasons": "win_angles", "zans_cautions": "win_caution", "data_reasons": "data_angles", "second": "second",
+                        "zans_chance": "chance", "data_chance": "data_chance", "data_conf": "data_conf", "rpr_pick": "rpr_pick",
+                        "rpr_reason": "rpr_reason", "price_at_pick": "price", "going": "going", "longshot_zans_label": "longshot",
+                        "data_gap": "data_gap", "drift_warning": "drift_warning"}
+EVIDENCE_PRICE_FIELDS = ("sky_bet_price", "best_price")
+EVIDENCE_FIELDS_REQUIRED = frozenset(EVIDENCE_RECORD_KEYS) | frozenset(EVIDENCE_PRICE_FIELDS)    # fixed schema: a builder cannot shrink it
+REASON_FIELDS_REQUIRED = ("zans_reasons", "zans_cautions", "data_reasons", "second", "rpr_reason")
 EVIDENCE_TEXT_FIELDS = ("zans_reasons", "zans_cautions", "data_reasons", "rpr_reason")   # reason text that must be traceable to the hashed pick record
+EVIDENCE_NAME_FIELDS = ("second", "rpr_pick")                                           # a runner named here must appear in the hashed pick record
+EVIDENCE_NUM_FIELDS = ("zans_chance", "data_chance", "data_conf", "price_at_pick")
+EVIDENCE_BOOL_FIELDS = ("data_gap", "drift_warning")                                    # absent in the file = false
 EVIDENCE_RACE_KEY = {"zans_cautions": "cautions"}                                      # race-row name when it differs from the evidence name
 NONE_LISTED = "none listed"
 PICK_NAME_KEYS = ("horse", "pick", "win_pick", "selection", "name")
+HEX64 = re.compile(r"[0-9a-f]{64}")
 
 
-def _h12(o_):
-    return hashlib.sha256(json.dumps(o_, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
+def _h(o_):
+    return hashlib.sha256(json.dumps(o_, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")).hexdigest()
 
 
 def _norm_text(x):
@@ -450,11 +461,23 @@ def _captured(ts):
     return t if t.tzinfo else t.replace(tzinfo=timezone.utc)
 
 
+def _num(x):
+    try:
+        f = float(x)
+    except (TypeError, ValueError):
+        return None
+    return f if math.isfinite(f) else None
+
+
 def check_evidence(d, getter):
     """V3 files: every picked race needs immutable evidence ids that are re-computed from the hash-verified source bytes.
-    pick_sha12 = hash of the pick record (matched on time AND course); price_row_sha12 = hash of the win pick's row in the prices file;
-    price fields count only when the prices file was captured strictly before the race off; best_price / sky_bet_price must equal the
-    hashed row (best_dec / the Sky Bet term); reason text must be traceable to the hashed record; an unverified reason field caps confidence at 6."""
+    FIXED schema: evidence_fields / reason_fields / evidence_map must be exactly the required sets (a builder cannot omit a field to skip its check).
+    Per picked race: the pick record is matched on its own course AND time (both mandatory) and its full sha256 must equal pick_sha256; the
+    record's horse must be the win pick; the pick source and the price source must each be captured strictly before the off; every populated
+    field is compared with its mapped record value (text traceable, names present, numbers equal, booleans equal) or listed NOT VERIFIED;
+    price_row_sha256 / longshot_row_sha256 = the runner's row in the prices file; best_price = best_dec, sky_bet_price = the Sky Bet term;
+    an unverified reason field caps confidence at 6. Evidence ids are unique. Public copies are authoritative; each source's blob_sha1 must be the
+    git blob hash of those same bytes (binds the public copy to the original blob without the private repo)."""
     import csv
     import io
     commit = d["racing_branch_commit"]
@@ -466,18 +489,28 @@ def check_evidence(d, getter):
                 raise Refuse(f"duplicate source id {i!r}")
             srcs[i] = x
     fields = d.get("evidence_fields")
-    if not isinstance(fields, list) or not fields or not all(isinstance(f, str) for f in fields):
-        raise Refuse("V3 file needs evidence_fields (the list of fields covered by evidence ids)")
-    reason_fields = d.get("reason_fields") or []
-    emap = (d.get("evidence_map") or {}).get("pick_record_keys") or {}
-    cache = {}
+    if not isinstance(fields, list) or set(fields) != EVIDENCE_FIELDS_REQUIRED or len(fields) != len(set(fields)):
+        raise Refuse("V3 evidence_fields must be exactly the required set: " + ", ".join(sorted(EVIDENCE_FIELDS_REQUIRED)))
+    if tuple(d.get("reason_fields") or ()) != REASON_FIELDS_REQUIRED:
+        raise Refuse("V3 reason_fields must be exactly " + ", ".join(REASON_FIELDS_REQUIRED))
+    emap = (d.get("evidence_map") or {}).get("pick_record_keys")
+    if emap != EVIDENCE_RECORD_KEYS:
+        raise Refuse("V3 evidence_map.pick_record_keys must be exactly the required field-to-record-key map")
+    if not re.fullmatch(r"[0-9a-f]{40}", str(d.get("racing_commit_original") or "")):
+        raise Refuse("V3 file needs racing_commit_original (40-hex original racing commit)")
+    cache, seen_ids = {}, set()
 
     def blob(src, where):
         x = srcs.get(src)
         if x is None:
             raise Refuse(f"{where}: evidence names source {src!r} which is not in sources[]")
         if x["path"] not in cache:
-            cache[x["path"]] = getter(commit, x["path"])
+            b = getter(commit, x["path"])
+            if hashlib.sha1(b"blob %d\0" % len(b) + b).hexdigest() != str(x.get("blob_sha1") or ""):
+                raise Refuse(f"source {x['path']}: blob_sha1 is not the git blob hash of the verified bytes (original-source binding)")
+            if not str(x.get("origin_path") or "").strip():
+                raise Refuse(f"source {x['path']}: origin_path is missing")
+            cache[x["path"]] = b
         return x, cache[x["path"]]
 
     for r in d.get("races", []):
@@ -485,12 +518,22 @@ def check_evidence(d, getter):
             continue
         where = f"race {r['course']} {r['time']}"
         ev = r.get("evidence")
-        if not isinstance(ev, dict) or not ev.get("id") or not re.fullmatch(r"[0-9a-f]{12}", str(ev.get("pick_sha12") or "")):
-            raise Refuse(f"{where}: a picked race needs evidence {{id, src, pick_sha12}} (12-hex pick record hash)")
+        if not isinstance(ev, dict) or not re.fullmatch(r"E\d+", str(ev.get("id") or "")) or not HEX64.fullmatch(str(ev.get("pick_sha256") or "")):
+            raise Refuse(f"{where}: a picked race needs evidence {{id 'E<n>', src, pick_sha256 (full 64-hex)}}")
+        if ev["id"] in seen_ids:
+            raise Refuse(f"{where}: duplicate evidence id {ev['id']}")
+        seen_ids.add(ev["id"])
         nv = r.get("not_verified") or []
-        if not isinstance(nv, list) or not set(nv) <= set(fields):
+        if not isinstance(nv, list) or not set(nv) <= EVIDENCE_FIELDS_REQUIRED:
             raise Refuse(f"{where}: not_verified must be a list that is a subset of evidence_fields")
-        _x, b = blob(ev.get("src"), where)
+        off = _off_utc(d["date"], r["time"])
+
+        def before_off(x, what):
+            cap = _captured(x.get("captured_utc"))
+            if cap is None or cap >= off:
+                raise Refuse(f"{where}: {what} captured_utc {x.get('captured_utc')!r} is not strictly before the off ({off.isoformat()})")
+        px, b = blob(ev.get("src"), where)
+        before_off(px, "the pick source")
         try:
             recs = json.loads(b.decode("utf-8")).get("picks")
         except Exception:   # noqa: BLE001
@@ -499,61 +542,93 @@ def check_evidence(d, getter):
             raise Refuse(f"{where}: evidence source is not a course file with a picks list")
         ck = _key(r["course"])
         hits = [q for q in recs if isinstance(q, dict) and str(q.get("time")).strip() == str(r["time"]).strip()
-                and (q.get("course") in (None, "") or _key(q.get("course")) == ck)]
+                and isinstance(q.get("course"), str) and _key(q["course"]) == ck]
         if len(hits) != 1:
-            raise Refuse(f"{where}: the pinned source holds {len(hits)} pick records for this course and time (need exactly 1)")
+            raise Refuse(f"{where}: the pinned source holds {len(hits)} pick records with this exact course and time (need exactly 1)")
         q = hits[0]
-        if _h12(q) != ev["pick_sha12"]:
-            raise Refuse(f"{where}: pick_sha12 does not match the pick record in the pinned source")
+        if _h(q) != ev["pick_sha256"]:
+            raise Refuse(f"{where}: pick_sha256 does not match the pick record in the pinned source")
         named = [q[k] for k in PICK_NAME_KEYS if isinstance(q.get(k), str) and q.get(k).strip()]
-        if named and _key(r["win_pick"]) not in {_key(n) for n in named}:
-            raise Refuse(f"{where}: win_pick {r['win_pick']!r} is not the horse in the hashed pick record")
-        for f in EVIDENCE_TEXT_FIELDS:
-            rv = r.get(EVIDENCE_RACE_KEY.get(f, f))
-            if rv in (None, "", [], {}) or f in nv or f not in fields:
+        if not named or _key(r["win_pick"]) not in {_key(n) for n in named}:
+            raise Refuse(f"{where}: win_pick {r['win_pick']!r} is not the horse named in the hashed pick record (a runner key is mandatory)")
+        rec_all = _norm_text(" ".join(_strings(q)))
+        for f in sorted(EVIDENCE_FIELDS_REQUIRED - set(EVIDENCE_PRICE_FIELDS)):
+            rk = EVIDENCE_RACE_KEY.get(f, f)
+            rv, rrec = r.get(rk), q.get(EVIDENCE_RECORD_KEYS[f])
+            if f in nv:
                 continue
-            rec = _norm_text(" ".join(_strings(q.get(emap.get(f)))))
-            shown = [_norm_text(t) for t in _strings(rv)]
-            if shown == [NONE_LISTED]:   # "none listed" = verified empty: only when the record key exists and is empty
-                if emap.get(f) not in q or q[emap.get(f)] not in (None, "", [], {}):
-                    raise Refuse(f"{where}: {f} says 'none listed' but the hashed pick record "
-                                 + ("has no such key" if emap.get(f) not in q else "holds content under it"))
-                continue
-            if not rec:
-                raise Refuse(f"{where}: {f} is shown as verified but the hashed pick record holds nothing under {emap.get(f)!r}")
-            for t in _strings(rv):
-                tt = _norm_text(re.sub(r"(\u2026|\.\.\.)$", "", t.strip()))
-                if tt and tt not in rec:
-                    raise Refuse(f"{where}: {f} text is not found in the hashed pick record (unsupported reason): {t[:60]!r}")
-        if any(f in nv for f in reason_fields):
+            if f in EVIDENCE_TEXT_FIELDS:
+                if rv in (None, "", [], {}):
+                    continue
+                rec = _norm_text(" ".join(_strings(rrec)))
+                shown = [_norm_text(t) for t in _strings(rv)]
+                if shown == [NONE_LISTED]:   # "none listed" = verified empty: only when the record key exists and is empty
+                    if EVIDENCE_RECORD_KEYS[f] not in q or rrec not in (None, "", [], {}):
+                        raise Refuse(f"{where}: {f} says 'none listed' but the hashed pick record "
+                                     + ("has no such key" if EVIDENCE_RECORD_KEYS[f] not in q else "holds content under it"))
+                    continue
+                if not rec:
+                    raise Refuse(f"{where}: {f} is shown as verified but the hashed pick record holds nothing under {EVIDENCE_RECORD_KEYS[f]!r}")
+                for t in _strings(rv):
+                    tt = _norm_text(re.sub(r"(\u2026|\.\.\.)$", "", t.strip()))
+                    if tt and tt not in rec:
+                        raise Refuse(f"{where}: {f} text is not found in the hashed pick record (unsupported reason): {t[:60]!r}")
+            elif f in EVIDENCE_NAME_FIELDS:
+                if rv in (None, ""):
+                    continue
+                nm = _horse_name(rv)
+                if nm is None or _norm_text(nm) not in rec_all:
+                    raise Refuse(f"{where}: {f} {rv!r} does not name a runner found in the hashed pick record")
+            elif f in EVIDENCE_NUM_FIELDS:
+                if rv is None:
+                    continue
+                a_, b_ = _num(rv), _num(rrec)
+                if a_ is None or b_ is None or abs(a_ - b_) > 0.0051:
+                    raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
+            elif f in EVIDENCE_BOOL_FIELDS:
+                if bool(rv) != bool(rrec):
+                    raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
+            elif rv not in (None, "", [], {}):    # going, longshot_zans_label: normalised text must match the record
+                if _norm_text(rv if isinstance(rv, str) else " ".join(_strings(rv))) != _norm_text(rrec if isinstance(rrec, str) else " ".join(_strings(rrec))):
+                    raise Refuse(f"{where}: {f} {rv!r} does not equal the hashed pick record value {rrec!r}")
+        if any(f in nv for f in REASON_FIELDS_REQUIRED):
             try:
                 big = int(r.get("confidence")) > GAP_CONFIDENCE_CAP
             except (TypeError, ValueError):
                 big = False
             if big and r.get("confidence_capped") != GAP_CONFIDENCE_CAP:
                 raise Refuse(f"{where}: a reason field is NOT VERIFIED, so confidence_capped must be {GAP_CONFIDENCE_CAP}")
-        priced = [f for f in ("best_price", "sky_bet_price") if r.get(f) is not None and f in fields and f not in nv]
+        ls = r.get("longshot")
+        lname = _horse_name(ls.get("name") if isinstance(ls, dict) else ls) if ls else None
+        priced = [f for f in EVIDENCE_PRICE_FIELDS if r.get(f) is not None and f not in nv]
         if ev.get("price_captured_after_off") and priced:
             raise Refuse(f"{where}: prices were captured after the off, so {priced} must be listed in not_verified")
-        if not priced:
+        if not priced and not (lname and "longshot_zans_label" not in nv):
             continue
         ps = srcs.get(ev.get("price_src"))
-        if ps is None or ps["path"] != d["prices_file"] or not re.fullmatch(r"[0-9a-f]{12}", str(ev.get("price_row_sha12") or "")):
-            raise Refuse(f"{where}: {priced} need price_src = the prices file and a price_row_sha12")
-        cap, off = _captured(ps.get("captured_utc")), _off_utc(d["date"], r["time"])
-        if cap is None or cap >= off:
-            raise Refuse(f"{where}: the prices file captured_utc {ps.get('captured_utc')!r} is not strictly before the off ({off.isoformat()})")
+        if ps is None or ps["path"] != d["prices_file"]:
+            raise Refuse(f"{where}: price evidence needs price_src = the prices file")
+        before_off(ps, "the prices file")
         _x, pb = blob(ev["price_src"], where)
-        rows = [e for e in csv.DictReader(io.StringIO(pb.decode("utf-8", "replace")))
-                if str(e.get("off_time") or e.get("time") or "").strip() == str(r["time"]).strip() and _key(e.get("course", "")) == ck
-                and _key(e.get("horse", "")) == _key(_horse_name(r["win_pick"]) or "") and str(e.get("status") or "").strip().upper() in ACTIVE_STATUS]
-        row = next((e for e in rows if _h12(dict(e)) == ev["price_row_sha12"]), None)
-        if row is None:
-            raise Refuse(f"{where}: price_row_sha12 does not match the win pick's row in the prices file")
-        sp = _source_prices(row)
-        for f, col in (("best_price", "best"), ("sky_bet_price", "sky")):
-            if f in priced and not any(abs(float(r[f]) - p) < 0.011 for p in sp[col]):
-                raise Refuse(f"{where}: {f} {r[f]} is not the {col} price in the hashed row")
+        allrows = [e for e in csv.DictReader(io.StringIO(pb.decode("utf-8", "replace")))
+                   if str(e.get("off_time") or e.get("time") or "").strip() == str(r["time"]).strip() and _key(e.get("course", "")) == ck
+                   and str(e.get("status") or "").strip().upper() in ACTIVE_STATUS]
+
+        def row_for(name, field):
+            h = ev.get(field)
+            if not HEX64.fullmatch(str(h or "")):
+                raise Refuse(f"{where}: {field} (full 64-hex) is required")
+            row = next((e for e in allrows if _key(e.get("horse", "")) == _key(name) and _h(dict(e)) == h), None)
+            if row is None:
+                raise Refuse(f"{where}: {field} does not match {name!r}'s row in the prices file")
+            return row
+        if priced:
+            sp = _source_prices(row_for(_horse_name(r["win_pick"]) or "", "price_row_sha256"))
+            for f, col in (("best_price", "best"), ("sky_bet_price", "sky")):
+                if f in priced and not any(abs(float(r[f]) - p) < 0.011 for p in sp[col]):
+                    raise Refuse(f"{where}: {f} {r[f]} is not the {col} price in the hashed row")
+        if lname and "longshot_zans_label" not in nv:
+            row_for(lname, "longshot_row_sha256")
 
 
 def _body(text, extra=""):
