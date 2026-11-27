@@ -88,7 +88,7 @@ def test_plan_shared_ledger_caps_duplicate_and_overrun():
     with pytest.raises(o.Stop, match="already used"):
         b.plan(items, TODAY, texts, [slot], ENV, TODAY)
     with pytest.raises(b.Skip):
-        b.plan(items, TODAY, texts, [{"body": f"<!-- {o.MARKER}:{b.batch_hash(TODAY, items)} -->"}], ENV, TODAY)
+        b.plan(items, TODAY, texts, [{"user": BOT, "body": f"<!-- {o.MARKER}:{b.batch_hash(TODAY, items)} -->"}], ENV, TODAY)
     over = {"user": BOT, "body": o.settle_tag("2026-11-10", "dead", 3.1, over=True)}
     with pytest.raises(o.Stop, match="more than its reservation"):
         b.plan(items, TODAY, texts, [over], ENV, TODAY)
@@ -170,7 +170,7 @@ def test_e2e_provider_failure_keeps_full_reservation_and_does_not_retry():
 def test_second_batch_same_day_makes_zero_calls():
     i, data = art("a")
     _, posted, _ = e2e(ENV, [], lambda e, p: (good([i]), "stop"), [i], data)
-    comments = [{"body": posted[0]}, {"body": posted[1]}]
+    comments = [{"user": BOT, "body": posted[0]}, {"user": BOT, "body": posted[1]}]
     j, data2 = art("b")
     with pytest.raises(o.Stop, match="already used"):
         e2e(ENV, comments, lambda e, p: pytest.fail("called"), [j], data2)
