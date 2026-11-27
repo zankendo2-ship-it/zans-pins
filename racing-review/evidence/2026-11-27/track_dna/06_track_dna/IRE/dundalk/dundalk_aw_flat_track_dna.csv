@@ -1,0 +1,13 @@
+course_id,course_name,country,race_code,surface,official_going,field_name,value,confidence,source_url
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,source_status,FETCHED,FETCH_AUDIT,https://www.irishracing.com/racecourses/dundalk
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,relevant_section_status,SECTION_REVIEW_REQUIRED,SECTION_AUDIT,https://www.irishracing.com/racecourses/dundalk
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,layout_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.irishracing.com/racecourses/dundalk
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats

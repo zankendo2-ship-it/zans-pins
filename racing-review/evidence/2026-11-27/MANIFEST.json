@@ -1,0 +1,299 @@
+{
+ "date": "2026-11-27",
+ "courses": [
+  "doncaster",
+  "dundalk",
+  "musselburgh",
+  "newbury",
+  "southwell"
+ ],
+ "files": [
+  {
+   "path": "racing-review/evidence/2026-11-27/README.md",
+   "bytes": 1591,
+   "sha256": "60d4ab732434a4ef3264a82c7c23fc24d33c46e952a5d699a4f8ef2b7e7926a6"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/course_knowledge/doncaster_jumps.md",
+   "bytes": 72671,
+   "sha256": "335374fe5b94273be192e568c0a1c3dff950f68aba255b6dc7e71e9056a2f69e"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/course_knowledge/dundalk_aw.md",
+   "bytes": 45025,
+   "sha256": "b06c13d37bccf6c4a882e2468f54c170652cdd66b289597ae9090c730a0caab0"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/course_knowledge/musselburgh_jumps.md",
+   "bytes": 72079,
+   "sha256": "1de50daa1485be99f68444a83ef1c3d1a691dd8f92bb867ca1c4cc8911cf3782"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/course_knowledge/newbury_jumps.md",
+   "bytes": 79770,
+   "sha256": "405bfa284c7cacfac7cdc8405a78f247d17757639c8f5ecdf5d1ac8e33f17eb9"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/course_knowledge/southwell_aw.md",
+   "bytes": 76090,
+   "sha256": "3485342be66058cf15574de64fa84919561c1373015371fe66bc46b6ff4000f1"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/history/runner_past_runs.csv",
+   "bytes": 578992,
+   "sha256": "6e880e8164da93601cf1f8ec7c9f8582cef58a8754f309428a17ac083e20a13b"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/methods/doncaster/JUMPS.md",
+   "bytes": 1548,
+   "sha256": "85c7e3195ef37a8646cb60761c50584232a953210744404283aed76c877f22a0"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/methods/dundalk/AW_FLAT.md",
+   "bytes": 11748,
+   "sha256": "8fb7203b7d7009fe6f112221180e7795d10e097a281b6f23c5db9621f3711e4e"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/methods/musselburgh/JUMPS.md",
+   "bytes": 1419,
+   "sha256": "29afb19272f8cd442aa3e281105173cfbf2ba52e936ddde79d117812bfeeeb57"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/methods/newbury/JUMPS.md",
+   "bytes": 2247,
+   "sha256": "565d928cca83ea2da6ab3233bf36a6bf89189d52fc1d27340ac4b00cbd2ca26f"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/methods/southwell/AW_FLAT.md",
+   "bytes": 11814,
+   "sha256": "1186218181482f774b295c3136bff119041d67477db72fa7c5ad8c3b6550dfaf"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/racecard_data/connections.csv",
+   "bytes": 267210,
+   "sha256": "4d4f2b2cb13c60e2101e14fdd82fca7b1a6be50e01bd59e62bb9fc7ad286f1a5"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/racecard_data/form_coverage.csv",
+   "bytes": 41168,
+   "sha256": "41f9268897f6ab77093c100be97332a1448ddaeb5740526939d74496c0dca9f2"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/racecard_data/formcheck.json",
+   "bytes": 40017,
+   "sha256": "d1c68fb811d52702e127ee2287dbe215c3e4520d2ac8f12c382b27457cbc4f46"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/racecard_data/runners.csv",
+   "bytes": 90292,
+   "sha256": "02dc9dc18a59013c75baadc103c0c1f52baf759774020e1c6ac1e808053d2c13"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/racecard_data/speed_pace.csv",
+   "bytes": 73030,
+   "sha256": "e9be6d93f7135ff029c1987c5dc0e81fc8aaca18e1e690b61622e5adaf33a5f2"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/runners_evidence_prerace.csv",
+   "bytes": 480654,
+   "sha256": "f2ce575a078e22ba847af3639a1e4fc3c57058492738ec23e8ac70f491e99021"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/04_accepted_evidence/GB/doncaster/doncaster_jumps_accepted_evidence.csv",
+   "bytes": 2,
+   "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/04_accepted_evidence/GB/musselburgh/musselburgh_jumps_accepted_evidence.csv",
+   "bytes": 2,
+   "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/04_accepted_evidence/GB/newbury/newbury_jumps_accepted_evidence.csv",
+   "bytes": 755,
+   "sha256": "9a4ec8f7a105fe659e00119337f722b5d2de1cfa274ae5794d887f9cd49cd310"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/04_accepted_evidence/GB/southwell/southwell_aw_flat_accepted_evidence.csv",
+   "bytes": 4060,
+   "sha256": "7497c712fe41b2ea0739f83b841efece51e67932d75e07976d7f0a1d3816431e"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/04_accepted_evidence/IRE/dundalk/dundalk_aw_flat_accepted_evidence.csv",
+   "bytes": 2,
+   "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/GB/doncaster/doncaster_jumps_distance_profiles.csv",
+   "bytes": 2,
+   "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/GB/doncaster/doncaster_jumps_track_dna.csv",
+   "bytes": 1793,
+   "sha256": "de840929cff09a627761d93f15008c4900f8b23e3bf67b234d108145b5c5d375"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/GB/musselburgh/musselburgh_jumps_distance_profiles.csv",
+   "bytes": 2,
+   "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/GB/musselburgh/musselburgh_jumps_track_dna.csv",
+   "bytes": 1955,
+   "sha256": "957346d089434605d6ef4f6cd8cee886f5506f32f3b364fd6f52fe5d051a04c5"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/GB/newbury/newbury_jumps_distance_profiles.csv",
+   "bytes": 2,
+   "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/GB/newbury/newbury_jumps_track_dna.csv",
+   "bytes": 1968,
+   "sha256": "fcefd58dfa9dba6f85b4c7d1ce9a04ec3477ddbaa1d6747357e8a5abb6276f7a"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/GB/southwell/southwell_aw_flat_distance_profiles.csv",
+   "bytes": 1785,
+   "sha256": "2d89076e4dd083b80343104a6cfc199ffc86b8acb638d6b7d2ecf1ce58e2cbe2"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/GB/southwell/southwell_aw_flat_track_dna.csv",
+   "bytes": 3422,
+   "sha256": "dc45d4dbbb68436e05657ecdaaf0090a8e002e095c8aa79baf4c3be204037fab"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/IRE/dundalk/dundalk_aw_flat_distance_profiles.csv",
+   "bytes": 2,
+   "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/06_track_dna/IRE/dundalk/dundalk_aw_flat_track_dna.csv",
+   "bytes": 1725,
+   "sha256": "d6f2bb67b7ea2f927c98e2731bac50a9d6b2222dcdccce75b6ca75fac1c57881"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/07_race_day_notes/GB/doncaster/doncaster_jumps_race_day_notes.csv",
+   "bytes": 299,
+   "sha256": "f9e37fc8b828f113440ffe87ba52201f6d3914ae7f4bf2e58d168cc27d1b6c9c"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/07_race_day_notes/GB/musselburgh/musselburgh_jumps_race_day_notes.csv",
+   "bytes": 311,
+   "sha256": "3bd70c6bdec8ad70ee20cbb71ca829b063fa1bf6bb590c08c10da3ce2001ea6b"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/07_race_day_notes/GB/newbury/newbury_jumps_race_day_notes.csv",
+   "bytes": 295,
+   "sha256": "158cc102f4353cd56cebb9adf5936a93f3c6d1295b2fce57b6928f3e702a672b"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/07_race_day_notes/GB/southwell/southwell_aw_flat_race_day_notes.csv",
+   "bytes": 307,
+   "sha256": "48283bd6444aa604b882a8238d7462a4915bb6d339dfca4bcc1a03dee60a1368"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/07_race_day_notes/IRE/dundalk/dundalk_aw_flat_race_day_notes.csv",
+   "bytes": 306,
+   "sha256": "0cbe3a6623cac7c8c2fe3d840acacbf043398ce653182030d034fc171f8c7350"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/08_audit/accepted_evidence_2026-11-27.csv",
+   "bytes": 4638,
+   "sha256": "b68f71a6a2d03e15985e6f6d37ae0d9ba5f8194eb2051d81b74f8ed99da415f9"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/08_audit/distance_profiles_2026-11-27.csv",
+   "bytes": 1785,
+   "sha256": "2d89076e4dd083b80343104a6cfc199ffc86b8acb638d6b7d2ecf1ce58e2cbe2"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/08_audit/fetch_audit_2026-11-27.csv",
+   "bytes": 3347,
+   "sha256": "63b70b2e04bea7738e7e592110bca017d8290136884076c84ea29f76711d2b59"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/08_audit/rejected_evidence_2026-11-27.csv",
+   "bytes": 88374,
+   "sha256": "d14a37e72369c6cfe54a88c321b8b3a1ae7ccc0b6c2b94c50a6cd6c15b08d06a"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/08_audit/section_audit_2026-11-27.csv",
+   "bytes": 1308,
+   "sha256": "f81a0fa964578b34813601b1dc1a27b9ed239abcad65b53af4ac4c161365a47a"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/08_audit/stage_0_2_course_quality_2026-11-27.csv",
+   "bytes": 993,
+   "sha256": "e5b5b78b2c286e67199c3ac1c53aafd2c78bc8d36181ec84cbfe6e21669fe118"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/08_audit/track_dna_fields_2026-11-27.csv",
+   "bytes": 10451,
+   "sha256": "1ee8f2857f811977b82d9b73a317b6e73f8dd30b8defef002bad50fd464d429c"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/08_audit/track_dna_status_2026-11-27.csv",
+   "bytes": 2455,
+   "sha256": "97fce1f71f19310af268b0cae6628ef1fda9245b27339d5faddb4ab26530059c"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/09_reports/GB/doncaster/doncaster_jumps_track_dna_report.md",
+   "bytes": 5540,
+   "sha256": "aff7c312e4f95ded381e203c1a2020cac8bc5af38e7a7b6e67df07cb135f5b83"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/09_reports/GB/musselburgh/musselburgh_jumps_track_dna_report.md",
+   "bytes": 6893,
+   "sha256": "84b549a7fc728bf8b49e6b1b325e2a5340b41a2a928213e91df39cacaa97be89"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/09_reports/GB/newbury/newbury_jumps_track_dna_report.md",
+   "bytes": 5549,
+   "sha256": "0b894f213300e46a3b3682d89104b3c9c65e828092b70d867219e02cc84f865c"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/09_reports/GB/southwell/southwell_aw_flat_track_dna_report.md",
+   "bytes": 11040,
+   "sha256": "e0ea769c8c5fdc1dd9ea7f1e2fcfe79dc22776420d4dbf9c3b6c7ae9d825b402"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/09_reports/IRE/dundalk/dundalk_aw_flat_track_dna_report.md",
+   "bytes": 4964,
+   "sha256": "305060c6165a14140665a9915086ff744ab2ed5facd1b9577e409acb16164408"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/10_manifest/track_dna_manifest_2026-11-27.json",
+   "bytes": 5525,
+   "sha256": "095386e93ecf7f2418b683f9ec74d19bc0f194be2237a29474db189c670fee61"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_dna/daily_track_dna_2026-11-27.md",
+   "bytes": 34865,
+   "sha256": "b8fbffd064df47b55d4e94861cd14eb7fbf2e75bed4bc4756b732bf68eddb693"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_stats/draw_bias.csv",
+   "bytes": 24720,
+   "sha256": "76faf06b6852909e665fb59056f04c68a3fd9ff4b095b53c26b1bee01d3fe654"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_stats/draw_field_bias.csv",
+   "bytes": 63936,
+   "sha256": "09479139a262cdb1e0c5254281aaaa3e43486cfdea6e079d6989d12709b1a80a"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_stats/pace_bias.csv",
+   "bytes": 78518,
+   "sha256": "c14ead672a27f66b539d1fc4e78f640c19051cf4dbe9dadc022ed7f93c984333"
+  },
+  {
+   "path": "racing-review/evidence/2026-11-27/track_stats/weight_bias.csv",
+   "bytes": 48735,
+   "sha256": "e996191e82b35535a205756ad928d4c746288ef5fa3510bb9e474df17b82c7ce"
+  }
+ ],
+ "combined_sha256": "5f2c9844ccc4b096d2a904c01f4502206578aeacddc74d2e96671b07ff82aaf0",
+ "total_bytes": 2369996
+}

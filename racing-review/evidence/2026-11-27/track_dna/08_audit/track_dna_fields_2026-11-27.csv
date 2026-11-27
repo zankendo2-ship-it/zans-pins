@@ -1,0 +1,64 @@
+course_id,course_name,country,race_code,surface,official_going,field_name,value,confidence,source_url
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,source_status,FETCHED,FETCH_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/doncaster/
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,relevant_section_status,RELEVANT_SECTION_EXTRACTED,SECTION_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/doncaster/
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,layout_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,jumping_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/doncaster/
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+doncaster,Doncaster,GB,JUMPS,TURF,GOOD,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,source_status,FETCHED,FETCH_AUDIT,https://www.irishracing.com/racecourses/dundalk
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,relevant_section_status,SECTION_REVIEW_REQUIRED,SECTION_AUDIT,https://www.irishracing.com/racecourses/dundalk
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,layout_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.irishracing.com/racecourses/dundalk
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+dundalk,Dundalk,IRE,AW_FLAT,POLYTRACK,STANDARD,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,source_status,FETCHED,FETCH_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/musselburgh/
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,relevant_section_status,RELEVANT_SECTION_EXTRACTED,SECTION_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/musselburgh/
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,layout_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,jumping_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/musselburgh/
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+musselburgh,Musselburgh,GB,JUMPS,TURF,GOOD_TO_SOFT,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+newbury,Newbury,GB,JUMPS,TURF,GOOD,source_status,FETCHED,FETCH_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,relevant_section_status,RELEVANT_SECTION_EXTRACTED,SECTION_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,layout_context,The home straight runs almost exactly east to west.,SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,jumping_context,"Track Details Newbury boasts a fairly large expanse near the Greenham area, enabling it to host Flat, hurdle and steeplechase races.",SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+newbury,Newbury,GB,JUMPS,TURF,GOOD,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/newbury/
+newbury,Newbury,GB,JUMPS,TURF,GOOD,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+newbury,Newbury,GB,JUMPS,TURF,GOOD,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,source_status,FETCHED,FETCH_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,relevant_section_status,RELEVANT_SECTION_EXTRACTED,SECTION_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,layout_context,"There is a straight five furlongs meaning that races over that distance, and 1m6f, begin before the final bend. | All other races however are staged on a traditional oval, around 1¼ miles in total length. | Races from 1m2f to 1m5f begin in front of the stands, with one-mile events, seven-furlong and six-furlong races all starting on the back straight. | The track is flat with a run-in of around three furlongs after the final turn, one which is tight enough by British standards and just a little more sweeping than a typical American dirt track against which it is often compared.",SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,surface_context,"Track Details Southwell is kept very busy indeed, at least on its all-weather course. | Things have changed in recent times owing to the course’s switch from Fibresand to Tapeta, though the feedback has been excellent with the move being seen almost universally as a good one for the track. | Flat Course In terms of layout, Southwell’s all-weather track is very unremarkable. | Something to always keep in mind with Tapeta tracks is that while they are all very fair, leading to many top trainers sending good horses, it can ride a tad slow. | They do feed back that it rides very similarly to an American track, perhaps even more so now after the Tapeta surface was introduced to replace the old Fibresand track.",SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,distance_configuration,"There is a straight five furlongs meaning that races over that distance, and 1m6f, begin before the final bend. | Races from 1m2f to 1m5f begin in front of the stands, with one-mile events, seven-furlong and six-furlong races all starting on the back straight.",SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,distances_described,"5f, 6f, 7f, 1m, 1m2f, 1m5f, 1m6f",SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats

@@ -1,0 +1,3 @@
+course_id,course_name,country,race_code,surface,field_name,source_url,source_key,section_label,section_status,zone,sentence_number,exact_quote,evidence_status,rejection_reason
+newbury,Newbury,GB,JUMPS,TURF,jumping_configuration,https://www.horseracingbettingsites.co.uk/racecourses/newbury/,combined_sources,JUMPS_SECTION,RELEVANT_SECTION_EXTRACTED,RELEVANT_SECTION,1,"Track Details Newbury boasts a fairly large expanse near the Greenham area, enabling it to host Flat, hurdle and steeplechase races.",ACCEPTED,
+newbury,Newbury,GB,JUMPS,TURF,layout,https://www.horseracingbettingsites.co.uk/racecourses/newbury/,combined_sources,JUMPS_SECTION,RELEVANT_SECTION_EXTRACTED,RELEVANT_SECTION,2,The home straight runs almost exactly east to west.,ACCEPTED,
