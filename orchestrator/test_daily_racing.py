@@ -724,7 +724,9 @@ def test_evidence_wrong_runner_course_row_or_field_refused():
 
 
 def test_evidence_typed_fields_must_match_the_hashed_record():
-    for chg, why in (({"second": "Dee Ess 8.00 (5%)"}, "second"), ({"rpr_pick": "Cee Dee"}, "rpr_pick"), ({"zans_chance": 0.40}, "zans_chance"),
+    for chg, why in (({"second": "Dee Ess 8.00 (5%)"}, "second"), ({"rpr_pick": "Cee Dee"}, "rpr_pick"),
+                     ({"second": "Alpha Star 4.00 (23%)"}, "second"), ({"rpr_pick": "Blue Sky"}, "rpr_pick"),
+                     ({"zans_chance": 0.40}, "zans_chance"),
                      ({"data_chance": 0.5}, "data_chance"), ({"data_conf": 9}, "data_conf"), ({"price_at_pick": "3.10"}, "price_at_pick"),
                      ({"going": "Heavy"}, "going"), ({"data_gap": True}, "data_gap"), ({"drift_warning": True}, "drift_warning")):
         with pytest.raises(r.Refuse, match=why):
