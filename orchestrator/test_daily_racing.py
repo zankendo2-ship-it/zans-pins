@@ -288,3 +288,22 @@ def test_revise_opens_a_gate_and_is_not_complete():
 def test_review_task_demands_a_short_reply_under_the_output_cap():
     # 27 Nov live run 45982259588: a long Claude reply hit max_tokens (BLOCKER). The prompt must ask for brevity.
     assert "KEEP THE REPLY SHORT" in r.REVIEW_TASK and "at most 6 reasons" in r.REVIEW_TASK
+
+
+V2_ROW = {**RACE, "second": None, "agent_b": "A", "data_gap": False, "price_move": None, "rpr_pick": "A", "rpr_reason": "r", "longshot": None}
+
+
+def test_schema_v2_files_need_every_reviewable_field_or_explicit_null():
+    day = "2026-11-28"
+    ok = file_bytes(date=day, frozen_at_utc=day + "T08:45:00Z", races=[V2_ROW])
+    assert r.validate(ok, day)
+    for drop in r.V2_RACE_FIELDS:
+        row = {k: v for k, v in V2_ROW.items() if k != drop}
+        with pytest.raises(r.Refuse):
+            r.validate(file_bytes(date=day, frozen_at_utc=day + "T08:45:00Z", races=[row]), day)
+    gap = {**V2_ROW, "data_gap": True, "confidence": "8"}
+    with pytest.raises(r.Refuse):                                   # uncapped data-gap pick
+        r.validate(file_bytes(date=day, frozen_at_utc=day + "T08:45:00Z", races=[gap]), day)
+    assert r.validate(file_bytes(date=day, frozen_at_utc=day + "T08:45:00Z", races=[{**gap, "confidence_capped": 6}]), day)
+    # earlier-dated files (27 Nov) keep the old schema
+    assert r.validate(file_bytes(), TODAY)

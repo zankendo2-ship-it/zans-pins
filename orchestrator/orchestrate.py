@@ -676,6 +676,7 @@ def gate_lines(h, items):
     cid = correction_id(items)
     return ["", "**Correction gate (open until a bot-posted receipt closes it; private routing not required, owner decision 27 Nov; this repo is public):**",
             f"- Correction id: `{cid}` ({len(items)} fixes, listed above).",
+            *[f"- Fix {i}: {redact(str(x))[:300]}" for i, x in enumerate(items, 1)],
             "- Close it only with the 'ZANS correction receipt' workflow (allowlisted actor, main branch) giving run "
             f"`{h}`, this correction id and exactly one decision per fix, numbered 1 to {len(items)}: "
             "'N=applied <commit> <changed path> <sha256 of that file at the commit>' (bound proof, checked against the repo) or 'N=rejected <reason>'. Only that bot-posted receipt counts. "
@@ -720,6 +721,17 @@ def pending_corrections(comments):
     return list(opened)
 
 
+def gate_item_texts(comments, run, cid):
+    """{N: text} of the fixes the bot-posted gate listed (so a re-review can be asked about every original item)."""
+    for c in comments:
+        if (c.get("user") or {}).get("login") != TRUSTED_SETTLER:
+            continue
+        b = c.get("body") or ""
+        if f"<!-- {CORRECTION}:{run}:{cid} -->" in b:
+            return {int(m.group(1)): m.group(2).strip() for m in re.finditer(r"^- Fix (\d+): (.+)$", b, re.M)}
+    return {}
+
+
 def gate_chain(comments, run, cid):
     """This gate plus every older gate it descends from (bot-posted parent markers only): a PASS/PASS re-review of the
     corrected artifact closes the whole chain, never a sibling gate."""
@@ -737,7 +749,8 @@ def gate_chain(comments, run, cid):
 
 
 def require_no_pending_corrections(comments, allow=None):
-    pend = [k for k in pending_corrections(comments) if k != allow]
+    allowed = set(allow or ())
+    pend = [k for k in pending_corrections(comments) if k not in allowed]
     if pend:
         raise Stop("STOPPED: an earlier run has a correction gate with no bot-posted receipt. Close it with the "
                    "correction receipt workflow first; no paid run on any route until then.")
