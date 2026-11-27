@@ -17,7 +17,7 @@
   - 3 rounds, and 6 API requests per run;
   - the first REJECT or BLOCKER stops the run at once, so the other reviewer is not called;
   - 1,500 output tokens per call, 120 s per call, 10 min per run;
-  - **at most 1 live (paid) run per UTC day** (hard ceiling, Alex 26 Nov: gather the day's items and send them in ONE batched run; $2.45 is reserved up front, then the run is settled at its measured cost). Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` = 1 set explicitly; empty or invalid means 0 live runs. Raising the ceiling needs a code change and a review;
+  - **at most 1 paid run total per UTC day across manual/live, products, racing and retro routes** (one shared slot; any paid route blocks every other paid route for that UTC day). Alex's instruction is to gather the day's items into ONE batched run; USD 2.45 is reserved up front for the manual two-reviewer route, then settled at measured cost. Live needs `ZANS_ORCH_MAX_RUNS_PER_DAY` = 1 set explicitly; empty or invalid means 0 live runs. Raising the ceiling needs a code change and a review;
   - **owner budgets:** live needs `ZANS_ORCH_MAX_USD_PER_RUN` (Alex approved `3`) and `ZANS_ORCH_MAX_USD_PER_MONTH` (Alex approved `10`). Missing, zero, negative or non-finite (`nan`, `inf`) values refuse live. Every call is priced at $10 in / $50 out per million tokens, which is above every allowed model's 25 Nov list price:
     - **before the run**, the worst case is worked out. The run is refused if that is over the per-run budget, or if it plus this month's reservations is over the monthly budget;
     - the full hard-cap worst run (**$2.45**) is **reserved in the slot comment** before any paid call, whatever the estimate, so failed runs count against the month;
@@ -33,8 +33,9 @@
   - files only from `zankendo2-ship-it` repos;
   - one run at a time (concurrency lock).
 - **Shared context.** Every review loads `orchestrator/ZANS_RULES.md` (the shared rules) and the **#26 issue body (the canonical checklist) as its own section, in full**. It is never cut by the comment cap; if it is over 14k characters the run is refused. It also loads the newest #26 comments and the text of the pinned files.
-- **Dedup.** It skips a mode + task + artifact set it has already reviewed. Mock and live have separate keys, so a mock never blocks the live run.
+- **Dedup.** A full 64-hex fingerprint and the pre-call slot prevent a retry of an unchanged paid artifact set, even after a failed attempt or on a later day. Mock and live have separate keys, so a mock never blocks the live run. Completion markers are emitted only in the trusted settlement comment after known, non-overrun usage; unknown usage, overrun or failed settlement never marks an artifact complete.
 - **Untrusted data.** Issue comments and artifacts go to the models inside untrusted-data markers, which the models are told to ignore instructions in. Any reply that isn't a valid verdict counts as BLOCKER, never PASS. That includes wrong field types, such as reasons not being a list of text.
+- **Correction routing limitation.** The current workflow does not implement a private Claude-thread handoff or receipt. Its GitHub summary is public on #26; corrections must be relayed manually until a tested internal route is added. Do not claim private routing or automatic re-review.
 - **No secrets or comment text in logs.** Keys are only passed in `live` mode and are never printed. The job has `contents: read` and `issues: write` only.
 - **Mock is labelled synthetic.** `mock` mode makes no model calls. Its summary says SYNTHETIC MOCK, zero paid API calls, and that it gives no verdict on the files.
 - **Pinned supply chain.** No third-party actions: a plain `git` checkout of the exact commit on the pinned `ubuntu-24.04` image. The test dependencies are installed with `--require-hashes`. The tests run before every review.
