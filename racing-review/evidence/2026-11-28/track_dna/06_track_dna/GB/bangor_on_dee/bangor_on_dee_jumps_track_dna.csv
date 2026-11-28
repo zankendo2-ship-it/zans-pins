@@ -1,0 +1,14 @@
+course_id,course_name,country,race_code,surface,official_going,field_name,value,confidence,source_url
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,source_status,FETCHED,FETCH_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/bangor-on-dee/
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,relevant_section_status,SECTION_REVIEW_REQUIRED,SECTION_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/bangor-on-dee/
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,layout_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,jumping_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/bangor-on-dee/
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+bangor_on_dee,Bangor-on-Dee,GB,JUMPS,TURF,GOOD_TO_SOFT,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats

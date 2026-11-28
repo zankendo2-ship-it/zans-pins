@@ -1,0 +1,14 @@
+course_id,course_name,country,race_code,surface,official_going,field_name,value,confidence,source_url
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,source_status,FETCHED,FETCH_AUDIT,https://www.irishracing.com/racecourses/fairyhouse
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,relevant_section_status,SECTION_REVIEW_REQUIRED,SECTION_AUDIT,https://www.irishracing.com/racecourses/fairyhouse
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,layout_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,jumping_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.irishracing.com/racecourses/fairyhouse
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+fairyhouse,Fairyhouse,IRE,JUMPS,TURF,YIELDING,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats

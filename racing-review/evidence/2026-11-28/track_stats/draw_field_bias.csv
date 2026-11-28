@@ -1,0 +1,433 @@
+course_id,course_name,discipline,distance,furlongs,going,field_size,races,low_runners,low_win_pct,low_prb,low_ae,middle_runners,middle_win_pct,middle_prb,middle_ae,high_runners,high_win_pct,high_prb,high_ae,confidence,verdict
+doncaster,Doncaster,FLAT,5f,5,ALL,6-9,115,286,19.9,0.558,1.42,290,10.3,0.495,0.78,286,9.8,0.448,0.77,MEDIUM,Strong LOW draw advantage
+doncaster,Doncaster,FLAT,5f,5,ALL,10-13,80,296,9.1,0.5,1.04,306,9.5,0.495,1.04,296,8.4,0.506,0.95,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,5f,5,ALL,14+,47,265,4.5,0.492,0.76,253,7.1,0.513,1.2,265,6.8,0.497,1.11,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,5f,5,FAST,6-9,58,143,21.7,0.59,1.56,144,9.7,0.486,0.74,143,9.1,0.424,0.67,LOW,Strong LOW draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,5f,5,FAST,10-13,26,97,4.1,0.469,0.51,98,13.3,0.475,1.45,97,10.3,0.557,1.1,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,5f,5,FAST,14+,6,31,3.2,0.441,0.51,31,9.7,0.553,1.4,31,6.5,0.506,1.06,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5f,5,GOOD,6-9,30,78,16.7,0.554,1.13,77,11.7,0.528,0.93,78,10.3,0.42,0.91,LOW,Strong LOW draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,5f,5,GOOD,10-13,28,103,10.7,0.512,1.2,106,8.5,0.51,0.92,103,7.8,0.48,0.89,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,5f,5,GOOD,14+,20,119,5.0,0.502,0.84,107,5.6,0.495,1.06,119,6.7,0.503,1.11,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5f,5,SOFT,6-9,27,65,20.0,0.49,1.48,69,10.1,0.475,0.71,65,10.8,0.536,0.84,LOW,Slight HIGH draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,5f,5,SOFT,10-13,26,96,12.5,0.518,1.35,102,6.9,0.5,0.78,96,7.3,0.482,0.86,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,5f,5,SOFT,14+,21,115,4.3,0.495,0.75,115,7.8,0.518,1.24,115,7.0,0.489,1.13,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,ALL,6-9,12,30,6.7,0.507,0.51,31,19.4,0.543,1.26,30,13.3,0.452,1.2,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,ALL,10-13,7,26,3.8,0.429,0.51,29,6.9,0.533,0.75,26,15.4,0.534,1.69,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,ALL,14+,17,114,2.6,0.432,0.56,117,6.0,0.562,1.13,114,6.1,0.505,1.28,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,FAST,6-9,7,18,5.6,0.474,0.42,19,15.8,0.523,1.1,18,16.7,0.501,1.58,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,FAST,10-13,1,4,0.0,0.432,0.0,4,25.0,0.545,2.51,4,0.0,0.523,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,FAST,14+,2,14,0.0,0.383,0.0,15,13.3,0.534,3.22,14,0.0,0.584,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,GOOD,6-9,3,8,12.5,0.544,0.83,7,14.3,0.555,1.27,8,12.5,0.424,0.99,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,GOOD,10-13,1,4,0.0,0.521,0.0,5,0.0,0.4,0.0,4,25.0,0.604,1.96,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,GOOD,14+,10,68,1.5,0.426,0.33,66,4.5,0.551,0.83,68,8.8,0.526,1.79,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,SOFT,6-9,2,4,0.0,0.583,0.0,5,40.0,0.6,1.61,4,0.0,0.292,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,SOFT,10-13,5,18,5.6,0.409,0.7,20,5.0,0.564,0.48,18,16.7,0.52,2.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,5½f,5.5,SOFT,14+,5,32,6.2,0.466,1.18,36,5.6,0.595,1.03,32,3.1,0.427,0.73,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6f,6,ALL,6-9,193,507,12.8,0.513,0.96,489,14.1,0.512,1.14,507,11.6,0.476,0.92,HIGH,No meaningful draw bias
+doncaster,Doncaster,FLAT,6f,6,ALL,10-13,176,649,8.5,0.503,0.96,687,10.3,0.522,1.14,649,7.7,0.474,0.89,HIGH,No meaningful draw bias
+doncaster,Doncaster,FLAT,6f,6,ALL,14+,117,655,5.8,0.509,0.96,639,5.8,0.504,0.94,655,6.4,0.488,1.11,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,6f,6,FAST,6-9,84,216,15.3,0.516,1.11,208,13.5,0.525,1.01,216,10.6,0.461,0.86,MEDIUM,Slight LOW draw advantage
+doncaster,Doncaster,FLAT,6f,6,FAST,10-13,68,248,8.5,0.485,0.89,256,9.8,0.515,1.09,248,8.9,0.499,1.03,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,6f,6,FAST,14+,24,127,3.9,0.471,0.62,120,8.3,0.499,1.22,127,7.1,0.53,1.17,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6f,6,GOOD,6-9,40,106,11.3,0.5,0.81,102,11.8,0.506,1.09,106,15.1,0.495,1.13,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,6f,6,GOOD,10-13,51,188,6.4,0.513,0.73,201,12.9,0.531,1.43,188,6.9,0.454,0.79,LOW,Slight LOW draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,6f,6,GOOD,14+,41,241,4.6,0.503,0.82,238,5.5,0.517,0.95,241,7.1,0.481,1.22,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,6f,6,SOFT,6-9,69,185,10.8,0.517,0.85,179,16.2,0.501,1.31,185,10.8,0.482,0.85,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,6f,6,SOFT,10-13,57,213,10.3,0.514,1.26,230,8.7,0.521,0.95,213,7.0,0.464,0.82,LOW,Slight LOW draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,6f,6,SOFT,14+,52,287,7.7,0.53,1.21,281,5.0,0.496,0.79,287,5.6,0.475,0.99,LOW,Slight LOW draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,6½f,6.5,ALL,6-9,12,34,11.8,0.539,0.97,33,6.1,0.405,0.52,34,17.6,0.553,1.5,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,ALL,10-13,27,99,9.1,0.446,1.19,110,10.9,0.541,1.12,99,6.1,0.508,0.69,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,6½f,6.5,ALL,14+,28,171,6.4,0.515,1.15,169,3.6,0.492,0.64,171,6.4,0.493,1.23,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,6½f,6.5,FAST,6-9,5,15,13.3,0.645,1.07,13,0.0,0.26,0.0,15,20.0,0.563,1.6,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,FAST,10-13,7,26,7.7,0.388,1.21,28,7.1,0.549,0.69,26,11.5,0.558,1.23,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,FAST,14+,3,19,5.3,0.538,0.74,16,0.0,0.383,0.0,19,10.5,0.561,2.36,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,GOOD,6-9,1,3,0.0,0.417,0.0,3,33.3,0.458,2.14,3,0.0,0.625,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,GOOD,10-13,11,40,15.0,0.535,1.75,44,11.4,0.501,1.21,40,0.0,0.464,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,GOOD,14+,18,110,6.4,0.514,1.16,113,4.4,0.519,0.78,110,5.5,0.467,1.08,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,SOFT,6-9,6,16,12.5,0.462,0.97,17,5.9,0.507,0.46,16,18.8,0.531,1.67,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,SOFT,10-13,9,33,3.0,0.382,0.4,38,13.2,0.582,1.34,33,9.1,0.523,1.07,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,6½f,6.5,SOFT,14+,7,42,7.1,0.506,1.37,40,2.5,0.459,0.44,42,7.1,0.533,1.18,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,7f,7,ALL,6-9,208,534,13.5,0.513,1.01,532,13.3,0.5,1.03,534,12.4,0.487,0.98,HIGH,No meaningful draw bias
+doncaster,Doncaster,FLAT,7f,7,ALL,10-13,228,844,9.8,0.51,1.1,898,9.0,0.504,1.02,844,7.7,0.486,0.88,HIGH,No meaningful draw bias
+doncaster,Doncaster,FLAT,7f,7,ALL,14+,127,703,6.1,0.492,0.99,687,5.5,0.5,0.94,703,6.5,0.508,1.07,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,7f,7,FAST,6-9,78,200,14.0,0.493,1.03,204,12.7,0.512,1.0,200,12.0,0.496,0.97,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,7f,7,FAST,10-13,83,305,10.2,0.499,1.16,326,7.4,0.501,0.84,305,9.2,0.501,1.01,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,7f,7,FAST,14+,29,153,5.2,0.453,0.83,148,4.7,0.539,0.77,153,9.2,0.51,1.36,LOW,Slight HIGH draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,7f,7,GOOD,6-9,56,143,16.1,0.518,1.27,140,12.9,0.499,0.99,143,10.5,0.482,0.77,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,7f,7,GOOD,10-13,72,271,10.7,0.496,1.19,279,9.7,0.528,1.08,271,5.9,0.475,0.71,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,7f,7,GOOD,14+,46,251,5.6,0.49,0.86,246,7.7,0.508,1.37,251,5.2,0.502,0.82,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,7f,7,SOFT,6-9,74,191,11.0,0.529,0.81,188,14.4,0.489,1.08,191,14.1,0.483,1.17,MEDIUM,Slight LOW draw advantage
+doncaster,Doncaster,FLAT,7f,7,SOFT,10-13,73,268,8.6,0.537,0.95,293,10.2,0.485,1.18,268,7.8,0.48,0.91,MEDIUM,Slight LOW draw advantage
+doncaster,Doncaster,FLAT,7f,7,SOFT,14+,52,299,7.0,0.515,1.2,293,4.1,0.474,0.69,299,6.4,0.511,1.12,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m,8,ALL,6-9,159,403,14.4,0.518,1.08,397,12.1,0.495,0.89,403,13.2,0.487,1.03,HIGH,No meaningful draw bias
+doncaster,Doncaster,FLAT,1m,8,ALL,10-13,112,405,11.1,0.514,1.15,431,9.7,0.499,1.1,405,6.2,0.488,0.72,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,1m,8,ALL,14+,80,469,7.9,0.502,1.33,470,5.1,0.51,0.9,469,4.1,0.489,0.75,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,1m,8,FAST,6-9,55,133,16.5,0.532,1.17,137,10.2,0.439,0.75,133,14.3,0.531,1.08,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m,8,FAST,10-13,32,117,13.7,0.52,1.41,123,6.5,0.465,0.77,117,6.8,0.518,0.78,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m,8,FAST,14+,10,53,3.8,0.472,0.56,47,10.6,0.577,1.49,53,5.7,0.46,0.97,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m,8,GOOD,6-9,52,140,12.1,0.493,0.95,131,13.0,0.511,0.94,140,12.9,0.497,1.12,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m,8,GOOD,10-13,39,143,11.2,0.543,1.18,149,12.1,0.509,1.37,143,3.5,0.448,0.41,LOW,Clear LOW draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m,8,GOOD,14+,33,191,7.3,0.462,1.29,194,4.6,0.515,0.81,191,5.2,0.523,0.9,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m,8,SOFT,6-9,52,130,14.6,0.531,1.12,129,13.2,0.539,0.99,130,12.3,0.43,0.89,LOW,Strong LOW draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m,8,SOFT,10-13,41,145,9.0,0.48,0.9,159,10.1,0.517,1.1,145,8.3,0.501,0.99,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m,8,SOFT,14+,37,225,9.3,0.543,1.56,229,4.4,0.492,0.82,225,2.7,0.466,0.53,LOW,Clear LOW draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m2f,10,ALL,6-9,163,403,13.2,0.511,0.99,405,13.8,0.497,0.98,403,13.4,0.493,1.03,HIGH,No meaningful draw bias
+doncaster,Doncaster,FLAT,1m2f,10,ALL,10-13,121,444,7.7,0.503,0.82,465,10.5,0.491,1.21,444,8.6,0.506,0.97,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,1m2f,10,ALL,14+,55,303,6.9,0.502,1.05,295,4.7,0.505,0.81,303,6.6,0.494,1.13,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m2f,10,FAST,6-9,62,147,13.6,0.515,0.97,155,15.5,0.503,1.07,147,12.2,0.483,0.95,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,1m2f,10,FAST,10-13,23,83,7.2,0.5,0.88,87,9.2,0.478,0.98,83,10.8,0.526,1.12,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m2f,10,FAST,14+,3,15,0.0,0.442,0.0,15,13.3,0.517,1.78,15,6.7,0.541,1.03,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m2f,10,GOOD,6-9,49,125,11.2,0.508,0.83,122,13.9,0.504,1.04,125,14.4,0.488,1.14,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m2f,10,GOOD,10-13,41,155,9.0,0.51,0.91,156,10.9,0.487,1.35,155,6.5,0.502,0.76,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m2f,10,GOOD,14+,22,120,7.5,0.496,1.11,118,4.2,0.498,0.73,120,6.7,0.506,1.14,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m2f,10,SOFT,6-9,52,131,14.5,0.511,1.17,128,11.7,0.481,0.82,131,13.7,0.508,1.03,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m2f,10,SOFT,10-13,57,206,6.8,0.5,0.73,222,10.8,0.498,1.21,206,9.2,0.502,1.05,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m2f,10,SOFT,14+,30,168,7.1,0.512,1.09,162,4.3,0.508,0.76,168,6.5,0.482,1.12,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m4f,12,ALL,6-9,120,286,16.1,0.488,1.19,302,14.6,0.504,1.04,286,10.5,0.507,0.77,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,1m4f,12,ALL,10-13,51,185,10.3,0.509,1.18,197,8.6,0.502,0.86,185,8.1,0.489,0.99,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m4f,12,ALL,14+,42,260,3.5,0.486,0.64,245,6.5,0.513,1.18,260,6.5,0.502,1.18,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m4f,12,FAST,6-9,51,120,16.7,0.503,1.23,126,17.5,0.524,1.14,120,7.5,0.471,0.58,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m4f,12,FAST,10-13,16,57,10.5,0.498,1.39,61,8.2,0.506,0.72,57,8.8,0.495,1.05,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m4f,12,FAST,14+,3,16,0.0,0.502,0.0,15,13.3,0.491,1.95,16,6.2,0.507,0.96,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m4f,12,GOOD,6-9,31,73,15.1,0.476,1.02,77,16.9,0.536,1.29,73,9.6,0.486,0.69,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m4f,12,GOOD,10-13,14,52,11.5,0.548,1.15,53,5.7,0.455,0.68,52,9.6,0.498,1.15,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m4f,12,GOOD,14+,17,97,4.1,0.499,0.68,91,4.4,0.493,0.76,97,9.3,0.507,1.54,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m4f,12,SOFT,6-9,38,93,16.1,0.479,1.31,99,9.1,0.454,0.69,93,15.1,0.57,1.04,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m4f,12,SOFT,10-13,21,76,9.2,0.49,1.06,83,10.8,0.53,1.08,76,6.6,0.479,0.83,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m4f,12,SOFT,14+,22,147,3.4,0.476,0.69,139,7.2,0.527,1.39,147,4.8,0.498,0.92,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m6½f,14.5,ALL,6-9,74,183,13.7,0.49,1.0,193,14.5,0.503,1.13,183,11.5,0.507,0.87,MEDIUM,No meaningful draw bias
+doncaster,Doncaster,FLAT,1m6½f,14.5,ALL,10-13,41,148,8.8,0.477,1.01,163,6.1,0.483,0.68,148,12.2,0.543,1.35,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m6½f,14.5,ALL,14+,8,43,9.3,0.52,1.33,43,7.0,0.531,1.19,43,2.3,0.45,0.4,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m6½f,14.5,FAST,6-9,27,61,11.5,0.497,0.84,69,17.4,0.481,1.18,61,13.1,0.524,0.94,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m6½f,14.5,FAST,10-13,3,10,10.0,0.367,0.97,12,16.7,0.56,1.76,10,0.0,0.562,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m6½f,14.5,FAST,14+,1,5,0.0,0.357,0.0,5,20.0,0.629,3.72,5,0.0,0.514,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m6½f,14.5,GOOD,6-9,22,55,16.4,0.476,1.16,57,14.0,0.524,1.08,55,9.1,0.499,0.74,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m6½f,14.5,GOOD,10-13,22,81,6.2,0.464,0.72,87,5.7,0.483,0.66,81,14.8,0.555,1.6,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m6½f,14.5,GOOD,14+,3,17,5.9,0.45,1.0,18,5.6,0.54,0.92,17,5.9,0.508,1.1,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m6½f,14.5,SOFT,6-9,25,67,13.4,0.496,1.0,67,11.9,0.508,1.13,67,11.9,0.496,0.9,LOW,No meaningful draw bias (small sample — treat with caution)
+doncaster,Doncaster,FLAT,1m6½f,14.5,SOFT,10-13,16,57,12.3,0.514,1.41,64,4.7,0.47,0.5,57,10.5,0.522,1.19,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,1m6½f,14.5,SOFT,14+,4,21,14.3,0.615,1.87,20,5.0,0.499,0.86,21,0.0,0.387,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,ALL,6-9,14,36,8.3,0.481,0.72,36,11.1,0.528,0.71,36,19.4,0.491,1.66,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,ALL,10-13,7,26,11.5,0.529,1.3,28,10.7,0.53,1.11,26,3.8,0.438,0.5,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,ALL,14+,2,10,20.0,0.659,2.44,9,0.0,0.409,0.0,10,0.0,0.423,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,FAST,6-9,6,15,0.0,0.42,0.0,16,18.8,0.561,1.04,15,20.0,0.515,1.97,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,FAST,10-13,3,12,16.7,0.527,2.15,13,7.7,0.53,0.8,12,0.0,0.441,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,GOOD,6-9,2,5,0.0,0.434,0.0,4,0.0,0.45,0.0,5,40.0,0.606,1.79,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,GOOD,10-13,3,11,9.1,0.536,0.94,11,9.1,0.511,0.98,11,9.1,0.454,1.08,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,GOOD,14+,1,5,20.0,0.662,2.34,4,0.0,0.385,0.0,5,0.0,0.431,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,SOFT,6-9,6,16,18.8,0.553,1.5,16,6.2,0.514,0.41,16,12.5,0.433,1.28,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,SOFT,10-13,1,3,0.0,0.519,0.0,4,25.0,0.583,2.27,3,0.0,0.37,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m½f,16.5,SOFT,14+,1,5,20.0,0.657,2.55,5,0.0,0.429,0.0,5,0.0,0.414,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m2f,18,ALL,6-9,10,24,16.7,0.5,1.34,24,16.7,0.53,0.85,24,8.3,0.47,0.87,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m2f,18,ALL,10-13,4,14,7.1,0.395,0.99,15,13.3,0.584,1.44,14,7.1,0.516,0.62,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m2f,18,FAST,6-9,1,2,0.0,0.3,0.0,2,50.0,0.9,1.39,2,0.0,0.3,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m2f,18,GOOD,6-9,3,7,42.9,0.694,2.63,8,0.0,0.414,0.0,7,0.0,0.405,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m2f,18,GOOD,10-13,3,10,10.0,0.434,1.15,11,18.2,0.614,1.8,10,0.0,0.44,0.0,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m2f,18,SOFT,6-9,6,15,6.7,0.436,0.58,14,21.4,0.543,1.04,15,13.3,0.524,1.45,TOO_FEW,Not enough races
+doncaster,Doncaster,FLAT,2m2f,18,SOFT,10-13,1,4,0.0,0.295,0.0,4,0.0,0.5,0.0,4,25.0,0.705,1.73,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,6f,6,ALL,6-9,72,183,13.7,0.517,1.0,183,9.8,0.47,0.75,183,16.4,0.514,1.31,MEDIUM,No meaningful draw bias
+fairyhouse,Fairyhouse,FLAT,6f,6,ALL,10-13,57,210,5.7,0.511,0.65,231,12.1,0.496,1.34,210,8.1,0.495,0.96,LOW,No meaningful draw bias (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,6f,6,ALL,14+,75,406,6.7,0.527,1.0,406,6.2,0.487,1.01,406,5.7,0.486,0.99,MEDIUM,Slight LOW draw advantage
+fairyhouse,Fairyhouse,FLAT,6f,6,FAST,6-9,22,55,7.3,0.468,0.59,55,20.0,0.503,1.41,55,14.5,0.531,1.08,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,6f,6,FAST,10-13,14,53,3.8,0.494,0.47,58,13.8,0.519,1.55,53,7.5,0.488,0.87,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,6f,6,FAST,14+,14,72,6.9,0.544,1.05,74,6.8,0.514,1.04,72,5.6,0.442,0.9,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,6f,6,GOOD,6-9,37,98,16.3,0.537,1.15,97,3.1,0.445,0.26,98,18.4,0.518,1.57,LOW,No meaningful draw bias (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,6f,6,GOOD,10-13,29,105,5.7,0.491,0.69,117,10.3,0.503,1.05,105,10.5,0.505,1.24,LOW,No meaningful draw bias (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,6f,6,GOOD,14+,42,231,6.5,0.522,0.98,230,6.1,0.494,1.0,231,5.6,0.483,1.03,LOW,No meaningful draw bias (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,6f,6,SOFT,6-9,13,30,16.7,0.54,1.14,31,12.9,0.488,0.87,30,13.3,0.472,1.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,6f,6,SOFT,10-13,14,52,7.7,0.568,0.72,56,14.3,0.456,1.88,52,3.8,0.481,0.48,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,6f,6,SOFT,14+,19,103,6.8,0.526,1.02,102,5.9,0.453,1.01,103,5.8,0.522,0.97,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,7f,7,ALL,6-9,43,116,15.5,0.508,1.34,110,15.5,0.504,1.2,116,6.9,0.492,0.52,LOW,No meaningful draw bias (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,7f,7,ALL,10-13,38,140,7.1,0.534,0.74,149,9.4,0.492,1.07,140,10.0,0.474,1.24,LOW,Clear LOW draw advantage (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,7f,7,ALL,14+,69,389,6.4,0.518,0.94,379,5.0,0.515,0.84,389,6.4,0.468,1.25,MEDIUM,Slight LOW draw advantage
+fairyhouse,Fairyhouse,FLAT,7f,7,FAST,6-9,15,40,15.0,0.522,1.2,39,17.9,0.529,1.38,40,5.0,0.454,0.41,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,7f,7,FAST,10-13,7,26,7.7,0.454,0.91,27,3.7,0.518,0.52,26,15.4,0.526,1.39,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,7f,7,FAST,14+,13,75,8.0,0.521,1.15,74,1.4,0.502,0.26,75,8.0,0.477,1.54,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,7f,7,GOOD,6-9,19,49,20.4,0.525,1.64,47,8.5,0.458,0.63,49,10.2,0.518,0.77,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,7f,7,GOOD,10-13,24,86,9.3,0.579,0.89,91,11.0,0.487,1.13,86,7.0,0.434,0.97,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,7f,7,GOOD,14+,40,222,5.9,0.521,0.86,213,6.1,0.51,1.0,222,6.3,0.47,1.17,LOW,Slight LOW draw advantage (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,7f,7,SOFT,6-9,9,27,7.4,0.454,0.84,24,25.0,0.551,2.19,27,3.7,0.5,0.26,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,7f,7,SOFT,10-13,7,28,0.0,0.47,0.0,31,9.7,0.484,1.26,28,14.3,0.548,1.82,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,7f,7,SOFT,14+,16,92,6.5,0.507,0.95,92,5.4,0.538,0.89,92,5.4,0.455,1.23,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m1f,9,ALL,6-9,1,3,33.3,0.458,3.61,3,0.0,0.458,0.0,3,0.0,0.583,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m1f,9,ALL,10-13,1,4,0.0,0.35,0.0,3,0.0,0.4,0.0,4,25.0,0.725,2.11,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m1f,9,ALL,14+,1,6,16.7,0.539,2.58,6,0.0,0.618,0.0,6,0.0,0.343,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m1f,9,SOFT,6-9,1,3,33.3,0.458,3.61,3,0.0,0.458,0.0,3,0.0,0.583,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m1f,9,SOFT,10-13,1,4,0.0,0.35,0.0,3,0.0,0.4,0.0,4,25.0,0.725,2.11,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m1f,9,SOFT,14+,1,6,16.7,0.539,2.58,6,0.0,0.618,0.0,6,0.0,0.343,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,ALL,6-9,27,68,8.8,0.463,0.77,67,13.4,0.519,0.89,68,17.6,0.519,1.31,LOW,Slight HIGH draw advantage (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,1m2f,10,ALL,10-13,31,116,7.8,0.507,0.9,117,12.0,0.541,1.36,116,6.9,0.453,0.74,LOW,Slight LOW draw advantage (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,1m2f,10,ALL,14+,30,166,5.4,0.489,0.91,162,8.0,0.506,1.29,166,4.8,0.506,0.79,LOW,No meaningful draw bias (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,1m2f,10,FAST,6-9,10,22,18.2,0.472,1.52,23,13.0,0.548,0.82,22,13.6,0.478,0.81,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,FAST,10-13,4,14,0.0,0.382,0.0,16,12.5,0.573,1.46,14,14.3,0.535,1.28,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,FAST,14+,9,47,4.3,0.45,0.73,46,6.5,0.552,0.97,47,8.5,0.499,1.26,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,GOOD,6-9,15,41,4.9,0.478,0.43,40,15.0,0.506,1.07,41,17.1,0.516,1.48,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,GOOD,10-13,13,47,8.5,0.551,0.86,48,12.5,0.505,1.46,47,6.4,0.446,0.71,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,GOOD,14+,14,79,5.1,0.522,0.85,79,7.6,0.471,1.26,79,5.1,0.507,0.89,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,SOFT,6-9,2,5,0.0,0.297,0.0,4,0.0,0.479,0.0,5,40.0,0.72,2.85,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,SOFT,10-13,14,55,9.1,0.501,1.17,53,11.3,0.563,1.26,55,5.5,0.438,0.61,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m2f,10,SOFT,14+,7,40,7.5,0.467,1.25,37,10.8,0.523,1.82,40,0.0,0.511,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,ALL,6-9,23,57,10.5,0.479,0.91,56,10.7,0.493,0.81,57,19.3,0.527,1.22,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,ALL,10-13,22,83,12.0,0.507,1.32,92,4.3,0.472,0.6,83,9.6,0.524,1.03,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,ALL,14+,34,183,8.2,0.518,1.31,177,5.1,0.473,0.84,183,5.5,0.508,0.84,LOW,No meaningful draw bias (small sample — treat with caution)
+fairyhouse,Fairyhouse,FLAT,1m4f,12,FAST,6-9,10,25,8.0,0.452,0.73,24,16.7,0.506,1.31,25,16.0,0.542,0.96,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,FAST,10-13,2,7,0.0,0.544,0.0,9,11.1,0.441,1.48,7,14.3,0.532,1.19,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,FAST,14+,12,63,9.5,0.479,1.7,59,3.4,0.465,0.5,63,6.3,0.554,0.89,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,GOOD,6-9,10,25,12.0,0.507,1.11,24,8.3,0.487,0.57,25,20.0,0.506,1.32,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,GOOD,10-13,14,53,11.3,0.498,1.23,59,3.4,0.489,0.53,53,11.3,0.514,1.13,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,GOOD,14+,17,93,8.6,0.535,1.36,94,5.3,0.48,0.89,93,4.3,0.485,0.72,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,SOFT,6-9,3,7,14.3,0.479,0.9,8,0.0,0.473,0.0,7,28.6,0.552,1.91,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,SOFT,10-13,6,23,17.4,0.514,1.83,24,4.2,0.441,0.45,23,4.3,0.547,0.62,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m4f,12,SOFT,14+,5,27,3.7,0.552,0.49,24,8.3,0.468,1.74,27,7.4,0.477,1.1,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,ALL,6-9,3,9,22.2,0.722,1.96,9,0.0,0.25,0.0,9,11.1,0.528,1.2,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,ALL,10-13,4,14,7.1,0.481,0.72,15,6.7,0.508,1.22,14,14.3,0.511,1.11,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,ALL,14+,3,15,0.0,0.534,0.0,15,13.3,0.518,2.49,15,6.7,0.448,1.05,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,FAST,10-13,2,7,14.3,0.495,1.2,7,0.0,0.387,0.0,7,14.3,0.617,1.14,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,GOOD,6-9,2,6,33.3,0.708,4.4,6,0.0,0.208,0.0,6,0.0,0.583,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,GOOD,10-13,1,4,0.0,0.455,0.0,4,0.0,0.477,0.0,4,25.0,0.568,1.66,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,GOOD,14+,2,10,0.0,0.501,0.0,11,9.1,0.497,2.17,10,10.0,0.503,1.42,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,SOFT,6-9,1,3,0.0,0.75,0.0,3,0.0,0.333,0.0,3,33.3,0.417,4.97,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,SOFT,10-13,1,3,0.0,0.481,0.0,4,25.0,0.75,3.01,3,0.0,0.185,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,SOFT,14+,1,5,0.0,0.6,0.0,4,25.0,0.577,2.92,5,0.0,0.338,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m6f,14,ALL,6-9,4,9,22.2,0.525,1.18,9,0.0,0.253,0.0,9,22.2,0.722,1.21,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m6f,14,ALL,10-13,1,3,0.0,0.481,0.0,4,25.0,0.778,2.48,3,0.0,0.148,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m6f,14,ALL,14+,1,6,16.7,0.627,2.41,6,0.0,0.422,0.0,6,0.0,0.451,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m6f,14,GOOD,6-9,4,9,22.2,0.525,1.18,9,0.0,0.253,0.0,9,22.2,0.722,1.21,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m6f,14,GOOD,10-13,1,3,0.0,0.481,0.0,4,25.0,0.778,2.48,3,0.0,0.148,0.0,TOO_FEW,Not enough races
+fairyhouse,Fairyhouse,FLAT,1m6f,14,GOOD,14+,1,6,16.7,0.627,2.41,6,0.0,0.422,0.0,6,0.0,0.451,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,ALL,6-9,54,143,13.3,0.509,1.0,134,10.4,0.557,0.8,143,14.7,0.437,1.2,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,5f,5,ALL,10-13,40,143,10.5,0.555,1.08,155,9.7,0.521,1.18,143,7.0,0.424,0.74,LOW,Strong LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,5f,5,ALL,14+,21,143,2.8,0.52,0.57,142,7.7,0.549,1.53,143,4.2,0.432,0.88,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,FAST,6-9,13,32,21.9,0.611,1.59,33,6.1,0.433,0.47,32,12.5,0.458,0.92,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,FAST,10-13,15,50,10.0,0.585,0.97,57,12.3,0.501,1.37,50,6.0,0.414,0.63,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,FAST,14+,9,61,0.0,0.498,0.0,62,11.3,0.542,2.32,61,3.3,0.46,0.62,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,GOOD,6-9,20,53,7.5,0.442,0.61,51,11.8,0.583,0.86,53,18.9,0.478,1.54,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,GOOD,10-13,14,52,9.6,0.55,1.15,54,9.3,0.539,1.15,52,7.7,0.413,0.75,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,GOOD,14+,7,47,6.4,0.544,1.26,46,6.5,0.546,1.14,47,2.1,0.412,0.5,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,SOFT,6-9,21,58,13.8,0.513,0.99,50,12.0,0.614,0.96,58,12.1,0.389,1.04,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,SOFT,10-13,11,41,12.2,0.524,1.15,44,6.8,0.523,0.93,41,7.3,0.452,0.88,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,5f,5,SOFT,14+,5,35,2.9,0.524,0.54,34,2.9,0.566,0.65,35,8.6,0.411,1.85,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6f,6,ALL,6-9,128,340,15.0,0.524,1.11,326,12.3,0.501,0.92,340,10.9,0.476,0.95,MEDIUM,Slight LOW draw advantage
+newbury,Newbury,FLAT,6f,6,ALL,10-13,134,494,8.7,0.523,1.0,522,9.4,0.514,1.01,494,8.5,0.463,0.99,MEDIUM,Clear LOW draw advantage
+newbury,Newbury,FLAT,6f,6,ALL,14+,72,372,6.5,0.515,0.9,358,8.9,0.528,1.39,372,4.3,0.458,0.72,MEDIUM,Slight LOW draw advantage
+newbury,Newbury,FLAT,6f,6,FAST,6-9,43,117,14.5,0.545,1.14,109,11.9,0.474,0.88,117,11.1,0.48,0.97,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,6f,6,FAST,10-13,50,184,4.9,0.499,0.58,195,12.8,0.532,1.32,184,8.7,0.469,1.03,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,6f,6,FAST,14+,28,142,5.6,0.488,0.8,142,10.6,0.529,1.71,142,3.5,0.483,0.54,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,6f,6,GOOD,6-9,41,113,17.7,0.517,1.28,105,9.5,0.498,0.73,113,9.7,0.487,0.93,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,6f,6,GOOD,10-13,41,149,12.1,0.572,1.28,162,7.4,0.505,0.77,149,7.4,0.422,0.97,LOW,Strong LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,6f,6,GOOD,14+,29,151,7.9,0.547,1.09,141,5.7,0.485,0.89,151,6.0,0.467,1.0,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,6f,6,SOFT,6-9,44,110,12.7,0.51,0.92,112,15.2,0.529,1.14,110,11.8,0.461,0.94,LOW,Slight LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,6f,6,SOFT,10-13,43,161,9.9,0.506,1.18,165,7.3,0.5,0.85,161,9.3,0.494,0.97,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,6f,6,SOFT,14+,15,79,5.1,0.502,0.71,75,12.0,0.609,1.72,79,2.5,0.396,0.49,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,ALL,6-9,11,32,12.5,0.471,1.19,30,13.3,0.593,0.86,32,9.4,0.442,1.01,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,ALL,10-13,24,86,8.1,0.501,0.8,94,9.6,0.5,1.2,86,9.3,0.499,1.03,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,ALL,14+,9,47,8.5,0.476,1.41,48,6.2,0.478,1.28,47,4.3,0.547,0.52,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,FAST,6-9,1,3,0.0,0.542,0.0,3,0.0,0.5,0.0,3,33.3,0.458,2.39,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,FAST,10-13,9,32,3.1,0.494,0.27,33,9.1,0.469,1.03,32,15.6,0.539,2.14,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,FAST,14+,3,15,6.7,0.482,0.68,15,6.7,0.498,1.72,15,6.7,0.521,1.06,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,GOOD,6-9,3,9,0.0,0.427,0.0,8,12.5,0.616,0.51,9,22.2,0.47,3.74,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,GOOD,10-13,4,14,0.0,0.437,0.0,18,16.7,0.463,3.48,14,7.1,0.611,0.51,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,GOOD,14+,1,5,0.0,0.286,0.0,5,0.0,0.529,0.0,5,20.0,0.686,2.8,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,SOFT,6-9,7,20,20.0,0.481,1.63,19,15.8,0.598,1.19,20,0.0,0.426,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,SOFT,10-13,11,40,15.0,0.53,1.56,43,7.0,0.539,0.8,40,5.0,0.429,0.59,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,6½f,6.5,SOFT,14+,5,27,11.1,0.507,2.46,28,7.1,0.459,1.59,27,0.0,0.535,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,7f,7,ALL,6-9,171,434,13.4,0.527,0.97,448,16.1,0.529,1.22,434,9.7,0.445,0.81,HIGH,Clear LOW draw advantage
+newbury,Newbury,FLAT,7f,7,ALL,10-13,172,642,9.2,0.529,0.96,656,9.1,0.502,1.02,642,8.6,0.47,1.07,HIGH,Slight LOW draw advantage
+newbury,Newbury,FLAT,7f,7,ALL,14+,90,476,5.7,0.516,0.87,449,8.9,0.537,1.33,476,4.8,0.449,0.8,MEDIUM,Clear LOW draw advantage
+newbury,Newbury,FLAT,7f,7,FAST,6-9,51,130,11.5,0.519,0.92,137,15.3,0.522,1.09,130,11.5,0.458,0.98,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,7f,7,FAST,10-13,48,186,10.2,0.53,1.04,182,9.9,0.516,1.16,186,6.5,0.455,0.84,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,7f,7,FAST,14+,30,157,4.5,0.536,0.6,148,9.5,0.536,1.69,157,5.7,0.431,0.9,LOW,Strong LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,7f,7,GOOD,6-9,42,105,15.2,0.509,1.02,114,13.2,0.524,1.07,105,10.5,0.47,0.89,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,7f,7,GOOD,10-13,56,204,7.4,0.497,0.77,217,9.2,0.502,1.0,204,10.8,0.502,1.33,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,7f,7,GOOD,14+,38,200,6.5,0.515,1.06,188,8.5,0.529,1.16,200,4.5,0.459,0.76,LOW,Slight LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,7f,7,SOFT,6-9,78,199,13.6,0.541,0.96,197,18.3,0.538,1.39,199,8.0,0.422,0.67,MEDIUM,Strong LOW draw advantage
+newbury,Newbury,FLAT,7f,7,SOFT,10-13,68,252,9.9,0.553,1.05,257,8.6,0.492,0.94,252,8.3,0.457,1.01,MEDIUM,Clear LOW draw advantage
+newbury,Newbury,FLAT,7f,7,SOFT,14+,22,119,5.9,0.491,1.01,113,8.8,0.553,1.24,119,4.2,0.459,0.72,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m,8,ALL,6-9,76,198,15.2,0.57,1.0,194,11.9,0.481,1.03,198,11.6,0.449,0.96,MEDIUM,Strong LOW draw advantage
+newbury,Newbury,FLAT,1m,8,ALL,10-13,105,388,7.5,0.526,0.85,421,11.4,0.515,1.23,388,7.2,0.457,0.88,MEDIUM,Clear LOW draw advantage
+newbury,Newbury,FLAT,1m,8,ALL,14+,67,377,6.4,0.542,1.01,353,5.4,0.499,0.9,377,6.4,0.46,1.08,MEDIUM,Clear LOW draw advantage
+newbury,Newbury,FLAT,1m,8,FAST,6-9,27,71,12.7,0.562,0.8,69,8.7,0.449,0.81,71,16.9,0.488,1.45,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m,8,FAST,10-13,30,109,7.3,0.523,0.75,121,9.9,0.505,1.01,109,9.2,0.471,1.35,LOW,Slight LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m,8,FAST,14+,15,83,6.0,0.564,1.02,78,7.7,0.499,1.25,83,4.8,0.437,0.75,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m,8,GOOD,6-9,16,44,15.9,0.589,1.11,42,9.5,0.411,1.04,44,11.4,0.496,0.85,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m,8,GOOD,10-13,34,128,8.6,0.52,1.0,141,10.6,0.522,1.25,128,6.2,0.456,0.73,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m,8,GOOD,14+,20,116,6.9,0.546,1.03,107,7.5,0.512,1.27,116,3.4,0.443,0.68,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m,8,SOFT,6-9,33,83,16.9,0.566,1.14,83,15.7,0.543,1.19,83,7.2,0.391,0.62,LOW,Strong LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m,8,SOFT,10-13,41,151,6.6,0.533,0.81,159,13.2,0.518,1.39,151,6.6,0.448,0.74,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m,8,SOFT,14+,32,178,6.2,0.528,0.99,168,3.0,0.491,0.5,178,9.0,0.481,1.46,LOW,Slight LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m1f,9,ALL,6-9,8,20,15.0,0.444,1.11,20,10.0,0.559,0.82,20,15.0,0.504,1.05,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m1f,9,ALL,10-13,3,10,20.0,0.615,1.97,12,0.0,0.403,0.0,10,10.0,0.51,0.94,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m1f,9,ALL,14+,2,10,10.0,0.437,1.26,11,0.0,0.483,0.0,10,10.0,0.582,1.7,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m1f,9,FAST,6-9,2,5,20.0,0.326,1.54,4,0.0,0.55,0.0,5,20.0,0.634,1.13,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m1f,9,GOOD,6-9,2,6,0.0,0.438,0.0,6,16.7,0.521,1.37,6,16.7,0.562,1.44,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m1f,9,GOOD,10-13,1,3,33.3,0.778,3.15,4,0.0,0.361,0.0,3,0.0,0.407,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m1f,9,GOOD,14+,2,10,10.0,0.437,1.26,11,0.0,0.483,0.0,10,10.0,0.582,1.7,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m1f,9,SOFT,6-9,4,9,22.2,0.513,1.35,10,10.0,0.585,0.8,9,11.1,0.393,0.78,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m1f,9,SOFT,10-13,2,7,14.3,0.545,1.43,8,0.0,0.424,0.0,7,14.3,0.554,1.34,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m2f,10,ALL,6-9,158,410,13.2,0.518,1.01,394,13.7,0.51,1.05,410,12.2,0.472,0.94,HIGH,Slight LOW draw advantage
+newbury,Newbury,FLAT,1m2f,10,ALL,10-13,131,487,10.5,0.506,1.11,501,8.6,0.508,0.96,487,7.8,0.486,0.95,MEDIUM,No meaningful draw bias
+newbury,Newbury,FLAT,1m2f,10,ALL,14+,67,350,6.0,0.531,0.89,343,6.7,0.507,1.02,350,6.6,0.463,1.11,MEDIUM,Clear LOW draw advantage
+newbury,Newbury,FLAT,1m2f,10,FAST,6-9,67,166,16.9,0.526,1.23,165,10.9,0.498,0.83,166,12.7,0.476,0.93,MEDIUM,Slight LOW draw advantage
+newbury,Newbury,FLAT,1m2f,10,FAST,10-13,41,152,11.8,0.525,1.16,154,6.5,0.483,0.7,152,8.6,0.493,1.17,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,1m2f,10,FAST,14+,18,92,5.4,0.503,0.84,94,3.2,0.482,0.5,92,10.9,0.516,1.67,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m2f,10,GOOD,6-9,42,115,11.3,0.507,0.89,107,15.0,0.537,1.13,115,11.3,0.459,0.98,LOW,Slight LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m2f,10,GOOD,10-13,43,158,10.8,0.506,1.17,168,7.1,0.491,0.81,158,9.5,0.502,1.09,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,1m2f,10,GOOD,14+,26,138,4.3,0.512,0.62,134,9.0,0.522,1.35,138,5.8,0.467,1.07,LOW,Slight LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m2f,10,SOFT,6-9,49,129,10.1,0.518,0.8,122,16.4,0.502,1.27,129,12.4,0.479,0.93,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,1m2f,10,SOFT,10-13,47,177,9.0,0.489,1.0,179,11.7,0.547,1.33,177,5.6,0.464,0.66,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,1m2f,10,SOFT,14+,23,120,8.3,0.573,1.26,115,7.0,0.511,1.03,120,4.2,0.418,0.69,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,ALL,6-9,32,79,8.9,0.496,0.7,80,11.2,0.472,0.8,79,20.3,0.532,1.5,LOW,No meaningful draw bias (small sample — treat with caution)
+newbury,Newbury,FLAT,1m3f,11,ALL,10-13,22,82,6.1,0.472,0.68,81,7.4,0.51,0.86,82,13.4,0.518,1.43,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,ALL,14+,5,27,7.4,0.499,1.19,23,8.7,0.468,1.17,27,3.7,0.528,0.62,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,FAST,6-9,14,33,9.1,0.501,0.76,37,10.8,0.463,0.7,33,21.2,0.54,1.62,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,FAST,10-13,6,23,13.0,0.503,1.31,20,5.0,0.552,0.61,23,8.7,0.452,0.96,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,FAST,14+,1,5,0.0,0.6,0.0,4,25.0,0.423,3.47,5,0.0,0.462,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,GOOD,6-9,10,25,8.0,0.47,0.59,23,17.4,0.513,1.09,25,16.0,0.518,1.37,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,GOOD,10-13,8,30,6.7,0.49,0.71,29,10.3,0.488,1.27,30,10.0,0.522,1.06,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,GOOD,14+,1,5,20.0,0.557,4.31,5,0.0,0.529,0.0,5,0.0,0.414,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,SOFT,6-9,8,21,9.5,0.519,0.73,20,5.0,0.443,0.56,21,23.8,0.535,1.45,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,SOFT,10-13,8,29,0.0,0.429,0.0,32,6.2,0.505,0.67,29,20.7,0.565,2.18,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m3f,11,SOFT,14+,3,17,5.9,0.452,1.12,14,7.1,0.459,0.96,17,5.9,0.582,0.94,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m4f,12,ALL,6-9,99,247,13.0,0.474,0.96,247,13.0,0.518,0.99,247,14.2,0.508,1.05,MEDIUM,No meaningful draw bias
+newbury,Newbury,FLAT,1m4f,12,ALL,10-13,54,190,9.5,0.522,1.05,215,10.7,0.506,1.17,190,7.4,0.472,0.81,LOW,Slight LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m4f,12,ALL,14+,18,92,6.5,0.547,0.96,85,7.1,0.518,0.93,92,6.5,0.438,1.14,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m4f,12,FAST,6-9,34,80,8.8,0.445,0.63,85,15.3,0.537,1.18,80,17.5,0.515,1.18,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m4f,12,FAST,10-13,13,45,11.1,0.461,1.35,52,9.6,0.535,0.87,45,6.7,0.498,0.84,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m4f,12,FAST,14+,3,15,0.0,0.453,0.0,13,7.7,0.522,1.03,15,13.3,0.533,1.76,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m4f,12,GOOD,6-9,29,72,13.9,0.436,1.19,76,13.2,0.523,0.95,72,12.5,0.539,0.89,LOW,Strong HIGH draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m4f,12,GOOD,10-13,13,44,6.8,0.514,0.82,53,11.3,0.553,1.13,44,9.1,0.423,0.99,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m4f,12,GOOD,14+,8,41,4.9,0.549,0.73,39,7.7,0.496,1.08,41,7.3,0.455,1.2,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m4f,12,SOFT,6-9,36,95,15.8,0.526,1.09,86,10.5,0.495,0.83,95,12.6,0.479,1.06,LOW,Slight LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m4f,12,SOFT,10-13,28,101,9.9,0.552,1.03,110,10.9,0.47,1.4,101,6.9,0.482,0.72,LOW,Clear LOW draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m4f,12,SOFT,14+,7,36,11.1,0.583,1.53,33,6.1,0.541,0.73,36,2.8,0.379,0.61,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,ALL,6-9,43,106,15.1,0.439,1.28,106,14.2,0.523,1.05,106,12.3,0.539,0.8,LOW,Strong HIGH draw advantage (small sample — treat with caution)
+newbury,Newbury,FLAT,1m5½f,13.5,ALL,10-13,16,59,6.8,0.507,0.8,59,11.9,0.476,1.27,59,8.5,0.517,0.92,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,ALL,14+,4,20,10.0,0.513,1.61,19,0.0,0.446,0.0,20,10.0,0.539,1.38,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,FAST,6-9,16,37,13.5,0.427,1.16,39,10.3,0.517,0.7,37,18.9,0.555,1.16,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,FAST,10-13,6,24,4.2,0.424,0.53,23,13.0,0.571,1.53,24,8.3,0.508,0.94,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,GOOD,6-9,9,23,21.7,0.487,1.52,22,9.1,0.516,0.75,23,8.7,0.498,0.65,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,GOOD,10-13,5,17,11.8,0.629,1.16,18,5.6,0.377,0.58,17,11.8,0.502,1.28,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,GOOD,14+,2,10,20.0,0.463,3.45,9,0.0,0.536,0.0,10,0.0,0.505,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,SOFT,6-9,18,46,13.0,0.426,1.21,45,20.0,0.532,1.52,46,8.7,0.547,0.56,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,SOFT,10-13,5,18,5.6,0.501,0.71,18,16.7,0.455,1.63,18,5.6,0.544,0.57,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,1m5½f,13.5,SOFT,14+,2,10,0.0,0.564,0.0,10,0.0,0.364,0.0,10,20.0,0.572,2.27,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,ALL,6-9,10,26,19.2,0.546,1.41,26,7.7,0.468,0.64,26,11.5,0.486,0.9,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,ALL,10-13,16,61,11.5,0.493,1.31,66,7.6,0.518,0.97,61,6.6,0.488,0.73,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,ALL,14+,4,20,10.0,0.585,1.3,16,0.0,0.442,0.0,20,10.0,0.462,1.3,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,FAST,6-9,3,7,42.9,0.587,2.52,8,0.0,0.475,0.0,7,0.0,0.442,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,FAST,10-13,3,11,18.2,0.557,1.44,13,0.0,0.465,0.0,11,9.1,0.485,1.3,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,GOOD,6-9,1,3,33.3,0.571,2.05,2,0.0,0.714,0.0,3,0.0,0.286,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,GOOD,10-13,4,15,6.7,0.446,1.14,17,11.8,0.568,1.41,15,6.7,0.477,0.59,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,SOFT,6-9,6,16,6.2,0.524,0.54,16,12.5,0.433,0.96,16,18.8,0.543,1.47,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,SOFT,10-13,9,35,11.4,0.492,1.3,36,8.3,0.514,1.04,35,5.7,0.493,0.66,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m,16,SOFT,14+,4,20,10.0,0.585,1.3,16,0.0,0.442,0.0,20,10.0,0.462,1.3,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,ALL,6-9,6,13,15.4,0.512,0.98,16,12.5,0.602,0.86,13,15.4,0.363,1.21,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,ALL,10-13,4,14,7.1,0.495,0.66,17,5.9,0.513,0.66,14,14.3,0.49,2.04,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,ALL,14+,3,15,6.7,0.511,0.74,16,0.0,0.478,0.0,15,13.3,0.512,3.56,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,FAST,6-9,2,4,0.0,0.5,0.0,5,20.0,0.66,2.18,4,25.0,0.3,1.24,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,FAST,10-13,2,7,0.0,0.375,0.0,8,12.5,0.6,1.28,7,14.3,0.511,2.5,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,FAST,14+,1,5,20.0,0.627,1.89,6,0.0,0.478,0.0,5,0.0,0.4,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,GOOD,6-9,3,6,33.3,0.567,2.15,8,12.5,0.542,0.66,6,0.0,0.378,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,GOOD,10-13,1,4,0.0,0.521,0.0,5,0.0,0.45,0.0,4,25.0,0.542,3.18,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,GOOD,14+,1,5,0.0,0.508,0.0,4,0.0,0.327,0.0,5,20.0,0.631,5.57,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,SOFT,6-9,1,3,0.0,0.417,0.0,3,0.0,0.667,0.0,3,33.3,0.417,3.37,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,SOFT,10-13,1,3,33.3,0.741,2.32,4,0.0,0.417,0.0,3,0.0,0.37,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m½f,16.5,SOFT,14+,1,5,0.0,0.4,0.0,6,0.0,0.578,0.0,5,20.0,0.507,3.87,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m2f,18,ALL,6-9,2,5,0.0,0.319,0.0,5,40.0,0.71,2.83,5,0.0,0.471,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m2f,18,ALL,10-13,2,6,16.7,0.481,1.39,8,0.0,0.486,0.0,6,16.7,0.537,2.35,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m2f,18,FAST,6-9,1,3,0.0,0.143,0.0,2,50.0,0.857,2.09,3,0.0,0.619,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m2f,18,FAST,10-13,1,3,33.3,0.481,2.55,4,0.0,0.556,0.0,3,0.0,0.444,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m2f,18,SOFT,6-9,1,2,0.0,0.583,0.0,3,33.3,0.611,4.41,2,0.0,0.25,0.0,TOO_FEW,Not enough races
+newbury,Newbury,FLAT,2m2f,18,SOFT,10-13,1,3,0.0,0.481,0.0,4,0.0,0.417,0.0,3,33.3,0.63,5.0,TOO_FEW,Not enough races
+newcastle,Newcastle,AW_FLAT,5f,5,ALL,6-9,273,700,12.1,0.479,1.03,694,13.0,0.514,0.93,700,14.0,0.508,1.04,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,5f,5,ALL,10-13,255,946,7.4,0.472,0.93,992,8.2,0.501,0.89,946,11.0,0.528,1.17,HIGH,Slight HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,5f,5,ALL,14+,59,295,8.1,0.507,1.26,236,5.9,0.489,0.8,295,7.1,0.503,0.93,LOW,No meaningful draw bias (small sample — treat with caution)
+newcastle,Newcastle,AW_FLAT,5f,5,STANDARD,6-9,273,700,12.1,0.479,1.03,694,13.0,0.514,0.93,700,14.0,0.508,1.04,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,5f,5,STANDARD,10-13,255,946,7.4,0.472,0.93,992,8.2,0.501,0.89,946,11.0,0.528,1.17,HIGH,Slight HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,5f,5,STANDARD,14+,59,295,8.1,0.507,1.26,236,5.9,0.489,0.8,295,7.1,0.503,0.93,LOW,No meaningful draw bias (small sample — treat with caution)
+newcastle,Newcastle,AW_FLAT,6f,6,ALL,6-9,353,943,10.4,0.482,0.88,911,13.2,0.497,1.07,943,14.7,0.521,1.08,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,6f,6,ALL,10-13,407,1528,8.4,0.481,1.08,1611,8.1,0.504,0.92,1528,9.9,0.515,1.05,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,6f,6,ALL,14+,95,475,6.1,0.489,0.92,380,7.4,0.494,1.09,475,8.0,0.516,1.01,MEDIUM,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,6f,6,STANDARD,6-9,353,943,10.4,0.482,0.88,911,13.2,0.497,1.07,943,14.7,0.521,1.08,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,6f,6,STANDARD,10-13,407,1528,8.4,0.481,1.08,1611,8.1,0.504,0.92,1528,9.9,0.515,1.05,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,6f,6,STANDARD,14+,95,475,6.1,0.489,0.92,380,7.4,0.494,1.09,475,8.0,0.516,1.01,MEDIUM,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,7f,7,ALL,6-9,356,946,12.1,0.487,1.0,904,13.1,0.504,1.02,946,13.2,0.51,1.0,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,7f,7,ALL,10-13,419,1561,7.1,0.48,0.89,1647,9.7,0.512,1.06,1561,9.6,0.508,1.03,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,7f,7,ALL,14+,82,410,6.6,0.477,1.07,328,8.2,0.528,1.04,410,6.8,0.502,0.91,MEDIUM,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,7f,7,STANDARD,6-9,356,946,12.1,0.487,1.0,904,13.1,0.504,1.02,946,13.2,0.51,1.0,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,7f,7,STANDARD,10-13,419,1561,7.1,0.48,0.89,1647,9.7,0.512,1.06,1561,9.6,0.508,1.03,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,7f,7,STANDARD,14+,82,410,6.6,0.477,1.07,328,8.2,0.528,1.04,410,6.8,0.502,0.91,MEDIUM,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,1m,8,ALL,6-9,386,994,13.1,0.493,1.07,972,14.7,0.505,1.1,994,11.4,0.503,0.84,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,1m,8,ALL,10-13,353,1313,8.1,0.486,1.0,1404,8.7,0.501,0.98,1313,9.5,0.513,1.03,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,1m,8,ALL,14+,79,395,6.8,0.46,1.05,316,7.6,0.518,1.05,395,7.1,0.526,0.92,MEDIUM,Clear HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,1m,8,STANDARD,6-9,386,994,13.1,0.493,1.07,972,14.7,0.505,1.1,994,11.4,0.503,0.84,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,1m,8,STANDARD,10-13,353,1313,8.1,0.486,1.0,1404,8.7,0.501,0.98,1313,9.5,0.513,1.03,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,1m,8,STANDARD,14+,79,395,6.8,0.46,1.05,316,7.6,0.518,1.05,395,7.1,0.526,0.92,MEDIUM,Clear HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,1m2f,10,ALL,6-9,202,517,11.6,0.458,1.01,522,15.1,0.521,1.13,517,12.4,0.521,0.88,HIGH,Clear HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,1m2f,10,ALL,10-13,182,682,8.5,0.476,1.11,716,8.8,0.511,0.95,682,8.9,0.513,0.96,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,1m2f,10,ALL,14+,36,180,4.4,0.491,0.65,144,6.2,0.466,0.93,180,10.6,0.538,1.36,LOW,Slight HIGH draw advantage (small sample — treat with caution)
+newcastle,Newcastle,AW_FLAT,1m2f,10,STANDARD,6-9,202,517,11.6,0.458,1.01,522,15.1,0.521,1.13,517,12.4,0.521,0.88,HIGH,Clear HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,1m2f,10,STANDARD,10-13,182,682,8.5,0.476,1.11,716,8.8,0.511,0.95,682,8.9,0.513,0.96,HIGH,No meaningful draw bias
+newcastle,Newcastle,AW_FLAT,1m2f,10,STANDARD,14+,36,180,4.4,0.491,0.65,144,6.2,0.466,0.93,180,10.6,0.538,1.36,LOW,Slight HIGH draw advantage (small sample — treat with caution)
+newcastle,Newcastle,AW_FLAT,1m4½f,12.5,ALL,6-9,180,452,11.1,0.456,0.93,457,15.3,0.502,1.22,452,13.5,0.542,0.88,HIGH,Clear HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,1m4½f,12.5,ALL,10-13,121,453,7.1,0.478,0.86,475,8.4,0.495,0.97,453,10.8,0.527,1.16,MEDIUM,Slight HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,1m4½f,12.5,ALL,14+,20,100,8.0,0.465,1.09,80,6.2,0.513,0.9,100,7.0,0.525,0.99,TOO_FEW,Not enough races
+newcastle,Newcastle,AW_FLAT,1m4½f,12.5,STANDARD,6-9,180,452,11.1,0.456,0.93,457,15.3,0.502,1.22,452,13.5,0.542,0.88,HIGH,Clear HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,1m4½f,12.5,STANDARD,10-13,121,453,7.1,0.478,0.86,475,8.4,0.495,0.97,453,10.8,0.527,1.16,MEDIUM,Slight HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,1m4½f,12.5,STANDARD,14+,20,100,8.0,0.465,1.09,80,6.2,0.513,0.9,100,7.0,0.525,0.99,TOO_FEW,Not enough races
+newcastle,Newcastle,AW_FLAT,2m½f,16.5,ALL,6-9,93,236,12.3,0.472,1.12,229,12.7,0.479,0.9,236,14.8,0.549,1.0,MEDIUM,Clear HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,2m½f,16.5,ALL,10-13,51,193,8.3,0.5,1.02,204,6.9,0.519,0.7,193,11.4,0.481,1.44,LOW,No meaningful draw bias (small sample — treat with caution)
+newcastle,Newcastle,AW_FLAT,2m½f,16.5,ALL,14+,27,158,3.2,0.469,0.6,144,9.0,0.535,1.35,158,5.7,0.5,1.0,LOW,No meaningful draw bias (small sample — treat with caution)
+newcastle,Newcastle,AW_FLAT,2m½f,16.5,STANDARD,6-9,93,236,12.3,0.472,1.12,229,12.7,0.479,0.9,236,14.8,0.549,1.0,MEDIUM,Clear HIGH draw advantage
+newcastle,Newcastle,AW_FLAT,2m½f,16.5,STANDARD,10-13,51,193,8.3,0.5,1.02,204,6.9,0.519,0.7,193,11.4,0.481,1.44,LOW,No meaningful draw bias (small sample — treat with caution)
+newcastle,Newcastle,AW_FLAT,2m½f,16.5,STANDARD,14+,27,158,3.2,0.469,0.6,144,9.0,0.535,1.35,158,5.7,0.5,1.0,LOW,No meaningful draw bias (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,5f,5,ALL,6-9,154,400,13.8,0.521,0.98,396,12.4,0.488,0.98,400,12.5,0.494,1.04,HIGH,No meaningful draw bias
+southwell,Southwell,AW_FLAT,5f,5,ALL,10-13,113,418,9.3,0.529,0.93,422,10.2,0.507,1.17,418,7.7,0.466,0.94,MEDIUM,Clear LOW draw advantage
+southwell,Southwell,AW_FLAT,5f,5,ALL,14+,20,100,7.0,0.541,0.9,80,7.5,0.541,0.94,100,7.0,0.427,1.2,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,5f,5,STANDARD,6-9,154,400,13.8,0.521,0.98,396,12.4,0.488,0.98,400,12.5,0.494,1.04,HIGH,No meaningful draw bias
+southwell,Southwell,AW_FLAT,5f,5,STANDARD,10-13,113,418,9.3,0.529,0.93,422,10.2,0.507,1.17,418,7.7,0.466,0.94,MEDIUM,Clear LOW draw advantage
+southwell,Southwell,AW_FLAT,5f,5,STANDARD,14+,20,100,7.0,0.541,0.9,80,7.5,0.541,0.94,100,7.0,0.427,1.2,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,6f,6,ALL,6-9,141,377,14.1,0.515,1.05,364,11.8,0.496,0.95,377,11.9,0.489,0.99,MEDIUM,No meaningful draw bias
+southwell,Southwell,AW_FLAT,6f,6,ALL,10-13,210,771,8.4,0.527,0.9,806,10.0,0.515,1.04,771,8.3,0.458,1.07,HIGH,Clear LOW draw advantage
+southwell,Southwell,AW_FLAT,6f,6,ALL,14+,19,95,5.3,0.523,0.68,76,10.5,0.543,1.32,95,6.3,0.443,1.07,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,6f,6,STANDARD,6-9,141,377,14.1,0.515,1.05,364,11.8,0.496,0.95,377,11.9,0.489,0.99,MEDIUM,No meaningful draw bias
+southwell,Southwell,AW_FLAT,6f,6,STANDARD,10-13,210,771,8.4,0.527,0.9,806,10.0,0.515,1.04,771,8.3,0.458,1.07,HIGH,Clear LOW draw advantage
+southwell,Southwell,AW_FLAT,6f,6,STANDARD,14+,19,95,5.3,0.523,0.68,76,10.5,0.543,1.32,95,6.3,0.443,1.07,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,7f,7,ALL,6-9,181,501,9.6,0.479,0.77,474,13.7,0.524,1.08,501,13.6,0.498,1.15,HIGH,No meaningful draw bias
+southwell,Southwell,AW_FLAT,7f,7,ALL,10-13,208,771,9.3,0.518,1.06,788,9.9,0.511,1.03,771,7.7,0.472,0.91,HIGH,Slight LOW draw advantage
+southwell,Southwell,AW_FLAT,7f,7,ALL,14+,19,95,6.3,0.496,0.89,76,6.6,0.512,0.84,95,8.4,0.495,1.26,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,7f,7,STANDARD,6-9,181,501,9.6,0.479,0.77,474,13.7,0.524,1.08,501,13.6,0.498,1.15,HIGH,No meaningful draw bias
+southwell,Southwell,AW_FLAT,7f,7,STANDARD,10-13,208,771,9.3,0.518,1.06,788,9.9,0.511,1.03,771,7.7,0.472,0.91,HIGH,Slight LOW draw advantage
+southwell,Southwell,AW_FLAT,7f,7,STANDARD,14+,19,95,6.3,0.496,0.89,76,6.6,0.512,0.84,95,8.4,0.495,1.26,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,1m,8,ALL,6-9,168,448,10.9,0.488,0.9,425,13.9,0.506,1.07,448,13.4,0.507,1.03,HIGH,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m,8,ALL,10-13,219,814,9.2,0.511,1.05,842,8.0,0.494,0.91,814,9.6,0.496,1.06,HIGH,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m,8,ALL,14+,21,105,6.7,0.451,0.87,84,9.5,0.54,1.38,105,5.7,0.517,0.84,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,1m,8,STANDARD,6-9,168,448,10.9,0.488,0.9,425,13.9,0.506,1.07,448,13.4,0.507,1.03,HIGH,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m,8,STANDARD,10-13,219,814,9.2,0.511,1.05,842,8.0,0.494,0.91,814,9.6,0.496,1.06,HIGH,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m,8,STANDARD,14+,21,105,6.7,0.451,0.87,84,9.5,0.54,1.38,105,5.7,0.517,0.84,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,1m3f,11,ALL,6-9,74,184,13.6,0.497,1.14,187,13.4,0.499,1.01,184,13.0,0.503,0.88,MEDIUM,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m3f,11,ALL,10-13,62,227,9.3,0.479,1.0,229,10.9,0.53,1.11,227,7.0,0.491,0.87,MEDIUM,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m3f,11,ALL,14+,8,40,7.5,0.519,0.99,32,6.2,0.457,0.76,40,7.5,0.515,1.29,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,1m3f,11,STANDARD,6-9,74,184,13.6,0.497,1.14,187,13.4,0.499,1.01,184,13.0,0.503,0.88,MEDIUM,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m3f,11,STANDARD,10-13,62,227,9.3,0.479,1.0,229,10.9,0.53,1.11,227,7.0,0.491,0.87,MEDIUM,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m3f,11,STANDARD,14+,8,40,7.5,0.519,0.99,32,6.2,0.457,0.76,40,7.5,0.515,1.29,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,1m4f,12,ALL,6-9,81,209,14.8,0.514,1.18,209,11.0,0.473,0.87,209,13.4,0.514,1.0,MEDIUM,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m4f,12,ALL,10-13,69,253,7.9,0.464,0.97,267,8.6,0.521,0.89,253,10.3,0.514,1.15,MEDIUM,Slight HIGH draw advantage
+southwell,Southwell,AW_FLAT,1m4f,12,ALL,14+,10,50,16.0,0.545,1.92,40,2.5,0.431,0.47,50,2.0,0.511,0.27,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,1m4f,12,STANDARD,6-9,81,209,14.8,0.514,1.18,209,11.0,0.473,0.87,209,13.4,0.514,1.0,MEDIUM,No meaningful draw bias
+southwell,Southwell,AW_FLAT,1m4f,12,STANDARD,10-13,69,253,7.9,0.464,0.97,267,8.6,0.521,0.89,253,10.3,0.514,1.15,MEDIUM,Slight HIGH draw advantage
+southwell,Southwell,AW_FLAT,1m4f,12,STANDARD,14+,10,50,16.0,0.545,1.92,40,2.5,0.431,0.47,50,2.0,0.511,0.27,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,1m6f,14,ALL,6-9,47,119,13.4,0.499,1.0,121,12.4,0.514,0.91,119,13.4,0.487,1.1,LOW,No meaningful draw bias (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,1m6f,14,ALL,10-13,34,123,3.3,0.445,0.37,124,12.9,0.546,1.35,123,11.4,0.51,1.24,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,1m6f,14,STANDARD,6-9,47,119,13.4,0.499,1.0,121,12.4,0.514,0.91,119,13.4,0.487,1.1,LOW,No meaningful draw bias (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,1m6f,14,STANDARD,10-13,34,123,3.3,0.445,0.37,124,12.9,0.546,1.35,123,11.4,0.51,1.24,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,2m½f,16.5,ALL,6-9,43,109,15.6,0.497,1.35,113,13.3,0.506,1.06,109,10.1,0.496,0.68,LOW,No meaningful draw bias (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,2m½f,16.5,ALL,10-13,25,89,6.7,0.447,0.77,99,11.1,0.533,1.21,89,9.0,0.516,0.99,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,2m½f,16.5,ALL,14+,1,5,0.0,0.446,0.0,4,0.0,0.615,0.0,5,20.0,0.462,2.6,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,2m½f,16.5,STANDARD,6-9,43,109,15.6,0.497,1.35,113,13.3,0.506,1.06,109,10.1,0.496,0.68,LOW,No meaningful draw bias (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,2m½f,16.5,STANDARD,10-13,25,89,6.7,0.447,0.77,99,11.1,0.533,1.21,89,9.0,0.516,0.99,LOW,Clear HIGH draw advantage (small sample — treat with caution)
+southwell,Southwell,AW_FLAT,2m½f,16.5,STANDARD,14+,1,5,0.0,0.446,0.0,4,0.0,0.615,0.0,5,20.0,0.462,2.6,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,2m2½f,18.5,ALL,6-9,3,7,0.0,0.303,0.0,7,28.6,0.514,2.09,7,14.3,0.683,0.84,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,2m2½f,18.5,ALL,10-13,1,3,33.3,0.778,4.47,4,0.0,0.611,0.0,3,0.0,0.111,0.0,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,2m2½f,18.5,STANDARD,6-9,3,7,0.0,0.303,0.0,7,28.6,0.514,2.09,7,14.3,0.683,0.84,TOO_FEW,Not enough races
+southwell,Southwell,AW_FLAT,2m2½f,18.5,STANDARD,10-13,1,3,33.3,0.778,4.47,4,0.0,0.611,0.0,3,0.0,0.111,0.0,TOO_FEW,Not enough races

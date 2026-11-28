@@ -1,0 +1,7 @@
+course_id,race_code,source_url,section_status,section_label,start_line,end_line,relevant_line_count,excluded_line_count,relevant_section_file
+bangor_on_dee,JUMPS,https://www.horseracingbettingsites.co.uk/racecourses/bangor-on-dee/,SECTION_REVIEW_REQUIRED,JUMPS_SECTION,,,0,2,reports/track_dna/2026-11-28/03_relevant_sections/GB/bangor_on_dee/bangor_on_dee_jumps_relevant_section.txt
+doncaster,JUMPS,https://www.horseracingbettingsites.co.uk/racecourses/doncaster/,SECTION_REVIEW_REQUIRED,JUMPS_SECTION,,,0,2,reports/track_dna/2026-11-28/03_relevant_sections/GB/doncaster/doncaster_jumps_relevant_section.txt
+fairyhouse,JUMPS,https://www.irishracing.com/racecourses/fairyhouse,SECTION_REVIEW_REQUIRED,JUMPS_SECTION,,,0,2046,reports/track_dna/2026-11-28/03_relevant_sections/IRE/fairyhouse/fairyhouse_jumps_relevant_section.txt
+newbury,JUMPS,https://www.horseracingbettingsites.co.uk/racecourses/newbury/,SECTION_REVIEW_REQUIRED,JUMPS_SECTION,,,0,2,reports/track_dna/2026-11-28/03_relevant_sections/GB/newbury/newbury_jumps_relevant_section.txt
+newcastle,JUMPS,https://www.horseracingbettingsites.co.uk/racecourses/newcastle/,SECTION_REVIEW_REQUIRED,JUMPS_SECTION,,,0,2,reports/track_dna/2026-11-28/03_relevant_sections/GB/newcastle/newcastle_jumps_relevant_section.txt
+southwell,AW_FLAT,https://www.horseracingbettingsites.co.uk/racecourses/southwell/,SECTION_REVIEW_REQUIRED,FLAT_OR_AW_SECTION,,,0,2,reports/track_dna/2026-11-28/03_relevant_sections/GB/southwell/southwell_aw_flat_relevant_section.txt

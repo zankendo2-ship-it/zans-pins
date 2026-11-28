@@ -1,0 +1,351 @@
+course_id,course_name,discipline,distance,furlongs,going,races,top_runners,top_win_pct,top_prb,top_ae,upper_runners,upper_win_pct,upper_prb,upper_ae,middle_runners,middle_win_pct,middle_prb,middle_ae,low_runners,low_win_pct,low_prb,low_ae,confidence,verdict,heavy_minus_light_prb,national_heavy_minus_light_prb
+bangor_on_dee,Bangor-on-Dee,CHASE,2m1½f,17.5,ALL,51,97,7.2,0.449,0.51,133,12.0,0.416,0.93,73,13.7,0.546,1.16,121,15.7,0.482,1.64,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.082,0.034
+bangor_on_dee,Bangor-on-Dee,CHASE,2m1½f,17.5,GOOD,25,48,6.2,0.444,0.48,72,11.1,0.432,0.92,46,10.9,0.521,1.02,49,20.4,0.544,1.95,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.094,0.021
+bangor_on_dee,Bangor-on-Dee,CHASE,2m1½f,17.5,SOFT,26,49,8.2,0.453,0.54,61,13.1,0.397,0.95,27,18.5,0.588,1.34,72,12.5,0.44,1.4,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.089,0.044
+bangor_on_dee,Bangor-on-Dee,CHASE,2m4½f,20.5,ALL,51,99,8.1,0.484,0.6,152,14.5,0.497,1.2,98,14.3,0.492,1.2,81,8.6,0.407,0.93,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.041,0.036
+bangor_on_dee,Bangor-on-Dee,CHASE,2m4½f,20.5,GOOD,26,55,7.3,0.484,0.53,75,17.3,0.516,1.33,49,14.3,0.513,1.13,26,7.7,0.414,0.79,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.036,0.034
+bangor_on_dee,Bangor-on-Dee,CHASE,2m4½f,20.5,SOFT,25,44,9.1,0.485,0.68,77,11.7,0.477,1.05,49,14.3,0.471,1.28,55,9.1,0.404,0.99,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.043,0.036
+bangor_on_dee,Bangor-on-Dee,CHASE,3m,24,ALL,70,148,12.8,0.484,1.04,222,9.9,0.454,0.91,134,8.2,0.449,0.74,130,13.8,0.47,1.41,MEDIUM,Typical — weight matters as much as nationally,0.009,0.013
+bangor_on_dee,Bangor-on-Dee,CHASE,3m,24,GOOD,32,66,15.2,0.469,1.24,97,9.3,0.462,0.92,64,4.7,0.474,0.41,72,13.9,0.502,1.48,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),-0.022,0.006
+bangor_on_dee,Bangor-on-Dee,CHASE,3m,24,SOFT,38,82,11.0,0.497,0.89,125,10.4,0.449,0.9,70,11.4,0.427,1.07,58,13.8,0.43,1.32,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.044,0.017
+bangor_on_dee,Bangor-on-Dee,CHASE,3m5½f,29.5,ALL,8,19,5.3,0.283,0.57,31,3.2,0.243,0.37,19,5.3,0.585,0.44,13,38.5,0.744,4.0,TOO_FEW,Not enough races,,
+bangor_on_dee,Bangor-on-Dee,CHASE,3m5½f,29.5,GOOD,1,2,0.0,0.0,0.0,2,0.0,0.25,0.0,1,0.0,0.833,0.0,2,50.0,0.833,3.22,TOO_FEW,Not enough races,,
+bangor_on_dee,Bangor-on-Dee,CHASE,3m5½f,29.5,SOFT,7,17,5.9,0.316,0.63,29,3.4,0.243,0.41,18,5.6,0.571,0.48,11,36.4,0.727,4.25,TOO_FEW,Not enough races,,
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m½f,16.5,ALL,58,115,19.1,0.575,1.34,187,9.1,0.471,0.84,127,10.2,0.491,0.99,102,5.9,0.42,0.74,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.067,0.039
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m½f,16.5,GOOD,35,59,22.0,0.558,1.46,110,9.1,0.51,0.78,78,9.0,0.475,0.88,69,7.2,0.41,0.93,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.092,0.04
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m½f,16.5,SOFT,23,56,16.1,0.593,1.21,77,9.1,0.415,0.92,49,12.2,0.516,1.15,33,3.0,0.441,0.36,TOO_FEW,Not enough races,,
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m3½f,19.5,ALL,72,146,13.0,0.53,1.02,226,12.4,0.495,1.16,170,9.4,0.506,1.0,164,5.5,0.428,0.67,MEDIUM,Typical — weight matters as much as nationally,0.045,0.037
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m3½f,19.5,GOOD,52,104,13.5,0.527,1.08,162,12.3,0.508,1.11,124,10.5,0.527,1.18,128,3.9,0.422,0.5,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.043,0.036
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m3½f,19.5,SOFT,20,42,11.9,0.538,0.9,64,12.5,0.465,1.31,46,6.5,0.451,0.61,36,11.1,0.45,1.18,TOO_FEW,Not enough races,,
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m7f,23,ALL,64,114,15.8,0.492,1.08,200,12.0,0.502,1.01,112,11.6,0.517,1.05,132,6.8,0.43,0.79,MEDIUM,Typical — weight matters as much as nationally,0.023,0.036
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m7f,23,GOOD,33,58,17.2,0.576,1.11,96,11.5,0.481,0.98,68,8.8,0.506,0.83,70,8.6,0.43,1.1,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.06,0.039
+bangor_on_dee,Bangor-on-Dee,HURDLE,2m7f,23,SOFT,31,56,14.3,0.405,1.05,104,12.5,0.522,1.04,44,15.9,0.535,1.38,62,4.8,0.43,0.51,LOW,Leans towards low weights (vs national) (small sample — treat with caution),-0.019,0.033
+doncaster,Doncaster,CHASE,2m½f,16.5,ALL,12,22,9.1,0.53,0.64,39,12.8,0.48,1.0,17,5.9,0.539,0.48,19,21.1,0.424,2.23,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,2m½f,16.5,GOOD,7,14,7.1,0.547,0.55,21,9.5,0.507,0.81,9,11.1,0.567,0.68,15,20.0,0.355,2.45,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,2m½f,16.5,SOFT,5,8,12.5,0.501,0.77,18,16.7,0.448,1.19,8,0.0,0.508,0.0,4,25.0,0.683,1.77,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,2m3f,19,ALL,23,54,7.4,0.443,0.54,65,18.5,0.512,1.43,42,14.3,0.537,1.26,20,5.0,0.369,0.41,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,2m3f,19,GOOD,9,20,10.0,0.415,0.67,20,15.0,0.483,1.04,13,23.1,0.626,1.64,9,11.1,0.513,0.76,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,2m3f,19,SOFT,14,34,5.9,0.459,0.46,45,20.0,0.525,1.63,29,10.3,0.497,1.02,11,0.0,0.252,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,2m4½f,20.5,ALL,10,21,19.0,0.485,1.31,38,7.9,0.452,0.64,18,11.1,0.491,1.06,2,50.0,0.929,2.83,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,2m4½f,20.5,GOOD,4,9,22.2,0.556,1.51,13,7.7,0.369,0.6,4,0.0,0.55,0.0,2,50.0,0.929,2.83,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,2m4½f,20.5,SOFT,6,12,16.7,0.432,1.16,25,8.0,0.495,0.66,14,14.3,0.474,1.64,0,,,,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,3m,24,ALL,50,97,8.2,0.41,0.66,162,14.8,0.487,1.22,102,8.8,0.444,0.8,61,14.8,0.526,1.29,LOW,Leans towards low weights (vs national) (small sample — treat with caution),-0.036,0.013
+doncaster,Doncaster,CHASE,3m,24,GOOD,19,33,9.1,0.429,0.63,64,17.2,0.515,1.45,39,7.7,0.431,0.66,19,10.5,0.525,0.94,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,3m,24,SOFT,31,64,7.8,0.401,0.68,98,13.3,0.469,1.08,63,9.5,0.452,0.89,42,16.7,0.526,1.44,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.054,0.017
+doncaster,Doncaster,CHASE,3m2f,26,ALL,10,21,14.3,0.525,1.32,20,15.0,0.464,1.01,22,13.6,0.437,1.06,19,5.3,0.419,0.52,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,3m2f,26,FAST,1,1,0.0,0.6,0.0,0,,,,3,33.3,0.6,1.45,2,0.0,0.2,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,3m2f,26,GOOD,5,12,16.7,0.495,1.53,11,18.2,0.536,1.21,11,9.1,0.328,0.73,9,0.0,0.498,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,CHASE,3m2f,26,SOFT,4,8,12.5,0.562,1.25,9,11.1,0.375,0.76,8,12.5,0.524,1.33,8,12.5,0.385,0.89,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,5f,5,ALL,73,155,14.2,0.533,1.05,324,10.8,0.498,1.09,188,7.4,0.493,0.89,62,4.8,0.452,0.69,MEDIUM,Typical — weight matters as much as nationally,0.043,0.07
+doncaster,Doncaster,FLAT,5f,5,FAST,32,66,18.2,0.557,1.15,136,11.0,0.504,0.97,55,7.3,0.478,0.88,24,4.2,0.374,0.64,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.104,0.089
+doncaster,Doncaster,FLAT,5f,5,GOOD,19,39,5.1,0.474,0.45,86,11.6,0.503,1.25,65,9.2,0.498,1.16,15,6.7,0.569,0.76,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,5f,5,SOFT,22,50,16.0,0.548,1.32,102,9.8,0.487,1.17,68,5.9,0.5,0.67,23,4.3,0.457,0.68,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,5½f,5.5,ALL,12,32,15.6,0.537,1.53,60,6.7,0.507,0.61,19,15.8,0.505,1.94,10,0.0,0.344,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,5½f,5.5,FAST,4,10,20.0,0.553,1.58,17,11.8,0.539,0.98,4,0.0,0.474,0.0,4,0.0,0.227,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,5½f,5.5,GOOD,3,8,25.0,0.616,2.32,16,0.0,0.385,0.0,4,25.0,0.79,3.34,2,0.0,0.438,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,5½f,5.5,SOFT,5,14,7.1,0.481,0.87,27,7.4,0.558,0.7,11,18.2,0.413,2.5,4,0.0,0.414,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,6f,6,ALL,161,434,12.7,0.537,1.06,786,8.8,0.51,0.93,387,7.5,0.468,1.01,124,6.5,0.413,1.22,HIGH,Typical — weight matters as much as nationally,0.083,0.07
+doncaster,Doncaster,FLAT,6f,6,FAST,65,169,14.2,0.534,1.07,295,9.5,0.509,0.91,116,8.6,0.465,1.09,48,6.2,0.414,1.1,MEDIUM,Typical — weight matters as much as nationally,0.082,0.089
+doncaster,Doncaster,FLAT,6f,6,GOOD,41,121,9.9,0.548,0.96,226,5.8,0.49,0.71,119,10.9,0.495,1.57,33,9.1,0.415,1.63,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.064,0.071
+doncaster,Doncaster,FLAT,6f,6,SOFT,55,144,13.2,0.531,1.12,265,10.6,0.528,1.13,152,3.9,0.448,0.54,43,4.7,0.411,1.0,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.1,0.053
+doncaster,Doncaster,FLAT,6½f,6.5,ALL,8,15,20.0,0.488,1.88,30,0.0,0.476,0.0,33,9.1,0.537,1.08,9,22.2,0.464,2.76,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,6½f,6.5,FAST,1,3,33.3,0.571,2.43,3,0.0,0.476,0.0,2,0.0,0.429,0.0,0,,,,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,6½f,6.5,GOOD,2,3,0.0,0.227,0.0,2,0.0,0.182,0.0,12,8.3,0.614,1.01,6,16.7,0.515,1.82,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,6½f,6.5,SOFT,5,9,22.2,0.548,1.96,25,0.0,0.499,0.0,19,10.5,0.501,1.42,3,33.3,0.361,5.63,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,7f,7,ALL,173,460,13.3,0.537,1.19,906,8.3,0.511,0.95,456,6.8,0.456,0.95,159,5.0,0.46,0.78,HIGH,Typical — weight matters as much as nationally,0.066,0.065
+doncaster,Doncaster,FLAT,7f,7,FAST,68,212,12.7,0.544,1.05,325,8.3,0.509,0.95,148,7.4,0.424,1.06,59,5.1,0.484,0.82,MEDIUM,Typical — weight matters as much as nationally,0.073,0.084
+doncaster,Doncaster,FLAT,7f,7,GOOD,31,85,11.8,0.518,1.23,185,8.6,0.52,0.97,69,4.3,0.44,0.67,25,8.0,0.457,1.11,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.071,0.066
+doncaster,Doncaster,FLAT,7f,7,SOFT,74,163,14.7,0.538,1.36,396,8.1,0.508,0.94,239,7.1,0.48,0.96,75,4.0,0.442,0.63,MEDIUM,Typical — weight matters as much as nationally,0.062,0.049
+doncaster,Doncaster,FLAT,1m,8,ALL,106,343,10.2,0.529,0.9,471,10.8,0.493,1.08,214,8.4,0.496,1.12,63,3.2,0.412,0.56,MEDIUM,Typical — weight matters as much as nationally,0.057,0.065
+doncaster,Doncaster,FLAT,1m,8,FAST,47,155,13.5,0.542,1.15,167,10.2,0.497,0.88,104,7.7,0.469,1.02,28,3.6,0.398,0.6,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.086,0.084
+doncaster,Doncaster,FLAT,1m,8,GOOD,31,104,8.7,0.547,0.78,162,10.5,0.462,1.15,48,10.4,0.533,1.37,16,0.0,0.482,0.0,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.003,0.066
+doncaster,Doncaster,FLAT,1m,8,SOFT,28,84,6.0,0.482,0.54,142,12.0,0.523,1.29,62,8.1,0.512,1.09,19,5.3,0.372,1.01,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.06,0.049
+doncaster,Doncaster,FLAT,1m2f,10,ALL,127,304,11.8,0.53,0.93,501,9.4,0.498,0.91,300,10.3,0.483,1.23,126,10.3,0.477,1.18,MEDIUM,Leans towards low weights (vs national),0.034,0.066
+doncaster,Doncaster,FLAT,1m2f,10,FAST,38,95,17.9,0.565,1.16,125,10.4,0.471,0.87,52,11.5,0.465,1.1,26,7.7,0.469,0.71,LOW,Leans towards low weights (vs national) (small sample — treat with caution),0.051,0.088
+doncaster,Doncaster,FLAT,1m2f,10,GOOD,32,81,11.1,0.516,0.92,138,8.7,0.532,0.89,82,9.8,0.465,1.28,27,11.1,0.396,1.22,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.094,0.062
+doncaster,Doncaster,FLAT,1m2f,10,SOFT,57,128,7.8,0.512,0.69,238,9.2,0.492,0.94,166,10.2,0.498,1.25,73,11.0,0.51,1.4,LOW,Leans towards low weights (vs national) (small sample — treat with caution),-0.002,0.051
+doncaster,Doncaster,FLAT,1m4f,12,ALL,71,167,15.6,0.508,1.21,286,8.7,0.507,0.81,124,8.9,0.475,0.92,76,11.8,0.498,1.29,MEDIUM,Leans towards low weights (vs national),0.021,0.066
+doncaster,Doncaster,FLAT,1m4f,12,FAST,22,42,26.2,0.607,1.56,96,10.4,0.479,0.9,25,4.0,0.408,0.38,14,0.0,0.486,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,1m4f,12,GOOD,20,56,8.9,0.511,0.78,91,9.9,0.505,1.07,33,3.0,0.463,0.37,23,21.7,0.509,2.06,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,1m4f,12,SOFT,29,69,14.5,0.446,1.26,99,6.1,0.535,0.54,66,13.6,0.507,1.37,39,10.3,0.496,1.21,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.011,0.051
+doncaster,Doncaster,FLAT,1m6½f,14.5,ALL,35,73,15.1,0.534,0.96,99,8.1,0.461,0.71,80,16.2,0.513,1.51,39,7.7,0.508,0.81,LOW,Leans towards low weights (vs national) (small sample — treat with caution),-0.013,0.04
+doncaster,Doncaster,FLAT,1m6½f,14.5,FAST,11,27,14.8,0.481,0.85,26,15.4,0.479,1.16,17,17.6,0.57,1.36,8,0.0,0.486,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,1m6½f,14.5,GOOD,11,21,9.5,0.527,0.63,41,7.3,0.437,0.62,23,26.1,0.608,2.19,5,0.0,0.406,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,1m6½f,14.5,SOFT,13,25,20.0,0.598,1.38,32,3.1,0.477,0.34,40,10.0,0.434,1.1,26,11.5,0.535,1.08,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,2m½f,16.5,ALL,11,22,18.2,0.551,1.49,36,11.1,0.539,0.96,25,8.0,0.375,0.77,12,8.3,0.55,0.65,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,2m½f,16.5,FAST,4,10,20.0,0.53,1.13,11,9.1,0.54,0.57,4,25.0,0.44,5.1,6,0.0,0.418,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,2m½f,16.5,GOOD,3,5,0.0,0.404,0.0,15,13.3,0.597,1.42,7,0.0,0.247,0.0,5,20.0,0.658,0.98,TOO_FEW,Not enough races,,
+doncaster,Doncaster,FLAT,2m½f,16.5,SOFT,4,7,28.6,0.687,3.15,10,10.0,0.451,1.01,14,7.1,0.42,0.47,1,0.0,0.8,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,2m½f,16.5,ALL,49,104,14.4,0.52,1.21,159,9.4,0.503,0.86,131,9.2,0.5,1.01,90,7.8,0.451,0.96,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.036,0.039
+doncaster,Doncaster,HURDLE,2m½f,16.5,FAST,1,2,0.0,0.3,0.0,1,0.0,0.4,0.0,3,33.3,0.667,2.99,0,,,,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,2m½f,16.5,GOOD,23,43,20.9,0.568,1.61,66,9.1,0.529,0.81,63,6.3,0.467,0.66,46,8.7,0.429,1.02,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,2m½f,16.5,SOFT,25,59,10.2,0.492,0.94,92,9.8,0.484,0.93,65,10.8,0.523,1.26,44,6.8,0.473,0.89,LOW,Leans towards low weights (vs national) (small sample — treat with caution),-0.01,0.036
+doncaster,Doncaster,HURDLE,2m3½f,19.5,ALL,59,123,11.4,0.542,0.97,235,10.6,0.485,1.15,147,9.5,0.505,0.93,104,5.8,0.406,0.77,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.058,0.037
+doncaster,Doncaster,HURDLE,2m3½f,19.5,FAST,1,2,0.0,0.3,0.0,2,0.0,0.4,0.0,1,100.0,1.0,14.32,1,0.0,0.6,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,2m3½f,19.5,GOOD,23,45,17.8,0.609,1.41,89,9.0,0.488,0.97,60,6.7,0.497,0.66,43,7.0,0.391,1.01,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,2m3½f,19.5,SOFT,35,76,7.9,0.509,0.73,144,11.8,0.485,1.26,86,10.5,0.504,1.02,60,5.0,0.413,0.66,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.038,0.04
+doncaster,Doncaster,HURDLE,2m5f,21,ALL,4,7,42.9,0.689,3.17,13,7.7,0.451,0.61,12,0.0,0.546,0.0,7,0.0,0.293,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,2m5f,21,GOOD,3,6,33.3,0.637,2.84,11,9.1,0.442,0.8,9,0.0,0.562,0.0,6,0.0,0.342,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,2m5f,21,SOFT,1,1,100.0,1.0,4.12,2,0.0,0.5,0.0,3,0.0,0.5,0.0,1,0.0,0.0,0.0,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,3m½f,24.5,ALL,62,126,15.1,0.459,1.3,228,8.3,0.482,0.84,156,8.3,0.501,0.83,104,10.6,0.46,1.21,MEDIUM,Leans towards low weights (vs national),-0.01,0.036
+doncaster,Doncaster,HURDLE,3m½f,24.5,GOOD,22,43,16.3,0.495,1.33,69,8.7,0.443,0.83,64,9.4,0.517,0.91,32,9.4,0.495,1.04,TOO_FEW,Not enough races,,
+doncaster,Doncaster,HURDLE,3m½f,24.5,SOFT,40,83,14.5,0.441,1.29,159,8.2,0.499,0.84,92,7.6,0.49,0.78,72,11.1,0.445,1.28,LOW,Leans towards low weights (vs national) (small sample — treat with caution),0.002,0.033
+fairyhouse,Fairyhouse,CHASE,2m5f,21,ALL,14,25,8.0,0.541,0.7,52,13.5,0.511,1.36,41,4.9,0.418,0.51,34,8.8,0.431,1.45,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,2m5f,21,GOOD,4,5,20.0,0.8,1.1,19,15.8,0.552,1.72,8,0.0,0.3,0.0,9,0.0,0.281,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,2m5f,21,SOFT,10,20,5.0,0.476,0.51,33,12.1,0.487,1.18,33,6.1,0.446,0.64,25,12.0,0.485,1.95,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,2m5½f,21.5,ALL,2,3,0.0,0.489,0.0,5,40.0,0.583,3.16,7,0.0,0.312,0.0,4,0.0,0.421,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,2m5½f,21.5,SOFT,2,3,0.0,0.489,0.0,5,40.0,0.583,3.16,7,0.0,0.312,0.0,4,0.0,0.421,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,2m7½f,23.5,ALL,6,18,5.6,0.517,0.61,26,3.8,0.257,0.51,20,15.0,0.504,1.69,14,7.1,0.417,1.64,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,2m7½f,23.5,GOOD,3,11,9.1,0.621,1.2,10,0.0,0.167,0.0,10,20.0,0.525,1.84,8,0.0,0.427,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,2m7½f,23.5,SOFT,3,7,0.0,0.352,0.0,16,6.2,0.313,0.81,10,10.0,0.483,1.45,6,16.7,0.404,3.76,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m,24,ALL,5,10,0.0,0.532,0.0,14,7.1,0.373,0.94,18,5.6,0.453,0.66,21,14.3,0.561,2.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m,24,GOOD,2,5,0.0,0.423,0.0,6,0.0,0.358,0.0,8,12.5,0.593,1.29,6,16.7,0.494,2.45,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m,24,SOFT,3,5,0.0,0.64,0.0,8,12.5,0.384,1.7,10,0.0,0.34,0.0,15,13.3,0.588,1.83,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m½f,24.5,ALL,5,10,20.0,0.583,1.51,6,0.0,0.296,0.0,11,18.2,0.475,1.76,14,7.1,0.423,0.68,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m½f,24.5,GOOD,2,5,0.0,0.422,0.0,1,0.0,0.4,0.0,2,50.0,0.667,3.52,8,12.5,0.519,1.11,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m½f,24.5,SOFT,3,5,40.0,0.743,2.72,5,0.0,0.275,0.0,9,11.1,0.433,1.18,6,0.0,0.295,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m1f,25,ALL,4,9,11.1,0.472,1.21,12,8.3,0.286,0.93,8,25.0,0.391,2.34,21,0.0,0.435,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m1f,25,SOFT,4,9,11.1,0.472,1.21,12,8.3,0.286,0.93,8,25.0,0.391,2.34,21,0.0,0.435,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m1½f,25.5,ALL,2,4,25.0,0.686,2.14,9,0.0,0.398,0.0,3,33.3,0.524,2.64,8,0.0,0.28,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m1½f,25.5,GOOD,1,2,0.0,0.8,0.0,7,0.0,0.41,0.0,2,50.0,0.5,2.83,5,0.0,0.133,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m1½f,25.5,SOFT,1,2,50.0,0.571,3.04,2,0.0,0.357,0.0,1,0.0,0.571,0.0,3,0.0,0.524,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m2f,26,ALL,1,1,0.0,0.875,0.0,6,16.7,0.479,1.29,0,,,,2,0.0,0.375,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,CHASE,3m2f,26,SOFT,1,1,0.0,0.875,0.0,6,16.7,0.479,1.29,0,,,,2,0.0,0.375,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,6f,6,ALL,40,87,10.3,0.504,1.19,185,9.7,0.541,1.3,171,4.7,0.503,0.7,156,3.2,0.446,0.7,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.048,0.07
+fairyhouse,Fairyhouse,FLAT,6f,6,FAST,7,12,33.3,0.549,3.09,32,9.4,0.565,1.14,29,0.0,0.48,0.0,24,0.0,0.413,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,6f,6,GOOD,25,57,8.8,0.525,1.11,119,9.2,0.543,1.23,114,5.3,0.504,0.82,99,3.0,0.428,0.72,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.068,0.071
+fairyhouse,Fairyhouse,FLAT,6f,6,SOFT,8,18,0.0,0.408,0.0,34,11.8,0.512,1.81,28,7.1,0.519,0.89,33,6.1,0.522,1.13,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,7f,7,ALL,27,58,12.1,0.571,1.22,115,4.3,0.505,0.51,123,6.5,0.477,1.07,94,7.4,0.481,1.78,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.059,0.065
+fairyhouse,Fairyhouse,FLAT,7f,7,FAST,5,11,0.0,0.545,0.0,18,0.0,0.484,0.0,21,9.5,0.416,1.53,19,15.8,0.582,4.19,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,7f,7,GOOD,20,41,12.2,0.563,1.43,90,5.6,0.517,0.68,101,5.9,0.493,0.99,72,5.6,0.453,1.3,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,7f,7,SOFT,2,6,33.3,0.673,2.2,7,0.0,0.406,0.0,1,0.0,0.125,0.0,3,0.0,0.5,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m2f,10,ALL,12,35,8.6,0.529,0.99,66,6.1,0.537,0.77,41,9.8,0.427,1.66,31,3.2,0.485,0.72,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m2f,10,FAST,2,5,0.0,0.618,0.0,6,16.7,0.636,1.48,3,33.3,0.667,2.28,10,0.0,0.309,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m2f,10,GOOD,8,22,9.1,0.496,1.04,42,7.1,0.544,0.86,33,9.1,0.418,1.8,20,0.0,0.547,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m2f,10,SOFT,2,8,12.5,0.563,1.67,18,0.0,0.489,0.0,5,0.0,0.34,0.0,1,100.0,1.0,15.54,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m4f,12,ALL,21,39,5.1,0.452,0.59,87,8.0,0.511,1.11,115,5.2,0.5,0.83,80,7.5,0.512,1.47,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m4f,12,FAST,6,11,9.1,0.517,0.76,22,4.5,0.525,0.64,42,4.8,0.482,0.77,12,16.7,0.5,3.8,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m4f,12,GOOD,15,28,3.6,0.426,0.49,65,9.2,0.507,1.26,73,5.5,0.509,0.86,68,5.9,0.514,1.13,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,ALL,8,13,7.7,0.442,0.6,26,3.8,0.532,0.4,32,3.1,0.513,0.4,24,20.8,0.48,3.73,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,FAST,1,2,0.0,0.556,0.0,3,0.0,0.148,0.0,1,0.0,0.889,0.0,4,25.0,0.639,3.69,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,GOOD,4,7,14.3,0.459,1.02,17,5.9,0.619,0.84,16,6.2,0.486,0.77,12,8.3,0.373,1.85,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m5½f,13.5,SOFT,3,4,0.0,0.354,0.0,6,0.0,0.475,0.0,15,0.0,0.517,0.0,8,37.5,0.56,5.67,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m6f,14,ALL,1,2,0.0,0.441,0.0,6,16.7,0.588,2.59,4,0.0,0.426,0.0,6,0.0,0.48,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,FLAT,1m6f,14,GOOD,1,2,0.0,0.441,0.0,6,16.7,0.588,2.59,4,0.0,0.426,0.0,6,0.0,0.48,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m,16,ALL,31,72,8.3,0.514,0.88,137,5.8,0.499,0.82,143,9.8,0.503,1.36,75,5.3,0.437,0.96,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.036,0.039
+fairyhouse,Fairyhouse,HURDLE,2m,16,GOOD,12,23,8.7,0.495,0.95,56,5.4,0.497,0.79,61,13.1,0.533,1.74,30,0.0,0.407,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m,16,SOFT,19,49,8.2,0.523,0.85,81,6.2,0.5,0.85,82,7.3,0.48,1.05,45,8.9,0.456,1.5,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m½f,16.5,ALL,1,2,0.0,0.364,0.0,6,16.7,0.621,1.94,0,,,,4,0.0,0.364,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m½f,16.5,SOFT,1,2,0.0,0.364,0.0,6,16.7,0.621,1.94,0,,,,4,0.0,0.364,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m2f,18,ALL,4,11,9.1,0.557,0.79,18,11.1,0.461,1.23,16,6.2,0.434,1.26,6,0.0,0.367,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m2f,18,GOOD,2,5,20.0,0.572,1.66,8,12.5,0.554,0.93,6,0.0,0.368,0.0,0,,,,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m2f,18,SOFT,2,6,0.0,0.544,0.0,10,10.0,0.387,1.86,10,10.0,0.473,2.1,6,0.0,0.367,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m2½f,18.5,ALL,1,2,0.0,0.423,0.0,10,10.0,0.454,1.3,2,0.0,0.692,0.0,0,,,,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m2½f,18.5,GOOD,1,2,0.0,0.423,0.0,10,10.0,0.454,1.3,2,0.0,0.692,0.0,0,,,,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m3½f,19.5,ALL,5,14,0.0,0.521,0.0,30,10.0,0.468,1.47,26,11.5,0.487,2.36,6,0.0,0.499,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m3½f,19.5,GOOD,1,3,0.0,0.333,0.0,7,14.3,0.724,1.53,5,0.0,0.286,0.0,0,,,,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m3½f,19.5,SOFT,4,11,0.0,0.572,0.0,23,8.7,0.389,1.45,21,14.3,0.535,2.47,6,0.0,0.499,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m4f,20,ALL,45,103,7.8,0.521,0.93,246,5.3,0.485,0.75,212,8.0,0.497,1.37,134,5.2,0.43,1.05,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.039,0.037
+fairyhouse,Fairyhouse,HURDLE,2m4f,20,GOOD,10,23,4.3,0.542,0.52,49,8.2,0.484,1.1,40,10.0,0.5,1.7,34,2.9,0.477,0.48,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m4f,20,SOFT,35,80,8.8,0.515,1.04,197,4.6,0.485,0.66,172,7.6,0.496,1.3,100,6.0,0.414,1.31,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.045,0.04
+fairyhouse,Fairyhouse,HURDLE,2m4½f,20.5,ALL,7,18,5.6,0.603,0.52,30,6.7,0.458,0.91,37,2.7,0.395,0.52,16,18.8,0.492,3.07,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m4½f,20.5,GOOD,2,4,0.0,0.792,0.0,11,9.1,0.385,1.62,11,0.0,0.471,0.0,4,25.0,0.529,3.66,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m4½f,20.5,SOFT,5,14,7.1,0.549,0.74,19,5.3,0.501,0.64,26,3.8,0.363,0.72,12,16.7,0.48,2.84,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m5½f,21.5,ALL,3,10,0.0,0.477,0.0,20,5.0,0.495,0.84,14,7.1,0.413,1.49,7,14.3,0.683,2.75,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m5½f,21.5,SOFT,3,10,0.0,0.477,0.0,20,5.0,0.495,0.84,14,7.1,0.413,1.49,7,14.3,0.683,2.75,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m6f,22,ALL,5,9,0.0,0.387,0.0,19,0.0,0.304,0.0,26,19.2,0.5,2.67,14,0.0,0.36,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m6f,22,GOOD,1,1,0.0,0.308,0.0,7,0.0,0.396,0.0,6,16.7,0.641,2.75,0,,,,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m6f,22,SOFT,4,8,0.0,0.397,0.0,12,0.0,0.25,0.0,20,20.0,0.457,2.65,14,0.0,0.36,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m6½f,22.5,ALL,1,4,0.0,0.567,0.0,2,0.0,0.0,0.0,9,0.0,0.259,0.0,1,100.0,1.0,17.59,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m6½f,22.5,SOFT,1,4,0.0,0.567,0.0,2,0.0,0.0,0.0,9,0.0,0.259,0.0,1,100.0,1.0,17.59,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m7f,23,ALL,5,11,36.4,0.79,3.77,19,0.0,0.418,0.0,20,0.0,0.357,0.0,20,5.0,0.478,0.74,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m7f,23,GOOD,1,2,50.0,0.964,4.42,4,0.0,0.589,0.0,5,0.0,0.343,0.0,4,0.0,0.375,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m7f,23,SOFT,4,9,33.3,0.751,3.6,15,0.0,0.372,0.0,15,0.0,0.361,0.0,16,6.2,0.503,0.84,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m7½f,23.5,ALL,9,21,9.5,0.461,0.95,39,0.0,0.43,0.0,38,10.5,0.529,1.38,35,8.6,0.463,1.73,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m7½f,23.5,GOOD,2,5,20.0,0.651,2.38,8,0.0,0.464,0.0,11,9.1,0.54,1.19,6,0.0,0.336,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,2m7½f,23.5,SOFT,7,16,6.2,0.402,0.59,31,0.0,0.421,0.0,27,11.1,0.525,1.46,29,10.3,0.489,1.89,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,3m,24,ALL,14,29,6.9,0.461,0.74,50,12.0,0.551,1.54,57,7.0,0.391,0.9,44,4.5,0.465,0.68,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,3m,24,GOOD,4,13,15.4,0.556,1.36,15,6.7,0.561,0.71,12,8.3,0.398,1.77,9,0.0,0.383,0.0,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,3m,24,SOFT,10,16,0.0,0.383,0.0,35,14.3,0.547,2.01,45,6.7,0.39,0.78,35,5.7,0.486,0.83,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,3m½f,24.5,ALL,3,8,0.0,0.339,0.0,14,14.3,0.537,1.79,11,0.0,0.54,0.0,21,4.8,0.408,1.25,TOO_FEW,Not enough races,,
+fairyhouse,Fairyhouse,HURDLE,3m½f,24.5,SOFT,3,8,0.0,0.339,0.0,14,14.3,0.537,1.79,11,0.0,0.54,0.0,21,4.8,0.408,1.25,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m½f,16.5,ALL,33,65,13.8,0.416,0.91,96,14.6,0.496,1.23,73,8.2,0.527,0.71,27,14.8,0.489,1.23,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.052,0.034
+newbury,Newbury,CHASE,2m½f,16.5,GOOD,7,12,16.7,0.424,0.87,16,18.8,0.485,1.48,16,6.2,0.497,0.46,3,33.3,0.6,2.1,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m½f,16.5,SOFT,26,53,13.2,0.414,0.92,80,13.8,0.498,1.17,57,8.8,0.535,0.8,24,12.5,0.475,1.09,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.049,0.044
+newbury,Newbury,CHASE,2m4f,20,ALL,17,33,6.1,0.401,0.6,41,17.1,0.532,1.13,59,8.5,0.514,0.78,12,25.0,0.516,2.68,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m4f,20,GOOD,5,10,0.0,0.383,0.0,15,13.3,0.511,0.92,19,10.5,0.542,1.3,6,16.7,0.458,2.25,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m4f,20,SOFT,12,23,8.7,0.409,0.81,26,19.2,0.544,1.25,40,7.5,0.5,0.62,6,33.3,0.573,2.96,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m6½f,22.5,ALL,24,56,7.1,0.474,0.63,103,9.7,0.483,0.92,52,15.4,0.442,1.59,22,9.1,0.54,1.21,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m6½f,22.5,GOOD,3,6,0.0,0.491,0.0,18,5.6,0.478,0.66,7,14.3,0.429,1.23,2,50.0,0.778,5.51,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m6½f,22.5,SOFT,21,50,8.0,0.472,0.68,85,10.6,0.485,0.96,45,15.6,0.444,1.65,20,5.0,0.516,0.68,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m7½f,23.5,ALL,23,41,14.6,0.449,1.24,88,9.1,0.468,0.82,49,12.2,0.474,1.0,16,18.8,0.576,1.28,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m7½f,23.5,GOOD,2,2,50.0,0.5,3.04,11,9.1,0.416,0.8,1,0.0,0.75,0.0,1,0.0,0.8,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,2m7½f,23.5,SOFT,21,39,12.8,0.447,1.1,77,9.1,0.476,0.82,48,12.5,0.468,1.02,15,20.0,0.561,1.46,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,3m2f,26,ALL,16,34,17.6,0.447,1.74,49,8.2,0.462,0.78,43,7.0,0.447,0.7,29,10.3,0.478,0.95,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,3m2f,26,GOOD,2,3,0.0,0.275,0.0,1,100.0,1.0,3.61,6,16.7,0.546,1.63,5,0.0,0.455,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,CHASE,3m2f,26,SOFT,14,31,19.4,0.464,1.93,48,6.2,0.451,0.62,37,5.4,0.431,0.55,24,12.5,0.483,1.25,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,5f,5,ALL,19,55,14.5,0.527,1.25,52,13.5,0.509,1.2,46,6.5,0.45,0.52,15,6.7,0.523,1.01,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,5f,5,FAST,8,20,25.0,0.568,1.75,26,7.7,0.448,0.66,15,0.0,0.475,0.0,10,10.0,0.536,1.6,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,5f,5,GOOD,7,24,8.3,0.524,0.8,18,16.7,0.563,1.61,19,10.5,0.411,0.88,5,0.0,0.495,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,5f,5,SOFT,4,11,9.1,0.458,0.96,8,25.0,0.585,2.06,12,8.3,0.482,0.5,0,,,,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,6f,6,ALL,52,121,10.7,0.453,0.9,243,10.7,0.536,1.15,142,7.0,0.496,0.88,56,5.4,0.456,0.84,LOW,Leans towards low weights (vs national) (small sample — treat with caution),0.019,0.07
+newbury,Newbury,FLAT,6f,6,FAST,15,38,7.9,0.477,0.63,63,14.3,0.577,1.28,35,2.9,0.4,0.4,9,22.2,0.454,2.94,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,6f,6,GOOD,16,38,10.5,0.469,0.92,71,9.9,0.498,1.06,50,10.0,0.516,1.2,17,0.0,0.53,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,6f,6,SOFT,21,45,13.3,0.418,1.12,109,9.2,0.538,1.12,57,7.0,0.537,0.85,30,3.3,0.414,0.5,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,7f,7,ALL,97,215,12.1,0.512,0.94,450,12.0,0.507,1.18,232,6.5,0.486,0.8,67,4.5,0.469,0.61,MEDIUM,Leans towards low weights (vs national),0.032,0.065
+newbury,Newbury,FLAT,7f,7,FAST,31,66,12.1,0.506,0.85,132,14.4,0.528,1.38,60,5.0,0.426,0.5,18,5.6,0.517,0.54,LOW,Leans towards low weights (vs national) (small sample — treat with caution),0.045,0.084
+newbury,Newbury,FLAT,7f,7,GOOD,33,73,11.0,0.521,0.85,167,10.8,0.497,1.11,76,6.6,0.492,0.9,24,8.3,0.495,1.11,LOW,Leans towards low weights (vs national) (small sample — treat with caution),0.016,0.066
+newbury,Newbury,FLAT,7f,7,SOFT,33,76,13.2,0.508,1.14,151,11.3,0.5,1.08,96,7.3,0.52,0.95,25,0.0,0.409,0.0,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.039,0.049
+newbury,Newbury,FLAT,1m,8,ALL,65,190,8.4,0.526,0.78,287,9.8,0.49,1.05,151,11.3,0.5,1.17,54,7.4,0.458,1.17,MEDIUM,Leans towards low weights (vs national),0.029,0.065
+newbury,Newbury,FLAT,1m,8,FAST,21,52,7.7,0.49,0.7,97,13.4,0.493,1.32,35,5.7,0.546,0.5,19,10.5,0.481,1.39,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m,8,GOOD,28,97,10.3,0.545,1.1,134,6.0,0.492,0.72,77,11.7,0.478,1.33,19,5.3,0.413,1.04,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.073,0.066
+newbury,Newbury,FLAT,1m,8,SOFT,16,41,4.9,0.528,0.35,56,12.5,0.482,1.27,39,15.4,0.503,1.58,16,6.2,0.483,0.99,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m1f,9,ALL,3,6,0.0,0.529,0.0,15,6.7,0.492,0.64,9,22.2,0.478,2.99,1,0.0,0.727,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m1f,9,GOOD,1,3,0.0,0.5,0.0,3,0.0,0.417,0.0,3,33.3,0.583,4.19,0,,,,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m1f,9,SOFT,2,3,0.0,0.559,0.0,12,8.3,0.511,0.88,6,16.7,0.426,2.32,1,0.0,0.727,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m2f,10,ALL,99,249,12.9,0.541,1.07,445,9.0,0.501,0.99,272,8.1,0.475,0.96,87,6.9,0.456,1.04,MEDIUM,Typical — weight matters as much as nationally,0.055,0.066
+newbury,Newbury,FLAT,1m2f,10,FAST,28,60,20.0,0.636,1.18,102,11.8,0.498,1.08,63,3.2,0.404,0.39,28,7.1,0.43,1.28,LOW,Top weights do better here than nationally (small sample — treat with caution),0.15,0.088
+newbury,Newbury,FLAT,1m2f,10,GOOD,34,111,13.5,0.551,1.38,190,6.3,0.481,0.79,89,7.9,0.484,1.06,21,4.8,0.477,0.75,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.036,0.062
+newbury,Newbury,FLAT,1m2f,10,SOFT,37,78,6.4,0.455,0.58,153,10.5,0.527,1.13,120,10.8,0.506,1.16,38,7.9,0.464,1.04,LOW,Leans towards low weights (vs national) (small sample — treat with caution),0.006,0.051
+newbury,Newbury,FLAT,1m3f,11,ALL,11,27,3.7,0.51,0.27,46,13.0,0.508,1.38,26,7.7,0.443,0.95,8,25.0,0.607,2.56,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m3f,11,FAST,5,10,0.0,0.439,0.0,20,20.0,0.532,1.98,8,0.0,0.361,0.0,4,25.0,0.768,1.71,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m3f,11,GOOD,3,7,0.0,0.492,0.0,14,7.1,0.438,0.78,5,20.0,0.584,3.14,1,100.0,1.0,12.92,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m3f,11,SOFT,3,10,10.0,0.594,1.12,12,8.3,0.547,0.96,13,7.7,0.439,1.06,3,0.0,0.262,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m4f,12,ALL,68,167,13.2,0.513,1.06,270,12.2,0.517,1.32,161,5.6,0.487,0.6,81,4.9,0.442,0.54,MEDIUM,Typical — weight matters as much as nationally,0.05,0.066
+newbury,Newbury,FLAT,1m4f,12,FAST,20,48,14.6,0.531,0.98,65,13.8,0.505,1.31,33,9.1,0.484,0.87,24,4.2,0.448,0.4,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m4f,12,GOOD,23,66,13.6,0.525,1.14,99,9.1,0.492,1.12,52,5.8,0.477,0.65,23,8.7,0.517,0.83,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m4f,12,SOFT,25,53,11.3,0.482,1.05,106,14.2,0.548,1.49,76,3.9,0.496,0.44,34,2.9,0.388,0.42,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.073,0.051
+newbury,Newbury,FLAT,1m5½f,13.5,ALL,21,35,11.4,0.48,1.2,54,14.8,0.468,1.32,61,9.8,0.483,0.73,34,11.8,0.607,1.18,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m5½f,13.5,FAST,5,7,14.3,0.571,1.73,9,22.2,0.576,1.4,12,0.0,0.393,0.0,10,20.0,0.51,2.87,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m5½f,13.5,GOOD,6,12,8.3,0.431,0.77,15,13.3,0.417,1.25,16,12.5,0.517,0.91,7,14.3,0.757,1.12,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,1m5½f,13.5,SOFT,10,16,12.5,0.478,1.38,30,13.3,0.461,1.32,33,12.1,0.499,1.07,17,5.9,0.603,0.56,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m,16,ALL,9,13,15.4,0.565,1.73,37,5.4,0.478,0.65,23,8.7,0.552,0.79,24,12.5,0.449,1.33,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m,16,FAST,1,2,0.0,0.333,0.0,5,0.0,0.378,0.0,1,0.0,0.889,0.0,2,50.0,0.778,1.94,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m,16,SOFT,8,11,18.2,0.607,1.84,32,6.2,0.494,0.71,22,9.1,0.536,0.84,22,9.1,0.419,1.15,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m½f,16.5,ALL,7,15,0.0,0.372,0.0,27,7.4,0.473,0.62,11,27.3,0.678,1.99,7,28.6,0.598,1.71,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m½f,16.5,FAST,1,3,0.0,0.278,0.0,2,0.0,0.5,0.0,1,0.0,0.667,0.0,1,100.0,1.0,2.3,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m½f,16.5,GOOD,4,9,0.0,0.459,0.0,16,12.5,0.459,0.98,8,25.0,0.662,2.07,1,0.0,0.231,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m½f,16.5,SOFT,2,3,0.0,0.204,0.0,9,0.0,0.492,0.0,2,50.0,0.75,2.36,5,20.0,0.592,1.63,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m2f,18,ALL,2,3,0.0,0.259,0.0,6,0.0,0.398,0.0,6,16.7,0.694,1.28,2,50.0,0.583,8.87,TOO_FEW,Not enough races,,
+newbury,Newbury,FLAT,2m2f,18,SOFT,2,3,0.0,0.259,0.0,6,0.0,0.398,0.0,6,16.7,0.694,1.28,2,50.0,0.583,8.87,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,2m½f,16.5,ALL,48,100,12.0,0.523,0.91,164,13.4,0.51,1.21,102,8.8,0.477,0.85,66,7.6,0.464,0.82,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.046,0.039
+newbury,Newbury,HURDLE,2m½f,16.5,GOOD,10,18,16.7,0.522,1.37,38,15.8,0.503,1.31,21,0.0,0.457,0.0,9,11.1,0.503,1.21,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,2m½f,16.5,SOFT,38,82,11.0,0.523,0.82,126,12.7,0.512,1.18,81,11.1,0.481,1.09,57,7.0,0.457,0.76,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.049,0.036
+newbury,Newbury,HURDLE,2m3f,19,ALL,4,10,20.0,0.463,1.65,13,7.7,0.49,0.85,7,14.3,0.554,1.37,6,0.0,0.458,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,2m3f,19,GOOD,1,2,0.0,0.312,0.0,2,0.0,0.5,0.0,4,25.0,0.719,1.79,1,0.0,0.0,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,2m3f,19,SOFT,3,8,25.0,0.5,2.03,11,9.1,0.489,1.02,3,0.0,0.333,0.0,5,0.0,0.55,0.0,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,2m4½f,20.5,ALL,26,51,15.7,0.559,1.51,119,6.7,0.461,0.69,70,10.0,0.468,1.19,48,6.2,0.501,0.94,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.025,0.037
+newbury,Newbury,HURDLE,2m4½f,20.5,GOOD,7,14,28.6,0.641,2.57,29,3.4,0.423,0.34,22,4.5,0.524,0.54,10,10.0,0.446,1.57,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,2m4½f,20.5,SOFT,19,37,10.8,0.528,1.07,90,7.8,0.473,0.81,48,12.5,0.442,1.48,38,5.3,0.515,0.78,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,3m,24,ALL,44,96,6.2,0.49,0.66,170,8.2,0.45,0.99,142,12.0,0.504,1.28,72,9.7,0.537,0.94,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.05,0.036
+newbury,Newbury,HURDLE,3m,24,FAST,1,1,0.0,0.429,0.0,2,0.0,0.286,0.0,5,20.0,0.514,1.45,0,,,,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,3m,24,GOOD,10,18,0.0,0.487,0.0,42,11.9,0.511,1.22,30,6.7,0.429,0.7,15,20.0,0.62,1.8,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,3m,24,SOFT,33,77,7.8,0.491,0.79,126,7.1,0.432,0.91,107,13.1,0.524,1.44,57,7.0,0.515,0.69,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.058,0.033
+newbury,Newbury,HURDLE,3m½f,24.5,ALL,7,14,21.4,0.418,1.56,27,3.7,0.438,0.43,21,9.5,0.432,1.36,15,6.7,0.693,0.76,TOO_FEW,Not enough races,,
+newbury,Newbury,HURDLE,3m½f,24.5,SOFT,7,14,21.4,0.418,1.56,27,3.7,0.438,0.43,21,9.5,0.432,1.36,15,6.7,0.693,0.76,TOO_FEW,Not enough races,,
+newcastle,Newcastle,AW_FLAT,5f,5,ALL,421,1197,13.3,0.546,1.06,1846,9.1,0.496,0.92,906,8.3,0.473,1.05,290,6.6,0.421,1.11,HIGH,Typical — weight matters as much as nationally,0.074,0.098
+newcastle,Newcastle,AW_FLAT,5f,5,STANDARD,421,1197,13.3,0.546,1.06,1846,9.1,0.496,0.92,906,8.3,0.473,1.05,290,6.6,0.421,1.11,HIGH,Typical — weight matters as much as nationally,0.074,0.098
+newcastle,Newcastle,AW_FLAT,6f,6,ALL,559,1734,11.2,0.527,0.94,2677,9.6,0.506,1.03,1120,8.7,0.468,1.14,296,4.7,0.411,0.81,HIGH,Typical — weight matters as much as nationally,0.077,0.098
+newcastle,Newcastle,AW_FLAT,6f,6,STANDARD,559,1734,11.2,0.527,0.94,2677,9.6,0.506,1.03,1120,8.7,0.468,1.14,296,4.7,0.411,0.81,HIGH,Typical — weight matters as much as nationally,0.077,0.098
+newcastle,Newcastle,AW_FLAT,7f,7,ALL,535,1593,12.1,0.546,1.0,2581,9.4,0.505,0.98,1074,7.7,0.457,1.05,285,6.3,0.366,1.17,HIGH,Typical — weight matters as much as nationally,0.114,0.102
+newcastle,Newcastle,AW_FLAT,7f,7,STANDARD,535,1593,12.1,0.546,1.0,2581,9.4,0.505,0.98,1074,7.7,0.457,1.05,285,6.3,0.366,1.17,HIGH,Typical — weight matters as much as nationally,0.114,0.102
+newcastle,Newcastle,AW_FLAT,1m,8,ALL,534,1544,12.4,0.533,1.02,2547,10.2,0.512,1.03,1051,5.9,0.451,0.8,295,7.1,0.404,1.3,HIGH,Typical — weight matters as much as nationally,0.095,0.102
+newcastle,Newcastle,AW_FLAT,1m,8,STANDARD,534,1544,12.4,0.533,1.02,2547,10.2,0.512,1.03,1051,5.9,0.451,0.8,295,7.1,0.404,1.3,HIGH,Typical — weight matters as much as nationally,0.095,0.102
+newcastle,Newcastle,AW_FLAT,1m2f,10,ALL,289,765,14.9,0.553,1.14,1243,9.9,0.511,0.96,609,7.2,0.457,0.94,256,3.5,0.391,0.61,HIGH,Typical — weight matters as much as nationally,0.108,0.097
+newcastle,Newcastle,AW_FLAT,1m2f,10,STANDARD,289,765,14.9,0.553,1.14,1243,9.9,0.511,0.96,609,7.2,0.457,0.94,256,3.5,0.391,0.61,HIGH,Typical — weight matters as much as nationally,0.108,0.097
+newcastle,Newcastle,AW_FLAT,1m4½f,12.5,ALL,243,563,13.3,0.542,1.0,934,12.0,0.506,1.1,510,8.4,0.482,0.9,255,5.1,0.42,0.7,HIGH,Typical — weight matters as much as nationally,0.073,0.097
+newcastle,Newcastle,AW_FLAT,1m4½f,12.5,STANDARD,243,563,13.3,0.542,1.0,934,12.0,0.506,1.1,510,8.4,0.482,0.9,255,5.1,0.42,0.7,HIGH,Typical — weight matters as much as nationally,0.073,0.097
+newcastle,Newcastle,AW_FLAT,2m½f,16.5,ALL,107,225,8.9,0.501,0.67,336,13.7,0.527,1.14,258,10.1,0.474,1.01,147,10.9,0.484,1.43,MEDIUM,Leans towards low weights (vs national),0.035,0.085
+newcastle,Newcastle,AW_FLAT,2m½f,16.5,STANDARD,107,225,8.9,0.501,0.67,336,13.7,0.527,1.14,258,10.1,0.474,1.01,147,10.9,0.484,1.43,MEDIUM,Leans towards low weights (vs national),0.035,0.085
+newcastle,Newcastle,CHASE,2m½f,16.5,ALL,22,38,15.8,0.481,0.82,38,15.8,0.549,1.07,36,5.6,0.435,0.52,52,15.4,0.488,1.54,TOO_FEW,Not enough races,,
+newcastle,Newcastle,CHASE,2m½f,16.5,GOOD,5,7,0.0,0.265,0.0,7,14.3,0.632,0.76,10,10.0,0.459,0.86,14,21.4,0.555,1.71,TOO_FEW,Not enough races,,
+newcastle,Newcastle,CHASE,2m½f,16.5,SOFT,17,31,19.4,0.53,0.92,31,16.1,0.53,1.16,26,3.8,0.426,0.37,38,13.2,0.463,1.45,TOO_FEW,Not enough races,,
+newcastle,Newcastle,CHASE,2m4f,20,ALL,57,105,16.2,0.477,1.15,155,15.5,0.542,1.19,101,10.9,0.423,0.86,87,5.7,0.398,0.54,LOW,Top weights do better here than nationally (small sample — treat with caution),0.099,0.036
+newcastle,Newcastle,CHASE,2m4f,20,GOOD,14,26,30.8,0.559,2.3,34,11.8,0.492,0.93,24,8.3,0.393,0.63,22,0.0,0.411,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,CHASE,2m4f,20,SOFT,43,79,11.4,0.451,0.8,121,16.5,0.556,1.26,77,11.7,0.433,0.94,65,7.7,0.394,0.8,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.09,0.036
+newcastle,Newcastle,CHASE,2m7½f,23.5,ALL,56,102,9.8,0.495,0.7,138,10.9,0.456,0.74,95,14.7,0.475,1.16,98,17.3,0.473,1.8,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.002,0.013
+newcastle,Newcastle,CHASE,2m7½f,23.5,GOOD,11,16,6.2,0.553,0.43,24,12.5,0.557,0.73,21,28.6,0.529,1.98,17,5.9,0.277,0.67,TOO_FEW,Not enough races,,
+newcastle,Newcastle,CHASE,2m7½f,23.5,SOFT,45,86,10.5,0.484,0.76,114,10.5,0.435,0.75,74,10.8,0.459,0.88,81,19.8,0.514,2.02,LOW,Leans towards low weights (vs national) (small sample — treat with caution),-0.027,0.017
+newcastle,Newcastle,CHASE,3m6f,30,ALL,2,2,0.0,0.438,0.0,3,66.7,0.889,3.52,1,0.0,0.125,0.0,10,0.0,0.417,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,CHASE,3m6f,30,GOOD,1,1,0.0,0.5,0.0,2,50.0,0.833,2.14,0,,,,4,0.0,0.292,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,CHASE,3m6f,30,SOFT,1,1,0.0,0.375,0.0,1,100.0,1.0,10.05,1,0.0,0.125,0.0,6,0.0,0.5,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m,16,ALL,41,75,16.0,0.565,1.48,121,11.6,0.483,0.98,96,10.4,0.48,1.06,104,4.8,0.483,0.55,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.043,0.039
+newcastle,Newcastle,HURDLE,2m,16,GOOD,7,10,20.0,0.533,1.9,23,4.3,0.449,0.44,15,20.0,0.608,1.6,21,4.8,0.463,0.55,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m,16,SOFT,34,65,15.4,0.57,1.42,98,13.3,0.491,1.08,81,8.6,0.456,0.92,83,4.8,0.488,0.55,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.058,0.036
+newcastle,Newcastle,HURDLE,2m1f,17,ALL,30,51,7.8,0.451,0.67,81,11.1,0.472,0.89,64,9.4,0.535,0.95,77,14.3,0.514,1.45,LOW,Low weights do better here than nationally (small sample — treat with caution),-0.063,0.039
+newcastle,Newcastle,HURDLE,2m1f,17,GOOD,9,12,8.3,0.513,0.58,20,10.0,0.415,0.87,16,0.0,0.591,0.0,32,18.8,0.498,1.74,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m1f,17,SOFT,21,39,7.7,0.432,0.71,61,11.5,0.49,0.89,48,12.5,0.517,1.25,45,11.1,0.526,1.21,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m4½f,20.5,ALL,62,112,10.7,0.511,0.96,189,6.9,0.47,0.73,185,13.0,0.536,1.32,175,7.4,0.423,0.96,MEDIUM,Typical — weight matters as much as nationally,0.011,0.037
+newcastle,Newcastle,HURDLE,2m4½f,20.5,GOOD,17,33,9.1,0.459,0.73,48,6.2,0.497,0.63,38,15.8,0.568,1.56,58,8.6,0.435,1.15,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m4½f,20.5,SOFT,45,79,11.4,0.533,1.07,141,7.1,0.46,0.77,147,12.2,0.527,1.25,117,6.8,0.417,0.87,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.025,0.04
+newcastle,Newcastle,HURDLE,2m6f,22,ALL,9,17,5.9,0.394,0.65,32,15.6,0.577,1.57,23,8.7,0.46,0.79,25,4.0,0.496,0.57,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m6f,22,GOOD,1,3,0.0,0.222,0.0,3,0.0,0.778,0.0,2,0.0,0.167,0.0,8,12.5,0.575,2.05,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m6f,22,SOFT,8,14,7.1,0.43,0.69,29,17.2,0.556,1.74,21,9.5,0.487,0.83,17,0.0,0.459,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m7½f,23.5,ALL,29,44,11.4,0.563,0.88,67,16.4,0.493,1.46,74,9.5,0.508,0.94,100,6.0,0.431,0.72,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.058,0.036
+newcastle,Newcastle,HURDLE,2m7½f,23.5,GOOD,14,20,10.0,0.627,0.64,31,19.4,0.494,2.22,46,6.5,0.542,0.67,51,5.9,0.394,0.81,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,2m7½f,23.5,SOFT,15,24,12.5,0.51,1.18,36,13.9,0.493,1.04,28,14.3,0.452,1.34,49,6.1,0.469,0.64,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,3m,24,ALL,5,6,16.7,0.527,1.22,16,12.5,0.484,1.23,13,15.4,0.543,1.11,11,0.0,0.459,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,3m,24,GOOD,1,1,0.0,0.5,0.0,1,0.0,0.333,0.0,3,33.3,0.833,1.32,2,0.0,0.083,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,HURDLE,3m,24,SOFT,4,5,20.0,0.532,1.32,15,13.3,0.494,1.33,10,10.0,0.455,0.95,9,0.0,0.542,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,NHF,2m,16,ALL,1,3,33.3,0.667,3.49,6,0.0,0.4,0.0,1,0.0,0.3,0.0,1,0.0,0.8,0.0,TOO_FEW,Not enough races,,
+newcastle,Newcastle,NHF,2m,16,SOFT,1,3,33.3,0.667,3.49,6,0.0,0.4,0.0,1,0.0,0.3,0.0,1,0.0,0.8,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,AW_FLAT,5f,5,ALL,234,638,13.3,0.557,0.99,1010,10.5,0.507,1.04,480,7.7,0.445,0.97,147,4.8,0.396,0.84,HIGH,Typical — weight matters as much as nationally,0.112,0.098
+southwell,Southwell,AW_FLAT,5f,5,STANDARD,234,638,13.3,0.557,0.99,1010,10.5,0.507,1.04,480,7.7,0.445,0.97,147,4.8,0.396,0.84,HIGH,Typical — weight matters as much as nationally,0.112,0.098
+southwell,Southwell,AW_FLAT,6f,6,ALL,300,1068,12.2,0.534,1.02,1415,9.1,0.495,0.99,486,7.2,0.463,0.94,101,5.9,0.408,1.17,HIGH,Typical — weight matters as much as nationally,0.079,0.098
+southwell,Southwell,AW_FLAT,6f,6,STANDARD,300,1068,12.2,0.534,1.02,1415,9.1,0.495,0.99,486,7.2,0.463,0.94,101,5.9,0.408,1.17,HIGH,Typical — weight matters as much as nationally,0.079,0.098
+southwell,Southwell,AW_FLAT,7f,7,ALL,310,1043,13.2,0.534,1.06,1510,9.1,0.498,0.98,488,6.1,0.46,0.87,100,5.0,0.372,0.95,HIGH,Typical — weight matters as much as nationally,0.1,0.102
+southwell,Southwell,AW_FLAT,7f,7,STANDARD,310,1043,13.2,0.534,1.06,1510,9.1,0.498,0.98,488,6.1,0.46,0.87,100,5.0,0.372,0.95,HIGH,Typical — weight matters as much as nationally,0.1,0.102
+southwell,Southwell,AW_FLAT,1m,8,ALL,314,1061,12.4,0.557,1.0,1517,10.0,0.496,1.07,487,4.9,0.42,0.71,121,6.6,0.386,1.1,HIGH,Typical — weight matters as much as nationally,0.123,0.102
+southwell,Southwell,AW_FLAT,1m,8,STANDARD,314,1061,12.4,0.557,1.0,1517,10.0,0.496,1.07,487,4.9,0.42,0.71,121,6.6,0.386,1.1,HIGH,Typical — weight matters as much as nationally,0.123,0.102
+southwell,Southwell,AW_FLAT,1m3f,11,ALL,112,290,11.7,0.532,0.84,523,10.7,0.501,1.09,192,8.9,0.478,1.07,65,7.7,0.413,1.11,MEDIUM,Typical — weight matters as much as nationally,0.071,0.097
+southwell,Southwell,AW_FLAT,1m3f,11,STANDARD,112,290,11.7,0.532,0.84,523,10.7,0.501,1.09,192,8.9,0.478,1.07,65,7.7,0.413,1.11,MEDIUM,Typical — weight matters as much as nationally,0.071,0.097
+southwell,Southwell,AW_FLAT,1m4f,12,ALL,135,362,12.7,0.546,1.02,608,9.9,0.498,0.96,275,8.4,0.461,1.03,75,9.3,0.438,1.34,MEDIUM,Typical — weight matters as much as nationally,0.073,0.097
+southwell,Southwell,AW_FLAT,1m4f,12,STANDARD,135,362,12.7,0.546,1.02,608,9.9,0.498,0.96,275,8.4,0.461,1.03,75,9.3,0.438,1.34,MEDIUM,Typical — weight matters as much as nationally,0.073,0.097
+southwell,Southwell,AW_FLAT,1m6f,14,ALL,81,179,13.4,0.553,0.94,339,13.0,0.522,1.16,161,7.5,0.442,0.85,50,2.0,0.349,0.29,MEDIUM,Leans towards top weights (vs national),0.142,0.085
+southwell,Southwell,AW_FLAT,1m6f,14,STANDARD,81,179,13.4,0.553,0.94,339,13.0,0.522,1.16,161,7.5,0.442,0.85,50,2.0,0.349,0.29,MEDIUM,Leans towards top weights (vs national),0.142,0.085
+southwell,Southwell,AW_FLAT,2m½f,16.5,ALL,68,152,18.4,0.537,1.42,263,7.2,0.491,0.68,146,13.7,0.522,1.26,54,1.9,0.38,0.22,MEDIUM,Typical — weight matters as much as nationally,0.063,0.085
+southwell,Southwell,AW_FLAT,2m½f,16.5,STANDARD,68,152,18.4,0.537,1.42,263,7.2,0.491,0.68,146,13.7,0.522,1.26,54,1.9,0.38,0.22,MEDIUM,Typical — weight matters as much as nationally,0.063,0.085
+southwell,Southwell,AW_FLAT,2m2½f,18.5,ALL,4,7,14.3,0.546,1.35,12,16.7,0.521,1.11,8,0.0,0.445,0.0,4,25.0,0.494,4.84,TOO_FEW,Not enough races,,
+southwell,Southwell,AW_FLAT,2m2½f,18.5,STANDARD,4,7,14.3,0.546,1.35,12,16.7,0.521,1.11,8,0.0,0.445,0.0,4,25.0,0.494,4.84,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,1m7½f,15.5,ALL,18,34,14.7,0.5,0.91,35,14.3,0.502,1.04,32,6.2,0.508,0.48,39,15.4,0.435,1.68,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,1m7½f,15.5,GOOD,12,24,16.7,0.467,1.02,28,10.7,0.488,0.81,19,10.5,0.529,0.86,26,11.5,0.442,1.44,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,1m7½f,15.5,SOFT,6,10,10.0,0.578,0.63,7,28.6,0.559,1.77,13,0.0,0.477,0.0,13,23.1,0.421,2.02,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,2m,16,ALL,36,67,14.9,0.514,0.97,80,18.8,0.512,1.24,53,11.3,0.492,0.82,80,6.2,0.404,0.79,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.065,0.034
+southwell,Southwell,CHASE,2m,16,GOOD,26,45,15.6,0.488,1.0,54,16.7,0.538,1.19,45,13.3,0.504,0.95,66,6.1,0.411,0.78,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.055,0.021
+southwell,Southwell,CHASE,2m,16,SOFT,10,22,13.6,0.568,0.9,26,23.1,0.46,1.32,8,0.0,0.427,0.0,14,7.1,0.372,0.87,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,2m4½f,20.5,ALL,65,129,16.3,0.484,1.09,190,12.6,0.479,1.03,100,12.0,0.491,0.99,131,6.1,0.398,0.78,MEDIUM,Typical — weight matters as much as nationally,0.037,0.036
+southwell,Southwell,CHASE,2m4½f,20.5,GOOD,41,74,14.9,0.498,0.93,110,13.6,0.482,1.14,70,14.3,0.501,1.14,94,5.3,0.39,0.69,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.044,0.034
+southwell,Southwell,CHASE,2m4½f,20.5,SOFT,24,55,18.2,0.465,1.36,80,11.2,0.474,0.88,30,6.7,0.467,0.59,37,8.1,0.418,0.98,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,3m,24,ALL,21,46,17.4,0.455,1.16,53,9.4,0.41,0.75,41,19.5,0.525,1.81,37,0.0,0.378,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,3m,24,GOOD,17,37,16.2,0.468,1.13,44,11.4,0.435,0.93,32,18.8,0.514,1.66,34,0.0,0.367,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,3m,24,SOFT,4,9,22.2,0.403,1.25,9,0.0,0.288,0.0,9,22.2,0.565,2.48,3,0.0,0.508,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,3m½f,24.5,ALL,59,119,19.3,0.545,1.25,129,10.9,0.445,0.91,101,11.9,0.4,0.78,112,8.9,0.402,1.01,LOW,Top weights do better here than nationally (small sample — treat with caution),0.094,0.013
+southwell,Southwell,CHASE,3m½f,24.5,GOOD,31,61,19.7,0.533,1.32,72,9.7,0.434,0.81,56,12.5,0.45,0.83,60,8.3,0.396,1.03,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.06,0.006
+southwell,Southwell,CHASE,3m½f,24.5,SOFT,28,58,19.0,0.558,1.18,57,12.3,0.458,1.03,45,11.1,0.338,0.73,52,9.6,0.409,0.99,LOW,Top weights do better here than nationally (small sample — treat with caution),0.135,0.017
+southwell,Southwell,CHASE,3m1½f,25.5,ALL,2,5,0.0,0.54,0.0,2,0.0,0.167,0.0,4,25.0,0.617,1.47,2,50.0,0.5,5.32,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,3m1½f,25.5,SOFT,2,5,0.0,0.54,0.0,2,0.0,0.167,0.0,4,25.0,0.617,1.47,2,50.0,0.5,5.32,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,3m2f,26,ALL,7,12,0.0,0.301,0.0,17,23.5,0.482,1.77,11,18.2,0.551,1.16,15,6.7,0.449,1.1,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,3m2f,26,GOOD,4,8,0.0,0.33,0.0,10,30.0,0.549,2.38,6,16.7,0.516,1.02,3,0.0,0.525,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,CHASE,3m2f,26,SOFT,3,4,0.0,0.241,0.0,7,14.3,0.387,1.0,5,20.0,0.593,1.34,12,8.3,0.429,1.19,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,1m7½f,15.5,ALL,24,41,17.1,0.489,1.15,85,11.8,0.517,1.05,50,6.0,0.399,0.67,45,8.9,0.477,1.03,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,1m7½f,15.5,GOOD,15,25,24.0,0.545,1.69,59,8.5,0.549,0.82,36,2.8,0.391,0.35,25,12.0,0.452,1.21,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,1m7½f,15.5,SOFT,9,16,6.2,0.401,0.39,26,19.2,0.443,1.46,14,14.3,0.42,1.24,20,5.0,0.51,0.71,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,2m,16,ALL,54,99,16.2,0.577,1.12,166,12.0,0.48,1.23,136,6.6,0.457,0.66,131,6.9,0.44,0.9,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.08,0.039
+southwell,Southwell,HURDLE,2m,16,FAST,1,1,0.0,0.0,0.0,5,20.0,0.667,1.4,1,0.0,0.0,0.0,0,,,,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,2m,16,GOOD,35,62,17.7,0.589,1.15,105,10.5,0.478,1.08,95,7.4,0.479,0.73,78,7.7,0.426,1.06,LOW,Leans towards top weights (vs national) (small sample — treat with caution),0.081,0.04
+southwell,Southwell,HURDLE,2m,16,SOFT,18,36,13.9,0.573,1.1,56,14.3,0.467,1.5,40,5.0,0.416,0.52,53,5.7,0.461,0.69,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,2m4½f,20.5,ALL,135,291,12.0,0.49,1.02,468,11.3,0.493,1.01,294,9.5,0.464,0.98,288,6.6,0.431,0.96,MEDIUM,Typical — weight matters as much as nationally,0.044,0.037
+southwell,Southwell,HURDLE,2m4½f,20.5,FAST,1,1,0.0,0.125,0.0,4,25.0,0.719,3.04,2,0.0,0.125,0.0,2,0.0,0.625,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,2m4½f,20.5,GOOD,83,181,11.6,0.499,0.97,279,11.5,0.485,1.06,179,10.1,0.472,1.01,199,6.0,0.446,0.9,MEDIUM,Typical — weight matters as much as nationally,0.033,0.036
+southwell,Southwell,HURDLE,2m4½f,20.5,SOFT,51,109,12.8,0.478,1.13,185,10.8,0.5,0.91,113,8.8,0.457,0.96,87,8.0,0.392,1.13,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.065,0.04
+southwell,Southwell,HURDLE,3m,24,ALL,32,66,15.2,0.506,1.18,105,9.5,0.45,0.9,53,7.5,0.433,0.76,85,9.4,0.445,1.13,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.039,0.036
+southwell,Southwell,HURDLE,3m,24,GOOD,24,47,17.0,0.506,1.39,82,8.5,0.466,0.86,38,2.6,0.383,0.28,74,10.8,0.469,1.24,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,3m,24,SOFT,8,19,10.5,0.505,0.73,23,13.0,0.392,1.0,15,20.0,0.559,1.78,11,0.0,0.28,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,3m½f,24.5,ALL,79,149,9.4,0.434,0.75,211,16.6,0.529,1.33,167,12.0,0.487,1.08,194,5.2,0.383,0.64,MEDIUM,Typical — weight matters as much as nationally,0.047,0.036
+southwell,Southwell,HURDLE,3m½f,24.5,FAST,1,1,0.0,0.25,0.0,3,33.3,0.875,1.67,3,0.0,0.375,0.0,2,0.0,0.188,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,3m½f,24.5,GOOD,48,85,9.4,0.459,0.72,113,15.0,0.5,1.18,112,14.3,0.51,1.29,128,5.5,0.419,0.69,LOW,Typical — weight matters as much as nationally (small sample — treat with caution),0.015,0.039
+southwell,Southwell,HURDLE,3m½f,24.5,SOFT,30,63,9.5,0.403,0.82,95,17.9,0.552,1.5,52,7.7,0.442,0.67,64,4.7,0.318,0.56,LOW,Top weights do better here than nationally (small sample — treat with caution),0.098,0.033
+southwell,Southwell,HURDLE,3m1½f,25.5,ALL,1,1,0.0,0.0,0.0,3,33.3,0.533,2.9,1,0.0,0.4,0.0,1,0.0,0.8,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,3m1½f,25.5,SOFT,1,1,0.0,0.0,0.0,3,33.3,0.533,2.9,1,0.0,0.4,0.0,1,0.0,0.8,0.0,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,3m2f,26,ALL,1,2,0.0,0.722,0.0,0,,,,5,0.0,0.4,0.0,3,33.3,0.519,5.3,TOO_FEW,Not enough races,,
+southwell,Southwell,HURDLE,3m2f,26,GOOD,1,2,0.0,0.722,0.0,0,,,,5,0.0,0.4,0.0,3,33.3,0.519,5.3,TOO_FEW,Not enough races,,

@@ -1,0 +1,435 @@
+date,course_id,off_time,race_id,name,horse_id,card_form,card_days_since_run,coverage,coverage_note,runs_held,first_run_held,last_run_held,last_course,last_result,usual_style
+2026-11-28,bangor_on_dee,11:50,931721,Malinas Glory,3461258,11-1D52,33,COMPLETE,,30,2021-04-01,2026-10-26,Hereford,2/8,PROMINENT
+2026-11-28,bangor_on_dee,11:50,931721,Cool Master,8450083,949-04,19,COMPLETE,,6,2025-11-29,2026-11-09,Carlisle,4/10,HELD_UP
+2026-11-28,bangor_on_dee,11:50,931721,Cahiers Den,5727950,432-67,32,COMPLETE,,12,2024-11-11,2026-10-27,Bangor-on-Dee,7/13,PROMINENT
+2026-11-28,bangor_on_dee,11:50,931721,Eaststone Bucks,7169690,/6920-,221,COMPLETE,,5,2025-03-10,2026-04-21,Ffos Las,10/12,HELD_UP
+2026-11-28,bangor_on_dee,11:50,931721,Clondaw Royale,4952182,13P-68,20,COMPLETE,,22,2023-10-06,2026-11-08,Ffos Las,8/11,LED
+2026-11-28,bangor_on_dee,11:50,931721,Rehill Relic,5033158,413F-8,21,COMPLETE,,18,2023-12-30,2026-11-07,Uttoxeter,8/9,PROMINENT
+2026-11-28,bangor_on_dee,11:50,931721,Exmoor Forest,4074035,333/9-,491,COMPLETE,,25,2022-01-18,2025-07-25,Uttoxeter,9/12,PROMINENT
+2026-11-28,bangor_on_dee,12:25,931720,Pointofdifference,7347875,11-1,37,PARTIAL,card form '11-1' shows 3 runs; we hold 1 (older runs missing),1,2026-10-22,2026-10-22,Ffos Las,1/6,
+2026-11-28,bangor_on_dee,12:25,931720,Cool Customer,7303476,/231-3,24,COMPLETE,,4,2025-12-02,2026-11-04,Chepstow,3/14,PROMINENT
+2026-11-28,bangor_on_dee,12:25,931720,Koaly Play,8876555,1-,265,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,bangor_on_dee,12:25,931720,Blackswan dOroux,8607159,8-5,19,COMPLETE,,2,2026-01-09,2026-11-09,Stratford,5/12,
+2026-11-28,bangor_on_dee,12:25,931720,Ballyteige,8489868,1-6,27,PARTIAL,card form '1-6' shows 2 runs; we hold 1 (older runs missing),1,2026-11-01,2026-11-01,Carlisle,6/8,
+2026-11-28,bangor_on_dee,12:25,931720,Goliath Flight,8908745,5-76,37,COMPLETE,,3,2026-03-09,2026-10-22,Ffos Las,6/11,HELD_UP
+2026-11-28,bangor_on_dee,12:25,931720,Emral Bridge,9024510,5-7,32,COMPLETE,,2,2026-04-18,2026-10-27,Bangor-on-Dee,7/11,
+2026-11-28,bangor_on_dee,12:25,931720,Britway Belle,7334510,733-55,14,COMPLETE,,5,2026-01-12,2026-11-14,Uttoxeter,5/7,HELD_UP
+2026-11-28,bangor_on_dee,12:25,931720,Menasha,9115759,2-0,14,PARTIAL,card form '2-0' shows 2 runs; we hold 1 (older runs missing),1,2026-11-14,2026-11-14,Uttoxeter,11/12,
+2026-11-28,bangor_on_dee,12:25,931720,Georgie Simmons,7462304,6/5,25,PARTIAL,card form '6/5' shows 2 runs; we hold 1 (older runs missing),1,2026-11-03,2026-11-03,Warwick,5/6,
+2026-11-28,bangor_on_dee,12:25,931720,Lunar Lily,8459471,PP5-,224,BEHIND,card says last ran 224 days ago; our last record is 309 days ago (2026-01-23),2,2025-12-02,2026-01-23,Warwick,-/16,
+2026-11-28,bangor_on_dee,12:25,931720,Maxiani,9051018,6-P0,38,PARTIAL,card form '6-P0' shows 3 runs; we hold 2 (older runs missing),2,2026-05-04,2026-10-21,Worcester,10/10,
+2026-11-28,bangor_on_dee,13:00,931717,Trinity Street,7365430,3254-1,30,COMPLETE,,6,2025-11-10,2026-10-29,Stratford,1/9,PROMINENT
+2026-11-28,bangor_on_dee,13:00,931717,Its Easy,3495422,87P-23,30,COMPLETE,,22,2023-10-26,2026-10-29,Ffos Las,3/6,LED
+2026-11-28,bangor_on_dee,13:00,931717,Pottersville,7409425,0148P-,224,COMPLETE,,6,2025-04-17,2026-04-18,Bangor-on-Dee,-/5,PROMINENT
+2026-11-28,bangor_on_dee,13:00,931717,Epinephrine,5366153,32425-,228,COMPLETE,,10,2024-12-07,2026-04-14,Market Rasen,5/7,PROMINENT
+2026-11-28,bangor_on_dee,13:00,931717,Lexies Moon,4853579,/622-9,27,COMPLETE,,13,2024-01-04,2026-11-01,Worcester,9/15,PROMINENT
+2026-11-28,bangor_on_dee,13:00,931717,All The Glory,3519822,47P-33,19,COMPLETE,,36,2021-05-24,2026-11-09,Carlisle,3/3,HELD_UP
+2026-11-28,bangor_on_dee,13:00,931717,Future Bucks,8406292,134P-6,206,COMPLETE,,5,2025-11-23,2026-05-06,Newton Abbot,6/8,PROMINENT
+2026-11-28,bangor_on_dee,13:33,931718,Scotts Legacy,8551786,51-17,36,COMPLETE,,4,2025-12-20,2026-10-23,Cheltenham,7/10,PROMINENT
+2026-11-28,bangor_on_dee,13:33,931718,Works For Me,9189303,1,208,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,bangor_on_dee,13:33,931718,Montevallo,8210015,42-,280,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,bangor_on_dee,13:33,931718,Our Pedro,10116034,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,bangor_on_dee,13:33,931718,Minutes To Spare,8899527,8-9,19,COMPLETE,,2,2026-03-06,2026-11-09,Carlisle,9/14,
+2026-11-28,bangor_on_dee,13:33,931718,Get Busy Jumping,10018709,85,17,COMPLETE,,2,2026-10-27,2026-11-11,Bangor-on-Dee,5/7,
+2026-11-28,bangor_on_dee,13:33,931718,Jeu Magic,10057484,7,24,COMPLETE,,1,2026-11-04,2026-11-04,Chepstow,7/13,
+2026-11-28,bangor_on_dee,13:33,931718,New Chapter,10057488,0,21,COMPLETE,,3,2020-06-10,2026-11-07,Uttoxeter,11/13,HELD_UP
+2026-11-28,bangor_on_dee,14:10,934388,Hang Out,8913404,1-1,17,PARTIAL,card form '1-1' shows 2 runs; we hold 1 (older runs missing),1,2026-11-11,2026-11-11,Bangor-on-Dee,1/7,
+2026-11-28,bangor_on_dee,14:10,934388,Loki,7631479,,24,COMPLETE,,4,2026-05-18,2026-11-04,Nottingham,4/13,PROMINENT
+2026-11-28,bangor_on_dee,14:10,934388,Written In Gold,10115425,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,bangor_on_dee,14:10,934388,Bears Socks,7622713,22-4,24,PARTIAL,card form '22-4' shows 3 runs; we hold 1 (older runs missing),1,2026-11-04,2026-11-04,Chepstow,4/13,
+2026-11-28,bangor_on_dee,14:10,934388,Old Colony,8968505,37,19,PARTIAL,card form '37' shows 2 runs; we hold 1 (older runs missing),1,2026-11-09,2026-11-09,Carlisle,7/14,
+2026-11-28,bangor_on_dee,14:10,934388,Queen Marcia,7227184,6/46-,259,COMPLETE,,3,2025-04-05,2026-03-14,Uttoxeter,6/12,PROMINENT
+2026-11-28,bangor_on_dee,14:10,934388,Mahbury,5595622,P2/,973,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,bangor_on_dee,14:10,934388,Deferred Interest,7648501,8P-,54,COMPLETE,,9,2025-06-09,2026-10-05,Kempton (AW),9/10,HELD_UP
+2026-11-28,bangor_on_dee,14:10,934388,Lilycala,9115668,0-4,196,COMPLETE,,2,2026-04-19,2026-05-16,Bangor-on-Dee,4/11,
+2026-11-28,bangor_on_dee,14:45,931719,Doctors Hill,6833909,2663-4,37,COMPLETE,,11,2025-04-12,2026-10-22,Ffos Las,4/6,HELD_UP
+2026-11-28,bangor_on_dee,14:45,931719,Royal Mer,4566465,22311-,268,COMPLETE,,26,2023-01-28,2026-03-05,Wincanton,1/5,PROMINENT
+2026-11-28,bangor_on_dee,14:45,931719,The Hawkstonian,6657556,/3513-,276,COMPLETE,,7,2024-11-01,2026-02-25,Bangor-on-Dee,3/5,PROMINENT
+2026-11-28,bangor_on_dee,14:45,931719,A Moments Madness,5554942,21/30-,233,COMPLETE,,9,2024-10-16,2026-04-09,Aintree,11/24,HELD_UP
+2026-11-28,bangor_on_dee,14:45,931719,Luron dOudairies,7639428,FP4-64,186,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,bangor_on_dee,14:45,931719,Mr Mojo Risin,6793636,4/54-2,196,COMPLETE,,4,2024-12-17,2026-05-16,Bangor-on-Dee,2/11,PROMINENT
+2026-11-28,bangor_on_dee,14:45,931719,Kourosh,5453465,P324/3,34,COMPLETE,,12,2023-11-29,2026-10-25,Market Rasen,3/6,HELD_UP
+2026-11-28,bangor_on_dee,14:45,931719,Locquirec,7578913,66F6-6,32,COMPLETE,,5,2026-01-02,2026-10-27,Bangor-on-Dee,6/9,PROMINENT
+2026-11-28,bangor_on_dee,14:45,931719,Whiskeywealth,3046815,0396-0,22,COMPLETE,,34,2021-03-15,2026-11-06,Aintree,10/10,PROMINENT
+2026-11-28,bangor_on_dee,15:25,931716,Big Cadillac,5671327,6634-1,47,COMPLETE,,6,2025-01-28,2026-10-12,Worcester,1/5,PROMINENT
+2026-11-28,bangor_on_dee,15:25,931716,The Price Of Peace,7046579,/215P-,260,COMPLETE,,4,2025-10-28,2026-03-13,Cheltenham,-/22,PROMINENT
+2026-11-28,bangor_on_dee,15:25,931716,Gasmani,4950371,12-842,32,COMPLETE,,13,2024-02-11,2026-10-27,Bangor-on-Dee,2/13,PROMINENT
+2026-11-28,bangor_on_dee,15:25,931716,Limerick Star,5845757,/3431-,245,COMPLETE,,4,2026-01-09,2026-03-28,Uttoxeter,1/6,PROMINENT
+2026-11-28,bangor_on_dee,15:25,931716,One Last Glance,3346534,2412-1,30,COMPLETE,,27,2021-02-17,2026-10-29,Stratford,1/6,HELD_UP
+2026-11-28,bangor_on_dee,15:25,931716,Paddy OMahler,4863583,112F-4,28,COMPLETE,,25,2023-02-04,2026-10-31,Wetherby,4/4,PROMINENT
+2026-11-28,bangor_on_dee,15:25,931716,Judicial Deference,5338282,2111B-,252,COMPLETE,,5,2025-11-29,2026-03-21,Kelso,-/14,PROMINENT
+2026-11-28,bangor_on_dee,15:25,931716,Lucky dAubrelle,7289187,86413-,233,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,bangor_on_dee,15:25,931716,Liege Ardent,8240924,6-0F25,32,PARTIAL,card form '6-0F25' shows 5 runs; we hold 1 (older runs missing),1,2026-10-27,2026-10-27,Bangor-on-Dee,5/13,
+2026-11-28,bangor_on_dee,15:25,931716,Laganhill,6907623,4272P-,238,COMPLETE,,9,2024-12-30,2026-04-04,Haydock,-/11,PROMINENT
+2026-11-28,bangor_on_dee,15:25,931716,Grand Albert,4952202,/4564-,259,COMPLETE,,12,2023-12-15,2026-03-14,Uttoxeter,4/16,HELD_UP
+2026-11-28,bangor_on_dee,15:25,931716,City Chief,3499224,312-41,204,BEHIND,card says last ran 204 days ago; our last record is 237 days ago (2026-04-05),16,2021-12-17,2026-04-05,Fairyhouse,2/9,MIDFIELD
+2026-11-28,doncaster,11:33,931698,Paddy De Pole,4303291,4-2412,17,COMPLETE,,19,2023-12-09,2026-11-11,Warwick,2/5,PROMINENT
+2026-11-28,doncaster,11:33,931698,Everyonesgame,3918403,765-22,26,COMPLETE,,26,2022-01-11,2026-11-02,Plumpton,2/7,PROMINENT
+2026-11-28,doncaster,11:33,931698,Docpickedme,3046807,3141-0,23,COMPLETE,,33,2020-11-07,2026-11-05,Newbury,12/16,LED
+2026-11-28,doncaster,12:08,931700,Down To Business,7503742,5-1042,14,COMPLETE,,11,2025-05-17,2026-11-14,Wetherby,2/4,HELD_UP
+2026-11-28,doncaster,12:08,931700,One Knight,5826749,10-3U3,25,COMPLETE,,7,2024-04-25,2026-11-03,Warwick,3/6,PROMINENT
+2026-11-28,doncaster,12:08,931700,Dancing Soldier,7334524,1-,363,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,doncaster,12:08,931700,Arms Of An Angel,7272322,P/C5-4,31,PARTIAL,card form 'P/C5-4' shows 4 runs; we hold 2 (older runs missing),2,2026-04-22,2026-10-28,Huntingdon,4/9,
+2026-11-28,doncaster,12:08,931700,Northerly,8930939,3-7,29,COMPLETE,,2,2026-04-05,2026-10-30,Uttoxeter,7/8,
+2026-11-28,doncaster,12:08,931700,Pfingstberg,4757703,,54,COMPLETE,,17,2022-12-27,2026-10-05,Pontefract,6/6,LED
+2026-11-28,doncaster,12:43,931697,Palamon,4497048,512311,1,COMPLETE,,41,2022-09-17,2026-11-27,Doncaster,1/3,HELD_UP
+2026-11-28,doncaster,12:43,931697,Nazare,6803084,96-311,31,COMPLETE,,13,2024-12-03,2026-10-28,Huntingdon,1/9,PROMINENT
+2026-11-28,doncaster,12:43,931697,Fairlawn Skipper,5856695,U12141,15,COMPLETE,,16,2024-05-16,2026-11-13,Sedgefield,1/3,PROMINENT
+2026-11-28,doncaster,12:43,931697,Nardaran,6005950,663-69,26,COMPLETE,,13,2024-12-27,2026-11-02,Plumpton,9/12,PROMINENT
+2026-11-28,doncaster,13:18,931696,Briery Rose,6857687,5/85-1,27,COMPLETE,,4,2024-12-31,2026-11-01,Huntingdon,1/4,HELD_UP
+2026-11-28,doncaster,13:18,931696,Queen Alice,9055772,3-,236,COMPLETE,,1,2026-04-06,2026-04-06,Fairyhouse,3/12,
+2026-11-28,doncaster,13:18,931696,Lady Litigator,8313805,U62-32,23,COMPLETE,,6,2025-12-17,2026-11-05,Plumpton,2/3,PROMINENT
+2026-11-28,doncaster,13:18,931696,La Trinite,7015791,36,23,COMPLETE,,16,2025-01-20,2026-11-05,Newbury,6/10,MIDFIELD
+2026-11-28,doncaster,13:18,931696,Harzandacassandra,8079912,70-5,43,COMPLETE,,3,2026-02-14,2026-10-16,Uttoxeter,5/7,MIDFIELD
+2026-11-28,doncaster,13:18,931696,Aunt Gallie,9024519,8-7,31,COMPLETE,,2,2026-04-01,2026-10-28,Huntingdon,7/9,
+2026-11-28,doncaster,13:18,931696,Just Rizzo,9024513,9-7,43,COMPLETE,,2,2026-04-01,2026-10-16,Uttoxeter,7/7,
+2026-11-28,doncaster,13:48,931701,Liberty Coach,5758998,6P3-31,28,COMPLETE,,23,2024-03-23,2026-10-31,Ayr,1/9,PROMINENT
+2026-11-28,doncaster,13:48,931701,Leaumec De Mee,7263137,2145-1,38,COMPLETE,,6,2025-03-15,2026-10-21,Worcester,1/7,PROMINENT
+2026-11-28,doncaster,13:48,931701,Flash Man,7390798,1-2334,20,COMPLETE,,17,2018-04-06,2026-11-08,Sandown,4/7,PROMINENT
+2026-11-28,doncaster,13:48,931701,Itsinthename,8268273,167-P5,22,COMPLETE,,6,2026-01-19,2026-11-06,Aintree,5/10,PROMINENT
+2026-11-28,doncaster,13:48,931701,Cotton Socks,8418738,331-64,19,COMPLETE,,15,2018-08-11,2026-11-09,Stratford,4/7,PROMINENT
+2026-11-28,doncaster,13:48,931701,Belfrina,5403077,2F12/P,13,COMPLETE,,8,2023-10-31,2026-11-15,Fontwell,-/8,PROMINENT
+2026-11-28,doncaster,14:28,931699,Camarrate,4977920,1-P223,14,COMPLETE,,22,2023-04-01,2026-11-14,Wetherby,3/4,HELD_UP
+2026-11-28,doncaster,14:28,931699,Mumfords Magic,4737879,17-612,35,COMPLETE,,14,2023-07-31,2026-10-24,Kelso,2/4,HELD_UP
+2026-11-28,doncaster,14:28,931699,Copshill Lad,4129100,1351-6,207,COMPLETE,,21,2022-05-15,2026-05-05,Ffos Las,6/9,PROMINENT
+2026-11-28,doncaster,14:28,931699,Getaway Vic,5652626,2231P3,30,COMPLETE,,10,2024-06-26,2026-10-29,Ffos Las,3/5,PROMINENT
+2026-11-28,doncaster,14:28,931699,Breezethroughlife,7303393,3-8344,23,COMPLETE,,11,2025-05-11,2026-11-05,Plumpton,4/4,PROMINENT
+2026-11-28,doncaster,14:28,931699,I Am The Moon,5831486,P4-248,150,COMPLETE,,16,2024-11-10,2026-07-01,Worcester,8/11,PROMINENT
+2026-11-28,doncaster,15:10,931702,Ignite The Night,10027859,3,30,COMPLETE,,1,2026-10-29,2026-10-29,Stratford,3/9,
+2026-11-28,doncaster,15:10,931702,Lady Loki,10014273,2,30,COMPLETE,,1,2026-10-29,2026-10-29,Stratford,2/9,
+2026-11-28,doncaster,15:10,931702,Karalees Legacy,10116033,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,doncaster,15:10,931702,Sarahs Surprise,10115429,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,doncaster,15:10,931702,Jolanta,9982083,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,doncaster,15:10,931702,Noemie Du Chenet,10027857,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,doncaster,15:10,931702,Dance In The Mist,9290868,5,30,COMPLETE,,1,2026-10-29,2026-10-29,Stratford,5/9,
+2026-11-28,doncaster,15:10,931702,Dees Gem,10116032,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,doncaster,15:10,931702,Marias Double,10027849,74,17,COMPLETE,,2,2026-10-29,2026-11-11,Warwick,4/7,
+2026-11-28,fairyhouse,11:45,934328,King Rasko Grey,5793374,/1311-,211,COMPLETE,,6,2024-04-30,2026-05-01,Punchestown,1/8,PROMINENT
+2026-11-28,fairyhouse,11:45,934328,Narciso Has,7457795,1/211-,299,PARTIAL,card form '1/211-' shows 4 runs; we hold 3 (older runs missing),3,2025-11-30,2026-02-02,Leopardstown,1/7,
+2026-11-28,fairyhouse,11:45,934328,Kielys Place,6898522,1/163-,211,PARTIAL,card form '1/163-' shows 4 runs; we hold 3 (older runs missing),3,2026-02-26,2026-05-01,Punchestown,3/8,LED
+2026-11-28,fairyhouse,11:45,934328,Spinningayarn,5671291,3115P-,213,COMPLETE,,7,2025-01-18,2026-04-29,Punchestown,-/14,PROMINENT
+2026-11-28,fairyhouse,11:45,934328,He Cant Dance,5633092,3321-1,208,COMPLETE,,11,2024-12-07,2026-05-04,Down Royal,1/6,LED
+2026-11-28,fairyhouse,11:45,934328,Sept Etoiles,7020727,41613-,220,COMPLETE,,5,2025-11-01,2026-04-22,Perth,3/4,PROMINENT
+2026-11-28,fairyhouse,11:45,934328,Robertjames,8973297,1-,244,COMPLETE,,1,2026-03-29,2026-03-29,Downpatrick,1/13,
+2026-11-28,fairyhouse,11:45,934328,Zanndabad,3685035,2110-2,29,COMPLETE,,26,2022-12-27,2026-10-30,Down Royal (IRE),2/7,HELD_UP
+2026-11-28,fairyhouse,11:45,934328,Sutherland,5713805,3-7123,14,BEHIND,card says last ran 14 days ago; our last record is 201 days ago (2026-05-11),10,2024-04-30,2026-05-11,Southwell,7/10,PROMINENT
+2026-11-28,fairyhouse,11:45,934328,Ready For Road,8304804,4795P-,256,COMPLETE,,5,2025-11-02,2026-03-17,Down Royal,-/19,MIDFIELD
+2026-11-28,fairyhouse,11:45,934328,Rock On Richie,8489902,521-8,24,PARTIAL,card form '521-8' shows 4 runs; we hold 1 (older runs missing),1,2026-11-04,2026-11-04,Wexford (IRE),8/9,
+2026-11-28,fairyhouse,11:45,934328,I Can Find Em,8455196,2-0960,13,PARTIAL,card form '2-0960' shows 5 runs; we hold 4 (older runs missing),4,2026-07-29,2026-11-15,Navan (IRE),16/25,HELD_UP
+2026-11-28,fairyhouse,11:45,934328,Maganey,6833915,PF-117,29,PARTIAL,card form 'PF-117' shows 5 runs; we hold 1 (older runs missing),1,2026-10-30,2026-10-30,Down Royal (IRE),7/7,
+2026-11-28,fairyhouse,12:20,934329,Qualimita,5007807,F/223-,370,COMPLETE,,11,2023-11-19,2025-11-23,Punchestown,3/5,PROMINENT
+2026-11-28,fairyhouse,12:20,934329,Karia Des Blaises,5015331,/F1P9-,213,COMPLETE,,14,2023-12-26,2026-04-29,Punchestown,9/14,HELD_UP
+2026-11-28,fairyhouse,12:20,934329,Karamoja,5325179,6714F-,211,COMPLETE,,11,2024-12-03,2026-05-01,Punchestown,-/22,PROMINENT
+2026-11-28,fairyhouse,12:20,934329,Break My Soul,4893316,23P-25,21,COMPLETE,,19,2023-11-09,2026-11-07,Gowran Park (IRE),5/7,HELD_UP
+2026-11-28,fairyhouse,12:20,934329,The Great Nudie,5911233,1433-9,34,COMPLETE,,16,2024-07-04,2026-10-25,Wexford (IRE),9/10,LED
+2026-11-28,fairyhouse,12:20,934329,Ballybawn Belter,4173265,763-P0,20,COMPLETE,,31,2022-03-06,2026-11-08,Naas (IRE),13/20,MIDFIELD
+2026-11-28,fairyhouse,12:20,934329,Katie Daniels,4994501,571P-4,24,COMPLETE,,11,2024-08-08,2026-11-04,Wexford (IRE),4/4,PROMINENT
+2026-11-28,fairyhouse,12:20,934329,Sophia Rose,7378586,P65-28,151,COMPLETE,,16,2025-04-10,2026-06-30,Wexford (IRE),8/14,HELD_UP
+2026-11-28,fairyhouse,12:55,934330,Birdie Or Bust,4728109,9P-341,48,COMPLETE,,21,2023-01-01,2026-10-11,Cork (IRE),1/8,HELD_UP
+2026-11-28,fairyhouse,12:55,934330,Western Diego,4073917,314F0-,212,COMPLETE,,16,2023-01-29,2026-04-30,Punchestown,14/20,HELD_UP
+2026-11-28,fairyhouse,12:55,934330,Moudan,5601158,95121-,224,COMPLETE,,18,2024-01-24,2026-04-18,Ayr,1/7,PROMINENT
+2026-11-28,fairyhouse,12:55,934330,Jazzy Matty,4612952,5625-6,98,COMPLETE,,25,2022-11-27,2026-08-22,Killarney (IRE),6/14,PROMINENT
+2026-11-28,fairyhouse,12:55,934330,Raffles Dolce Vita,5800832,64716-,212,COMPLETE,,5,2025-11-09,2026-04-30,Punchestown,6/20,PROMINENT
+2026-11-28,fairyhouse,12:55,934330,Manoir De Mirande,8344456,123F14,29,COMPLETE,,15,2025-12-07,2026-10-30,Down Royal (IRE),4/9,PROMINENT
+2026-11-28,fairyhouse,12:55,934330,Drumgill,5396362,450U62,21,COMPLETE,,55,2023-11-02,2026-11-07,Gowran Park (IRE),2/7,HELD_UP
+2026-11-28,fairyhouse,12:55,934330,Coral River,5613771,2219-4,33,COMPLETE,,17,2024-01-27,2026-10-26,Galway (IRE),4/7,PROMINENT
+2026-11-28,fairyhouse,12:55,934330,The King Of Prs,4191639,947FP-,212,COMPLETE,,30,2022-03-17,2026-04-30,Punchestown,-/20,MIDFIELD
+2026-11-28,fairyhouse,12:55,934330,Dee Capo,4942580,U402P-,213,COMPLETE,,19,2023-04-09,2026-04-29,Punchestown,-/14,HELD_UP
+2026-11-28,fairyhouse,12:55,934330,Springt De La Mare,4938771,31168/,587,COMPLETE,,9,2023-11-18,2025-04-20,Fairyhouse (IRE),8/9,HELD_UP
+2026-11-28,fairyhouse,13:30,934331,Saratoga,6111585,33211-,210,COMPLETE,,11,2024-07-15,2026-05-02,Punchestown,1/12,PROMINENT
+2026-11-28,fairyhouse,13:30,934331,Bartholomew,8018237,412-2,20,COMPLETE,,7,2025-08-23,2026-11-08,Naas (IRE),2/4,PROMINENT
+2026-11-28,fairyhouse,13:30,934331,Huntin Boots,8620492,25-U1,21,COMPLETE,,4,2026-01-22,2026-11-07,Gowran Park (IRE),1/12,PROMINENT
+2026-11-28,fairyhouse,13:30,934331,Ole Ole,8313644,2F1-81,34,COMPLETE,,8,2025-11-22,2026-10-25,Galway (IRE),1/5,MIDFIELD
+2026-11-28,fairyhouse,14:05,934332,If You Believe,7238162,10/4-1,33,PARTIAL,card form '10/4-1' shows 4 runs; we hold 3 (older runs missing),3,2025-04-29,2026-10-26,Galway (IRE),1/10,PROMINENT
+2026-11-28,fairyhouse,14:05,934332,Marco Du Seuil,9222130,1-231,27,PARTIAL,card form '1-231' shows 4 runs; we hold 3 (older runs missing),3,2026-05-26,2026-11-01,Cork (IRE),1/10,PROMINENT
+2026-11-28,fairyhouse,14:05,934332,Lureka Du Noyer,7534482,48-121,107,PARTIAL,card form '48-121' shows 5 runs; we hold 3 (older runs missing),3,2026-05-28,2026-08-13,Tramore (IRE),1/7,
+2026-11-28,fairyhouse,14:05,934332,Joe Cool,7339089,13,14,COMPLETE,,11,2025-04-02,2026-11-14,Navan (IRE),3/8,MIDFIELD
+2026-11-28,fairyhouse,14:05,934332,El Bilo,9889096,81,34,COMPLETE,,2,2026-10-14,2026-10-25,Wexford (IRE),1/11,
+2026-11-28,fairyhouse,14:05,934332,Martymill,8455158,626131,48,COMPLETE,,8,2025-11-30,2026-10-11,Cork (IRE),1/7,PROMINENT
+2026-11-28,fairyhouse,14:05,934332,Pumas Dream,8401620,7410-,254,COMPLETE,,4,2025-11-23,2026-03-19,Cork,10/10,MIDFIELD
+2026-11-28,fairyhouse,14:05,934332,Taras Halls,4782838,1P2P4-,287,COMPLETE,,22,2023-01-13,2026-02-14,Haydock,4/11,PROMINENT
+2026-11-28,fairyhouse,14:40,934333,Green Hint,7272309,12/2-1,69,PARTIAL,card form '12/2-1' shows 4 runs; we hold 3 (older runs missing),3,2025-04-29,2026-09-20,Listowel (IRE),1/13,
+2026-11-28,fairyhouse,14:40,934333,Premier Division,8455162,332-1,29,COMPLETE,,4,2025-11-29,2026-10-30,Down Royal (IRE),1/8,MIDFIELD
+2026-11-28,fairyhouse,14:40,934333,Bold Script,8940395,2-,244,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,fairyhouse,14:40,934333,Hamavi,5851323,,157,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,fairyhouse,14:40,934333,My Fault Again,7365423,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,fairyhouse,14:40,934333,Wilton Mills Trier,8489907,13-1,205,PARTIAL,card form '13-1' shows 3 runs; we hold 2 (older runs missing),2,2026-04-06,2026-05-07,Wexford,1/10,
+2026-11-28,fairyhouse,14:40,934333,Cristal Clere,2951965,4/,27,COMPLETE,,28,2022-04-20,2026-11-01,Curragh (IRE),14/21,HELD_UP
+2026-11-28,fairyhouse,14:40,934333,The Farmers Bar,9083816,3-784,24,PARTIAL,card form '3-784' shows 4 runs; we hold 3 (older runs missing),3,2026-05-07,2026-11-04,Wexford (IRE),4/14,MIDFIELD
+2026-11-28,fairyhouse,14:40,934333,Tatum,5092879,,51,COMPLETE,,20,2023-06-14,2026-10-08,Thurles (IRE),5/13,MIDFIELD
+2026-11-28,fairyhouse,14:40,934333,Treasure Memory,7139191,/233P-,238,COMPLETE,,4,2025-10-25,2026-04-04,Fairyhouse,-/25,PROMINENT
+2026-11-28,fairyhouse,14:40,934333,Affiniseaandbeyond,7303444,P2-4,19,PARTIAL,card form 'P2-4' shows 3 runs; we hold 1 (older runs missing),1,2026-11-09,2026-11-09,Punchestown (IRE),4/11,
+2026-11-28,fairyhouse,14:40,934333,Hollys Thunder,9110886,3-6,34,COMPLETE,,2,2026-05-01,2026-10-25,Galway (IRE),6/8,
+2026-11-28,fairyhouse,14:40,934333,Confidence Within,7529888,3130,14,PARTIAL,card form '3130' shows 4 runs; we hold 3 (older runs missing),3,2026-08-08,2026-11-14,Navan (IRE),16/22,HELD_UP
+2026-11-28,fairyhouse,14:40,934333,Gaelic Moon,10115267,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,fairyhouse,14:40,934333,Colossal Impact,7312265,3-446,11,COMPLETE,,4,2026-03-21,2026-11-17,Limerick (IRE),6/12,LED
+2026-11-28,fairyhouse,14:40,934333,Pros And Cons,8779490,71-127,23,PARTIAL,card form '71-127' shows 5 runs; we hold 2 (older runs missing),2,2026-04-06,2026-11-05,Clonmel (IRE),7/11,
+2026-11-28,fairyhouse,14:40,934333,Clean As A Whistle,8812101,P-,280,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,fairyhouse,14:40,934333,Game Shadow,9317840,4130,34,COMPLETE,,4,2026-05-29,2026-10-25,Wexford (IRE),11/13,HELD_UP
+2026-11-28,fairyhouse,14:40,934333,Hetty Parker,9698439,6,101,COMPLETE,,1,2026-08-19,2026-08-19,Sligo (IRE),6/8,
+2026-11-28,fairyhouse,14:40,934333,Melody dArc,9725845,800,13,COMPLETE,,3,2026-09-07,2026-11-15,Navan (IRE),12/17,HELD_UP
+2026-11-28,fairyhouse,14:40,934333,Two Pats,10084160,9,16,COMPLETE,,1,2026-11-12,2026-11-12,Thurles (IRE),9/11,
+2026-11-28,fairyhouse,14:40,934333,Membling,8788795,8-,291,COMPLETE,,1,2026-02-10,2026-02-10,Limerick,8/11,
+2026-11-28,fairyhouse,14:40,934333,Rough And Tough,4967854,80,14,COMPLETE,,18,2023-03-29,2026-11-14,Navan (IRE),21/22,MIDFIELD
+2026-11-28,fairyhouse,15:13,934334,Kilt Ecossais,5355572,12112-,377,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,fairyhouse,15:13,934334,Fairlander,7204721,6430-1,174,COMPLETE,,7,2025-10-26,2026-06-07,Punchestown (IRE),1/16,HELD_UP
+2026-11-28,fairyhouse,15:13,934334,Euro Agent,8455157,722313,24,COMPLETE,,10,2025-11-30,2026-11-04,Wexford (IRE),3/8,MIDFIELD
+2026-11-28,fairyhouse,15:13,934334,Kim Roque,6121068,24543-,224,COMPLETE,,5,2025-11-16,2026-04-18,Ayr,3/16,HELD_UP
+2026-11-28,fairyhouse,15:13,934334,Coyote Spirit,5878987,410-66,148,COMPLETE,,13,2024-05-03,2026-07-03,Wexford (IRE),6/11,PROMINENT
+2026-11-28,fairyhouse,15:13,934334,Nelson County,5727953,/4133-,252,COMPLETE,,10,2024-12-16,2026-03-21,Navan,3/12,HELD_UP
+2026-11-28,fairyhouse,15:13,934334,Harwa,8758170,22106-,236,PARTIAL,card form '22106-' shows 5 runs; we hold 3 (older runs missing),3,2026-02-03,2026-04-06,Fairyhouse,6/9,HELD_UP
+2026-11-28,fairyhouse,15:13,934334,Hey Now,8525541,45-14,24,COMPLETE,,4,2025-12-15,2026-11-04,Wexford (IRE),4/8,HELD_UP
+2026-11-28,fairyhouse,15:13,934334,Carrigg Island,7378577,553-05,20,COMPLETE,,8,2025-04-10,2026-11-08,Naas (IRE),5/20,HELD_UP
+2026-11-28,fairyhouse,15:13,934334,Zam Bobbler,7471134,5614-,237,COMPLETE,,4,2025-09-27,2026-04-05,Fairyhouse,4/20,PROMINENT
+2026-11-28,fairyhouse,15:13,934334,Magic Day,5826676,-62436,14,COMPLETE,,15,2024-11-17,2026-11-14,Navan (IRE),6/12,MIDFIELD
+2026-11-28,fairyhouse,15:13,934334,Noble Name,7139197,1435-8,202,COMPLETE,,8,2025-05-08,2026-05-10,Cork,8/15,HELD_UP
+2026-11-28,fairyhouse,15:13,934334,Sequoiaspirit,3168643,P-1007,13,COMPLETE,,57,2020-08-07,2026-11-15,Navan (IRE),7/16,LED
+2026-11-28,fairyhouse,15:13,934334,Burru,4893331,-10460,13,COMPLETE,,23,2023-10-03,2026-11-15,Navan (IRE),13/16,LED
+2026-11-28,fairyhouse,15:13,934334,Thisaintthat,8725510,5562-7,202,COMPLETE,,5,2026-02-04,2026-05-10,Cork,7/8,MIDFIELD
+2026-11-28,fairyhouse,15:13,934334,Dont Go Yet,2548813,133-U9,14,COMPLETE,,40,2019-03-10,2026-11-14,Navan (IRE),9/15,MIDFIELD
+2026-11-28,fairyhouse,15:13,934334,Duke Of Leggagh,4315451,1P/9-7,14,COMPLETE,,50,2022-05-14,2026-11-14,Navan (IRE),7/15,HELD_UP
+2026-11-28,fairyhouse,15:13,934334,Portnacoo,4843425,4PU94-,283,COMPLETE,,24,2023-02-19,2026-02-18,Punchestown,4/5,LED
+2026-11-28,fairyhouse,15:13,934334,Ms Agartha Yeats,4666919,3/F0P-,337,COMPLETE,,12,2022-10-30,2025-12-26,Limerick,-/12,PROMINENT
+2026-11-28,fairyhouse,15:43,934335,Uncle Pad,8489863,1-,300,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,fairyhouse,15:43,934335,Stanger,9110909,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,fairyhouse,15:43,934335,Golden Current,8455199,1-,333,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,fairyhouse,15:43,934335,Beautiful Moon,10116225,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,fairyhouse,15:43,934335,Okingston Town,8844487,3-,273,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,fairyhouse,15:43,934335,Noharmintrying,9715939,5,96,COMPLETE,,1,2026-08-24,2026-08-24,Ballinrobe (IRE),5/15,
+2026-11-28,fairyhouse,15:43,934335,Back In Favour,7529909,-18330,46,PARTIAL,card form '-18330' shows 5 runs; we hold 4 (older runs missing),4,2026-07-06,2026-10-13,Punchestown (IRE),12/14,HELD_UP
+2026-11-28,fairyhouse,15:43,934335,Seedino,10116228,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,fairyhouse,15:43,934335,Mule Skinner,8844512,35-8,168,PARTIAL,card form '35-8' shows 3 runs; we hold 1 (older runs missing),1,2026-06-13,2026-06-13,Downpatrick (IRE),8/8,
+2026-11-28,fairyhouse,15:43,934335,Cant Stopthe Clock,10044349,7,28,COMPLETE,,1,2026-10-31,2026-10-31,Down Royal (IRE),7/14,
+2026-11-28,fairyhouse,15:43,934335,Ladies Luck,9083785,4-3,195,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,newbury,12:00,931715,Aqua Bleu,8330890,111P-2,22,COMPLETE,,6,2025-11-03,2026-11-06,Aintree,2/4,LED
+2026-11-28,newbury,12:00,931715,Sappingirl,8299916,26-2,23,COMPLETE,,3,2025-10-26,2026-11-05,Newbury,2/10,MIDFIELD
+2026-11-28,newbury,12:00,931715,Well Achieved,8812086,1-,286,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,newbury,12:00,931715,Trial By Jury,8268281,12-,346,PARTIAL,card form '12-' shows 2 runs; we hold 1 (older runs missing),1,2025-12-17,2025-12-17,Newbury,2/8,
+2026-11-28,newbury,12:00,931715,Terrano,7365419,3/1,210,PARTIAL,card form '3/1' shows 2 runs; we hold 1 (older runs missing),1,2026-05-02,2026-05-02,Hexham,1/8,
+2026-11-28,newbury,12:00,931715,Livio,8418718,1/3017,63,PARTIAL,card form '1/3017' shows 5 runs; we hold 4 (older runs missing),4,2026-05-11,2026-09-26,Listowel (IRE),7/14,PROMINENT
+2026-11-28,newbury,12:00,931715,Indulto Rouge,7499332,1305-,249,PARTIAL,card form '1305-' shows 4 runs; we hold 3 (older runs missing),3,2025-11-25,2026-03-24,Southwell,5/7,
+2026-11-28,newbury,12:00,931715,Wonder Flying,7431633,5837-3,27,COMPLETE,,5,2025-10-25,2026-11-01,Carlisle,3/8,MIDFIELD
+2026-11-28,newbury,12:00,931715,Spare The Voice,8940393,1-5,23,PARTIAL,card form '1-5' shows 2 runs; we hold 1 (older runs missing),1,2026-11-05,2026-11-05,Newbury,5/10,
+2026-11-28,newbury,12:00,931715,Asamahleroffact,9222133,F,203,MISSING,"card shows previous runs but none are in our results (gap in our data, or runs abroad/point-to-point)",0,,,,,
+2026-11-28,newbury,12:00,931715,Ballypollard,7488286,1-6,210,PARTIAL,card form '1-6' shows 2 runs; we hold 1 (older runs missing),1,2026-05-02,2026-05-02,Punchestown,6/16,
+2026-11-28,newbury,12:00,931715,Mister Coko,8079928,58-35,36,COMPLETE,,4,2025-11-22,2026-10-23,Cheltenham,5/7,HELD_UP
+2026-11-28,newbury,12:00,931715,Company Charge,9522213,5U387,23,COMPLETE,,5,2026-07-13,2026-11-05,Newbury,7/10,HELD_UP
+2026-11-28,newbury,12:35,931713,Royal Response,8844480,21-1,23,PARTIAL,card form '21-1' shows 3 runs; we hold 1 (older runs missing),1,2026-11-05,2026-11-05,Newbury,1/10,
+2026-11-28,newbury,12:35,931713,Fairy Park,7365427,1/23-1,37,PARTIAL,card form '1/23-1' shows 4 runs; we hold 3 (older runs missing),3,2026-02-28,2026-10-22,Ffos Las,1/8,PROMINENT
+2026-11-28,newbury,12:35,931713,Salsinha,7806373,34-213,29,COMPLETE,,8,2025-07-11,2026-10-30,Down Royal (IRE),3/7,PROMINENT
+2026-11-28,newbury,12:35,931713,Katios Queen,8313787,133-1,44,COMPLETE,,4,2025-10-26,2026-10-15,Fontwell,1/6,HELD_UP
+2026-11-28,newbury,12:35,931713,Timamzel,7413938,1218-,233,COMPLETE,,4,2025-12-07,2026-04-09,Aintree,8/20,PROMINENT
+2026-11-28,newbury,12:35,931713,LAmandine,8620468,31-1,46,COMPLETE,,3,2026-01-15,2026-10-13,Southwell,1/4,
+2026-11-28,newbury,12:35,931713,Miss Kingston,7395190,41-261,33,COMPLETE,,10,2025-04-11,2026-10-26,Hereford,1/12,LED
+2026-11-28,newbury,12:35,931713,Boombox,7204749,23-221,14,PARTIAL,card form '23-221' shows 5 runs; we hold 3 (older runs missing),3,2026-05-11,2026-11-14,Uttoxeter,1/7,
+2026-11-28,newbury,12:35,931713,Ladies Day,7374136,-21142,80,COMPLETE,,10,2025-05-10,2026-09-09,Sedgefield,2/5,PROMINENT
+2026-11-28,newbury,12:35,931713,Marvelous Dragones,8607150,0230-1,18,PARTIAL,card form '0230-1' shows 5 runs; we hold 2 (older runs missing),2,2026-01-01,2026-11-10,Huntingdon,1/7,
+2026-11-28,newbury,12:35,931713,Mythical Bird,6247226,,32,COMPLETE,,20,2024-08-01,2026-10-27,Wolverhampton (AW),5/8,HELD_UP
+2026-11-28,newbury,13:10,931711,Knight Of Allen,5431190,42P3-2,21,COMPLETE,,14,2023-11-18,2026-11-07,Aintree,2/11,HELD_UP
+2026-11-28,newbury,13:10,931711,Leader In The Park,4668926,/22P-4,30,COMPLETE,,13,2023-11-25,2026-10-29,Ffos Las,4/6,LED
+2026-11-28,newbury,13:10,931711,Norn Iron,4705217,2311-2,211,COMPLETE,,12,2023-03-19,2026-05-01,Punchestown,2/22,HELD_UP
+2026-11-28,newbury,13:10,931711,Barlovento,5469751,21831-,220,COMPLETE,,10,2024-01-30,2026-04-22,Perth,1/7,PROMINENT
+2026-11-28,newbury,13:10,931711,El Capitaine,4130931,4371-1,42,COMPLETE,,14,2022-02-12,2026-10-17,Newton Abbot,1/4,PROMINENT
+2026-11-28,newbury,13:10,931711,Kdeux Saint Fray,5867539,4307-2,23,COMPLETE,,12,2024-11-22,2026-11-05,Plumpton,2/3,PROMINENT
+2026-11-28,newbury,13:10,931711,Jipcot,4604761,1404-U,30,COMPLETE,,20,2023-03-17,2026-10-29,Stratford,-/10,LED
+2026-11-28,newbury,13:10,931711,Kings Threshold,4042094,410-42,21,COMPLETE,,24,2021-12-31,2026-11-07,Uttoxeter,2/5,HELD_UP
+2026-11-28,newbury,13:10,931711,Demnat,3320102,P/329/,625,COMPLETE,,7,2024-02-07,2025-03-13,Cheltenham,9/20,PROMINENT
+2026-11-28,newbury,13:10,931711,Holetown,4996570,/4613-,253,COMPLETE,,4,2025-12-10,2026-03-20,Newbury,3/11,PROMINENT
+2026-11-28,newbury,13:10,931711,Chuggy,5781926,1125-4,17,COMPLETE,,9,2025-03-08,2026-11-11,Bangor-on-Dee,4/5,LED
+2026-11-28,newbury,13:10,931711,Go West,4189606,3144-2,30,COMPLETE,,16,2022-11-18,2026-10-29,Stratford,2/10,PROMINENT
+2026-11-28,newbury,13:10,931711,Moon dOrange,4652679,37-074,35,COMPLETE,,30,2022-12-28,2026-10-24,Cheltenham,4/9,HELD_UP
+2026-11-28,newbury,13:10,931711,Down Memory Lane,4652673,P5-P89,21,COMPLETE,,14,2023-02-25,2026-11-07,Aintree,9/11,HELD_UP
+2026-11-28,newbury,13:10,931711,Sheldon,2969896,2321-1,19,COMPLETE,,42,2020-01-15,2026-11-09,Stratford,1/8,LED
+2026-11-28,newbury,13:10,931711,Eyed,3980246,275P7-,225,COMPLETE,,25,2021-12-04,2026-04-17,Ayr,7/15,HELD_UP
+2026-11-28,newbury,13:10,931711,Royal Jewel,4994591,63132-,238,COMPLETE,,18,2023-11-10,2026-04-04,Newton Abbot,2/6,PROMINENT
+2026-11-28,newbury,13:10,931711,Neon Moon,3014342,4F50-8,28,COMPLETE,,37,2020-11-24,2026-10-31,Ascot,8/10,HELD_UP
+2026-11-28,newbury,13:40,931714,Moneygarrow,5864585,35118-,260,COMPLETE,,8,2024-10-12,2026-03-13,Cheltenham,8/22,HELD_UP
+2026-11-28,newbury,13:40,931714,A King Of Magic,7164959,45121-,219,COMPLETE,,6,2025-02-22,2026-04-23,Perth,1/8,MIDFIELD
+2026-11-28,newbury,13:40,931714,Spirits Bay,4705218,3476-2,23,COMPLETE,,19,2022-11-18,2026-11-05,Newbury,2/16,HELD_UP
+2026-11-28,newbury,13:40,931714,Gentleman Toboot,5727979,/1137-,266,COMPLETE,,7,2024-10-30,2026-03-07,Sandown,7/17,LED
+2026-11-28,newbury,13:40,931714,Firestream,3509829,/P56-6,23,COMPLETE,,13,2021-10-30,2026-11-05,Newbury,6/16,HELD_UP
+2026-11-28,newbury,13:40,931714,Frontier Prince,6609367,34-011,36,COMPLETE,,14,2024-11-07,2026-10-23,Cheltenham,1/11,MIDFIELD
+2026-11-28,newbury,13:40,931714,Fingle Bridge,4662611,13200-,232,COMPLETE,,11,2022-10-28,2026-04-10,Aintree,21/22,
+2026-11-28,newbury,13:40,931714,Califet En Vol,5412939,5147-6,28,COMPLETE,,12,2024-04-20,2026-10-31,Ascot,6/10,PROMINENT
+2026-11-28,newbury,13:40,931714,Court In The Act,4924380,/1041/,608,COMPLETE,,11,2023-03-09,2025-03-30,Ascot,1/3,LED
+2026-11-28,newbury,13:40,931714,Walk On High,3908384,115P-4,26,COMPLETE,,16,2021-11-03,2026-11-02,Plumpton,4/12,HELD_UP
+2026-11-28,newbury,13:40,931714,Ace Of Spades,5472324,2108-0,35,COMPLETE,,16,2024-01-10,2026-10-24,Cheltenham,10/19,HELD_UP
+2026-11-28,newbury,13:40,931714,Jigs Forge,4969825,7/315-,294,COMPLETE,,7,2024-11-20,2026-02-07,Newbury,5/10,LED
+2026-11-28,newbury,13:40,931714,One Horse Town,6706380,220-63,35,COMPLETE,,16,2025-01-16,2026-10-24,Cheltenham,3/7,LED
+2026-11-28,newbury,13:40,931714,Nurse Susan,3910265,1140-8,27,COMPLETE,,15,2021-11-08,2026-11-01,Carlisle,8/10,HELD_UP
+2026-11-28,newbury,13:40,931714,Kamsinas,4159586,55F3-6,27,COMPLETE,,22,2022-11-05,2026-11-01,Carlisle,6/10,HELD_UP
+2026-11-28,newbury,13:40,931714,Too Bossy For Us,5268403,16P-60,41,COMPLETE,,25,2023-09-05,2026-10-18,Leopardstown (IRE),9/15,MIDFIELD
+2026-11-28,newbury,13:40,931714,Insurrection,4753578,3803-7,21,COMPLETE,,17,2023-04-09,2026-11-07,Aintree,7/11,HELD_UP
+2026-11-28,newbury,14:20,931710,Idaho Sun,5889851,6/111-,337,COMPLETE,,6,2024-10-30,2025-12-26,Aintree,1/6,PROMINENT
+2026-11-28,newbury,14:20,931710,Minella Yoga,8236364,11315-,217,COMPLETE,,5,2025-11-04,2026-04-25,Sandown,5/15,PROMINENT
+2026-11-28,newbury,14:20,931710,La Conquiere,5809865,1206-2,28,COMPLETE,,8,2024-12-21,2026-10-31,Wetherby,2/4,HELD_UP
+2026-11-28,newbury,14:20,931710,Mossy Fen Road,5708487,9/112-,300,COMPLETE,,5,2025-02-01,2026-02-01,Musselburgh,2/4,HELD_UP
+2026-11-28,newbury,14:20,931710,Mondo Man,5381828,24116-,162,COMPLETE,,11,2024-06-21,2026-06-19,Ascot,16/17,HELD_UP
+2026-11-28,newbury,14:20,931710,White Noise,7082546,1212-4,20,COMPLETE,,8,2025-04-17,2026-11-08,Sandown,4/8,PROMINENT
+2026-11-28,newbury,14:20,931710,Our Boy Stan,6928469,1/166-,224,COMPLETE,,5,2025-01-01,2026-04-18,Ayr,6/8,PROMINENT
+2026-11-28,newbury,14:20,931710,Klycot,7525294,41213-,31,COMPLETE,,7,2025-12-05,2026-10-28,Nottingham,7/13,LED
+2026-11-28,newbury,15:00,930675,Wendigo,4922461,31F6-1,27,COMPLETE,,15,2023-10-12,2026-11-01,Carlisle,1/3,PROMINENT
+2026-11-28,newbury,15:00,930675,Mr Hope Street,4818549,6341-3,30,COMPLETE,,18,2023-02-12,2026-10-29,Stratford,3/10,HELD_UP
+2026-11-28,newbury,15:00,930675,Regents Stroll,5299424,31232-,232,COMPLETE,,12,2023-11-25,2026-04-10,Aintree,2/8,LED
+2026-11-28,newbury,15:00,930675,Road To Home,5689598,3P23-1,53,COMPLETE,,13,2024-06-03,2026-10-06,Galway (IRE),1/8,HELD_UP
+2026-11-28,newbury,15:00,930675,Kap Vert,5713786,3411-3,22,COMPLETE,,14,2024-11-10,2026-11-06,Aintree,3/12,PROMINENT
+2026-11-28,newbury,15:00,930675,Miami Magic,4922465,131F-2,23,COMPLETE,,13,2024-05-17,2026-11-05,Newbury,2/16,PROMINENT
+2026-11-28,newbury,15:00,930675,Panic Attack,2969900,113F3-,220,COMPLETE,,28,2020-01-16,2026-04-22,Perth,3/4,PROMINENT
+2026-11-28,newbury,15:00,930675,Masaccio,2394553,3331/1,23,COMPLETE,,18,2020-11-28,2026-11-05,Newbury,1/16,PROMINENT
+2026-11-28,newbury,15:00,930675,Booster Bob,4853677,/15F0-,232,COMPLETE,,16,2023-02-01,2026-04-10,Aintree,13/27,HELD_UP
+2026-11-28,newbury,15:00,930675,Myretown,4031502,4P08-1,35,COMPLETE,,15,2022-10-08,2026-10-24,Kelso,1/4,LED
+2026-11-28,newbury,15:00,930675,Havaila,4283989,36111-,217,COMPLETE,,37,2022-05-01,2026-04-25,Sandown,1/11,HELD_UP
+2026-11-28,newbury,15:00,930675,The Jukebox Kid,5671323,411P-0,23,COMPLETE,,8,2025-03-15,2026-11-05,Newbury,14/16,PROMINENT
+2026-11-28,newbury,15:00,930675,Downmexicoway,4867653,134-53,66,COMPLETE,,14,2023-04-25,2026-09-23,Listowel (IRE),3/18,PROMINENT
+2026-11-28,newbury,15:00,930675,One Big Bang,4175225,1336-5,23,COMPLETE,,23,2023-01-31,2026-11-05,Newbury,5/16,PROMINENT
+2026-11-28,newbury,15:00,930675,Here Comes Georgie,4984097,633-17,22,COMPLETE,,25,2023-04-17,2026-11-06,Aintree,7/12,PROMINENT
+2026-11-28,newbury,15:00,930675,The Doyen Chief,4725815,129-P2,34,COMPLETE,,18,2023-04-06,2026-10-25,Market Rasen,2/4,HELD_UP
+2026-11-28,newbury,15:00,930675,Amirite,3862940,0PP-40,23,COMPLETE,,25,2021-12-29,2026-11-05,Newbury,13/16,LED
+2026-11-28,newbury,15:38,931712,Un Sens A La Vie,5864671,142-11,25,COMPLETE,,9,2025-02-18,2026-11-03,Warwick,1/2,LED
+2026-11-28,newbury,15:38,931712,Ryans Rocket,4183370,1U61-B,7,COMPLETE,,14,2023-11-09,2026-11-21,Ascot,-/7,PROMINENT
+2026-11-28,newbury,15:38,931712,Wreckless Eric,5511509,6203-2,30,COMPLETE,,16,2024-01-23,2026-10-29,Ffos Las,2/6,HELD_UP
+2026-11-28,newbury,15:38,931712,Pure Carbon,4948270,1231-2,20,COMPLETE,,14,2023-11-09,2026-11-08,Ffos Las,2/4,HELD_UP
+2026-11-28,newbury,15:38,931712,Breaking Cover,4129104,441114,29,COMPLETE,,22,2022-10-29,2026-10-30,Wetherby,4/6,HELD_UP
+2026-11-28,newbury,15:38,931712,Pleasington,5412824,52FP1-,225,COMPLETE,,11,2023-11-18,2026-04-17,Ayr,1/9,HELD_UP
+2026-11-28,newbury,15:38,931712,The Four Sixes,4173272,74-P51,31,COMPLETE,,26,2022-03-06,2026-10-28,Newton Abbot,1/5,PROMINENT
+2026-11-28,newbury,15:38,931712,Stencil,5903606,210P-6,22,COMPLETE,,8,2025-01-25,2026-11-06,Aintree,6/6,HELD_UP
+2026-11-28,newbury,15:38,931712,Jour dEvasion,5051938,11P8-F,28,COMPLETE,,20,2023-05-22,2026-10-31,Ascot,-/11,PROMINENT
+2026-11-28,newbury,15:38,931712,Escapeandevade,3347663,2P2-03,37,COMPLETE,,25,2022-01-02,2026-10-22,Ffos Las,3/6,LED
+2026-11-28,newbury,15:38,931712,Jony R,5842792,144P-P,13,COMPLETE,,11,2024-04-20,2026-11-15,Cheltenham,-/9,HELD_UP
+2026-11-28,newcastle,11:40,931728,Leader Allen,7355980,2152/2,119,PARTIAL,card form '2152/2' shows 5 runs; we hold 1 (older runs missing),1,2026-08-01,2026-08-01,Galway (IRE),2/19,
+2026-11-28,newcastle,11:40,931728,Nikolavs Otto,8210011,2-5,44,PARTIAL,card form '2-5' shows 2 runs; we hold 1 (older runs missing),1,2026-10-15,2026-10-15,Perth,5/9,
+2026-11-28,newcastle,11:40,931728,Measure Of A Man,9055547,P-22,28,PARTIAL,card form 'P-22' shows 3 runs; we hold 1 (older runs missing),1,2026-10-31,2026-10-31,Wetherby,2/6,
+2026-11-28,newcastle,11:40,931728,Magical Major,8779472,2-8,19,PARTIAL,card form '2-8' shows 2 runs; we hold 1 (older runs missing),1,2026-11-09,2026-11-09,Carlisle,8/14,
+2026-11-28,newcastle,11:40,931728,Cape Warrior,9000068,22-255,19,COMPLETE,,5,2026-03-27,2026-11-09,Carlisle,5/14,PROMINENT
+2026-11-28,newcastle,11:40,931728,Beluga Lagoon,9254415,U15,22,PARTIAL,card form 'U15' shows 3 runs; we hold 1 (older runs missing),1,2026-11-06,2026-11-06,Hexham,5/9,
+2026-11-28,newcastle,11:40,931728,Dilrisk,8844478,43-00,19,COMPLETE,,4,2026-03-14,2026-11-09,Carlisle,14/14,MIDFIELD
+2026-11-28,newcastle,11:40,931728,Rhythm Of The Rye,9051005,2-6,23,PARTIAL,card form '2-6' shows 2 runs; we hold 1 (older runs missing),1,2026-11-05,2026-11-05,Newcastle,6/8,
+2026-11-28,newcastle,11:40,931728,Wings Of The Glen,10035609,37,10,COMPLETE,,2,2026-10-30,2026-11-18,Hexham,7/9,
+2026-11-28,newcastle,11:40,931728,LAppel Du Large,8455166,90-P,198,COMPLETE,,3,2025-12-11,2026-05-14,Perth,-/13,PROMINENT
+2026-11-28,newcastle,12:15,931725,Passengerontheship,5047968,722211,27,COMPLETE,,22,2023-10-08,2026-11-01,Carlisle,1/8,LED
+2026-11-28,newcastle,12:15,931725,Red Delta,4936826,1306-4,41,COMPLETE,,11,2025-02-13,2026-10-18,Sedgefield,4/7,HELD_UP
+2026-11-28,newcastle,12:15,931725,Impatient,4261339,5124-1,20,COMPLETE,,27,2019-08-07,2026-11-08,Ffos Las,1/6,PROMINENT
+2026-11-28,newcastle,12:15,931725,I Wish You,5426844,4313-U,44,COMPLETE,,16,2023-11-11,2026-10-15,Perth,-/6,HELD_UP
+2026-11-28,newcastle,12:15,931725,Ki Woo,5613804,5-12P2,21,COMPLETE,,14,2024-12-10,2026-11-07,Kelso,2/4,PROMINENT
+2026-11-28,newcastle,12:15,931725,Pinot Rouge,4217545,3-72P4,10,COMPLETE,,24,2024-01-30,2026-11-18,Hexham,4/4,HELD_UP
+2026-11-28,newcastle,12:50,931726,Old Coast Road,7238130,1-21,21,PARTIAL,card form '1-21' shows 3 runs; we hold 2 (older runs missing),2,2026-10-11,2026-11-07,Aintree,1/2,
+2026-11-28,newcastle,12:50,931726,Splendid Fellow,7404511,26-213,23,COMPLETE,,7,2025-10-18,2026-11-05,Newbury,3/16,PROMINENT
+2026-11-28,newcastle,12:50,931726,Lauvergnat,8236319,P1-2,27,PARTIAL,card form 'P1-2' shows 3 runs; we hold 1 (older runs missing),1,2026-11-01,2026-11-01,Carlisle,2/8,
+2026-11-28,newcastle,12:50,931726,Elusive Dreams,7139225,1-1,22,PARTIAL,card form '1-1' shows 2 runs; we hold 1 (older runs missing),1,2026-11-06,2026-11-06,Hexham,1/9,
+2026-11-28,newcastle,12:50,931726,Bay Runner,7499349,32-3,28,PARTIAL,card form '32-3' shows 3 runs; we hold 2 (older runs missing),2,2026-03-14,2026-10-31,Ayr,3/8,
+2026-11-28,newcastle,12:50,931726,Dream On Mick,8366484,P11-P,213,PARTIAL,card form 'P11-P' shows 4 runs; we hold 2 (older runs missing),2,2026-04-04,2026-04-29,Punchestown,-/14,
+2026-11-28,newcastle,13:25,931723,Jordans Cross,5784870,F118B-,232,COMPLETE,,9,2024-11-06,2026-04-10,Aintree,-/8,PROMINENT
+2026-11-28,newcastle,13:25,931723,Crest Of Fortune,5299432,4635-2,27,COMPLETE,,14,2023-12-12,2026-11-01,Worcester,2/7,HELD_UP
+2026-11-28,newcastle,13:25,931723,Il Est Francais,3974499,3PPP-5,45,COMPLETE,,7,2023-12-26,2026-10-14,Ffos Las,5/8,PROMINENT
+2026-11-28,newcastle,13:25,931723,Apple Away,4159582,/31-62,27,COMPLETE,,21,2022-09-28,2026-11-01,Carlisle,2/4,LED
+2026-11-28,newcastle,13:25,931723,Laurens Bay,4867628,1/133-,314,COMPLETE,,9,2024-03-28,2026-01-18,Windsor,3/6,HELD_UP
+2026-11-28,newcastle,13:25,931723,First Confession,5457590,5F10-1,17,COMPLETE,,12,2024-10-25,2026-11-11,Bangor-on-Dee,1/5,LED
+2026-11-28,newcastle,13:25,931723,Alcedo,4705216,9122P-,259,COMPLETE,,14,2022-12-21,2026-03-14,Uttoxeter,-/16,PROMINENT
+2026-11-28,newcastle,13:25,931723,King Turgeon,3886697,/66F-2,22,COMPLETE,,21,2023-01-01,2026-11-06,Aintree,2/12,PROMINENT
+2026-11-28,newcastle,13:25,931723,Konfusion,4387127,3F3-5P,7,COMPLETE,,20,2022-06-17,2026-11-21,Haydock,-/7,PROMINENT
+2026-11-28,newcastle,13:25,931723,Intense Approach,4910540,-06P21,28,COMPLETE,,25,2023-05-30,2026-10-31,Down Royal (IRE),1/12,LED
+2026-11-28,newcastle,14:00,931722,Mydaddypaddy,7200243,/1123-,263,COMPLETE,,5,2025-03-02,2026-03-10,Cheltenham,3/11,
+2026-11-28,newcastle,14:00,931722,Alexei,5601165,3143-1,21,COMPLETE,,12,2024-11-14,2026-11-07,Aintree,1/4,HELD_UP
+2026-11-28,newcastle,14:00,931722,Golden Ace,4713776,254-23,37,COMPLETE,,18,2023-02-18,2026-10-22,Carlisle,3/8,PROMINENT
+2026-11-28,newcastle,14:00,931722,Minella Study,6429624,11138-,233,COMPLETE,,11,2024-09-10,2026-04-09,Aintree,8/10,PROMINENT
+2026-11-28,newcastle,14:00,931722,Indemnity,4002062,1-0262,28,COMPLETE,,26,2023-09-26,2026-10-31,Ascot,2/16,PROMINENT
+2026-11-28,newcastle,14:35,931724,Brace For Landing,7231804,3550-1,23,COMPLETE,,5,2025-10-30,2026-11-05,Newcastle,1/8,PROMINENT
+2026-11-28,newcastle,14:35,931724,Las Canals,6723577,/911-1,29,COMPLETE,,4,2025-12-10,2026-10-30,Uttoxeter,1/15,HELD_UP
+2026-11-28,newcastle,14:35,931724,Cave Bridge,7404520,/111-6,23,PARTIAL,card form '/111-6' shows 4 runs; we hold 3 (older runs missing),3,2025-10-16,2026-11-05,Newbury,6/16,
+2026-11-28,newcastle,14:35,931724,Kool Raoul,6692975,785-11,22,COMPLETE,,12,2024-11-29,2026-11-06,Hexham,1/9,PROMINENT
+2026-11-28,newcastle,14:35,931724,The Kalooki Kid,4652628,456P-2,14,COMPLETE,,18,2022-10-24,2026-11-14,Wetherby,2/6,MIDFIELD
+2026-11-28,newcastle,14:35,931724,Tiddesley Wood,5299444,1341-4,49,COMPLETE,,8,2025-01-24,2026-10-10,Hexham,4/4,PROMINENT
+2026-11-28,newcastle,14:35,931724,Dreams Ka,8507334,121814,21,COMPLETE,,12,2025-12-12,2026-11-07,Kelso,4/11,MIDFIELD
+2026-11-28,newcastle,14:35,931724,Captain Butler,4682869,6454P-,225,COMPLETE,,9,2023-05-16,2026-04-17,Ayr,-/11,PROMINENT
+2026-11-28,newcastle,14:35,931724,Tashkhan,3292652,13534-,21,COMPLETE,,37,2021-03-27,2026-11-07,Doncaster,16/23,HELD_UP
+2026-11-28,newcastle,14:35,931724,Cannock Park,4922410,45/0-R,168,COMPLETE,,13,2023-03-26,2026-06-13,Hexham,-/8,PROMINENT
+2026-11-28,newcastle,15:18,931727,Albie Littlewood,5360140,6511-1,38,COMPLETE,,7,2023-10-31,2026-10-21,Worcester,1/9,HELD_UP
+2026-11-28,newcastle,15:18,931727,Looking Splendid,4701582,612-31,23,COMPLETE,,22,2022-11-17,2026-11-05,Newcastle,1/5,LED
+2026-11-28,newcastle,15:18,931727,Authorized Mission,5521267,/1295-,253,COMPLETE,,14,2023-12-23,2026-03-20,Musselburgh,5/13,PROMINENT
+2026-11-28,newcastle,15:18,931727,Treaty Boy,4682893,4-41F1,23,COMPLETE,,26,2023-11-04,2026-11-05,Newcastle,1/9,PROMINENT
+2026-11-28,newcastle,15:18,931727,Diamond Mix,5376170,/13-22,22,COMPLETE,,13,2023-10-19,2026-11-06,Hexham,2/7,PROMINENT
+2026-11-28,newcastle,15:18,931727,Glory And Honour,3030298,723632,15,COMPLETE,,74,2020-10-08,2026-11-13,Sedgefield,2/3,LED
+2026-11-28,newcastle,15:18,931727,Ballyfort,4303272,1622-2,35,COMPLETE,,19,2023-11-04,2026-10-24,Kelso,2/5,HELD_UP
+2026-11-28,newcastle,15:18,931727,Genois,3272415,2-P4UP,29,COMPLETE,,33,2020-11-08,2026-10-30,Wetherby,-/6,HELD_UP
+2026-11-28,newcastle,15:18,931727,Heads Or Harps,3984120,2322-7,44,COMPLETE,,13,2022-10-27,2026-10-15,Perth,7/8,HELD_UP
+2026-11-28,southwell,16:30,931886,Levens Hall,7020372,31,138,COMPLETE,,2,2026-05-21,2026-07-13,Windsor,1/11,
+2026-11-28,southwell,16:30,931886,El Nay,8290517,232324,154,COMPLETE,,6,2026-02-21,2026-06-27,Chester,4/4,LED
+2026-11-28,southwell,16:30,931886,Aura Champagne,8031345,-33238,6,COMPLETE,,6,2025-09-19,2026-11-22,Lingfield (AW),8/9,PROMINENT
+2026-11-28,southwell,16:30,931886,Francescas Dream,10044214,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,southwell,16:30,931886,Micro Flame,10115575,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,southwell,16:30,931886,I Am Legend,5134074,6/,1255,COMPLETE,,1,2023-06-22,2023-06-22,Chelmsford (AW),6/11,
+2026-11-28,southwell,16:30,931886,Beatrice Briannie,7205032,54,8,COMPLETE,,2,2026-10-22,2026-11-20,Wolverhampton (AW),4/5,
+2026-11-28,southwell,16:30,931886,Quipster,10114783,9,9,COMPLETE,,1,2026-11-19,2026-11-19,Lingfield (AW),9/9,
+2026-11-28,southwell,17:00,931888,Arthur Carrot,9678426,263241,9,COMPLETE,,6,2026-08-17,2026-11-19,Lingfield (AW),1/8,PROMINENT
+2026-11-28,southwell,17:00,931888,Bacha,9424942,5332,9,COMPLETE,,4,2026-06-27,2026-11-19,Lingfield (AW),2/8,HELD_UP
+2026-11-28,southwell,17:00,931888,Thai Baht,9725835,2851,23,COMPLETE,,4,2026-08-25,2026-11-05,Southwell (AW),1/13,HELD_UP
+2026-11-28,southwell,17:00,931888,Odegaard,9340081,54552,22,COMPLETE,,5,2026-06-05,2026-11-06,Newcastle (AW),2/11,PROMINENT
+2026-11-28,southwell,17:00,931888,Marsala,9447234,4733,63,COMPLETE,,4,2026-07-02,2026-09-26,Newmarket,3/10,PROMINENT
+2026-11-28,southwell,17:00,931888,Lions Den,9222203,61,42,COMPLETE,,2,2026-09-25,2026-10-17,Catterick,1/7,
+2026-11-28,southwell,17:00,931888,Knightbolt,9678433,483,23,COMPLETE,,3,2026-08-14,2026-11-05,Southwell (AW),3/9,PROMINENT
+2026-11-28,southwell,17:00,931888,Koodini,9194407,310494,43,COMPLETE,,10,2026-05-07,2026-10-16,Haydock,4/9,PROMINENT
+2026-11-28,southwell,17:00,931888,Mojito Madness,8688498,53199,71,COMPLETE,,5,2026-06-08,2026-09-18,Newbury,9/11,PROMINENT
+2026-11-28,southwell,17:00,931888,From Me To You,8688629,063619,30,COMPLETE,,11,2026-04-17,2026-10-29,Southwell (AW),9/13,HELD_UP
+2026-11-28,southwell,17:00,931888,Frumoasa,8881447,13006,26,COMPLETE,,5,2026-04-29,2026-11-02,Chelmsford (AW),6/9,MIDFIELD
+2026-11-28,southwell,17:00,931888,Bullrider,9456981,23566,59,COMPLETE,,5,2026-07-01,2026-09-30,Kempton (AW),6/13,PROMINENT
+2026-11-28,southwell,17:00,931888,Jeepers Fortune,8881160,676,35,COMPLETE,,3,2026-09-02,2026-10-24,Southwell (AW),6/10,MIDFIELD
+2026-11-28,southwell,17:30,931887,Goldwork,7204783,364431,11,COMPLETE,,16,2025-04-30,2026-11-17,Southwell (AW),1/13,LED
+2026-11-28,southwell,17:30,931887,Lady Mariko,6728409,004613,6,COMPLETE,,28,2024-11-18,2026-11-22,Lingfield (AW),3/11,HELD_UP
+2026-11-28,southwell,17:30,931887,Red Hat Eagle,4659069,523523,11,COMPLETE,,30,2022-10-27,2026-11-17,Southwell (AW),3/11,MIDFIELD
+2026-11-28,southwell,17:30,931887,Tasdeed,6456206,0-7841,65,COMPLETE,,9,2024-09-17,2026-09-24,Southwell (AW),1/9,MIDFIELD
+2026-11-28,southwell,17:30,931887,King Of Ithaca,4303351,584260,24,COMPLETE,,40,2022-06-22,2026-11-04,Kempton (AW),10/11,HELD_UP
+2026-11-28,southwell,17:30,931887,Jellystone Park,7436345,421003,23,COMPLETE,,6,2026-03-25,2026-11-05,Southwell (AW),3/9,LED
+2026-11-28,southwell,17:30,931887,Abduction,3106233,243632,24,COMPLETE,,82,2020-08-23,2026-11-04,Musselburgh,2/12,HELD_UP
+2026-11-28,southwell,17:30,931887,Yaajooz,4924572,036816,29,COMPLETE,,25,2023-09-06,2026-10-30,Newcastle (AW),6/11,MIDFIELD
+2026-11-28,southwell,17:30,931887,Lunario,4725959,016463,33,COMPLETE,,37,2022-11-29,2026-10-26,Kempton (AW),3/12,PROMINENT
+2026-11-28,southwell,17:30,931887,Electric Avenue,5113808,468906,213,COMPLETE,,34,2023-11-25,2026-04-29,Southwell (AW),6/9,HELD_UP
+2026-11-28,southwell,17:30,931887,Patricia R,7639443,210-78,42,COMPLETE,,6,2025-06-06,2026-10-17,Southwell (AW),8/8,HELD_UP
+2026-11-28,southwell,17:30,931887,Spy Kingdom,7280718,-50P00,35,COMPLETE,,7,2025-04-16,2026-10-24,Doncaster,13/13,HELD_UP
+2026-11-28,southwell,18:00,934389,Native Honey,58956387,155681,42,COMPLETE,,24,2024-05-13,2026-10-17,Southwell (AW),1/9,PROMINENT
+2026-11-28,southwell,18:00,934389,Venetian Sky,8227223,452843,29,COMPLETE,,9,2025-11-01,2026-10-30,Newcastle (AW),3/9,HELD_UP
+2026-11-28,southwell,18:00,934389,Stenmark,5991308,382608,6,COMPLETE,,17,2024-06-16,2026-11-22,Lingfield (AW),8/11,PROMINENT
+2026-11-28,southwell,18:00,934389,Seoul Force,7551791,3541-6,189,COMPLETE,,5,2025-06-15,2026-05-23,Curragh,6/13,PROMINENT
+2026-11-28,southwell,18:00,934389,Stanley Spencer,4839375,080006,23,COMPLETE,,31,2023-07-01,2026-11-05,Southwell (AW),6/9,MIDFIELD
+2026-11-28,southwell,18:00,934389,Decem Starr,7204781,408207,21,COMPLETE,,10,2025-08-23,2026-11-07,Doncaster,7/12,HELD_UP
+2026-11-28,southwell,18:00,934389,Glamorous Angela,5845608,323-,347,COMPLETE,,3,2025-11-01,2025-12-16,Newcastle (AW),3/6,PROMINENT
+2026-11-28,southwell,18:00,934389,Mo Anam Chara,8120550,012153,33,COMPLETE,,10,2025-09-18,2026-10-26,Southwell (AW),3/9,MIDFIELD
+2026-11-28,southwell,18:00,934389,Beauty Choice,2744022,400918,21,COMPLETE,,62,2019-10-09,2026-11-07,Doncaster,8/12,PROMINENT
+2026-11-28,southwell,18:00,934389,Dark Angel Light,9268186,7176,33,COMPLETE,,4,2026-06-13,2026-10-26,Southwell (AW),6/8,PROMINENT
+2026-11-28,southwell,18:30,931883,Unfurled,9991212,2,32,COMPLETE,,1,2026-10-27,2026-10-27,Wolverhampton (AW),2/6,
+2026-11-28,southwell,18:30,931883,Secha,10115884,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,southwell,18:30,931883,Mantuba,10115288,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,southwell,18:30,931883,Hootie Frutti,10115125,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,southwell,18:30,931883,Al Basos,10115285,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,southwell,18:30,931883,Shakiara,10116040,,,DEBUT,no previous runs,0,,,,,
+2026-11-28,southwell,18:30,931883,Late Night Show,9711573,65,43,COMPLETE,,2,2026-08-21,2026-10-16,Redcar,5/7,
+2026-11-28,southwell,18:30,931883,State Of America,9599811,86,32,COMPLETE,,2,2026-08-26,2026-10-27,Wolverhampton (AW),6/6,
+2026-11-28,southwell,19:00,931885,Palms Oasis,9866057,421,21,COMPLETE,,3,2026-09-24,2026-11-07,Southwell (AW),1/13,MIDFIELD
+2026-11-28,southwell,19:00,931885,Henley On Thames,9326750,221142,31,COMPLETE,,7,2026-06-12,2026-10-28,Kempton (AW),2/7,PROMINENT
+2026-11-28,southwell,19:00,931885,Blue Pete,9290861,73221,26,COMPLETE,,5,2026-05-30,2026-11-02,Chelmsford (AW),1/9,PROMINENT
+2026-11-28,southwell,19:00,931885,Fully Stocked,9416689,24321,42,COMPLETE,,5,2026-06-29,2026-10-17,Southwell (AW),1/11,LED
+2026-11-28,southwell,19:00,931885,Longshanks Luke,9531392,8441,40,COMPLETE,,4,2026-07-15,2026-10-19,Pontefract,1/6,HELD_UP
+2026-11-28,southwell,19:00,931885,Lady Blanche,9092902,3183,10,COMPLETE,,4,2026-04-15,2026-11-18,Kempton (AW),3/5,MIDFIELD
+2026-11-28,southwell,19:00,931885,Angel Sense,9166862,233618,79,COMPLETE,,6,2026-04-30,2026-09-10,Doncaster,8/11,PROMINENT
+2026-11-28,southwell,19:00,931885,Green Star,8881159,246,40,COMPLETE,,3,2026-09-12,2026-10-19,Pontefract,6/6,LED
+2026-11-28,southwell,19:00,931885,Cloud Summit,9331776,4666,9,COMPLETE,,4,2026-06-11,2026-11-19,Lingfield (AW),6/8,HELD_UP
+2026-11-28,southwell,19:30,931882,Elyam,6151847,53/111,29,COMPLETE,,5,2024-07-20,2026-10-30,Newcastle (AW),1/12,LED
+2026-11-28,southwell,19:30,931882,Ancient State,6916300,214526,21,COMPLETE,,22,2024-12-27,2026-11-07,Doncaster,6/22,PROMINENT
+2026-11-28,southwell,19:30,931882,Rhythm N Hooves,4274093,818214,12,COMPLETE,,55,2023-03-17,2026-11-16,Wolverhampton (AW),4/11,PROMINENT
+2026-11-28,southwell,19:30,931882,Dazzling Haze,7551815,5-5100,121,COMPLETE,,11,2025-05-17,2026-07-30,Goodwood,12/18,PROMINENT
+2026-11-28,southwell,19:30,931882,Baldomero,3271078,944256,7,COMPLETE,,75,2021-05-09,2026-11-21,Lingfield (AW),6/11,PROMINENT
+2026-11-28,southwell,19:30,931882,Jack The Bachelor,7556742,1603-4,309,COMPLETE,,7,2025-06-20,2026-01-23,Southwell (AW),4/7,LED
+2026-11-28,southwell,20:00,931884,Leading Times,8148798,12-161,21,COMPLETE,,5,2025-09-23,2026-11-07,Southwell (AW),1/14,HELD_UP
+2026-11-28,southwell,20:00,931884,Atticum,8075059,-55334,56,COMPLETE,,8,2025-09-08,2026-10-03,Ascot,4/12,MIDFIELD
+2026-11-28,southwell,20:00,931884,Toolatetonegotiate,5884206,108232,21,COMPLETE,,34,2024-05-06,2026-11-07,Southwell (AW),2/14,HELD_UP
+2026-11-28,southwell,20:00,931884,Sir Yoshi,5820851,948354,29,COMPLETE,,22,2024-05-10,2026-10-30,Newcastle (AW),4/12,PROMINENT
+2026-11-28,southwell,20:00,931884,Anaisa,7409473,734083,11,COMPLETE,,21,2025-04-16,2026-11-17,Southwell (AW),3/13,MIDFIELD
+2026-11-28,southwell,20:00,931884,Call Margot,7499459,039016,21,COMPLETE,,16,2025-05-05,2026-11-07,Southwell (AW),6/14,HELD_UP
+2026-11-28,southwell,20:00,931884,Alligator Alley,2537502,-69800,12,COMPLETE,,73,2019-05-06,2026-11-16,Wolverhampton (AW),10/11,HELD_UP
+2026-11-28,southwell,20:00,931884,Fenlander,5176439,331109,21,COMPLETE,,28,2023-07-13,2026-11-07,Southwell (AW),9/14,PROMINENT
+2026-11-28,southwell,20:30,931881,Castle Cove,5942396,6441-0,21,COMPLETE,,9,2024-05-27,2026-11-07,Doncaster,13/23,HELD_UP
+2026-11-28,southwell,20:30,931881,Lord dOr,7935107,222242,50,COMPLETE,,7,2025-08-06,2026-10-09,Newmarket,2/10,HELD_UP
+2026-11-28,southwell,20:30,931881,Tawajjah,5431197,21/213,77,COMPLETE,,7,2023-11-15,2026-09-12,Doncaster,3/12,PROMINENT
+2026-11-28,southwell,20:30,931881,Master Builder,5845542,0-1040,21,COMPLETE,,17,2024-04-29,2026-11-07,Doncaster,12/23,MIDFIELD
+2026-11-28,southwell,20:30,931881,Deira Mile,5216454,8-6785,9,COMPLETE,,12,2023-08-10,2026-11-19,Newcastle (AW),5/8,HELD_UP
+2026-11-28,southwell,20:30,931881,Orchard Keeper,5587117,4-5549,51,COMPLETE,,16,2024-01-19,2026-10-08,Bath,9/12,PROMINENT
+2026-11-28,southwell,20:30,931881,Brasil Power,3685040,090980,10,COMPLETE,,49,2021-07-22,2026-11-18,Kempton (AW),12/14,HELD_UP

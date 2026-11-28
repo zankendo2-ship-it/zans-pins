@@ -1,0 +1,13 @@
+course_id,course_name,country,race_code,surface,official_going,field_name,value,confidence,source_url
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,source_status,FETCHED,FETCH_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,relevant_section_status,SECTION_REVIEW_REQUIRED,SECTION_AUDIT,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,track_direction,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NOT_SCORED,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,layout_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,surface_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,distance_configuration,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,going_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,draw_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,pace_context,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,NARRATIVE_ONLY_NOT_NUMERIC,
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,distances_described,NOT_CONFIRMED_FOR_CONFIGURED_RACE_CODE,SOURCE_BACKED,https://www.horseracingbettingsites.co.uk/racecourses/southwell/
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,draw_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
+southwell,Southwell,GB,AW_FLAT,TAPETA,STANDARD,pace_bias_numeric,"SEE_HARD_NUMBERS_SECTION (historic results, per trip)",HISTORIC_RESULTS,reports/track_stats
