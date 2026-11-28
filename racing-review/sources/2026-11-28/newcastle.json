@@ -1,0 +1,737 @@
+{
+ "published_utc": "2026-11-28T10:05:16Z",
+ "course": "newcastle",
+ "picks": [
+  {
+   "exact_rpr_pick": "Dilrisk",
+   "exact_rpr": 66,
+   "exact_rpr_run": "RPR 66 at Carlisle 2026-10-22, good 17f (finished 12); carried 11-0 then, 11-4 today (4lb heavier)",
+   "exact_weight_change": 4,
+   "exact_confirmed": false,
+   "time": "11:40",
+   "race": "Dane Architectural Systems Millionaire EBF \"National Hunt\" Maiden Hurdle (Qualifier) (GBB Race)",
+   "distance": "2m1f",
+   "field": [
+    {
+     "name": "Leader Allen",
+     "chance": 0.522,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Nikolavs Otto",
+     "chance": 0.34,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Measure Of A Man",
+     "chance": 0.09,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Cape Warrior",
+     "chance": 0.011,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Beluga Lagoon",
+     "chance": 0.01,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Magical Major",
+     "chance": 0.007,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Dilrisk",
+     "chance": 0.007,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Rhythm Of The Rye",
+     "chance": 0.006,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Wings Of The Glen",
+     "chance": 0.005,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "LAppel Du Large",
+     "chance": 0.002,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 10,
+   "handicap": false,
+   "class": "4",
+   "win": "Leader Allen",
+   "price": "1.91",
+   "chance": 0.522,
+   "fair": "1.92",
+   "confidence": 9,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Leader Allen",
+   "data_pick": "Leader Allen",
+   "data_chance": 0.367,
+   "data_conf": 7,
+   "data_price": "1.91",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.367,
+   "evidence_price": "1.91",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "1.57 -> 1.91 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "Leader Allen drifted 1.50 -> 1.91 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Nikolavs Otto",
+   "second": "Nikolavs Otto 2.20 (34%)",
+   "rpr_pick": "Leader Allen",
+   "rpr_reason": "RPR 129; distance 0/1, going 1/1 (wins/runs); weight -8lb vs last run - fine",
+   "anchor": "Leader Allen (RPR 119 at trip/going) = WIN PICK",
+   "longshot": "Cape Warrior 41.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Leader Allen"
+  },
+  {
+   "exact_rpr_pick": "",
+   "exact_rpr": null,
+   "exact_rpr_run": "no runner has run on this exact going over this trip",
+   "exact_weight_change": null,
+   "exact_confirmed": false,
+   "time": "12:15",
+   "race": "J&D Pierce Steeling The Race Handicap Chase (GBB Race)",
+   "distance": "3m6f",
+   "field": [
+    {
+     "name": "Red Delta",
+     "chance": 0.3078,
+     "angles": [
+      "top exact-conditions RPR: A/E 1.11 (563; ~1.09 / 1.12)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Passengerontheship",
+     "chance": 0.2222,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "I Wish You",
+     "chance": 0.1986,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Impatient",
+     "chance": 0.1514,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ki Woo",
+     "chance": 0.1002,
+     "angles": [
+      "top recent RPR: Newcastle jumps A/E 1.12 (655; ~1.18 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Pinot Rouge",
+     "chance": 0.0197,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 6,
+   "handicap": true,
+   "class": "3",
+   "win": "Red Delta",
+   "price": "3.25",
+   "chance": 0.3078405727266469,
+   "fair": "3.25",
+   "confidence": 5,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Passengerontheship",
+   "data_pick": "Passengerontheship",
+   "data_chance": 0.3047,
+   "data_conf": 5,
+   "data_price": "3.50",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.309,
+   "evidence_price": "3.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top exact-conditions RPR: A/E 1.11 (563; ~1.09 / 1.12)"
+   ],
+   "win_caution": [],
+   "move": "9.00 -> 3.25 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Passengerontheship 3.50 (22%)",
+   "rpr_pick": "Ki Woo",
+   "rpr_reason": "RPR 138; distance 0/1, going 3/11 (wins/runs); weight +1lb vs last run - fine",
+   "anchor": "Red Delta (RPR 125 at trip/going) = WIN PICK",
+   "longshot": "Pinot Rouge 41.00 SPECULATIVE (ranked 6th by us)",
+   "watchlist": [],
+   "pace": "Lone front-runner - Passengerontheship could get an easy lead",
+   "changed": false,
+   "model_pick": "Red Delta"
+  },
+  {
+   "exact_rpr_pick": "",
+   "exact_rpr": null,
+   "exact_rpr_run": "no runner has run on this exact going over this trip",
+   "exact_weight_change": null,
+   "exact_confirmed": false,
+   "time": "12:50",
+   "race": "Weatherbys And Birdie Calendars \"The French Furze\" Novices' Hurdle (GBB Race)",
+   "distance": "2m6f",
+   "field": [
+    {
+     "name": "Old Coast Road",
+     "chance": 0.4404,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Splendid Fellow",
+     "chance": 0.333,
+     "angles": [
+      "top recent RPR: Newcastle jumps A/E 1.12 (655; ~1.18 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Elusive Dreams",
+     "chance": 0.1141,
+     "angles": [
+      "won on today's exact going, 1-2 in field have: A/E 1.16 (363; ~1.18 / 1.15)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Lauvergnat",
+     "chance": 0.0783,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Dream On Mick",
+     "chance": 0.0215,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Bay Runner",
+     "chance": 0.0127,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 6,
+   "handicap": false,
+   "class": "2",
+   "win": "Old Coast Road",
+   "price": "2.20",
+   "chance": 0.44042084658673847,
+   "fair": "2.28",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Old Coast Road",
+   "data_pick": "Old Coast Road",
+   "data_chance": 0.4141,
+   "data_conf": 7,
+   "data_price": "2.20",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.422,
+   "evidence_price": "2.20",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "3.75 -> 2.20 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Splendid Fellow 2.63 (33%)",
+   "rpr_pick": "Splendid Fellow",
+   "rpr_reason": "RPR 132; no runner has run at today's trip - top RPR kept; up 13lb on last run BUT has finished top-3 3x carrying 160lb+ before - can cope",
+   "anchor": "no runner has an RPR at this trip on this going",
+   "longshot": "Dream On Mick 29.00 SPECULATIVE (ranked 5th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Old Coast Road"
+  },
+  {
+   "exact_rpr_pick": "Il Est Francais",
+   "exact_rpr": 173,
+   "exact_rpr_run": "RPR 173 at Kempton 2024-12-26, good 24f (finished 2); carried 11-10 then, 12-0 today (4lb heavier)",
+   "exact_weight_change": 4,
+   "exact_confirmed": false,
+   "time": "13:25",
+   "race": "SES Engineering Powering Past The Rehearsal Handicap Chase (Premier Handicap) (GBB Race)",
+   "distance": "3m",
+   "field": [
+    {
+     "name": "Crest Of Fortune",
+     "chance": 0.2046,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Jordans Cross",
+     "chance": 0.1836,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Il Est Francais",
+     "chance": 0.1432,
+     "angles": [
+      "top exact-conditions RPR: A/E 1.11 (563; ~1.09 / 1.12)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Laurens Bay",
+     "chance": 0.1008,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "First Confession",
+     "chance": 0.0929,
+     "angles": [],
+     "cautions": [
+      "usual front-runner: A/E 0.91 (452; ~0.86 / 0.94)"
+     ]
+    },
+    {
+     "name": "Apple Away",
+     "chance": 0.0878,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "King Turgeon",
+     "chance": 0.0629,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Alcedo",
+     "chance": 0.0549,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Konfusion",
+     "chance": 0.0492,
+     "angles": [
+      "top recent RPR: Newcastle jumps A/E 1.12 (655; ~1.18 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Intense Approach",
+     "chance": 0.0201,
+     "angles": [],
+     "cautions": [
+      "usual front-runner: A/E 0.91 (452; ~0.86 / 0.94)"
+     ]
+    }
+   ],
+   "going": "Good",
+   "runners": 10,
+   "handicap": true,
+   "class": "1",
+   "win": "Crest Of Fortune",
+   "price": "4.50",
+   "chance": 0.20456019557950408,
+   "fair": "4.89",
+   "confidence": 3,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "First Confession",
+   "data_pick": "First Confession",
+   "data_chance": 0.1758,
+   "data_conf": 3,
+   "data_price": "8.50",
+   "data_angles": [],
+   "data_cautions": [
+    "usual front-runner: A/E 0.91 (452; ~0.86 / 0.94)"
+   ],
+   "evidence_chance": 0.183,
+   "evidence_price": "8.50",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "9.00 -> 4.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Jordans Cross 5.50 (18%)",
+   "rpr_pick": "First Confession",
+   "rpr_reason": "RPR 161; distance 1/4, going 3/5 (wins/runs); weight -9lb vs last run - fine",
+   "anchor": "Il Est Francais (RPR 173 at trip/going) = shortlist (our chance 14%)",
+   "longshot": "Konfusion 17.00 SPECULATIVE (ranked 7th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "Crest Of Fortune"
+  },
+  {
+   "exact_rpr_pick": "Indemnity",
+   "exact_rpr": 137,
+   "exact_rpr_run": "RPR 137 at Market Rasen 2026-07-18, good 16.5f (finished 2); carried 12-0 then, 11-10 today (4lb lighter)",
+   "exact_weight_change": -4,
+   "exact_confirmed": false,
+   "time": "14:00",
+   "race": "Bowmer And Kirkland We Build As One Fighting Fifth Hurdle (Grade 1) (GBB Race)",
+   "distance": "2m1f",
+   "field": [
+    {
+     "name": "Mydaddypaddy",
+     "chance": 0.4948,
+     "angles": [],
+     "cautions": [
+      "back from 263 days at under 2/1 (NOTE: no trap in data)"
+     ]
+    },
+    {
+     "name": "Alexei",
+     "chance": 0.3426,
+     "angles": [
+      "top recent RPR: Newcastle jumps A/E 1.12 (655; ~1.18 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Golden Ace",
+     "chance": 0.1284,
+     "angles": [
+      "top exact-conditions RPR: A/E 1.11 (563; ~1.09 / 1.12)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Minella Study",
+     "chance": 0.0216,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Indemnity",
+     "chance": 0.0127,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 5,
+   "handicap": false,
+   "class": "1",
+   "win": "Mydaddypaddy",
+   "price": "2.25",
+   "chance": 0.4947633463637344,
+   "fair": "2.03",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Mydaddypaddy",
+   "data_pick": "Mydaddypaddy",
+   "data_chance": 0.513,
+   "data_conf": 9,
+   "data_price": "2.25",
+   "data_angles": [],
+   "data_cautions": [
+    "back from 263 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "evidence_chance": 0.521,
+   "evidence_price": "2.25",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [
+    "back from 263 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "move": "2.63 -> 2.25 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Alexei 2.38 (34%)",
+   "rpr_pick": "Alexei",
+   "rpr_reason": "RPR 164; distance 3/6, going 2/4 (wins/runs); up 6lb after WINNING last time (the handicapper's rise) - has to prove it can follow up off the higher mark",
+   "anchor": "Golden Ace (RPR 147 at trip/going) = shortlist (our chance 13%)",
+   "longshot": "no longshot",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Mydaddypaddy"
+  },
+  {
+   "exact_rpr_pick": "Tiddesley Wood",
+   "exact_rpr": 127,
+   "exact_rpr_run": "RPR 127 at Kempton 2026-03-14, good 21f (finished 1); carried 11-7 then, 12-0 today (7lb heavier)",
+   "exact_weight_change": 7,
+   "exact_confirmed": false,
+   "time": "14:35",
+   "race": "Ryder & Cundall Designed To Go The Distance Handicap Hurdle",
+   "distance": "2m4\u00bdf",
+   "field": [
+    {
+     "name": "Cave Bridge",
+     "chance": 0.2368,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Brace For Landing",
+     "chance": 0.219,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Las Canals",
+     "chance": 0.1546,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "The Kalooki Kid",
+     "chance": 0.119,
+     "angles": [
+      "top recent RPR: Newcastle jumps A/E 1.12 (655; ~1.18 / 1.08)",
+      "top exact-conditions RPR: A/E 1.11 (563; ~1.09 / 1.12)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Tiddesley Wood",
+     "chance": 0.0813,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Captain Butler",
+     "chance": 0.0565,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kool Raoul",
+     "chance": 0.0495,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Tashkhan",
+     "chance": 0.0406,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Dreams Ka",
+     "chance": 0.0317,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Cannock Park",
+     "chance": 0.0109,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 10,
+   "handicap": true,
+   "class": "3",
+   "win": "Cave Bridge",
+   "price": "4.50",
+   "chance": 0.2368400190264785,
+   "fair": "4.23",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Brace For Landing",
+   "data_pick": "Brace For Landing",
+   "data_chance": 0.2677,
+   "data_conf": 5,
+   "data_price": "3.75",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.273,
+   "evidence_price": "3.75",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "9.00 -> 4.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Brace For Landing 3.75 (22%)",
+   "rpr_pick": "The Kalooki Kid",
+   "rpr_reason": "RPR 133; distance 2/8, going 1/5 (wins/runs); weight -2lb vs last run - fine",
+   "anchor": "The Kalooki Kid (RPR 128 at trip/going) = RPR PICK",
+   "longshot": "Captain Butler 15.00 SPECULATIVE (ranked 6th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Cave Bridge"
+  },
+  {
+   "exact_rpr_pick": "Genois",
+   "exact_rpr": 137,
+   "exact_rpr_run": "RPR 137 at Wetherby 2024-11-01, good 19.5f (finished 1); carried 10-2 then, 12-2 today (28lb heavier)",
+   "exact_weight_change": 28,
+   "exact_confirmed": false,
+   "time": "15:18",
+   "race": "Jodie Standing's Point-To-Point Recruits Handicap Chase (Go North Monet's Garden Qualifier) (GBB)",
+   "distance": "2m4f",
+   "field": [
+    {
+     "name": "Albie Littlewood",
+     "chance": 0.5641,
+     "angles": [
+      "top recent RPR: Newcastle jumps A/E 1.12 (655; ~1.18 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Authorized Mission",
+     "chance": 0.1794,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Looking Splendid",
+     "chance": 0.0599,
+     "angles": [],
+     "cautions": [
+      "usual front-runner: A/E 0.91 (452; ~0.86 / 0.94)"
+     ]
+    },
+    {
+     "name": "Treaty Boy",
+     "chance": 0.0439,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Diamond Mix",
+     "chance": 0.0439,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Heads Or Harps",
+     "chance": 0.0341,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ballyfort",
+     "chance": 0.0312,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Glory And Honour",
+     "chance": 0.0262,
+     "angles": [],
+     "cautions": [
+      "usual front-runner: A/E 0.91 (452; ~0.86 / 0.94)"
+     ]
+    },
+    {
+     "name": "Genois",
+     "chance": 0.0172,
+     "angles": [
+      "top exact-conditions RPR: A/E 1.11 (563; ~1.09 / 1.12)"
+     ],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 9,
+   "handicap": true,
+   "class": "4",
+   "win": "Albie Littlewood",
+   "price": "1.80",
+   "chance": 0.5641363170981424,
+   "fair": "1.78",
+   "confidence": 9,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Albie Littlewood",
+   "data_pick": "Albie Littlewood",
+   "data_chance": 0.5044,
+   "data_conf": 8,
+   "data_price": "1.80",
+   "data_angles": [
+    "top recent RPR: Newcastle jumps A/E 1.12 (655; ~1.18 / 1.08)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.488,
+   "evidence_price": "1.80",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Newcastle jumps A/E 1.12 (655; ~1.18 / 1.08)"
+   ],
+   "win_caution": [],
+   "move": "3.50 -> 1.80 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Authorized Mission 5.00 (18%)",
+   "rpr_pick": "Albie Littlewood",
+   "rpr_reason": "RPR 132; distance 2/2, going 0/1 (wins/runs); up 8lb after WINNING last time (the handicapper's rise) - has to prove it can follow up off the higher mark",
+   "anchor": "Genois (RPR 137 at trip/going) = shortlist (our chance 2%)",
+   "longshot": "Glory And Honour 19.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "Albie Littlewood"
+  }
+ ]
+}

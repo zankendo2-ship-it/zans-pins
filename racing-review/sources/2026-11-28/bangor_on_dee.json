@@ -1,0 +1,803 @@
+{
+ "published_utc": "2026-11-28T10:04:40Z",
+ "course": "bangor_on_dee",
+ "picks": [
+  {
+   "exact_rpr_pick": "Exmoor Forest",
+   "exact_rpr": 111,
+   "exact_rpr_run": "RPR 111 at Taunton 2025-02-18, good to soft 23f (finished 3); carried 11-10 then, 12-0 today (4lb heavier)",
+   "exact_weight_change": 4,
+   "exact_confirmed": true,
+   "time": "11:50",
+   "race": "Hope House Children's Hospices Conditional Jockeys' Training Series Handicap Hurdle (RE Series)",
+   "distance": "2m7f",
+   "field": [
+    {
+     "name": "Cahiers Den",
+     "chance": 0.3593,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Eaststone Bucks",
+     "chance": 0.1792,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Cool Master",
+     "chance": 0.1784,
+     "angles": [
+      "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Malinas Glory",
+     "chance": 0.1227,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Rehill Relic",
+     "chance": 0.0644,
+     "angles": [
+      "won on today's exact going, 1-2 in field have: A/E 1.18 (266; ~1.22 / 1.16)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Clondaw Royale",
+     "chance": 0.0554,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Exmoor Forest",
+     "chance": 0.0405,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 7,
+   "handicap": true,
+   "class": "5",
+   "win": "Cahiers Den",
+   "price": "2.75",
+   "chance": 0.35929921805404336,
+   "fair": "2.79",
+   "confidence": 7,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Malinas Glory",
+   "data_pick": "Malinas Glory",
+   "data_chance": 0.277,
+   "data_conf": 5,
+   "data_price": "8.00",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.281,
+   "evidence_price": "8.00",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "7.00 -> 2.75 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Eaststone Bucks 4.50 (18%)",
+   "rpr_pick": "Clondaw Royale",
+   "rpr_reason": "RPR 104; distance 1/6, going 0/3 (wins/runs); passed over: Malinas Glory (104) not run on the going; WARNING up 8lb on last run and never placed carrying this much",
+   "anchor": "Exmoor Forest (RPR 112 at trip/going) = shortlist (our chance 4%)",
+   "longshot": "Rehill Relic 15.00 STRONG (ranked 3rd by us)",
+   "watchlist": [],
+   "pace": "Lone front-runner - Clondaw Royale could get an easy lead",
+   "changed": false,
+   "model_pick": "Cahiers Den"
+  },
+  {
+   "exact_rpr_pick": "Cool Customer",
+   "exact_rpr": 107,
+   "exact_rpr_run": "RPR 107 at Chepstow 2026-11-04, good to soft 19.5f (finished 3); carried 10-13 then, 11-4 today (5lb heavier)",
+   "exact_weight_change": 5,
+   "exact_confirmed": true,
+   "time": "12:25",
+   "race": "Wrexham Lager Maiden Hurdle (GBB Race)",
+   "distance": "2m3\u00bdf",
+   "field": [
+    {
+     "name": "Pointofdifference",
+     "chance": 0.5122,
+     "angles": [
+      "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Cool Customer",
+     "chance": 0.3257,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Koaly Play",
+     "chance": 0.095,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ballyteige",
+     "chance": 0.0165,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Emral Bridge",
+     "chance": 0.0165,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Blackswan dOroux",
+     "chance": 0.0116,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Britway Belle",
+     "chance": 0.007,
+     "angles": [
+      "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Goliath Flight",
+     "chance": 0.0058,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Menasha",
+     "chance": 0.0039,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lunar Lily",
+     "chance": 0.0029,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Georgie Simmons",
+     "chance": 0.0019,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Maxiani",
+     "chance": 0.001,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 12,
+   "handicap": false,
+   "class": "4",
+   "win": "Pointofdifference",
+   "price": "1.67",
+   "chance": 0.5122043427685151,
+   "fair": "1.96",
+   "confidence": 9,
+   "verdict": "BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Cool Customer",
+   "data_pick": "Cool Customer",
+   "data_chance": 0.3167,
+   "data_conf": 6,
+   "data_price": "2.63",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.309,
+   "evidence_price": "2.63",
+   "short_fav_caution": true,
+   "win_angles": [
+    "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+   ],
+   "win_caution": [],
+   "move": "1.67 -> 1.67 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Cool Customer 2.63 (33%)",
+   "rpr_pick": "Cool Customer",
+   "rpr_reason": "RPR 120; distance 0/1, going 0/2 (wins/runs); up 5lb on last run BUT has finished top-3 1x carrying 156lb+ before - can cope",
+   "anchor": "Cool Customer (RPR 107 at trip/going) = RPR PICK",
+   "longshot": "Ballyteige 34.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Pointofdifference"
+  },
+  {
+   "exact_rpr_pick": "All The Glory",
+   "exact_rpr": 126,
+   "exact_rpr_run": "RPR 126 at Musselburgh 2024-11-29, good to soft 20f (finished 1); carried 11-4 then, 11-8 today (4lb heavier)",
+   "exact_weight_change": 4,
+   "exact_confirmed": false,
+   "time": "13:00",
+   "race": "Howard Evans Roofing & Cladding Mares' Handicap Chase (Challenger Mares' Chase Qualifier) (GBB)",
+   "distance": "2m4\u00bdf",
+   "field": [
+    {
+     "name": "Trinity Street",
+     "chance": 0.5339,
+     "angles": [
+      "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+      "won last time: A/E 1.07 (508; ~1.07 / 1.07)",
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Epinephrine",
+     "chance": 0.1144,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lexies Moon",
+     "chance": 0.1059,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Its Easy",
+     "chance": 0.0945,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Future Bucks",
+     "chance": 0.07,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Pottersville",
+     "chance": 0.0482,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "All The Glory",
+     "chance": 0.0331,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 7,
+   "handicap": true,
+   "class": "3",
+   "win": "Trinity Street",
+   "price": "1.83",
+   "chance": 0.5339251950788947,
+   "fair": "1.88",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Trinity Street",
+   "data_pick": "Trinity Street",
+   "data_chance": 0.3242,
+   "data_conf": 5,
+   "data_price": "1.83",
+   "data_angles": [
+    "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+    "won last time: A/E 1.07 (508; ~1.07 / 1.07)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.301,
+   "evidence_price": "1.83",
+   "short_fav_caution": false,
+   "win_angles": [
+    "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+    "won last time: A/E 1.07 (508; ~1.07 / 1.07)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "win_caution": [],
+   "move": "2.50 -> 1.83 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Epinephrine 7.50 (11%)",
+   "rpr_pick": "All The Glory",
+   "rpr_reason": "RPR 137; distance 3/13, going 3/12 (wins/runs); up 15lb on last run BUT has finished top-3 5x carrying 160lb+ before - can cope",
+   "anchor": "All The Glory (RPR 135 at trip/going) = RPR PICK",
+   "longshot": "All The Glory 21.00 STRONG (ranked 2nd by us)",
+   "watchlist": [],
+   "pace": "Lone front-runner - Its Easy could get an easy lead",
+   "changed": false,
+   "model_pick": "Trinity Street"
+  },
+  {
+   "exact_rpr_pick": "Scotts Legacy",
+   "exact_rpr": 119,
+   "exact_rpr_run": "RPR 119 at Cheltenham 2026-10-23, good to soft 16.5f (finished 7); carried 11-1 then, 11-6 today (5lb heavier)",
+   "exact_weight_change": 5,
+   "exact_confirmed": true,
+   "time": "13:33",
+   "race": "Paul Ferguson Jumpers To Follow Novices' Hurdle (GBB Race) (Div I)",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "Scotts Legacy",
+     "chance": 0.7091,
+     "angles": [
+      "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Works For Me",
+     "chance": 0.126,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Montevallo",
+     "chance": 0.0862,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Our Pedro",
+     "chance": 0.0445,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Get Busy Jumping",
+     "chance": 0.0152,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Minutes To Spare",
+     "chance": 0.0133,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Jeu Magic",
+     "chance": 0.0028,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "New Chapter",
+     "chance": 0.0028,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 8,
+   "handicap": false,
+   "class": "3",
+   "win": "Scotts Legacy",
+   "price": "1.30",
+   "chance": 0.7091144762449807,
+   "fair": "1.42",
+   "confidence": 10,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Scotts Legacy",
+   "data_pick": "Scotts Legacy",
+   "data_chance": 0.385,
+   "data_conf": 7,
+   "data_price": "1.30",
+   "data_angles": [
+    "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.367,
+   "evidence_price": "1.30",
+   "short_fav_caution": false,
+   "win_angles": [
+    "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "win_caution": [],
+   "move": "2.00 -> 1.30 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Works For Me 5.50 (13%)",
+   "rpr_pick": "Scotts Legacy",
+   "rpr_reason": "RPR 132; distance 2/4, going 0/1 (wins/runs); WARNING up 5lb on last run and never placed carrying this much",
+   "anchor": "Scotts Legacy (RPR 119 at trip/going) = WIN PICK",
+   "longshot": "Get Busy Jumping 29.00 SPECULATIVE (ranked 5th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Scotts Legacy"
+  },
+  {
+   "exact_rpr_pick": "Bears Socks",
+   "exact_rpr": 98,
+   "exact_rpr_run": "RPR 98 at Chepstow 2026-11-04, good to soft 16f (finished 4); carried 10-13 then, 11-0 today (1lb heavier)",
+   "exact_weight_change": 1,
+   "exact_confirmed": false,
+   "time": "14:10",
+   "race": "Paul Ferguson Jumpers To Follow Novices' Hurdle (GBB Race) (Div II)",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "Hang Out",
+     "chance": 0.5164,
+     "angles": [
+      "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Loki",
+     "chance": 0.2413,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Written In Gold",
+     "chance": 0.0827,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Bears Socks",
+     "chance": 0.0798,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Old Colony",
+     "chance": 0.0433,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Queen Marcia",
+     "chance": 0.0187,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Mahbury",
+     "chance": 0.0089,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Deferred Interest",
+     "chance": 0.0049,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lilycala",
+     "chance": 0.0039,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 9,
+   "handicap": false,
+   "class": "3",
+   "win": "Hang Out",
+   "price": "1.80",
+   "chance": 0.5163848040422745,
+   "fair": "1.94",
+   "confidence": 9,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Hang Out",
+   "data_pick": "Hang Out",
+   "data_chance": 0.4849,
+   "data_conf": 8,
+   "data_price": "1.80",
+   "data_angles": [
+    "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.478,
+   "evidence_price": "1.80",
+   "short_fav_caution": false,
+   "win_angles": [
+    "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+   ],
+   "win_caution": [],
+   "move": "2.00 -> 1.80 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Loki 3.25 (24%)",
+   "rpr_pick": "Old Colony",
+   "rpr_reason": "RPR 96; distance 0/1, going 0/1 (wins/runs); passed over: Hang Out (123) not run on the going; weight -4lb vs last run - fine",
+   "anchor": "Queen Marcia (RPR 99 at trip/going) = shortlist (our chance 2%)",
+   "longshot": "Queen Marcia 34.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Hang Out"
+  },
+  {
+   "exact_rpr_pick": "Royal Mer",
+   "exact_rpr": 117,
+   "exact_rpr_run": "RPR 117 at Exeter 2026-01-09, good to soft 17.5f (finished 2); carried 11-11 then, 12-1 today (4lb heavier)",
+   "exact_weight_change": 4,
+   "exact_confirmed": true,
+   "time": "14:45",
+   "race": "Follow Dave Win 60th Birthday Handicap Chase (GBB Race)",
+   "distance": "2m1\u00bdf",
+   "field": [
+    {
+     "name": "Doctors Hill",
+     "chance": 0.3862,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Locquirec",
+     "chance": 0.1245,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "The Hawkstonian",
+     "chance": 0.0958,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Royal Mer",
+     "chance": 0.0942,
+     "angles": [
+      "won on today's exact going, 1-2 in field have: A/E 1.18 (266; ~1.22 / 1.16)",
+      "won last time: A/E 1.07 (508; ~1.07 / 1.07)",
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Mr Mojo Risin",
+     "chance": 0.0859,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "A Moments Madness",
+     "chance": 0.084,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Luron dOudairies",
+     "chance": 0.082,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kourosh",
+     "chance": 0.0326,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Whiskeywealth",
+     "chance": 0.0148,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 9,
+   "handicap": true,
+   "class": "4",
+   "win": "Doctors Hill",
+   "price": "2.50",
+   "chance": 0.3862154471757526,
+   "fair": "2.59",
+   "confidence": 7,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "The Hawkstonian",
+   "data_pick": "The Hawkstonian",
+   "data_chance": 0.1859,
+   "data_conf": 3,
+   "data_price": "7.50",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.19,
+   "evidence_price": "7.50",
+   "short_fav_caution": true,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "7.00 -> 2.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Locquirec 7.50 (12%)",
+   "rpr_pick": "Doctors Hill",
+   "rpr_reason": "RPR 128; distance 0/2, going 0/5 (wins/runs); up 10lb on last run BUT has finished top-3 3x carrying 155lb+ before - can cope",
+   "anchor": "Whiskeywealth (RPR 136 at trip/going) = shortlist (our chance 1%)",
+   "longshot": "Kourosh 19.00 SPECULATIVE (ranked 8th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Doctors Hill"
+  },
+  {
+   "exact_rpr_pick": "City Chief",
+   "exact_rpr": 149,
+   "exact_rpr_run": "RPR 149 at Wetherby 2023-02-04, good to soft 24f (finished 1); carried 11-2 then, 11-13 today (11lb heavier)",
+   "exact_weight_change": 11,
+   "exact_confirmed": false,
+   "time": "15:25",
+   "race": "Pennine Flooring On The Radio Handicap Chase (Challenger Staying Chase Series Qualifier) (GBB Race)",
+   "distance": "3m",
+   "field": [
+    {
+     "name": "The Price Of Peace",
+     "chance": 0.2684,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Big Cadillac",
+     "chance": 0.1361,
+     "angles": [
+      "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+      "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Laganhill",
+     "chance": 0.0905,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Gasmani",
+     "chance": 0.0807,
+     "angles": [
+      "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Judicial Deference",
+     "chance": 0.0784,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Liege Ardent",
+     "chance": 0.0745,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Limerick Star",
+     "chance": 0.0696,
+     "angles": [
+      "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+      "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Grand Albert",
+     "chance": 0.0696,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Paddy OMahler",
+     "chance": 0.046,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lucky dAubrelle",
+     "chance": 0.0392,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "One Last Glance",
+     "chance": 0.0333,
+     "angles": [
+      "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+      "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "City Chief",
+     "chance": 0.0137,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 12,
+   "handicap": true,
+   "class": "3",
+   "win": "The Price Of Peace",
+   "price": "3.25",
+   "chance": 0.26841508727898616,
+   "fair": "3.73",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Big Cadillac",
+   "data_pick": "Big Cadillac",
+   "data_chance": 0.1755,
+   "data_conf": 3,
+   "data_price": "6.00",
+   "data_angles": [
+    "last RPR above its previous best: A/E 1.11 (596; ~1.22 / 1.06)",
+    "won last time: A/E 1.07 (508; ~1.07 / 1.07)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.17,
+   "evidence_price": "6.00",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "6.00 -> 3.25 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Big Cadillac 6.00 (14%)",
+   "rpr_pick": "Big Cadillac",
+   "rpr_reason": "RPR 132; distance 0/1, going 1/3 (wins/runs); up 5lb after WINNING last time (the handicapper's rise) - has to prove it can follow up off the higher mark",
+   "anchor": "City Chief (RPR 149 at trip/going) = shortlist (our chance 1%)",
+   "longshot": "One Last Glance 21.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "The Price Of Peace"
+  }
+ ]
+}

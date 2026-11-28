@@ -1,0 +1,1116 @@
+{
+ "published_utc": "2026-11-28T10:04:58Z",
+ "course": "fairyhouse",
+ "picks": [
+  {
+   "exact_rpr_pick": "Sept Etoiles",
+   "exact_rpr": 86,
+   "exact_rpr_run": "RPR 86 at Thurles 2026-01-18, yielding 22f (finished 6); carried 11-5 then, 11-12 today (7lb heavier)",
+   "exact_weight_change": 7,
+   "exact_confirmed": false,
+   "time": "11:45",
+   "race": "SIS Supporting Irish Racing Beginners Chase",
+   "distance": "2m5\u00bdf",
+   "field": [
+    {
+     "name": "King Rasko Grey",
+     "chance": 0.4464,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)",
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": [
+      "back from 211 days at under 2/1 (NOTE: no trap in data)"
+     ]
+    },
+    {
+     "name": "Narciso Has",
+     "chance": 0.3068,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": [
+      "back from 299 days at under 2/1 (NOTE: no trap in data)"
+     ]
+    },
+    {
+     "name": "Kielys Place",
+     "chance": 0.1046,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Spinningayarn",
+     "chance": 0.0796,
+     "angles": [],
+     "cautions": [
+      "never run within 1f of the trip (owner priority 1): Fairyhouse A/E 0.84, -40% (1,624; 0.82 / 0.85)"
+     ]
+    },
+    {
+     "name": "Robertjames",
+     "chance": 0.0176,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "He Cant Dance",
+     "chance": 0.0144,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Zanndabad",
+     "chance": 0.014,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Sept Etoiles",
+     "chance": 0.0084,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Sutherland",
+     "chance": 0.0019,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ready For Road",
+     "chance": 0.0019,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Rock On Richie",
+     "chance": 0.0019,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Maganey",
+     "chance": 0.0019,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "I Can Find Em",
+     "chance": 0.0009,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Yielding",
+   "runners": 13,
+   "handicap": false,
+   "class": "",
+   "win": "King Rasko Grey",
+   "price": "2.10",
+   "chance": 0.446368738482158,
+   "fair": "2.25",
+   "confidence": 7,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "King Rasko Grey",
+   "data_pick": "King Rasko Grey",
+   "data_chance": 0.4966,
+   "data_conf": 8,
+   "data_price": "2.10",
+   "data_angles": [
+    "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [
+    "back from 211 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "evidence_chance": 0.484,
+   "evidence_price": "2.10",
+   "short_fav_caution": false,
+   "win_angles": [
+    "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "win_caution": [
+    "back from 211 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "move": "2.50 -> 2.10 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Narciso Has 2.63 (31%)",
+   "rpr_pick": "Zanndabad",
+   "rpr_reason": "RPR 133; distance 1/3, going 0/0 (wins/runs); nobody higher had run at both trip and going; passed over: Zanndabad (133) not run on the going, Rock On Richie (118) not run at the trip, Maganey (56) not run at the trip; weight +0lb vs last run - fine",
+   "anchor": "King Rasko Grey (RPR 148 at trip/going) = WIN PICK",
+   "longshot": "He Cant Dance 34.00 SPECULATIVE (ranked 5th by us)",
+   "watchlist": [],
+   "pace": "Strong early pace likely - 3 habitual front-runners should take each other on",
+   "changed": false,
+   "model_pick": "King Rasko Grey"
+  },
+  {
+   "exact_rpr_pick": "Ballybawn Belter",
+   "exact_rpr": 125,
+   "exact_rpr_run": "RPR 125 at Punchestown (IRE) 2023-04-26, yielding 20f (finished 1); carried 11-1 then, 11-3 today (2lb heavier)",
+   "exact_weight_change": 2,
+   "exact_confirmed": false,
+   "time": "12:20",
+   "race": "Activ8 Solar Energies Irish EBF Mares Handicap Chase",
+   "distance": "2m4f",
+   "field": [
+    {
+     "name": "Karia Des Blaises",
+     "chance": 0.2508,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Katie Daniels",
+     "chance": 0.1856,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Karamoja",
+     "chance": 0.1555,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "The Great Nudie",
+     "chance": 0.1382,
+     "angles": [],
+     "cautions": [
+      "lone front-runner: Fairyhouse A/E 0.77 (277; 0.74 / 0.79)"
+     ]
+    },
+    {
+     "name": "Ballybawn Belter",
+     "chance": 0.1013,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Qualimita",
+     "chance": 0.0763,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Break My Soul",
+     "chance": 0.0552,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Sophia Rose",
+     "chance": 0.0371,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Yielding",
+   "runners": 8,
+   "handicap": true,
+   "class": "",
+   "win": "Karia Des Blaises",
+   "price": "5.00",
+   "chance": 0.2507525586995786,
+   "fair": "3.99",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Karia Des Blaises",
+   "data_pick": "Karia Des Blaises",
+   "data_chance": 0.4753,
+   "data_conf": 8,
+   "data_price": "5.00",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.46,
+   "evidence_price": "5.00",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "win_caution": [],
+   "move": "4.00 -> 5.00 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "Karia Des Blaises drifted 3.50 -> 5.00 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Katie Daniels",
+   "second": "Katie Daniels 5.00 (19%)",
+   "rpr_pick": "Karia Des Blaises",
+   "rpr_reason": "RPR 143; distance 0/4, going 0/3 (wins/runs); WARNING up 12lb on last run and never placed carrying this much",
+   "anchor": "Break My Soul (RPR 142 at trip/going) = shortlist (our chance 6%)",
+   "longshot": "Sophia Rose 19.00 SPECULATIVE (ranked 8th by us)",
+   "watchlist": [],
+   "pace": "Lone front-runner - The Great Nudie could get an easy lead",
+   "changed": false,
+   "model_pick": "Karia Des Blaises"
+  },
+  {
+   "exact_rpr_pick": "Western Diego",
+   "exact_rpr": 140,
+   "exact_rpr_run": "RPR 140 at Fairyhouse 2026-01-14, yielding 17f (finished 1); carried 10-4 then, 11-1 today (11lb heavier)",
+   "exact_weight_change": 11,
+   "exact_confirmed": false,
+   "time": "12:55",
+   "race": "EASYFIX Equine Handicap Chase (Listed Race)",
+   "distance": "2m1f",
+   "field": [
+    {
+     "name": "Raffles Dolce Vita",
+     "chance": 0.2257,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Western Diego",
+     "chance": 0.2139,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Coral River",
+     "chance": 0.1099,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Moudan",
+     "chance": 0.0875,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)",
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Birdie Or Bust",
+     "chance": 0.0845,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Jazzy Matty",
+     "chance": 0.0793,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Manoir De Mirande",
+     "chance": 0.0726,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Drumgill",
+     "chance": 0.0353,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Springt De La Mare",
+     "chance": 0.0343,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "The King Of Prs",
+     "chance": 0.0285,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Dee Capo",
+     "chance": 0.0285,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Yielding",
+   "runners": 11,
+   "handicap": true,
+   "class": "",
+   "win": "Raffles Dolce Vita",
+   "price": "4.50",
+   "chance": 0.22569218505238206,
+   "fair": "4.44",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Western Diego",
+   "data_pick": "Western Diego",
+   "data_chance": 0.3638,
+   "data_conf": 6,
+   "data_price": "4.00",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.374,
+   "evidence_price": "4.00",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "7.50 -> 4.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Western Diego 4.00 (21%)",
+   "rpr_pick": "Western Diego",
+   "rpr_reason": "RPR 153; distance 1/9, going 1/4 (wins/runs); passed over: Moudan (156) not run on the going; weight -10lb vs last run - fine",
+   "anchor": "Moudan (RPR 147 at trip/going) = shortlist (our chance 9%)",
+   "longshot": "Dee Capo 21.00 SPECULATIVE (ranked 6th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Raffles Dolce Vita"
+  },
+  {
+   "exact_rpr_pick": "Saratoga",
+   "exact_rpr": 142,
+   "exact_rpr_run": "RPR 142 at Punchestown 2026-05-02, yielding 16f (finished 1); carried 11-0 then, 11-12 today (12lb heavier)",
+   "exact_weight_change": 12,
+   "exact_confirmed": true,
+   "time": "13:30",
+   "race": "Mullinam Hurdle (Grade 3)",
+   "distance": "2m",
+   "field": [
+    {
+     "name": "Saratoga",
+     "chance": 0.4346,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)",
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": [
+      "back from 210 days at under 2/1 (NOTE: no trap in data)"
+     ]
+    },
+    {
+     "name": "Huntin Boots",
+     "chance": 0.2528,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Bartholomew",
+     "chance": 0.2329,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ole Ole",
+     "chance": 0.0796,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    }
+   ],
+   "going": "Yielding",
+   "runners": 4,
+   "handicap": false,
+   "class": "",
+   "win": "Saratoga",
+   "price": "2.38",
+   "chance": 0.4346402329213452,
+   "fair": "2.31",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Saratoga",
+   "data_pick": "Saratoga",
+   "data_chance": 0.3074,
+   "data_conf": 6,
+   "data_price": "2.38",
+   "data_angles": [
+    "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+    "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [
+    "back from 210 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "evidence_chance": 0.287,
+   "evidence_price": "2.38",
+   "short_fav_caution": false,
+   "win_angles": [
+    "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+    "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "win_caution": [
+    "back from 210 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "move": "1.73 -> 2.38 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "Saratoga drifted 1.91 -> 2.38 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Huntin Boots",
+   "second": "Huntin Boots 3.50 (25%)",
+   "rpr_pick": "Bartholomew",
+   "rpr_reason": "RPR 150; distance 1/4, going 1/3 (wins/runs); weight -7lb vs last run - fine",
+   "anchor": "Saratoga (RPR 142 at trip/going) = WIN PICK",
+   "longshot": "no longshot",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Saratoga"
+  },
+  {
+   "exact_rpr_pick": "Martymill",
+   "exact_rpr": 109,
+   "exact_rpr_run": "RPR 109 at Listowel (IRE) 2026-06-01, yielding 20f (finished 2); carried 11-7 then, 10-13 today (8lb lighter)",
+   "exact_weight_change": -8,
+   "exact_confirmed": false,
+   "time": "14:05",
+   "race": "Close Brothers Rated Novice Hurdle",
+   "distance": "2m4f",
+   "field": [
+    {
+     "name": "If You Believe",
+     "chance": 0.3121,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Marco Du Seuil",
+     "chance": 0.2779,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Lureka Du Noyer",
+     "chance": 0.2146,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Martymill",
+     "chance": 0.078,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Joe Cool",
+     "chance": 0.0533,
+     "angles": [],
+     "cautions": [
+      "never run within 1f of the trip (owner priority 1): Fairyhouse A/E 0.84, -40% (1,624; 0.82 / 0.85)"
+     ]
+    },
+    {
+     "name": "Pumas Dream",
+     "chance": 0.0273,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "El Bilo",
+     "chance": 0.0227,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Taras Halls",
+     "chance": 0.0141,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Yielding",
+   "runners": 8,
+   "handicap": false,
+   "class": "",
+   "win": "If You Believe",
+   "price": "3.00",
+   "chance": 0.3120510680319294,
+   "fair": "3.21",
+   "confidence": 6,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Lureka Du Noyer",
+   "data_pick": "Lureka Du Noyer",
+   "data_chance": 0.2471,
+   "data_conf": 4,
+   "data_price": "4.50",
+   "data_angles": [
+    "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+    "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.236,
+   "evidence_price": "4.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+   ],
+   "win_caution": [],
+   "move": "2.88 -> 3.00 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Marco Du Seuil 3.00 (28%)",
+   "rpr_pick": "Lureka Du Noyer",
+   "rpr_reason": "RPR 134; distance 1/2, going 1/1 (wins/runs); weight -8lb vs last run - fine",
+   "anchor": "Taras Halls (RPR 124 at trip/going) = shortlist (our chance 1%)",
+   "longshot": "Taras Halls 51.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Lone front-runner - Lureka Du Noyer could get an easy lead",
+   "changed": false,
+   "model_pick": "If You Believe"
+  },
+  {
+   "exact_rpr_pick": "Treasure Memory",
+   "exact_rpr": 115,
+   "exact_rpr_run": "RPR 115 at Galway 2025-10-25, yielding 16.5f (finished 2); carried 11-12 then, 11-12 today (same weight)",
+   "exact_weight_change": 0,
+   "exact_confirmed": false,
+   "time": "14:40",
+   "race": "Kettles Country House Hotel Maiden Hurdle",
+   "distance": "2m",
+   "field": [
+    {
+     "name": "Green Hint",
+     "chance": 0.4326,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Premier Division",
+     "chance": 0.2396,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Hamavi",
+     "chance": 0.1383,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Bold Script",
+     "chance": 0.0358,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "My Fault Again",
+     "chance": 0.0271,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Wilton Mills Trier",
+     "chance": 0.0213,
+     "angles": [
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Cristal Clere",
+     "chance": 0.0213,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Treasure Memory",
+     "chance": 0.0164,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Hollys Thunder",
+     "chance": 0.0087,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Clean As A Whistle",
+     "chance": 0.0077,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Tatum",
+     "chance": 0.0068,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Confidence Within",
+     "chance": 0.0068,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Game Shadow",
+     "chance": 0.0068,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "The Farmers Bar",
+     "chance": 0.0061,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Colossal Impact",
+     "chance": 0.0058,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Affiniseaandbeyond",
+     "chance": 0.0039,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Pros And Cons",
+     "chance": 0.0039,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Gaelic Moon",
+     "chance": 0.0029,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Melody dArc",
+     "chance": 0.0019,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Rough And Tough",
+     "chance": 0.0019,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Hetty Parker",
+     "chance": 0.0017,
+     "angles": [],
+     "cautions": [
+      "never run within 1f of the trip (owner priority 1): Fairyhouse A/E 0.84, -40% (1,624; 0.82 / 0.85)"
+     ]
+    },
+    {
+     "name": "Two Pats",
+     "chance": 0.0017,
+     "angles": [],
+     "cautions": [
+      "never run within 1f of the trip (owner priority 1): Fairyhouse A/E 0.84, -40% (1,624; 0.82 / 0.85)"
+     ]
+    },
+    {
+     "name": "Membling",
+     "chance": 0.001,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Yielding",
+   "runners": 23,
+   "handicap": false,
+   "class": "",
+   "win": "Green Hint",
+   "price": "2.00",
+   "chance": 0.43257095885111946,
+   "fair": "2.32",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Green Hint",
+   "data_pick": "Green Hint",
+   "data_chance": 0.5377,
+   "data_conf": 9,
+   "data_price": "2.00",
+   "data_angles": [
+    "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.529,
+   "evidence_price": "2.00",
+   "short_fav_caution": false,
+   "win_angles": [
+    "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+   ],
+   "win_caution": [],
+   "move": "3.25 -> 2.00 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Premier Division 3.00 (24%)",
+   "rpr_pick": "Treasure Memory",
+   "rpr_reason": "RPR 117; distance 0/2, going 0/2 (wins/runs); weight +0lb vs last run - fine",
+   "anchor": "Treasure Memory (RPR 115 at trip/going) = RPR PICK",
+   "longshot": "Wilton Mills Trier 26.00 STRONG (ranked 3rd by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "Green Hint"
+  },
+  {
+   "exact_rpr_pick": "Dont Go Yet",
+   "exact_rpr": 122,
+   "exact_rpr_run": "RPR 122 at Wexford (IRE) 2025-04-04, yielding 19.5f (finished 2); carried 10-9 then, 10-10 today (1lb heavier)",
+   "exact_weight_change": 1,
+   "exact_confirmed": false,
+   "time": "15:13",
+   "race": "Francis McGee Memorial Handicap Hurdle",
+   "distance": "2m4f",
+   "field": [
+    {
+     "name": "Nelson County",
+     "chance": 0.161,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kim Roque",
+     "chance": 0.147,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Hey Now",
+     "chance": 0.1213,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)"
+     ],
+     "cautions": [
+      "never run within 1f of the trip (owner priority 1): Fairyhouse A/E 0.84, -40% (1,624; 0.82 / 0.85)"
+     ]
+    },
+    {
+     "name": "Kilt Ecossais",
+     "chance": 0.0849,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Fairlander",
+     "chance": 0.0828,
+     "angles": [
+      "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+      "won last time: Fairyhouse A/E 1.11 (971; 1.16 / 1.08)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Harwa",
+     "chance": 0.0583,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Euro Agent",
+     "chance": 0.0573,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Thisaintthat",
+     "chance": 0.0484,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Zam Bobbler",
+     "chance": 0.0464,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Carrigg Island",
+     "chance": 0.0415,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Coyote Spirit",
+     "chance": 0.0296,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Dont Go Yet",
+     "chance": 0.0207,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Magic Day",
+     "chance": 0.0188,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ms Agartha Yeats",
+     "chance": 0.0168,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Sequoiaspirit",
+     "chance": 0.0158,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Duke Of Leggagh",
+     "chance": 0.0148,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Noble Name",
+     "chance": 0.0128,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Burru",
+     "chance": 0.0119,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Portnacoo",
+     "chance": 0.0099,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Yielding",
+   "runners": 19,
+   "handicap": true,
+   "class": "",
+   "win": "Nelson County",
+   "price": "6.00",
+   "chance": 0.1609912319039188,
+   "fair": "6.22",
+   "confidence": 3,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Kim Roque",
+   "data_pick": "Kim Roque",
+   "data_chance": 0.2045,
+   "data_conf": 4,
+   "data_price": "6.50",
+   "data_angles": [
+    "improver: Fairyhouse A/E 1.10 (1,460; 1.20 / 1.03)",
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.189,
+   "evidence_price": "6.50",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "11.00 -> 6.00 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Kim Roque 6.50 (15%)",
+   "rpr_pick": "Coyote Spirit",
+   "rpr_reason": "RPR 136; distance 0/5, going 0/2 (wins/runs); weight -5lb vs last run - fine",
+   "anchor": "Kim Roque (RPR 131 at trip/going) = shortlist (our chance 15%)",
+   "longshot": "Coyote Spirit 17.00 SPECULATIVE (ranked 7th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "Nelson County"
+  },
+  {
+   "exact_rpr_pick": "",
+   "exact_rpr": null,
+   "exact_rpr_run": "no runner has run on this exact going over this trip",
+   "exact_weight_change": null,
+   "exact_confirmed": false,
+   "time": "15:43",
+   "race": "Willie Elliott Memorial (Pro/Am) INH Flat Race",
+   "distance": "2m",
+   "field": [
+    {
+     "name": "Uncle Pad",
+     "chance": 0.5469,
+     "angles": [],
+     "cautions": [
+      "back from 300 days at under 2/1 (NOTE: no trap in data)"
+     ]
+    },
+    {
+     "name": "Stanger",
+     "chance": 0.1327,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Golden Current",
+     "chance": 0.1227,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Noharmintrying",
+     "chance": 0.0922,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": [
+      "never run within 1f of the trip (owner priority 1): Fairyhouse A/E 0.84, -40% (1,624; 0.82 / 0.85)"
+     ]
+    },
+    {
+     "name": "Back In Favour",
+     "chance": 0.0251,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Beautiful Moon",
+     "chance": 0.0241,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Seedino",
+     "chance": 0.0201,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Okingston Town",
+     "chance": 0.0121,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Cant Stopthe Clock",
+     "chance": 0.009,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Mule Skinner",
+     "chance": 0.008,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ladies Luck",
+     "chance": 0.007,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Yielding",
+   "runners": 11,
+   "handicap": false,
+   "class": "",
+   "win": "Uncle Pad",
+   "price": "1.62",
+   "chance": 0.546917806497665,
+   "fair": "1.83",
+   "confidence": 9,
+   "verdict": "BET",
+   "old_rule_bet": false,
+   "data_gap": true,
+   "evidence_agrees": false,
+   "evidence_pick": "Noharmintrying",
+   "data_pick": "Noharmintrying",
+   "data_chance": 0.1957,
+   "data_conf": 3,
+   "data_price": "8.50",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [
+    "never run within 1f of the trip (owner priority 1): Fairyhouse A/E 0.84, -40% (1,624; 0.82 / 0.85)"
+   ],
+   "evidence_chance": 0.205,
+   "evidence_price": "8.50",
+   "short_fav_caution": true,
+   "win_angles": [],
+   "win_caution": [
+    "back from 300 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "move": "2.10 -> 1.62 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Stanger 5.50 (13%)",
+   "rpr_pick": "Back In Favour",
+   "rpr_reason": "RPR 106; distance 0/3, going 0/0 (wins/runs); nobody higher had run at both trip and going; passed over: Back In Favour (106) not run on the going, Cant Stopthe Clock (89) not run on the going, Mule Skinner (81) not run at the trip; weight -4lb vs last run - fine",
+   "anchor": "no runner has an RPR at this trip on this going",
+   "longshot": "Back In Favour 26.00 STRONG (ranked 2nd by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Uncle Pad"
+  }
+ ]
+}

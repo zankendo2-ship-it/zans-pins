@@ -1,0 +1,235 @@
+[
+ {
+  "section": "Singles",
+  "name": "Win single",
+  "legs": [
+   {
+    "course": "Bangor On Dee",
+    "time": "11:50",
+    "horse": "Cahiers Den",
+    "price": 2.75,
+    "chance": 0.35929921805404336,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "7/10 confidence - 09:30 price, claim Best Odds Guaranteed",
+  "odds": null
+ },
+ {
+  "section": "Singles",
+  "name": "Win single",
+  "legs": [
+   {
+    "course": "Bangor On Dee",
+    "time": "14:45",
+    "horse": "Doctors Hill",
+    "price": 2.5,
+    "chance": 0.3862154471757526,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "7/10 confidence - 09:30 price, claim Best Odds Guaranteed",
+  "odds": null
+ },
+ {
+  "section": "Singles",
+  "name": "Win single",
+  "legs": [
+   {
+    "course": "Doncaster",
+    "time": "11:33",
+    "horse": "Docpickedme",
+    "price": 2.63,
+    "chance": 0.38953773677495346,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "7/10 confidence - 09:30 price, claim Best Odds Guaranteed",
+  "odds": null
+ },
+ {
+  "section": "Singles",
+  "name": "Win single",
+  "legs": [
+   {
+    "course": "Doncaster",
+    "time": "13:48",
+    "horse": "Liberty Coach",
+    "price": 2.5,
+    "chance": 0.3976123526219723,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "7/10 confidence - 09:30 price, claim Best Odds Guaranteed",
+  "odds": null
+ },
+ {
+  "section": "Singles",
+  "name": "Win single",
+  "legs": [
+   {
+    "course": "Southwell",
+    "time": "18:30",
+    "horse": "Unfurled",
+    "price": 2.5,
+    "chance": 0.37838941046125135,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "7/10 confidence - 09:30 price, claim Best Odds Guaranteed",
+  "odds": null
+ },
+ {
+  "section": "Multiples",
+  "name": "Double",
+  "legs": [
+   {
+    "course": "Newcastle",
+    "time": "15:18",
+    "horse": "Albie Littlewood",
+    "price": 1.8,
+    "chance": 0.5641363170981424,
+    "why": "9/10 confidence - PRICE MIX short leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "SHORT"
+   },
+   {
+    "course": "Doncaster",
+    "time": "11:33",
+    "horse": "Docpickedme",
+    "price": 2.63,
+    "chance": 0.38953773677495346,
+    "why": "7/10 confidence - PRICE MIX middle leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "MIDDLE"
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "PRICE MIX double - the short + middle legs (best value in each price band, TRIAL) - 09:30 price, claim Best Odds Guaranteed",
+  "odds": 4.734
+ },
+ {
+  "section": "Multiples",
+  "name": "Treble",
+  "legs": [
+   {
+    "course": "Newcastle",
+    "time": "15:18",
+    "horse": "Albie Littlewood",
+    "price": 1.8,
+    "chance": 0.5641363170981424,
+    "why": "9/10 confidence - PRICE MIX short leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "SHORT"
+   },
+   {
+    "course": "Doncaster",
+    "time": "11:33",
+    "horse": "Docpickedme",
+    "price": 2.63,
+    "chance": 0.38953773677495346,
+    "why": "7/10 confidence - PRICE MIX middle leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "MIDDLE"
+   },
+   {
+    "course": "Newcastle",
+    "time": "12:15",
+    "horse": "Red Delta",
+    "price": 3.25,
+    "chance": 0.3078405727266469,
+    "why": "5/10 confidence - PRICE MIX fill (empty band) leg (best value in its price band)",
+    "backed": true,
+    "heavy": "",
+    "band": "FILL (empty band)"
+   }
+  ],
+  "lines": 1,
+  "unit": 1000,
+  "total": 1000,
+  "note": "PRICE MIX treble - short, middle and bigger price (best value in each band, TRIAL) - 09:30 price, claim Best Odds Guaranteed",
+  "odds": 15.3855
+ },
+ {
+  "section": "Multiples",
+  "name": "Lucky 15",
+  "legs": [
+   {
+    "course": "Doncaster",
+    "time": "11:33",
+    "horse": "Docpickedme",
+    "price": 2.63,
+    "chance": 0.38953773677495346,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   },
+   {
+    "course": "Doncaster",
+    "time": "13:48",
+    "horse": "Liberty Coach",
+    "price": 2.5,
+    "chance": 0.3976123526219723,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   },
+   {
+    "course": "Bangor On Dee",
+    "time": "11:50",
+    "horse": "Cahiers Den",
+    "price": 2.75,
+    "chance": 0.35929921805404336,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   },
+   {
+    "course": "Bangor On Dee",
+    "time": "14:45",
+    "horse": "Doctors Hill",
+    "price": 2.5,
+    "chance": 0.3862154471757526,
+    "why": "7/10 confidence",
+    "backed": true,
+    "heavy": ""
+   }
+  ],
+  "lines": 15,
+  "unit": 66,
+  "total": 990,
+  "note": "4 singles, 6 doubles, 4 trebles, 1 four-fold - our 4 best-value win picks priced 2.00+ - 09:30 price, claim Best Odds Guaranteed",
+  "odds": null
+ }
+]

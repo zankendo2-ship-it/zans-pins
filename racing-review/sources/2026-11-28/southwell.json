@@ -1,0 +1,1057 @@
+{
+ "published_utc": "2026-11-28T10:05:25Z",
+ "course": "southwell",
+ "picks": [
+  {
+   "exact_rpr_pick": "El Nay",
+   "exact_rpr": 87,
+   "exact_rpr_run": "RPR 87 at Lingfield (AW) 2026-02-21, standard 8f (finished 2); carried 8-11 then, 9-4 today (7lb heavier)",
+   "exact_weight_change": 7,
+   "exact_confirmed": false,
+   "time": "16:30",
+   "race": "Arc All Weather Bonus Is Back Novice Stakes (GBB Race)",
+   "distance": "1m",
+   "field": [
+    {
+     "name": "Levens Hall",
+     "chance": 0.663,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": [
+      "back from 138 days at under 2/1 (NOTE: no trap in data)"
+     ]
+    },
+    {
+     "name": "El Nay",
+     "chance": 0.1853,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+      "lone front-runner: Southwell A/E 1.12 (993)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Aura Champagne",
+     "chance": 0.0654,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Francescas Dream",
+     "chance": 0.0385,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Micro Flame",
+     "chance": 0.0173,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Beatrice Briannie",
+     "chance": 0.0115,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "I Am Legend",
+     "chance": 0.0113,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Quipster",
+     "chance": 0.0077,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 8,
+   "handicap": false,
+   "class": "4",
+   "win": "Levens Hall",
+   "price": "1.29",
+   "chance": 0.6629631732024602,
+   "fair": "1.51",
+   "confidence": 10,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Levens Hall",
+   "data_pick": "Levens Hall",
+   "data_chance": 0.5873,
+   "data_conf": 9,
+   "data_price": "1.29",
+   "data_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [
+    "back from 138 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "evidence_chance": 0.583,
+   "evidence_price": "1.29",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [
+    "back from 138 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "move": "1.91 -> 1.29 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "El Nay 4.50 (19%)",
+   "rpr_pick": "Levens Hall",
+   "rpr_reason": "RPR 92; distance 1/2, going 0/1 (wins/runs); up 7lb after WINNING last time (the handicapper's rise) - has to prove it can follow up off the higher mark",
+   "anchor": "El Nay (RPR 87 at trip/going) = shortlist (our chance 19%)",
+   "longshot": "Micro Flame 34.00 STRONG (ranked 2nd by us)",
+   "watchlist": [],
+   "pace": "Lone front-runner - El Nay could get an easy lead",
+   "changed": false,
+   "model_pick": "Levens Hall"
+  },
+  {
+   "exact_rpr_pick": "Arthur Carrot",
+   "exact_rpr": 78,
+   "exact_rpr_run": "RPR 78 at Lingfield (AW) 2026-11-19, standard 7f (finished 1); carried 9-1 then, 10-1 today (14lb heavier)",
+   "exact_weight_change": 14,
+   "exact_confirmed": true,
+   "time": "17:00",
+   "race": "All-Weather Championship Is Back Nursery Handicap",
+   "distance": "7f",
+   "field": [
+    {
+     "name": "Arthur Carrot",
+     "chance": 0.2465,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Marsala",
+     "chance": 0.1935,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Bacha",
+     "chance": 0.1719,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Thai Baht",
+     "chance": 0.0982,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Mojito Madness",
+     "chance": 0.0629,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Odegaard",
+     "chance": 0.057,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Knightbolt",
+     "chance": 0.0422,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lions Den",
+     "chance": 0.0295,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "From Me To You",
+     "chance": 0.0285,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Koodini",
+     "chance": 0.0206,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Bullrider",
+     "chance": 0.0206,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Frumoasa",
+     "chance": 0.0147,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Jeepers Fortune",
+     "chance": 0.0138,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 13,
+   "handicap": true,
+   "class": "5",
+   "win": "Arthur Carrot",
+   "price": "3.75",
+   "chance": 0.2464937892226016,
+   "fair": "4.06",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Arthur Carrot",
+   "data_pick": "Arthur Carrot",
+   "data_chance": 0.2847,
+   "data_conf": 5,
+   "data_price": "3.75",
+   "data_angles": [
+    "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.269,
+   "evidence_price": "3.75",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "5.00 -> 3.75 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "Arthur Carrot drifted 2.50 -> 3.75 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Marsala",
+   "second": "Marsala 4.50 (19%)",
+   "rpr_pick": "From Me To You",
+   "rpr_reason": "RPR 78; distance 0/3, going 1/5 (wins/runs); passed over: Marsala (80) not run on the going, Frumoasa (80) not run at the trip, Mojito Madness (79) not run on the going; weight -4lb vs last run - fine",
+   "anchor": "Arthur Carrot (RPR 78 at trip/going) = WIN PICK",
+   "longshot": "Lions Den 21.00 SPECULATIVE (ranked 6th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Arthur Carrot"
+  },
+  {
+   "exact_rpr_pick": "Abduction",
+   "exact_rpr": 97,
+   "exact_rpr_run": "RPR 97 at Wolverhampton (AW) 2023-10-27, standard 7f (finished 1); carried 9-1 then, 9-8 today (7lb heavier)",
+   "exact_weight_change": 7,
+   "exact_confirmed": false,
+   "time": "17:30",
+   "race": "Midnite A Next Generation Betting App Handicap (Div I)",
+   "distance": "7f",
+   "field": [
+    {
+     "name": "Goldwork",
+     "chance": 0.1884,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Lady Mariko",
+     "chance": 0.187,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Red Hat Eagle",
+     "chance": 0.131,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "King Of Ithaca",
+     "chance": 0.1172,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Tasdeed",
+     "chance": 0.0885,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lunario",
+     "chance": 0.0788,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Jellystone Park",
+     "chance": 0.0733,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+     ]
+    },
+    {
+     "name": "Yaajooz",
+     "chance": 0.0553,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Abduction",
+     "chance": 0.0352,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Electric Avenue",
+     "chance": 0.0167,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Spy Kingdom",
+     "chance": 0.0154,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+     ]
+    },
+    {
+     "name": "Patricia R",
+     "chance": 0.0131,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 12,
+   "handicap": true,
+   "class": "5",
+   "win": "Goldwork",
+   "price": "4.50",
+   "chance": 0.18844253940043384,
+   "fair": "5.31",
+   "confidence": 3,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Goldwork",
+   "data_pick": "Goldwork",
+   "data_chance": 0.158,
+   "data_conf": 3,
+   "data_price": "4.50",
+   "data_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.153,
+   "evidence_price": "4.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "3.25 -> 4.50 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "Goldwork drifted 2.63 -> 4.50 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Lady Mariko",
+   "second": "Lady Mariko 4.50 (19%)",
+   "rpr_pick": "Lunario",
+   "rpr_reason": "RPR 86; distance 2/12, going 0/7 (wins/runs); up 15lb on last run BUT has finished top-3 6x carrying 132lb+ before - can cope",
+   "anchor": "Abduction (RPR 97 at trip/going) = shortlist (our chance 4%)",
+   "longshot": "Abduction 23.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": true,
+   "model_pick": "Lady Mariko"
+  },
+  {
+   "exact_rpr_pick": "Beauty Choice",
+   "exact_rpr": 90,
+   "exact_rpr_run": "RPR 90 at Wolverhampton (AW) 2020-12-07, standard 7f (finished 2); carried 9-4 then, 9-3 today (1lb lighter)",
+   "exact_weight_change": -1,
+   "exact_confirmed": false,
+   "time": "18:00",
+   "race": "Midnite A Next Generation Betting App Handicap (Div II)",
+   "distance": "7f",
+   "field": [
+    {
+     "name": "Venetian Sky",
+     "chance": 0.1606,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Decem Starr",
+     "chance": 0.1547,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Native Honey",
+     "chance": 0.1527,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Seoul Force",
+     "chance": 0.1236,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Stenmark",
+     "chance": 0.112,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Mo Anam Chara",
+     "chance": 0.0902,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Glamorous Angela",
+     "chance": 0.0694,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Beauty Choice",
+     "chance": 0.0673,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Stanley Spencer",
+     "chance": 0.0645,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Dark Angel Light",
+     "chance": 0.005,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 10,
+   "handicap": true,
+   "class": "5",
+   "win": "Venetian Sky",
+   "price": "5.50",
+   "chance": 0.1606116727011711,
+   "fair": "6.23",
+   "confidence": 3,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Venetian Sky",
+   "data_pick": "Venetian Sky",
+   "data_chance": 0.2627,
+   "data_conf": 5,
+   "data_price": "5.50",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.265,
+   "evidence_price": "5.50",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "4.50 -> 5.50 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "Venetian Sky drifted 4.00 -> 5.50 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Decem Starr",
+   "second": "Decem Starr 6.00 (15%)",
+   "rpr_pick": "Decem Starr",
+   "rpr_reason": "RPR 86; distance 0/7, going 0/2 (wins/runs); weight +3lb vs last run - fine",
+   "anchor": "Stanley Spencer (RPR 90 at trip/going) = shortlist (our chance 6%)",
+   "longshot": "Dark Angel Light 126.00 SPECULATIVE (ranked 10th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Venetian Sky"
+  },
+  {
+   "exact_rpr_pick": "Unfurled",
+   "exact_rpr": 67,
+   "exact_rpr_run": "RPR 67 at Wolverhampton (AW) 2026-10-27, standard 7f (finished 2); carried 9-2 then, 9-4 today (2lb heavier)",
+   "exact_weight_change": 2,
+   "exact_confirmed": true,
+   "time": "18:30",
+   "race": "AWC Season 14 Has Begun EBF Fillies' Novice Stakes (GBB Race)",
+   "distance": "7f",
+   "field": [
+    {
+     "name": "Unfurled",
+     "chance": 0.3784,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Secha",
+     "chance": 0.2216,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Mantuba",
+     "chance": 0.1934,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Al Basos",
+     "chance": 0.0671,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Late Night Show",
+     "chance": 0.0525,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Shakiara",
+     "chance": 0.0418,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Hootie Frutti",
+     "chance": 0.036,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "State Of America",
+     "chance": 0.0093,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+     ]
+    }
+   ],
+   "going": "Standard",
+   "runners": 8,
+   "handicap": false,
+   "class": "3",
+   "win": "Unfurled",
+   "price": "2.50",
+   "chance": 0.37838941046125135,
+   "fair": "2.65",
+   "confidence": 7,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Unfurled",
+   "data_pick": "Unfurled",
+   "data_chance": 0.3395,
+   "data_conf": 6,
+   "data_price": "2.50",
+   "data_angles": [
+    "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.321,
+   "evidence_price": "2.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [],
+   "move": "5.50 -> 2.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Secha 3.75 (22%)",
+   "rpr_pick": "Unfurled",
+   "rpr_reason": "RPR 77; distance 0/1, going 0/1 (wins/runs); weight +2lb vs last run - fine",
+   "anchor": "Unfurled (RPR 67 at trip/going) = WIN PICK",
+   "longshot": "State Of America 67.00 STRONG (ranked 3rd by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Unfurled"
+  },
+  {
+   "exact_rpr_pick": "Palms Oasis",
+   "exact_rpr": 79,
+   "exact_rpr_run": "RPR 79 at Southwell (AW) 2026-11-07, standard 6f (finished 1); carried 9-7 then, 8-12 today (9lb lighter)",
+   "exact_weight_change": -9,
+   "exact_confirmed": false,
+   "time": "19:00",
+   "race": "AWC Finals Day At Newcastle 26th March Nursery Handicap",
+   "distance": "6f",
+   "field": [
+    {
+     "name": "Palms Oasis",
+     "chance": 0.2871,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Henley On Thames",
+     "chance": 0.2849,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Blue Pete",
+     "chance": 0.1401,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Angel Sense",
+     "chance": 0.1164,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Fully Stocked",
+     "chance": 0.0587,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+     ]
+    },
+    {
+     "name": "Longshanks Luke",
+     "chance": 0.0408,
+     "angles": [],
+     "cautions": [
+      "slow starter at 5-6f: A/E 0.89 (807)"
+     ]
+    },
+    {
+     "name": "Cloud Summit",
+     "chance": 0.0247,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lady Blanche",
+     "chance": 0.0246,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+     ]
+    },
+    {
+     "name": "Green Star",
+     "chance": 0.0227,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+     ]
+    }
+   ],
+   "going": "Standard",
+   "runners": 9,
+   "handicap": true,
+   "class": "4",
+   "win": "Palms Oasis",
+   "price": "3.50",
+   "chance": 0.2870840302848988,
+   "fair": "3.49",
+   "confidence": 5,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Palms Oasis",
+   "data_pick": "Palms Oasis",
+   "data_chance": 0.2922,
+   "data_conf": 5,
+   "data_price": "3.50",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.292,
+   "evidence_price": "3.50",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "6.00 -> 3.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Henley On Thames 3.25 (28%)",
+   "rpr_pick": "Palms Oasis",
+   "rpr_reason": "RPR 95; distance 1/3, going 1/3 (wins/runs); weight -9lb vs last run - fine",
+   "anchor": "Henley On Thames (RPR 85 at trip/going) = shortlist (our chance 28%)",
+   "longshot": "Longshanks Luke 15.00 SPECULATIVE (ranked 6th by us)",
+   "watchlist": [],
+   "pace": "Strong early pace likely - 3 habitual front-runners should take each other on",
+   "changed": false,
+   "model_pick": "Palms Oasis"
+  },
+  {
+   "exact_rpr_pick": "Elyam",
+   "exact_rpr": 98,
+   "exact_rpr_run": "RPR 98 at Newcastle (AW) 2026-10-30, standard 5f (finished 1); carried 9-2 then, 9-9 today (7lb heavier)",
+   "exact_weight_change": 7,
+   "exact_confirmed": true,
+   "time": "19:30",
+   "race": "Midnite Built Different Handicap",
+   "distance": "5f",
+   "field": [
+    {
+     "name": "Elyam",
+     "chance": 0.4559,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+     ]
+    },
+    {
+     "name": "Ancient State",
+     "chance": 0.214,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Baldomero",
+     "chance": 0.1416,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Rhythm N Hooves",
+     "chance": 0.1319,
+     "angles": [],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Dazzling Haze",
+     "chance": 0.0412,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Jack The Bachelor",
+     "chance": 0.0154,
+     "angles": [],
+     "cautions": [
+      "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+     ]
+    }
+   ],
+   "going": "Standard",
+   "runners": 6,
+   "handicap": true,
+   "class": "2",
+   "win": "Elyam",
+   "price": "2.00",
+   "chance": 0.4559052114077557,
+   "fair": "2.20",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Elyam",
+   "data_pick": "Elyam",
+   "data_chance": 0.5287,
+   "data_conf": 9,
+   "data_price": "2.00",
+   "data_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "data_cautions": [
+    "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+   ],
+   "evidence_chance": 0.531,
+   "evidence_price": "2.00",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Southwell A/E 1.06 (3,285)"
+   ],
+   "win_caution": [
+    "usual front-runner (owner's stamina-loop fade): A/E 0.93 (2,239; 0.95 in 2016-21, 0.92 in 2022-26)"
+   ],
+   "move": "2.10 -> 2.00 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "Elyam drifted 1.57 -> 2.00 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Ancient State",
+   "second": "Ancient State 4.50 (21%)",
+   "rpr_pick": "Ancient State",
+   "rpr_reason": "RPR 106; distance 5/11, going 3/10 (wins/runs); up 6lb on last run BUT has finished top-3 10x carrying 127lb+ before - can cope",
+   "anchor": "Baldomero (RPR 100 at trip/going) = shortlist (our chance 14%)",
+   "longshot": "Dazzling Haze 19.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "Elyam"
+  },
+  {
+   "exact_rpr_pick": "Alligator Alley",
+   "exact_rpr": 110,
+   "exact_rpr_run": "RPR 110 at Southwell (AW) 2023-01-01, standard 5f (finished 1); carried 9-6 then, 9-9 today (3lb heavier)",
+   "exact_weight_change": 3,
+   "exact_confirmed": false,
+   "time": "20:00",
+   "race": "Midnite: Built For 2027 Not 2007 Handicap",
+   "distance": "5f",
+   "field": [
+    {
+     "name": "Leading Times",
+     "chance": 0.276,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Atticum",
+     "chance": 0.2132,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Sir Yoshi",
+     "chance": 0.1767,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Call Margot",
+     "chance": 0.0966,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Toolatetonegotiate",
+     "chance": 0.0937,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Alligator Alley",
+     "chance": 0.0649,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Anaisa",
+     "chance": 0.0532,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Fenlander",
+     "chance": 0.0256,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 8,
+   "handicap": true,
+   "class": "4",
+   "win": "Leading Times",
+   "price": "3.25",
+   "chance": 0.27603176731310675,
+   "fair": "3.63",
+   "confidence": 5,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Leading Times",
+   "data_pick": "Leading Times",
+   "data_chance": 0.2434,
+   "data_conf": 4,
+   "data_price": "3.25",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.246,
+   "evidence_price": "3.25",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "3.50 -> 3.25 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Atticum 4.50 (21%)",
+   "rpr_pick": "Sir Yoshi",
+   "rpr_reason": "RPR 94; distance 1/20, going 0/4 (wins/runs); up 12lb on last run BUT has finished top-3 2x carrying 133lb+ before - can cope",
+   "anchor": "Alligator Alley (RPR 110 at trip/going) = shortlist (our chance 6%)",
+   "longshot": "Fenlander 31.00 SPECULATIVE (ranked 8th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Leading Times"
+  },
+  {
+   "exact_rpr_pick": "Brasil Power",
+   "exact_rpr": 99,
+   "exact_rpr_run": "RPR 99 at Wolverhampton (AW) 2025-12-26, standard 12f (finished 1); carried 9-6 then, 9-7 today (1lb heavier)",
+   "exact_weight_change": 1,
+   "exact_confirmed": false,
+   "time": "20:30",
+   "race": "Make The Move To Midnite Handicap (GBBPlus Race)",
+   "distance": "1m4f",
+   "field": [
+    {
+     "name": "Lord dOr",
+     "chance": 0.4213,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Castle Cove",
+     "chance": 0.2135,
+     "angles": [
+      "top recent RPR: Southwell A/E 1.06 (3,285)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Tawajjah",
+     "chance": 0.1873,
+     "angles": [
+      "won on today's surface/going, only 1-2 in field have: A/E 1.20, +4% (779)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Master Builder",
+     "chance": 0.0895,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Orchard Keeper",
+     "chance": 0.0428,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Brasil Power",
+     "chance": 0.0242,
+     "angles": [
+      "top exact-conditions RPR (owner's RPR Anchor): Southwell A/E 1.09 (2,948)",
+      "won on today's surface/going, only 1-2 in field have: A/E 1.20, +4% (779)"
+     ],
+     "cautions": [
+      "age 6+: A/E 0.96 (6,700)"
+     ]
+    },
+    {
+     "name": "Deira Mile",
+     "chance": 0.0214,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Standard",
+   "runners": 7,
+   "handicap": true,
+   "class": "2",
+   "win": "Lord dOr",
+   "price": "2.38",
+   "chance": 0.4212915495142109,
+   "fair": "2.38",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Lord dOr",
+   "data_pick": "Lord dOr",
+   "data_chance": 0.2851,
+   "data_conf": 5,
+   "data_price": "2.38",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.294,
+   "evidence_price": "2.38",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "3.25 -> 2.38 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Castle Cove 4.00 (21%)",
+   "rpr_pick": "Deira Mile",
+   "rpr_reason": "RPR 102; distance 0/3, going 0/2 (wins/runs); passed over: Lord dOr (105) not run on the going, Tawajjah (105) not run at the trip, Castle Cove (104) not run on the going; WARNING up 11lb on last run and never placed carrying this much",
+   "anchor": "Brasil Power (RPR 99 at trip/going) = shortlist (our chance 2%)",
+   "longshot": "Orchard Keeper 17.00 STRONG (ranked 2nd by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Lord dOr"
+  }
+ ]
+}

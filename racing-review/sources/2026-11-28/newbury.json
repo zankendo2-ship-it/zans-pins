@@ -1,0 +1,1105 @@
+{
+ "published_utc": "2026-11-28T10:05:07Z",
+ "course": "newbury",
+ "picks": [
+  {
+   "exact_rpr_pick": "Trial By Jury",
+   "exact_rpr": 116,
+   "exact_rpr_run": "RPR 116 at Newbury 2025-12-17, good to soft 20.5f (finished 2); carried 11-0 then, 11-0 today (same weight)",
+   "exact_weight_change": 0,
+   "exact_confirmed": false,
+   "time": "12:00",
+   "race": "Coral \"Daily Rewards Shaker\" Novices' Hurdle (GBB Race)",
+   "distance": "2m4\u00bdf",
+   "field": [
+    {
+     "name": "Aqua Bleu",
+     "chance": 0.3037,
+     "angles": [
+      "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+     ],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Well Achieved",
+     "chance": 0.2153,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Trial By Jury",
+     "chance": 0.1742,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Sappingirl",
+     "chance": 0.1061,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Terrano",
+     "chance": 0.0681,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Livio",
+     "chance": 0.0298,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Wonder Flying",
+     "chance": 0.0211,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Mister Coko",
+     "chance": 0.0205,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Asamahleroffact",
+     "chance": 0.019,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ballypollard",
+     "chance": 0.017,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Indulto Rouge",
+     "chance": 0.0135,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Spare The Voice",
+     "chance": 0.0096,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Company Charge",
+     "chance": 0.0019,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 13,
+   "handicap": false,
+   "class": "3",
+   "win": "Aqua Bleu",
+   "price": "3.50",
+   "chance": 0.3036726139785729,
+   "fair": "3.30",
+   "confidence": 6,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Aqua Bleu",
+   "data_pick": "Aqua Bleu",
+   "data_chance": 0.3711,
+   "data_conf": 7,
+   "data_price": "3.50",
+   "data_angles": [
+    "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+   ],
+   "data_cautions": [
+    "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+   ],
+   "evidence_chance": 0.364,
+   "evidence_price": "3.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+   ],
+   "win_caution": [
+    "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+   ],
+   "move": "7.00 -> 3.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Well Achieved 4.00 (22%)",
+   "rpr_pick": "Trial By Jury",
+   "rpr_reason": "RPR 133; distance 0/1, going 0/1 (wins/runs); passed over: Aqua Bleu (139) not run at the trip, Livio (134) not run on the going; weight +0lb vs last run - fine",
+   "anchor": "Trial By Jury (RPR 116 at trip/going) = RPR PICK",
+   "longshot": "Livio 23.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "Aqua Bleu"
+  },
+  {
+   "exact_rpr_pick": "Fairy Park",
+   "exact_rpr": 119,
+   "exact_rpr_run": "RPR 119 at Aintree 2026-04-09, good to soft 17f (finished 3); carried 11-2 then, 11-0 today (2lb lighter)",
+   "exact_weight_change": -2,
+   "exact_confirmed": false,
+   "time": "12:35",
+   "race": "Play Coral \"Racing-Super-Series\" Mares' Novices' Hurdle (Listed Race) (GBB Race)",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "Fairy Park",
+     "chance": 0.3392,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Royal Response",
+     "chance": 0.2984,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Salsinha",
+     "chance": 0.1497,
+     "angles": [
+      "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Timamzel",
+     "chance": 0.0865,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "LAmandine",
+     "chance": 0.0279,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Katios Queen",
+     "chance": 0.0259,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Boombox",
+     "chance": 0.0219,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Miss Kingston",
+     "chance": 0.0179,
+     "angles": [
+      "lone front-runner: A/E 1.25 (185; ~1.47 / 1.11)"
+     ],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Ladies Day",
+     "chance": 0.0172,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Marvelous Dragones",
+     "chance": 0.0105,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Mythical Bird",
+     "chance": 0.0048,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 11,
+   "handicap": false,
+   "class": "1",
+   "win": "Fairy Park",
+   "price": "2.63",
+   "chance": 0.33921747998616875,
+   "fair": "2.95",
+   "confidence": 6,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Royal Response",
+   "data_pick": "Royal Response",
+   "data_chance": 0.1908,
+   "data_conf": 3,
+   "data_price": "3.00",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.19,
+   "evidence_price": "3.00",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "3.75 -> 2.63 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Royal Response 3.00 (30%)",
+   "rpr_pick": "Fairy Park",
+   "rpr_reason": "RPR 136; distance 0/2, going 0/2 (wins/runs); passed over: Salsinha (137) not run on the going; weight +0lb vs last run - fine",
+   "anchor": "Salsinha (RPR 123 at trip/going) = shortlist (our chance 15%)",
+   "longshot": "Boombox 34.00 STRONG (ranked 2nd by us)",
+   "watchlist": [],
+   "pace": "Lone front-runner - Miss Kingston could get an easy lead",
+   "changed": false,
+   "model_pick": "Fairy Park"
+  },
+  {
+   "exact_rpr_pick": "Royal Jewel",
+   "exact_rpr": 136,
+   "exact_rpr_run": "RPR 136 at Taunton 2026-03-09, good 23f (finished 3); carried 11-10 then, 11-6 today (4lb lighter)",
+   "exact_weight_change": -4,
+   "exact_confirmed": false,
+   "time": "13:10",
+   "race": "Coral Sir Peter O'Sullevan Memorial Handicap Chase (GBB Race)",
+   "distance": "2m6\u00bdf",
+   "field": [
+    {
+     "name": "Knight Of Allen",
+     "chance": 0.1832,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    },
+    {
+     "name": "Norn Iron",
+     "chance": 0.1205,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    },
+    {
+     "name": "Leader In The Park",
+     "chance": 0.1094,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Barlovento",
+     "chance": 0.0965,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kdeux Saint Fray",
+     "chance": 0.0946,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "El Capitaine",
+     "chance": 0.078,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Jipcot",
+     "chance": 0.068,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Holetown",
+     "chance": 0.0349,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Go West",
+     "chance": 0.0334,
+     "angles": [
+      "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+     ],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Demnat",
+     "chance": 0.0305,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Chuggy",
+     "chance": 0.0298,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kings Threshold",
+     "chance": 0.0268,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Sheldon",
+     "chance": 0.0216,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Moon dOrange",
+     "chance": 0.0182,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Eyed",
+     "chance": 0.0179,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    },
+    {
+     "name": "Royal Jewel",
+     "chance": 0.0158,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Down Memory Lane",
+     "chance": 0.0124,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Neon Moon",
+     "chance": 0.0086,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    }
+   ],
+   "going": "Good",
+   "runners": 18,
+   "handicap": true,
+   "class": "2",
+   "win": "Knight Of Allen",
+   "price": "4.50",
+   "chance": 0.18320560538530864,
+   "fair": "5.46",
+   "confidence": 3,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Knight Of Allen",
+   "data_pick": "Knight Of Allen",
+   "data_chance": 0.1112,
+   "data_conf": 2,
+   "data_price": "4.50",
+   "data_angles": [],
+   "data_cautions": [
+    "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+   ],
+   "evidence_chance": 0.112,
+   "evidence_price": "4.50",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [
+    "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+   ],
+   "move": "5.50 -> 4.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Norn Iron 6.00 (12%)",
+   "rpr_pick": "Knight Of Allen",
+   "rpr_reason": "RPR 150; distance 0/1, going 1/2 (wins/runs); up 5lb on last run BUT has finished top-3 7x carrying 153lb+ before - can cope",
+   "anchor": "Kings Threshold (RPR 138 at trip/going) = shortlist (our chance 3%)",
+   "longshot": "Go West 21.00 STRONG (ranked 3rd by us)",
+   "watchlist": [],
+   "pace": "Strong early pace likely - 4 habitual front-runners should take each other on",
+   "changed": false,
+   "model_pick": "Knight Of Allen"
+  },
+  {
+   "exact_rpr_pick": "Insurrection",
+   "exact_rpr": 146,
+   "exact_rpr_run": "RPR 146 at Musselburgh 2025-02-02, good to soft 20.5f (finished 1); carried 11-7 then, 11-1 today (6lb lighter)",
+   "exact_weight_change": -6,
+   "exact_confirmed": false,
+   "time": "13:40",
+   "race": "Coral \"Bet\u00a310 Get\u00a350 Sign Up Offer\" Handicap Hurdle (GBB Race)",
+   "distance": "2m4\u00bdf",
+   "field": [
+    {
+     "name": "Moneygarrow",
+     "chance": 0.2477,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    },
+    {
+     "name": "A King Of Magic",
+     "chance": 0.1179,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Gentleman Toboot",
+     "chance": 0.1152,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Fingle Bridge",
+     "chance": 0.0916,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Jigs Forge",
+     "chance": 0.0739,
+     "angles": [
+      "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Spirits Bay",
+     "chance": 0.0611,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Frontier Prince",
+     "chance": 0.0502,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Walk On High",
+     "chance": 0.0502,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Firestream",
+     "chance": 0.0492,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Califet En Vol",
+     "chance": 0.0325,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "One Horse Town",
+     "chance": 0.0236,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Ace Of Spades",
+     "chance": 0.021,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Court In The Act",
+     "chance": 0.0205,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Nurse Susan",
+     "chance": 0.0162,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Kamsinas",
+     "chance": 0.0129,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    },
+    {
+     "name": "Insurrection",
+     "chance": 0.0082,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Too Bossy For Us",
+     "chance": 0.0079,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 17,
+   "handicap": true,
+   "class": "2",
+   "win": "Moneygarrow",
+   "price": "3.25",
+   "chance": 0.24768913716028237,
+   "fair": "4.04",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "A King Of Magic",
+   "data_pick": "A King Of Magic",
+   "data_chance": 0.1177,
+   "data_conf": 2,
+   "data_price": "7.50",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.115,
+   "evidence_price": "7.50",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [
+    "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+   ],
+   "move": "2.63 -> 3.25 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "A King Of Magic 7.50 (12%)",
+   "rpr_pick": "Firestream",
+   "rpr_reason": "RPR 145; distance 1/3, going 2/3 (wins/runs); weight +4lb vs last run - fine",
+   "anchor": "Insurrection (RPR 146 at trip/going) = shortlist (our chance 1%)",
+   "longshot": "One Horse Town 29.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Strong early pace likely - 4 habitual front-runners should take each other on",
+   "changed": false,
+   "model_pick": "Moneygarrow"
+  },
+  {
+   "exact_rpr_pick": "Idaho Sun",
+   "exact_rpr": 143,
+   "exact_rpr_run": "RPR 143 at Aintree 2025-12-26, good to soft 17f (finished 1); carried 11-8 then, 12-0 today (6lb heavier)",
+   "exact_weight_change": 6,
+   "exact_confirmed": true,
+   "time": "14:20",
+   "race": "Coral Racing Club Intermediate Handicap Hurdle (Reg' As The Gerry Feilden) (Premier Handicap) (GBB)",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "Idaho Sun",
+     "chance": 0.4568,
+     "angles": [
+      "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+     ],
+     "cautions": [
+      "back from 337 days at under 2/1 (NOTE: no trap in data)"
+     ]
+    },
+    {
+     "name": "Mossy Fen Road",
+     "chance": 0.1226,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Minella Yoga",
+     "chance": 0.1206,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "La Conquiere",
+     "chance": 0.0977,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "White Noise",
+     "chance": 0.0721,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Our Boy Stan",
+     "chance": 0.056,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Mondo Man",
+     "chance": 0.0525,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Klycot",
+     "chance": 0.0217,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good To Soft",
+   "runners": 8,
+   "handicap": true,
+   "class": "1",
+   "win": "Idaho Sun",
+   "price": "2.50",
+   "chance": 0.45680695339730903,
+   "fair": "2.19",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": true,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Idaho Sun",
+   "data_pick": "Idaho Sun",
+   "data_chance": 0.2672,
+   "data_conf": 5,
+   "data_price": "2.50",
+   "data_angles": [
+    "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+   ],
+   "data_cautions": [
+    "back from 337 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "evidence_chance": 0.251,
+   "evidence_price": "2.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+   ],
+   "win_caution": [
+    "back from 337 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "move": "2.75 -> 2.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Mossy Fen Road 7.00 (12%)",
+   "rpr_pick": "Mossy Fen Road",
+   "rpr_reason": "RPR 144; distance 3/5, going 2/3 (wins/runs); weight -2lb vs last run - fine",
+   "anchor": "Idaho Sun (RPR 143 at trip/going) = WIN PICK",
+   "longshot": "Mondo Man 15.00 SPECULATIVE (ranked 6th by us)",
+   "watchlist": [],
+   "pace": "Strong early pace likely - 3 habitual front-runners should take each other on",
+   "changed": false,
+   "model_pick": "Idaho Sun"
+  },
+  {
+   "exact_rpr_pick": "Myretown",
+   "exact_rpr": 147,
+   "exact_rpr_run": "RPR 147 at Kelso 2026-10-24, good 26f (finished 1); carried 11-12 then, 11-7 today (5lb lighter)",
+   "exact_weight_change": -5,
+   "exact_confirmed": false,
+   "time": "15:00",
+   "race": "Coral Gold Cup Handicap Chase (Registered As The Newbury Gold Cup) (Premier Handicap) (GBB Race)",
+   "distance": "3m2f",
+   "field": [
+    {
+     "name": "Wendigo",
+     "chance": 0.2233,
+     "angles": [
+      "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Miami Magic",
+     "chance": 0.1209,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Regents Stroll",
+     "chance": 0.1045,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Mr Hope Street",
+     "chance": 0.0892,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Road To Home",
+     "chance": 0.0736,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Kap Vert",
+     "chance": 0.0706,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Booster Bob",
+     "chance": 0.0488,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Panic Attack",
+     "chance": 0.0435,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Masaccio",
+     "chance": 0.0393,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "One Big Bang",
+     "chance": 0.0319,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Downmexicoway",
+     "chance": 0.0312,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "The Jukebox Kid",
+     "chance": 0.029,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Havaila",
+     "chance": 0.0284,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    },
+    {
+     "name": "Myretown",
+     "chance": 0.0281,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Here Comes Georgie",
+     "chance": 0.0232,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "The Doyen Chief",
+     "chance": 0.0087,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Amirite",
+     "chance": 0.0058,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    }
+   ],
+   "going": "Good",
+   "runners": 17,
+   "handicap": true,
+   "class": "1",
+   "win": "Wendigo",
+   "price": "4.00",
+   "chance": 0.22329140849164508,
+   "fair": "4.48",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Wendigo",
+   "data_pick": "Wendigo",
+   "data_chance": 0.1725,
+   "data_conf": 3,
+   "data_price": "4.00",
+   "data_angles": [
+    "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.161,
+   "evidence_price": "4.00",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+   ],
+   "win_caution": [],
+   "move": "5.00 -> 4.00 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Miami Magic 6.50 (12%)",
+   "rpr_pick": "Wendigo",
+   "rpr_reason": "RPR 156; distance 0/1, going 2/4 (wins/runs); weight +2lb vs last run - fine",
+   "anchor": "Myretown (RPR 147 at trip/going) = shortlist (our chance 3%)",
+   "longshot": "Downmexicoway 21.00 SPECULATIVE (ranked 8th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "Wendigo"
+  },
+  {
+   "exact_rpr_pick": "Breaking Cover",
+   "exact_rpr": 141,
+   "exact_rpr_run": "RPR 141 at Stratford 2026-09-05, good 17f (finished 1); carried 11-9 then, 12-1 today (6lb heavier)",
+   "exact_weight_change": 6,
+   "exact_confirmed": false,
+   "time": "15:38",
+   "race": "Coral \"Pipped-At-The-Post\" And Win Handicap Chase (For The Jim Joel Memorial Trophy) (GBB Race)",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "Un Sens A La Vie",
+     "chance": 0.228,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Ryans Rocket",
+     "chance": 0.2008,
+     "angles": [
+      "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Wreckless Eric",
+     "chance": 0.1592,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    },
+    {
+     "name": "Pure Carbon",
+     "chance": 0.1071,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)"
+     ]
+    },
+    {
+     "name": "Pleasington",
+     "chance": 0.0887,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "The Four Sixes",
+     "chance": 0.0593,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Jour dEvasion",
+     "chance": 0.0545,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Breaking Cover",
+     "chance": 0.038,
+     "angles": [
+      "top recent RPR: Newbury jumps A/E 1.21, +1% (592; ~1.30 / 1.16)"
+     ],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Escapeandevade",
+     "chance": 0.0302,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Stencil",
+     "chance": 0.0245,
+     "angles": [],
+     "cautions": [
+      "usually held up: A/E 0.94 (1,080; ~0.94 / 0.94)",
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    },
+    {
+     "name": "Jony R",
+     "chance": 0.0097,
+     "angles": [],
+     "cautions": [
+      "weakened / no extra in either of last 2: A/E 0.91 (1,526; ~0.89 / 0.92)"
+     ]
+    }
+   ],
+   "going": "Good",
+   "runners": 11,
+   "handicap": true,
+   "class": "3",
+   "win": "Un Sens A La Vie",
+   "price": "3.50",
+   "chance": 0.22795827471192112,
+   "fair": "4.39",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Pleasington",
+   "data_pick": "Un Sens A La Vie",
+   "data_chance": 0.1374,
+   "data_conf": 2,
+   "data_price": "3.50",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.141,
+   "evidence_price": "8.50",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "3.75 -> 3.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Ryans Rocket 4.50 (20%)",
+   "rpr_pick": "The Four Sixes",
+   "rpr_reason": "RPR 150; distance 3/5, going 2/6 (wins/runs); weight -16lb vs last run - fine",
+   "anchor": "Breaking Cover (RPR 141 at trip/going) = shortlist (our chance 4%)",
+   "longshot": "Breaking Cover 19.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Even pace likely - two habitual front-runners",
+   "changed": false,
+   "model_pick": "Un Sens A La Vie"
+  }
+ ]
+}

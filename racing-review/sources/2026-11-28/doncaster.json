@@ -1,0 +1,636 @@
+{
+ "published_utc": "2026-11-28T10:04:49Z",
+ "course": "doncaster",
+ "picks": [
+  {
+   "exact_rpr_pick": "Docpickedme",
+   "exact_rpr": 141,
+   "exact_rpr_run": "RPR 141 at Doncaster 2025-01-25, good 24f (finished 1); carried 10-9 then, 12-0 today (19lb heavier)",
+   "exact_weight_change": 19,
+   "exact_confirmed": true,
+   "time": "11:33",
+   "race": "Josie Rowe Memorial Handicap Hurdle",
+   "distance": "3m\u00bdf",
+   "field": [
+    {
+     "name": "Docpickedme",
+     "chance": 0.3895,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Paddy De Pole",
+     "chance": 0.3641,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Everyonesgame",
+     "chance": 0.2463,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 3,
+   "handicap": true,
+   "class": "3",
+   "win": "Docpickedme",
+   "price": "2.75",
+   "chance": 0.38953773677495346,
+   "fair": "2.57",
+   "confidence": 7,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Docpickedme",
+   "data_pick": "Docpickedme",
+   "data_chance": 0.4862,
+   "data_conf": 8,
+   "data_price": "2.75",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.474,
+   "evidence_price": "2.75",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "win_caution": [],
+   "move": "5.50 -> 2.75 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Paddy De Pole 2.25 (36%)",
+   "rpr_pick": "Paddy De Pole",
+   "rpr_reason": "RPR 123; distance 0/4, going 5/14 (wins/runs); weight +3lb vs last run - fine",
+   "anchor": "Docpickedme (RPR 141 at trip/going) = WIN PICK",
+   "longshot": "no longshot",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Docpickedme"
+  },
+  {
+   "exact_rpr_pick": "One Knight",
+   "exact_rpr": 124,
+   "exact_rpr_run": "RPR 124 at Hereford 2026-03-25, good 16f (finished 1); carried 10-13 then, 11-0 today (1lb heavier)",
+   "exact_weight_change": 1,
+   "exact_confirmed": false,
+   "time": "12:08",
+   "race": "Howcroft Group Novices' Hurdle (Go North Night Nurse Series Qualifier) (GBB Race)",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "One Knight",
+     "chance": 0.3474,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Down To Business",
+     "chance": 0.3141,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Dancing Soldier",
+     "chance": 0.1948,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Arms Of An Angel",
+     "chance": 0.0945,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Pfingstberg",
+     "chance": 0.0374,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Northerly",
+     "chance": 0.0118,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 6,
+   "handicap": false,
+   "class": "4",
+   "win": "One Knight",
+   "price": "2.50",
+   "chance": 0.3473725644558158,
+   "fair": "2.88",
+   "confidence": 6,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Down To Business",
+   "data_pick": "Down To Business",
+   "data_chance": 0.4827,
+   "data_conf": 8,
+   "data_price": "3.00",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.471,
+   "evidence_price": "3.00",
+   "short_fav_caution": true,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "6.00 -> 2.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Down To Business 3.00 (31%)",
+   "rpr_pick": "Down To Business",
+   "rpr_reason": "RPR 119; distance 1/5, going 1/4 (wins/runs); WARNING up 11lb on last run and never placed carrying this much",
+   "anchor": "One Knight (RPR 124 at trip/going) = WIN PICK",
+   "longshot": "Pfingstberg 21.00 SPECULATIVE (ranked 5th by us)",
+   "watchlist": [],
+   "pace": "Lone front-runner - Pfingstberg could get an easy lead",
+   "changed": false,
+   "model_pick": "One Knight"
+  },
+  {
+   "exact_rpr_pick": "Palamon",
+   "exact_rpr": 138,
+   "exact_rpr_run": "RPR 138 at Wetherby 2026-11-14, good 19.5f (finished 1); carried 10-2 then, 12-4 today (30lb heavier)",
+   "exact_weight_change": 30,
+   "exact_confirmed": true,
+   "time": "12:43",
+   "race": "Winter Family Raceday 29th December Novices' Limited Handicap Chase (GBB Race)",
+   "distance": "2m3f",
+   "field": [
+    {
+     "name": "Palamon",
+     "chance": 0.3473,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Nazare",
+     "chance": 0.315,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Fairlawn Skipper",
+     "chance": 0.1998,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Nardaran",
+     "chance": 0.1378,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 4,
+   "handicap": true,
+   "class": "3",
+   "win": "Palamon",
+   "price": "2.50",
+   "chance": 0.3473124630832842,
+   "fair": "2.88",
+   "confidence": 6,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Palamon",
+   "data_pick": "Palamon",
+   "data_chance": 0.4631,
+   "data_conf": 8,
+   "data_price": "2.50",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.451,
+   "evidence_price": "2.50",
+   "short_fav_caution": false,
+   "win_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "win_caution": [],
+   "move": "2.63 -> 2.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Nazare 2.88 (32%)",
+   "rpr_pick": "Nazare",
+   "rpr_reason": "RPR 138; distance 1/2, going 2/5 (wins/runs); weight -12lb vs last run - fine",
+   "anchor": "Palamon (RPR 138 at trip/going) = WIN PICK",
+   "longshot": "no longshot",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Palamon"
+  },
+  {
+   "exact_rpr_pick": "Briery Rose",
+   "exact_rpr": 111,
+   "exact_rpr_run": "RPR 111 at Huntingdon 2026-11-01, good 19.5f (finished 1); carried 11-0 then, 11-6 today (6lb heavier)",
+   "exact_weight_change": 6,
+   "exact_confirmed": true,
+   "time": "13:18",
+   "race": "Dranfields CIU National Charity Raceday Mares' Novices' Hurdle (GBB Race)",
+   "distance": "2m3\u00bdf",
+   "field": [
+    {
+     "name": "Queen Alice",
+     "chance": 0.4529,
+     "angles": [],
+     "cautions": [
+      "back from 236 days at under 2/1 (NOTE: no trap in data)"
+     ]
+    },
+    {
+     "name": "Briery Rose",
+     "chance": 0.259,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Lady Litigator",
+     "chance": 0.1391,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Harzandacassandra",
+     "chance": 0.073,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "La Trinite",
+     "chance": 0.0661,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Aunt Gallie",
+     "chance": 0.0059,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Just Rizzo",
+     "chance": 0.0039,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 7,
+   "handicap": false,
+   "class": "3",
+   "win": "Queen Alice",
+   "price": "1.91",
+   "chance": 0.45288603848051306,
+   "fair": "2.21",
+   "confidence": 8,
+   "verdict": "BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Briery Rose",
+   "data_pick": "Briery Rose",
+   "data_chance": 0.4617,
+   "data_conf": 8,
+   "data_price": "4.00",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.45,
+   "evidence_price": "4.00",
+   "short_fav_caution": true,
+   "win_angles": [],
+   "win_caution": [
+    "back from 236 days at under 2/1 (NOTE: no trap in data)"
+   ],
+   "move": "2.63 -> 1.91 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Briery Rose 4.00 (26%)",
+   "rpr_pick": "Briery Rose",
+   "rpr_reason": "RPR 119; distance 1/1, going 1/3 (wins/runs); up 6lb after WINNING last time (the handicapper's rise) - has to prove it can follow up off the higher mark",
+   "anchor": "Briery Rose (RPR 111 at trip/going) = RPR PICK",
+   "longshot": "Aunt Gallie 71.00 SPECULATIVE (ranked 6th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Queen Alice"
+  },
+  {
+   "exact_rpr_pick": "Flash Man",
+   "exact_rpr": 105,
+   "exact_rpr_run": "RPR 105 at Plumpton 2026-04-06, good 16f (finished 1); carried 10-10 then, 11-3 today (7lb heavier)",
+   "exact_weight_change": 7,
+   "exact_confirmed": false,
+   "time": "13:48",
+   "race": "Apres Village Friday 18th December Handicap Hurdle (Go North Sea Pigeon Series Qualifier)",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "Liberty Coach",
+     "chance": 0.3976,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Leaumec De Mee",
+     "chance": 0.26,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Flash Man",
+     "chance": 0.1736,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Itsinthename",
+     "chance": 0.0996,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Cotton Socks",
+     "chance": 0.0464,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Belfrina",
+     "chance": 0.0227,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 6,
+   "handicap": true,
+   "class": "4",
+   "win": "Liberty Coach",
+   "price": "2.50",
+   "chance": 0.3976123526219723,
+   "fair": "2.52",
+   "confidence": 7,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Leaumec De Mee",
+   "data_pick": "Leaumec De Mee",
+   "data_chance": 0.3375,
+   "data_conf": 6,
+   "data_price": "3.00",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.327,
+   "evidence_price": "3.00",
+   "short_fav_caution": true,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "3.00 -> 2.50 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Leaumec De Mee 3.00 (26%)",
+   "rpr_pick": "Liberty Coach",
+   "rpr_reason": "RPR 122; distance 1/7, going 0/2 (wins/runs); weight +2lb vs last run - fine",
+   "anchor": "Flash Man (RPR 106 at trip/going) = shortlist (our chance 17%)",
+   "longshot": "Cotton Socks 15.00 SPECULATIVE (ranked 5th by us)",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Liberty Coach"
+  },
+  {
+   "exact_rpr_pick": "Mumfords Magic",
+   "exact_rpr": 118,
+   "exact_rpr_run": "RPR 118 at Kelso 2026-10-24, good 26f (finished 2); carried 10-6 then, 12-0 today (22lb heavier)",
+   "exact_weight_change": 22,
+   "exact_confirmed": true,
+   "time": "14:28",
+   "race": "Doncaster 2027 Annual Membership Handicap Chase (Go North Red Rum Series Qualifier) (GBB Race)",
+   "distance": "3m2f",
+   "field": [
+    {
+     "name": "Camarrate",
+     "chance": 0.2308,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Mumfords Magic",
+     "chance": 0.2195,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "I Am The Moon",
+     "chance": 0.1892,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Copshill Lad",
+     "chance": 0.1506,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Getaway Vic",
+     "chance": 0.109,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Breezethroughlife",
+     "chance": 0.101,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 6,
+   "handicap": true,
+   "class": "4",
+   "win": "Camarrate",
+   "price": "3.75",
+   "chance": 0.23079589916299345,
+   "fair": "4.34",
+   "confidence": 4,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": false,
+   "evidence_pick": "Mumfords Magic",
+   "data_pick": "Mumfords Magic",
+   "data_chance": 0.2807,
+   "data_conf": 5,
+   "data_price": "4.00",
+   "data_angles": [
+    "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+   ],
+   "data_cautions": [],
+   "evidence_chance": 0.271,
+   "evidence_price": "4.00",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "3.00 -> 3.75 (drifted)",
+   "drift_switch": "",
+   "drift_warning": "Camarrate drifted 3.00 -> 3.75 overnight - still our pick on the evidence, kept out of the multiples",
+   "drift_alt": "Mumfords Magic",
+   "second": "Mumfords Magic 4.00 (22%)",
+   "rpr_pick": "Mumfords Magic",
+   "rpr_reason": "RPR 120; distance 1/4, going 1/6 (wins/runs); up 22lb on last run BUT has finished top-3 1x carrying 166lb+ before - can cope",
+   "anchor": "Mumfords Magic (RPR 118 at trip/going) = RPR PICK",
+   "longshot": "no longshot",
+   "watchlist": [],
+   "pace": "Slow early pace likely - no habitual front-runner; those racing prominently can dictate",
+   "changed": false,
+   "model_pick": "Camarrate"
+  },
+  {
+   "exact_rpr_pick": "Marias Double",
+   "exact_rpr": 66,
+   "exact_rpr_run": "RPR 66 at Warwick 2026-11-11, good 16f (finished 4); carried 10-13 then, 11-2 today (3lb heavier)",
+   "exact_weight_change": 3,
+   "exact_confirmed": false,
+   "time": "15:10",
+   "race": "Grace And Dotty Fillies' \"Junior\" National Hunt Flat Race (Category 1 Elimination) (GBB Race)",
+   "distance": "2m\u00bdf",
+   "field": [
+    {
+     "name": "Ignite The Night",
+     "chance": 0.33,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Lady Loki",
+     "chance": 0.2521,
+     "angles": [
+      "top recent RPR (best of last 3): all UK/IRE jumps A/E 1.12 (39,230)"
+     ],
+     "cautions": []
+    },
+    {
+     "name": "Sarahs Surprise",
+     "chance": 0.1225,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Karalees Legacy",
+     "chance": 0.1136,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Dance In The Mist",
+     "chance": 0.0573,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Jolanta",
+     "chance": 0.0454,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Noemie Du Chenet",
+     "chance": 0.0346,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Dees Gem",
+     "chance": 0.0306,
+     "angles": [],
+     "cautions": []
+    },
+    {
+     "name": "Marias Double",
+     "chance": 0.0138,
+     "angles": [],
+     "cautions": []
+    }
+   ],
+   "going": "Good",
+   "runners": 9,
+   "handicap": false,
+   "class": "5",
+   "win": "Ignite The Night",
+   "price": "2.75",
+   "chance": 0.32999061403942104,
+   "fair": "3.04",
+   "confidence": 6,
+   "verdict": "NO BET",
+   "old_rule_bet": false,
+   "data_gap": false,
+   "evidence_agrees": true,
+   "evidence_pick": "Ignite The Night",
+   "data_pick": "Ignite The Night",
+   "data_chance": 0.2944,
+   "data_conf": 5,
+   "data_price": "2.75",
+   "data_angles": [],
+   "data_cautions": [],
+   "evidence_chance": 0.297,
+   "evidence_price": "2.75",
+   "short_fav_caution": false,
+   "win_angles": [],
+   "win_caution": [],
+   "move": "3.25 -> 2.75 (shortened)",
+   "drift_switch": "",
+   "drift_warning": "",
+   "drift_alt": "",
+   "second": "Lady Loki 3.75 (25%)",
+   "rpr_pick": "Marias Double",
+   "rpr_reason": "RPR 78; distance 0/2, going 0/1 (wins/runs); passed over: Lady Loki (94) not run on the going, Ignite The Night (92) not run on the going, Dance In The Mist (87) not run on the going; weight +3lb vs last run - fine",
+   "anchor": "Marias Double (RPR 66 at trip/going) = RPR PICK",
+   "longshot": "Noemie Du Chenet 19.00 SPECULATIVE (ranked 4th by us)",
+   "watchlist": [],
+   "pace": "Pace unclear - too few runners with readable running styles",
+   "changed": false,
+   "model_pick": "Ignite The Night"
+  }
+ ]
+}
