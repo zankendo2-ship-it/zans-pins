@@ -1,0 +1,673 @@
+{
+ "date": "2026-11-28",
+ "full_file": "racing-review/full/2026-11-28.full.json",
+ "full_sha256": "e4d100e94de99972dc7ddcdf0d5519c11de6a0880ec2c32675e4e1ba5a7ebfe1",
+ "full_bytes": 63825,
+ "trimmed_file": "racing-review/2026-11-28.json",
+ "trimmed_sha256": "2162df9f0d1e899a62911212e7bca41c70b74ee58c40db438e548515297f39a5",
+ "races": 45,
+ "top_level_fields_differing": [
+  "built_utc",
+  "trimmed"
+ ],
+ "races_fields_differing": [
+  "data_reasons",
+  "rpr_reason",
+  "zans_reasons"
+ ],
+ "differences": [
+  {
+   "race": "11:33 Doncaster",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "11:33 Doncaster",
+   "field": "rpr_reason",
+   "full_len": 77,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "11:33 Doncaster",
+   "field": "zans_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "11:40 Newcastle",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "11:45 Fairyhouse",
+   "field": "data_reasons",
+   "full_len": 128,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "11:45 Fairyhouse",
+   "field": "rpr_reason",
+   "full_len": 160,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "11:45 Fairyhouse",
+   "field": "zans_reasons",
+   "full_len": 128,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "11:50 Bangor-on-Dee",
+   "field": "rpr_reason",
+   "full_len": 160,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:00 Newbury",
+   "field": "data_reasons",
+   "full_len": 67,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:00 Newbury",
+   "field": "rpr_reason",
+   "full_len": 160,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:00 Newbury",
+   "field": "zans_reasons",
+   "full_len": 67,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:08 Doncaster",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:08 Doncaster",
+   "field": "rpr_reason",
+   "full_len": 109,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:15 Newcastle",
+   "field": "rpr_reason",
+   "full_len": 77,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:15 Newcastle",
+   "field": "zans_reasons",
+   "full_len": 58,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:20 Fairyhouse",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:20 Fairyhouse",
+   "field": "rpr_reason",
+   "full_len": 109,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:20 Fairyhouse",
+   "field": "zans_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:25 Bangor-on-Dee",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:25 Bangor-on-Dee",
+   "field": "rpr_reason",
+   "full_len": 124,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:25 Bangor-on-Dee",
+   "field": "zans_reasons",
+   "full_len": 47,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:35 Newbury",
+   "field": "rpr_reason",
+   "full_len": 126,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:43 Doncaster",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:43 Doncaster",
+   "field": "rpr_reason",
+   "full_len": 77,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:43 Doncaster",
+   "field": "zans_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:50 Newcastle",
+   "field": "rpr_reason",
+   "full_len": 138,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "12:55 Fairyhouse",
+   "field": "rpr_reason",
+   "full_len": 125,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:00 Bangor-on-Dee",
+   "field": "data_reasons",
+   "full_len": 184,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:00 Bangor-on-Dee",
+   "field": "rpr_reason",
+   "full_len": 127,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:00 Bangor-on-Dee",
+   "field": "zans_reasons",
+   "full_len": 184,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:10 Newbury",
+   "field": "rpr_reason",
+   "full_len": 124,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:18 Doncaster",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:18 Doncaster",
+   "field": "rpr_reason",
+   "full_len": 153,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:25 Newcastle",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:30 Fairyhouse",
+   "field": "data_reasons",
+   "full_len": 182,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:30 Fairyhouse",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:30 Fairyhouse",
+   "field": "zans_reasons",
+   "full_len": 182,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:33 Bangor-on-Dee",
+   "field": "data_reasons",
+   "full_len": 137,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:33 Bangor-on-Dee",
+   "field": "rpr_reason",
+   "full_len": 108,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:33 Bangor-on-Dee",
+   "field": "zans_reasons",
+   "full_len": 137,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:40 Newbury",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:48 Doncaster",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "13:48 Doncaster",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:00 Newcastle",
+   "field": "rpr_reason",
+   "full_len": 153,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:05 Fairyhouse",
+   "field": "data_reasons",
+   "full_len": 111,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:05 Fairyhouse",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:05 Fairyhouse",
+   "field": "zans_reasons",
+   "full_len": 57,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:10 Bangor-on-Dee",
+   "field": "data_reasons",
+   "full_len": 47,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:10 Bangor-on-Dee",
+   "field": "rpr_reason",
+   "full_len": 125,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:10 Bangor-on-Dee",
+   "field": "zans_reasons",
+   "full_len": 47,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:20 Newbury",
+   "field": "data_reasons",
+   "full_len": 67,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:20 Newbury",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:20 Newbury",
+   "field": "zans_reasons",
+   "full_len": 67,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:28 Doncaster",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:28 Doncaster",
+   "field": "rpr_reason",
+   "full_len": 125,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:35 Newcastle",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:40 Fairyhouse",
+   "field": "data_reasons",
+   "full_len": 57,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:40 Fairyhouse",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:40 Fairyhouse",
+   "field": "zans_reasons",
+   "full_len": 57,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "14:45 Bangor-on-Dee",
+   "field": "rpr_reason",
+   "full_len": 125,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:00 Newbury",
+   "field": "data_reasons",
+   "full_len": 67,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:00 Newbury",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:00 Newbury",
+   "field": "zans_reasons",
+   "full_len": 67,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:10 Doncaster",
+   "field": "rpr_reason",
+   "full_len": 160,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:13 Fairyhouse",
+   "field": "data_reasons",
+   "full_len": 125,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:13 Fairyhouse",
+   "field": "rpr_reason",
+   "full_len": 76,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:18 Newcastle",
+   "field": "data_reasons",
+   "full_len": 64,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:18 Newcastle",
+   "field": "rpr_reason",
+   "full_len": 153,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:18 Newcastle",
+   "field": "zans_reasons",
+   "full_len": 64,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:25 Bangor-on-Dee",
+   "field": "data_reasons",
+   "full_len": 113,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:25 Bangor-on-Dee",
+   "field": "rpr_reason",
+   "full_len": 153,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:38 Newbury",
+   "field": "rpr_reason",
+   "full_len": 77,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:43 Fairyhouse",
+   "field": "data_reasons",
+   "full_len": 71,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "15:43 Fairyhouse",
+   "field": "rpr_reason",
+   "full_len": 160,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "16:30 Southwell",
+   "field": "data_reasons",
+   "full_len": 46,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "16:30 Southwell",
+   "field": "rpr_reason",
+   "full_len": 152,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "16:30 Southwell",
+   "field": "zans_reasons",
+   "full_len": 46,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "17:00 Southwell",
+   "field": "data_reasons",
+   "full_len": 123,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "17:00 Southwell",
+   "field": "rpr_reason",
+   "full_len": 160,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "17:00 Southwell",
+   "field": "zans_reasons",
+   "full_len": 123,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "17:30 Southwell",
+   "field": "data_reasons",
+   "full_len": 46,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "17:30 Southwell",
+   "field": "rpr_reason",
+   "full_len": 125,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "17:30 Southwell",
+   "field": "zans_reasons",
+   "full_len": 46,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "18:00 Southwell",
+   "field": "rpr_reason",
+   "full_len": 75,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "18:30 Southwell",
+   "field": "data_reasons",
+   "full_len": 123,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "18:30 Southwell",
+   "field": "rpr_reason",
+   "full_len": 75,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "18:30 Southwell",
+   "field": "zans_reasons",
+   "full_len": 123,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "19:00 Southwell",
+   "field": "rpr_reason",
+   "full_len": 75,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "19:30 Southwell",
+   "field": "data_reasons",
+   "full_len": 46,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "19:30 Southwell",
+   "field": "rpr_reason",
+   "full_len": 127,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "19:30 Southwell",
+   "field": "zans_reasons",
+   "full_len": 46,
+   "trimmed_len": 30,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "20:00 Southwell",
+   "field": "rpr_reason",
+   "full_len": 125,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  },
+  {
+   "race": "20:30 Southwell",
+   "field": "rpr_reason",
+   "full_len": 160,
+   "trimmed_len": 50,
+   "trimmed_is_prefix": true
+  }
+ ],
+ "approval_note": "approved_by in the trimmed JSON is the coordinator session relaying Alex's 11:15 UTC tap on the \"Send trimmed variant\" card; no card export is published, so treat it as a relayed claim, not independent evidence. No size cap was changed.",
+ "prices_note": "prices_file racing-review/sources/2026-11-28/d0_midday.csv (sha256 2475e36b..., captured 11:07:59Z) now published at that path; it was committed late. d0_1006.csv (10:06:22Z) is also published."
+}
